@@ -1,0 +1,9 @@
+name = ELX site configurations
+core = 7.x
+package = Features
+dependencies[] = admin_views
+dependencies[] = elx_users_feature
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_ui
+features[features_api][] = api:2

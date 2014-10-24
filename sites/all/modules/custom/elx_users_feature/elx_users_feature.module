@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Users Feature feature.
+ */
+
+include_once 'elx_users_feature.features.inc';

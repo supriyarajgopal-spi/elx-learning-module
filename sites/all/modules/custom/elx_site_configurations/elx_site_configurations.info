@@ -1,8 +1,11 @@
 name = ELX site configurations
 core = 7.x
 package = Features
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
 dependencies[] = admin_views
 dependencies[] = elx_users_feature
+dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui

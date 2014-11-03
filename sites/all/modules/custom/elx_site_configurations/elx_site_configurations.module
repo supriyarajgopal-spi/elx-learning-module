@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the ELX site configurations feature.
  */
+
+include_once 'elx_site_configurations.features.inc';

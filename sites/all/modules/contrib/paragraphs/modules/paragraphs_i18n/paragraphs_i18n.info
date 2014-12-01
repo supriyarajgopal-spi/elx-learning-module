@@ -1,10 +1,11 @@
-name = Paragraphs Bundle Permissions
-description = Add view / create / update / delete permissions for all paragraph bundles.
+name = Paragraphs - Internationalization
+description = Allow paragraph bundles to be duplicate for translation.
 core = 7.x
 package = Paragraphs
 
 dependencies[] = paragraphs
-
+dependencies[] = replicate
+dependencies[] = replicate_paragraphs
 
 ; Information added by Drupal.org packaging script on 2014-11-27
 version = "7.x-1.0-beta5+5-dev"

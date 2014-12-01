@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Imlementations of views hooks.
+ */
+
+/**
+ * Implements hook_views_pre_render().
+ */
+
+function elx_json_feed_views_pre_render(&$view) {
+  if ($view->name == 'rest_json_view') {
+    // dpm($view->result[0]->field_field_flash_cards_para[0]['rendered']['entity']['paragraphs_item']);
+    // $view->result[0]->field_field_flash_cards_para[0]['rendered']['entity']['paragraphs_item'][3]['field_front_text_para'][0]['#markup'] = 'NEW VALUE';
+  }
+}

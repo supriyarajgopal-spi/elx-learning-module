@@ -1,0 +1,4 @@
+name = "ELX JSON Feed Formatter"
+description = "Formats JSON output"
+core = "7.x"
+package = "Custom Modules"

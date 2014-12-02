@@ -163,7 +163,42 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
             }
             // Rendered output.
             elseif (isset($data['#access']) && $data['#access'] == TRUE) {
-              $obj[$idx] = render($data);
+              // Check for a field collection
+              if (isset($data['entity']['field_collection_item'])) {
+                foreach ($data['entity']['field_collection_item'] as $fcid => $entity) {
+                  // If the field collection is using the services view mode,
+                  // add each child separately.
+                  if ($entity['#view_mode'] == 'services') {
+                    $instances = field_info_instances($entity['#entity_type'], $entity['#bundle']);
+                    foreach (element_children($entity, TRUE) as $child) {
+                      $instance = $instances[$child];
+                      $element_key = $instance['display']['services']['settings']['data_element_key'];
+                      $element_key = ($element_key ? $element_key : $instance['label']);
+
+                      // Get the formatted values for the field and add them to
+                      // the data array, using any preset element keys.
+                      foreach (element_children($entity[$child]) as $field_item) {
+                        $fi = &$entity[$child][$field_item];
+                        if (is_array($fi) && count($fi) == 1 && isset($fi['value'])) {
+                          $obj[$idx][$element_key] = $fi['value'];
+                        }
+                        else {
+                          $obj[$idx][$element_key] = $fi;
+                        }
+                      }
+                    }
+
+                    // Allow modules to alter the data before it is sent.
+                    drupal_alter('services_field_collection_data', $obj[$idx], $entity, $f_key);
+                  }
+                  else {
+                    $obj[$idx] = render($data);
+                  }
+                }
+              }
+              else {
+                $obj[$idx] = render($data);
+              }
             }
             else {
               $obj[$idx] = array('error' => t('Access denied or format unknown on field.'));

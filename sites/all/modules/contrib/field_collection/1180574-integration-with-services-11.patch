@@ -1,0 +1,40 @@
+diff --git a/field_collection.module b/field_collection.module
+index b6b8a37..3a7905a 100644
+--- a/field_collection.module
++++ b/field_collection.module
+@@ -1508,3 +1508,34 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
+ 
+   return array('value' => $field_collection->item_id);
+ }
++
++/**
++* Implements hook_services_request_preprocess_alter()
++* @note : Serivices module hook
++*/
++function field_collection_services_request_preprocess_alter($controller, &$args) {
++  foreach ($args as $key => $arg) {
++    $entities = _service_fieldcollection_recursive_search($arg, 'fieldcollection');
++    foreach ($entities as $delta => $entity) {
++      $field_name = $entity['field_name'];
++      $field_collection = new FieldCollectionItemEntity($args[$key][$field_name]['und'][$delta]['entity']);
++      $args[$key][$field_name]['und'][$delta]['entity'] = $field_collection;
++    }
++  }
++}
++
++/**
++* Recureisve search on the array
++*/
++function _service_fieldcollection_recursive_search($array, $key) {
++  $results = array();
++  if (is_array($array)) {
++    if (isset($array[$key])) {
++      $results[] = $array[$key];
++    }
++    foreach ($array as $subarray) {
++      $results = array_merge($results, _service_fieldcollection_recursive_search($subarray, $key));
++    }
++  }
++  return $results;
++}
+\ No newline at end of file

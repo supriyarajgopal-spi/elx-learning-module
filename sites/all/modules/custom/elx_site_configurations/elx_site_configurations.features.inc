@@ -52,6 +52,11 @@ function elx_site_configurations_paragraphs_info() {
       'bundle' => 'answers',
       'locked' => '1',
     ),
+    'list_item' => array(
+      'name' => 'List item',
+      'bundle' => 'list_item',
+      'locked' => '1',
+    ),
     'multiple_choice_collection' => array(
       'name' => 'Multiple choice collection',
       'bundle' => 'multiple_choice_collection',

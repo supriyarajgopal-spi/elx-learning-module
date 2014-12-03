@@ -10,6 +10,136 @@
 function elx_site_configurations_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-list-field_intro'
+  $field_instances['node-list-field_intro'] = array(
+    'bundle' => 'list',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-list-field_layout'
+  $field_instances['node-list-field_layout'] = array(
+    'bundle' => 'list',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_layout',
+    'label' => 'Layout',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-list-field_list_item'
+  $field_instances['node-list-field_list_item'] = array(
+    'bundle' => 'list',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Add text or upload an image to display in list items.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_list_item',
+    'label' => 'List item',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => 0,
+        'list_item' => 'list_item',
+        'multiple_choice_collection' => 0,
+        'questions' => 0,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'list item',
+      'title_multiple' => 'list items',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-question_and_answer-field_difficulty'
   $field_instances['node-question_and_answer-field_difficulty'] = array(
     'bundle' => 'question_and_answer',
@@ -779,6 +909,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('1 = easiest<br>
 5 = hardest');
   t('Add a collection of multiple choice question and answers.');
+  t('Add text or upload an image to display in list items.');
   t('Answer');
   t('Answer custom feedback');
   t('Answer image');
@@ -786,9 +917,12 @@ function elx_site_configurations_field_default_field_instances() {
   t('Correct answer');
   t('Difficulty');
   t('Enter correct or incorrect answer text, or upload answer image.');
+  t('Intro text');
   t('Is required');
   t('Is this question required to be answered by the user?');
   t('Is this the correct answer to the question?');
+  t('Layout');
+  t('List item');
   t('Multiple choice');
   t('Question image');
   t('Question text');

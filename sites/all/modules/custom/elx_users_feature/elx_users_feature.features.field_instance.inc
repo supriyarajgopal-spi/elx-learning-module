@@ -30,6 +30,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'City',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -64,6 +65,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Country',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -95,6 +97,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Employer number',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -129,6 +132,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'First name',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -163,6 +167,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Job title',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -197,6 +202,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Last name',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -231,6 +237,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Region',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -262,6 +269,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Store/Counter name',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
     ),
     'widget' => array(
@@ -293,6 +301,7 @@ function elx_users_feature_field_default_field_instances() {
     'label' => 'Subordinates',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => 1,
     ),
     'widget' => array(

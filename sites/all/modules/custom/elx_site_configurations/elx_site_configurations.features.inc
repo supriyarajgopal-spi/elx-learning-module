@@ -26,7 +26,15 @@ function elx_site_configurations_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Subtitle'),
+      'help' => '',
+    ),
+    'matching_game' => array(
+      'name' => t('Matching Game'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Subtitle'),
       'help' => '',
     ),
     'question_and_answer' => array(
@@ -34,7 +42,15 @@ function elx_site_configurations_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Subtitle'),
+      'help' => '',
+    ),
+    'reveal' => array(
+      'name' => t('Reveal'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Subtitle'),
       'help' => '',
     ),
   );
@@ -53,7 +69,7 @@ function elx_site_configurations_paragraphs_info() {
       'locked' => '1',
     ),
     'list_item' => array(
-      'name' => 'List item',
+      'name' => 'List item collection',
       'bundle' => 'list_item',
       'locked' => '1',
     ),

@@ -36,6 +36,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Intro text',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -80,6 +81,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Layout',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -127,6 +129,7 @@ function elx_site_configurations_field_default_field_instances() {
         'questions' => 0,
       ),
       'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
       'title' => 'list item',
       'title_multiple' => 'list items',
       'user_register_form' => FALSE,
@@ -137,6 +140,180 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(),
       'type' => 'paragraphs_embed',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-matching_game-field_correct_feedback'
+  $field_instances['node-matching_game-field_correct_feedback'] = array(
+    'bundle' => 'matching_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_correct_feedback',
+    'label' => 'Correct feedback',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-matching_game-field_incorrect_feeback'
+  $field_instances['node-matching_game-field_incorrect_feeback'] = array(
+    'bundle' => 'matching_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_incorrect_feeback',
+    'label' => 'Incorrect feeback',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-matching_game-field_intro'
+  $field_instances['node-matching_game-field_intro'] = array(
+    'bundle' => 'matching_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-matching_game-field_match_collection'
+  $field_instances['node-matching_game-field_match_collection'] = array(
+    'bundle' => 'matching_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Add a matching set of text or images.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_match_collection',
+    'label' => 'Match collection',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => 0,
+        'list_item' => 0,
+        'match_game_collection' => 'match_game_collection',
+        'multiple_choice_collection' => 0,
+        'questions' => 0,
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'match',
+      'title_multiple' => 'matches',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 4,
     ),
   );
 
@@ -167,6 +344,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Difficulty',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -208,6 +386,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Is required',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -259,6 +438,7 @@ function elx_site_configurations_field_default_field_instances() {
         'questions' => 0,
       ),
       'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
       'title' => 'multiple choice',
       'title_multiple' => 'multiple choice',
       'user_register_form' => FALSE,
@@ -269,6 +449,213 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(),
       'type' => 'paragraphs_embed',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_intro'
+  $field_instances['node-reveal-field_intro'] = array(
+    'bundle' => 'reveal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_new_test_image'
+  $field_instances['node-reveal-field_new_test_image'] = array(
+    'bundle' => 'reveal',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '300x150',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_new_test_image',
+    'label' => 'New Test image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_reveal_collection'
+  $field_instances['node-reveal-field_reveal_collection'] = array(
+    'bundle' => 'reveal',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reveal_collection',
+    'label' => 'Reveal collection',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => 0,
+        'list_item' => 0,
+        'match_game_collection' => 0,
+        'multiple_choice_collection' => 0,
+        'questions' => 0,
+        'reveal_collection' => 'reveal_collection',
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'reveal item',
+      'title_multiple' => 'reveal items',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_test_image'
+  $field_instances['node-reveal-field_test_image'] = array(
+    'bundle' => 'reveal',
+    'deleted' => 0,
+    'description' => '300x150',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '300x150',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_test_image',
+    'label' => 'Test image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '300x150',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => '300x150',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 3,
     ),
   );
 
@@ -298,6 +685,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Answer custom feedback',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -339,6 +727,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Answer image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -392,6 +781,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Answer text',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -436,6 +826,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Correct answer',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -476,6 +867,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'List image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -529,6 +921,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'List text',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -581,6 +974,7 @@ function elx_site_configurations_field_default_field_instances() {
         'questions' => 0,
       ),
       'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
       'title' => 'answer',
       'title_multiple' => 'answers',
       'user_register_form' => FALSE,
@@ -621,6 +1015,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -674,6 +1069,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question text',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -715,6 +1111,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question video',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -769,6 +1166,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Video poster image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -823,6 +1221,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -876,6 +1275,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question text',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -917,6 +1317,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Question video',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -971,6 +1372,7 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Video poster image',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'user_register_form' => FALSE,
     ),
@@ -1002,15 +1404,19 @@ function elx_site_configurations_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('1 = easiest<br>
 5 = hardest');
+  t('300x150');
   t('Add a collection of multiple choice question and answers.');
+  t('Add a matching set of text or images.');
   t('Add text or upload an image to display in list items.');
   t('Answer');
   t('Answer custom feedback');
   t('Answer image');
   t('Answer text');
   t('Correct answer');
+  t('Correct feedback');
   t('Difficulty');
   t('Enter correct or incorrect answer text, or upload answer image.');
+  t('Incorrect feeback');
   t('Intro text');
   t('Is required');
   t('Is this question required to be answered by the user?');
@@ -1019,10 +1425,14 @@ function elx_site_configurations_field_default_field_instances() {
   t('List image');
   t('List item');
   t('List text');
+  t('Match collection');
   t('Multiple choice');
+  t('New Test image');
   t('Question image');
   t('Question text');
   t('Question video');
+  t('Reveal collection');
+  t('Test image');
   t('Upload video poster');
   t('Video poster image');
 

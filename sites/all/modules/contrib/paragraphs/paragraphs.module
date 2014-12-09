@@ -185,7 +185,7 @@ function paragraphs_item_access($op, $entity, $account, $entity_type) {
   // If no module specified either allow or deny, we always allow.
   $access = module_invoke_all('paragraphs_item_access', $entity, $op, $account);
   if (in_array(PARAGRAPHS_ITEM_ACCESS_DENY, $access, TRUE)) {
-    $permissions[$account->uid][$cid][$op] = TRUE;
+    $permissions[$account->uid][$cid][$op] = FALSE;
     return FALSE;
   }
   elseif (in_array(PARAGRAPHS_ITEM_ACCESS_ALLOW, $access, TRUE)) {
@@ -305,6 +305,7 @@ function paragraphs_field_info() {
       'title' => PARAGRAPHS_DEFAULT_TITLE,
       'title_multiple' => PARAGRAPHS_DEFAULT_TITLE_MULTIPLE,
       'allowed_bundles' => array(),
+      'bundle_weights' => array(),
     ),
     'default_widget' => 'paragraphs_hidden',
     'default_formatter' => 'paragraphs_view',
@@ -327,14 +328,19 @@ function paragraphs_form_field_ui_field_edit_form_alter(&$form, $form_state) {
 
 function paragraphs_bundle_settings_form_submit($form, &$form_state) {
   $bundle_settings = array();
+  $bundle_weights = array();
   if (isset($form_state['values']['instance']['settings']['allowed_bundles_table'])) {
     $bundle_settings_table = $form_state['values']['instance']['settings']['allowed_bundles_table'];
     uasort($bundle_settings_table, 'drupal_sort_weight');
     foreach ($bundle_settings_table as $machine_name => $value) {
-      $bundle_settings[$machine_name] = (($value['enabled'] === 1) ? $machine_name : 0);
+      $bundle_settings[$machine_name] = (($value['enabled'] === 1) ? $machine_name : -1);
+      $bundle_weights[$machine_name] = $value['weight'];
     }
   }
+
   $form_state['values']['instance']['settings']['allowed_bundles'] = $bundle_settings;
+  $form_state['values']['instance']['settings']['bundle_weights'] = $bundle_weights;
+
   unset($form_state['values']['instance']['settings']['allowed_bundles_table']);
 }
 
@@ -346,19 +352,20 @@ function paragraphs_field_instance_settings_form($field, $instance) {
   $settings = $instance['settings'];
   $bundles = array();
   $_bundles = paragraphs_bundle_load();
+  $max_weight = 0;
+  $weights = array();
+
   foreach ($_bundles as $machine_name => $bundle) {
     $bundles[$machine_name] = $bundle->name;
-  }
-
-  $weights = array();
-  $weight = 0;
-  if (isset($settings['allowed_bundles'])) {
-    foreach ($settings['allowed_bundles'] as $machine_name => $bundle) {
-      $weights[$machine_name] = $weight;
-      $weight++;
+    if (isset($settings['bundle_weights'][$machine_name])) {
+      $weights[$machine_name] = $settings['bundle_weights'][$machine_name];
+      if ($settings['bundle_weights'][$machine_name] > $max_weight) {
+        $max_weight = $settings['bundle_weights'][$machine_name];
+      }
     }
   }
-  $max_weight = $weight;
+
+  $max_weight++;
 
   $element['allowed_bundles_table'] = array(
     '#tree' => TRUE,
@@ -1180,4 +1187,18 @@ function paragraphs_field_prepare_translation($entity_type, $entity, $field, $in
   } else {
       paragraphs_i18n_field_prepare_translation($entity_type, $entity, $field, $instance, $langcode, $items, $source_entity, $source_langcode);
   }
+}
+
+/**
+ * Implements hook_features_api().
+ */
+function paragraphs_features_api() {
+  return array(
+    'paragraphs' => array(
+      'name' => t('Paragraphs Bundles'),
+      'feature_source' => TRUE,
+      'default_hook' => 'paragraphs_info',
+      'file' => drupal_get_path('module', 'paragraphs') . '/paragraphs.features.inc',
+    ),
+  );
 }

@@ -151,3 +151,16 @@ function hook_entity_translation_update($entity_type, $entity, $translation, $va
  */
 function hook_entity_translation_delete($entity_type, $entity, $langcode) {
 }
+
+/**
+ * Allows modules to act when a revision translation is deleted.
+ *
+ * @param $entity_type
+ *   The entity type.
+ * @param $entity
+ *   The entity.
+ * @param $langcode
+ *   The langcode of the revision translation which was deleted.
+ */
+function hook_entity_translation_delete_revision($entity_type, $entity, $langcode) {
+}

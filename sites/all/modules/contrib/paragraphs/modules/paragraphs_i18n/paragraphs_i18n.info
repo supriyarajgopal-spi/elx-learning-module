@@ -7,9 +7,9 @@ dependencies[] = paragraphs
 dependencies[] = replicate
 dependencies[] = replicate_paragraphs
 
-; Information added by Drupal.org packaging script on 2014-11-27
-version = "7.x-1.0-beta5+5-dev"
+; Information added by Drupal.org packaging script on 2014-12-02
+version = "7.x-1.0-beta5+9-dev"
 core = "7.x"
 project = "paragraphs"
-datestamp = "1417077186"
+datestamp = "1417553881"
 

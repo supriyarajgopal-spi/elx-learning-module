@@ -25,9 +25,12 @@ function elx_site_configurations_wysiwyg_default_profiles() {
         'default' => array(
           'Bold' => 1,
           'Italic' => 1,
+          'BulletedList' => 1,
+          'NumberedList' => 1,
           'Link' => 1,
           'Source' => 1,
           'PasteFromWord' => 1,
+          'Styles' => 1,
         ),
         'drupal' => array(
           'media' => 1,
@@ -41,7 +44,7 @@ function elx_site_configurations_wysiwyg_default_profiles() {
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
       'css_path' => '',
-      'stylesSet' => '',
+      'stylesSet' => 'Disclaimer=div.disclaimer',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
       'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,

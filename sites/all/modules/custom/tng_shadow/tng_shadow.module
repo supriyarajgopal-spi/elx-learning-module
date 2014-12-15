@@ -1,0 +1,116 @@
+<?php
+
+
+/**
+ * @param $entity - This view entity is passed
+ * from the shadow module to construct a valid JSON object that the NewPlayerV2 can consume.
+ * We process the paragraph portion since shadowed entities does not.
+ *
+ * We loop through the 'field_xyz' pieces which came from field_info_instances element_children.
+ *
+ *   for (each field we find)
+ *     go through each element child and look for a paragraph type
+ *       if (it is a paragraph)
+ *         loop through it to find all pairs of questions and possible multiple answers
+ *       else
+ *         note the node and data in our manifest object
+ *   end
+ */
+
+function tng_shadow_shadow_request_alter($entity) {
+
+  try {
+    //dpm ($entity);
+    $entity_array = (array) $entity;
+    dpm ($entity_array);
+    //$size_of_entity_array = count($entity_array);
+    //dpm('number of array elements : ' . $size_of_entity_array    );
+    // load the current entity in a wrapper
+    $wrapper = entity_metadata_wrapper('node', $entity);
+    //dpm(_wrapper_debug($wrapper));
+    // given our node entity type, get all the fields for it
+    $entity_type = $entity->type;
+    //dpm($size_of_entity_array . ' ' . $entity_type . ' elements in the node type');
+    // field_info_instances holds the field values we will write to our object.
+    // paragraph types must be explored more, 'regular' value fields are written as is.
+    $node_fields = field_info_instances('node', $entity_type);
+    //dpm($node_fields);
+    $number_of_fields = count($node_fields);
+    dpm('found ' . $number_of_fields . ' ' . $entity_type . ' fields ');
+    $children_nodes_to_process = element_children($node_fields);
+    // we loop through the fields looking for a paragraph type to expand and rewrite
+    for ($i=0; $i < $number_of_fields; $i++) {
+      dpm('['. $i .']:' . $children_nodes_to_process[$i]);
+      //dpm($children_nodes_to_process[$i]);
+      //dpm($wrapper->$children_nodes_to_process[$i]->value());
+      $info = field_info_field($children_nodes_to_process[$i]);
+      // $info['field_name'] is the name of the paragraph
+      if ($info['type'] == 'paragraphs') {
+        $paragraphs = $wrapper->$info['field_name']->value();
+        $paragraphs_name = $info['field_name'];
+        $number_of_paragraphs = count($paragraphs);
+        dpm($number_of_paragraphs . ' '. $info['field_name'] . ' paragraphs found.');
+        for ($p=0; $p < $number_of_paragraphs; $p++) {
+          // for a paragraph object, this is the value of the question
+          dpm('question ['. $p . '] is : ' . $paragraphs[$p]->field_question_text['und'][0]['value']);
+          $num_answers = count($paragraphs[$p]->field_paragraph_answer['und']);
+          dpm($num_answers . ' answers : ');
+          for ($a=0; $a < $num_answers; $a++) {
+            dpm('answer ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_answer_text['und'][0]['value']);
+            dpm('answer feedback ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_answer_feedback['und'][0]['value']);
+            dpm('answer flagged correct ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_correct_answer['und'][0]['value']);
+          }
+        }
+      } else {
+        dpm('not a paragraph, saving value on object');
+        // if we have a title, it is language specific, if not use 'und'
+        if ($children_nodes_to_process[$i] == 'title_field') {
+          dpm($children_nodes_to_process[$i]);
+          dpm($entity_array[$children_nodes_to_process[$i]][$entity_array['language']][0]['value']);
+        } else {
+          dpm($children_nodes_to_process[$i]);
+          dpm($entity_array[$children_nodes_to_process[$i]]['und'][0]['value']);
+        }
+      }
+    }
+
+    //return $my_object;
+
+  }
+  catch (exception $e) {
+    dpm($e);
+  }
+
+}
+
+function array_to_obj($array, &$obj)
+{
+  foreach ($array as $key => $value)
+  {
+    if (is_array($value))
+    {
+      $obj->$key = new stdClass();
+      array_to_obj($value, $obj->$key);
+    }
+    else
+    {
+      $obj->$key = $value;
+    }
+  }
+  return $obj;
+}
+
+function arrayToObject($array)
+{
+  $object= new stdClass();
+  return array_to_obj($array,$object);
+}
+
+
+function _wrapper_debug($w) {
+  $values = array();
+  foreach ($w->getPropertyInfo() as $key => $val) {
+    $values[$key] = $w->$key->value();
+  }
+  return $values;
+}

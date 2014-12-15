@@ -21,20 +21,20 @@ function elx_users_feature_locale_default_languages() {
     'formula' => '',
     'domain' => '',
     'prefix' => '',
-    'weight' => 0,
+    'weight' => -10,
   );
-  // Exported language: es.
-  $languages['es'] = array(
-    'language' => 'es',
-    'name' => 'Spanish',
-    'native' => 'Español',
+  // Exported language: zh-hant.
+  $languages['zh-hant'] = array(
+    'language' => 'zh-hant',
+    'name' => 'Chinese, Traditional',
+    'native' => '繁體中文',
     'direction' => 0,
     'enabled' => 1,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => 'es',
-    'weight' => 0,
+    'prefix' => 'zh-hant',
+    'weight' => -9,
   );
   return $languages;
 }

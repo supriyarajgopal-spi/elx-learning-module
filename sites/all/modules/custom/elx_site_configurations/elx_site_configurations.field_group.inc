@@ -42,6 +42,92 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_bottom|paragraphs_item|match_game_collection|form';
+  $field_group->group_name = 'group_bottom';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'match_game_collection';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Bottom',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_bottom_match_text',
+      1 => 'field_bottom_match_image',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Bottom',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-bottom field-group-fieldset',
+        'description' => 'Enter either text OR image.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_bottom|paragraphs_item|match_game_collection|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_middle|paragraphs_item|match_game_collection|form';
+  $field_group->group_name = 'group_middle';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'match_game_collection';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Middle',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_middle_match_text',
+      1 => 'field_middle_match_image',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Middle',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-middle field-group-fieldset',
+        'description' => 'Enter either text OR image.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_middle|paragraphs_item|match_game_collection|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_partners|node|product_detail|form';
+  $field_group->group_name = 'group_partners';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'product_detail';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Perfect partners',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_perfect_partners',
+      1 => 'field_perfect_partners_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-partners field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_partners|node|product_detail|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_question_video|paragraphs_item|multiple_choice_collection|form';
   $field_group->group_name = 'group_question_video';
   $field_group->entity_type = 'paragraphs_item';
@@ -156,6 +242,35 @@ function elx_site_configurations_field_group_info() {
     ),
   );
   $export['group_question|paragraphs_item|questions|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_top|paragraphs_item|match_game_collection|form';
+  $field_group->group_name = 'group_top';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'match_game_collection';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Top',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_top_match_text',
+      1 => 'field_top_match_image',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Top',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-top field-group-fieldset',
+        'description' => 'Enter either text OR image.',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_top|paragraphs_item|match_game_collection|form'] = $field_group;
 
   return $export;
 }

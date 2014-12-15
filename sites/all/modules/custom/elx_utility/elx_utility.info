@@ -1,0 +1,4 @@
+name = ELX Utility
+description = Implements small form and menu alters, etc., for ELX
+core = 7.x
+package = ELX

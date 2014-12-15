@@ -1,0 +1,27 @@
+<?php
+
+function elx_utility_node_validate($node, $form, &$form_state) {
+  // dpm($node);
+  // if ($node->type=='history' || $node->type=='teaser') {
+  //   if (strlen($node->field_link['und'][0]['url']) && $node->field_video_upload['und'][0]['fid']) {
+  //     form_set_error('field', t('You may either use a link or a video, not both.'));
+  //   }
+  //   elseif (!(strlen($node->field_link['und'][0]['url']) || $node->field_video_upload['und'][0]['fid'])) {
+  //     form_set_error('field', t('You must choose either a link or a video (but not both).'));
+  //   }
+  // }
+}
+
+function elx_utility_preprocess_html(&$variables) {
+// Add conditional stylesheets for admin pages on admin theme.
+  global $user;
+  if ( $user->uid ) {
+    // reference your current admin theme
+    $theme_path = drupal_get_path('theme', 'seven');
+    // reference your own stylesheet
+    drupal_add_css(drupal_get_path('module', 'elx_utility')
+    . '/admin.css', array('weight' => CSS_THEME));
+    drupal_add_js(drupal_get_path('module', 'elx_utility')
+    . '/admin.js');
+  }
+}

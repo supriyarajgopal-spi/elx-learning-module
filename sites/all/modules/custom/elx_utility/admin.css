@@ -1,0 +1,9 @@
+.node-type-hot-spots .field-name-field-hot-spot-image {
+  position: relative;
+}
+.node-type-hot-spots .field-name-field-hot-spot-image #overlay {
+  background: url(/sites/all/themes/elx/images/test-overlay.png) no-repeat top left;
+  height: 400px;
+  width: 300px;
+  position: absolute;
+}

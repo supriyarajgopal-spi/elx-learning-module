@@ -1,0 +1,7 @@
+name = TNG mean shadow changes
+description = Provides TNG shadow custom code to process paragraphs.
+core = 7.x
+
+dependencies[] = mean
+dependencies[] = entity
+dependencies[] = mean_shadow

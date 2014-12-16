@@ -2,7 +2,6 @@
 Drupal.behaviors.admin_js = {
   attach: function(context, settings) {
     $('.node-type-hot-spots .field-name-field-hot-spot-image .image-preview').prepend('<div id="overlay"></div>');
-    console.log('Works');
   }
 }
 })(jQuery, Drupal, this, this.document);

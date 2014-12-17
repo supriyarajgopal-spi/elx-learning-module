@@ -109,7 +109,3 @@ function elx_json_feed_shadow_request_alter(&$entity) {
   }
 }
 
-function elx_json_feed_node_view($node, $view_mode, $langcode) {
-
-}
-

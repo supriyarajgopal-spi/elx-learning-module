@@ -24,7 +24,7 @@ function elx_site_configurations_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_answer_text',
-      1 => 'field_answer_media',
+      1 => 'field_answer_image',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -138,8 +138,8 @@ function elx_site_configurations_field_group_info() {
     'label' => 'Question video',
     'weight' => '3',
     'children' => array(
-      0 => 'field_question_video',
-      1 => 'field_video_poster_image',
+      0 => 'field_question_video_file',
+      1 => 'field_video_poster_img',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -197,7 +197,7 @@ function elx_site_configurations_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_question_text',
-      1 => 'field_question_media',
+      1 => 'field_question_image',
       2 => 'group_question_video',
     ),
     'format_type' => 'fieldset',

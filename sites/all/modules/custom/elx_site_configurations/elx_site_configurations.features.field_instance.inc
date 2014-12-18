@@ -537,7 +537,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -616,12 +616,19 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
-      'weight' => 16,
+      'type' => 'media_generic',
+      'weight' => 15,
     ),
   );
 
@@ -791,7 +798,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -806,7 +813,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 6,
       ),
       'teaser' => array(
@@ -829,7 +836,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -892,7 +899,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -907,7 +914,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -930,7 +937,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -971,7 +978,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -1027,7 +1034,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -1259,14 +1266,21 @@ function elx_site_configurations_field_default_field_instances() {
     'settings' => array(
       'add_mode' => 'select',
       'allowed_bundles' => array(
-        'answers' => 0,
-        'list_item' => 0,
-        'match_game_collection' => 0,
+        'answers' => -1,
+        'list_item' => -1,
+        'match_game_collection' => -1,
         'multiple_choice_collection' => 'multiple_choice_collection',
-        'questions' => 0,
-        'reveal_collection' => 0,
+        'questions' => -1,
+        'reveal_collection' => -1,
       ),
-      'bundle_weights' => array(),
+      'bundle_weights' => array(
+        'answers' => 2,
+        'list_item' => 3,
+        'match_game_collection' => 4,
+        'multiple_choice_collection' => 5,
+        'questions' => 6,
+        'reveal_collection' => 7,
+      ),
       'default_edit_mode' => 'open',
       'entity_translation_sync' => FALSE,
       'title' => 'multiple choice',
@@ -1419,132 +1433,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_test_image'
-  $field_instances['node-reveal-field_test_image'] = array(
-    'bundle' => 'reveal',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '300x150',
-        ),
-        'type' => 'image',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_test_image',
-    'label' => 'TEST IMAGE',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-reveal-field_test_image_two'
-  $field_instances['node-reveal-field_test_image_two'] = array(
-    'bundle' => 'reveal',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'large',
-        ),
-        'type' => 'image',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_test_image_two',
-    'label' => 'TEST IMAGE TWO',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-reveal-title_field'
   $field_instances['node-reveal-title_field'] = array(
     'bundle' => 'reveal',
@@ -1629,20 +1517,21 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-answers-field_answer_media'
-  $field_instances['paragraphs_item-answers-field_answer_media'] = array(
+  // Exported field_instance: 'paragraphs_item-answers-field_answer_image'
+  $field_instances['paragraphs_item-answers-field_answer_image'] = array(
     'bundle' => 'answers',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 1,
+        'type' => 'image',
+        'weight' => 4,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -1652,12 +1541,19 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_answer_media',
+    'field_name' => 'field_answer_image',
     'label' => 'Answer image',
     'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1665,13 +1561,13 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
+          'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 'video',
+          'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -1777,12 +1673,13 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 1,
+        'type' => 'image',
+        'weight' => 3,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -1796,8 +1693,15 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'List image',
     'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1873,12 +1777,13 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 5,
+        'type' => 'image',
+        'weight' => 8,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -1892,8 +1797,15 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Bottom match image',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1901,7 +1813,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
+          'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -1969,12 +1881,13 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 3,
+        'type' => 'image',
+        'weight' => 7,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -1988,8 +1901,15 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Middle match image',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1997,7 +1917,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
+          'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -2065,12 +1985,13 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 1,
+        'type' => 'image',
+        'weight' => 6,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -2084,8 +2005,15 @@ function elx_site_configurations_field_default_field_instances() {
     'label' => 'Top match image',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2093,7 +2021,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
+          'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -2213,20 +2141,21 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_media'
-  $field_instances['paragraphs_item-multiple_choice_collection-field_question_media'] = array(
+  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_image'
+  $field_instances['paragraphs_item-multiple_choice_collection-field_question_image'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 1,
+        'type' => 'image',
+        'weight' => 6,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -2236,12 +2165,19 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_question_media',
+    'field_name' => 'field_question_image',
     'label' => 'Question image',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2249,7 +2185,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
+          'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -2309,20 +2245,18 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_video'
-  $field_instances['paragraphs_item-multiple_choice_collection-field_question_video'] = array(
+  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_video_file'
+  $field_instances['paragraphs_item-multiple_choice_collection-field_question_video_file'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
-        'settings' => array(
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'media',
-        'weight' => 2,
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 7,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -2332,12 +2266,15 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_question_video',
+    'field_name' => 'field_question_video_file',
     'label' => 'Question video',
     'required' => 0,
     'settings' => array(
+      'description_field' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2360,24 +2297,25 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_video_poster_image'
-  $field_instances['paragraphs_item-multiple_choice_collection-field_video_poster_image'] = array(
+  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_video_poster_img'
+  $field_instances['paragraphs_item-multiple_choice_collection-field_video_poster_img'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'mediafield',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'image_link' => '',
+          'image_style' => '',
         ),
-        'type' => 'media',
-        'weight' => 3,
+        'type' => 'image',
+        'weight' => 8,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -2387,12 +2325,19 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_video_poster_image',
+    'field_name' => 'field_video_poster_img',
     'label' => 'Video poster image',
     'required' => 0,
     'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2415,7 +2360,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 10,
     ),
   );
 
@@ -2739,8 +2684,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Season');
   t('Story');
   t('Subtitle');
-  t('TEST IMAGE');
-  t('TEST IMAGE TWO');
   t('Tags/keywords');
   t('Title');
   t('Top match image');

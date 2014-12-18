@@ -40,15 +40,15 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_answer_media'
-  $field_bases['field_answer_media'] = array(
+  // Exported field_base: 'field_answer_image'
+  $field_bases['field_answer_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_answer_media',
+    'field_name' => 'field_answer_image',
     'foreign keys' => array(
-      'file_managed' => array(
+      'fid' => array(
         'columns' => array(
           'fid' => 'fid',
         ),
@@ -61,12 +61,16 @@ function elx_site_configurations_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'mediafield',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'media',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_answer_text'
@@ -136,7 +140,7 @@ function elx_site_configurations_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_bottom_match_image',
     'foreign keys' => array(
-      'file_managed' => array(
+      'fid' => array(
         'columns' => array(
           'fid' => 'fid',
         ),
@@ -149,12 +153,16 @@ function elx_site_configurations_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'mediafield',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'media',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_bottom_match_text'
@@ -510,7 +518,7 @@ function elx_site_configurations_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_boolean',
   );
 
@@ -537,7 +545,7 @@ function elx_site_configurations_field_default_field_bases() {
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'list_text',
   );
 
@@ -549,7 +557,7 @@ function elx_site_configurations_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_list_image',
     'foreign keys' => array(
-      'file_managed' => array(
+      'fid' => array(
         'columns' => array(
           'fid' => 'fid',
         ),
@@ -562,12 +570,16 @@ function elx_site_configurations_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'mediafield',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'media',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_list_item'
@@ -643,7 +655,7 @@ function elx_site_configurations_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_middle_match_image',
     'foreign keys' => array(
-      'file_managed' => array(
+      'fid' => array(
         'columns' => array(
           'fid' => 'fid',
         ),
@@ -656,12 +668,16 @@ function elx_site_configurations_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'mediafield',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'media',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_middle_match_text'
@@ -715,7 +731,7 @@ function elx_site_configurations_field_default_field_bases() {
   // Exported field_base: 'field_paragraph_multiple_choice'
   $field_bases['field_paragraph_multiple_choice'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_paragraph_multiple_choice',
@@ -901,6 +917,39 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_question_image'
+  $field_bases['field_question_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_question_image',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_question_media'
   $field_bases['field_question_media'] = array(
     'active' => 1,
@@ -987,6 +1036,40 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'media',
+  );
+
+  // Exported field_base: 'field_question_video_file'
+  $field_bases['field_question_video_file'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_question_video_file',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_reveal_collection'
@@ -1169,72 +1252,6 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_test_image'
-  $field_bases['field_test_image'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_test_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'entity_translation_sync' => array(
-        0 => 'fid',
-      ),
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 1,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_test_image_two'
-  $field_bases['field_test_image_two'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_test_image_two',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'entity_translation_sync' => array(
-        0 => 'fid',
-      ),
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 1,
-    'type' => 'image',
-  );
-
   // Exported field_base: 'field_top_match_image'
   $field_bases['field_top_match_image'] = array(
     'active' => 1,
@@ -1243,7 +1260,7 @@ function elx_site_configurations_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_top_match_image',
     'foreign keys' => array(
-      'file_managed' => array(
+      'fid' => array(
         'columns' => array(
           'fid' => 'fid',
         ),
@@ -1256,12 +1273,16 @@ function elx_site_configurations_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'mediafield',
+    'module' => 'image',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
-    'type' => 'media',
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_top_match_text'
@@ -1321,6 +1342,39 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'media',
+  );
+
+  // Exported field_base: 'field_video_poster_img'
+  $field_bases['field_video_poster_img'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_video_poster_img',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_why_there_s_only_one'

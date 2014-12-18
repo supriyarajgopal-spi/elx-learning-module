@@ -12,6 +12,7 @@
  *     go through each element child and look for a paragraph type
  *       if (it is a paragraph)
  *         loop through it to find all pairs of questions and possible multiple answers
+ *          note this information in the manifest object
  *       else
  *         note the node and data in our manifest object
  *   end
@@ -23,6 +24,8 @@ function tng_shadow_shadow_request_alter($entity) {
     //dpm ($entity);
     $entity_array = (array) $entity;
     dpm ($entity_array);
+    $language = $entity->path['language'];
+    dpm($language);
     //$size_of_entity_array = count($entity_array);
     //dpm('number of array elements : ' . $size_of_entity_array    );
     // load the current entity in a wrapper
@@ -31,49 +34,156 @@ function tng_shadow_shadow_request_alter($entity) {
     // given our node entity type, get all the fields for it
     $entity_type = $entity->type;
     //dpm($size_of_entity_array . ' ' . $entity_type . ' elements in the node type');
-    // field_info_instances holds the field values we will write to our object.
+
+    // field_info_instances holds the field values at the outermost level
     // paragraph types must be explored more, 'regular' value fields are written as is.
     $node_fields = field_info_instances('node', $entity_type);
     //dpm($node_fields);
     $number_of_fields = count($node_fields);
     dpm('found ' . $number_of_fields . ' ' . $entity_type . ' fields ');
     $children_nodes_to_process = element_children($node_fields);
+    //dpm($children_nodes_to_process[0]);
+    $manifest_qa = array(array());
     // we loop through the fields looking for a paragraph type to expand and rewrite
+    // otherwise we try to do the right thing for an image or file type.
     for ($i=0; $i < $number_of_fields; $i++) {
       dpm('['. $i .']:' . $children_nodes_to_process[$i]);
       //dpm($children_nodes_to_process[$i]);
       //dpm($wrapper->$children_nodes_to_process[$i]->value());
       $info = field_info_field($children_nodes_to_process[$i]);
+      dpm($info);
       // $info['field_name'] is the name of the paragraph
       if ($info['type'] == 'paragraphs') {
+        // if we have a paragraphs type, use a wrapper for easier reference
         $paragraphs = $wrapper->$info['field_name']->value();
-        $paragraphs_name = $info['field_name'];
-        $number_of_paragraphs = count($paragraphs);
-        dpm($number_of_paragraphs . ' '. $info['field_name'] . ' paragraphs found.');
+        //dpm($paragraphs);
+        $number_of_paragraphs = count($wrapper->$info['field_name']->value());
+        dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
+        // using the paragraphs bundle type, we can get all the fields we need to account for in our data
+        $paragraph_fields = field_info_instances('paragraphs_item', $paragraphs->bundle);
+        $number_of_paragraph_fields = count($paragraph_fields);
+        //dpm($paragraph_fields);
+        dpm($number_of_paragraph_fields . $paragraph_fields['field_name'] . ' paragraph fields found.');
+        $children_fields_to_process = element_children($paragraph_fields);
+        // explore each paragraph
         for ($p=0; $p < $number_of_paragraphs; $p++) {
-          // for a paragraph object, this is the value of the question
-          dpm('question ['. $p . '] is : ' . $paragraphs[$p]->field_question_text['und'][0]['value']);
-          $num_answers = count($paragraphs[$p]->field_paragraph_answer['und']);
-          dpm($num_answers . ' answers : ');
-          for ($a=0; $a < $num_answers; $a++) {
-            dpm('answer ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_answer_text['und'][0]['value']);
-            dpm('answer feedback ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_answer_feedback['und'][0]['value']);
-            dpm('answer flagged correct ['. $a. '] : '. $wrapper->field_paragraph_multiple_choice[$p]->field_paragraph_answer[$a]->value()->field_correct_answer['und'][0]['value']);
+          // and every field for each paragraph
+          for ($pf=0; $pf < $number_of_paragraph_fields; $pf++) {
+            // inside the fields within a paragraph the language variable is not used, it's 'und'
+            $language = 'und';
+            $field_name = $children_fields_to_process[$pf];
+            dpm($field_name);
+            $field_child_info = field_info_field($children_fields_to_process[$pf]);
+            //dpm('fi');
+            //dpm($field_child_info);
+            $name = $field_child_info['field_name'];
+            dpm('paragraphs');
+            dpm($paragraphs);
+            //return;
+            //$field_info = get_object_vars($paragraphs[$p]->{$name}[$language][0]['value']);
+            //dpm($field_info);
+            //dpm($paragraphs[$p]->{$name}->$language);
+            $paragraph_object = get_object_vars($paragraphs);
+            dpm('paragraph object');
+            dpm($paragraph_object);
+            dpm($paragraphs[$p]->{$name}['und']);
+            return;
+            $field_count = count($paragraphs[$p]->{$name}['und']);
+
+            //$field_count = count($paragraph_object[$p][$entity->$language]);
+            dpm($field_count);
+            return;
+            // if there are no elements in the field don't process
+            if ($field_count < 1) {
+              continue;
+            } else {
+              // question value
+              dpm($field_count .  ' field(s) found for ' . $paragraphs[$p]->{$name}[$language][0]['value']);
+              if ($field_count == 1) {
+                dpm('name : '. $name . ' value : ' . $paragraphs[$p]->{$name}[$language][0]['value']);
+              } else {
+                for ($f=0; $f < $field_count; $f++) {
+                  $entity = paragraphs_item_load($paragraphs[$p]->{$name}[$language][$f]['value']);
+                  //dpm($entity);
+                  $para_inst = field_info_instances('paragraphs_item', $entity->bundle());
+                  //dpm($para_inst);
+                  $sub_children = element_children($para_inst);
+                  foreach ($sub_children as $key=>$value) {
+                    //dpm($key);
+                    // if the value for a field is set, we will output it (and skip blank fields)
+                    if (isset($entity->{$value}[$language][0]['value'])) {
+                      dpm($value);
+                      dpm($entity->{$value}[$language][0]['value']);
+                    }
+                    $info = field_info_field($sub_children[$key]);
+                    //dpm($info);
+                    // expect 'file' or 'image' here
+                    $field_name = $value;
+                    if ($info['type'] == 'image') {
+                      $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
+                      $fid = $entity_array[$field_name][$language][0]['fid'];
+                      $file_id = file_load($fid);
+                      $uri = $file_id->uri;
+                      $image_style_path = image_style_url($image_style, $uri);
+                      dpm($field_name . ': ' . $image_style_path);
+                    }
+                    if ($info['type'] == 'taxonomy_term_reference') {
+                      $number_of_terms = count($entity_array[$field_name][$language]);
+                      dpm($field_name);
+                      for ($t=0; $t < $number_of_terms; $t++) {
+                        $tids = array($entity_array[$field_name][$language][$t]['tid']);
+                        $terms = taxonomy_term_load_multiple($tids);
+                        foreach ($terms as $term) {
+                          $name = $term->name;
+                          dpm($name);
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-      } else {
+      }
+      elseif ($info['type'] == 'image') {
+        $field_name = "";
+        dpm('found an outer node image');
+        $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
+        $fid = $entity_array[$field_name][$language][0]['fid'];
+        $file_id = file_load($fid);
+        $uri = $file_id->uri;
+        $image_style_path = image_style_url($image_style, $uri);
+        dpm($field_name . ': ' . $image_style_path);
+      }
+      elseif ($info['type'] == 'taxonomy_term_reference') {
+        $field_name = "";
+        $number_of_terms = count($entity_array[$field_name][$language]);
+        dpm($field_name);
+        for ($t=0; $t < $number_of_terms; $t++) {
+          $tids = array($entity_array[$field_name][$language][$t]['tid']);
+          $terms = taxonomy_term_load_multiple($tids);
+          foreach ($terms as $term) {
+            $name = $term->name;
+            dpm($name);
+          }
+        }
+      }
+      elseif ($info['type'] == 'file') {
+
         dpm('not a paragraph, saving value on object');
-        // if we have a title, it is language specific, if not use 'und'
+        // if we have a title, it is language specific, if not use $language
         if ($children_nodes_to_process[$i] == 'title_field') {
           dpm($children_nodes_to_process[$i]);
           dpm($entity_array[$children_nodes_to_process[$i]][$entity_array['language']][0]['value']);
         } else {
           dpm($children_nodes_to_process[$i]);
-          dpm($entity_array[$children_nodes_to_process[$i]]['und'][0]['value']);
+          dpm($entity_array[$children_nodes_to_process[$i]][$language][0]['value']);
         }
       }
     }
 
+    dpm ($manifest_qa);
     //return $my_object;
 
   }

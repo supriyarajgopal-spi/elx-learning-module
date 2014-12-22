@@ -176,12 +176,10 @@ function tng_shadow_shadow_request_alter($entity) {
       elseif ($info['type'] == 'file') {
         dpm('found an outer node file');
         $field_name = $info['field_name'];
-        $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
         $fid = $entity_array[$field_name][$language][0]['fid'];
         $file_id = file_load($fid);
         $uri = $file_id->uri;
-        $image_style_path = image_style_url($image_style, $uri);
-        dpm($field_name . ': ' . drupal_realpath($uri));
+        dpm($field_name . ': ' . file_create_url($uri));
       }
       elseif ($info['type'] == 'taxonomy_term_reference') {
         dpm('found a taxonomy term reference');

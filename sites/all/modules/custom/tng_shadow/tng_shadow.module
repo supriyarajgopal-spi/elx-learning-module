@@ -125,6 +125,8 @@ function tng_shadow_shadow_request_alter($entity) {
                         $file_id = file_load($fid);
                         $uri = $file_id->uri;
                         $image_style_path = image_style_url($image_style, $uri);
+                      } else {
+                        $image_style_path = '';
                       }
                       dpm($field_name . ': ' . $image_style_path);
                     }
@@ -162,9 +164,13 @@ function tng_shadow_shadow_request_alter($entity) {
         $field_name = $info['field_name'];
         $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
         $fid = $entity_array[$field_name][$language][0]['fid'];
-        $file_id = file_load($fid);
-        $uri = $file_id->uri;
-        $image_style_path = image_style_url($image_style, $uri);
+        if ($fid) {
+          $file_id = file_load($fid);
+          $uri = $file_id->uri;
+          $image_style_path = image_style_url($image_style, $uri);
+        } else {
+          $image_style_path = '';
+        }
         dpm($field_name . ': ' . $image_style_path);
       }
       elseif ($info['type'] == 'file') {

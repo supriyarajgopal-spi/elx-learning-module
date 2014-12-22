@@ -121,9 +121,11 @@ function tng_shadow_shadow_request_alter($entity) {
                     if ($info['type'] == 'image') {
                       $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
                       $fid = $entity_array[$field_name][$language][0]['fid'];
-                      $file_id = file_load($fid);
-                      $uri = $file_id->uri;
-                      $image_style_path = image_style_url($image_style, $uri);
+                      if ($fid) {
+                        $file_id = file_load($fid);
+                        $uri = $file_id->uri;
+                        $image_style_path = image_style_url($image_style, $uri);
+                      }
                       dpm($field_name . ': ' . $image_style_path);
                     }
                     if ($info['type'] == 'taxonomy_term_reference') {

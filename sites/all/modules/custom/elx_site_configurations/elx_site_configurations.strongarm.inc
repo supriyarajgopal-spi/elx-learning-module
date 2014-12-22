@@ -691,17 +691,17 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language';
   $strongarm->value = array(
+    'locale-user' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_user',
+      ),
+      'file' => 'includes/locale.inc',
+    ),
     'locale-url' => array(
       'callbacks' => array(
         'language' => 'locale_language_from_url',
         'switcher' => 'locale_language_switcher_url',
         'url_rewrite' => 'locale_language_url_rewrite_url',
-      ),
-      'file' => 'includes/locale.inc',
-    ),
-    'locale-user' => array(
-      'callbacks' => array(
-        'language' => 'locale_language_from_user',
       ),
       'file' => 'includes/locale.inc',
     ),
@@ -723,6 +723,11 @@ function elx_site_configurations_strongarm() {
         'language' => 'locale_language_from_interface',
       ),
       'file' => 'includes/locale.inc',
+    ),
+    'language-default' => array(
+      'callbacks' => array(
+        'language' => 'language_from_default',
+      ),
     ),
   );
   $export['language_negotiation_language_content'] = $strongarm;
@@ -779,11 +784,11 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_providers_weight_language';
   $strongarm->value = array(
-    'locale-url' => '-8',
-    'locale-session' => '-6',
-    'locale-user' => '-4',
-    'locale-browser' => '-2',
-    'language-default' => '10',
+    'locale-url' => '-9',
+    'locale-session' => '-8',
+    'locale-user' => '-10',
+    'locale-browser' => '-7',
+    'language-default' => '-6',
   );
   $export['locale_language_providers_weight_language'] = $strongarm;
 

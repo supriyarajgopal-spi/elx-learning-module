@@ -230,14 +230,14 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 6,
@@ -1530,7 +1530,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 10,
@@ -1571,7 +1571,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 14,
@@ -1612,7 +1612,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 9,
@@ -1703,7 +1703,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 11,
@@ -1791,7 +1791,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 17,
@@ -2012,7 +2012,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 13,
@@ -2024,7 +2024,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'product_detail',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Optional',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2135,7 +2135,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 8,
@@ -3835,7 +3835,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Middle match image');
   t('Middle match text');
   t('Multiple choice');
-  t('Optional');
   t('Perfect partners');
   t('Perfect partners text');
   t('Point value');

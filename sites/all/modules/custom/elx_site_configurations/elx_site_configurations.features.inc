@@ -21,6 +21,46 @@ function elx_site_configurations_ctools_plugin_api($module = NULL, $api = NULL) 
  */
 function elx_site_configurations_node_info() {
   $items = array(
+    'content_object' => array(
+      'name' => t('Content Object'),
+      'base' => 'node_content',
+      'description' => t('Wrapper for leaning objects.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'drag_match' => array(
+      'name' => t('Drag Match'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'drag_priorities' => array(
+      'name' => t('Drag Priorities'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'drag_select' => array(
+      'name' => t('Drag Select'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'flash_cards' => array(
+      'name' => t('Flash Cards'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'hot_spots' => array(
       'name' => t('Hot Spots'),
       'base' => 'node_content',

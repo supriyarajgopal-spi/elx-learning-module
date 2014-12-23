@@ -10,6 +10,37 @@
 function elx_site_configurations_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'body'
+  $field_bases['body'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'node',
+    ),
+    'field_name' => 'body',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
   // Exported field_base: 'field_answer_feedback'
   $field_bases['field_answer_feedback'] = array(
     'active' => 1,
@@ -252,6 +283,36 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_custom_cta'
+  $field_bases['field_custom_cta'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_custom_cta',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_customer_questions'
   $field_bases['field_customer_questions'] = array(
     'active' => 1,
@@ -340,6 +401,33 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_featured'
+  $field_bases['field_featured'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_featured',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_fun_fact_sheet'
   $field_bases['field_fun_fact_sheet'] = array(
     'active' => 1,
@@ -372,6 +460,69 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'file',
+  );
+
+  // Exported field_base: 'field_headline'
+  $field_bases['field_headline'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_headline',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 80,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_hero_image'
+  $field_bases['field_hero_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hero_image',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 1,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_hot_spot_image'
@@ -547,6 +698,93 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_learning_category'
+  $field_bases['field_learning_category'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_learning_category',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'learning_category',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_learning_objects'
+  $field_bases['field_learning_objects'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_learning_objects',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'drag_match' => 'drag_match',
+          'drag_priorities' => 'drag_priorities',
+          'drag_select' => 'drag_select',
+          'flash_cards' => 'flash_cards',
+          'hot_spots' => 'hot_spots',
+          'list' => 'list',
+          'matching_game' => 'matching_game',
+          'question_and_answer' => 'question_and_answer',
+          'reveal' => 'reveal',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 1,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_list_image'
@@ -819,6 +1057,36 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_point_value'
+  $field_bases['field_point_value'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_point_value',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_price'
   $field_bases['field_price'] = array(
     'active' => 1,
@@ -1007,6 +1275,34 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_question_type'
+  $field_bases['field_question_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_question_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'single' => 'Single answer',
+        'multiple' => 'Multiple answer',
+        'text' => 'Text area',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_question_video'

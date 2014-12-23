@@ -20,6 +20,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_content_object';
+  $strongarm->value = 0;
+  $export['comment_anonymous_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_drag_match';
+  $strongarm->value = 0;
+  $export['comment_anonymous_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_drag_priorities';
+  $strongarm->value = 0;
+  $export['comment_anonymous_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_drag_select';
+  $strongarm->value = 0;
+  $export['comment_anonymous_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_flash_cards';
+  $strongarm->value = 0;
+  $export['comment_anonymous_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_hot_spots';
   $strongarm->value = 0;
   $export['comment_anonymous_hot_spots'] = $strongarm;
@@ -58,6 +93,48 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_anonymous_reveal';
   $strongarm->value = 0;
   $export['comment_anonymous_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_content_object';
+  $strongarm->value = '1';
+  $export['comment_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_content_object';
+  $strongarm->value = 1;
+  $export['comment_default_mode_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_drag_match';
+  $strongarm->value = 1;
+  $export['comment_default_mode_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_drag_priorities';
+  $strongarm->value = 1;
+  $export['comment_default_mode_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_drag_select';
+  $strongarm->value = 1;
+  $export['comment_default_mode_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_flash_cards';
+  $strongarm->value = 1;
+  $export['comment_default_mode_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -104,6 +181,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_content_object';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_drag_match';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_drag_priorities';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_drag_select';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_flash_cards';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_hot_spots';
   $strongarm->value = '50';
   $export['comment_default_per_page_hot_spots'] = $strongarm;
@@ -142,6 +254,69 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_per_page_reveal';
   $strongarm->value = '50';
   $export['comment_default_per_page_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_drag_match';
+  $strongarm->value = '1';
+  $export['comment_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_drag_priorities';
+  $strongarm->value = '1';
+  $export['comment_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_drag_select';
+  $strongarm->value = '1';
+  $export['comment_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_flash_cards';
+  $strongarm->value = '1';
+  $export['comment_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_content_object';
+  $strongarm->value = 1;
+  $export['comment_form_location_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_drag_match';
+  $strongarm->value = 1;
+  $export['comment_form_location_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_drag_priorities';
+  $strongarm->value = 1;
+  $export['comment_form_location_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_drag_select';
+  $strongarm->value = 1;
+  $export['comment_form_location_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_flash_cards';
+  $strongarm->value = 1;
+  $export['comment_form_location_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -209,6 +384,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_content_object';
+  $strongarm->value = '1';
+  $export['comment_preview_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_drag_match';
+  $strongarm->value = '1';
+  $export['comment_preview_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_drag_priorities';
+  $strongarm->value = '1';
+  $export['comment_preview_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_drag_select';
+  $strongarm->value = '1';
+  $export['comment_preview_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_flash_cards';
+  $strongarm->value = '1';
+  $export['comment_preview_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_hot_spots';
   $strongarm->value = '1';
   $export['comment_preview_hot_spots'] = $strongarm;
@@ -272,6 +482,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_content_object';
+  $strongarm->value = 1;
+  $export['comment_subject_field_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_drag_match';
+  $strongarm->value = 1;
+  $export['comment_subject_field_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_drag_priorities';
+  $strongarm->value = 1;
+  $export['comment_subject_field_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_drag_select';
+  $strongarm->value = 1;
+  $export['comment_subject_field_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_flash_cards';
+  $strongarm->value = 1;
+  $export['comment_subject_field_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_hot_spots';
   $strongarm->value = 1;
   $export['comment_subject_field_hot_spots'] = $strongarm;
@@ -314,6 +559,103 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__content_object';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__drag_match';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__drag_priorities';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__drag_select';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__flash_cards';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__hot_spots';
   $strongarm->value = array(
     'view_modes' => array(
@@ -342,10 +684,10 @@ function elx_site_configurations_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -365,7 +707,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -385,7 +727,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -469,7 +811,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -511,7 +853,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -624,6 +966,41 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'jquery_update_jquery_version';
   $strongarm->value = '1.8';
   $export['jquery_update_jquery_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_content_object';
+  $strongarm->value = '4';
+  $export['language_content_type_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_drag_match';
+  $strongarm->value = '4';
+  $export['language_content_type_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_drag_priorities';
+  $strongarm->value = '4';
+  $export['language_content_type_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_drag_select';
+  $strongarm->value = '4';
+  $export['language_content_type_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_flash_cards';
+  $strongarm->value = '4';
+  $export['language_content_type_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -844,6 +1221,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_content_object';
+  $strongarm->value = array();
+  $export['menu_options_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_drag_match';
+  $strongarm->value = array();
+  $export['menu_options_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_drag_priorities';
+  $strongarm->value = array();
+  $export['menu_options_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_drag_select';
+  $strongarm->value = array();
+  $export['menu_options_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_flash_cards';
+  $strongarm->value = array();
+  $export['menu_options_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_hot_spots';
   $strongarm->value = array();
   $export['menu_options_hot_spots'] = $strongarm;
@@ -886,6 +1298,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_content_object';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_drag_match';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_drag_priorities';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_drag_select';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_flash_cards';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_hot_spots';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_hot_spots'] = $strongarm;
@@ -924,6 +1371,51 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'menu_parent_reveal';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_content_object';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_drag_match';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_drag_priorities';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_drag_select';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_flash_cards';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -982,6 +1474,41 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_content_object';
+  $strongarm->value = '0';
+  $export['node_preview_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_drag_match';
+  $strongarm->value = '0';
+  $export['node_preview_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_drag_priorities';
+  $strongarm->value = '0';
+  $export['node_preview_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_drag_select';
+  $strongarm->value = '0';
+  $export['node_preview_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_flash_cards';
+  $strongarm->value = '0';
+  $export['node_preview_flash_cards'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_hot_spots';
   $strongarm->value = '1';
   $export['node_preview_hot_spots'] = $strongarm;
@@ -1020,6 +1547,41 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_preview_reveal';
   $strongarm->value = '0';
   $export['node_preview_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_content_object';
+  $strongarm->value = 0;
+  $export['node_submitted_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_drag_match';
+  $strongarm->value = 0;
+  $export['node_submitted_drag_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_drag_priorities';
+  $strongarm->value = 0;
+  $export['node_submitted_drag_priorities'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_drag_select';
+  $strongarm->value = 0;
+  $export['node_submitted_drag_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_flash_cards';
+  $strongarm->value = 0;
+  $export['node_submitted_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

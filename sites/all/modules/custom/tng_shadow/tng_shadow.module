@@ -1,6 +1,236 @@
 <?php
 
 
+$outer_data_prefix = '[{';
+$outer_data_suffix = '}]';
+
+
+/**
+ * @param $targetid - a target_id value
+ *
+ * tng_perfect_partner_extractor - will load the node for the passed target_id and hand back an array
+ *  of pairs of data:
+ *    - headline (or product name for products)
+ *    - thumbnail image of the referenced product
+ *
+ */
+function tng_perfect_partner_extractor ($targetid) {
+  try {
+    $return = array();
+    $entity = node_load($targetid);
+    dpm('taxman:');
+    dpm($entity);
+    $language = $entity->language;
+    $product_title = $entity->title_field[$language][0]['value'];
+    dpm($product_title);
+    $return[] = $product_title;
+    $thumb = $entity->field_product_image[$language][0]['uri'];
+    $return[] = $thumb;
+    dpm('thumbnail image, then title');
+    dpm($thumb);
+    return $return;
+  }
+  catch (exception $e) {
+    dpm($e);
+  }
+}
+
+/**
+ * @param $id = required parameter for creating an npFeature for NewPlayerV2
+ * @param null $req = if there is a required css library, pass it in here, default is null
+ * @param null $version = if there is a version number given, embed it here
+ * @param null $timestamp = if there is an assigned date, use it, otherwise creation from current time.
+ *
+ * tng_npFeature_maker - given the required parameter $id, build a valid npFeature code chunk
+ */
+function tng_npFeature_maker($id, $req = NULL, $version = NULL, $timestamp = NULL) {
+  try {
+    dpm('beginning npFeature code');
+    if (isset($id)) {
+      if (!isset($req)) {
+        $req = '["../../../assets/anr.css"]';
+      }
+      if (!isset($version)) {
+        $version = '"0.0.1"';
+      }
+      if (!isset($timestamp)) {
+        $format_string = 'Y-M-D_h:m:s';
+        $time_string = date ($format_string);
+        dpm($time_string);
+        $timestamp = '"' . $time_string . '"';
+      }
+      $feature = '"type"' . ':' . '"npFeature"' ;
+      $feature = $feature . ',' . '"data"' . ': {' .  '"id"' . ': ' . '"' . $id . '"';
+      $feature = $feature . ',' . '"req"' . ': ' . $req;
+      $feature = $feature . ',' . '"version"' . ': ' . $version;
+      $feature = $feature . ',' . '"timestamp"' . ': ' . $timestamp;
+      $feature = $feature . '},';
+      dpm('feature string');
+      dpm($feature);
+      return $feature;
+    } else {
+      dpm('No id passed to npFeature function!');
+      return null;
+    }
+  }
+
+  catch (exception $e) {
+    dpm($e);
+  }
+
+}
+
+/**
+ * @param $id = required parameter for creating an npContent for NewPlayerV2
+ * @param null $language = required parameter to set the language for the page content
+ * @param null $title = set the page title
+ * @param null $description = set the page description
+ *
+ * tng_npContent_maker - given the required parameter $id, build a valid npContent code chunk
+ */
+function tng_npContent_maker($id, $language, $title = NULL, $description = NULL) {
+  try {
+    dpm('beginning npContent code');
+    if (isset($id) && isset($language)) {
+      if (!isset($title)) {
+        $title = '"Sample Manifest Content Title"';
+      }
+      if (!isset($description)) {
+        $description = '"Sample presentation"';
+      }
+      $content = '"components": [ {';
+      $content = $content . '"type"' . ':' . '"npContent"' ;
+      $content = $content . ',' . '"data"' . ': {' .  '"id"' . ': ' .  $id;
+      $content = $content . ',' . '"language"' . ': ' . $language;
+      $content = $content . ',' . '"title"' . ': ' . $title;
+      $content = $content . ',' . '"description"' . ': ' . $description;
+      $content = $content . '},';
+      dpm('content string');
+      dpm($content);
+      return $content;
+    } else {
+      dpm('No id or language passed to npContent function!');
+      return null;
+    }
+  }
+
+  catch (exception $e) {
+    dpm($e);
+  }
+
+}
+
+
+/**
+ * @param $id = required parameter for creating an npPage for NewPlayerV2
+ * @param null $parentid = set the parent id for a page relationship
+ * @param null $title = set the page title
+ * @param null $required = set the page description
+ *
+ * tng_npPage_maker - given the required parameter $id, build a valid npPage code chunk
+ */
+function tng_npPage_maker($id, $parentid = NULL, $title = NULL,  $required = NULL) {
+  try {
+    dpm('beginning npPage code');
+    if (isset($id)) {
+      if (!isset($title)) {
+        $title = '"Page Title"';
+      }
+      if (!isset($required)) {
+        $required = 'false';
+      }
+      $page = '"components": [ {';
+      $page = $page . '"type"' . ':' . '"npPage"' ;
+      $page = $page . ',' . '"data"' . ': {' .  '"id"' . ': '  . $id ;
+      $page = $page . ',' . '"parentId"' . ': ' . $parentid;
+      $page = $page . ',' . '"title"' . ': ' . $title;
+      $page = $page . ',' . '"required"' . ': ' . $required;
+      $page = $page . '},';
+      dpm('page string');
+      dpm($page);
+      return $page;
+    } else {
+      dpm('No id passed to npPage function!');
+      return null;
+    }
+  }
+
+  catch (exception $e) {
+    dpm($e);
+  }
+
+}
+
+//
+//{
+//  "type": "npHTML",
+//	"data": {
+//    "id": "anrBenefitsHeader",
+//		"plugin": "np-expandable",
+//		"class" : "field-label",
+//		"content": "Benefits"
+//	},
+//	"components": [
+//	  {
+//      "type": "npHTML",
+//			"data": {
+//        "id": "anrBenefits",
+//			  "content": "<ol><li>Instantly&mdash;lines and wrinkles look plumped and smoothed.</li><li>In just one week&mdash;skin doubles its own natural collagen production.*</li><li>In just 4 weeks&mdash;96% of women showed a significant reduction in the look of lines & wrinkles.**</ol>"
+//		  },
+//		  "components": [ ]
+//		}
+//	]
+//},
+//
+/**
+ * @param $id = div id used for css styling later
+ * @param null $class = define a class for the HTML element, for example 'field-label'
+ * @param null $headerlabel = each header section needs a label to style, slightly confusing it is the 'content' of the header
+ * @param null $content = typically the raw HTML for the <div>
+ * @return null|string = returns a string of nice json for an HTML element
+ */
+
+
+//function tng_npHTML_maker($id, $class = NULL, $headerlabel = NULL,  $content = NULL) {
+//  try {
+//    dpm('beginning npHTML code');
+//    if (isset($id)) {
+//      if (!isset($title)) {
+//        $title = '"Page Title"';
+//      }
+//      if (!isset($required)) {
+//        $required = 'false';
+//      }
+//      $html = '{';
+//      $html = $html . '"type"' . ':' . '"npHTML"' ;
+//      $html = $html . ',' . '"data"' . ': {' .  '"id"' . ': ' . '"' . $id . "Header". '"';
+//      $html = $html . ',' . '"parentId"' . ': ' . $parentid;
+//      $html = $html . ',' . '"class"' . ': ' . '"' . $class . '"';
+//      $html = $html . ',' . '"content"' . ': ' . '"' . $headerlabel . '"';
+//
+//      $html = $html . ',' . '"title"' . ': ' . $title;
+//      $html = $html . '"type"' . ':' . '"npHTML"' ;
+//      $html = $html . ',' . '"data"' . ': {' .  '"id"' . ': ' . '"' . $id . "Header". '"';
+//
+//      $html = $html . ',' . '"title"' . ': ' . $title;
+//      $html = $html . ',' . '"required"' . ': ' . $required;
+//      $html = $html . '},';
+//      dpm('page string');
+//      dpm($html);
+//      return $html;
+//    } else {
+//      dpm('No id passed to npPage function!');
+//      return null;
+//    }
+//  }
+//
+//  catch (exception $e) {
+//    dpm($e);
+//  }
+//
+//}
+
+
 /**
  * @param $entity - This view entity is passed
  * from the shadow module to construct a valid JSON object that the NewPlayerV2 can consume.
@@ -25,11 +255,19 @@ function tng_shadow_shadow_request_alter($entity) {
     $entity_array = (array) $entity;
     dpm ($entity_array);
     $language = $entity->path['language'];
-    dpm($language);
+    //dpm($language);
     global $namevalue;
     $manifest = array();
-    //$size_of_entity_array = count($entity_array);
-    //dpm('number of array elements : ' . $size_of_entity_array    );
+
+//    $feature_chunk = tng_npFeature_maker('Sample Product Display', '["../../../assets/anr.css"]', '"0.0.5"', '"2014-Dec-Mon_04:12:22"');
+//    dpm($feature_chunk);
+//    $content_chunk = tng_npContent_maker('"content_en-US"', '"en-US"', '"Sample Manifest"', '"Sample presentation"');
+//    dpm($content_chunk);
+//    $page_chunk = tng_npPage_maker('"Welcome"', '""', '"Advanced Night Repair"',  'false');
+//    dpm($page_chunk);
+//    $combo = $feature_chunk . $content_chunk . $page_chunk;
+//    dpm($combo);
+
     // load the current entity in a wrapper
     $wrapper = entity_metadata_wrapper('node', $entity);
     //dpm(_wrapper_debug($wrapper));
@@ -59,7 +297,8 @@ function tng_shadow_shadow_request_alter($entity) {
       if ($info['type'] == 'paragraphs') {
         // if we have a paragraphs type, use a wrapper for easier reference
         $paragraphs = $wrapper->$info['field_name']->value();
-        //dpm($paragraphs);
+        dpm('paragraphs');
+        dpm($paragraphs);
         $number_of_paragraphs = count($wrapper->$info['field_name']->value());
         dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
         $namevalue = $namevalue .  '[';
@@ -158,6 +397,11 @@ function tng_shadow_shadow_request_alter($entity) {
       elseif ($info['type'] == 'entityreference') {
         dpm($info);
         dpm('found an entity reference node to fetch and process');
+        $field_name = $info['field_name'];
+        $targetid = $entity_array[$field_name][$language][0]['target_id'];
+        dpm($targetid);
+        $partnerinfo = tng_perfect_partner_extractor($targetid);
+        dpm($partnerinfo);
       }
       elseif ($info['type'] == 'image') {
         dpm('found an outer node image');

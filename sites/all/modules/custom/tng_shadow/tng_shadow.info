@@ -1,5 +1,5 @@
-name = TNG mean shadow changes
-description = Provides TNG shadow custom code to process paragraphs.
+name = TNG custom mean shadow changes
+description = Provides TNG shadow custom code to process Drupal entities and create working NewPlayerV2 manifests.
 core = 7.x
 
 dependencies[] = mean

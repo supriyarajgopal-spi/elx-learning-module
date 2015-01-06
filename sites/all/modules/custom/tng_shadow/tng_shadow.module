@@ -255,7 +255,6 @@ function tng_npPageContentFeatureCleanup() {
  * @return array the $manifest_language returned has the language-country in the 0th element and the content line in the 1st element
  */
 function make_language_strings($language_key) {
-  //$manifest_language[] = '';
   if ($language_key == 'en') {
     $manifest_language[] = 'en-US';
     $manifest_language[] = 'content_en-US';
@@ -272,6 +271,9 @@ function make_language_strings($language_key) {
   return $manifest_language;
 }
 
+/**
+ * The process_ functions are
+ */
 
 /**
  * @param $product_values - an array with key=>value pairs for the products
@@ -324,7 +326,7 @@ function process_product($product_values, $language, $nid) {
       } else {
         // remove the 'field_' from the key to make our id
         $fix_key = ucfirst(str_replace('field_', '', $key));
-        $chunk_name = 'anr' . $fix_key;
+        $chunk_name = 'prd' . $fix_key;
         $fix_value = str_replace('"','\"',$value);
         $html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
         $whole_product = $whole_product . $html_chunk . ',';
@@ -360,7 +362,7 @@ function process_hotspot($object_values, $language, $nid) {
   dpm('**language**' . $language);
   dpm($object_values);
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
-  // and if we find between 1 and 17 fields, layout the page
+  // and if we find between 1 and 3 fields, layout the page
   $min_product_fields = 1;
   $max_product_fields = 3;
   $num_fields = count($object_values);
@@ -391,7 +393,7 @@ function process_hotspot($object_values, $language, $nid) {
       } else {
         // remove the 'field_' from the key to make our id
         $fix_key = ucfirst(str_replace('field_', '', $key));
-        $chunk_name = 'anr' . $fix_key;
+        $chunk_name = 'hts' . $fix_key;
         $fix_value = str_replace('"','\"',$value);
         $html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
         $whole_hotspot = $whole_hotspot . $html_chunk . ',';
@@ -417,11 +419,74 @@ function process_hotspot($object_values, $language, $nid) {
   }
 }
 
+function process_question_and_answer($object_values, $language, $nid) {
+  dpm('**language**' . $language);
+  dpm($object_values);
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find between 1 and 3 fields, layout the page
+  $min_product_fields = 1;
+  $max_product_fields = 10;
+  $num_fields = count($object_values);
+  if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
+    // here we process the fields we find for our question and answer passed in the array of $object_values
+    //  start by telling the processor how many fields we found
+    dpm('Question and Answer had ' . $num_fields . ' fields.');
+    $title = $object_values['title_field'];
+    dpm('title : ' . $title);
+    $feature_chunk = tng_npFeature_maker($title, '["../../../assets/qaa.css"]', '0.0.1');
+    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_content = $language_strings[1];
+    $manifest_title = 'Q and A Manifest - ' . $title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'This manifest creates a question and answer page.');
+    // for some reason, 'Welcome' is a magic title that allows the rest of the HTML pages to work.
+    $page_chunk = tng_npPage_maker('Welcome', '', $title,  'true');
+
+    $whole_qa = $feature_chunk . $content_chunk . $page_chunk;
+    foreach ($object_values as $key=>$value) {
+      dpm('**** data ****' . $key . ' : ' . $value);
+
+      if ($key == 'field_answer_image') {
+        $truth = tng_convert_drupal_to_mean_filename($value);
+        $image_chunk = tng_npImage_maker($truth);
+        $whole_qa = $whole_qa . $image_chunk . ',';
+      } else {
+        // remove the 'field_' from the key to make our id
+        $fix_key = ucfirst(str_replace('field_', '', $key));
+        $chunk_name = 'qaa' . $fix_key;
+        $fix_value = str_replace('"','\"',$value);
+        $html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
+        $whole_qa = $whole_qa . $html_chunk . ',';
+      }
+
+      dpm("**question answer**". $whole_qa);
+
+    }
+    // after looping the HTML or Image group, remove the final ','
+    $whole_qa = rtrim($whole_qa, ",");
+    $finish_chunk = tng_npPageContentFeatureCleanup();
+    $whole_qa = $whole_qa . $finish_chunk;
+    dpm('**** qa ****');
+    dpm($whole_qa);
+
+    // when we edit a new node for a questionanswer (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product
+    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $manifest_title, $language, $nid);
+    // return the new nid to set it on the parent node
+    return $new_nid;
+  } else {
+    dpm('Received more or less items than we expected for our question and answer, so we are not processing it.');
+  }
+
+}
+
 
 function process_content_object($object_values, $language) {
   dpm('**language**' . $language);
   dpm($object_values);
 }
+
 
 /**
  * @param $node_data - this is the full manifest to save on a separate node
@@ -529,20 +594,19 @@ function tng_shadow_shadow_request_alter($entity) {
     // we loop through the fields looking for a paragraph type to expand and rewrite
     for ($i=0; $i < $number_of_fields; $i++) {
       dpm('['. $i .']:' . $children_nodes_to_process[$i]);
-      // first field is the 'field_paragraph_multiple_choice'
-      $namevalue = '"' . $children_nodes_to_process[$i] . '" : "' ;
       //dpm($children_nodes_to_process[$i]);
       //dpm($wrapper->$children_nodes_to_process[$i]->value());
       $info = field_info_field($children_nodes_to_process[$i]);
-      // $info['field_name'] is the name of the paragraph
       if ($info['type'] == 'paragraphs') {
+        // the outer node type is a 'field_paragraph_multiple_choice', so save this name for later pre-manifest creation.
+        $save_field_name = $children_nodes_to_process[$i];
+        $namevalue = '[ { ' ;
         // if we have a paragraphs type, use a wrapper for easier reference
         $paragraphs = $wrapper->$info['field_name']->value();
         dpm('paragraphs');
         dpm($paragraphs);
         $number_of_paragraphs = count($wrapper->$info['field_name']->value());
         dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
-        $namevalue = $namevalue .  '[';
         // using the paragraphs bundle type, we can get all the fields we need to account for in our data
         $paragraph_fields = field_info_instances('paragraphs_item', $paragraphs->bundle);
         $number_of_paragraph_fields = count($paragraph_fields);
@@ -556,15 +620,16 @@ function tng_shadow_shadow_request_alter($entity) {
             // inside the fields within a paragraph the language variable is not used, it's 'und'
             $language = 'und';
             $field_name = $children_fields_to_process[$pf];
-            dpm($field_name);
+            //dpm('field_name : ' . $field_name);
             $field_child_info = field_info_field($children_fields_to_process[$pf]);
             //dpm('fi');
             //dpm($field_child_info);
             $name = $field_child_info['field_name'];
+            //dpm('name : ' . $name);
             if (isset($paragraphs->{$name}[$language][0]['value'])) {
-              $namevalue = $namevalue . '{"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value']. '"},';
+              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value']. '",';
             } else {
-              $namevalue = $namevalue . '{"' . $field_name . '" : ' . '""},';
+              $namevalue = $namevalue . '"' . $field_name . '" : ' . '"",';
             }
             //$field_info = $paragraphs->{$name}[$language][0]['value'];
             //dpm($field_info);
@@ -592,7 +657,7 @@ function tng_shadow_shadow_request_alter($entity) {
                     if (isset($entity->{$value}[$language][0]['value'])) {
                       dpm($value);
                       dpm($entity->{$value}[$language][0]['value']);
-                      $namevalue = $namevalue . '{"' . $value . '":"' . $entity->{$value}[$language][0]['value'] . '"},';
+                      $namevalue = $namevalue . '"' . $value . '":"' . $entity->{$value}[$language][0]['value'] . '",';
                     }
                     $info = field_info_field($sub_children[$key]);
                     //dpm($info);
@@ -628,9 +693,10 @@ function tng_shadow_shadow_request_alter($entity) {
             }
           }
         }
-        // remove the final ',' and add the final ']' to be syntax correct on the json
-        $namevalue = trim($namevalue, ",") . ']"';
+        // remove the final ',' and add the final '} ]' to be syntax correct on the json
+        $namevalue = trim($namevalue, ",") . '} ]';
         $manifest[]  = $namevalue;
+        $pre_manifest[$save_field_name] = $namevalue;
         dpm($namevalue);
       }
       elseif ($info['type'] == 'entityreference') {
@@ -683,16 +749,8 @@ function tng_shadow_shadow_request_alter($entity) {
       }
       elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
         dpm('found text or text_long field');
-        $field_name = $info['field_name'];
-        $number_of_terms = count($entity_array[$field_name][$language]);
-        if ($number_of_terms > 1) {
-
-        } else {
-          dpm ('found ' . $number_of_terms . ' in our '. $field_name);
-          dpm($entity_array[$field_name][$language][0]['value']);
-          $pre_manifest[$field_name] = $entity_array[$field_name][$language][0]['value'];
-          dpm($pre_manifest);
-        }
+        $pre_manifest[$children_nodes_to_process[$i]] = $wrapper->$children_nodes_to_process[$i]->value();
+        dpm($pre_manifest);
       }
       elseif ($info['type'] == 'file') {
         dpm('found an outer node file');
@@ -723,10 +781,12 @@ function tng_shadow_shadow_request_alter($entity) {
         $pre_manifest[$field_name] = $collector;
       }
       elseif (($info['type']== 'list_text') || ($info['type']== 'list_boolean')) {
+        dpm('found some list_text or list_boolean');
         $field_name = $info['field_name'];
-        $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
+        $pre_manifest[$field_name] = $wrapper->$children_nodes_to_process[$i]->value();
+        dpm($pre_manifest);
       }
-      elseif ($info['type']== 'object_manifest') {
+      elseif ($info['type'] == 'object_manifest') {
         dpm('found me a manifest to play with');
         $field_name = $info['field_name'];
         $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
@@ -782,7 +842,16 @@ function tng_shadow_shadow_request_alter($entity) {
         $entity->field_manifest[$language][0]['target_id'] = $new_nid;
         node_save($entity);
       }
-
+    } elseif ($entity_type == 'question_and_answer') {
+      dpm('found a question_and_answer to work on');
+      dpm($entity_array);
+      dpm($entity_array['field_manifest']['en'][0]['target_id']);
+      $new_nid = process_question_and_answer($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id']);
+      if (isset($new_nid)) {
+        dpm('setting new manifest nid on question_and_answer entity');
+        $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+       node_save($entity);
+      }
     }
   }
   catch (exception $e) {

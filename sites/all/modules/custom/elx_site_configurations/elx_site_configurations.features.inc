@@ -17,6 +17,65 @@ function elx_site_configurations_ctools_plugin_api($module = NULL, $api = NULL) 
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function elx_site_configurations_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: product_detail.
+  $styles['product_detail'] = array(
+    'name' => 'product_detail',
+    'label' => 'Product detail',
+    'effects' => array(
+      6 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'imageinfo_cache_effect_router',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'retina_images_image_resize_form',
+        'summary theme' => 'retina_images_image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 320,
+          'height' => 290,
+          'retinafy' => 0,
+          '#imageinfo_cache_effect_callback' => 'retina_images_image_scale_and_crop_effect',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: product_detail_retina.
+  $styles['product_detail_retina'] = array(
+    'name' => 'product_detail_retina',
+    'label' => 'Product detail (retina)',
+    'effects' => array(
+      8 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'imageinfo_cache_effect_router',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'retina_images_image_resize_form',
+        'summary theme' => 'retina_images_image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 320,
+          'height' => 290,
+          'retinafy' => 1,
+          '#imageinfo_cache_effect_callback' => 'retina_images_image_scale_and_crop_effect',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function elx_site_configurations_node_info() {
@@ -24,7 +83,7 @@ function elx_site_configurations_node_info() {
     'content_object' => array(
       'name' => t('Content Object'),
       'base' => 'node_content',
-      'description' => t('Wrapper for leaning objects.'),
+      'description' => t('Wrapper for learning objects.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -83,6 +142,14 @@ function elx_site_configurations_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Subtitle'),
+      'help' => '',
+    ),
+    'object_manifest' => array(
+      'name' => t('Object Manifest'),
+      'base' => 'node_content',
+      'description' => t('These nodes hold the manifest for the NewPlayerV2'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'product_detail' => array(

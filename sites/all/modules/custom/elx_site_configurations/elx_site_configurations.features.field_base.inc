@@ -730,6 +730,7 @@ function elx_site_configurations_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -785,6 +786,33 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_learning_template'
+  $field_bases['field_learning_template'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_learning_template',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'generic' => 'Generic',
+        'popquiz' => 'Pop Quiz',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_list_image'
@@ -865,6 +893,50 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_manifest'
+  $field_bases['field_manifest'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_manifest',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'object_manifest' => 'object_manifest',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 1,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_match_collection'
@@ -1147,6 +1219,7 @@ function elx_site_configurations_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -1449,6 +1522,7 @@ function elx_site_configurations_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
@@ -1543,6 +1617,7 @@ function elx_site_configurations_field_default_field_bases() {
         ),
       ),
       'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',

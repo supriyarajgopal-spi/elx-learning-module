@@ -735,15 +735,26 @@ function tng_shadow_shadow_request_alter($entity) {
         dpm('found an image');
         $field_name = $info['field_name'];
         $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
+        $image_name = explode('_', $image_style);
+        $is_retina = array_pop($image_name);
+        $non_retina_style = implode('_', $image_name);
         $fid = $entity_array[$field_name][$language][0]['fid'];
         if ($fid) {
           $file_id = file_load($fid);
           $uri = $file_id->uri;
-          $image_style_path = image_style_url($image_style, $uri);
+          $style_path = image_style_url($image_style, $uri);
+          if ($is_retina == 'retina') {
+            $non_retina_path = image_style_url($non_retina_style, $uri);
+            $image_style_path = array($style_path, $non_retina_path);
+          } else {
+            $image_style_path = array($style_path);
+          }
         } else {
           $image_style_path = '';
         }
-        dpm($field_name . ': ' . $image_style_path);
+        for ($p=0; $p < 2; $p++) {
+          dpm($field_name . ': ' . $image_style_path[$p]);
+        }
         $pre_manifest[$field_name] = $image_style_path;
         dpm($pre_manifest);
       }

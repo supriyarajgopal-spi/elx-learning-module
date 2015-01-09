@@ -22,29 +22,5 @@ function elx_users_feature_user_default_roles() {
     'weight' => 3,
   );
 
-  // Exported role: Counter Manager.
-  $roles['Counter Manager'] = array(
-    'name' => 'Counter Manager',
-    'weight' => 4,
-  );
-
-  // Exported role: Field Manager.
-  $roles['Field Manager'] = array(
-    'name' => 'Field Manager',
-    'weight' => 5,
-  );
-
-  // Exported role: Global Learning Team.
-  $roles['Global Learning Team'] = array(
-    'name' => 'Global Learning Team',
-    'weight' => 7,
-  );
-
-  // Exported role: Regional.
-  $roles['Regional'] = array(
-    'name' => 'Regional',
-    'weight' => 6,
-  );
-
   return $roles;
 }

@@ -10,6 +10,76 @@
 function elx_users_feature_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'user-user-field_account_field_executive'
+  $field_instances['user-user-field_account_field_executive'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_account_field_executive',
+    'label' => 'Account/field executive',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_account_name'
+  $field_instances['user-user-field_account_name'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_account_name',
+    'label' => 'Account name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_city'
   $field_instances['user-user-field_city'] = array(
     'bundle' => 'user',
@@ -45,6 +115,41 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_counter_manager'
+  $field_instances['user-user-field_counter_manager'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_counter_manager',
+    'label' => 'Counter manager',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_country'
   $field_instances['user-user-field_country'] = array(
     'bundle' => 'user',
@@ -73,7 +178,77 @@ function elx_users_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_door'
+  $field_instances['user-user-field_door'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_door',
+    'label' => 'Door',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_education_manager_executiv'
+  $field_instances['user-user-field_education_manager_executiv'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_education_manager_executiv',
+    'label' => 'Education manager/executive',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 16,
     ),
   );
 
@@ -147,6 +322,54 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_hire_date'
+  $field_instances['user-user-field_hire_date'] = array(
+    'bundle' => 'user',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_hire_date',
+    'label' => 'Hire date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_job_title'
   $field_instances['user-user-field_job_title'] = array(
     'bundle' => 'user',
@@ -217,6 +440,41 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_market_name'
+  $field_instances['user-user-field_market_name'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_market_name',
+    'label' => 'Market name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_region_list'
   $field_instances['user-user-field_region_list'] = array(
     'bundle' => 'user',
@@ -245,12 +503,12 @@ function elx_users_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'user-user-field_store_counter_name'
-  $field_instances['user-user-field_store_counter_name'] = array(
+  // Exported field_instance: 'user-user-field_state'
+  $field_instances['user-user-field_state'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
@@ -258,72 +516,49 @@ function elx_users_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 8,
+        'type' => 'text_default',
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'user',
-    'field_name' => 'field_store_counter_name',
-    'label' => 'Store/Counter name',
+    'field_name' => 'field_state',
+    'label' => 'State',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
       'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_subordinates'
-  $field_instances['user-user-field_subordinates'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 7,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
       ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_subordinates',
-    'label' => 'Subordinates',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 12,
+      'type' => 'text_textfield',
+      'weight' => 11,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Account name');
+  t('Account/field executive');
   t('City');
+  t('Counter manager');
   t('Country');
+  t('Door');
+  t('Education manager/executive');
   t('Employer number');
   t('First name');
+  t('Hire date');
   t('Job title');
   t('Last name');
+  t('Market name');
   t('Region');
-  t('Store/Counter name');
-  t('Subordinates');
+  t('State');
 
   return $field_instances;
 }

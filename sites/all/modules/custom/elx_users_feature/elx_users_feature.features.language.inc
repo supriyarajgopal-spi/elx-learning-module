@@ -49,18 +49,5 @@ function elx_users_feature_locale_default_languages() {
     'prefix' => 'fr',
     'weight' => -9,
   );
-  // Exported language: zh-hant.
-  $languages['zh-hant'] = array(
-    'language' => 'zh-hant',
-    'name' => 'Chinese, Traditional',
-    'native' => '繁體中文',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 2,
-    'formula' => '($n>1)',
-    'domain' => '',
-    'prefix' => 'zh-hant',
-    'weight' => -7,
-  );
   return $languages;
 }

@@ -50,68 +50,98 @@ function elx_users_feature_feeds_importer_default() {
         'status' => '1',
         'mappings' => array(
           0 => array(
-            'source' => 'name',
-            'target' => 'name',
-            'unique' => 0,
-          ),
-          1 => array(
-            'source' => 'mail',
+            'source' => 'Email',
             'target' => 'mail',
             'unique' => 1,
           ),
+          1 => array(
+            'source' => 'Email',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
           2 => array(
-            'source' => 'First name',
+            'source' => 'First Name',
             'target' => 'field_first_name',
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'Last name',
+            'source' => 'Last Name',
             'target' => 'field_last_name',
             'unique' => FALSE,
           ),
           4 => array(
+            'source' => 'Employee ID',
+            'target' => 'field_employer_number',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'Learner Group',
+            'target' => 'roles_list',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'Account Name',
+            'target' => 'field_account_name',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'Door',
+            'target' => 'field_door',
+            'unique' => FALSE,
+          ),
+          8 => array(
             'source' => 'City',
             'target' => 'field_city',
             'unique' => FALSE,
           ),
-          5 => array(
+          9 => array(
+            'source' => 'State',
+            'target' => 'field_state',
+            'unique' => FALSE,
+          ),
+          10 => array(
             'source' => 'Country',
             'target' => 'field_country',
             'unique' => FALSE,
           ),
-          6 => array(
+          11 => array(
             'source' => 'Region',
             'target' => 'field_region_list',
             'unique' => FALSE,
           ),
-          7 => array(
-            'source' => 'Employer number',
-            'target' => 'field_employer_number',
-            'unique' => FALSE,
-          ),
-          8 => array(
-            'source' => 'Job title',
-            'target' => 'field_job_title',
-            'unique' => FALSE,
-          ),
-          9 => array(
-            'source' => 'Store/Counter name',
-            'target' => 'field_store_counter_name',
-            'unique' => FALSE,
-          ),
-          10 => array(
-            'source' => 'Subordinates',
-            'target' => 'field_subordinates',
-            'unique' => FALSE,
-          ),
-          11 => array(
-            'source' => 'Language',
-            'target' => 'language',
-            'unique' => FALSE,
-          ),
           12 => array(
-            'source' => 'created',
-            'target' => 'created',
+            'source' => 'Market Name',
+            'target' => 'field_market_name',
+            'unique' => FALSE,
+          ),
+          13 => array(
+            'source' => 'Hire Date',
+            'target' => 'field_hire_date:start',
+            'unique' => FALSE,
+          ),
+          14 => array(
+            'source' => 'Counter Manager',
+            'target' => 'field_counter_manager',
+            'unique' => FALSE,
+          ),
+          15 => array(
+            'source' => 'Education Manager/Executive',
+            'target' => 'field_education_manager_executiv',
+            'unique' => FALSE,
+          ),
+          16 => array(
+            'source' => ' Account/Field Executive',
+            'target' => 'field_account_field_executive',
+            'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'Status',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+          ),
+          18 => array(
+            'source' => 'Status',
+            'target' => 'status',
             'unique' => FALSE,
           ),
         ),
@@ -119,6 +149,8 @@ function elx_users_feature_feeds_importer_default() {
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
         'bundle' => 'user',
+        'user_roles_create' => TRUE,
+        'update_non_existent' => 'skip',
       ),
     ),
     'content_type' => '',

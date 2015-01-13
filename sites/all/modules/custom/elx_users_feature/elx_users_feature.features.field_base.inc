@@ -791,8 +791,11 @@ function elx_users_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'reg1' => 'Region 1',
-        'reg2' => 'Region 2',
+        'US' => 'US',
+        'AU' => 'AU',
+        'NZ' => 'NZ',
+        'ZA' => 'ZA',
+        'UK' => 'UK',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

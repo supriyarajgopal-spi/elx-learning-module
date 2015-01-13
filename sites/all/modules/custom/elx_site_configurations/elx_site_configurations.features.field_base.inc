@@ -815,6 +815,32 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_learning_type'
+  $field_bases['field_learning_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_learning_type',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'evaluation' => 'Evaluation',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_list_image'
   $field_bases['field_list_image'] = array(
     'active' => 1,

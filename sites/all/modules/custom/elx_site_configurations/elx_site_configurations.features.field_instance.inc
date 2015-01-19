@@ -322,7 +322,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 

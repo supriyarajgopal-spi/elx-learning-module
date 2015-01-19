@@ -22,28 +22,34 @@ function elx_users_feature_user_default_roles() {
     'weight' => 3,
   );
 
-  // Exported role: Counter Manager.
-  $roles['Counter Manager'] = array(
-    'name' => 'Counter Manager',
-    'weight' => 4,
+  // Exported role: Brand Management and Field.
+  $roles['Brand Management and Field'] = array(
+    'name' => 'Brand Management and Field',
+    'weight' => 6,
   );
 
-  // Exported role: Field Manager.
-  $roles['Field Manager'] = array(
-    'name' => 'Field Manager',
-    'weight' => 5,
+  // Exported role: EL NYO Global Education System Admin.
+  $roles['EL NYO Global Education System Admin'] = array(
+    'name' => 'EL NYO Global Education System Admin',
+    'weight' => 8,
   );
 
-  // Exported role: Global Learning Team.
-  $roles['Global Learning Team'] = array(
-    'name' => 'Global Learning Team',
+  // Exported role: EL Regional Market Admin.
+  $roles['EL Regional Market Admin'] = array(
+    'name' => 'EL Regional Market Admin',
     'weight' => 7,
   );
 
-  // Exported role: Regional.
-  $roles['Regional'] = array(
-    'name' => 'Regional',
-    'weight' => 6,
+  // Exported role: Multi-Brand Sales Associate.
+  $roles['Multi-Brand Sales Associate'] = array(
+    'name' => 'Multi-Brand Sales Associate',
+    'weight' => 5,
+  );
+
+  // Exported role: Store Management.
+  $roles['Store Management'] = array(
+    'name' => 'Store Management',
+    'weight' => 4,
   );
 
   return $roles;

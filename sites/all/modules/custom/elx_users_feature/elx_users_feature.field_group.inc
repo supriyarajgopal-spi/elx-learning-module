@@ -25,8 +25,12 @@ function elx_users_feature_field_group_info() {
     'children' => array(
       0 => 'field_job_title',
       1 => 'field_employer_number',
-      2 => 'field_subordinates',
-      3 => 'field_store_counter_name',
+      2 => 'field_account_name',
+      3 => 'field_door',
+      4 => 'field_hire_date',
+      5 => 'field_counter_manager',
+      6 => 'field_education_manager_executiv',
+      7 => 'field_account_field_executive',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -36,7 +40,7 @@ function elx_users_feature_field_group_info() {
         'classes' => 'group-employee field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_employee|user|user|form'] = $field_group;
@@ -68,7 +72,7 @@ function elx_users_feature_field_group_info() {
         'classes' => 'group-personal field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_personal|user|user|form'] = $field_group;
@@ -89,7 +93,9 @@ function elx_users_feature_field_group_info() {
       0 => 'field_city',
       1 => 'field_country',
       2 => 'field_region_list',
-      3 => 'timezone',
+      3 => 'field_state',
+      4 => 'field_market_name',
+      5 => 'timezone',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -99,7 +105,7 @@ function elx_users_feature_field_group_info() {
         'classes' => 'group-regional field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_regional|user|user|form'] = $field_group;

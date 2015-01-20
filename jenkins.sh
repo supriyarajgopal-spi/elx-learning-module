@@ -1,3 +1,3 @@
 #!/bin/bash
 cd $WORKSPACE
-drush cc all
+/usr/bin/drush cc all

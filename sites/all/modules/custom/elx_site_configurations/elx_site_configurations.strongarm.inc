@@ -14,7 +14,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme';
-  $strongarm->value = 'seven';
+  $strongarm->value = 'elx';
   $export['admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -608,6 +608,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'n/j/y';
+  $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_settings_node__content_object';
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
@@ -1098,6 +1105,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_answer_image';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_answer_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_field_answer_media';
   $strongarm->value = array();
   $export['imageinfo_cache_field_answer_media'] = $strongarm;
@@ -1108,6 +1122,27 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'imageinfo_cache_field_bottom_match_image';
   $strongarm->value = array();
   $export['imageinfo_cache_field_bottom_match_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_fun_fact_sheet';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_fun_fact_sheet'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_hero_image';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_hero_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_hot_spot_image';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_hot_spot_image'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1126,6 +1161,22 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_product_image';
+  $strongarm->value = array(
+    'product_detail_retina' => 'product_detail_retina',
+  );
+  $export['imageinfo_cache_field_product_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_question_image';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_question_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_field_question_media';
   $strongarm->value = array();
   $export['imageinfo_cache_field_question_media'] = $strongarm;
@@ -1136,6 +1187,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'imageinfo_cache_field_question_video';
   $strongarm->value = array();
   $export['imageinfo_cache_field_question_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_question_video_file';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_question_video_file'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1168,6 +1226,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'imageinfo_cache_field_video_poster_image';
   $strongarm->value = array();
   $export['imageinfo_cache_field_video_poster_image'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageinfo_cache_field_video_poster_img';
+  $strongarm->value = array();
+  $export['imageinfo_cache_field_video_poster_img'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

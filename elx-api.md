@@ -882,15 +882,3 @@ The following country codes are the ones that Drupal will use:
 |ZA|South Africa|
 |ZM|Zambia|
 |ZW|Zimbabwe|
-|
-
-
-
-
-
-
-
-
-
-
-

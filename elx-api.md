@@ -342,31 +342,31 @@ User schema:
 
 ```javascript
 var UserSchema = new Schema ({
-  email {type: String, required: true, unique: true},   
-  firstname {type: String},  
-  lastname {type: String},    
-  employeeid {type: Number},
-  position {type: String},  
-  learnergroup {type: String},
-  accountname {type: String},
-  language {type: String},
-  door {type: String},
-  city {type: String},
-  state {type: String},
-  country {type: String},
-  region {type: String},
-  marketname {type: String},
-  hiredate {type: Date},   
-  countermanager {type: String},
-  educationmanager {type: String},
-  accountexecutive {type: String},
-  level {type: String},
-  rank {type: String},
-  creationdate {type: Date},
-  modificationdate {type: Date},
-  lastaccessdate {type: Date},
-  avatar {type: String},  
-  password {type: String}
+  email : {type: String, required: true, unique: true},   
+  firstname : {type: String},  
+  lastname : {type: String},    
+  employeeid : {type: Number},
+  position : {type: String},  
+  learnergroup : {type: String},
+  accountname : {type: String},
+  language : {type: String},
+  door : {type: String},
+  city : {type: String},
+  state : {type: String},
+  country : {type: String},
+  region : {type: String},
+  marketname : {type: String},
+  hiredate : {type: Date},   
+  countermanager : {type: String},
+  educationmanager : {type: String},
+  accountexecutive : {type: String},
+  level : {type: String},
+  rank : {type: String},
+  creationdate : {type: Date},
+  modificationdate : {type: Date},
+  lastaccessdate : {type: Date},
+  avatar : {type: String},  
+  password : {type: String}
   });
 ``` 
 
@@ -397,22 +397,22 @@ Products schema:
 
 ```javascript
 var ProductSchema = new Schema ({
-  productname {type: String, required: true, unique: true},   
-  tags {type: String},
-  categories {type: String},
-  seasonlaunched {type: String},
-  whytheresonly1 {type: String},
-  demonstration {type: String},
-  benefits {type: String},
-  ifsheasksshare {type: String},
-  relatedproducts {type: String},
-  perfectpartners {type: String},
-  story {type: String},
-  customerquestions {type: String},
-  fullfactsheet {type: String},
-  image {type: String},
-  price {type: String},
-  manifest {type: String}
+  productname : {type: String, required: true, unique: true},   
+  tags : {type: String},
+  categories : {type: String},
+  seasonlaunched : {type: String},
+  whytheresonly1 : {type: String},
+  demonstration : {type: String},
+  benefits : {type: String},
+  ifsheasksshare : {type: String},
+  relatedproducts : {type: String},
+  perfectpartners : {type: String},
+  story : {type: String},
+  customerquestions : {type: String},
+  fullfactsheet : {type: String},
+  image : {type: String},
+  price : {type: String},
+  manifest : {type: String}
   });
   ``` 
   
@@ -440,8 +440,8 @@ Favorites schema:
 ```javascript
 var FavoriteSchema = new Schema ({
 
-  userid {type: String, required: true, unique: true},   
-  favoriteid {type: String, required: true}
+  userid : {type: String, required: true, unique: true},   
+  favoriteid : {type: String, required: true}
   });
   ``` 
 - userid - who favored the content entity
@@ -474,9 +474,9 @@ Comment schema:
 ```javascript
 var CommentsSchema = new Schema ({
 
-  userid {type: String, required: true},   
-  favoriteid {type: String, required: true}
-  comment {type: String, required: true}
+  userid : {type: String, required: true},   
+  favoriteid : {type: String, required: true}
+  comment : {type: String, required: true}
   });
   ``` 
   
@@ -511,11 +511,11 @@ we create a database entity, Actions to help us out.
 ```javascript
 var ActionsSchema = new Schema ({
 
-  userid {type: String, required: true},   
-  contentid {type: String, required: true},
-  action {type: String, required: true},
-  score {type: String},
-  timestamp {type: Date},
+  userid : {type: String, required: true},   
+  contentid : {type: String, required: true},
+  action : {type: String, required: true},
+  score : {type: String},
+  timestamp : {type: Date},
   });
   ``` 
   
@@ -921,14 +921,4 @@ The following country codes are the ones that Drupal will use:
 |ZM|Zambia|
 |ZW|Zimbabwe|
 |
-
-
-
-
-
-  
-
-
-
-
 

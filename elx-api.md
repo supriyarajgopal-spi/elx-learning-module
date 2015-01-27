@@ -203,7 +203,7 @@ US - United States
 AU - Australia  
 NZ - New Zealand  
 ZA - South Africa  
-UK - United Kingdom
+UK - United Kingdom  
 
 Users will also have roles assigned to them from the following types or **Learner Groups**:
 
@@ -504,9 +504,9 @@ POST data: comment text
 To track more user activities like the opening of Products or Content Objects
 we create a database entity, Actions to help us out.
 
-/actions/open  
-/actions/complete  
-/actions/:user  
+/actions/open/:userid/:contentid     
+/actions/complete/:userid/:contentid       
+/actions/score/:userid/:contentid       
 
 ```javascript
 var ActionsSchema = new Schema ({
@@ -523,7 +523,7 @@ var ActionsSchema = new Schema ({
 - userid - who performed the action  
 - contentid - id of the content entity 
   
-  (at launch will only be an id of these types and based on ID)
+  (at launch will only be an id of these types and based on contentid)
   product, re-nutriv, advanced night repair, greet, meet, treat, complete  
   
 - action - the action user performed  
@@ -656,7 +656,7 @@ ON MEAN:
 If Creative Few won't be using the ```mean.io``` module as a base, use this code where it will be 
 appropriate to catch the mean-shadow events.
 
-Addendum to Documentation
+##Addendum to Documentation
 
 The following country codes are the ones that Drupal will use:
 

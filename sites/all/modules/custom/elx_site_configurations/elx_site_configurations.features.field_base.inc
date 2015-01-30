@@ -771,6 +771,50 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_just_for_you'
+  $field_bases['field_just_for_you'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_just_for_you',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'product_detail' => 'product_detail',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 1,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_layout'
   $field_bases['field_layout'] = array(
     'active' => 1,
@@ -1000,6 +1044,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_manifest',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -1573,6 +1620,50 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'file',
+  );
+
+  // Exported field_base: 'field_related_products'
+  $field_bases['field_related_products'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_related_products',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'product_detail' => 'product_detail',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 1,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_reveal_collection'

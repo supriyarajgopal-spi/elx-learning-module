@@ -2366,7 +2366,7 @@ function elx_site_configurations_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -2411,6 +2411,50 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_detail-field_just_for_you'
+  $field_instances['node-product_detail-field_just_for_you'] = array(
+    'bundle' => 'product_detail',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_just_for_you',
+    'label' => 'Just for you',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-product_detail-field_manifest'
   $field_instances['node-product_detail-field_manifest'] = array(
     'bundle' => 'product_detail',
@@ -2452,7 +2496,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 19,
+      'weight' => 18,
     ),
   );
 
@@ -2683,6 +2727,50 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-product_detail-field_related_products'
+  $field_instances['node-product_detail-field_related_products'] = array(
+    'bundle' => 'product_detail',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_products',
+    'label' => 'Related products',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 15,
     ),
   );
 
@@ -4662,6 +4750,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Is this content featured on the home page?');
   t('Is this question required to be answered by the user?');
   t('Is this the correct answer to the question?');
+  t('Just for you');
   t('Layout');
   t('Learning category');
   t('Learning objects');
@@ -4685,6 +4774,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Question text');
   t('Question type');
   t('Question video');
+  t('Related products');
   t('Reveal collection');
   t('Reveal thumbnail');
   t('Season');

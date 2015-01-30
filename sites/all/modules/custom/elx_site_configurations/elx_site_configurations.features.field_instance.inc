@@ -391,7 +391,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_learning_template',
-    'label' => 'Learning template',
+    'label' => 'Object template',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -4515,7 +4515,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Layout');
   t('Learning category');
   t('Learning objects');
-  t('Learning template');
   t('List image');
   t('List item');
   t('List text');
@@ -4524,6 +4523,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Middle match image');
   t('Middle match text');
   t('Multiple choice');
+  t('Object template');
   t('Perfect partners');
   t('Perfect partners text');
   t('Point value');

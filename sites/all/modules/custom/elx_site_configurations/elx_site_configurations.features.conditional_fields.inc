@@ -58,21 +58,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -86,7 +72,21 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -116,15 +116,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           3 => 0,
         ),
@@ -132,17 +124,25 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
           1 => 1,
           3 => 0,
         ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 188,
+      'value_form' => 248,
       'value' => array(
         0 => array(
-          'tid' => 188,
+          'tid' => 248,
         ),
       ),
       'values' => array(),
@@ -199,21 +199,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -227,7 +213,21 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -257,15 +257,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           3 => 0,
         ),
@@ -273,17 +265,25 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
           1 => 1,
           3 => 0,
         ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 189,
+      'value_form' => 246,
       'value' => array(
         0 => array(
-          'tid' => 189,
+          'tid' => 246,
         ),
       ),
       'values' => array(),
@@ -338,21 +338,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -366,7 +352,21 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -396,15 +396,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           3 => 0,
         ),
@@ -412,17 +404,25 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
           1 => 1,
           3 => 0,
         ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 189,
+      'value_form' => 246,
       'value' => array(
         0 => array(
-          'tid' => 189,
+          'tid' => 246,
         ),
       ),
       'values' => array(),
@@ -479,21 +479,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -507,7 +493,21 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -537,15 +537,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           3 => 0,
         ),
@@ -553,17 +545,25 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
           1 => 1,
           3 => 0,
         ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 187,
+      'value_form' => 249,
       'value' => array(
         0 => array(
-          'tid' => 187,
+          'tid' => 249,
         ),
       ),
       'values' => array(),
@@ -618,21 +618,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        5 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -646,7 +632,21 @@ function elx_site_configurations_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -676,15 +676,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        5 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        7 => array(
+        9 => array(
           1 => 1,
           3 => 0,
         ),
@@ -692,17 +684,25 @@ function elx_site_configurations_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        9 => array(
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
           1 => 1,
           3 => 0,
         ),
       ),
       'selector' => '',
       'values_set' => 1,
-      'value_form' => 187,
+      'value_form' => 249,
       'value' => array(
         0 => array(
-          'tid' => 187,
+          'tid' => 249,
         ),
       ),
       'values' => array(),

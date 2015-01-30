@@ -16,38 +16,38 @@ function elx_users_feature_locale_default_languages() {
     'name' => 'English',
     'native' => 'English',
     'direction' => 0,
+    'enabled' => 0,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => 'en',
+    'weight' => -8,
+  );
+  // Exported language: en-UK.
+  $languages['en-UK'] = array(
+    'language' => 'en-UK',
+    'name' => 'English UK',
+    'native' => 'English UK',
+    'direction' => 0,
     'enabled' => 1,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => '',
-    'weight' => -10,
-  );
-  // Exported language: es.
-  $languages['es'] = array(
-    'language' => 'es',
-    'name' => 'Spanish',
-    'native' => 'Español',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 2,
-    'formula' => '($n!=1)',
-    'domain' => '',
-    'prefix' => 'es',
-    'weight' => -8,
-  );
-  // Exported language: fr.
-  $languages['fr'] = array(
-    'language' => 'fr',
-    'name' => 'French',
-    'native' => 'Français',
-    'direction' => 0,
-    'enabled' => 1,
-    'plurals' => 2,
-    'formula' => '($n>1)',
-    'domain' => '',
-    'prefix' => 'fr',
+    'prefix' => 'en-uk',
     'weight' => -9,
+  );
+  // Exported language: en-US.
+  $languages['en-US'] = array(
+    'language' => 'en-US',
+    'name' => 'English US',
+    'native' => 'English US',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => 'en-us',
+    'weight' => -10,
   );
   return $languages;
 }

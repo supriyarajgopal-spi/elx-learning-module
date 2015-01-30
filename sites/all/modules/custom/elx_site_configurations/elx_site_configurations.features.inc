@@ -27,6 +27,14 @@ function elx_site_configurations_ctools_plugin_api($module = NULL, $api = NULL) 
  */
 function elx_site_configurations_node_info() {
   $items = array(
+    'badge' => array(
+      'name' => t('Badge'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'content_object' => array(
       'name' => t('Content Object'),
       'base' => 'node_content',

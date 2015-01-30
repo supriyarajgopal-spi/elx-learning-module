@@ -9,6 +9,31 @@
  */
 function elx_site_configurations_taxonomy_default_vocabularies() {
   return array(
+    'content_object_type' => array(
+      'name' => 'Content Object Type',
+      'machine_name' => 'content_object_type',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'learning_category' => array(
       'name' => 'Learning Category',
       'machine_name' => 'learning_category',
@@ -109,6 +134,31 @@ function elx_site_configurations_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'story_type' => array(
+      'name' => 'Story Type',
+      'machine_name' => 'story_type',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'tags' => array(
       'name' => 'Tags',
       'machine_name' => 'tags',
@@ -117,7 +167,7 @@ function elx_site_configurations_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => 0,
+      'i18n_mode' => 4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

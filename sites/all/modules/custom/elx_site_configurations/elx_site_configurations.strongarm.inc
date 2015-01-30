@@ -1365,15 +1365,15 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'language_default';
   $strongarm->value = (object) array(
-    'language' => 'en',
-    'name' => 'English',
-    'native' => 'English',
+    'language' => 'en-US',
+    'name' => 'English US',
+    'native' => 'English US',
     'direction' => '0',
     'enabled' => 1,
     'plurals' => '0',
     'formula' => '',
     'domain' => '',
-    'prefix' => '',
+    'prefix' => 'en-us',
     'weight' => '-10',
     'javascript' => '',
   );

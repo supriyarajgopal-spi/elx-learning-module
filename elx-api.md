@@ -199,13 +199,13 @@ will cover the following regions to start (and we will use the 2 letter version 
 
 ####User Regions
 
-APAC - Asia Pacific  
-NOAM - North America  
-EMEA - Europe/Middle East/Africa  
-LATAM - Latin America  
-TRA - Travel Retail America  
-TRAPAC - Travel Retail Asia Pacific  
-TREMEA - Travel Retail Europe/Middle East/Africa  
+1. APAC - Asia Pacific
+2. NOAM - North America
+3. EMEA - Europe/Middle East/Africa
+4. LATAM - Latin America
+5. TRA - Travel Retail America
+6. TRAPAC - Travel Retail Asia Pacific
+7. TREMEA - Travel Retail Europe/Middle East/Africa
 
 Users will also have roles assigned to them from the following types or **Learner Groups**:
 

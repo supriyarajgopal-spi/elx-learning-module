@@ -318,7 +318,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => -9,
     ),
   );
 
@@ -436,7 +436,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 6,
     ),
   );
 
@@ -471,7 +471,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => -8,
     ),
   );
 
@@ -506,7 +506,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 3,
     ),
   );
 
@@ -573,7 +573,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 5,
     ),
   );
 
@@ -608,7 +608,7 @@ function elx_users_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 4,
     ),
   );
 

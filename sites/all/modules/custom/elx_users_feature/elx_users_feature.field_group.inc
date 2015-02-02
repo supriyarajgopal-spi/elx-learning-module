@@ -21,7 +21,7 @@ function elx_users_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Employee info',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_account_field_executive',
       1 => 'field_account_name',
@@ -56,7 +56,7 @@ function elx_users_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal information',
-    'weight' => '3',
+    'weight' => '0',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
@@ -88,14 +88,14 @@ function elx_users_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Regional information',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_city',
       1 => 'field_country',
       2 => 'field_region_list',
       3 => 'field_state',
-      4 => 'timezone',
-      5 => 'field_market_name',
+      4 => 'field_market_name',
+      5 => 'timezone',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

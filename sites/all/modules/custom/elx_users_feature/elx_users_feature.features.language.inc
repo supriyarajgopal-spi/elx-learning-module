@@ -23,9 +23,9 @@ function elx_users_feature_locale_default_languages() {
     'prefix' => 'en',
     'weight' => -8,
   );
-  // Exported language: en-UK.
-  $languages['en-UK'] = array(
-    'language' => 'en-UK',
+  // Exported language: enuk.
+  $languages['enuk'] = array(
+    'language' => 'enuk',
     'name' => 'English UK',
     'native' => 'English UK',
     'direction' => 0,
@@ -36,9 +36,9 @@ function elx_users_feature_locale_default_languages() {
     'prefix' => 'en-uk',
     'weight' => -9,
   );
-  // Exported language: en-US.
-  $languages['en-US'] = array(
-    'language' => 'en-US',
+  // Exported language: enus.
+  $languages['enus'] = array(
+    'language' => 'enus',
     'name' => 'English US',
     'native' => 'English US',
     'direction' => 0,

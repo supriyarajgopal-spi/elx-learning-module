@@ -522,6 +522,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Status';
   $handler->display->display_options['fields']['status']['type'] = 'custom';
   $handler->display->display_options['fields']['status']['type_custom_true'] = 'Active';
   $handler->display->display_options['fields']['status']['type_custom_false'] = 'Inactive';
@@ -584,6 +585,7 @@ function elx_users_feature_views_default_views() {
     t('Account/Field Executive'),
     t('Data export'),
     t('Hire Date'),
+    t('Status'),
   );
   $export['user_export'] = $view;
 

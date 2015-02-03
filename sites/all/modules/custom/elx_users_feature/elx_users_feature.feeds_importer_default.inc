@@ -116,36 +116,41 @@ function elx_users_feature_feeds_importer_default() {
             'unique' => FALSE,
           ),
           13 => array(
+            'source' => 'Learner Group',
+            'target' => 'roles_list',
+            'unique' => FALSE,
+          ),
+          14 => array(
             'source' => 'Hire Date',
             'target' => 'field_hire_date:start',
             'unique' => FALSE,
           ),
-          14 => array(
+          15 => array(
             'source' => 'Counter Manager',
             'target' => 'field_counter_manager',
             'unique' => FALSE,
           ),
-          15 => array(
+          16 => array(
             'source' => 'Education Manager/Executive',
             'target' => 'field_education_manager_executiv',
             'unique' => FALSE,
           ),
-          16 => array(
+          17 => array(
             'source' => ' Account/Field Executive',
             'target' => 'field_account_field_executive',
             'unique' => FALSE,
           ),
-          17 => array(
+          18 => array(
             'source' => 'Status',
             'target' => 'Temporary target 1',
             'unique' => FALSE,
           ),
-          18 => array(
+          19 => array(
             'source' => 'Status',
             'target' => 'status',
             'unique' => FALSE,
           ),
-          19 => array(
+          20 => array(
             'source' => 'Language',
             'target' => 'language',
             'unique' => FALSE,

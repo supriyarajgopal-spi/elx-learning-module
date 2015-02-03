@@ -31,7 +31,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -304,6 +304,26 @@ function elx_users_feature_views_default_views() {
     8 => 0,
     9 => 0,
   );
+  /* Filter criterion: User: Region (field_region_list) */
+  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -312,40 +332,41 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = 'Email';
   /* Field: User: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = 'First Name';
   $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
   /* Field: User: Last name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = 'Last Name';
   $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
   /* Field: User: Employer number */
   $handler->display->display_options['fields']['field_employer_number']['id'] = 'field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['table'] = 'field_data_field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['field'] = 'field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['label'] = 'Employer ID';
   $handler->display->display_options['fields']['field_employer_number']['exclude'] = TRUE;
   /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['label'] = 'Learner Group';
+  /* Field: User: Account name */
+  $handler->display->display_options['fields']['field_account_name']['id'] = 'field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['label'] = 'Account Name';
+  $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
   /* Field: User: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
   $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['exclude'] = TRUE;
-  /* Field: User: Account name */
-  $handler->display->display_options['fields']['field_account_name']['id'] = 'field_account_name';
-  $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
-  $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
-  $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
-  /* Field: User: Account/field executive */
-  $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['exclude'] = TRUE;
   /* Field: User: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
@@ -362,35 +383,39 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
-  /* Field: User: Counter manager */
-  $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
-  $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
-  $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
-  $handler->display->display_options['fields']['field_counter_manager']['exclude'] = TRUE;
-  /* Field: User: Education manager/executive */
-  $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
-  $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
-  $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
+  /* Field: User: Market name */
+  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['label'] = 'Market Name';
   /* Field: User: Hire date */
   $handler->display->display_options['fields']['field_hire_date']['id'] = 'field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['table'] = 'field_data_field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['field'] = 'field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: User: Job title */
-  $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['exclude'] = TRUE;
-  /* Field: User: Market name */
-  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
+  /* Field: User: Counter manager */
+  $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['label'] = 'Counter Manager';
+  $handler->display->display_options['fields']['field_counter_manager']['exclude'] = TRUE;
+  /* Field: User: Education manager/executive */
+  $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['label'] = 'Education Manager/Executive';
+  /* Field: User: Account/field executive */
+  $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['label'] = 'Account/Field Executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['exclude'] = TRUE;
   /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
@@ -407,41 +432,44 @@ function elx_users_feature_views_default_views() {
 
   /* Display: Data export */
   $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = 'Email';
   /* Field: User: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = 'First Name';
   /* Field: User: Last name */
   $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
   $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = 'Last Name';
   /* Field: User: Employer number */
   $handler->display->display_options['fields']['field_employer_number']['id'] = 'field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['table'] = 'field_data_field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['field'] = 'field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['label'] = 'Employer ID';
   /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  /* Field: User: Door */
-  $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
-  $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
-  $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
+  $handler->display->display_options['fields']['rid']['label'] = 'Learner Group';
   /* Field: User: Account name */
   $handler->display->display_options['fields']['field_account_name']['id'] = 'field_account_name';
   $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
   $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
-  /* Field: User: Account/field executive */
-  $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_name']['label'] = 'Account Name';
+  /* Field: User: Door */
+  $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
+  $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
+  $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
   /* Field: User: City */
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
@@ -458,33 +486,38 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
-  /* Field: User: Counter manager */
-  $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
-  $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
-  $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
-  /* Field: User: Education manager/executive */
-  $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
-  $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
-  $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
+  /* Field: User: Market name */
+  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['label'] = 'Market Name';
   /* Field: User: Hire date */
   $handler->display->display_options['fields']['field_hire_date']['id'] = 'field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['table'] = 'field_data_field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['field'] = 'field_hire_date';
+  $handler->display->display_options['fields']['field_hire_date']['label'] = 'Hire Date';
   $handler->display->display_options['fields']['field_hire_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: User: Job title */
-  $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
-  /* Field: User: Market name */
-  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
+  /* Field: User: Counter manager */
+  $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['label'] = 'Counter Manager';
+  /* Field: User: Education manager/executive */
+  $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['label'] = 'Education Manager/Executive';
+  /* Field: User: Account/field executive */
+  $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['label'] = 'Account/Field Executive';
   /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
@@ -539,7 +572,18 @@ function elx_users_feature_views_default_views() {
     t('Inactive'),
     t('Language'),
     t('Page'),
+    t('Email'),
+    t('First Name'),
+    t('Last Name'),
+    t('Employer ID'),
+    t('Learner Group'),
+    t('Account Name'),
+    t('Market Name'),
+    t('Counter Manager'),
+    t('Education Manager/Executive'),
+    t('Account/Field Executive'),
     t('Data export'),
+    t('Hire Date'),
   );
   $export['user_export'] = $view;
 

@@ -233,19 +233,19 @@ Regions and Market Names :
 
 |Asia Pacific|
 |-------------------------|
-|Australia             ||AU|
-|China                 ||CN|
-|Hong Kong             ||HK|
-|Japan                 ||JP|
-|Korea                 ||KR|
-|Malaysia              ||MY|
-|New Zealand           ||NZ|
-|Singapore             ||SG|
-|Taiwan                ||TW|
-|Thailand              ||TH|
-|Vietnam               ||VN|
-|Indonesia             ||ID|
-|Philippines           ||PP|
+|Australia             |AU|
+|China                 |CN|
+|Hong Kong             |HK|
+|Japan                 |JP|
+|Korea                 |KR|
+|Malaysia              |MY|
+|New Zealand           |NZ|
+|Singapore             |SG|
+|Taiwan                |TW|
+|Thailand              |TH|
+|Vietnam               |VN|
+|Indonesia             |ID|
+|Philippines           |PP|
 
 |North America|
 |-------------------------|
@@ -270,7 +270,7 @@ Regions and Market Names :
 |Nordic                        |DK|
 |Finland                       |FI|
 |Adriatic                      |AD|
-|Poland-Lituania-Estonia-Latvia|PL|
+|Poland, Lituania, Estonia, Latvia|PL|
 |Russia                        |RU|
 |South Africa                  |ZA|
 |Spain                         |SP|
@@ -285,28 +285,32 @@ Regions and Market Names :
 
 |Latin America|
 |-------------------------|
-|Southern Cone-Chile-Peru-Argentina |SC|
-|Mexico                             |MX|
-|Venezuela                          |VE|
-|Colombia-Ecuador-Central America   |CECA|
+|Southern Cone - Chile, Peru, Argentina |SC|
+|Mexico                                 |MX|
+|Venezuela                              |VE|
+|CECA MARKETS - Colombia, Ecuador and Central America   |CECA|
 
-|Travel Retail Americas                              |
+|Travel Retail Americas   |
 |-------------------------|
-|Travel Retail Americas-South-Central America-Mexico |TRAM-SCM|
-|Travel Retail Americas-Caribbean-Cancun             |TRAM-CC|
-|Travel Retail Americas-North America                |TRAM-NA|
+|TR Americas, South, Central America & Mexico |TRAM-SCM|
+|TR Americas, Caribbean & Cancun              |TRAM-CC|
+|TR Americas, North America                   |TRAM-NA|
 
 |Travel Retail Asia Pacific                 |
 |-------------------------------------------|
-|Travel Retail Hong Kong-Macau-Taiwan |TR-HK|
-|Travel Retail China                  |TR-CN|
-|Travel Retail Southeast Asia-Oceania |TR-SEA|
-|Travel Retail Japan-Middle Pacific   |TR-JP|
-|Travel Retail Korea                  |TR-KR|
+|TR Hong Kong, Taiwan, Macau |TR-HK|
+|TR China                    |TR-CN|
+|TR Singapore                |TR-SG|
+|TR Thailand                 |TR-TH|
+|TR Malaysia                 |TR-MY|
+|TR Japan                    |TR-JP|
+|TR Mid-Pac                  |TR-MP|
+|TR Korea                    |TR-KR|
+|TR Oceania                  |TR-SEA|
 
 |Travel Retail Europe/Middle East/Africa|
 |---------------------------------------|
-|Travel Retail Europe-Middle East-Africa|TR-EMA|
+|TR Europe, Mid-East, Africa|TR-EMA|
 
 The following fields will define our User model imported from EL Excel spreadsheets :
 

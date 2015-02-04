@@ -284,10 +284,32 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'Email';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
   /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['group'] = 1;
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roles';
@@ -308,12 +330,33 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['group'] = 1;
   $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Market name (field_market_name) */
+  $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
+  $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator_id'] = 'field_market_name_value_op';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['label'] = 'Market name';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator'] = 'field_market_name_value_op';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['identifier'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -572,8 +615,8 @@ function elx_users_feature_views_default_views() {
     t('Active'),
     t('Inactive'),
     t('Language'),
-    t('Page'),
     t('Email'),
+    t('Page'),
     t('First Name'),
     t('Last Name'),
     t('Employer ID'),

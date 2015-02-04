@@ -231,8 +231,8 @@ The rest of the above Users of the system will is defined in Daniels documentati
 
 Regions and Market Names :
 
-|Asia Pacific||
-|------------------------||
+|Asia Pacific|
+|-------------------------|
 |Australia             |AU|
 |China                 |CN|
 |Hong Kong             |HK|
@@ -247,15 +247,15 @@ Regions and Market Names :
 |Indonesia             |ID|
 |Philippines           |PP|
 
-|North America||
-|------------------------||
+|North America|
+|-------------------------|
 |United States         |US|
 |Canada                |CA|
 |Puerto Rico           |PR|
 |Fashion Group         |FG|
 
-|Europe/Middle East/Africa||
-|-------------------------||
+|Europe/Middle East/Africa|
+|-------------------------|
 |Austria                       |AT|
 |Benelux                       |BE|
 |Netherlands                   |NL|
@@ -283,21 +283,21 @@ Regions and Market Names :
 |Middle East                   |AE|
 |Portugal                      |PT|
 
-|Latin America||
-|-------------------------||
+|Latin America|
+|-------------------------|
 |Southern Cone - Chile, Peru, Argentina |SC|
 |Mexico                                 |MX|
 |Venezuela                              |VE|
 |CECA MARKETS - Colombia, Ecuador and Central America   |CECA|
 
-|Travel Retail Americas   ||
-|-------------------------||
+|Travel Retail Americas   |
+|-------------------------|
 |TR Americas, South, Central America & Mexico |TRAM-SCM|
 |TR Americas, Caribbean & Cancun              |TRAM-CC|
 |TR Americas, North America                   |TRAM-NA|
 
-|Travel Retail Asia Pacific                 ||
-|-------------------------------------------||
+|Travel Retail Asia Pacific                 |
+|-------------------------------------------|
 |TR Hong Kong, Taiwan, Macau |TR-HK|
 |TR China                    |TR-CN|
 |TR Singapore                |TR-SG|
@@ -308,8 +308,8 @@ Regions and Market Names :
 |TR Korea                    |TR-KR|
 |TR Oceania                  |TR-SEA|
 
-|Travel Retail Europe/Middle East/Africa||
-|---------------------------------------||
+|Travel Retail Europe/Middle East/Africa|
+|---------------------------------------|
 |TR Europe, Mid-East, Africa|TR-EMA|
 
 The following fields will define our User model imported from EL Excel spreadsheets :

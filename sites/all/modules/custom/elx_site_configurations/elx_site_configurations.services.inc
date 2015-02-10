@@ -108,13 +108,7 @@ function elx_site_configurations_default_services_endpoint() {
   $endpoint->name = 'rest';
   $endpoint->server = 'rest_server';
   $endpoint->path = 'rest';
-  $endpoint->authentication = array(
-    'services_oauth' => array(
-      'oauth_context' => 'drupal',
-      'authorization' => 'authorization',
-      'credentials' => 'token',
-    ),
-  );
+  $endpoint->authentication = array();
   $endpoint->server_settings = array(
     'formatters' => array(
       'json' => TRUE,

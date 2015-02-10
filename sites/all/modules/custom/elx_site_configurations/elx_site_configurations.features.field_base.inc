@@ -653,6 +653,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_hot_spot_collection'
+  $field_bases['field_hot_spot_collection'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_spot_collection',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_hot_spot_image'
   $field_bases['field_hot_spot_image'] = array(
     'active' => 1,
@@ -660,6 +681,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hot_spot_image',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -684,6 +708,129 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_hot_spot_text'
+  $field_bases['field_hot_spot_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_spot_text',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_hot_spot_x_cordinate'
+  $field_bases['field_hot_spot_x_cordinate'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_spot_x_cordinate',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'posA' => 'A',
+        'posB' => 'B',
+        'posC' => 'C',
+        'posD' => 'D',
+        'posE' => 'E',
+        'posF' => 'F',
+        'posG' => 'G',
+        'posH' => 'H',
+        'posI' => 'I',
+        'posJ' => 'J',
+        'posK' => 'K',
+        'posL' => 'L',
+        'posM' => 'M',
+        'posN' => 'N',
+        'posO' => 'O',
+        'posP' => 'P',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_hot_spot_y_cordinate'
+  $field_bases['field_hot_spot_y_cordinate'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_spot_y_cordinate',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'pos1' => 1,
+        'pos2' => 2,
+        'pos3' => 3,
+        'pos4' => 4,
+        'pos5' => 5,
+        'pos6' => 6,
+        'pos7' => 7,
+        'pos8' => 8,
+        'pos9' => 9,
+        'pos10' => 10,
+        'pos11' => 11,
+        'pos12' => 12,
+        'pos13' => 13,
+        'pos14' => 14,
+        'pos15' => 15,
+        'pos16' => 16,
+        'pos17' => 17,
+        'pos18' => 18,
+        'pos19' => 19,
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_if_she_asks_share'
@@ -879,6 +1026,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_learning_category',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -967,6 +1117,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_learning_template',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -979,6 +1132,7 @@ function elx_site_configurations_field_default_field_bases() {
       'allowed_values' => array(
         'generic' => 'Generic',
         'popquiz' => 'Pop Quiz',
+        'survey' => 'Survey',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
@@ -1362,42 +1516,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_product_category'
-  $field_bases['field_product_category'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_product_category',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'product_category',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_product_image'

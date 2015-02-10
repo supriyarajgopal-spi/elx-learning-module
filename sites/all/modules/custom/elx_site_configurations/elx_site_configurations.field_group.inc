@@ -108,7 +108,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Perfect partners',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_perfect_partners',
       1 => 'field_perfect_partners_text',

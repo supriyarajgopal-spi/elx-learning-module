@@ -35,7 +35,7 @@ function elx_site_configurations_taxonomy_default_vocabularies() {
       ),
     ),
     'learning_category' => array(
-      'name' => 'Learning Category',
+      'name' => 'Category',
       'machine_name' => 'learning_category',
       'description' => '',
       'hierarchy' => 0,
@@ -43,31 +43,6 @@ function elx_site_configurations_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 4,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'product_category' => array(
-      'name' => 'Product Category',
-      'machine_name' => 'product_category',
-      'description' => '',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

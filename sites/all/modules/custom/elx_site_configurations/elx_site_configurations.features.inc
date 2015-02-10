@@ -154,6 +154,11 @@ function elx_site_configurations_paragraphs_info() {
       'bundle' => 'answers',
       'locked' => '1',
     ),
+    'hot_spot' => array(
+      'name' => 'Hot spot',
+      'bundle' => 'hot_spot',
+      'locked' => '1',
+    ),
     'list_item' => array(
       'name' => 'List item collection',
       'bundle' => 'list_item',

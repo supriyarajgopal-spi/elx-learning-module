@@ -2,8 +2,8 @@
   position: relative;
 }
 .node-type-hot-spots .field-name-field-hot-spot-image #overlay {
-  background: url(/sites/all/themes/elx/images/test-overlay.png) no-repeat top left;
-  height: 400px;
-  width: 300px;
+  background: url(/sites/all/themes/elx/images/hot-spot-overlay.png) no-repeat top left;
+  height: 665px;
+  width: 575px;
   position: absolute;
 }

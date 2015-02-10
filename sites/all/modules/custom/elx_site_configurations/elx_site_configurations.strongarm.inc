@@ -1163,7 +1163,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_field_product_image';
   $strongarm->value = array(
-    'product_detail_retina' => 'product_detail_retina',
+    'thumbnail' => 'thumbnail',
   );
   $export['imageinfo_cache_field_product_image'] = $strongarm;
 

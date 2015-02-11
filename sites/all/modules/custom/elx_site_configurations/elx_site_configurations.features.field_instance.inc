@@ -3456,7 +3456,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3494,12 +3494,9 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3543,7 +3540,7 @@ function elx_site_configurations_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3559,14 +3556,23 @@ function elx_site_configurations_field_default_field_instances() {
     'settings' => array(
       'add_mode' => 'select',
       'allowed_bundles' => array(
-        'answers' => 0,
-        'list_item' => 0,
-        'match_game_collection' => 0,
-        'multiple_choice_collection' => 0,
-        'questions' => 0,
+        'answers' => -1,
+        'hot_spot' => -1,
+        'list_item' => -1,
+        'match_game_collection' => -1,
+        'multiple_choice_collection' => -1,
+        'questions' => -1,
         'reveal_collection' => 'reveal_collection',
       ),
-      'bundle_weights' => array(),
+      'bundle_weights' => array(
+        'answers' => 2,
+        'hot_spot' => 3,
+        'list_item' => 4,
+        'match_game_collection' => 5,
+        'multiple_choice_collection' => 6,
+        'questions' => 7,
+        'reveal_collection' => 8,
+      ),
       'default_edit_mode' => 'open',
       'entity_translation_sync' => FALSE,
       'title' => 'reveal item',
@@ -3594,7 +3600,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3632,9 +3638,14 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5018,6 +5029,111 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_hero'
+  $field_instances['paragraphs_item-reveal_collection-field_reveal_hero'] = array(
+    'bundle' => 'reveal_collection',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'reveal_hero',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_reveal_hero',
+    'label' => 'Reveal hero',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg mp4 mov',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '765x200',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_text'
+  $field_instances['paragraphs_item-reveal_collection-field_reveal_text'] = array(
+    'bundle' => 'reveal_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_reveal_text',
+    'label' => 'Reveal text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_thumbnail'
   $field_instances['paragraphs_item-reveal_collection-field_reveal_thumbnail'] = array(
     'bundle' => 'reveal_collection',
@@ -5029,7 +5145,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'large',
+          'image_style' => 'reveal_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -5149,6 +5265,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Question video');
   t('Related products');
   t('Reveal collection');
+  t('Reveal hero');
+  t('Reveal text');
   t('Reveal thumbnail');
   t('Season');
   t('Story');

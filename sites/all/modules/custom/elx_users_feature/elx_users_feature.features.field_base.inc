@@ -721,7 +721,7 @@ function elx_users_feature_field_default_field_bases() {
         'CA' => 'Canada',
         'PR' => 'Puerto Rico',
         'AT' => 'Austria',
-        'BE' => 'Netherlands',
+        'NL' => 'Netherlands',
         'CS' => 'Czech Republic',
         'FR' => 'France',
         'GM' => 'Germany',

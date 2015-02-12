@@ -1,0 +1,5 @@
+
+/* Allow themers style the "check all" / "uncheck all" actions. */
+.checkall-action a {
+  font-size: .85em;
+}

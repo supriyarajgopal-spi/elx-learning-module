@@ -64,7 +64,7 @@
  * - skip original values access: A flag specifying whether skipping access
  *   control when editing original values for this entity. Defaults to FALSE.
  * - bundle callback: A callback to check whether the passed bundle has entity
- *   translation enabled. If empty all bundles are supposed to be enabled.
+ *   translation enabled. Defaults to TRUE for all bundles.
  * - default settings: The defaults to be applied to settings when an explicit
  *   choice is missing.
  */

@@ -1472,6 +1472,10 @@ class EntityTranslationDefaultHandler implements EntityTranslationHandlerInterfa
    * @see EntityTranslationHandlerInterface::entityFormLanguageWidgetSubmit()
    */
   public function entityFormLanguageWidgetSubmit($form, &$form_state) {
+    if (!entity_translation_enabled($this->entityType, $this->bundle)) {
+      return;
+    }
+
     $this->updateFormLanguage($form_state);
     $form_langcode = $this->getFormLanguage();
 

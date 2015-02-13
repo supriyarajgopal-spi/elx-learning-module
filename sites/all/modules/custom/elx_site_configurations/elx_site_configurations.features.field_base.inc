@@ -972,12 +972,15 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'translated_entityreference',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
+        ),
+        'filter' => array(
+          'language' => 1,
         ),
         'sort' => array(
           'type' => 'none',
@@ -1065,6 +1068,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_learning_objects',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -1082,12 +1088,15 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'translated_entityreference',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
+        ),
+        'filter' => array(
+          'language' => 1,
         ),
         'sort' => array(
           'type' => 'none',
@@ -1478,6 +1487,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_perfect_partners',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'node' => array(
         'columns' => array(
@@ -1495,12 +1507,15 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'translated_entityreference',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
+        ),
+        'filter' => array(
+          'language' => 1,
         ),
         'sort' => array(
           'type' => 'none',
@@ -1880,12 +1895,15 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'translated_entityreference',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
+        ),
+        'filter' => array(
+          'language' => 1,
         ),
         'sort' => array(
           'type' => 'none',

@@ -85,7 +85,7 @@
         return $(this);
       };
       var options = {'label': '<b>Select all</b>',};
-      $('#product-detail-node-form #edit-field-markets-und, #content-object-node-form #edit-field-markets-und').drupalCheckAll(options);
+      $('#product-detail-node-form div[id^="edit-field-markets-"], #content-object-node-form div[id^="edit-field-markets-"]').drupalCheckAll(options);
     }
   }
 })(jQuery, Drupal, this, this.document);

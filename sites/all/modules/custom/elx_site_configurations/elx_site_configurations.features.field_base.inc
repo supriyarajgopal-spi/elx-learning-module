@@ -710,6 +710,35 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_hot_spot_instructions'
+  $field_bases['field_hot_spot_instructions'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hot_spot_instructions',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_hot_spot_text'
   $field_bases['field_hot_spot_text'] = array(
     'active' => 1,

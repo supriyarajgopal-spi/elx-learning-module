@@ -1,8 +1,28 @@
 <?php
 
-function tng_process_entity () {
-
-}
+// some global strings needed here and there
+$bg_outside_padding = 'background-brand-primary-light outside-padding';
+$bg_inside_padding = 'background-brand-offwhite inside-padding';
+$bg_newplayer_background = 'newplayer-background';
+$h3_sans_head = 'h3 sans-head';
+$h4_sans_normal = 'h4 sans-normal';
+$h3_sans_head_collapse = 'h3 sans-head collapse-toggle';
+$h3_headline = 'h3 headline';
+$h4_sans_normal_collapse = 'h4 sans-normal collapse-element';
+$col_sm8 = 'col-sm-8 sans-small';
+$col_sm4_resp = 'col-sm-4 img-responsive';
+$h5_sans = 'h5 sans-head-sub col-sm-12';
+$btn_fact_sheet = 'btn btn-info btn-sm';
+$btn_favorite = 'btn btn-primary btn-sm';
+$close_html = '] },';
+$close_perfect = '] } ] },';
+$column_close = '] } ] } ] },' ;
+$close_product = '] } ] } ] } ] } ]';
+$col_sm4 = 'col-sm-4';
+$switch_collapse = 'isCollapsed = !isCollapsed';
+$expand = 'np-expandable';
+$data_collapse = 'isCollapsed';
+$collapse_element = 'collapse-element';
 
 /**
  * @param $date - given a date, find the difference between that data and today's date.
@@ -533,7 +553,7 @@ function tng_npColumn_maker($class = NULL,  $columns = NULL, $open_component = F
  * @param $alt - optional alt text for image
  * @return null|string
  */
-function tng_npImage_maker($src = NULL, $class = NULL, $alt = NULL) {
+function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL) {
   try {
     //dpm('beginning npImage code');
     $image = '';
@@ -554,6 +574,41 @@ function tng_npImage_maker($src = NULL, $class = NULL, $alt = NULL) {
   }
 
 }
+
+function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL) {
+  try {
+    //dpm('beginning of npHotspot code');
+    $hotspot = '';
+    $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"' ;
+    $hotspot = $hotspot . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $hotspot = $hotspot . ',' .   '"class"' . ':' . '"' . $class . '"';
+    $hotspot = $hotspot . ',' .   '"req"'   . ':' . '"' . '["' . $req .  '"' . '],';
+    $hotspot = $hotspot . ',' .   '"hotspotButtons"' . ':' . '[' ;
+    return $hotspot;
+  }
+
+  catch (exception $e) {
+    dpm($e);
+  }
+}
+
+function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL) {
+  try {
+    //dpm('beginning of npHotspot_button code');
+    $hotspotbutton = '';
+    $hotspotbutton = $hotspotbutton . '{' ;
+    $hotspotbutton = $hotspotbutton . ',' .   '"class"' . ':' . '"' . $class . '"';
+    $hotspotbutton = $hotspotbutton . ',' .   '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotbutton = $hotspotbutton . ',' .   '"image"' . ':' . '"' . $image . '"';
+    $hotspotbutton = $hotspotbutton . '},' ;
+    return $hotspotbutton;
+  }
+
+  catch (exception $e) {
+    dpm($e);
+  }
+}
+
 
 /**
  * @return string - when we create manifest objects we need to finish things with proper entity closing } and ]
@@ -671,27 +726,28 @@ return $perfect_fields;
  */
 function process_product($product_values, $language, $nid) {
 
-  $bg_outside_padding = 'background-brand-primary-light outside-padding';
-  $bg_inside_padding = 'background-brand-offwhite inside-padding';
-  $bg_products_background = 'products-background';
-  $h3_sans_head = 'h3 sans-head';
-  $h4_sans_normal = 'h4 sans-normal';
-  $h3_sans_head_collapse = 'h3 sans-head collapse-toggle';
-  $h4_sans_normal_collapse = 'h4 sans-normal collapse-element';
-  $col_sm8 = 'col-sm-8 sans-small';
-  $col_sm4_resp = 'col-sm-4 img-responsive';
-  $h5_sans = 'h5 sans-head-sub col-sm-12';
-  $btn_fact_sheet = 'btn btn-info btn-sm';
-  $btn_favorite = 'btn btn-primary btn-sm';
-  $close_html = '] },';
-  $close_perfect = '] } ] },';
-  $column_close = '] } ] } ] },' ;
-  $close_product = '] } ] } ] } ] } ]';
-  $col_sm4 = 'col-sm-4';
-  $switch_collapse = 'isCollapsed = !isCollapsed';
-  $expand = 'np-expandable';
-  $data_collapse = 'isCollapsed';
-  $collapse_element = 'collapse-element';
+  global $bg_outside_padding;// = 'background-brand-primary-light outside-padding';
+  global $bg_inside_padding;//  = 'background-brand-offwhite inside-padding';
+  global $bg_newplayer_background;//  = 'newplayer-background';
+  global $h3_sans_head;//  = 'h3 sans-head';
+  global $h4_sans_normal;//  = 'h4 sans-normal';
+  global $h3_sans_head_collapse;//  = 'h3 sans-head collapse-toggle';
+  global $h3_headline;// = 'h3 headline';
+  global $h4_sans_normal_collapse;//  = 'h4 sans-normal collapse-element';
+  global $col_sm8;//  = 'col-sm-8 sans-small';
+  global $col_sm4_resp;//  = 'col-sm-4 img-responsive';
+  global $h5_sans;//  = 'h5 sans-head-sub col-sm-12';
+  global $btn_fact_sheet;//  = 'btn btn-info btn-sm';
+  global $btn_favorite;//  = 'btn btn-primary btn-sm';
+  global $close_html;//  = '] },';
+  global $close_perfect;//  = '] } ] },';
+  global $column_close;//  = '] } ] } ] },' ;
+  global $close_product;//  = '] } ] } ] } ] } ]';
+  global $col_sm4;//  = 'col-sm-4';
+  global $switch_collapse;//  = 'isCollapsed = !isCollapsed';
+  global $expand;//  = 'np-expandable';
+  global $data_collapse;//  = 'isCollapsed';
+  global $collapse_element;//  = 'collapse-element';
 
   //dpm('product values');
   //dpm($product_values);
@@ -713,16 +769,16 @@ function process_product($product_values, $language, $nid) {
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Product Manifest-' . $title;
+    $manifest_title = 'Product-Manifest-' . $title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
-    $products_background = tng_npHTML_basic_maker($bg_products_background, '','','','','',FALSE);
+    $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','',FALSE);
     $background_padding = tng_npHTML_basic_maker('',$bg_outside_padding,'','','','',TRUE);
     $title_chunk = tng_npHTML_basic_maker('','h1','','','', $title, FALSE);
     $subtitle = $product_values['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '','','',$subtitle, FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
     $truth = tng_convert_drupal_to_mean_filename($product_values['field_product_image']);
-    $image_chunk = tng_npImage_maker($truth, 'topImage img-responsive', $title );
+    $image_chunk = tng_npImage_maker('', $truth, 'topImage img-responsive', $title );
     $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', TRUE);
 
     $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '','','', 'Why there’s only 1', TRUE);
@@ -744,7 +800,7 @@ function process_product($product_values, $language, $nid) {
     $perfect_plus_chunk = tng_npHTML_basic_maker('', $collapse_element, '', '', $data_collapse, '', TRUE);
     $more_column = tng_npColumn_maker('row', '2', TRUE);
     $row_chunk = tng_npHTML_basic_maker('', 'row', '','','', '', TRUE);
-    $first_image_chunk = tng_npImage_maker($perfect_data[0], $col_sm4, $perfect_data[1] ) . ',';
+    $first_image_chunk = tng_npImage_maker('', $perfect_data[0], $col_sm4, $perfect_data[1] ) . ',';
     $disclaim_one_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[1], FALSE);
     $disclaim_two_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[2], FALSE);
     $disclaim_two_chunk = rtrim($disclaim_two_chunk, ", ");
@@ -753,7 +809,7 @@ function process_product($product_values, $language, $nid) {
 
     if (count($perfect_data) > 3) {
       //dpm('we will make 2 perfect partners');
-      $second_image_chunk = tng_npImage_maker($perfect_data[3], $col_sm4, $perfect_data[4] ) . ',';
+      $second_image_chunk = tng_npImage_maker('', $perfect_data[3], $col_sm4, $perfect_data[4] ) . ',';
       $disclaim_second_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[4], FALSE);
       $disclaim_last_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[5], FALSE);
       $disclaim_last_chunk = rtrim($disclaim_last_chunk, ", ");
@@ -785,7 +841,7 @@ function process_product($product_values, $language, $nid) {
     $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '','','SEE SIMILAR PRODUCTS:', FALSE);
 
     $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0]);
-    $similar_image_chunk = tng_npImage_maker($similar_image, $col_sm4_resp, $similar_data[1] ) . ',';
+    $similar_image_chunk = tng_npImage_maker('', $similar_image, $col_sm4_resp, $similar_data[1] ) . ',';
     $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[1], FALSE);
     $flexible_footer = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[2], FALSE);
     $flexible_footer = rtrim($flexible_footer, ", ");
@@ -797,7 +853,7 @@ function process_product($product_values, $language, $nid) {
     $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '','','','SUGGESTED FOR YOU', FALSE);
 
     $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0]);
-    $suggested_image_chunk = tng_npImage_maker($suggested_image, $col_sm4_resp, $suggested_data[1] ) . ',';
+    $suggested_image_chunk = tng_npImage_maker('', $suggested_image, $col_sm4_resp, $suggested_data[1] ) . ',';
     $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '','','', $suggested_data[1], FALSE);
     $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '','','',$suggested_data[2], FALSE);
     $suggested_footer_creation_date = rtrim($suggested_footer_creation_date,", ");
@@ -832,64 +888,79 @@ function process_product($product_values, $language, $nid) {
 }
 
 /**
- * @param $object_values
+ * @param $hotspot_values
  * @param $language
  * @param $nid
  * @return mixed
  */
-function process_hotspot($object_values, $language, $nid) {
+function process_hotspot($hotspot_values, $language, $nid) {
+
+  global $bg_outside_padding;// = 'background-brand-primary-light outside-padding';
+  global $bg_inside_padding;//  = 'background-brand-offwhite inside-padding';
+  global $bg_newplayer_background;//  = 'newplayer-background';
+  global $h3_sans_head;//  = 'h3 sans-head';
+  global $h4_sans_normal;//  = 'h4 sans-normal';
+  global $h3_sans_head_collapse;//  = 'h3 sans-head collapse-toggle';
+  global $h3_headline;// = 'h3 headline';
+  global $h4_sans_normal_collapse;//  = 'h4 sans-normal collapse-element';
+  global $col_sm8;//  = 'col-sm-8 sans-small';
+  global $col_sm4_resp;//  = 'col-sm-4 img-responsive';
+  global $h5_sans;//  = 'h5 sans-head-sub col-sm-12';
+  global $btn_fact_sheet;//  = 'btn btn-info btn-sm';
+  global $btn_favorite;//  = 'btn btn-primary btn-sm';
+  global $close_html;//  = '] },';
+  global $close_perfect;//  = '] } ] },';
+  global $column_close;//  = '] } ] } ] },' ;
+  global $close_product;//  = '] } ] } ] } ] } ]';
+  global $col_sm4;//  = 'col-sm-4';
+  global $switch_collapse;//  = 'isCollapsed = !isCollapsed';
+  global $expand;//  = 'np-expandable';
+  global $data_collapse;//  = 'isCollapsed';
+  global $collapse_element;//  = 'collapse-element';
+
   //dpm('**language**' . $language);
   //dpm($object_values);
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 3 fields, layout the page
   $min_product_fields = 1;
-  $max_product_fields = 3;
-  $num_fields = count($object_values);
+  $max_product_fields = 20;
+  $num_fields = count($hotspot_values);
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     // here we process the fields we find for our hot spot passed in the array of $object_values
     //  start by telling the processor how many fields we found
     //dpm('Hot Spot had ' . $num_fields . ' fields.');
-    $title = $object_values['title_field'];
+    $title = $hotspot_values['title_field'];
     //dpm('title : ' . $title);
-    $feature_chunk = tng_npFeature_maker($title, '["../../../assets/hts.css"]', '0.0.1');
+    $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Hot Spot Manifest - ' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'This manifest creates a hot spot page.');
+    $manifest_title = 'Hot-Spot-Manifest-' . $title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for hot spot page.');
+    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','',TRUE);
+    $truth = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image']);
+    $image_chunk = tng_npImage_maker('renutriv-background-image', $truth, 'img-responsive', $title );
+    $subtitle = $hotspot_values['field_subtitle'];
+    $subtitle_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','',$subtitle, FALSE);
+    $instructions = $hotspot_values['field_hot_spot_instructions'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','',$instructions, FALSE);
+
+    if ($hotspot_values['field_hot_spot_collection']) {
+      dpm('Found a hot spot collection to work on');
+      dpm($hotspot_values['field_hot_spot_collection']);
+    }
+    // paragraph bundle definition for hot spots are:
+    //field_hot_spot_x_cordinate
+    //field_hot_spot_y_cordinate
+    //field_hot_spot_text
+
+
     // for some reason, 'Welcome' is a magic title that allows the rest of the HTML pages to work.
     $page_chunk = tng_npPageStart_maker('Welcome', '', $title, 'true', 'true');
 
-    $whole_hotspot = $feature_chunk . $content_chunk . $page_chunk;
-    foreach ($object_values as $key=>$value) {
-      //dpm('**** data ****' . $key . ' : ' . $value);
-
-      if ($key == 'field_hot_spot_image') {
-        $truth = tng_convert_drupal_to_mean_filename($value);
-        $image_chunk = tng_npImage_maker($truth);
-        $whole_hotspot = $whole_hotspot . $image_chunk . ',';
-      } else {
-        // remove the 'field_' from the key to make our id
-        $fix_key = ucfirst(str_replace('field_', '', $key));
-        $chunk_name = 'hts' . $fix_key;
-        $fix_value = str_replace('"','\"',$value);
-        $html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
-        $whole_hotspot = $whole_hotspot . $html_chunk . ',';
-      }
-
-      //dpm("**hotspot**". $whole_hotspot);
-
-    }
-    // after looping the HTML or Image group, remove the final ','
-    $whole_hotspot = rtrim($whole_hotspot, ",");
-    $finish_page = tng_npPageCleanup();
-    $whole_hotspot = $whole_hotspot . $finish_page;
-
-    $finish_chunk = tng_npPageContentFeatureCleanup();
-    $whole_hotspot = $whole_hotspot . $finish_chunk;
-    //dpm('**** hotspot ****');
-    //dpm($whole_hotspot);
+    $whole_hotspot = $feature_chunk . $content_chunk . $hotspot_background . $image_chunk . $close_html. $subtitle_chunk;
+    $whole_hotspot = $whole_hotspot . $instructions_chunk;
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
@@ -1165,32 +1236,6 @@ function tng_convert_drupal_to_mean_filename($value) {
   return $remote_picture_name;
 }
 
-
-//function tng_convert_fid_to_style_path ($fid)
-//{
-//  if ($fid) {
-//    $file_id = file_load($fid);
-//    $uri = $file_id->uri;
-//    $style_path = image_style_url($image_style, $uri);
-//    if ($is_retina == 'retina') {
-//      $non_retina_path = image_style_url($non_retina_style, $uri);
-//      dpm('**non retina path**');
-//      dpm($non_retina_path);
-//      $image_style_path = array($style_path, $non_retina_path);
-//      dpm('**image path style**');
-//      dpm($image_style_path);
-//    } else {
-//      $image_style_path = array($style_path);
-//      dpm('**$image_style_path**');
-//      dpm($image_style_path);
-//    }
-//  } else {
-//    $image_style_path = '';
-//  }
-//return $image_style_path;
-//}
-
-
 function tng_paragraph_processor() {
 
 }
@@ -1257,19 +1302,24 @@ function tng_shadow_shadow_request_alter($entity) {
       if ($info['type'] == 'paragraphs') {
         // the outer node type is a 'field_paragraph_multiple_choice', so save this name for later pre-manifest creation.
         $save_field_name = $children_nodes_to_process[$i];
+        dpm('saved name');
+        dpm($save_field_name);
         $namevalue = '[ { ' ;
         // if we have a paragraphs type, use a wrapper for easier reference
         $paragraphs = $wrapper->$info['field_name']->value();
-        //dpm('paragraphs');
-        //dpm($paragraphs);
+        dpm('paragraphs');
+        //_wrapper_debug($paragraphs);
         $number_of_paragraphs = count($wrapper->$info['field_name']->value());
-        //dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
+        dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
         // using the paragraphs bundle type, we can get all the fields we need to account for in our data
         $paragraph_fields = field_info_instances('paragraphs_item', $paragraphs->bundle);
+        dpm('para fields');
         $number_of_paragraph_fields = count($paragraph_fields);
-        //dpm($paragraph_fields);
-        //dpm($number_of_paragraph_fields . $paragraph_fields['field_name'] . ' paragraph fields found.');
+        dpm($paragraph_fields);
+        dpm($number_of_paragraph_fields . $paragraph_fields['field_name'] . ' paragraph fields found.');
         $children_fields_to_process = element_children($paragraph_fields);
+        dpm('children fields');
+        dpm($children_fields_to_process);
         // explore each paragraph
         for ($p=0; $p < $number_of_paragraphs; $p++) {
           // and every field for each paragraph
@@ -1277,22 +1327,22 @@ function tng_shadow_shadow_request_alter($entity) {
             // inside the fields within a paragraph the language variable is not used, it's 'und'
             $language = 'und';
             $field_name = $children_fields_to_process[$pf];
-            //dpm('field_name : ' . $field_name);
+            dpm('field_name : ' . $field_name);
             $field_child_info = field_info_field($children_fields_to_process[$pf]);
-            //dpm($field_child_info);
+            dpm($field_child_info);
             $name = $field_child_info['field_name'];
-            //dpm('name : ' . $name);
+            dpm('name : ' . $name);
             // the answer node itself has no value we can use, so don't include it
             if ($name == 'field_paragraph_answer'){
             }
             elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
               $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value']. '",';
-              //dpm('value after name' . $namevalue);
+              dpm('value after name' . $namevalue);
             } else {
               $namevalue = $namevalue . '"' . $field_name . '" : ' . '"",';
             }
-            //$field_info = $paragraphs->{$name}[$language][0]['value'];
-            //dpm($field_info);
+            $field_info = $paragraphs->{$name}[$language][0]['value'];
+            dpm($field_info);
 
             $field_count = count($paragraphs->{$name}[$language]);
             // if there are no elements in the field don't process
@@ -1300,31 +1350,31 @@ function tng_shadow_shadow_request_alter($entity) {
               continue;
             } else {
               // typical question
-              //dpm($field_count .  ' field(s) sets found for ' . $paragraphs->{$name}[$language][0]['value']);
+              dpm($field_count .  ' field(s) sets found for ' . $paragraphs->{$name}[$language][0]['value']);
               if (($field_count == 1) && (isset($paragraphs->{$name}[$language][0]['value']))) {
-                //dpm('name : '. $name . ' value : ' . $paragraphs->{$name}[$language][0]['value']);
+                dpm('name : '. $name . ' value : ' . $paragraphs->{$name}[$language][0]['value']);
               } else {
                 // typically answers
                 for ($f=0; $f < $field_count; $f++) {
                   $entity = paragraphs_item_load($paragraphs->{$name}[$language][$f]['value']);
-                  //dpm('**entity**');
-                  //dpm($entity);
+                  dpm('**entity**');
+                  dpm($entity);
                   $para_inst = field_info_instances('paragraphs_item', $entity->bundle);
-                  //dpm($para_inst);
+                  dpm($para_inst);
                   $sub_children = element_children($para_inst);
                   foreach ($sub_children as $key=>$value) {
-                    //dpm('***key***');
-                    //dpm($key);
-                    //dpm('***value***');
-                    //dpm($value);
+                    dpm('***key***');
+                    dpm($key);
+                    dpm('***value***');
+                    dpm($value);
                     // if the value for a field is set, we will output it (and skip blank fields)
                     if (isset($entity->{$value}[$language][0]['value'])) {
-                      //dpm($value);
-                      //dpm($entity->{$value}[$language][0]['value']);
+                      dpm($value);
+                      dpm($entity->{$value}[$language][0]['value']);
                       $namevalue = $namevalue . '"' . $value . '":"' . $entity->{$value}[$language][0]['value'] . '",';
                     }
                     $info = field_info_field($sub_children[$key]);
-                    //dpm($info);
+                    dpm($info);
                     // expect 'file' or 'image' here
                     $field_name = $value;
                     if ($info['type'] == 'image') {
@@ -1348,7 +1398,7 @@ function tng_shadow_shadow_request_alter($entity) {
                         $terms = taxonomy_term_load_multiple($tids);
                         foreach ($terms as $term) {
                           $name = $term->name;
-                          //dpm($name);
+                          dpm($name);
                         }
                       }
                     }

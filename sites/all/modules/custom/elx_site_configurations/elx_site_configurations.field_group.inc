@@ -71,6 +71,34 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_market|node|content_object|form';
+  $field_group->group_name = 'group_market';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'content_object';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Markets',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_markets',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Markets',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-market field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_market|node|content_object|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_middle|paragraphs_item|match_game_collection|form';
   $field_group->group_name = 'group_middle';
   $field_group->entity_type = 'paragraphs_item';
@@ -124,6 +152,34 @@ function elx_site_configurations_field_group_info() {
     ),
   );
   $export['group_partners|node|product_detail|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_product_markets|node|product_detail|form';
+  $field_group->group_name = 'group_product_markets';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'product_detail';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Markets',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_markets',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Markets',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-product-markets field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_product_markets|node|product_detail|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

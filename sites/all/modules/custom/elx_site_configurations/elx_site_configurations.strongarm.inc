@@ -1163,7 +1163,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_field_product_image';
   $strongarm->value = array(
-    'thumbnail' => 'thumbnail',
+    'teaser_thumbnail' => 'teaser_thumbnail',
   );
   $export['imageinfo_cache_field_product_image'] = $strongarm;
 
@@ -1259,7 +1259,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_admin_version';
-  $strongarm->value = '';
+  $strongarm->value = '1.5';
   $export['jquery_update_jquery_admin_version'] = $strongarm;
 
   $strongarm = new stdClass();

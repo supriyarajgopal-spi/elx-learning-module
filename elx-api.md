@@ -668,8 +668,8 @@ The following country codes are the ones that Drupal will use:
 
 |Country Codes  |Names|
 |:--------------|-|
-|AC|	Ascension Island|
-|AD|	Andorra|
+|AC|Ascension Island|
+|AD|Andorra|
 |AE|United Arab Emirates|
 |AF|Afghanistan|
 |AG|Antigua and Barbuda|
@@ -926,5 +926,4 @@ The following country codes are the ones that Drupal will use:
 |ZA|South Africa|
 |ZM|Zambia|
 |ZW|Zimbabwe|
-|
 

@@ -96,7 +96,7 @@ function tng_manifest_extractor ($targetid) {
     //dpm($learning_object_manifest);
     // manifests are not language sensitive, so we are ok with using 'und' here (we write them after all)
     $results = $learning_object_manifest->body['und'][0]['value'];
-    //dpm($results);
+    dpm($results);
     return $results;
   }
   catch (exception $e) {
@@ -114,7 +114,7 @@ function tng_manifest_extractor ($targetid) {
  *
  * tng_npFeature_maker - given the required parameter $id, build a valid npFeature code chunk
  */
-function tng_npFeature_maker($id, $req = NULL, $version = NULL, $timestamp = NULL) {
+function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $timestamp = NULL) {
   try {
     //dpm('beginning npFeature code');
     if (isset($id)) {
@@ -133,6 +133,7 @@ function tng_npFeature_maker($id, $req = NULL, $version = NULL, $timestamp = NUL
       $feature = $feature . '"type"' . ':' . '"npFeature"' ;
       $feature = $feature . ',' . '"data"' . ': {' .  '"id"' . ': ' . '"' . $id . '"';
       //NewPlayerV2 will bomb if it finds something it can't load and that thing is required, like a missing css file, for now don't add it
+      $feature = $feature . ',' . '"class"' . ': ' . '"' . $class . '"';
       //$feature = $feature . ',' . '"req"' . ': ' . $req;
       $feature = $feature . ',' . '"version"' . ': '  . '"'. $version. '"';
       $feature = $feature . ',' . '"timestamp"' . ': '  . '"' . $time_string . '"';
@@ -406,13 +407,16 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  * @open_component FALSE = pass TRUE to leave the component nesting openn (say for background padding)
  */
-function tng_npHTML_basic_maker($class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $open_component = FALSE) {
+function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $open_component = FALSE) {
   try {
     //dpm('beginning npHTML code');
     $content = str_replace('"','\"',$content);
     $html = '';
     $html = $html . '{' . '"type"' . ':' . '"npHTML"' ;
     $html = $html . ',' . '"data"' . ': {' ;
+    if ($id) {
+      $html = $html .         '"id"' . ': ' . '"' . $id . '"' ;
+    }
     if ($class) {
       $html = $html .         '"class"' . ': ' . '"' . $class . '"' ;
     }
@@ -669,6 +673,7 @@ function process_product($product_values, $language, $nid) {
 
   $bg_outside_padding = 'background-brand-primary-light outside-padding';
   $bg_inside_padding = 'background-brand-offwhite inside-padding';
+  $bg_products_background = 'products-background';
   $h3_sans_head = 'h3 sans-head';
   $h4_sans_normal = 'h4 sans-normal';
   $h3_sans_head_collapse = 'h3 sans-head collapse-toggle';
@@ -703,24 +708,25 @@ function process_product($product_values, $language, $nid) {
     //dpm('Product had ' . $num_fields . ' fields.');
     $title = $product_values['title_field'];
     //dpm('title : ' . $title);
-    $feature_chunk = tng_npFeature_maker($title, '[]', '0.0.1');
+    $feature_chunk = tng_npFeature_maker('products', 'productTemplate', '[]', '0.0.1');
     // language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Product Manifest - ' . $title;
+    $manifest_title = 'Product Manifest-' . $title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
-    $background_padding = tng_npHTML_basic_maker($bg_outside_padding,'','','','',TRUE);
-    $title_chunk = tng_npHTML_basic_maker('h1','','','', $title, FALSE);
+    $products_background = tng_npHTML_basic_maker($bg_products_background, '','','','','',FALSE);
+    $background_padding = tng_npHTML_basic_maker('',$bg_outside_padding,'','','','',TRUE);
+    $title_chunk = tng_npHTML_basic_maker('','h1','','','', $title, FALSE);
     $subtitle = $product_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('h2', '','','',$subtitle, FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '','','',$subtitle, FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
     $truth = tng_convert_drupal_to_mean_filename($product_values['field_product_image']);
     $image_chunk = tng_npImage_maker($truth, 'topImage img-responsive', $title );
-    $inside_padding = tng_npHTML_basic_maker($bg_inside_padding,'','','','', TRUE);
+    $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', TRUE);
 
-    $why_there = tng_npHTML_basic_maker($h3_sans_head, '','','', 'Why there’s only 1', TRUE);
-    $why_content = tng_npHTML_basic_maker($h4_sans_normal, '','','', $product_values['field_why_there_s_only_one'], FALSE);
+    $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '','','', 'Why there’s only 1', TRUE);
+    $why_content = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_why_there_s_only_one'], FALSE);
     $why_content = rtrim($why_content, ", ");
     $demonstration = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'DEMONSTRATION', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_demonstration']);
     $benefits = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'BENEFITS', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_benefits']);
@@ -734,22 +740,22 @@ function process_product($product_values, $language, $nid) {
     $perfect_partner_data = $product_values['field_perfect_partners'];
 
     $perfect_data = create_perfect_partners($basepath, $perfect_partner_data);
-    $perfect_chunk = tng_npHTML_basic_maker($h3_sans_head_collapse, $switch_collapse, $expand, '', 'PERFECT PARTNERS', TRUE);
-    $perfect_plus_chunk = tng_npHTML_basic_maker($collapse_element, '', '', $data_collapse, '', TRUE);
+    $perfect_chunk = tng_npHTML_basic_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, '', 'PERFECT PARTNERS', TRUE);
+    $perfect_plus_chunk = tng_npHTML_basic_maker('', $collapse_element, '', '', $data_collapse, '', TRUE);
     $more_column = tng_npColumn_maker('row', '2', TRUE);
-    $row_chunk = tng_npHTML_basic_maker('row', '','','', '', TRUE);
+    $row_chunk = tng_npHTML_basic_maker('', 'row', '','','', '', TRUE);
     $first_image_chunk = tng_npImage_maker($perfect_data[0], $col_sm4, $perfect_data[1] ) . ',';
-    $disclaim_one_chunk = tng_npHTML_basic_maker($col_sm8, '','','', $perfect_data[1], FALSE);
-    $disclaim_two_chunk = tng_npHTML_basic_maker($col_sm8, '','','', $perfect_data[2], FALSE);
+    $disclaim_one_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[1], FALSE);
+    $disclaim_two_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[2], FALSE);
     $disclaim_two_chunk = rtrim($disclaim_two_chunk, ", ");
     $disclaim_two_chunk = $disclaim_two_chunk . $close_html;
-    $next_disclaim = tng_npHTML_basic_maker('row', '','','', '', TRUE);
+    $next_disclaim = tng_npHTML_basic_maker('', 'row', '','','', '', TRUE);
 
     if (count($perfect_data) > 3) {
       //dpm('we will make 2 perfect partners');
       $second_image_chunk = tng_npImage_maker($perfect_data[3], $col_sm4, $perfect_data[4] ) . ',';
-      $disclaim_second_chunk = tng_npHTML_basic_maker($col_sm8, '','','', $perfect_data[4], FALSE);
-      $disclaim_last_chunk = tng_npHTML_basic_maker($col_sm8, '','','', $perfect_data[5], FALSE);
+      $disclaim_second_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[4], FALSE);
+      $disclaim_last_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[5], FALSE);
       $disclaim_last_chunk = rtrim($disclaim_last_chunk, ", ");
       // close the row component, end of column component, and another row component, and perfect partners
       $disclaim_last_chunk = $disclaim_last_chunk . $close_perfect;
@@ -757,8 +763,8 @@ function process_product($product_values, $language, $nid) {
       $next_disclaim = $next_disclaim . $close_perfect;
     }
 
-    $row_phrase = tng_npHTML_basic_maker('row', '','','', '', TRUE);
-    $perfect_partner = tng_npHTML_basic_maker($h4_sans_normal, '','','', $product_values['field_perfect_partners_text'], FALSE);
+    $row_phrase = tng_npHTML_basic_maker('', 'row', '','','', '', TRUE);
+    $perfect_partner = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_perfect_partners_text'], FALSE);
     $perfect_partner = rtrim($perfect_partner,', ');
     $perfect_partner = $perfect_partner . $column_close;
 
@@ -771,33 +777,33 @@ function process_product($product_values, $language, $nid) {
     $next_button = rtrim($next_button,", ");
     $next_button = $next_button . $column_close;
 
-    $more_outer_padding = tng_npHTML_basic_maker('outside-padding', '','','','', TRUE);
+    $more_outer_padding = tng_npHTML_basic_maker('', 'outside-padding', '','','','', TRUE);
     $similar_partner_data = $product_values['field_related_products'];
     $similar_data = create_perfect_partners($basepath, $similar_partner_data);
     $similar_column = tng_npColumn_maker('row ', '2', TRUE);
-    $similar_row = tng_npHTML_basic_maker('row', '', '','','', TRUE);
-    $similar_content = tng_npHTML_basic_maker($h5_sans, '', '','','SEE SIMILAR PRODUCTS:', FALSE);
+    $similar_row = tng_npHTML_basic_maker('', 'row', '', '','','', TRUE);
+    $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '','','SEE SIMILAR PRODUCTS:', FALSE);
 
     $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0]);
     $similar_image_chunk = tng_npImage_maker($similar_image, $col_sm4_resp, $similar_data[1] ) . ',';
-    $flexible_content = tng_npHTML_basic_maker($col_sm8, '', '','', $similar_data[1], FALSE);
-    $flexible_footer = tng_npHTML_basic_maker($col_sm8, '', '','', $similar_data[2], FALSE);
+    $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[1], FALSE);
+    $flexible_footer = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[2], FALSE);
     $flexible_footer = rtrim($flexible_footer, ", ");
     $flexible_footer = $flexible_footer . $close_html;
 
     $suggested_partner_data = $product_values['field_just_for_you'];
     $suggested_data = create_perfect_partners($basepath, $suggested_partner_data);
-    $suggested_row = tng_npHTML_basic_maker('row', '','','','', TRUE);
-    $suggested_content = tng_npHTML_basic_maker($h5_sans, '','','','SUGGESTED FOR YOU', FALSE);
+    $suggested_row = tng_npHTML_basic_maker('', 'row', '','','','', TRUE);
+    $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '','','','SUGGESTED FOR YOU', FALSE);
 
     $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0]);
     $suggested_image_chunk = tng_npImage_maker($suggested_image, $col_sm4_resp, $suggested_data[1] ) . ',';
-    $suggested_footer = tng_npHTML_basic_maker($col_sm8, '','','', $suggested_data[1], FALSE);
-    $suggested_footer_creation_date = tng_npHTML_basic_maker($col_sm8, '','','',$suggested_data[2], FALSE);
+    $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '','','', $suggested_data[1], FALSE);
+    $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '','','',$suggested_data[2], FALSE);
     $suggested_footer_creation_date = rtrim($suggested_footer_creation_date,", ");
 
     // assemble the product from our chunks of data
-    $whole_product = $feature_chunk . $content_chunk . $background_padding . $title_chunk . $subtitle_chunk . $column_chunk . $image_chunk . ',' .  $inside_padding . $why_there . $why_content . $column_close .  $demonstration;
+    $whole_product = $feature_chunk . $content_chunk . $products_background . $background_padding . $title_chunk . $subtitle_chunk . $column_chunk . $image_chunk . ',' .  $inside_padding . $why_there . $why_content . $column_close .  $demonstration;
     $whole_product = $whole_product . $benefits . $if_she_asks;
     // we will always have one similar product, but might have two, so perfect_data should have either 3 or 6 elements to it.
     $whole_product = $whole_product . $perfect_chunk . $perfect_plus_chunk . $more_column . $row_chunk . $first_image_chunk . $disclaim_one_chunk . $disclaim_two_chunk . $next_disclaim ;
@@ -810,6 +816,10 @@ function process_product($product_values, $language, $nid) {
 
     dpm('**whole product so far**');
     dpm($whole_product);
+
+    // here we write the file out to save our manifest formatting for escaped quotes
+    $json_name = str_replace(" ", "-", $manifest_title);
+    $file = file_save_data($whole_product,'public://' . $json_name);
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product

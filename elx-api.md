@@ -298,19 +298,19 @@ Regions and Market Names :
 
 |Travel Retail Asia Pacific                 |Code|
 |-------------------------------------------|-|
-|TR Hong Kong, Taiwan, Macau |TR-HK|
-|TR China                    |TR-CN|
-|TR Singapore                |TR-SG|
-|TR Thailand                 |TR-TH|
-|TR Malaysia                 |TR-MY|
-|TR Japan                    |TR-JP|
-|TR Mid-Pac                  |TR-MP|
-|TR Korea                    |TR-KR|
-|TR Oceania                  |TR-SEA|
+|TR Hong Kong, Taiwan, Macau |TRAPAC-HMT|
+|TR China                    |TRAPAC-CN|
+|TR Singapore                |TRAPAC-SG|
+|TR Thailand                 |TRAPAC-TH|
+|TR Malaysia                 |TRAPAC-MY|
+|TR Japan                    |TRAPAC-JP|
+|TR Mid-Pac                  |TRAPAC-MP|
+|TR Korea                    |TRAPAC-KR|
+|TR Oceania                  |TRAPAC-SEA|
 
 |Travel Retail Europe/Middle East/Africa|Code|
 |---------------------------------------|-|
-|TR Europe, Mid-East, Africa|TR-EMA|
+|TR Europe, Mid-East, Africa|TREMA|
 
 The following fields will define our User model imported from EL Excel spreadsheets :
 

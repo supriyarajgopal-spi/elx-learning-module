@@ -717,6 +717,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hot_spot_instructions',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -735,7 +738,7 @@ function elx_site_configurations_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -1342,6 +1345,7 @@ function elx_site_configurations_field_default_field_bases() {
         'US' => 'United States',
         'CA' => 'Canada',
         'PR' => 'Puerto Rico',
+        'FG' => 'Fashion Group',
         'AT' => 'Austria',
         'NL' => 'Netherlands',
         'CS' => 'Czech Republic',
@@ -1374,16 +1378,16 @@ function elx_site_configurations_field_default_field_bases() {
         'TRAM-CC' => 'TR Americas, Caribbean & Cancun',
         'CECA' => 'CECA MARKETS - Colombia, Ecuador and Central America',
         'TRAM-NA' => 'TR Americas, North America',
-        'TR-HK' => 'TR Hong Kong, Taiwan, Macau',
-        'TR-CN' => 'TR China',
-        'TR-SG' => 'TR Singapore',
-        'TR-TH' => 'TR Thailand',
-        'TR-MY' => 'TR Malaysia',
-        'TR-JP' => 'TR Japan',
-        'TR-MP' => 'TR Mid-Pac',
-        'TR-KR' => 'TR Korea',
-        'TR-OC' => 'TR Oceania',
-        'TR-EMA' => 'TR Europe, Mid-East, Africa',
+        'TRAPAC-HK' => 'TR Hong Kong, Taiwan, Macau',
+        'TRAPAC-CN' => 'TR China',
+        'TRAPAC-SG' => 'TR Singapore',
+        'TRAPAC-TH' => 'TR Thailand',
+        'TRAPAC-MY' => 'TR Malaysia',
+        'TRAPAC-JP' => 'TR Japan',
+        'TRAPAC-MP' => 'TR Mid-Pac',
+        'TRAPAC-KR' => 'TR Korea',
+        'TRAPAC-OC' => 'TR Oceania',
+        'TREMA' => 'TR Europe, Mid-East, Africa',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

@@ -1098,6 +1098,20 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_object_manifest';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_object_manifest'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_object_manifest';
+  $strongarm->value = array();
+  $export['i18n_node_options_object_manifest'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_disable_on_demand_generation';
   $strongarm->value = 0;
   $export['imageinfo_cache_disable_on_demand_generation'] = $strongarm;
@@ -1390,14 +1404,6 @@ function elx_site_configurations_strongarm() {
       ),
       'file' => 'includes/locale.inc',
     ),
-    'locale-url' => array(
-      'callbacks' => array(
-        'language' => 'locale_language_from_url',
-        'switcher' => 'locale_language_switcher_url',
-        'url_rewrite' => 'locale_language_url_rewrite_url',
-      ),
-      'file' => 'includes/locale.inc',
-    ),
     'language-default' => array(
       'callbacks' => array(
         'language' => 'language_from_default',
@@ -1477,9 +1483,9 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'locale_language_providers_weight_language';
   $strongarm->value = array(
+    'locale-user' => '-10',
     'locale-url' => '-9',
     'locale-session' => '-8',
-    'locale-user' => '-10',
     'locale-browser' => '-7',
     'language-default' => '-6',
   );

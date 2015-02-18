@@ -232,7 +232,7 @@ function elx_site_configurations_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-product-markets field-group-fieldset',
-        'description' => '',
+        'description' => 'Select Markets to restrict where content is displayed, if all are unselected content will display to all Markets.',
       ),
       'formatter' => 'collapsed',
     ),

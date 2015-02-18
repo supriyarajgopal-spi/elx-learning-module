@@ -1520,7 +1520,7 @@ function elx_site_configurations_field_default_field_bases() {
   // Exported field_base: 'field_perfect_partners'
   $field_bases['field_perfect_partners'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 2,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_perfect_partners',
@@ -1626,34 +1626,43 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_price'
-  $field_bases['field_price'] = array(
+  // Exported field_base: 'field_product_categories'
+  $field_bases['field_product_categories'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_price',
+    'field_name' => 'field_product_categories',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
-      'format' => array(
+      'tid' => array(
         'columns' => array(
-          'format' => 'format',
+          'tid' => 'tid',
         ),
-        'table' => 'filter_format',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'taxonomy',
     'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'product_category',
+          'parent' => 0,
+        ),
+      ),
       'entity_translation_sync' => FALSE,
-      'max_length' => 255,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 1,
-    'type' => 'text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_product_image'

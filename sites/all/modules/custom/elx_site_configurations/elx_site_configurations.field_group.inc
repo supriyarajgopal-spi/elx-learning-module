@@ -194,7 +194,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Perfect partners',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_perfect_partners',
       1 => 'field_perfect_partners_text',
@@ -222,7 +222,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Markets',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_markets',
     ),

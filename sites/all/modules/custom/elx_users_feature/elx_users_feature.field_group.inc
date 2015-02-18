@@ -31,6 +31,10 @@ function elx_users_feature_field_group_info() {
       5 => 'field_employer_number',
       6 => 'field_hire_date',
       7 => 'field_job_title',
+      8 => 'field_field_sales_director_regio',
+      9 => 'field_regional_vice_president',
+      10 => 'field_general_manager_brand_mana',
+      11 => 'field_market_administrator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

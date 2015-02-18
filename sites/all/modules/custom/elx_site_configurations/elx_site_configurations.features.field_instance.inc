@@ -2427,7 +2427,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -2468,7 +2468,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -2509,7 +2509,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -2559,7 +2559,7 @@ function elx_site_configurations_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -2600,7 +2600,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -2644,7 +2644,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -2727,7 +2727,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -2736,7 +2736,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'product_detail',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select Markets to restrict content to, leave all <b>unselected</b> to display to <b>all</b> Markets.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2860,8 +2860,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_price'
-  $field_instances['node-product_detail-field_price'] = array(
+  // Exported field_instance: 'node-product_detail-field_product_categories'
+  $field_instances['node-product_detail-field_product_categories'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2869,10 +2869,10 @@ function elx_site_configurations_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2882,22 +2882,19 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_price',
-    'label' => 'Price',
+    'field_name' => 'field_product_categories',
+    'label' => 'Product categories',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
     ),
   );
 
@@ -2960,7 +2957,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -3004,7 +3001,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -3042,7 +3039,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -3083,7 +3080,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -3206,7 +3203,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -5381,7 +5378,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Perfect partners');
   t('Perfect partners text');
   t('Point value');
-  t('Price');
+  t('Product categories');
   t('Product image');
   t('Pulsed content');
   t('Question image');
@@ -5394,6 +5391,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Reveal text');
   t('Reveal thumbnail');
   t('Season');
+  t('Select Markets to restrict content to, leave all <b>unselected</b> to display to <b>all</b> Markets.');
   t('Story');
   t('Story type');
   t('Subtitle');

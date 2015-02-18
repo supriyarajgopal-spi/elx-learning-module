@@ -141,16 +141,36 @@ function elx_users_feature_feeds_importer_default() {
             'unique' => FALSE,
           ),
           18 => array(
+            'source' => 'Field Sales Director/Regional Education Director',
+            'target' => 'field_field_sales_director_regio',
+            'unique' => FALSE,
+          ),
+          19 => array(
+            'source' => 'Regional Vice President',
+            'target' => 'field_regional_vice_president',
+            'unique' => FALSE,
+          ),
+          20 => array(
+            'source' => 'General Manager/Brand Manager',
+            'target' => 'field_general_manager_brand_mana',
+            'unique' => FALSE,
+          ),
+          21 => array(
+            'source' => 'Market Administrator',
+            'target' => 'field_market_administrator',
+            'unique' => FALSE,
+          ),
+          22 => array(
             'source' => 'Status',
             'target' => 'Temporary target 1',
             'unique' => FALSE,
           ),
-          19 => array(
+          23 => array(
             'source' => 'Status',
             'target' => 'status',
             'unique' => FALSE,
           ),
-          20 => array(
+          24 => array(
             'source' => 'Language',
             'target' => 'language',
             'unique' => FALSE,

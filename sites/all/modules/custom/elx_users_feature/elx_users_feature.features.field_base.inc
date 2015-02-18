@@ -540,6 +540,9 @@ function elx_users_feature_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hire_date',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -549,7 +552,7 @@ function elx_users_feature_field_default_field_bases() {
       'cache_enabled' => 0,
       'entity_translation_sync' => FALSE,
       'granularity' => array(
-        'day' => 'day',
+        'day' => 0,
         'hour' => 0,
         'minute' => 0,
         'month' => 'month',

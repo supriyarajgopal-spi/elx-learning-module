@@ -71,6 +71,64 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hotspot|paragraphs_item|hot_spot|form';
+  $field_group->group_name = 'group_hotspot';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'hot_spot';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Hot spot group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_hot_spot_x_cordinate',
+      1 => 'field_hot_spot_y_cordinate',
+      2 => 'field_hot_spot_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Hot spot group',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-hotspot field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_hotspot|paragraphs_item|hot_spot|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_list_items|paragraphs_item|list_item|form';
+  $field_group->group_name = 'group_list_items';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'list_item';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'List group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_list_image',
+      1 => 'field_list_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-list-items field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_list_items|paragraphs_item|list_item|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_market|node|content_object|form';
   $field_group->group_name = 'group_market';
   $field_group->entity_type = 'node';
@@ -298,6 +356,36 @@ function elx_site_configurations_field_group_info() {
     ),
   );
   $export['group_question|paragraphs_item|questions|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_reveal|paragraphs_item|reveal_collection|form';
+  $field_group->group_name = 'group_reveal';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'reveal_collection';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Reveal group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_reveal_thumbnail',
+      1 => 'field_reveal_hero',
+      2 => 'field_reveal_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Reveal group',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-reveal field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_reveal|paragraphs_item|reveal_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

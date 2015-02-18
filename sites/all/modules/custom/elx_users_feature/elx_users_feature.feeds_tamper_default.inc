@@ -1158,7 +1158,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Singapore/',
+    'find' => 'TR Singapore',
     'replace' => 'TRAPAC-SG',
     'case_sensitive' => 0,
     'word_boundaries' => 0,

@@ -1384,7 +1384,7 @@ function elx_site_configurations_field_default_field_bases() {
         'TRAM-NA' => 'Travel Retail Americas - North America',
         'TRAPAC-HMT' => 'Travel Retail Hong Kong-Macau-Taiwan',
         'TRAPAC-CN' => 'Travel Retail China',
-        'TRAPAC-SG' => 'TR Singapore/',
+        'TRAPAC-SG' => 'TR Singapore',
         'TRAPAC-TH' => 'TR Thailand',
         'TRAPAC-MY' => 'TR Malaysia',
         'TRAPAC-SEA' => 'Travel Retail Oceania',

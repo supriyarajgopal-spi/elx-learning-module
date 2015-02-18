@@ -2736,7 +2736,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'product_detail',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select Markets to restrict content to, leave all <b>unselected</b> to display to <b>all</b> Markets.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5391,7 +5391,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Reveal text');
   t('Reveal thumbnail');
   t('Season');
-  t('Select Markets to restrict content to, leave all <b>unselected</b> to display to <b>all</b> Markets.');
   t('Story');
   t('Story type');
   t('Subtitle');

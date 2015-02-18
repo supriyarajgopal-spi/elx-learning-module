@@ -2766,9 +2766,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'checkall' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 21,
     ),

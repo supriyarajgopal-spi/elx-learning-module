@@ -238,7 +238,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'CECA MARKETS - Colombia, Ecuador and Central America',
+    'find' => 'Colombia - Ecuador - Central America',
     'replace' => 'CECA',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
@@ -698,7 +698,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'Poland, Lituania, Estonia, Latvia',
+    'find' => 'Poland/Lituania/Estonia/Latvia',
     'replace' => 'PL',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
@@ -838,7 +838,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'Southern Cone - Chile, Peru, Argentina',
+    'find' => 'Southern Cone - Chile - Peru - Argentina',
     'replace' => 'SC',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
@@ -998,8 +998,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR China',
-    'replace' => 'TR-CN',
+    'find' => 'Travel Retail China',
+    'replace' => 'TRAPAC-CN',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1007,7 +1007,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 50;
-  $feeds_tamper->description = 'TR-CN';
+  $feeds_tamper->description = 'TRAPAC-CN';
   $export['elx_users-market_name-trcn'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1018,8 +1018,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Europe, Mid-East, Africa',
-    'replace' => 'TR-EMA',
+    'find' => 'Travel Retail Europe - Middle East - Africa',
+    'replace' => 'TREMEA',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1027,7 +1027,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 58;
-  $feeds_tamper->description = 'TR-EMA';
+  $feeds_tamper->description = 'TREMEA';
   $export['elx_users-market_name-trema'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1039,7 +1039,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
     'find' => 'TR Hong Kong, Taiwan, Macau',
-    'replace' => 'TR-HK',
+    'replace' => 'TRAPAC-HK',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1047,7 +1047,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 49;
-  $feeds_tamper->description = 'TR-HK';
+  $feeds_tamper->description = 'TRAPAC-HK';
   $export['elx_users-market_name-trhk'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1058,8 +1058,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Japan',
-    'replace' => 'TR-JP',
+    'find' => 'Travel Retail Japan',
+    'replace' => 'TRAPAC-JP',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1067,7 +1067,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 54;
-  $feeds_tamper->description = 'TR-JP';
+  $feeds_tamper->description = 'TRAPAC-JP';
   $export['elx_users-market_name-trjp'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1078,8 +1078,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Korea',
-    'replace' => 'TR-KR',
+    'find' => 'Travel Retail Korea',
+    'replace' => 'TRAPAC-KR',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1087,7 +1087,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 56;
-  $feeds_tamper->description = 'TR-KR';
+  $feeds_tamper->description = 'TRAPAC-KR';
   $export['elx_users-market_name-trkr'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1098,8 +1098,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Mid-Pac',
-    'replace' => 'TR-MP',
+    'find' => 'Travel Retail Middle Pacific',
+    'replace' => 'TRAPAC-MP',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1107,7 +1107,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 55;
-  $feeds_tamper->description = 'TR-MP';
+  $feeds_tamper->description = 'TRAPAC-MP';
   $export['elx_users-market_name-trmp'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1119,7 +1119,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
     'find' => 'TR Malaysia',
-    'replace' => 'TR-MY',
+    'replace' => 'TRAPAC-MY',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1127,7 +1127,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 53;
-  $feeds_tamper->description = 'TR-MY';
+  $feeds_tamper->description = 'TRAPAC-MY';
   $export['elx_users-market_name-trmy'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1138,8 +1138,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Market Name';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'TR Oceania',
-    'replace' => 'TR-SEA',
+    'find' => 'Travel Retail Oceania',
+    'replace' => 'TRAPAC-SEA',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1147,7 +1147,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 57;
-  $feeds_tamper->description = 'TR-SEA';
+  $feeds_tamper->description = 'TRAPAC-SEA';
   $export['elx_users-market_name-trsea'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1159,7 +1159,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
     'find' => 'TR Singapore',
-    'replace' => 'TR-SG',
+    'replace' => 'TRAPAC-SG',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1167,7 +1167,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 51;
-  $feeds_tamper->description = 'TR-SG';
+  $feeds_tamper->description = 'TRAPAC-SG';
   $export['elx_users-market_name-trsg'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -1179,7 +1179,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
     'find' => 'TR Thailand',
-    'replace' => 'TR-TH',
+    'replace' => 'TRAPAC-TH',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -1187,7 +1187,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 52;
-  $feeds_tamper->description = 'TR-TH';
+  $feeds_tamper->description = 'TRAPAC-TH';
   $export['elx_users-market_name-trth'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();

@@ -257,7 +257,7 @@ Regions and Market Names :
 |Europe/Middle East/Africa|Code|
 |------------------------|-|
 |Austria                       |AT|
-|Benelux                       |BE|
+|Belgium                       |BE|
 |Netherlands                   |NL|
 |Czech Republic                |CS|
 |France                        |FR|

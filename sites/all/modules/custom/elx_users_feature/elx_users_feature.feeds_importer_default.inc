@@ -106,7 +106,7 @@ function elx_users_feature_feeds_importer_default() {
             'unique' => FALSE,
           ),
           11 => array(
-            'source' => 'Region',
+            'source' => 'Region Code',
             'target' => 'field_region_list',
             'unique' => FALSE,
           ),

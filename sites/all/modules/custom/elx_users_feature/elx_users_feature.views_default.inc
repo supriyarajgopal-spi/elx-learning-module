@@ -259,7 +259,7 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: User: Job title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
@@ -565,7 +565,7 @@ function elx_users_feature_views_default_views() {
     t('Counter manager'),
     t('Education manager/executive'),
     t('Hire date'),
-    t('Job title'),
+    t('Broken handler field_data_field_job_title.field_job_title'),
     t('Market name'),
     t('Regional Vice President'),
     t('Active'),

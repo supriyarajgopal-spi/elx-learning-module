@@ -429,49 +429,14 @@ function elx_users_feature_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
+        'input_format' => 'custom',
+        'input_format_custom' => 'm/Y',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
       'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_job_title'
-  $field_instances['user-user-field_job_title'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_job_title',
-    'label' => 'Job title',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
     ),
   );
 
@@ -833,7 +798,6 @@ function elx_users_feature_field_default_field_instances() {
   t('First name');
   t('General Manager/Brand Manager');
   t('Hire date');
-  t('Job title');
   t('Last access date');
   t('Last name');
   t('Level');

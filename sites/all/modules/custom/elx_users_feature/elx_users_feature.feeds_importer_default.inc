@@ -136,7 +136,7 @@ function elx_users_feature_feeds_importer_default() {
             'unique' => FALSE,
           ),
           17 => array(
-            'source' => ' Account/Field Executive',
+            'source' => 'Account/Field Executive',
             'target' => 'field_account_field_executive',
             'unique' => FALSE,
           ),

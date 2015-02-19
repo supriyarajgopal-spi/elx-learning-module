@@ -2920,6 +2920,47 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_detail-field_price'
+  $field_instances['node-product_detail-field_price'] = array(
+    'bundle' => 'product_detail',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_price',
+    'label' => 'Price',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-product_detail-field_product_categories'
   $field_instances['node-product_detail-field_product_categories'] = array(
     'bundle' => 'product_detail',
@@ -5650,6 +5691,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Perfect partners');
   t('Perfect partners text');
   t('Point value');
+  t('Price');
   t('Product categories');
   t('Product image');
   t('Pulsed content');

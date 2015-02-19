@@ -819,7 +819,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

@@ -819,7 +819,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
@@ -921,7 +921,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

@@ -884,48 +884,108 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-body'
-  $field_instances['node-drag_match-body'] = array(
+  // Exported field_instance: 'node-drag_match-field_drag_match_collection'
+  $field_instances['node-drag_match-field_drag_match_collection'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'field_name' => 'field_drag_match_collection',
+    'label' => 'Drag match collection',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => -1,
+        'drag_match' => 'drag_match',
+        'hot_spot' => -1,
+        'list_item' => -1,
+        'match_game_collection' => -1,
+        'multiple_choice_collection' => -1,
+        'questions' => -1,
+        'reveal_collection' => -1,
+      ),
+      'bundle_weights' => array(
+        'answers' => 2,
+        'drag_match' => 3,
+        'hot_spot' => 4,
+        'list_item' => 5,
+        'match_game_collection' => 6,
+        'multiple_choice_collection' => 7,
+        'questions' => 8,
+        'reveal_collection' => 9,
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'Drag match',
+      'title_multiple' => 'Drag matchs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-drag_match-field_intro'
+  $field_instances['node-drag_match-field_intro'] = array(
+    'bundle' => 'drag_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+        'rows' => 5,
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'type' => 'text_textarea',
+      'weight' => 2,
     ),
   );
 
@@ -1548,7 +1608,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1599,12 +1659,12 @@ function elx_site_configurations_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_hot_spot_instructions'
-  $field_instances['node-hot_spots-field_hot_spot_instructions'] = array(
+  // Exported field_instance: 'node-hot_spots-field_intro'
+  $field_instances['node-hot_spots-field_intro'] = array(
     'bundle' => 'hot_spots',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1615,7 +1675,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1625,8 +1685,8 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_hot_spot_instructions',
-    'label' => 'Hot Spot instructions',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1640,7 +1700,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1684,7 +1744,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -4127,6 +4187,216 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-drag_match-field_left_drag_image'
+  $field_instances['paragraphs_item-drag_match-field_left_drag_image'] = array(
+    'bundle' => 'drag_match',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_left_drag_image',
+    'label' => 'Left drag image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-drag_match-field_left_drag_text'
+  $field_instances['paragraphs_item-drag_match-field_left_drag_text'] = array(
+    'bundle' => 'drag_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_left_drag_text',
+    'label' => 'Left drag text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-drag_match-field_right_drag_image'
+  $field_instances['paragraphs_item-drag_match-field_right_drag_image'] = array(
+    'bundle' => 'drag_match',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_right_drag_image',
+    'label' => 'Right drag image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-drag_match-field_right_drag_text'
+  $field_instances['paragraphs_item-drag_match-field_right_drag_text'] = array(
+    'bundle' => 'drag_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_right_drag_text',
+    'label' => 'Right drag text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_text'
   $field_instances['paragraphs_item-hot_spot-field_hot_spot_text'] = array(
     'bundle' => 'hot_spot',
@@ -5343,13 +5613,13 @@ function elx_site_configurations_field_default_field_instances() {
   t('Customer questions');
   t('Demonstration');
   t('Difficulty');
+  t('Drag match collection');
   t('Enter correct or incorrect answer text, or upload answer image.');
   t('Featured');
   t('Final exam');
   t('Fun fact sheet');
   t('Headline');
   t('Hero image');
-  t('Hot Spot instructions');
   t('Hot spot collection');
   t('Hot spot image');
   t('Hot spot text');
@@ -5365,6 +5635,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Just for you');
   t('Layout');
   t('Learning objects');
+  t('Left drag image');
+  t('Left drag text');
   t('List image');
   t('List item');
   t('List text');
@@ -5390,6 +5662,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Reveal hero');
   t('Reveal text');
   t('Reveal thumbnail');
+  t('Right drag image');
+  t('Right drag text');
   t('Season');
   t('Story');
   t('Story type');

@@ -499,6 +499,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_drag_match_collection'
+  $field_bases['field_drag_match_collection'] = array(
+    'active' => 1,
+    'cardinality' => 5,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_drag_match_collection',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_featured'
   $field_bases['field_featured'] = array(
     'active' => 1,
@@ -710,38 +731,6 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_hot_spot_instructions'
-  $field_bases['field_hot_spot_instructions'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_hot_spot_instructions',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'text_long',
-  );
-
   // Exported field_base: 'field_hot_spot_text'
   $field_bases['field_hot_spot_text'] = array(
     'active' => 1,
@@ -931,6 +920,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_intro',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -1180,6 +1172,74 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_left_drag_image'
+  $field_bases['field_left_drag_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_left_drag_image',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_left_drag_text'
+  $field_bases['field_left_drag_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_left_drag_text',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_list_image'
@@ -2084,6 +2144,74 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_right_drag_image'
+  $field_bases['field_right_drag_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_right_drag_image',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_right_drag_text'
+  $field_bases['field_right_drag_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_right_drag_text',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_season'

@@ -154,6 +154,11 @@ function elx_site_configurations_paragraphs_info() {
       'bundle' => 'answers',
       'locked' => '1',
     ),
+    'drag_match' => array(
+      'name' => 'Drag Match',
+      'bundle' => 'drag_match',
+      'locked' => '1',
+    ),
     'hot_spot' => array(
       'name' => 'Hot spot',
       'bundle' => 'hot_spot',

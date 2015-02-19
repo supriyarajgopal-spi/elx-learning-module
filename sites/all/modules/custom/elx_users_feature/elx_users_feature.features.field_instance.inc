@@ -287,6 +287,41 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_field_sales_director_regio'
+  $field_instances['user-user-field_field_sales_director_regio'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_field_sales_director_regio',
+    'label' => 'Field Sales Director/Regional Education Director',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_first_name'
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
@@ -319,6 +354,41 @@ function elx_users_feature_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => -9,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_general_manager_brand_mana'
+  $field_instances['user-user-field_general_manager_brand_mana'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_general_manager_brand_mana',
+    'label' => 'General Manager/Brand Manager',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 19,
     ),
   );
 
@@ -510,6 +580,41 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_market_administrator'
+  $field_instances['user-user-field_market_administrator'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 25,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_market_administrator',
+    'label' => 'Market Administrator',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_market_name'
   $field_instances['user-user-field_market_name'] = array(
     'bundle' => 'user',
@@ -644,6 +749,41 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_regional_vice_president'
+  $field_instances['user-user-field_regional_vice_president'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_regional_vice_president',
+    'label' => 'Regional Vice President',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_state'
   $field_instances['user-user-field_state'] = array(
     'bundle' => 'user',
@@ -689,16 +829,20 @@ function elx_users_feature_field_default_field_instances() {
   t('Door');
   t('Education manager/executive');
   t('Employer number');
+  t('Field Sales Director/Regional Education Director');
   t('First name');
+  t('General Manager/Brand Manager');
   t('Hire date');
   t('Job title');
   t('Last access date');
   t('Last name');
   t('Level');
+  t('Market Administrator');
   t('Market name');
   t('Modified date');
   t('Rank');
   t('Region');
+  t('Regional Vice President');
   t('State');
 
   return $field_instances;

@@ -819,7 +819,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
@@ -1390,25 +1390,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'language_content_type_reveal';
   $strongarm->value = '4';
   $export['language_content_type_reveal'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_default';
-  $strongarm->value = (object) array(
-    'language' => 'enus',
-    'name' => 'English US',
-    'native' => 'English US',
-    'direction' => '0',
-    'enabled' => 1,
-    'plurals' => '0',
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'en-us',
-    'weight' => '-10',
-    'javascript' => '',
-  );
-  $export['language_default'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

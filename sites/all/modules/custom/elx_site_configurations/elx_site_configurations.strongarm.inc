@@ -619,8 +619,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__content_object'] = $strongarm;
@@ -632,8 +632,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__drag_match'] = $strongarm;
@@ -645,8 +645,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__drag_priorities'] = $strongarm;
@@ -658,8 +658,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__drag_select'] = $strongarm;
@@ -671,8 +671,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__flash_cards'] = $strongarm;
@@ -684,8 +684,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__hot_spots'] = $strongarm;
@@ -697,8 +697,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__list'] = $strongarm;
@@ -710,8 +710,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__matching_game'] = $strongarm;
@@ -723,8 +723,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__product_detail'] = $strongarm;
@@ -749,8 +749,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__question_and_answer'] = $strongarm;
@@ -762,8 +762,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->value = array(
     'default_language' => 'xx-et-default',
     'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
     'shared_fields_original_only' => 0,
   );
   $export['entity_translation_settings_node__reveal'] = $strongarm;

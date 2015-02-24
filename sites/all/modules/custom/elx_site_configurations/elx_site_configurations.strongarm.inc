@@ -1020,7 +1020,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '-5',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),

@@ -208,6 +208,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_employer_number']['id'] = 'field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['table'] = 'field_data_field_employer_number';
   $handler->display->display_options['fields']['field_employer_number']['field'] = 'field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['exclude'] = TRUE;
   /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
@@ -216,10 +217,12 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
   $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
+  $handler->display->display_options['fields']['field_door']['exclude'] = TRUE;
   /* Field: User: Account name */
   $handler->display->display_options['fields']['field_account_name']['id'] = 'field_account_name';
   $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
   $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
   /* Field: User: Account/field executive */
   $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
@@ -228,6 +231,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
+  $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
   /* Field: User: State */
   $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
   $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
@@ -244,6 +248,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
   $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
   $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['exclude'] = TRUE;
   /* Field: User: Education manager/executive */
   $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
   $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
@@ -252,6 +257,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_hire_date']['id'] = 'field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['table'] = 'field_data_field_hire_date';
   $handler->display->display_options['fields']['field_hire_date']['field'] = 'field_hire_date';
+  $handler->display->display_options['fields']['field_hire_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hire_date']['settings'] = array(
     'format_type' => 'long',
     'fromto' => 'both',
@@ -259,10 +265,6 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
-  $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
   /* Field: User: Market name */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
@@ -284,6 +286,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'users';
   $handler->display->display_options['fields']['language']['field'] = 'language';
+  $handler->display->display_options['fields']['language']['exclude'] = TRUE;
   /* Field: User: Field Sales Director/Regional Education Director */
   $handler->display->display_options['fields']['field_field_sales_director_regio']['id'] = 'field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['table'] = 'field_data_field_field_sales_director_regio';
@@ -565,7 +568,6 @@ function elx_users_feature_views_default_views() {
     t('Counter manager'),
     t('Education manager/executive'),
     t('Hire date'),
-    t('Broken handler field_data_field_job_title.field_job_title'),
     t('Market name'),
     t('Regional Vice President'),
     t('Active'),

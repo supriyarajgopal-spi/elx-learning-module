@@ -13,13 +13,113 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-czech';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Czech',
+    'replace' => 'cs',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Czech';
+  $export['elx_users-language-czech'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-danish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Danish',
+    'replace' => 'da',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 6;
+  $feeds_tamper->description = 'Danish';
+  $export['elx_users-language-danish'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-dutch';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Dutch',
+    'replace' => 'nl',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 7;
+  $feeds_tamper->description = 'Dutch';
+  $export['elx_users-language-dutch'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-en_ca';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'English (Canada)',
+    'replace' => 'enca',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 9;
+  $feeds_tamper->description = 'English (Canada)';
+  $export['elx_users-language-en_ca'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-english';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'English',
+    'replace' => 'en',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 8;
+  $feeds_tamper->description = 'English';
+  $export['elx_users-language-english'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-language-english_au';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Language';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'English AU',
-    'replace' => 'enau',
+    'find' => 'Chinese (Simplified)',
+    'replace' => 'zhhans',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -27,7 +127,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'English AU';
+  $feeds_tamper->description = 'Chinese (Simplified)';
   $export['elx_users-language-english_au'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -38,8 +138,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Language';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'English NZ',
-    'replace' => 'ennz',
+    'find' => 'Chinese (Traditional)',
+    'replace' => 'zhhant',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -47,7 +147,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 3;
-  $feeds_tamper->description = 'English NZ';
+  $feeds_tamper->description = 'Chinese (Traditional)';
   $export['elx_users-language-english_nz'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -58,8 +158,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Language';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'English UK',
-    'replace' => 'enuk',
+    'find' => 'Bulgarian',
+    'replace' => 'bg',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -67,7 +167,7 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'English UK';
+  $feeds_tamper->description = 'Bulgarian';
   $export['elx_users-language-english_uk'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -78,8 +178,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Language';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'English ZA',
-    'replace' => 'enza',
+    'find' => 'Croatian',
+    'replace' => 'hr',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -87,8 +187,48 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 4;
-  $feeds_tamper->description = 'English ZA';
+  $feeds_tamper->description = 'Croatian';
   $export['elx_users-language-english_za'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-estonian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Estonian',
+    'replace' => 'et',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 10;
+  $feeds_tamper->description = 'Estonian';
+  $export['elx_users-language-estonian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-filipino';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Filipino',
+    'replace' => 'fil',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 11;
+  $feeds_tamper->description = 'Filipino';
+  $export['elx_users-language-filipino'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -98,8 +238,8 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->source = 'Language';
   $feeds_tamper->plugin_id = 'find_replace';
   $feeds_tamper->settings = array(
-    'find' => 'English US',
-    'replace' => 'enus',
+    'find' => 'Arabic',
+    'replace' => 'ar',
     'case_sensitive' => 0,
     'word_boundaries' => 0,
     'whole' => 0,
@@ -107,8 +247,468 @@ function elx_users_feature_feeds_tamper_default() {
     'func' => 'str_ireplace',
   );
   $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'English US';
+  $feeds_tamper->description = 'Arabic';
   $export['elx_users-language-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-finnish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Finnish',
+    'replace' => 'fi',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 12;
+  $feeds_tamper->description = 'Finnish';
+  $export['elx_users-language-finnish'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-fr_ca';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'French (Canada)',
+    'replace' => 'frca',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 14;
+  $feeds_tamper->description = 'French (Canada)';
+  $export['elx_users-language-fr_ca'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-french';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'French',
+    'replace' => 'fr',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 13;
+  $feeds_tamper->description = 'French';
+  $export['elx_users-language-french'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-greek';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Greek',
+    'replace' => 'el',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 15;
+  $feeds_tamper->description = 'Greek';
+  $export['elx_users-language-greek'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-hebrew';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Hebrew',
+    'replace' => 'he',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 16;
+  $feeds_tamper->description = 'Hebrew';
+  $export['elx_users-language-hebrew'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-hungarian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Hungarian',
+    'replace' => 'hu',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 17;
+  $feeds_tamper->description = 'Hungarian';
+  $export['elx_users-language-hungarian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-icelandic';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Icelandic',
+    'replace' => 'is',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 18;
+  $feeds_tamper->description = 'Icelandic';
+  $export['elx_users-language-icelandic'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-indonesian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Indonesian',
+    'replace' => 'id',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 19;
+  $feeds_tamper->description = 'Indonesian';
+  $export['elx_users-language-indonesian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-italian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Italian',
+    'replace' => 'it',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 20;
+  $feeds_tamper->description = 'Italian';
+  $export['elx_users-language-italian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-japanese';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Japanese',
+    'replace' => 'ja',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 21;
+  $feeds_tamper->description = 'Japanese';
+  $export['elx_users-language-japanese'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-korean';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Korean',
+    'replace' => 'ko',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 22;
+  $feeds_tamper->description = 'Korean';
+  $export['elx_users-language-korean'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-latvian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Latvian',
+    'replace' => 'lv',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 23;
+  $feeds_tamper->description = 'Latvian';
+  $export['elx_users-language-latvian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-lithuanian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Lithuanian',
+    'replace' => 'lt',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 24;
+  $feeds_tamper->description = 'Lithuanian';
+  $export['elx_users-language-lithuanian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-norwegian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Norwegian Bokmål',
+    'replace' => 'nb',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 25;
+  $feeds_tamper->description = 'Norwegian Bokmål';
+  $export['elx_users-language-norwegian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-polish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Polish',
+    'replace' => 'pl',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 26;
+  $feeds_tamper->description = 'Polish';
+  $export['elx_users-language-polish'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-portuguese';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Portuguese',
+    'replace' => 'pt',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 27;
+  $feeds_tamper->description = 'Portuguese';
+  $export['elx_users-language-portuguese'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-romanian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Romanian',
+    'replace' => 'ro',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 28;
+  $feeds_tamper->description = 'Romanian';
+  $export['elx_users-language-romanian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-russian';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Russian',
+    'replace' => 'ru',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 29;
+  $feeds_tamper->description = 'Russian';
+  $export['elx_users-language-russian'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-spanish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Spanish',
+    'replace' => 'es',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 30;
+  $feeds_tamper->description = 'Spanish';
+  $export['elx_users-language-spanish'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-spanish_sp';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Spanish (Spain)',
+    'replace' => 'essp',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 31;
+  $feeds_tamper->description = 'Spanish (Spain)';
+  $export['elx_users-language-spanish_sp'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-swedish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Swedish',
+    'replace' => 'sv',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 32;
+  $feeds_tamper->description = 'Swedish';
+  $export['elx_users-language-swedish'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-thai';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Thai',
+    'replace' => 'th',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 33;
+  $feeds_tamper->description = 'Thai';
+  $export['elx_users-language-thai'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-language-turkish';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Language';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => 'Turkish',
+    'replace' => 'tr',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 34;
+  $feeds_tamper->description = 'Turkish';
+  $export['elx_users-language-turkish'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

@@ -430,7 +430,7 @@ function elx_users_feature_field_default_field_instances() {
       'settings' => array(
         'increment' => 15,
         'input_format' => 'custom',
-        'input_format_custom' => 'm/Y',
+        'input_format_custom' => 'm/j/Y',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',

@@ -4142,6 +4142,44 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-tools-field_tool_by_role'
+  $field_instances['node-tools-field_tool_by_role'] = array(
+    'bundle' => 'tools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tool_by_role',
+    'label' => 'Tool by role',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-tools-field_tool_description'
   $field_instances['node-tools-field_tool_description'] = array(
     'bundle' => 'tools',
@@ -4236,7 +4274,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -5964,6 +6002,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('This is the title that will be displayed in the ELX system.');
   t('Title');
   t('Tool PDF');
+  t('Tool by role');
   t('Tool description');
   t('Top match image');
   t('Top match text');

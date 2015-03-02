@@ -641,13 +641,21 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL) {
 }
 
 
-function tng_npDragAndDrop_maker($id = NULL, $class = NULL, $req = NULL, $feedback = NULL) {
+function tng_npDragAndMatch_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback =  NULL, $req = NULL) {
   $tng_debug = 0;
   try {
     $dragandrop = '';
-    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDrop"' ;
+    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropMatch"' ;
     $dragandrop = $dragandrop . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
-    $dragandrop = $dragandrop . ',' .   '"class"' . ':' . '"' . $class . '"';
+    if ($class) {
+      $dragandrop = $dragandrop . ',' .   '"class"' . ':' . '"' . $class . '"';
+    }
+    if ($positive_feedback) {
+      $dragandrop = $dragandrop . ',' .   '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+    }
+    if ($negative_feedback) {
+      $dragandrop = $dragandrop . ',' .   '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+    }
     $dragandrop = $dragandrop . ',' .   '"req"'   . ':' .  '[' . $req . ']';
     $dragandrop = $dragandrop . ',' .   '"draggableButtons"' . ':' . '[' ;
     return $dragandrop;
@@ -666,10 +674,16 @@ function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, 
   try {
     $dragdropbutton = '';
     $dragdropbutton = $dragdropbutton . '{' ;
-    $dragdropbutton = $dragdropbutton .       '"id"' . ':' . '"' . $id . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"class"' . ':' . '"' . $class . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"content"' . ':' . '"' . $content . '"';
+    if ($id) {
+      $dragdropbutton = $dragdropbutton .       '"id"' . ':' . '"' . $id . '"';
+    }
+    if ($class) {
+      $dragdropbutton = $dragdropbutton . ',' . '"class"' . ':' . '"' . $class . '"';
+    }
+    if ($feedback ) {
+      $dragdropbutton = $dragdropbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
+    }
+    $dragdropbutton = $dragdropbutton       . '"content"' . ':' . '"' . $content . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"image"' . ':' . '"' . $image . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
@@ -807,13 +821,15 @@ function create_perfect_partners($path, $csv_fields) {
  *  field_related_products
  *
  */
-function process_product($product_values, $language, $nid) {
+function process_product($product_values, $labels, $language, $nid) {
   $tng_debug = 0;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);
     dpm('language for product');
     dpm($language);
+    dpm('translated labels');
+    dpm($labels);
   }
   $bg_outside_padding = 'background-brand-primary-light outside-padding';
   $bg_inside_padding = 'background-brand-offwhite inside-padding';
@@ -850,19 +866,19 @@ function process_product($product_values, $language, $nid) {
     //title field has the unique 'admin name' title
     $title = $product_values['title_field'];
     $title = rtrim($title,' ');
-    // replace spaces with dashes for better matching later
+    // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
+    $title = str_replace("/", "-", $title);
     $display_title = $product_values['field_display_title'];
     $name = rtrim($title, ' ');
     $num_mkts = count($product_values['field_markets']);
-    if ($tng_debug == 1) {
-      dpm('number of markets found:');
-      dpm($num_mkts);
-    }
     $markets = $product_values['field_markets'];
     if ($tng_debug == 1) {
       dpm($markets);
+      dpm('number of markets found:');
+      dpm($num_mkts);
     }
+
     $feature_chunk = tng_npFeature_maker('products', 'productTemplate', '[]', '0.0.1');
     // language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
@@ -876,21 +892,40 @@ function process_product($product_values, $language, $nid) {
     $subtitle = $product_values['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '','','',$subtitle,'',  FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
-    $truth = tng_convert_drupal_to_mean_filename($product_values['field_product_image']);
-    $image_chunk = tng_npImage_maker('', $truth, 'topImage img-responsive', $title );
-    $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', '', TRUE);
+    $image_path = tng_convert_drupal_to_mean_filename($product_values['field_product_image']);
+    // todo: fix this to work with a real thumbnail image, rather than the large one
+    $thumbnail_link = $image_path;
 
-    $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '','','', 'Why there’s only 1', '', TRUE);
+    $image_chunk = tng_npImage_maker('', $image_path, 'topImage img-responsive', $title );
+    $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', '', TRUE);
+    $translated_why = $labels['field_why_there_s_only_one'];
+    if (!$translated_why) {
+      $translated_why = 'WHY THERE\'S ONLY ONE';
+    }
+    $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '','','', $translated_why, '', TRUE);
     $why_content = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_why_there_s_only_one'], '', FALSE);
     $why_content = rtrim($why_content, ', ');
-    $demonstration = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'DEMONSTRATION', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_demonstration']);
-    $benefits = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'BENEFITS', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_benefits']);
+    $translated_demo = $labels['field_demonstration'];
+    if (!$translated_demo) {
+      $translated_demo = 'DEMONSTRATION';
+    }
+    $demonstration = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_demo, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_demonstration']);
+    $translated_bene = $labels['field_benefits'];
+    if (!$translated_bene) {
+      $translated_bene = 'BENEFITS';
+    }
+    $benefits = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_bene, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_benefits']);
+    $translated_share = $labels['field_if_she_asks_share'];
+    if (!$translated_share) {
+      $translated_share = 'IF SHE ASKS, SHARE';
+    }
+    $if_she_asks = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_share, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_if_she_asks_share']);
 
-    $if_she_asks = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'If she asks, share', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_if_she_asks_share']);
+    $intro_text = strip_tags($product_values['field_if_she_asks_share']);
     // the triple has title,image,date
     //todo: use thumbnails instead of large images for the perfect partners and related products, just for you
     // for now, use the common base path for all products, later we will use thumbnails
-    $basepath = substr($truth, 0, strripos($truth, "/"));
+    $basepath = substr($image_path, 0, strripos($image_path, "/"));
     $perfect_partner_data = $product_values['field_perfect_partners'];
 
     $prefix_url = '/api/products/name/';
@@ -898,8 +933,15 @@ function process_product($product_values, $language, $nid) {
     if ($tng_debug == 1) {
       dpm('perfect data back:');
       dpm($perfect_data);
+      dpm($intro_text);
+      dpm($display_title);
+      dpm($thumbnail_link);
     }
-    $perfect_chunk = tng_npHTML_basic_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, '', 'PERFECT PARTNERS', '', TRUE);
+    $translated_perfect = $labels['field_perfect_partners_text'];
+    if (!$translated_perfect) {
+      $translated_perfect = 'PERFECT PARTNERS';
+    }
+    $perfect_chunk = tng_npHTML_basic_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, '', $translated_perfect, '', TRUE);
     $perfect_plus_chunk = tng_npHTML_basic_maker('', $collapse_element, '', '', $data_collapse, '', '', TRUE);
     $more_column = tng_npColumn_maker('row', '2', TRUE);
     $row_chunk = tng_npHTML_basic_maker('', 'row', '','','', '', '', TRUE);
@@ -934,11 +976,18 @@ function process_product($product_values, $language, $nid) {
     $perfect_partner = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_perfect_partners_text'], '', FALSE);
     $perfect_partner = rtrim($perfect_partner,', ');
     $perfect_partner = $perfect_partner . $column_close;
-
-    $story = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'STORY', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_story']);
-    $customer_questions = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, 'CUSTOMER QUESTIONS', '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_customer_questions']);
-
+    $translated_story = $labels['field_story'];
+    if (!$translated_story) {
+      $translated_story = 'STORY';
+    }
+    $story = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_story, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_story']);
+    $translated_quest = $labels['field_perfect_partners_text'];
+    if (!$translated_quest) {
+      $translated_quest = 'CUSTOMER QUESTIONS';
+    }
+    $customer_questions = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_quest, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_customer_questions']);
     $button_column = tng_npColumn_maker('row button-padding', '2', TRUE);
+    // todo: figure out a way to translate these buttons
     $like_button = tng_npButton_maker('QuizIntro', '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
     $next_button = tng_npButton_maker('Question1', '', $btn_fact_sheet, 'GET THE FULL FACT SHEET');
     $next_button = rtrim($next_button, ', ');
@@ -996,19 +1045,17 @@ function process_product($product_values, $language, $nid) {
     $whole_product = $whole_product . $row_phrase . $perfect_partner . $story . $customer_questions;
     $whole_product = $whole_product . $button_column . $like_button . $next_button . $more_outer_padding . $similar_column . $similar_row . $similar_content . $similar_image_chunk . $flexible_content . $flexible_footer . $suggested_row;
     $whole_product = $whole_product . $suggested_content . $suggested_image_chunk . $suggested_footer . $suggested_footer_creation_date . $close_product;
-
     if ($tng_debug == 1) {
       dpm('**whole product so far**');
       dpm($whole_product);
     }
-
     // here we write the file out to save our manifest formatting for escaped quotes
     //$json_name = str_replace(" ", "-", $manifest_title);
     //$file = file_save_data($whole_product,'public://' . $json_name);
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid);
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_link, $intro_text);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1093,7 +1140,7 @@ function process_hotspot($hotspot_values, $language, $nid) {
           $whole_hotsopt = rtrim($whole_hotsopt, ', ');
         }
       }
-      $main_image = $hotspot_values['field_hot_spot_image'];
+      $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image']);
       $end_hot_spot = tng_npHotspot_closer('placeholder content', $main_image);
       $whole_hotsopt = $whole_hotsopt . $end_hot_spot . $close_hot_spot;
       if ($tng_debug == 1) {
@@ -1103,7 +1150,7 @@ function process_hotspot($hotspot_values, $language, $nid) {
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, '', $language, $nid);
+    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1114,16 +1161,16 @@ function process_hotspot($hotspot_values, $language, $nid) {
 }
 
 /**
- * @param $hotspot_values
+ * @param $dragmatch_values
  * @param $language
  * @param $nid
  * @return mixed
  */
-function process_dragdrop($dragdrop, $language, $nid) {
+function process_dragmatch($dragmatch, $language, $nid) {
   $tng_debug = 0;
   if ($tng_debug == 1) {
-    dpm('drag object');
-    dpm($dragdrop);
+    dpm('drag match object');
+    dpm($dragmatch);
   }
 
   $bg_newplayer_background = 'newplayer-background';
@@ -1138,11 +1185,11 @@ function process_dragdrop($dragdrop, $language, $nid) {
   // and if we find between 1 and 20 fields, layout the page
   $min_dragdrop_fields = 1;
   $max_dragdrop_fields = 20;
-  $num_fields = count($dragdrop);
+  $num_fields = count($dragmatch);
 
   //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
-  $correct_feedback = $dragdrop['field_custom_correct_feedback'];
-  $incorrect_feedback = $dragdrop['field_custom_incorrect_feedback'];
+  $correct_feedback = $dragmatch['field_custom_correct_feedback'];
+  $incorrect_feedback = $dragmatch['field_custom_incorrect_feedback'];
   $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
   $placeholder = '<p>this is the placeholder content</p>';
   $boxclass = 'box';
@@ -1152,7 +1199,9 @@ function process_dragdrop($dragdrop, $language, $nid) {
     // here we process the fields we find for our hot spot passed in the array of $object_values
     //  start by telling the processor how many fields we found
     //dpm('Hot Spot had ' . $num_fields . ' fields.');
-    $title = $dragdrop['title_field'];
+    $title = $dragmatch->title;
+    dpm('****title****');
+    dpm($title);
     $title = str_replace(" ", "-", $title);
     if ($tng_debug == 1) {
       dpm('**title drag and drop**');
@@ -1160,7 +1209,7 @@ function process_dragdrop($dragdrop, $language, $nid) {
     }
     //$title = 'Re-Nutriv Drag and Drop';
     // we don't use the subtitle currently,but code for it in case we need it later.
-    // $subtitle = $dragdrop['field_subtitle'];
+    // $subtitle = $dragmatch['field_subtitle'];
     $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
@@ -1168,24 +1217,24 @@ function process_dragdrop($dragdrop, $language, $nid) {
     $manifest_content = $language_strings[1];
     $manifest_title = 'Drag-Spot-Manifest-' . $title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for drag and drop page.');
-    $dragdrop_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
+    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
     $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
     $background_chunk = rtrim($background_chunk, ', ');
-    $subtitle = $dragdrop['field_subtitle'];
+    $subtitle = $dragmatch['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
-    $introductory_text = $dragdrop['field_intro'];
+    $introductory_text = $dragmatch['field_intro'];
     $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
 
-    $whole_dragdrop = $feature_chunk . $content_chunk . $dragdrop_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
-    if ($dragdrop['field_drag_match_collection']) {
+    if ($dragmatch['field_drag_match_collection']) {
       {
-        $drag_top = tng_npDragAndDrop_maker('', 'test-strip', '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
+        $drag_top = tng_npDragAndMatch_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragdrop = $whole_dragdrop . $drag_top;
 
-        foreach ($dragdrop as $key=>$value) {
+        foreach ($dragmatch as $key=>$value) {
           if ($tng_debug == 1) {
             dpm('**** data ****' . $key . ' : ' . $value);
           }
@@ -1200,11 +1249,11 @@ function process_dragdrop($dragdrop, $language, $nid) {
             // for each pair of matching content, grab the data and package it up as content, matching content
             $boxnumber = 0;
             for ($i=0; $i < $count_of_elements; $i += 2) {
-              $box = 'box' . $boxnumber;
-              $boxnumber +=1;
+              //$box = 'box' . $boxnumber;
+              //$boxnumber +=1;
               $left_text_or_image = value_from_pair($sploder[$i]);
               $right_text_or_image = value_from_pair($sploder[$i+1]);
-              $hotspot_detail = tng_dragdrop_button_maker($box, $boxclass, $correct_feedback, $left_text_or_image, $boximage, $right_text_or_image, $boximage);
+              $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, $boximage, $right_text_or_image, $boximage);
               $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
             }
             $whole_dragdrop = rtrim($whole_dragdrop, ', ');
@@ -1219,7 +1268,7 @@ function process_dragdrop($dragdrop, $language, $nid) {
 
       // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid);
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -1228,8 +1277,127 @@ function process_dragdrop($dragdrop, $language, $nid) {
       }
     }
   }
-
 }
+
+/**
+ * @param $dragmatch_values
+ * @param $language
+ * @param $nid
+ * @return mixed
+ */
+function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
+  $tng_debug = 0;
+  if ($tng_debug == 1) {
+    dpm('drag match prioritize object');
+    dpm($dragprioritize);
+  }
+
+  $bg_newplayer_background = 'newplayer-background';
+  $outside_padding = 'outside-padding';
+  $renutriv_logo_image = 'renutriv-logo-image';
+  $renutriv_background_image = 'renutriv-background-image';
+  $h3_headline = 'h3 headline';
+  $close_html = '] },';
+  $close_drag_drop  = '] } ] } ] } ]';
+
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find between 1 and 20 fields, layout the page
+  $min_dragdrop_fields = 1;
+  $max_dragdrop_fields = 20;
+  $num_fields = count($dragprioritize);
+
+  //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
+  $correct_feedback = $dragprioritize['field_custom_correct_feedback'];
+  $incorrect_feedback = $dragprioritize['field_custom_incorrect_feedback'];
+  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
+  $placeholder = '<p>this is the placeholder content</p>';
+  $boxclass = 'box';
+  $boximage = '/assets/images/hotspot.png';
+
+  if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
+    // here we process the fields we find for our hot spot passed in the array of $object_values
+    //  start by telling the processor how many fields we found
+    //dpm('Hot Spot had ' . $num_fields . ' fields.');
+    $title = $dragprioritize->title;
+    dpm('****title****');
+    dpm($title);
+    $title = str_replace(" ", "-", $title);
+    if ($tng_debug == 1) {
+      dpm('**title drag and drop**');
+      dpm($title);
+    }
+    //$title = 'Re-Nutriv Drag and Drop';
+    // we don't use the subtitle currently,but code for it in case we need it later.
+    // $subtitle = $dragmatch['field_subtitle'];
+    $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
+    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_content = $language_strings[1];
+    $manifest_title = 'Drag-Spot-Manifest-' . $title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for drag and drop page.');
+    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $background_chunk = rtrim($background_chunk, ', ');
+    $subtitle = $dragprioritize['field_subtitle'];
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $introductory_text = $dragprioritize['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+
+    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+
+    if ($dragprioritize['field_drag_match_collection']) {
+      {
+        $drag_top = tng_npDragAndMatchPrioritize_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
+        $whole_dragdrop = $whole_dragdrop . $drag_top;
+
+        foreach ($dragprioritize as $key=>$value) {
+          if ($tng_debug == 1) {
+            dpm('**** data ****' . $key . ' : ' . $value);
+          }
+          if ($key == 'field_drag_match_collection') {
+            // remove brackets and curly braces [] {}
+            $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
+            $sploder = explode('",', $trim_str);
+            if ($tng_debug == 1) {
+              dpm($sploder);
+            }
+            $count_of_elements = count($sploder);
+            // for each pair of matching content, grab the data and package it up as content, matching content
+            $boxnumber = 0;
+            for ($i=0; $i < $count_of_elements; $i += 2) {
+              //$box = 'box' . $boxnumber;
+              //$boxnumber +=1;
+              $left_text_or_image = value_from_pair($sploder[$i]);
+              $right_text_or_image = value_from_pair($sploder[$i+1]);
+              $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, $boximage, $right_text_or_image, $boximage);
+              $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
+            }
+            $whole_dragdrop = rtrim($whole_dragdrop, ', ');
+          }
+        }
+        $end_dragdrop_spot = tng_npDragAndDrop_closer($placeholder, '');
+        $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
+        if ($tng_debug == 1) {
+          dpm($whole_dragdrop);
+        }
+      }
+
+      // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+      // to create an updated manifest, delete the old manifest and re-edit the product
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
+      // return the new nid to set it on the parent node
+      return $new_nid;
+    } else {
+      if ($tng_debug == 1) {
+        dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
+      }
+    }
+  }
+}
+
 /**
  * @param $object_values - is an array which holds all name/value pairs, for example 'field_difficulty : 1'
  * @param $language - the language specified by the node
@@ -1333,7 +1501,7 @@ function process_question_and_answer($object_values, $language, $nid) {
 
     // when we edit a new node for a question-answer (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, '', $language, $nid);
+    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, '', $language, $nid,'','','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1411,7 +1579,7 @@ function process_content_object($object_values, $language, $nid) {
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $language, $nid);
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $language, $nid, '','','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1432,7 +1600,7 @@ function process_content_object($object_values, $language, $nid) {
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid) {
+function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_display_text) {
 
   global $user;
   $tng_debug = 0;
@@ -1442,6 +1610,8 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
   {
     if ($tng_debug == 1) {
       dpm('creating a new nid node manifest');
+      dpm('node data');
+      dpm($node_data);
     }
     $node = new stdClass();
     $node->title = $node_title;
@@ -1469,6 +1639,24 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
     // since we can't save a manifest node with a 'language' we save it separately in a new field
     $node->field_manifest_language[$node->language][] = array(
       'value' => $node_language,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'thumbnail link' we save it separately in a new field
+    $node->field_thumbnail_link[$node->language][] = array(
+      'value' => $node_thumbnail_link,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display text' we save it separately in a new field
+    $node->field_intro_text[$node->language][] = array(
+      'value' => $node_display_text,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display title' we save it separately in a new field
+    $node->field_product_name[$node->language][] = array(
+      'value' => $node_display_title,
       'format' => 'plain_text',
     );
 
@@ -1543,6 +1731,7 @@ function tng_paragraph_processor() {
 
 function tng_shadow_shadow_request_alter($entity) {
   $tng_debug = 0;
+  $translated_labels[] ='';
   try {
     if ($tng_debug == 1) {
       dpm ($entity);
@@ -1559,7 +1748,13 @@ function tng_shadow_shadow_request_alter($entity) {
       }
       $save_entity = node_load($entity->nid) ;
       $entity_array = (array) $entity;
-      $language = $entity->language;
+      // needed to use the language from the url, since it wasn't writing other than english manifests
+      //$language = $entity->language;
+      $language = get_language_from_uri();
+      if (strlen($language) > 2)
+      {
+        $language = $entity->language;
+      }
       global $namevalue;
       $pre_manifest = array();
       if ($tng_debug == 1) {
@@ -1849,34 +2044,35 @@ function tng_shadow_shadow_request_alter($entity) {
           } else {
             $image_style_path = '';
           }
-//        dpm('**image style path**');
-//        dpm($image_style_path);
-//        for ($p=0; $p < 2; $p++) {
-//          dpm('**two loop**');
-//          dpm($field_name . ': ' . $image_style_path[$p]);
-//        }
           $pre_manifest[$field_name] = $image_style_path[0];
-          //dpm($pre_manifest);
         }
         elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
-          //dpm('found text or text_long field');
-          //dpm('children');
-          //dpm($children_nodes_to_process[$i]);
-          //dpm('wrapper');
           $wrap_array = $wrapper->$children_nodes_to_process[$i]->value();
           if (is_array($wrap_array)) {
             $wrap = $wrap_array['value'];
           } elseif(is_string($wrap_array)) {
             $wrap = $wrapper->$children_nodes_to_process[$i]->value();
           }
-          //dpm($wrap);
+          // since we do field translation, we need a way of finding out if we are working on non-english languages
+          // and we rely on drupals url method to modify 'foreign' content, which is url and form-based, with the language at the end of the url '/es'
+          if ($entity_type == 'product_detail') {
+            $uri_language = get_language_from_uri();
+            $instance = field_info_instance('node', $info['field_name'], 'product_detail');
+            $my_translated_label = i18n_field_translate_property($instance, 'label', $uri_language);
+            if ($tng_debug == 1) {
+              dpm('instance of translate');
+              dpm($instance);
+              dpm('***label: ' . $my_translated_label);
+            }
+            $translated_labels[$info['field_name']]= $my_translated_label;
+          }
           $pre_manifest[$children_nodes_to_process[$i]] = $wrap;
-          //dpm($pre_manifest);
         }
         elseif ($info['type'] == 'file') {
           $field_name = $info['field_name'];
-          if ($entity_array[$field_name][$language]) {
-            $fid = $entity_array[$field_name][$language][0]['fid'];
+          $local_language = get_language_from_uri();
+          if ($entity_array[$field_name][$local_language]) {
+            $fid = $entity_array[$field_name][$local_language][0]['fid'];
             $file_id = file_load($fid);
             $uri = $file_id->uri;
             $thefilepath = file_create_url($uri);
@@ -1927,6 +2123,7 @@ function tng_shadow_shadow_request_alter($entity) {
           $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
         }
         else {
+          // todo: get through all our usual objects and do something useful/brilliant with an unknown type
           // this section needs work, since it must handle any types we don't know about.
           //dpm('not anything we have seen before, saving value on object : '. $info['type']);
           //dpm($info);
@@ -1956,7 +2153,7 @@ function tng_shadow_shadow_request_alter($entity) {
       // if we have a product, convert it to a manifest
       if ($entity_type == 'product_detail') {
         // the manifest field is where we store the nid value for the json manifest for NewPlayerV2.
-        $new_nid = process_product($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        $new_nid = process_product($pre_manifest, $translated_labels, $language, $entity_array['field_manifest'][$language][0]['target_id']);
         // if we find a new nid, attach it to the parent node, otherwise don't do anything with it.
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on entity');
@@ -1981,7 +2178,15 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       } elseif ($entity_type == 'drag_match') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_dragdrop($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        $new_nid = process_dragmatch($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        if (isset($new_nid)) {
+          //dpm('setting new manifest nid on hot spot entity');
+          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          node_save($entity);
+        }
+      } elseif ($entity_type == 'drag_priorities') {
+        //dpm('found a hot spot to work on');
+        $new_nid = process_dragmatch_prioritize($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;
@@ -2011,6 +2216,24 @@ function tng_shadow_shadow_request_alter($entity) {
       dpm($e);
     }
   }
+}
+
+function get_language_from_uri () {
+  $tng_debug = 0;
+  $uri_language = '';
+  $language_url = $_SERVER['REQUEST_URI'];
+  $lang_splitter = explode('/', $language_url);
+  $ctr = count($lang_splitter);
+  if ($tng_debug == 1) {
+    dpm('language url');
+    dpm($language_url);
+    dpm($lang_splitter);
+    dpm($lang_splitter[$ctr-1]);
+  }
+  if ($lang_splitter[$ctr-1]) {
+    $uri_language = $lang_splitter[$ctr-1];
+  }
+  return $uri_language;
 }
 
 function array_to_obj($array, &$obj)

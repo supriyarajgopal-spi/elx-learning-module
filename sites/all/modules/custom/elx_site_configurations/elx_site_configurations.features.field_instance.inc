@@ -2532,6 +2532,47 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-object_manifest-field_intro_text'
+  $field_instances['node-object_manifest-field_intro_text'] = array(
+    'bundle' => 'object_manifest',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro_text',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-object_manifest-field_manifest_language'
   $field_instances['node-object_manifest-field_manifest_language'] = array(
     'bundle' => 'object_manifest',
@@ -2611,6 +2652,88 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance: 'node-object_manifest-field_product_name'
+  $field_instances['node-object_manifest-field_product_name'] = array(
+    'bundle' => 'object_manifest',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_name',
+    'label' => 'Product name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-object_manifest-field_thumbnail_link'
+  $field_instances['node-object_manifest-field_thumbnail_link'] = array(
+    'bundle' => 'object_manifest',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_thumbnail_link',
+    'label' => 'Thumbnail link',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => -1,
     ),
   );
 
@@ -5981,6 +6104,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Price');
   t('Product categories');
   t('Product image');
+  t('Product name');
   t('Pulsed content');
   t('Question image');
   t('Question text');
@@ -6000,6 +6124,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Tags/keywords');
   t('This is the name used to reference Products throughout the admin system. This name <b>MUST</b> be unique.');
   t('This is the title that will be displayed in the ELX system.');
+  t('Thumbnail link');
   t('Title');
   t('Tool PDF');
   t('Tool by role');

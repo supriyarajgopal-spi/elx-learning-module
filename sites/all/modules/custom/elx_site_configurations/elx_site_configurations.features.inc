@@ -23,64 +23,6 @@ function elx_site_configurations_ctools_plugin_api($module = NULL, $api = NULL) 
 }
 
 /**
- * Implements hook_image_default_styles().
- */
-function elx_site_configurations_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: archive_thumbnail.
-  $styles['archive_thumbnail'] = array(
-    'name' => 'archive_thumbnail',
-    'label' => 'Archive thumbnail',
-    'effects' => array(
-      7 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'imageinfo_cache_effect_router',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 140,
-          'height' => 124,
-          '#imageinfo_cache_effect_callback' => 'imageinfo_cache_effect_router',
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: teaser_thumbnail.
-  $styles['teaser_thumbnail'] = array(
-    'name' => 'teaser_thumbnail',
-    'label' => 'Teaser thumbnail',
-    'effects' => array(
-      4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'imageinfo_cache_effect_router',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 100,
-          'height' => 100,
-          'retinafy' => 0,
-          '#imageinfo_cache_effect_callback' => 'imageinfo_cache_effect_router',
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  return $styles;
-}
-
-/**
  * Implements hook_node_info().
  */
 function elx_site_configurations_node_info() {

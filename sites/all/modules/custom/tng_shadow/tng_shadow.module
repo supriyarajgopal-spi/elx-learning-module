@@ -892,8 +892,9 @@ function process_product($product_values, $labels, $language, $nid) {
     $subtitle = $product_values['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '','','',$subtitle,'',  FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
-    $image_path = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], FALSE);
-    $thumbnail_link = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], TRUE);
+    $image_path = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], '', FALSE);
+    $thumbnail_teaser = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], 'teaser', TRUE);
+    $thumbnail_archive = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], 'archive', TRUE);
     $image_chunk = tng_npImage_maker('', $image_path, 'topImage img-responsive', $title );
     $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', '', TRUE);
     $translated_why = $labels['field_why_there_s_only_one'];
@@ -920,7 +921,7 @@ function process_product($product_values, $labels, $language, $nid) {
     $if_she_asks = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_share, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_if_she_asks_share']);
     $intro_text = strip_tags($product_values['field_if_she_asks_share']);
     // the triple has title,image,date
-    $basepath = substr($thumbnail_link, 0, strripos($thumbnail_link, "/"));
+    $basepath = substr($thumbnail_teaser, 0, strripos($thumbnail_teaser, "/"));
     $perfect_partner_data = $product_values['field_perfect_partners'];
 
     $prefix_url = '/api/products/name/';
@@ -930,7 +931,7 @@ function process_product($product_values, $labels, $language, $nid) {
       dpm($perfect_data);
       dpm($intro_text);
       dpm($display_title);
-      dpm($thumbnail_link);
+      dpm($thumbnail_teaser);
     }
     $translated_perfect = $labels['field_perfect_partners_text'];
     if (!$translated_perfect) {
@@ -998,7 +999,7 @@ function process_product($product_values, $labels, $language, $nid) {
     //$link_path = '/api/products/name/' . $similar_data[1];
     $strip = strip_tags($similar_data[1]);
     $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
-    $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0], TRUE);
+    $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0], 'teaser', TRUE);
     $similar_image_chunk = tng_npImage_maker('', $similar_image, $col_sm4_resp, $similar_data[1] ) . ',';
     $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[1], $dash_name, FALSE);
     $flexible_footer = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[2], '', FALSE);
@@ -1014,7 +1015,7 @@ function process_product($product_values, $labels, $language, $nid) {
       //$link_path = '/api/products/name/' . $suggested_data[1];
       $strip = strip_tags($suggested_data[1]);
       $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
-      $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0], TRUE);
+      $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0], 'teaser', TRUE);
       $suggested_image_chunk = tng_npImage_maker('', $suggested_image, $col_sm4_resp, $suggested_data[1] ) . ',';
       $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '','','', $suggested_data[1], $dash_name, FALSE);
       $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '','','',$suggested_data[2], '', FALSE);
@@ -1049,7 +1050,7 @@ function process_product($product_values, $labels, $language, $nid) {
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_link, $intro_text);
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $intro_text);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1134,7 +1135,7 @@ function process_hotspot($hotspot_values, $language, $nid) {
           $whole_hotsopt = rtrim($whole_hotsopt, ', ');
         }
       }
-      $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image']);
+      $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image'],'','');
       $end_hot_spot = tng_npHotspot_closer('placeholder content', $main_image);
       $whole_hotsopt = $whole_hotsopt . $end_hot_spot . $close_hot_spot;
       if ($tng_debug == 1) {
@@ -1473,7 +1474,7 @@ function process_question_and_answer($object_values, $language, $nid) {
         $ba = '{' . $ba . ']},';
         $whole_qa = $whole_qa . $ba;
       } elseif ($key == 'field_answer_image') {
-        $truth = tng_convert_drupal_to_mean_filename($value);
+        $truth = tng_convert_drupal_to_mean_filename($value, '','');
         $image_chunk = tng_npImage_maker('', $truth, '', '');
         $whole_qa = $whole_qa . $image_chunk ;
       } else {
@@ -1553,7 +1554,7 @@ function process_content_object($object_values, $language, $nid) {
         $whole_object = $whole_object . $combo;
       }
       elseif ($key == 'field_hero_image') {
-        $truth = tng_convert_drupal_to_mean_filename($value);
+        $truth = tng_convert_drupal_to_mean_filename($value,'','');
         $image_chunk = tng_npImage_maker($truth);
         $whole_object = $whole_object . $image_chunk . ',';
       } else {
@@ -1678,7 +1679,7 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
  * @param $value - full pathname of the local drupal image file
  * @return string - return the path which we will expect on the MEAN server side 'assets + stylepath'
  */
-function tng_convert_drupal_to_mean_filename($value, $make_thumbnail = NULL) {
+function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL) {
   $tng_debug = 1;
   //short circuit this if there isn't a system path
   if (substr($value,0,6) == 'assets') {
@@ -1687,10 +1688,11 @@ function tng_convert_drupal_to_mean_filename($value, $make_thumbnail = NULL) {
   $justpath = parse_url($value, PHP_URL_PATH);
   // if we want a thumbnail make it
   if ($make_thumbnail == TRUE) {
-    dpm('we have a thumbnail product image, not a real one');
-    $justpath = str_replace('product_detail', 'teaser_thumbnail', $justpath);
-  } else {
-    dpm('we have a real product image, not a thumbnail');
+    if ($thumb_type == 'teaser') {
+      $justpath = str_replace('product_detail', 'teaser_thumbnail', $justpath);
+    } else if ($thumb_type == 'archive') {
+      $justpath = str_replace('product_detail', 'archive_thumbnail', $justpath);
+    }
   }
   $needle = "/default/files/";
   $match = strpos($justpath, $needle);

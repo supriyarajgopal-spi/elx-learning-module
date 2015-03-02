@@ -3029,7 +3029,7 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'size' => 60,
+        'size' => 80,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 19,
@@ -3195,7 +3195,7 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'size' => 60,
+        'size' => 80,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 18,
@@ -3427,7 +3427,7 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'size' => 60,
+        'size' => 80,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 18,
@@ -3678,7 +3678,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 80,
       ),
       'type' => 'text_textfield',
       'weight' => 0,

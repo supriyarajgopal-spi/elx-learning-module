@@ -45,7 +45,7 @@ function elx_site_configurations_image_default_styles() {
         'data' => array(
           'width' => 140,
           'height' => 124,
-          '#imageinfo_cache_effect_callback' => 'image_scale_and_crop_effect',
+          '#imageinfo_cache_effect_callback' => 'imageinfo_cache_effect_router',
         ),
         'weight' => 1,
       ),
@@ -70,7 +70,7 @@ function elx_site_configurations_image_default_styles() {
           'width' => 100,
           'height' => 100,
           'retinafy' => 0,
-          '#imageinfo_cache_effect_callback' => 'image_scale_and_crop_effect',
+          '#imageinfo_cache_effect_callback' => 'imageinfo_cache_effect_router',
         ),
         'weight' => 1,
       ),

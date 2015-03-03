@@ -13,6 +13,37 @@ function elx_users_feature_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_elx_user|user|user|form';
+  $field_group->group_name = 'group_elx_user';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'ELX Data',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_last_access_date',
+      1 => 'field_level',
+      2 => 'field_modified_date',
+      3 => 'field_rank',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'ELX Data',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-elx-user field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_elx_user|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_employee|user|user|form';
   $field_group->group_name = 'group_employee';
   $field_group->entity_type = 'user';
@@ -30,11 +61,10 @@ function elx_users_feature_field_group_info() {
       4 => 'field_education_manager_executiv',
       5 => 'field_employer_number',
       6 => 'field_hire_date',
-      7 => 'field_job_title',
-      8 => 'field_field_sales_director_regio',
-      9 => 'field_regional_vice_president',
-      10 => 'field_general_manager_brand_mana',
-      11 => 'field_market_administrator',
+      7 => 'field_field_sales_director_regio',
+      8 => 'field_general_manager_brand_mana',
+      9 => 'field_market_administrator',
+      10 => 'field_regional_vice_president',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

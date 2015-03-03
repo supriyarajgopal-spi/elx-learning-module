@@ -885,6 +885,7 @@ function process_product($product_values, $labels, $language, $nid) {
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Product-Manifest-' . $name;
+    $newplayer_api_link = '/api/products/name/' . $manifest_title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
     $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','', '', FALSE);
     $background_padding = tng_npHTML_basic_maker('',$bg_outside_padding,'','','','','', TRUE);
@@ -1050,7 +1051,7 @@ function process_product($product_values, $labels, $language, $nid) {
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $intro_text);
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1145,7 +1146,7 @@ function process_hotspot($hotspot_values, $language, $nid) {
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
+    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, '', $language, $nid,'', '', '','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1263,7 +1264,7 @@ function process_dragmatch($dragmatch, $language, $nid) {
 
       // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','', '','');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -1382,7 +1383,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
 
       // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','');
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -1496,7 +1497,7 @@ function process_question_and_answer($object_values, $language, $nid) {
 
     // when we edit a new node for a question-answer (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, '', $language, $nid,'','','');
+    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, '', $language, $nid,'','','','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1574,7 +1575,7 @@ function process_content_object($object_values, $language, $nid) {
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $language, $nid, '','','');
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1595,7 +1596,7 @@ function process_content_object($object_values, $language, $nid) {
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_display_text) {
+function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_newplayer_link, $node_display_text) {
 
   global $user;
   $tng_debug = 1;
@@ -1652,6 +1653,13 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
     // since we can't save a manifest node with a 'display title' we save it separately in a new field
     $node->field_product_name[$node->language][] = array(
       'value' => $node_display_title,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'newplayer link' we save it separately in a new field
+    //http://localhost:3000/api/products/name/Product-Manifest-Advanced-Night-Repair-Eye-Synchronized-Complex-II
+    $node->field_newplayer_link[$node->language][] = array(
+      'value' => $node_newplayer_link,
       'format' => 'plain_text',
     );
 

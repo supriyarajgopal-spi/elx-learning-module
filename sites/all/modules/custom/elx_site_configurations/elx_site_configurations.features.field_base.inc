@@ -620,6 +620,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
+  // Exported field_base: 'field_drag_priority_collection'
+  $field_bases['field_drag_priority_collection'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_drag_priority_collection',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_featured'
   $field_bases['field_featured'] = array(
     'active' => 1,

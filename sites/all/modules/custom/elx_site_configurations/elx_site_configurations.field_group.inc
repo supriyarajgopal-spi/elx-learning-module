@@ -295,6 +295,34 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_priority|paragraphs_item|drag_priority|form';
+  $field_group->group_name = 'group_priority';
+  $field_group->entity_type = 'paragraphs_item';
+  $field_group->bundle = 'drag_priority';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Priority group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_priority_image',
+      1 => 'field_priority_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-priority field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_priority|paragraphs_item|drag_priority|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_product_markets|node|product_detail|form';
   $field_group->group_name = 'group_product_markets';
   $field_group->entity_type = 'node';

@@ -5188,14 +5188,14 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_list_image',
-    'label' => 'List image',
+    'label' => 'List media',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
-      'entity_translation_sync' => 0,
+      'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
+      'file_extensions' => 'png gif jpg jpeg mp4 mov',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -5207,13 +5207,14 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 0,
+          'video' => 'video',
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -6292,8 +6293,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Learning objects');
   t('Left drag image');
   t('Left drag text');
-  t('List image');
   t('List item');
+  t('List media');
   t('List text');
   t('Manifest');
   t('Markets');

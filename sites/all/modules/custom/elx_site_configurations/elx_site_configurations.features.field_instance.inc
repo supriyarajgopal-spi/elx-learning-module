@@ -3311,7 +3311,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'product_detail',
     'default_value' => array(
       0 => array(
-        'value' => '<p><strong>Need a phrase to help you link? Try:</strong></p><p>"Because you love ___, I also want to show you ___."</p>',
+        'value' => '<p>Need a phrase to help you link? Try:</p><p><strong>"Because you love ___, I also want to show you ___."</strong></p>',
         'format' => 'full_html',
       ),
     ),

@@ -3024,7 +3024,7 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'pdf',
       'max_filesize' => '',
@@ -3035,13 +3035,20 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
           'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
-        'progress_indicator' => 'throbber',
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 0,
+        ),
       ),
       'type' => 'media_generic',
       'weight' => 20,

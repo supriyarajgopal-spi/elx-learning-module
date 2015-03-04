@@ -5195,14 +5195,14 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_list_image',
-    'label' => 'List media',
+    'label' => 'List image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg mp4 mov',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -5221,7 +5221,7 @@ function elx_site_configurations_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 'video',
+          'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -5271,6 +5271,49 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-list_item-field_list_video'
+  $field_instances['paragraphs_item-list_item-field_list_video'] = array(
+    'bundle' => 'list_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 4,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_list_video',
+    'label' => 'List video',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'videos',
+      'file_extensions' => 'mp4 mov',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
       'weight' => 2,
     ),
   );
@@ -6101,14 +6144,14 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_reveal_hero',
-    'label' => 'Reveal hero',
+    'label' => 'Reveal hero image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg mp4 mov',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '765x200',
@@ -6127,7 +6170,7 @@ function elx_site_configurations_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 'video',
+          'video' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -6137,6 +6180,49 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_hero_video'
+  $field_instances['paragraphs_item-reveal_collection-field_reveal_hero_video'] = array(
+    'bundle' => 'reveal_collection',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_reveal_hero_video',
+    'label' => 'Reveal hero video',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'videos',
+      'file_extensions' => 'mp4 mov',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 3,
     ),
   );
 
@@ -6177,7 +6263,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -6300,9 +6386,10 @@ function elx_site_configurations_field_default_field_instances() {
   t('Learning objects');
   t('Left drag image');
   t('Left drag text');
+  t('List image');
   t('List item');
-  t('List media');
   t('List text');
+  t('List video');
   t('Manifest');
   t('Markets');
   t('Match collection');
@@ -6327,7 +6414,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Question video');
   t('Related products');
   t('Reveal collection');
-  t('Reveal hero');
+  t('Reveal hero image');
+  t('Reveal hero video');
   t('Reveal text');
   t('Reveal thumbnail');
   t('Right drag image');

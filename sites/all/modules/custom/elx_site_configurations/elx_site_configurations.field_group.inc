@@ -194,15 +194,17 @@ function elx_site_configurations_field_group_info() {
     'children' => array(
       0 => 'field_list_image',
       1 => 'field_list_text',
+      2 => 'field_list_video',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'List group',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-list-items field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'group-list-items field-group-fieldset',
+        'description' => 'Upload EITHER a video OR an image.',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_list_items|paragraphs_item|list_item|form'] = $field_group;
@@ -482,6 +484,7 @@ function elx_site_configurations_field_group_info() {
       0 => 'field_reveal_thumbnail',
       1 => 'field_reveal_hero',
       2 => 'field_reveal_text',
+      3 => 'field_reveal_hero_video',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -489,7 +492,7 @@ function elx_site_configurations_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => 'group-reveal field-group-fieldset',
-        'description' => '',
+        'description' => 'Upload EITHER hero image OR hero video.',
       ),
       'formatter' => 'open',
     ),

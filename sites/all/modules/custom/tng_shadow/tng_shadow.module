@@ -672,7 +672,7 @@ function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_f
   $tng_debug = 0;
   try {
     $dragandrop = '';
-    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndMatchPrioritize"' ;
+    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"' ;
     $dragandrop = $dragandrop . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
       $dragandrop = $dragandrop . ',' .   '"class"' . ':' . '"' . $class . '"';
@@ -745,6 +745,73 @@ function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
 }
 
 
+function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading = NULL, $content = NULL,
+                          $component_type = NULL, $component_data = NULL, $component_id = NULL, $component_src = NULL,
+                          $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL) {
+  $tng_debug = 0;
+  try {
+    $list = '';
+    $list = $list . '{' . '"type"' . ':' . '"npList"' ;
+    $list = $list . ',' . '"data"' . ': {' ;
+    if ($id) {
+      $list = $list . ',' .   '"id"' . ':'  . '"' . $id . '"';
+    }
+    if ($class) {
+      $list = $list . ',' .   '"class"' . ':' . '"' . $class . '"';
+    }
+    if ($data_ng) {
+      $list = $list . ',' .   '"data-ng:wrap"'   . ':' .  '"'  . $data_ng . '"';
+    }
+    if ($heading) {
+      $list = $list . ',' .   '"heading"'   . ':' .  '"'  . $heading . '"';
+    }
+    if ($heading) {
+      $list = $list . ',' .   '"content"'   . ':' .  '"'  . $content . '"';
+    }
+    $list = $list . '},'  ;
+    $list = $list .       '"components"' . ':' . '[' ;
+    $list = $list .         '{' ;
+    if ($component_type) {
+      $list = $list .           '"type"' . ':' . '"' . $component_type . '"';
+    }
+    if ($component_data) {
+      $list = $list . ',         "data"' . ':' . '"' . $component_data . '"';
+    }
+    $list = $list .           '{';
+    if ($component_id) {
+      $list = $list .             '"id"' . ':' . '"' . $component_id . '"';
+    }
+    if ($component_src) {
+      $list = $list . ',            "src"' . ':' . '"' . $component_src . '"';
+    }
+    if ($component_alt) {
+      $list = $list . ',            "alt"' . ':' . '"' . $component_alt . '"';
+    }
+    if ($data_poster) {
+      $list = $list . ',            "poster"' . ':' . '"' . $data_poster . '"';
+    }
+    if ($data_baseurl) {
+      $list = $list . ',            "baseUrl"' . ':' . '"' . $data_baseurl . '"';
+    }
+    if ($data_baseurl) {
+      $list = $list . ',            "types"' . ':' . '"' . $data_types . '"';
+    }
+    $list = $list .            '"},"' ;
+    $list = $list .          '"components"' . ':' . '"[]"';
+    $list = $list .      '}';
+    $list = $list .    ']';
+    $list = $list .  '},';
+    return $list;
+  }
+
+  catch (exception $e) {
+    if ($tng_debug == 1) {
+      dpm($e);
+    }
+  }
+}
+
+
 /**
  * @return string - when we create manifest objects we need to finish things with proper entity closing } and ]
  */
@@ -776,6 +843,10 @@ function make_language_strings($language_key) {
   $country_only = '';
   $language_only = substr($language_key,0);
 
+  if ($language_key == 'und') {
+    $manifest_language[] = 'en';
+    $manifest_language[] = 'content_' . 'en';
+  }
   if (strlen($language_key) > 2)
   {
     $country_only = strtoupper(substr($language_key, 2));
@@ -913,6 +984,7 @@ function process_product($product_values, $labels, $language, $nid) {
     $manifest_content = $language_strings[1];
     $manifest_title = 'Product-Manifest-' . $name;
     $newplayer_api_link = '/api/products/name/' . $manifest_title;
+    $product_filter_categories = $product_values['field_product_categories'];
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
     $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','', '', FALSE);
     $background_padding = tng_npHTML_basic_maker('',$bg_outside_padding,'','','','','', TRUE);
@@ -1078,7 +1150,7 @@ function process_product($product_values, $labels, $language, $nid) {
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text);
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1422,6 +1494,123 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
 }
 
 /**
+ * @param $dragmatch_values
+ * @param $language
+ * @param $nid
+ * @return mixed
+ */
+function process_list($listobject, $language, $nid) {
+  $tng_debug = 0;
+  if ($tng_debug == 1) {
+    dpm('list object');
+    dpm($listobject);
+  }
+
+  $bg_newplayer_background = 'newplayer-background';
+  $outside_padding = 'outside-padding';
+  $renutriv_logo_image = 'renutriv-logo-image';
+  $renutriv_background_image = 'renutriv-background-image';
+  $h3_headline = 'h3 headline';
+  $close_html = '] },';
+  $close_drag_drop  = '] } ] } ] } ]';
+
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find between 1 and 20 fields, layout the page
+  $min_dragmatch_fields = 1;
+  $max_dragmatch_fields = 20;
+  $num_fields = count($listobject);
+
+  //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
+  $correct_feedback = $listobject['field_custom_correct_feedback'];
+  $incorrect_feedback = $listobject['field_custom_incorrect_feedback'];
+  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
+  $placeholder = '<p>this is the placeholder content</p>';
+  $boxclass = 'box';
+  $boximage = '/assets/images/hotspot.png';
+
+  if ($num_fields >= $min_dragmatch_fields && $num_fields <= $max_dragmatch_fields) {
+    // here we process the fields we find for our hot spot passed in the array of $object_values
+    //  start by telling the processor how many fields we found
+    //dpm('Hot Spot had ' . $num_fields . ' fields.');
+    $title = $listobject->title;
+    dpm('****title****');
+    dpm($title);
+    $title = str_replace(" ", "-", $title);
+    if ($tng_debug == 1) {
+      dpm('**title drag and drop**');
+      dpm($title);
+    }
+    //$title = 'Re-Nutriv Drag and Drop';
+    // we don't use the subtitle currently,but code for it in case we need it later.
+    // $subtitle = $dragmatch['field_subtitle'];
+    $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
+    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_content = $language_strings[1];
+    $manifest_title = 'List-Manifest-' . $title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for list itesm.');
+    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $background_chunk = rtrim($background_chunk, ', ');
+    $subtitle = $listobject['field_subtitle'];
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $introductory_text = $listobject['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+
+    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+
+    foreach ($listobject as $key=>$value) {
+      if ($tng_debug == 1) {
+        dpm('**** data ****' . $key . ' : ' . $value);
+      }
+      if ($key == 'field_list_item') {
+        // remove brackets and curly braces [] {}
+        $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
+        $sploder = explode('",', $trim_str);
+        if ($tng_debug == 1) {
+          dpm($sploder);
+        }
+        $count_of_elements = count($sploder);
+        // for each pair of matching content, grab the data and package it up as content, matching content
+        for ($i=0; $i < $count_of_elements; $i += 1) {
+          $left_text_or_image = value_from_pair($sploder[$i]);
+          $hotspot_detail = tng_npList_maker('', 'h6 instructional', TRUE, 'list heading', $left_text_or_image,'','','','','','','','');
+          $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
+        }
+        $whole_dragdrop = rtrim($whole_dragdrop, ', ');
+      } else {
+        if ($key == 'field_list_image') {
+          dpm('found an image');
+        }
+        else {
+          if ($key == 'field_list_video') {
+            dpm('found a video');
+          }
+        }
+      }
+      $end_dragdrop_spot = tng_npDragAndDrop_closer($placeholder, '');
+      $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
+      if ($tng_debug == 1) {
+        dpm($whole_dragdrop);
+      }
+    }
+
+      // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+      // to create an updated manifest, delete the old manifest and re-edit the product
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+      // return the new nid to set it on the parent node
+      return $new_nid;
+    } else {
+      if ($tng_debug == 1) {
+        dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
+      }
+  }
+}
+
+/**
  * @param $object_values - is an array which holds all name/value pairs, for example 'field_difficulty : 1'
  * @param $language - the language specified by the node
  * @param $nid - id of the node we processed to get the array info in $object_values
@@ -1623,7 +1812,7 @@ function process_content_object($object_values, $language, $nid) {
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_newplayer_link, $node_display_text) {
+function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_newplayer_link, $node_display_text, $node_categories) {
 
   global $user;
   $tng_debug = 0;
@@ -1683,12 +1872,26 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
       'format' => 'plain_text',
     );
 
+    // since we can't save a manifest node with a 'display title' we save it separately in a new field
+    $node->field_product_name[$node->language][] = array(
+      'value' => $node_display_title,
+      'format' => 'plain_text',
+    );
+
     // since we can't save a manifest node with a 'newplayer link' we save it separately in a new field
     //http://localhost:3000/api/products/name/Product-Manifest-Advanced-Night-Repair-Eye-Synchronized-Complex-II
     $node->field_newplayer_link[$node->language][] = array(
       'value' => $node_newplayer_link,
       'format' => 'plain_text',
     );
+
+    // since we can't save a manifest node with a 'categories link' we save it separately in a new field
+    //http://localhost:3000/api/products/name/Product-Manifest-Advanced-Night-Repair-Eye-Synchronized-Complex-II
+    $node->field_manifest_categories[$node->language][] = array(
+      'value' => $node_categories,
+      'format' => 'plain_text',
+    );
+
 
     //$node->language = $node_language; // unfortunately this doesn't work
     $node->uid = $user->uid;
@@ -1747,9 +1950,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
   return $remote_picture_name;
 }
 
-function tng_paragraph_processor() {
 
-}
 /**
  * @param $entity - This view entity is passed
  * from the shadow module to construct a valid JSON object that the NewPlayerV2 can consume.
@@ -1853,7 +2054,10 @@ function tng_shadow_shadow_request_alter($entity) {
             $bundler = 'drag_match';
           } elseif ($entity_type == 'drag_priorities') {
             $bundler = 'drag_priority';
+          } elseif ($entity_type == 'list') {
+            $bundler = 'list_item';
           }
+
           $paragraph_fields = field_info_instances('paragraphs_item', $bundler);
           $number_of_paragraph_fields = count($paragraph_fields);
           if ($tng_debug == 1) {
@@ -1862,6 +2066,9 @@ function tng_shadow_shadow_request_alter($entity) {
             dpm($number_of_paragraph_fields . $paragraph_fields['field_name'] . ' paragraph fields found.');
           }
           $children_fields_to_process = element_children($paragraph_fields);
+          $match_possibilites = array('field_priority_image', 'field_priority_text');
+          $drag_possibilities = array('field_left_drag_image', 'field_left_drag_text', 'field_right_drag_image', 'field_right_drag_text');
+          $list_possibilities = array('field_list_image', 'field_list_video', 'field_list_text');
           // explore each paragraph
           for ($p=0; $p < $number_of_paragraphs; $p++) {
             // and every field for each paragraph
@@ -1876,25 +2083,48 @@ function tng_shadow_shadow_request_alter($entity) {
                 dpm($field_child_info);
                 dpm('name : ' . $name);
               }
-              $match_possibilites = array('field_priority_image', 'field_priority_text');
-              $drag_possibilities = array('field_left_drag_image', 'field_left_drag_text', 'field_right_drag_image', 'field_right_drag_text');
-
-              if (in_array($name, $match_possibilites)){
-                if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                  $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+              // todo: this should be collapsed and refactored once we're sure we don't need to process each type separately
+              if (in_array($name, $match_possibilites)) {
+                if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                  if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                  }
+                  if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
+                  }
                   if ($tng_debug == 1) {
                     dpm('value after name' . $namevalue);
                   }
                 }
               } else {
+                if (in_array($name, $list_possibilities)){
+                    if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                      $lan = $language;
+                      if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                      } else {
+                        if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                          $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
+                        }
+                      }
+                      if ($tng_debug == 1) {
+                        dpm('value after name' . $namevalue);
+                      }
+                    }
+              } else {
                 if (in_array($name, $drag_possibilities)){
-                  if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
-                    if ($tng_debug == 1) {
+                  if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                    if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                    }
+                    if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
+                    }
+                      if ($tng_debug == 1) {
                       dpm('value after name' . $namevalue);
                     }
                   }
-                } else {
+               } else {
                   if (strlen(strstr($name,'field_hot_spot')) >0) {
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
                       $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
@@ -1918,6 +2148,8 @@ function tng_shadow_shadow_request_alter($entity) {
                   }
                 }
               }
+            }
+
 
               $field_count = count($paragraphs->{$name}[$language]);
               // if there are no elements in the field don't process
@@ -2238,6 +2470,14 @@ function tng_shadow_shadow_request_alter($entity) {
       } elseif ($entity_type == 'drag_priorities') {
         //dpm('found a hot spot to work on');
         $new_nid = process_dragmatch_prioritize($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        if (isset($new_nid)) {
+          //dpm('setting new manifest nid on hot spot entity');
+          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          node_save($entity);
+        }
+      } elseif ($entity_type == 'list') {
+        //dpm('found a hot spot to work on');
+        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;

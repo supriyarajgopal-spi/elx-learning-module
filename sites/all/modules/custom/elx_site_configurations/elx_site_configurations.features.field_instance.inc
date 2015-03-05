@@ -1560,6 +1560,76 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-flash_cards-field_flash_card_collection'
+  $field_instances['node-flash_cards-field_flash_card_collection'] = array(
+    'bundle' => 'flash_cards',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_flash_card_collection',
+    'label' => 'Flash card collection',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => -1,
+        'drag_match' => -1,
+        'drag_priority' => -1,
+        'flash_card_collection' => 'flash_card_collection',
+        'hot_spot' => -1,
+        'list_item' => -1,
+        'match_game_collection' => -1,
+        'multiple_choice_collection' => -1,
+        'new_spot' => -1,
+        'questions' => -1,
+        'reveal_collection' => -1,
+      ),
+      'bundle_weights' => array(
+        'answers' => 2,
+        'drag_match' => 3,
+        'drag_priority' => 4,
+        'flash_card_collection' => 5,
+        'hot_spot' => 6,
+        'list_item' => 7,
+        'match_game_collection' => 8,
+        'multiple_choice_collection' => 9,
+        'new_spot' => 10,
+        'questions' => -10,
+        'reveal_collection' => -10,
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'Flash card',
+      'title_multiple' => 'Flash cards',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-flash_cards-field_manifest'
   $field_instances['node-flash_cards-field_manifest'] = array(
     'bundle' => 'flash_cards',
@@ -1600,7 +1670,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -1684,7 +1754,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -1793,6 +1863,16 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'preview_image_style' => 'hot_spot',
         'progress_indicator' => 'throbber',
       ),
@@ -5053,6 +5133,88 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_back_card'
+  $field_instances['paragraphs_item-flash_card_collection-field_back_card'] = array(
+    'bundle' => 'flash_card_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_back_card',
+    'label' => 'Back card',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_front_card'
+  $field_instances['paragraphs_item-flash_card_collection-field_front_card'] = array(
+    'bundle' => 'flash_card_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_front_card',
+    'label' => 'Front card',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_text'
   $field_instances['paragraphs_item-hot_spot-field_hot_spot_text'] = array(
     'bundle' => 'hot_spot',
@@ -5311,6 +5473,16 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -6219,6 +6391,16 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -6343,6 +6525,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Answer image');
   t('Answer text');
   t('Autocomplete tags. Separate tags by commas.');
+  t('Back card');
   t('Badge description');
   t('Badge icon');
   t('Benefits');
@@ -6365,6 +6548,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Enter correct or incorrect answer text, or upload answer image.');
   t('Featured');
   t('Final exam');
+  t('Flash card collection');
+  t('Front card');
   t('Fun fact sheet');
   t('Headline');
   t('Hero image');

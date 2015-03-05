@@ -698,6 +698,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_flash_card_collection'
+  $field_bases['field_flash_card_collection'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_flash_card_collection',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_fun_fact_sheet'
   $field_bases['field_fun_fact_sheet'] = array(
     'active' => 1,

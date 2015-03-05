@@ -164,6 +164,11 @@ function elx_site_configurations_paragraphs_info() {
       'bundle' => 'drag_priority',
       'locked' => '1',
     ),
+    'flash_card_collection' => array(
+      'name' => 'Flash card collection',
+      'bundle' => 'flash_card_collection',
+      'locked' => '1',
+    ),
     'hot_spot' => array(
       'name' => 'Hot spot',
       'bundle' => 'hot_spot',

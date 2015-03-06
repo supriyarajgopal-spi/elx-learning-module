@@ -137,8 +137,10 @@ function elx_site_configurations_field_group_info() {
     'label' => 'Flash card',
     'weight' => '0',
     'children' => array(
-      0 => 'field_front_card',
-      1 => 'field_back_card',
+      0 => 'field_back_card',
+      1 => 'field_front_card',
+      2 => 'field_front_card_image',
+      3 => 'field_back_card_image',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

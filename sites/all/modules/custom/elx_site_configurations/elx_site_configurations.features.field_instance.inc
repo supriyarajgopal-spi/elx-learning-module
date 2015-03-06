@@ -5208,10 +5208,84 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_back_card_image'
+  $field_instances['paragraphs_item-flash_card_collection-field_back_card_image'] = array(
+    'bundle' => 'flash_card_collection',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_back_card_image',
+    'label' => 'Back card image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 1,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'image_flash_card_image',
+        'insert_styles' => array(
+          'auto' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_archive_thumbnail' => 0,
+          'image_flash_card_image' => 'image_flash_card_image',
+          'image_hot_spot' => 0,
+          'image_large' => 0,
+          'image_list_image' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_product_detail' => 0,
+          'image_reveal_hero' => 0,
+          'image_reveal_thumbnail' => 0,
+          'image_teaser_thumbnail' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
     ),
   );
 
@@ -5249,10 +5323,87 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_front_card_image'
+  $field_instances['paragraphs_item-flash_card_collection-field_front_card_image'] = array(
+    'bundle' => 'flash_card_collection',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_front_card_image',
+    'label' => 'Front card image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
+        'insert' => 1,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'image_flash_card_image',
+        'insert_styles' => array(
+          'auto' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_archive_thumbnail' => 0,
+          'image_flash_card_image' => 'image_flash_card_image',
+          'image_hot_spot' => 0,
+          'image_large' => 0,
+          'image_list_image' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_product_detail' => 0,
+          'image_reveal_hero' => 0,
+          'image_reveal_thumbnail' => 0,
+          'image_teaser_thumbnail' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 3,
     ),
   );
 
@@ -5471,7 +5622,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 3,
@@ -6567,6 +6718,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Answer text');
   t('Autocomplete tags. Separate tags by commas.');
   t('Back card');
+  t('Back card image');
   t('Badge description');
   t('Badge icon');
   t('Benefits');
@@ -6592,6 +6744,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Final exam');
   t('Flash card collection');
   t('Front card');
+  t('Front card image');
   t('Fun fact sheet');
   t('Headline');
   t('Hero image');

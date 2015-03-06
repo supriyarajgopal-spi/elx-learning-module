@@ -5259,7 +5259,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'image',
       'settings' => array(
         'insert' => 1,
-        'insert_absolute' => 0,
+        'insert_absolute' => 1,
         'insert_class' => '',
         'insert_default' => 'image_flash_card_image',
         'insert_styles' => array(
@@ -5369,15 +5369,8 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'insert' => 1,
-        'insert_absolute' => 0,
+        'insert_absolute' => 1,
         'insert_class' => '',
         'insert_default' => 'image_flash_card_image',
         'insert_styles' => array(

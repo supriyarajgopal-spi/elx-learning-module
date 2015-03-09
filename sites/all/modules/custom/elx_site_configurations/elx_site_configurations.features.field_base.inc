@@ -712,6 +712,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
+  // Exported field_base: 'field_drag_select_collection'
+  $field_bases['field_drag_select_collection'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_drag_select_collection',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_drag_select_image'
   $field_bases['field_drag_select_image'] = array(
     'active' => 1,
@@ -746,6 +767,38 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
+  );
+
+  // Exported field_base: 'field_drag_select_question'
+  $field_bases['field_drag_select_question'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_drag_select_question',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_drag_select_text'

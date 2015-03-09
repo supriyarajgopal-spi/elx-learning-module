@@ -1469,7 +1469,118 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-drag_select-field_drag_select_collection'
+  $field_instances['node-drag_select-field_drag_select_collection'] = array(
+    'bundle' => 'drag_select',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_drag_select_collection',
+    'label' => 'Drag select collection',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'answers' => -1,
+        'drag_match' => -1,
+        'drag_priority' => -1,
+        'drag_select' => 'drag_select',
+        'flash_card_collection' => -1,
+        'hot_spot' => -1,
+        'list_item' => -1,
+        'match_game_collection' => -1,
+        'multiple_choice_collection' => -1,
+        'questions' => -1,
+        'reveal_collection' => -1,
+      ),
+      'bundle_weights' => array(
+        'answers' => 2,
+        'drag_match' => 3,
+        'drag_priority' => 4,
+        'drag_select' => 5,
+        'flash_card_collection' => 6,
+        'hot_spot' => 7,
+        'list_item' => 8,
+        'match_game_collection' => 9,
+        'multiple_choice_collection' => 10,
+        'questions' => -10,
+        'reveal_collection' => -10,
+      ),
+      'default_edit_mode' => 'open',
+      'entity_translation_sync' => FALSE,
+      'title' => 'Drag select',
+      'title_multiple' => 'Drag selects',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-drag_select-field_drag_select_question'
+  $field_instances['node-drag_select-field_drag_select_question'] = array(
+    'bundle' => 'drag_select',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_drag_select_question',
+    'label' => 'Drag select question',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
     ),
   );
 
@@ -1510,7 +1621,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 7,
     ),
   );
 
@@ -1551,7 +1662,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -1595,7 +1706,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -1679,7 +1790,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -6956,7 +7067,9 @@ function elx_site_configurations_field_default_field_instances() {
   t('Display title');
   t('Drag match collection');
   t('Drag priority collection');
+  t('Drag select collection');
   t('Drag select image');
+  t('Drag select question');
   t('Drag select text');
   t('Enter correct or incorrect answer text, or upload answer image.');
   t('Featured');

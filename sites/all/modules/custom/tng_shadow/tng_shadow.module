@@ -744,9 +744,27 @@ function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
   }
 }
 
+//function tng_npList_closer($feedback = NULL, $image = NULL) {
+//  $tng_debug = 0;
+//  try {
+//    $listclose = '';
+//    //$listclose = $listclose . '],' .   '"feedback"' . ':' . '"' . $feedback . '"' ;
+//    //$listclose = $listclose . ','  .   '"image"' . ":" . '"' . $image . '"';
+//    //$listclose = $listclose . '}' . '"components"' . ':' . '[]' ;
+//    //$listclose = $listclose . '}'  ;
+//    return $listclose;
+//  }
+//
+//  catch (exception $e) {
+//    if ($tng_debug == 1) {
+//      dpm($e);
+//    }
+//  }
+//}
+
 
 function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading = NULL, $content = NULL,
-                          $component_type = NULL, $component_data = NULL, $component_id = NULL, $component_src = NULL,
+                          $component_type = NULL,  $component_id = NULL, $component_src = NULL,
                           $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL) {
   $tng_debug = 0;
   try {
@@ -754,10 +772,10 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
     $list = $list . '{' . '"type"' . ':' . '"npList"' ;
     $list = $list . ',' . '"data"' . ': {' ;
     if ($id) {
-      $list = $list . ',' .   '"id"' . ':'  . '"' . $id . '"';
+      $list = $list .         '"id"' . ':'  . '"' . $id . '"';
     }
     if ($class) {
-      $list = $list . ',' .   '"class"' . ':' . '"' . $class . '"';
+      $list = $list .         '"class"' . ':' . '"' . $class . '"';
     }
     if ($data_ng) {
       $list = $list . ',' .   '"data-ng:wrap"'   . ':' .  '"'  . $data_ng . '"';
@@ -774,30 +792,27 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
     if ($component_type) {
       $list = $list .           '"type"' . ':' . '"' . $component_type . '"';
     }
-    if ($component_data) {
-      $list = $list . ',         "data"' . ':' . '"' . $component_data . '"';
-    }
-    $list = $list .           '{';
+      $list = $list . ',         "data"' . ': {' ;
     if ($component_id) {
       $list = $list .             '"id"' . ':' . '"' . $component_id . '"';
     }
     if ($component_src) {
-      $list = $list . ',            "src"' . ':' . '"' . $component_src . '"';
+      $list = $list . '             "src"' . ':' . '"' . $component_src . '"';
     }
     if ($component_alt) {
       $list = $list . ',            "alt"' . ':' . '"' . $component_alt . '"';
     }
     if ($data_poster) {
-      $list = $list . ',            "poster"' . ':' . '"' . $data_poster . '"';
+      $list = $list . '            "poster"' . ':' . '"' . $data_poster . '"';
     }
     if ($data_baseurl) {
-      $list = $list . ',            "baseUrl"' . ':' . '"' . $data_baseurl . '"';
+      $list = $list . '            "baseUrl"' . ':' . '"' . $data_baseurl . '"';
     }
     if ($data_baseurl) {
-      $list = $list . ',            "types"' . ':' . '"' . $data_types . '"';
+      $list = $list . ',            "types"' . ':' . '"[' . $data_types . ']"';
     }
-    $list = $list .            '"},"' ;
-    $list = $list .          '"components"' . ':' . '"[]"';
+    $list = $list .            '},' ;
+    $list = $list .          '"components"' . ':' . '[]';
     $list = $list .      '}';
     $list = $list .    ']';
     $list = $list .  '},';
@@ -984,6 +999,7 @@ function process_product($product_values, $labels, $language, $nid) {
     $manifest_content = $language_strings[1];
     $manifest_title = 'Product-Manifest-' . $name;
     $newplayer_api_link = '/api/products/name/' . $manifest_title;
+    $favorite_link = '/api/favorites/product/' . $manifest_title;
     $product_filter_categories = $product_values['field_product_categories'];
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
     $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','', '', FALSE);
@@ -1084,7 +1100,7 @@ function process_product($product_values, $labels, $language, $nid) {
     $customer_questions = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_quest, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_customer_questions']);
     $button_column = tng_npColumn_maker('row button-padding', '2', TRUE);
     // todo: figure out a way to translate these buttons
-    $like_button = tng_npButton_maker('QuizIntro', '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
     $next_button = tng_npButton_maker('Question1', '', $btn_fact_sheet, 'GET THE FULL FACT SHEET');
     $next_button = rtrim($next_button, ', ');
     $next_button = $next_button . $column_close;
@@ -1494,14 +1510,18 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
 }
 
 /**
- * @param $dragmatch_values
- * @param $language
+ * @param $listobject = array of list pieces to form our manifest
+ * @param $language = language
  * @param $nid
  * @return mixed
  */
 function process_list($listobject, $language, $nid) {
   $tng_debug = 0;
   if ($tng_debug == 1) {
+    dpm('nid:');
+    dpm($nid);
+    dpm('language');
+    dpm($language);
     dpm('list object');
     dpm($listobject);
   }
@@ -1512,7 +1532,7 @@ function process_list($listobject, $language, $nid) {
   $renutriv_background_image = 'renutriv-background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_drag_drop  = '] } ] } ] } ]';
+  $close_list  = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 20 fields, layout the page
@@ -1525,22 +1545,25 @@ function process_list($listobject, $language, $nid) {
   $incorrect_feedback = $listobject['field_custom_incorrect_feedback'];
   $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
   $placeholder = '<p>this is the placeholder content</p>';
-  $boxclass = 'box';
-  $boximage = '/assets/images/hotspot.png';
 
   if ($num_fields >= $min_dragmatch_fields && $num_fields <= $max_dragmatch_fields) {
-    // here we process the fields we find for our hot spot passed in the array of $object_values
+    // here we process the fields we find for our list passed in the array of $object_values
     //  start by telling the processor how many fields we found
-    //dpm('Hot Spot had ' . $num_fields . ' fields.');
-    $title = $listobject->title;
-    dpm('****title****');
-    dpm($title);
+    //dpm('List had ' . $num_fields . ' fields.');
+    $title = $listobject['title_field'];
     $title = str_replace(" ", "-", $title);
     if ($tng_debug == 1) {
-      dpm('**title drag and drop**');
+      dpm('****npLlist title****');
       dpm($title);
     }
-    //$title = 'Re-Nutriv Drag and Drop';
+    // the field layout is single or double column formatting
+    //todo: followup with Christian about what a two-column will look like
+    $wrap = $listobject['field_layout'];
+    if ($wrap == 1) {
+      $data_ng_wrap = "true";
+    } else {
+      $data_ng_wrap = "false";
+    }
     // we don't use the subtitle currently,but code for it in case we need it later.
     // $subtitle = $dragmatch['field_subtitle'];
     $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
@@ -1557,48 +1580,36 @@ function process_list($listobject, $language, $nid) {
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
-    $introductory_text = $listobject['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
-
-    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
-
-    foreach ($listobject as $key=>$value) {
-      if ($tng_debug == 1) {
-        dpm('**** data ****' . $key . ' : ' . $value);
-      }
-      if ($key == 'field_list_item') {
-        // remove brackets and curly braces [] {}
-        $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
-        $sploder = explode('",', $trim_str);
-        if ($tng_debug == 1) {
-          dpm($sploder);
+    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk ;
+    if ($listobject['field_list_item']) {
+      //process the list just once here in pairs of image/text, video/text, audio/text
+      $all_of_them = $listobject['field_list_item'];
+      $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
+      $sploder = explode('",', $trim_str);
+      $count_of_elements = count($sploder);
+      for ($i=0; $i < $count_of_elements; $i+=2) {
+        $key = explode(':', $sploder[$i]);
+        if ($key[0] == '"field_list_image" ') {
+          $first_image = str_replace('"', '', $key[1] .':' . $key[2]);
+          $first_image = tng_convert_drupal_to_mean_filename($first_image,'','','true');
+          $value = explode(':', $sploder[$i+1]);
+          $second_text = str_replace('"', '', $value[1]);
+          $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, 'list heading', $second_text,'npImage','', $first_image ,'', '' ,'','');
+          $whole_dragdrop = $whole_dragdrop . $listobject_detail;
+        } else if ($key[0] == '"field_list_text" ') {
+          $first_text = str_replace('"', '', $key[1]);
+          $value = explode(':', $sploder[$i+1]);
+          $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
+          $second_video = tng_convert_drupal_to_mean_filename($second_video,'','', 'true');
+          $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, 'list heading', $first_text,'npVideo','', '' ,'', '' , $second_video,'mp4');
+          $whole_dragdrop = $whole_dragdrop . $listobject_detail;
         }
-        $count_of_elements = count($sploder);
-        // for each pair of matching content, grab the data and package it up as content, matching content
-        for ($i=0; $i < $count_of_elements; $i += 1) {
-          $left_text_or_image = value_from_pair($sploder[$i]);
-          $hotspot_detail = tng_npList_maker('', 'h6 instructional', TRUE, 'list heading', $left_text_or_image,'','','','','','','','');
-          $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
-        }
-        $whole_dragdrop = rtrim($whole_dragdrop, ', ');
-      } else {
-        if ($key == 'field_list_image') {
-          dpm('found an image');
-        }
-        else {
-          if ($key == 'field_list_video') {
-            dpm('found a video');
-          }
-        }
-      }
-      $end_dragdrop_spot = tng_npDragAndDrop_closer($placeholder, '');
-      $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
-      if ($tng_debug == 1) {
-        dpm($whole_dragdrop);
       }
     }
+    $whole_dragdrop = rtrim($whole_dragdrop, ', ');
+    $whole_dragdrop = $whole_dragdrop . $close_list;
 
-      // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+      // when we edit a new node for a list (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
       $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
       // return the new nid to set it on the parent node
@@ -1917,35 +1928,43 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
  * @param $value - full pathname of the local drupal image file
  * @return string - return the path which we will expect on the MEAN server side 'assets + stylepath'
  */
-function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL) {
+function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL, $public_process = NULL) {
   $tng_debug = 0;
+  $remote_picture_name = '';
   //short circuit this if there isn't a system path
   if (substr($value,0,6) == 'assets') {
     return $value;
   }
-  $justpath = parse_url($value, PHP_URL_PATH);
-  // if we want a thumbnail make it
-  if ($make_thumbnail == TRUE) {
-    if ($thumb_type == 'teaser') {
-      $justpath = str_replace('product_detail', 'teaser_thumbnail', $justpath);
-    } else if ($thumb_type == 'archive') {
-      $justpath = str_replace('product_detail', 'archive_thumbnail', $justpath);
+  if ($public_process) {
+    $justpath = parse_url($value);
+    $justpath['path'] = trim($justpath['path'], ' ');
+    $pub_image = str_replace('public://','',$justpath);
+    $remote_picture_name = 'assets/' . $pub_image['path'];
+  } else {
+    $justpath = parse_url($value, PHP_URL_PATH);
+    // if we want a thumbnail make it
+    if ($make_thumbnail == TRUE) {
+      if ($thumb_type == 'teaser') {
+        $justpath = str_replace('product_detail', 'teaser_thumbnail', $justpath);
+      } else if ($thumb_type == 'archive') {
+        $justpath = str_replace('product_detail', 'archive_thumbnail', $justpath);
+      }
     }
-  }
-  $needle = "/default/files/";
-  $match = strpos($justpath, $needle);
-  $match = $match + strlen($needle);
-  $submatch =  substr($justpath, $match);
-  $remote_picture_name = 'assets/' . $submatch;
-  if ($tng_debug == 1) {
-    dpm('***incoming path');
-    dpm($value);
-    dpm('***path value***'. $justpath);
-    dpm('***index***'. $match);
-    dpm('sub match');
-    dpm($submatch);
-    dpm('remote picture name');
-    dpm($remote_picture_name);
+    $needle = "/default/files/";
+    $match = strpos($justpath, $needle);
+    $match = $match + strlen($needle);
+    $submatch =  substr($justpath, $match);
+    $remote_picture_name = 'assets/' . $submatch;
+    if ($tng_debug == 1) {
+      dpm('***incoming path');
+      dpm($value);
+      dpm('***path value***'. $justpath);
+      dpm('***index***'. $match);
+      dpm('sub match');
+      dpm($submatch);
+      dpm('remote picture name');
+      dpm($remote_picture_name);
+    }
   }
   return $remote_picture_name;
 }
@@ -2099,7 +2118,6 @@ function tng_shadow_shadow_request_alter($entity) {
               } else {
                 if (in_array($name, $list_possibilities)){
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                      $lan = $language;
                       if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
                         $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
                       } else {

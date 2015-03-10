@@ -669,6 +669,36 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_disclaimer_type'
+  $field_bases['field_disclaimer_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_disclaimer_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'privacy' => 'Privacy Policy',
+        'terms' => 'Terms & Conditions',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_display_title'
   $field_bases['field_display_title'] = array(
     'active' => 1,

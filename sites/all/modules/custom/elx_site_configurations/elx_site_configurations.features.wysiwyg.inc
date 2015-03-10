@@ -32,12 +32,6 @@ function elx_site_configurations_wysiwyg_default_profiles() {
           'PasteFromWord' => 1,
           'Styles' => 1,
         ),
-        'drupal' => array(
-          'media' => 1,
-        ),
-        'media_crop_ckeditor' => array(
-          'media_crop_edit_instance' => 1,
-        ),
       ),
       'toolbarLocation' => 'top',
       'resize_enabled' => 1,

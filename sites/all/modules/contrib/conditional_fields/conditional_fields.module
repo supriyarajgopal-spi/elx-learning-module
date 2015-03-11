@@ -245,9 +245,6 @@ function conditional_fields_element_after_build($element, &$form_state) {
     $entity_type = $field['#entity_type'];
     $bundle = $field['#bundle'];
   }
-   elseif (isset($field[0]) && isset($field[0]['#entity_type']) && $bundle = _conditional_fields_find_parent_bundle($field)) {
-    $entity_type = $field[0]['#entity_type'];
-  }
   elseif (isset($form['#entity_type'], $form['#bundle'])) {
     $entity_type = $form['#entity_type'];
     $bundle = $form['#bundle'];
@@ -478,6 +475,7 @@ function conditional_fields_form_after_build($form, &$form_state) {
         }
         unset($behaviors[CONDITIONAL_FIELDS_FIELD_EDIT_HIDE_UNTRIGGERED_ORPHAN]);
         unset($behaviors[CONDITIONAL_FIELDS_FIELD_EDIT_HIDE_ORPHAN]);
+        unset($behaviors[CONDITIONAL_FIELDS_FIELD_EDIT_RESET_UNTRIGGERED]);
         continue;
       }
 
@@ -582,7 +580,7 @@ function conditional_fields_form_after_build($form, &$form_state) {
     if (!empty($behaviors)) {
       foreach ($behaviors as $behavior) {
         $behavior($form, $form_state, $dependent, $dependent_info);
-      }      
+      }
     }
 
     unset($behaviors);
@@ -609,7 +607,7 @@ function conditional_fields_form_after_build($form, &$form_state) {
         foreach ($states[$state_key]['OR'] as $constraint_key => $constraint_value) {
           $or[] = array($constraint_key => $constraint_value);
         }
-        // '1' as a string so that we get an object (which means logic groups 
+        // '1' as a string so that we get an object (which means logic groups
         // are ANDed together).
         $states_new[$state_key]['1'] = $or;
       }
@@ -722,7 +720,7 @@ function conditional_fields_dependent_validate($element, &$form_state, $form) {
  */
 function conditional_fields_form_field_get_values($element, $form_state) {
   // Fall back to #parents to support custom dependencies.
-  $parents = isset($element['#field_parents']) ? $element['#field_parents'] : $element['#parents'];
+  $parents = !empty($element['#field_parents']) ? $element['#field_parents'] : $element['#parents'];
   return drupal_array_get_nested_value($form_state['values'], $parents);
 }
 
@@ -750,6 +748,9 @@ function conditional_fields_form_validate($form, &$form_state) {
     // If we couldn't find a location for the field's submitted values, let the
     // validation errors pass through to avoid security holes.
     if (!isset($field_values_location[$dependent['#field_name']])) {
+      if (!empty($field['errors'])) {
+        $untriggered_dependents_errors = array_merge($untriggered_dependents_errors, $field['errors']);
+      }
       continue;
     }
 
@@ -1984,16 +1985,4 @@ function conditional_fields_features_api() {
       'file' => drupal_get_path('module', 'conditional_fields') . '/includes/conditional_fields.features.inc',
     ),
   );
-}
-
-// need to return immediate parent as the bundle
-function _conditional_fields_find_parent_bundle($field) {
-  $field_parents = array_reverse($field[0]['#field_parents']);
-  foreach ($field_parents as $parent) {
-    if (!is_numeric($parent) && $parent != 'und') {
-      return $parent;
-    }
-  }
-  
-  return false;
 }

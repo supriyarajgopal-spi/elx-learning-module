@@ -884,6 +884,166 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-disclaimer-field_disclaimer_text'
+  $field_instances['node-disclaimer-field_disclaimer_text'] = array(
+    'bundle' => 'disclaimer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_disclaimer_text',
+    'label' => 'Disclaimer text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 15,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-disclaimer-field_disclaimer_type'
+  $field_instances['node-disclaimer-field_disclaimer_type'] = array(
+    'bundle' => 'disclaimer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_disclaimer_type',
+    'label' => 'Disclaimer type',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-disclaimer-field_markets'
+  $field_instances['node-disclaimer-field_markets'] = array(
+    'bundle' => 'disclaimer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_markets',
+    'label' => 'Markets',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-disclaimer-title_field'
+  $field_instances['node-disclaimer-title_field'] = array(
+    'bundle' => 'disclaimer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-drag_match-field_custom_correct_feedback'
   $field_instances['node-drag_match-field_custom_correct_feedback'] = array(
     'bundle' => 'drag_match',
@@ -4759,7 +4919,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -4857,7 +5017,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -5550,7 +5710,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 15,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 12,
     ),
   );
 
@@ -5620,7 +5780,7 @@ function elx_site_configurations_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 11,
     ),
   );
 
@@ -5661,7 +5821,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 15,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
@@ -5731,7 +5891,7 @@ function elx_site_configurations_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
@@ -7064,6 +7224,8 @@ function elx_site_configurations_field_default_field_instances() {
   t('Customer questions');
   t('Demonstration');
   t('Difficulty');
+  t('Disclaimer text');
+  t('Disclaimer type');
   t('Display title');
   t('Drag match collection');
   t('Drag priority collection');

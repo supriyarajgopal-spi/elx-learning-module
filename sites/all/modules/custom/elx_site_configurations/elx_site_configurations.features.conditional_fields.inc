@@ -10,7 +10,7 @@
 function elx_site_configurations_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:content_object:0"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_final_exam',
@@ -149,7 +149,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:content_object:1"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_pulsed_content',
@@ -290,7 +290,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:content_object:2"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_pulsed_content',
@@ -429,7 +429,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:content_object:3"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_story_type',
@@ -570,7 +570,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:content_object:4"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_story_type',

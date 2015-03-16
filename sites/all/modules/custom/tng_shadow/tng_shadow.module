@@ -1305,7 +1305,7 @@ function process_product($product_values, $labels, $language, $nid) {
       $translated_story = 'STORY';
     }
     $story = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_story, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_story']);
-    $translated_quest = $labels['field_perfect_partners_text'];
+    $translated_quest = $labels['field_customer_questions'];
     if (!$translated_quest) {
       $translated_quest = 'CUSTOMER QUESTIONS';
     }
@@ -1875,8 +1875,7 @@ function process_flashcards($flashcard_values, $language, $nid) {
   //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
   $correct_feedback = $flashcard_values['field_custom_correct_feedback'];
   $incorrect_feedback = $flashcard_values['field_custom_incorrect_feedback'];
-  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
-  $placeholder = '<p>this is the placeholder content</p>';
+  $instructions = '<p>Select each image to learn more.</p>';
 
   if ($num_fields >= $min_flashcard_fields && $num_fields <= $max_flashcard_fields) {
     $title = $flashcard_values['title_field'];
@@ -1900,9 +1899,9 @@ function process_flashcards($flashcard_values, $language, $nid) {
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
-    $introductory_text = $flashcard_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $instructions, '', FALSE);
     $whole_flashcard = $feature_chunk . $content_chunk . $flashcard_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+
     if ($flashcard_values['field_flash_card_collection']) {
       $flashcard_top = tng_npFlashCard_maker('flash-cards-test-id', 'flash-cards-test-class');
       $whole_flashcard = $whole_flashcard . $flashcard_top;
@@ -2372,7 +2371,7 @@ function value_from_pair ($string) {
 function process_content_object($object_values, $language, $nid) {
   $tng_debug =0;
   $min_product_fields = 1;
-  $max_product_fields = 25;
+  $max_product_fields = 50;
   $num_fields = count($object_values);
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     // here we process the fields we find for our hot spot passed in the array of $object_values

@@ -3867,7 +3867,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'product_detail',
     'default_value' => array(
       0 => array(
-        'value' => '<p>Need a phrase to help you link? Try:</p><p><strong>"Because you love ___, I also want to show you ___."</strong></p>',
+        'value' => '<p>Need a phrase to help you link? Try:</p><p><strong>&quot;Because you love ___, I also want to show you ___.&quot;</strong></p>',
         'format' => 'full_html',
       ),
     ),
@@ -3890,7 +3890,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_perfect_partners_text',
-    'label' => 'Perfect partners text',
+    'label' => 'Perfect partners',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -7315,7 +7315,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Newplayer link');
   t('Object template');
   t('Perfect partners');
-  t('Perfect partners text');
   t('Point value');
   t('Price');
   t('Priority image');

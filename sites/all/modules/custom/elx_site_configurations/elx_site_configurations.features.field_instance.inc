@@ -6222,10 +6222,10 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'matching',
         ),
         'type' => 'image',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -6326,10 +6326,10 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'matching',
         ),
         'type' => 'image',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -6430,10 +6430,10 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'matching',
         ),
         'type' => 'image',
-        'weight' => 6,
+        'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',

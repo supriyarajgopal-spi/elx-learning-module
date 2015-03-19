@@ -29,6 +29,7 @@ function elx_site_configurations_wysiwyg_default_profiles() {
           'NumberedList' => 1,
           'Link' => 1,
           'Unlink' => 1,
+          'Anchor' => 1,
           'Source' => 1,
           'PasteFromWord' => 1,
           'Styles' => 1,

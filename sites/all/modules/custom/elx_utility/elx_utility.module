@@ -25,3 +25,26 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.js');
   }
 }
+
+/**
+ * Implements hook_feeds_node_processor_targets_alter().
+ */
+function elx_utility_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+  if ($entity_type == 'user') {
+    $targets['pass'] = array(
+      'name' => t('Password'),
+      'description' => t('Shows up in legend on mapping form.'),
+      'callback' => 'elx_utility_set_target',
+    );
+  }
+}
+
+/**
+ * Mapping callback.
+ */
+function elx_utility_set_target($source, $entity, $target, $value, $mapping) {
+  $password = 'test-pass';
+  $entity->pass = $password;
+  // dpm($entity);
+}
+

@@ -2539,47 +2539,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_intro'
-  $field_instances['node-list-field_intro'] = array(
-    'bundle' => 'list',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_intro',
-    'label' => 'Intro text',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-list-field_layout'
   $field_instances['node-list-field_layout'] = array(
     'bundle' => 'list',
@@ -4479,6 +4438,47 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-question_and_answer-field_completion_text'
+  $field_instances['node-question_and_answer-field_completion_text'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_completion_text',
+    'label' => 'Completion text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-question_and_answer-field_difficulty'
   $field_instances['node-question_and_answer-field_difficulty'] = array(
     'bundle' => 'question_and_answer',
@@ -4515,6 +4515,91 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-question_and_answer-field_first_question_in_quiz'
+  $field_instances['node-question_and_answer-field_first_question_in_quiz'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_first_question_in_quiz',
+    'label' => 'First question in quiz',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-question_and_answer-field_intro'
+  $field_instances['node-question_and_answer-field_intro'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro text',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 10,
     ),
   );
 
@@ -4562,6 +4647,50 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-question_and_answer-field_last_question_in_quiz'
+  $field_instances['node-question_and_answer-field_last_question_in_quiz'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_last_question_in_quiz',
+    'label' => 'Last question in quiz',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-question_and_answer-field_manifest'
   $field_instances['node-question_and_answer-field_manifest'] = array(
     'bundle' => 'question_and_answer',
@@ -4602,7 +4731,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -4662,7 +4791,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -7433,6 +7562,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Bottom match text');
   t('Categories');
   t('Category');
+  t('Completion text');
   t('Content object type');
   t('Correct answer');
   t('Correct feedback');
@@ -7455,6 +7585,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Enter correct or incorrect answer text, or upload answer image.');
   t('Featured');
   t('Final exam');
+  t('First question in quiz');
   t('Flash card collection');
   t('Front card');
   t('Front card image');
@@ -7476,6 +7607,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Just for you');
   t('Keywords');
   t('Language');
+  t('Last question in quiz');
   t('Layout');
   t('Learning objects');
   t('Left drag image');

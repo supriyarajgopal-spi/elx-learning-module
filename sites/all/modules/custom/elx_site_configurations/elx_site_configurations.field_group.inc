@@ -498,6 +498,37 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_questions|node|question_and_answer|form';
+  $field_group->group_name = 'group_questions';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'question_and_answer';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'First/last questions',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_first_question_in_quiz',
+      1 => 'field_last_question_in_quiz',
+      2 => 'field_intro',
+      3 => 'field_completion_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'First/last questions',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-questions field-group-fieldset',
+        'description' => '<p>If this question is the first or last question in a quiz, check the appropriate box and enter the intro text or completion screen text.</p>',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_questions|node|question_and_answer|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_question|paragraphs_item|multiple_choice_collection|form';
   $field_group->group_name = 'group_question';
   $field_group->entity_type = 'paragraphs_item';

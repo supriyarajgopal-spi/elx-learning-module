@@ -15,7 +15,7 @@ function elx_utility_node_validate($node, $form, &$form_state) {
 function elx_utility_preprocess_html(&$variables) {
 // Add conditional stylesheets for admin pages on admin theme.
   global $user;
-  if ( $user->uid ) {
+  if ($user->uid) {
     // reference your current admin theme
     $theme_path = drupal_get_path('theme', 'seven');
     // reference your own stylesheet
@@ -39,12 +39,62 @@ function elx_utility_feeds_processor_targets_alter(&$targets, $entity_type, $bun
   }
 }
 
+function elx_utility_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
+  global $total_users;
+  $total_users = count($result->items);
+}
+
+function randomPassword() {
+  $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+  $pass = array(); //remember to declare $pass as an array
+  $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+  for ($i = 0; $i < 8; $i++) {
+      $n = rand(0, $alphaLength);
+      $pass[] = $alphabet[$n];
+  }
+  return implode($pass); //turn the array into a string
+}
+
+function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+  // watchdog('UID?', $entity->uid);
+  $password = randomPassword();
+  $encrypted_data = aes_encrypt($password);
+  $entity->pass = $password;
+  db_insert('aes_passwords')
+    ->fields(array(
+      'uid' => $entity->uid,
+      'pass' => $encrypted_data,
+    ))
+    ->execute();
+  $pass = user_hash_password($password);
+  watchdog('pass', $pass);
+  db_update('users')
+    ->fields(array('pass' => $pass))
+    ->where("uid = :uid", array(
+      ':uid' => $entity->uid,
+    ))
+    ->execute();
+}
+
 /**
  * Mapping callback.
  */
 function elx_utility_set_target($source, $entity, $target, $value, $mapping) {
-  $password = 'test-pass';
-  $entity->pass = $password;
-  // dpm($entity);
+  global $total_users;
+  // dpm($total_users);
+  // dpm('users ' . $total_users);
+  // for ($i=0; $i < $total_users; $i++) {
+  //   $password = 'test-pass' . $i;
+  //   $encrypted_data = aes_encrypt($password);
+  //   $entity->pass = $password;
+  //   db_insert('aes_passwords')
+  //     ->fields(array(
+  //       'uid' => $entity->uid,
+  //       'pass' => $encrypted_data,
+  //     ))
+  //     ->execute();
+  // }
+  dpm('encrypted pass: ' . $encrypted_data);
 }
+
 

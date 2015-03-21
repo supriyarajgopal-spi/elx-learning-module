@@ -29,20 +29,20 @@ function elx_utility_preprocess_html(&$variables) {
 /**
  * Implements hook_feeds_node_processor_targets_alter().
  */
-function elx_utility_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
-  if ($entity_type == 'user') {
-    $targets['pass'] = array(
-      'name' => t('Password'),
-      'description' => t('Shows up in legend on mapping form.'),
-      'callback' => 'elx_utility_set_target',
-    );
-  }
-}
+// function elx_utility_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+//   if ($entity_type == 'user') {
+//     $targets['pass'] = array(
+//       'name' => t('Password'),
+//       'description' => t('Shows up in legend on mapping form.'),
+//       'callback' => 'elx_utility_set_target',
+//     );
+//   }
+// }
 
-function elx_utility_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
-  global $total_users;
-  $total_users = count($result->items);
-}
+// function elx_utility_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
+//   global $total_users;
+//   $total_users = count($result->items);
+// }
 
 function randomPassword() {
   $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
@@ -57,6 +57,7 @@ function randomPassword() {
 
 function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
   // watchdog('UID?', $entity->uid);
+  require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $password = randomPassword();
   $encrypted_data = aes_encrypt($password);
   $entity->pass = $password;
@@ -67,7 +68,7 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
     ))
     ->execute();
   $pass = user_hash_password($password);
-  watchdog('pass', $pass);
+  // watchdog('pass', $pass);
   db_update('users')
     ->fields(array('pass' => $pass))
     ->where("uid = :uid", array(
@@ -79,22 +80,22 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
 /**
  * Mapping callback.
  */
-function elx_utility_set_target($source, $entity, $target, $value, $mapping) {
-  global $total_users;
-  // dpm($total_users);
-  // dpm('users ' . $total_users);
-  // for ($i=0; $i < $total_users; $i++) {
-  //   $password = 'test-pass' . $i;
-  //   $encrypted_data = aes_encrypt($password);
-  //   $entity->pass = $password;
-  //   db_insert('aes_passwords')
-  //     ->fields(array(
-  //       'uid' => $entity->uid,
-  //       'pass' => $encrypted_data,
-  //     ))
-  //     ->execute();
-  // }
-  dpm('encrypted pass: ' . $encrypted_data);
-}
+// function elx_utility_set_target($source, $entity, $target, $value, $mapping) {
+//   global $total_users;
+//   dpm($total_users);
+//   dpm('users ' . $total_users);
+//   for ($i=0; $i < $total_users; $i++) {
+//     $password = 'test-pass' . $i;
+//     $encrypted_data = aes_encrypt($password);
+//     $entity->pass = $password;
+//     db_insert('aes_passwords')
+//       ->fields(array(
+//         'uid' => $entity->uid,
+//         'pass' => $encrypted_data,
+//       ))
+//       ->execute();
+//   }
+//   dpm('encrypted pass: ' . $encrypted_data);
+// }
 
 

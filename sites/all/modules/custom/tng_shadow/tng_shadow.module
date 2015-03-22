@@ -125,7 +125,7 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
         $req = '["../../../assets/anr.css"]';
       }
       if (!isset($version)) {
-        $version = '"0.0.1"';
+        $version = '0.0.1';
       }
       if (!isset($timestamp)) {
         $format_string = 'Y-M-D_h:m:s';
@@ -1074,6 +1074,13 @@ function make_language_strings($language_key) {
 }
 
 
+function tng_value_from_pair ($string) {
+  $q = explode(':', $string);
+  $quest = trim($q[1], ' "');
+  return  $quest;
+}
+
+
 /**
  * @param $path - the path is the base path of an image, currently hi-res but will be a thumbnail image later
  * @param $csv_fields - the triplet of information is a csv separated field set, with product name, image, and date of creation
@@ -1380,7 +1387,7 @@ function process_product($product_values, $labels, $language, $nid) {
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1434,7 +1441,6 @@ function process_hotspot($hotspot_values, $language, $nid) {
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
     $instructions = $hotspot_values['field_hot_spot_instructions'];
     $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','',$instructions, '', FALSE);
-
     $whole_hotsopt= $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
     if ($hotspot_values['field_hot_spot_collection']) {
@@ -1455,9 +1461,9 @@ function process_hotspot($hotspot_values, $language, $nid) {
           $count_of_elements = count($sploder);
           // for each triplet, grab the data and package it up as text, x and y coordinate
           for ($i=0; $i < $count_of_elements; $i += 3) {
-            $t = value_from_pair($sploder[$i]);
-            $x = value_from_pair($sploder[$i+1]);
-            $y = value_from_pair($sploder[$i+2]);
+            $t = tng_value_from_pair($sploder[$i]);
+            $x = tng_value_from_pair($sploder[$i+1]);
+            $y = tng_value_from_pair($sploder[$i+2]);
             $xy_combo = $x . ' ' . $y;
             $hotspot_detail = tng_hotspot_button_maker($xy_combo, $t, '');
             $whole_hotsopt = $whole_hotsopt . $hotspot_detail;
@@ -1475,7 +1481,7 @@ function process_hotspot($hotspot_values, $language, $nid) {
 
     // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, '', $language, $nid,'', '', '','');
+    $new_nid = tng_create_manifest_node($whole_hotsopt, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1576,8 +1582,8 @@ function process_dragmatch($dragmatch, $language, $nid) {
             for ($i=0; $i < $count_of_elements; $i += 2) {
               //$box = 'box' . $boxnumber;
               //$boxnumber +=1;
-              $left_text_or_image = value_from_pair($sploder[$i]);
-              $right_text_or_image = value_from_pair($sploder[$i+1]);
+              $left_text_or_image = tng_value_from_pair($sploder[$i]);
+              $right_text_or_image = tng_value_from_pair($sploder[$i+1]);
               $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, $boximage, $right_text_or_image, $boximage);
               $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
             }
@@ -1593,7 +1599,7 @@ function process_dragmatch($dragmatch, $language, $nid) {
 
       // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','', '','');
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -1695,7 +1701,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
             for ($i=0; $i < $count_of_elements; $i += 1) {
               //$box = 'box' . $boxnumber;
               //$boxnumber +=1;
-              $left_text_or_image = value_from_pair($sploder[$i]);
+              $left_text_or_image = tng_value_from_pair($sploder[$i]);
               //$right_text_or_image = value_from_pair($sploder[$i+1]);
               $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, $boximage, '', $boximage);
               $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
@@ -1712,7 +1718,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
 
       // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -1833,7 +1839,7 @@ function process_reveal($reveal_values, $language, $nid) {
 
       // when we edit a new node for a reveal (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_reveal, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+      $new_nid = tng_create_manifest_node($whole_reveal, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
       return $new_nid;
 
@@ -1956,7 +1962,8 @@ function process_flashcards($flashcard_values, $language, $nid) {
 
     // when we edit a new node for a flashcard (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_flashcard, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+    //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
+    $new_nid = tng_create_manifest_node($whole_flashcard, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
 
@@ -1972,6 +1979,9 @@ function process_flashcards($flashcard_values, $language, $nid) {
  * @param $language = language
  * @param $nid
  * @return mixed
+ *
+ * The assumption here is that a list item will always be a part of series of components, hence the final ',' at the end of it.
+ *
  */
 function process_list($listobject, $language, $nid) {
   $tng_debug =0;
@@ -1984,32 +1994,18 @@ function process_list($listobject, $language, $nid) {
     dpm($listobject);
   }
 
-  $bg_newplayer_background = 'newplayer-background';
-  $outside_padding = 'outside-padding';
-  $renutriv_logo_image = 'renutriv-logo-image';
-  $renutriv_background_image = 'renutriv-background-image';
-  $h3_headline = 'h3 headline';
-  $close_html = '] },';
-  $close_list  = '] } ] } ] } ] } ]';
-
-  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 20 fields, layout the page
   $min_list_fields = 1;
   $max_list_fields = 20;
   $num_fields = count($listobject);
 
-  //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
-  $correct_feedback = $listobject['field_custom_correct_feedback'];
-  $incorrect_feedback = $listobject['field_custom_incorrect_feedback'];
-  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
-  $placeholder = '<p>this is the placeholder content</p>';
-
+  //leave this check for now, although it may not be needed.
   if ($num_fields >= $min_list_fields && $num_fields <= $max_list_fields) {
     // here we process the fields we find for our list passed in the array of $object_values
-    //  start by telling the processor how many fields we found
-    //dpm('List had ' . $num_fields . ' fields.');
+    // start by telling the processor how many fields we found
     $title = $listobject['title_field'];
     $title = str_replace(" ", "-", $title);
+    $subtitle = $listobject['field_subtitle'];
     if ($tng_debug == 1) {
       dpm('****npLlist title****');
       dpm($title);
@@ -2022,40 +2018,8 @@ function process_list($listobject, $language, $nid) {
     } else {
       $data_ng_wrap = "false";
     }
-    // we don't use the subtitle currently,but code for it in case we need it later.
-    // $subtitle = $list['field_subtitle'];
-    $feature_chunk = tng_npFeature_maker('reNutriv', '', '[]', '0.0.1');
-    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
-    $language_strings = make_language_strings($language);
-    $manifest_language = $language_strings[0];
-    $manifest_content = $language_strings[1];
+    $whole_list = '';
     $manifest_title = 'List-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for list itesm.');
-    $list_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
-    $background_chunk = rtrim($background_chunk, ', ');
-    $subtitle = $listobject['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
-    $whole_dragdrop = $feature_chunk . $content_chunk . $list_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk ;
-
-    //
-//    if ($info['type'] == 'image') {
-//      $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
-//      $fid = $entity_array[$field_name][$language][0]['fid'];
-//      if ($fid) {
-//        $file_id = file_load($fid);
-//        $uri = $file_id->uri;
-//        $image_style_path = image_style_url($image_style, $uri);
-//      } else {
-//        $image_style_path = '';
-//      }
-//      if ($tng_debug == 1) {
-//        dpm($field_name . ': ' . $image_style_path);
-//      }
-//    }
-
 
     if ($listobject['field_list_item']) {
       //process the list just once here in pairs of image/text, video/text, audio/text
@@ -2071,26 +2035,24 @@ function process_list($listobject, $language, $nid) {
           $value = explode(':', $sploder[$i+1]);
           $second_text = str_replace('"', '', $value[1]);
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, 'list heading', $second_text,'npImage','', $first_image ,'', '' ,'','');
-          $whole_dragdrop = $whole_dragdrop . $listobject_detail;
+          $whole_list = $whole_list . $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
           $first_text = str_replace('"', '', $key[1]);
           $value = explode(':', $sploder[$i+1]);
           $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
           $second_video = tng_convert_drupal_to_mean_filename($second_video,'','', 'true');
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, 'list heading', $first_text,'npVideo','', '' ,'', '' , $second_video,'mp4');
-          $whole_dragdrop = $whole_dragdrop . $listobject_detail;
+          $whole_list = $whole_list . $listobject_detail;
         }
       }
     }
-    $whole_dragdrop = rtrim($whole_dragdrop, ', ');
-    $whole_dragdrop = $whole_dragdrop . $close_list;
     if ($tng_debug == 1) {
       dpm('****finished List manifest****');
-      dpm($whole_dragdrop);
+      dpm($whole_list);
     }
       // when we edit a new node for a list (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+      $new_nid = tng_create_manifest_node($whole_list, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
       return $new_nid;
     } else {
@@ -2237,7 +2199,8 @@ function process_matchgame($matchgame_values, $language, $nid) {
 
     // when we edit a new node for a matchgame (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_matchgame, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+    //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
+    $new_nid = tng_create_manifest_node($whole_matchgame, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
 
@@ -2275,6 +2238,7 @@ function process_question_and_answer($object_values, $language, $nid) {
     // here we process the fields we find for our question and answer passed in the array of $object_values
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
+    $subtitle = $object_values['field_subtitle'];
     if ($tng_debug == 1) {
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
@@ -2282,6 +2246,9 @@ function process_question_and_answer($object_values, $language, $nid) {
     $page_chunk = tng_npPageStart_maker($title, '', $title, 'true',  'true');
 
     $whole_qa =  $page_chunk;
+    $ba = '';
+    $correct_answer_text = '';
+    $incorrect_answer_text = '';
     //$whole_qa =  $whole_qa . $page_chunk;
     // paragraphs are
     foreach ($object_values as $key=>$value) {
@@ -2299,27 +2266,24 @@ function process_question_and_answer($object_values, $language, $nid) {
         // for each pair, grab the data and package it for npQuestion, npAnswer
         for ($i=0; $i < $count_of_elements; $i++) {
           if (strpos($sploder[$i], 'field_question_text') !== FALSE) {
-            $q = value_from_pair($sploder[$i]);
+            $q = tng_value_from_pair($sploder[$i]);
             $question_text = $q;
-          } elseif (strpos($sploder[$i], 'field_answer_text') !== FALSE) {
-            // funky processing look-ahead to get the answers correct
-            $q = value_from_pair($sploder[$i]);
-            $f = value_from_pair($sploder[$i+1]);
-            $c = value_from_pair($sploder[$i+2]);
-            //set the correct/incorrect text in the answer
-            if ($c == 1) {
-              $ap = tng_npAnswer_maker($q, 'true', $f, '');
-              $correct_answer_text = $f;
+          } elseif (strpos($sploder[$i], 'field_answer_feedback') !== FALSE) {
+            $answer_feedback = tng_value_from_pair($sploder[$i]);
+            $answer_text = tng_value_from_pair($sploder[$i+1]);
+            $answer_correctness = tng_value_from_pair($sploder[$i+2]);
+            if ($answer_correctness == 1) {
+              $ap = tng_npAnswer_maker($answer_text, 'true', $answer_feedback, '');
+              $correct_answer_text = $answer_feedback;
             } else {
-              $ap = tng_npAnswer_maker($q, 'false', '', $f);
-              $incorrect_answer_text = $f;
+              $ap = tng_npAnswer_maker($answer_text, 'false', '', $answer_feedback);
+              $incorrect_answer_text = $answer_feedback;
             }
-            // phpStorm shows this as an error but it is, in fact, is not.
             $ba = $ba . $ap;
           }
         }
         // until Kory fixes the npAnswer to override the correct and incorrect text in each question we build the question after the answers
-        $np = tng_npQuestion_maker($required, 'true', 'radio', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
+        $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
         $ba =  $np . $ba;
 
@@ -2333,11 +2297,7 @@ function process_question_and_answer($object_values, $language, $nid) {
         $image_chunk = tng_npImage_maker('', $truth, '', '');
         $whole_qa = $whole_qa . $image_chunk ;
       } else {
-        // remove the 'field_' from the key to make our id
-        $fix_key = ucfirst(str_replace('field_', '', $key));
-        $chunk_name = 'qaa' . $fix_key;
         $fix_value = str_replace('"','\"',$value);
-        //$html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
         $html_chunk = tng_npHTML_basic_maker('', 'field-label', '', '', '',  $fix_value, '', FALSE);
         $whole_qa = $whole_qa . $html_chunk ;
       }
@@ -2347,11 +2307,11 @@ function process_question_and_answer($object_values, $language, $nid) {
     $finish_chunk = tng_npPageCleanup();
     $whole_qa = $whole_qa . $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title
-    $title = 'Q and A Manifest - ' . $title;
+    $title = 'Q-and-A-Manifest - ' . $title;
 
     // when we edit a new node for a question-answer (or make it for the first time), create a new object_manifest
-    // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, '', $language, $nid,'','','','');
+    // to create an updated manifest, delete the old manifest and re-edit the product or list or ...
+    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -2361,35 +2321,65 @@ function process_question_and_answer($object_values, $language, $nid) {
   }
 }
 
-function value_from_pair ($string) {
-  $q = explode(':', $string);
-  $quest = trim($q[1], ' "');
-  return  $quest;
-}
-
-
 function process_content_object($object_values, $language, $nid) {
   $tng_debug =0;
   $min_product_fields = 1;
   $max_product_fields = 50;
   $num_fields = count($object_values);
+
+  $bg_newplayer_background = 'newplayer-background';
+  $outside_padding = 'outside-padding';
+  $renutriv_logo_image = 'renutriv-logo-image';
+  $renutriv_background_image = 'background-image';
+  $h3_headline = 'h3 headline';
+  $close_html = '] },';
+  $close_contentobject  = '] } ] } ] } ]';
+
+
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     // here we process the fields we find for our hot spot passed in the array of $object_values
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
     if ($tng_debug == 1) {
-      dpm('Hot Spot had ' . $num_fields . ' fields.');
+      dpm('Content Object had ' . $num_fields . ' fields.');
+      dpm('**language**' . $language);
+      dpm('object values from process_content_object');
+      dpm($object_values);
       dpm('title : ' . $title);
     }
-    $feature_chunk = tng_npFeature_maker($title, '', '0.0.1');
+    $learning_category = rtrim($object_values['field_learning_category'], ',');
+    if ($learning_category == 'Re-Nutriv') {
+      $learning_category_id = 'reNutriv';
+    } else if ($learning_category == 'ANR') {
+      $learning_category_id = 'ANR';
+    }
+    $content_object_type = rtrim($object_values['field_content_object_type'], ',');
+    if ($content_object_type == 'Learning Content') {
+      $content_object_prefix = 'Learning-Object-Manifest-';
+    } else if ($content_object_type == 'Story') {
+      $content_object_prefix = 'Story-Manifest-';
+    }
+    $headline = $object_values['field_headline'];
+    $feature_chunk = tng_npFeature_maker($learning_category_id, '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Content Object Manifest - ' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'This manifest creates a content object multi-page.');
-    $menu_chunk = tng_npMenu_maker('globalMenu', 'pages');
-    $whole_object = $feature_chunk . $content_chunk .  $menu_chunk;
+    //todo: define the way we refer to the api call for tiles in $dash_name
+    //$dash_name =  $prefix_url . $content_object_prefix . str_replace(" ", "-", $strip);
+    $manifest_title = $content_object_prefix . str_replace(" ", "-", $title);
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'This manifest creates a multi-page content object .');
+    $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $background_chunk = rtrim($background_chunk, ', ');
+    $subtitle = $object_values['field_subtitle'];
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
+    $introductory_text = $object_values['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    //$instructions_chunk = rtrim($instructions_chunk, ', ');
+    $whole_object  =  $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
     foreach ($object_values as $key=>$value) {
       if ($tng_debug == 1) {
@@ -2408,28 +2398,21 @@ function process_content_object($object_values, $language, $nid) {
         }
         $whole_object = $whole_object . $combo;
       }
-      elseif ($key == 'field_hero_image') {
-        $truth = tng_convert_drupal_to_mean_filename($value,'','');
-        $image_chunk = tng_npImage_maker($truth);
-        $whole_object = $whole_object . $image_chunk . ',';
-      } else {
-        // remove the 'field_' from the key to make our id
-        $fix_key = ucfirst(str_replace('field_', '', $key));
-        $chunk_name = 'coo' . $fix_key;
-        $fix_value = str_replace('"','\"',$value);
-        $html_chunk = tng_npHTML_maker($chunk_name, 'field-label', $key,  $fix_value);
-        $whole_object = $whole_object . $html_chunk . ',';
-      }
+//      elseif ($key == 'field_hero_image') {
+//        $truth = tng_convert_drupal_to_mean_filename($value,'','');
+//        $image_chunk = tng_npImage_maker($truth);
+//        $whole_object = $whole_object . $image_chunk . ',';
+//      } else {
+//        //$html_chunk = tng_npHTML_maker('', '','field-label', $key,  $fix_value);
+//        //$html_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+//        //$whole_object = $whole_object . $html_chunk ;
+//      }
 
     }
     // after looping the HTML or Image group, remove the final ','
     $whole_object = rtrim($whole_object, ',');
-    $finish_chunk = tng_npPageContentFeatureCleanup();
-    $whole_object = $whole_object . $finish_chunk;
-
-    // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
-    // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $language, $nid,'','','','');
+    $whole_object = $whole_object . $close_contentobject;
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -2450,7 +2433,7 @@ function process_content_object($object_values, $language, $nid) {
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets, $node_language, $nid, $node_display_title, $node_thumbnail_link, $node_newplayer_link, $node_display_text, $node_categories, $node_keywords) {
+function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL) {
 
   global $user;
   $tng_debug =0;
@@ -2481,7 +2464,9 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
     for ($c=0; $c < $cnt_markets; $c++) {
       $market_csv = $market_csv . $markets[$c] . ',';
     }
-    $market_csv = rtrim($market_csv, ', ');
+    if (isset($market_csv)) {
+      $market_csv = rtrim($market_csv, ', ');
+    }
     if ($tng_debug == 1) {
       dpm('whole market');
       dpm($market_csv);
@@ -2527,8 +2512,8 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
     );
 
     // since we can't save a manifest node with a 'display title' we save it separately in a new field
-    $node->field_product_name[$node->language][] = array(
-      'value' => $node_display_title,
+    $node->field_subtitle[$node->language][] = array(
+      'value' => $node_subtitle,
       'format' => 'plain_text',
     );
 
@@ -2551,7 +2536,6 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $markets
       'value' => $node_keywords,
       'format' => 'plain_text',
     );
-
 
     //$node->language = $node_language; // unfortunately this doesn't work
     $node->uid = $user->uid;
@@ -2618,6 +2602,40 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
   return $remote_picture_name;
 }
 
+//  function tng_shadow_node_validate($entity, $form, &$form_state) {
+//  dpm("inside node presave");
+//  dpm($entity);
+//  if (isset($entity->field_manifest['und'][0]['target_id'])) {
+//    dpm('we think the manifest node is set');
+//    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
+//    if (!$node_man) {
+//      dpm('we are unsetting the phantom');
+//      unset($entity->field_manifest['und'][0]['target_id']);
+//    }
+//  }
+//}
+
+/**
+ * @param $entity This function solves a strange problem where our form believes that there is an
+ * entity reference, when in fact it is a phantom (that or the cruft exists in the hook for form_alter).
+ * Either way, we need this to go away, so we unset the manifest field manually.
+ */
+function tng_shadow_node_presave($entity) {
+  $tng_debug =0;
+  if ($tng_debug == 1) {
+    dpm("inside node presave");
+    dpm($entity);
+    if (isset($entity->field_manifest['und'][0]['target_id'])) {
+      dpm('we think the manifest node is set');
+      $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
+      if (!$node_man) {
+        dpm('we are unsetting the phantom');
+        unset($entity->field_manifest);
+        dpm($entity);
+      }
+    }
+  }
+}
 
 /**
  * @param $entity - This view entity is passed
@@ -2635,6 +2653,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  *         note the node and data in our premanifest object
  *   end
  */
+
 
 function tng_shadow_shadow_request_alter($entity) {
   $tng_debug =0;
@@ -3004,8 +3023,10 @@ function tng_shadow_shadow_request_alter($entity) {
               $learning_manifest  = tng_manifest_extractor($targetid, $language);
               $pre_manifest[$field_name][$num] = $learning_manifest;
             }
-            //dpm('manifest destiny');
-            //dpm($pre_manifest);
+            if ($tng_debug == 1) {
+              dpm('manifest testiny');
+              dpm($pre_manifest);
+            }
           }
         }
         elseif ($info['type'] == 'image') {

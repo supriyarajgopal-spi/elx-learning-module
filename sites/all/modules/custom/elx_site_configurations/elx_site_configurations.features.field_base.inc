@@ -1730,6 +1730,7 @@ function elx_site_configurations_field_default_field_bases() {
           'hot_spots' => 'hot_spots',
           'list' => 'list',
           'matching_game' => 'matching_game',
+          'object_manifest' => 'object_manifest',
           'question_and_answer' => 'question_and_answer',
           'reveal' => 'reveal',
         ),

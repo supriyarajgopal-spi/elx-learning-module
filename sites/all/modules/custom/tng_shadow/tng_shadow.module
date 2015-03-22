@@ -2446,6 +2446,7 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
       dpm('node data : ' . $node_data);
       dpm('node type : ' . $node_type);
       dpm('node title : ' . $node_title);
+      dpm('node subtitle : ' . $node_subtitle);
       dpm('node markets : ' . $markets);
       dpm('node language : ' . $node_language);
       dpm('node nid : ' . $nid);
@@ -2512,7 +2513,7 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
     );
 
     // since we can't save a manifest node with a 'display title' we save it separately in a new field
-    $node->field_subtitle[$node->language][] = array(
+    $node->field_manifest_subtitle[$node->language][] = array(
       'value' => $node_subtitle,
       'format' => 'plain_text',
     );

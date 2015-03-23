@@ -2724,7 +2724,7 @@ function tng_shadow_shadow_request_alter($entity) {
           dpm('**type to process**');
           dpm($type);
         }
-        if ($info['type'] == 'paragraphs' || $info['type'] == 'entityreference') {
+        if ($info['type'] == 'paragraphs') {
           // the outer node type is a 'field_paragraph_multiple_choice', so save this name for later pre-manifest creation.
           $save_field_name = $children_nodes_to_process[$i];
           $namevalue = '[ { ' ;
@@ -2754,10 +2754,7 @@ function tng_shadow_shadow_request_alter($entity) {
             $bundler = 'flash_card_collection';
           } elseif ($entity_type == 'matching_game') {
             $bundler = 'match_game_collection';
-          } elseif ($entity_type == 'content_object') {
-            $bundler = 'hot_spot';
-          }
-
+          } 
           $paragraph_fields = field_info_instances('paragraphs_item', $bundler);
           $number_of_paragraph_fields = count($paragraph_fields);
           if ($tng_debug == 1) {

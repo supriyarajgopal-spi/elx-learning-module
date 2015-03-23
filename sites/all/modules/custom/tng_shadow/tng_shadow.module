@@ -287,6 +287,8 @@ function tng_npMenu_maker ($id, $menuitemstype = NULL) {
   }
 }
 
+
+
 /**
  * @param $link - the link that will be followed when the button is clicked, the label must be defined
  * @param null $type - optional type to seeuply to the data element
@@ -299,7 +301,7 @@ function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle =
   try {
     if (isset($link)) {
       if (!isset($buttontitle)) {
-        $buttontitle = 'Click Me!';
+        $buttontitle = 'Next';
       }
       $page =        '{';
       $page = $page .  '"type"' . ':' . '"npButton"' ;
@@ -1428,7 +1430,7 @@ function process_hotspot($hotspot_values, $language, $nid, $standalone = NULL) {
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Hot-Spot-Manifest-' . $title;
+    $manifest_title = 'Learning-Object-Manifest-' . $title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for hot spot page.');
     $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
     $background_chunk = tng_npHTML_basic_maker('background-image', '','', '', '', '', '', FALSE );
@@ -1476,7 +1478,7 @@ function process_hotspot($hotspot_values, $language, $nid, $standalone = NULL) {
       if ($standalone == 1) {
         $whole_hotspot = $whole_hotspot . $end_hot_spot . $close_hot_spot;
       } else {
-        $whole_hotspot = $whole_hotspot . $end_hot_spot;
+        $whole_hotspot =  $whole_hotspot . $end_hot_spot ;
       }
       if ($tng_debug == 1) {
         dpm($whole_hotspot);
@@ -2242,6 +2244,7 @@ function process_question_and_answer($object_values, $language, $nid) {
     // here we process the fields we find for our question and answer passed in the array of $object_values
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
+    $title = str_replace(" ", "-", $title);
     $subtitle = $object_values['field_subtitle'];
     if ($tng_debug == 1) {
       dpm('Question and Answer had ' . $num_fields . ' fields.');
@@ -2286,10 +2289,11 @@ function process_question_and_answer($object_values, $language, $nid) {
             $ba = $ba . $ap;
           }
         }
+        $bt = tng_npButton_maker('', 'btn-primary', '', 'Next');
         // until Kory fixes the npAnswer to override the correct and incorrect text in each question we build the question after the answers
         $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
-        $ba =  $np . $ba;
+        $ba =  $np . $ba . $bt;
 
         // remove the final comma from any number of question/multiple answers bits
         $ba = rtrim($ba, ',');
@@ -2300,11 +2304,12 @@ function process_question_and_answer($object_values, $language, $nid) {
         $truth = tng_convert_drupal_to_mean_filename($value, '','');
         $image_chunk = tng_npImage_maker('', $truth, '', '');
         $whole_qa = $whole_qa . $image_chunk ;
-      } else {
-        $fix_value = str_replace('"','\"',$value);
-        $html_chunk = tng_npHTML_basic_maker('', 'field-label', '', '', '',  $fix_value, '', FALSE);
-        $whole_qa = $whole_qa . $html_chunk ;
       }
+//      else {
+//        $fix_value = str_replace('"','\"',$value);
+//        $html_chunk = tng_npHTML_basic_maker('', 'field-label', '', '', '',  $fix_value, '', FALSE);
+//        $whole_qa = $whole_qa . $html_chunk ;
+//      }
     }
     // after looping the HTML or Image group, remove the final ','
     $whole_qa = rtrim($whole_qa, ', ');

@@ -3295,7 +3295,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       } elseif ($entity_type == 'hot_spots') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_hotspot($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '1');
+        $new_nid = process_hotspot($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;

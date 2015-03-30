@@ -139,15 +139,17 @@ function elx_site_configurations_field_group_info() {
     'children' => array(
       0 => 'field_drag_select_image',
       1 => 'field_drag_select_text',
+      2 => 'field_correct_answer',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Drag select',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-drag-select field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'group-drag-select field-group-fieldset',
+        'description' => 'Upload EITHER image OR enter answer text.',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_drag_select|paragraphs_item|drag_select|form'] = $field_group;

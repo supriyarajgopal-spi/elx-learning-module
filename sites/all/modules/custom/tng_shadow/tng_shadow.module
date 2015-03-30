@@ -1922,10 +1922,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   $min_flashcard_fields = 1;
   $max_flashcard_fields = 20;
   $num_fields = count($flashcard_values);
-
-  //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
-  $correct_feedback = $flashcard_values['field_custom_correct_feedback'];
-  $incorrect_feedback = $flashcard_values['field_custom_incorrect_feedback'];
   $instructions = '<p>Select each image to learn more.</p>';
 
   if ($num_fields >= $min_flashcard_fields && $num_fields <= $max_flashcard_fields) {
@@ -3316,7 +3312,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       } elseif ($entity_type == 'hot_spots') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_hotspot($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $new_nid = process_hotspot($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '1');
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;

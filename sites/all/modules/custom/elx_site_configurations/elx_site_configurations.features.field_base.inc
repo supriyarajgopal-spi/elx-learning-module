@@ -1737,6 +1737,7 @@ function elx_site_configurations_field_default_field_bases() {
         'generic' => 'Generic',
         'popquiz' => 'Pop Quiz',
         'survey' => 'Survey',
+        'trivia' => 'Trivia Game',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

@@ -1765,12 +1765,6 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   $max_reveal_fields = 20;
   $num_fields = count($reveal_values);
 
-  //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
-  $correct_feedback = $reveal_values['field_custom_correct_feedback'];
-  $incorrect_feedback = $reveal_values['field_custom_incorrect_feedback'];
-  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
-  $placeholder = '<p>this is the placeholder content</p>';
-
   if ($num_fields >= $min_reveal_fields && $num_fields <= $max_reveal_fields) {
     $title = $reveal_values['title_field'];
     $title = str_replace(" ", "-", $title);
@@ -2477,14 +2471,8 @@ function process_content_object($object_values, $language, $nid) {
       dpm('number of markets found:');
       dpm($num_mkts);
     }
-
-
     $content_keywords = $object_values['field_tags_keywords'];
-
-
     $intro_text = strip_tags($object_values['field_intro']);
-
-
     $headline = $object_values['field_headline'];
     $feature_chunk = tng_npFeature_maker($learning_category_id, '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
@@ -3331,7 +3319,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       } elseif ($entity_type == 'list') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'],'0');
+        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;

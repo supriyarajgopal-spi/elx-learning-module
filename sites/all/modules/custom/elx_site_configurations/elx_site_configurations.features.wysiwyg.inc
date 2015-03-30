@@ -43,9 +43,10 @@ function elx_site_configurations_wysiwyg_default_profiles() {
       'acf_allowed_content' => '',
       'css_setting' => 'theme',
       'css_path' => '',
-      'stylesSet' => 'Disclaimer=div.disclaimer',
+      'stylesSet' => 'Heading=p.header-dark
+Disclaimer=div.disclaimer',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'advanced__active_tab' => 'edit-basic',
+      'advanced__active_tab' => 'edit-css',
       'forcePasteAsPlainText' => 0,
     ),
     'rdf_mapping' => array(),

@@ -46,8 +46,8 @@ function elx_site_configurations_wysiwyg_default_profiles() {
       'stylesSet' => 'Heading=p.header-dark
 Disclaimer=div.disclaimer',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'advanced__active_tab' => 'edit-css',
-      'forcePasteAsPlainText' => 0,
+      'advanced__active_tab' => 'edit-paste',
+      'forcePasteAsPlainText' => 1,
     ),
     'rdf_mapping' => array(),
   );

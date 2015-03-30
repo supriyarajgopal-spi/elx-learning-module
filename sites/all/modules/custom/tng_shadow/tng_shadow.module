@@ -1974,14 +1974,12 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
         $back_http = strpos($sploder[$i+1], 'http');
         if ($front_http === false && $back_http === false) {
           // it has text only
-          dpm('text only card found');
           $key = explode(':', $sploder[$i], 2);
           $key_two = explode(':', $sploder[$i+1], 2);
           $omni_one = str_replace('"','\'',$key[1]);
           $omni_two = str_replace('"','\'',$key_two[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
         } else if ($front_http >= 0 && $back_http === false){
-          dpm('front card image found, none on the back');
           $key = explode(':', $sploder[$i], 2);
           $start_pos1 = strpos($key[1],'http');
           $end_pos1 = strpos($key[1], '?');
@@ -1998,8 +1996,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           //}
           $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
         } else if ($back_http  >= 0 && $front_http === false) {
-          dpm('back card has an image, front card does not');
-          dpm('front and back card found');
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
           $key_two = explode(':', $sploder[$i+1], 2);
@@ -2015,7 +2011,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $omni_one = str_replace('"','\'',$key[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
         } else if ($back_http  >= 0 && $front_http >= 0) {
-          dpm('found front and back images on the cards');
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
           $key = explode(':', $sploder[$i], 2);

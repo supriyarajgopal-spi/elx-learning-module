@@ -83,7 +83,7 @@ function elx_site_configurations_field_default_field_instances() {
       'default_image' => 0,
       'entity_translation_sync' => 0,
       'file_directory' => 'badge_icons',
-      'file_extensions' => 'png gif jpg jpeg',
+      'file_extensions' => 'png gif jpg jpeg svg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',

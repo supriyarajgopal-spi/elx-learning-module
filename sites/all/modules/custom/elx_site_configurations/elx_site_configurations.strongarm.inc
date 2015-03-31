@@ -1398,6 +1398,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_field_hero_image';
   $strongarm->value = array(
+    'archive_thumbnail' => 'archive_thumbnail',
     'tile_spotlight' => 'tile_spotlight',
   );
   $export['imageinfo_cache_field_hero_image'] = $strongarm;

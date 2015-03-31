@@ -88,6 +88,7 @@
       $('#product-detail-node-form div[id^="edit-field-markets-"],' +
         '#content-object-node-form div[id^="edit-field-markets-"],' +
         '#tools-node-form div[id^="edit-field-markets-"],' +
+        '#badge-node-form div[id^="edit-field-markets-"],' +
         '#disclaimer-node-form div[id^="edit-field-markets-"]').drupalCheckAll(options);
     }
   }

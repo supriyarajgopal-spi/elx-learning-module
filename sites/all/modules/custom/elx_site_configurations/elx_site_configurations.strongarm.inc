@@ -126,7 +126,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_badge';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_badge'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1852,9 +1852,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_badge';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_badge'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2310,7 +2308,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_badge';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_badge'] = $strongarm;
 
   $strongarm = new stdClass();

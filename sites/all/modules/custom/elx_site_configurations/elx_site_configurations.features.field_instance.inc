@@ -44,7 +44,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 5,
@@ -149,7 +149,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 10,
       ),
       'type' => 'text_textarea',
       'weight' => 6,

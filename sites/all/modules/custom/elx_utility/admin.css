@@ -13,3 +13,8 @@
 .select-all {
   margin-bottom: 20px;
 }
+
+.field-name-field-badge-icon img {
+  height: 200px;
+  width: 200px;
+}

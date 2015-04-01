@@ -2058,7 +2058,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
 }
 
 /**
- * @param $listobject = array of list pieces to form our manifest
+ * @param $badgeobject = array of list pieces to form our manifest
  * @param $language = language
  * @param $nid
  * @return mixed
@@ -2156,7 +2156,6 @@ function process_list($listobject, $language, $nid) {
  * @param $nid
  * @return mixed
  *
- * The assumption here is that a badge item will always be a part of series of components, hence the final ',' at the end of it.
  *
  */
 function process_badge($badgeobject, $language, $nid) {
@@ -2169,28 +2168,36 @@ function process_badge($badgeobject, $language, $nid) {
     dpm('badge object');
     dpm($badgeobject);
   }
-
   // and if we find between 1 and 20 fields, layout the page
-  $min_badge_fields = 1;
-  $max_badge_fields = 20;
+  $min_batch_fields = 1;
+  $max_batch_fields = 20;
   $num_fields = count($badgeobject);
 
   //leave this check for now, although it may not be needed.
-  if ($num_fields >= $min_badge_fields && $num_fields <= $max_badge_fields) {
-    // here we process the fields we find for our badge passed in the array of $object_values
-    // start by telling the processor how many fields we found
+  if ($num_fields >= $min_batch_fields && $num_fields <= $max_batch_fields) {
     $title = $badgeobject['title_field'];
+    $title = rtrim($title,' ');
+    // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
-    if ($tng_debug == 1) {
-      dpm('****title****');
-      dpm($title);
+    $title = str_replace("/", "-", $title);
+    $name = rtrim($title, ' ');
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_title = 'Badge-Manifest-' . $name;
+    $markets = $badgeobject['field_markets'];
+    if ($badgeobject['field_badge_icon']) {
+      $badge_icon = $badgeobject['field_badge_icon'];
+      $mean_image_name = tng_convert_drupal_to_mean_filename($badge_icon, '', '', FALSE);
     }
 
-    if ($badgeobject['field_badge_icon']) {
-    }
+    $badge_description = $badgeobject['field_badge_description'];
+    $badge_unearned_description = $badgeobject['field_badge_unearned_description'];
+    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description);
+    // return the new nid to set it on the parent node
+    return $new_nid;
   } else {
     if ($tng_debug == 1) {
-      dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
+      dpm('Received more or less items than we expected for our badge, so we are not processing it.');
     }
   }
 }
@@ -2719,6 +2726,93 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
   }
 }
 
+
+function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL) {
+
+  global $user;
+  $tng_debug =1;
+
+  // don't make a new manifest node if we already have one
+  if (!isset($nid))
+  {
+    if ($tng_debug == 1) {
+      dpm('creating a new nid node manifest');
+      dpm('node type : ' . $node_type);
+      dpm('node title : ' . $node_title);
+      dpm('node markets : ' . $markets);
+      dpm('node language : ' . $node_language);
+      dpm('node nid : ' . $nid);
+      dpm('node badge icon : ' . $node_badge_icon);
+      dpm('node badge description : ' . $node_badge_description);
+      dpm('node badge unearned description : ' . $node_badge_unearned_description);
+    }
+    $node = new stdClass();
+    $node->title = $node_title;
+    // markets needs to be added to our manifest, so create a csv list
+    $cnt_markets = count($markets);
+    $market_csv = '';
+    for ($c=0; $c < $cnt_markets; $c++) {
+      $market_csv = $market_csv . $markets[$c] . ',';
+    }
+    if (isset($market_csv)) {
+      $market_csv = rtrim($market_csv, ', ');
+    }
+    if ($tng_debug == 1) {
+      dpm('whole market');
+      dpm($market_csv);
+    }
+    $node->type = $node_type;
+    node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+    //language will not be set on the manifest but each manifest contains language specific goods
+    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
+    //otherwise it will create a node with no body content, see the process_product function for more on language setting
+    $node->language = LANGUAGE_NONE;
+    $node->field_manifest_markets[$node->language][] = array(
+      'value' => $market_csv,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'language' we save it separately in a new field
+    $node->field_manifest_language[$node->language][] = array(
+      'value' => $node_language,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'thumbnail link' we save it separately in a new field
+    $node->field_badge_image[$node->language][] = array(
+      'value' => $node_badge_icon,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display text' we save it separately in a new field
+    $node->field_badge_description[$node->language][] = array(
+      'value' => $node_badge_description,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display title' we save it separately in a new field
+    $node->field_badge_unearned_description[$node->language][] = array(
+      'value' => $node_badge_unearned_description,
+      'format' => 'plain_text',
+    );
+
+    //$node->language = $node_language; // unfortunately this doesn't work
+    $node->uid = $user->uid;
+    $node->status = 1; //(1 or 0): published or not
+    $node->promote = 0; //(1 or 0): promoted to front page
+    $node->comment = 0; // 0 = comments disabled, 1 = read only, 2 = read/write
+
+
+    $node = node_submit($node); // Prepare node for saving
+    node_save($node);
+    if ($tng_debug == 1) {
+      dpm($node);
+    }
+    return $node->nid;
+  }
+}
+
+
 /**
  * @param $value - full pathname of the local drupal image file
  * @return string - return the path which we will expect on the MEAN server side 'assets + stylepath'
@@ -2747,11 +2841,21 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
         $justpath = str_replace('product_detail', 'tile_thumbnail', $justpath);
       }
     }
-    $needle = "/default/files/";
+    //bizarre image string case for badge icons: todo: ask Ryan why?
+    $needle = "/default/files/styles//public/";
     $match = strpos($justpath, $needle);
-    $match = $match + strlen($needle);
-    $submatch =  substr($justpath, $match);
-    $remote_picture_name = 'assets/' . $submatch;
+    if ($match < 0) {
+      $needle = "/default/files/";
+      $match = strpos($justpath, $needle);
+      $match = $match + strlen($needle);
+      $submatch =  substr($justpath, $match);
+      $remote_picture_name = 'assets/' . $submatch;
+    } else {
+      $match = $match + strlen($needle);
+      $submatch =  substr($justpath, $match);
+      $remote_picture_name = 'assets/styles/' . $submatch;
+    }
+
     if ($tng_debug == 1) {
       dpm('***incoming path');
       dpm($value);
@@ -3406,9 +3510,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       }
     }
-
-  }
-  catch (exception $e) {
+  }  catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }

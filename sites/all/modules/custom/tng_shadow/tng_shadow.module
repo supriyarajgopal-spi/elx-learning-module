@@ -2963,14 +2963,14 @@ function tng_shadow_node_presave($entity) {
   if ($tng_debug == 1) {
     dpm("inside node presave");
     dpm($entity);
-    if (isset($entity->field_manifest['und'][0]['target_id'])) {
-      dpm('we think the manifest node is set');
-      $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
-      if (!$node_man) {
-        dpm('we are unsetting the phantom');
-        unset($entity->field_manifest);
-        dpm($entity);
-      }
+  }
+  if (isset($entity->field_manifest['und'][0]['target_id'])) {
+    // dpm('we think the manifest node is set');
+    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
+    if (!$node_man) {
+      // dpm('we are unsetting the phantom');
+      unset($entity->field_manifest);
+      // dpm($entity);
     }
   }
 }

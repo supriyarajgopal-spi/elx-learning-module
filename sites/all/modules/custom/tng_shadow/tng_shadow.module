@@ -50,7 +50,7 @@ function tng_date_difference_creator ($date) {
  *
  */
 function tng_title_image_date_extractor ($targetid) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $title = 'title_field';
     $image = 'field_product_image';
@@ -83,7 +83,7 @@ function tng_title_image_date_extractor ($targetid) {
  *
  */
 function tng_manifest_extractor ($targetid, $language) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if ($tng_debug == 1) {
       dpm('language passed to manifest extractor');
@@ -118,7 +118,7 @@ function tng_manifest_extractor ($targetid, $language) {
  * tng_npFeature_maker - given the required parameter $id, build a valid npFeature code chunk
  */
 function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $timestamp = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($id)) {
       if (!isset($req)) {
@@ -166,7 +166,7 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
  * tng_npContent_maker - given the required parameter $id, build a valid npContent code chunk
  */
 function tng_npContent_maker($id, $language, $title = NULL, $description = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($id) && isset($language)) {
       if (!isset($title)) {
@@ -211,7 +211,7 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
  * tng_npPageStart_maker - given the required parameter $id, build a valid npPage code chunk
  */
 function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL,  $required = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($id)) {
       if (!isset($title)) {
@@ -259,7 +259,7 @@ function tng_npPageEndMaker() {
  * @return null|string
  */
 function tng_npMenu_maker ($id, $menuitemstype = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($id)) {
       if (!isset($menuitemstype)) {
@@ -297,7 +297,7 @@ function tng_npMenu_maker ($id, $menuitemstype = NULL) {
  * @return null|string - button manifest chunk is returned (null if no link is given)
  */
 function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($link)) {
       if (!isset($buttontitle)) {
@@ -339,7 +339,7 @@ function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle =
  * @return null|string
  */
 function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($question_text)) {
       // we assume radio button versus checkbox if you don't supply a choice
@@ -384,7 +384,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
  * @return null|string
  */
 function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedback_incorrect = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     if (isset($label)) {
       $answer = '{';
@@ -435,7 +435,7 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
  * @open_component FALSE = pass TRUE to leave the component nesting openn (say for background padding)
  */
 function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $link = NULL, $open_component = FALSE) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $content = str_replace('"','\"',$content);
     $html = '';
@@ -489,7 +489,7 @@ function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  */
 function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $xplugin = null, $content_one, $id_two = NULL,  $class_two = null, $data_collapse = null, $content_two = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $content_one = str_replace('"','\"',$content_one);
     $content_two = str_replace('"','\"',$content_two);
@@ -531,7 +531,7 @@ function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $x
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  */
 function tng_npColumn_maker($class = NULL,  $columns = NULL, $open_component = FALSE) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $html = '';
     $html = $html . '{' . '"type"' . ':' . '"npColumn"' ;
@@ -564,7 +564,7 @@ function tng_npColumn_maker($class = NULL,  $columns = NULL, $open_component = F
  * @return null|string
  */
 function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   //guard against bad image data and short circuit 'assets/' to '' to return a harmless npImage link
   if (!(strlen($src) > 8)) {
     $src = '';
@@ -591,7 +591,7 @@ function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL) 
 }
 
 function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $hotspot = '';
     $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"' ;
@@ -610,7 +610,7 @@ function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback =
 }
 
 function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $hotspotbutton = '';
     $hotspotbutton = $hotspotbutton . '{' ;
@@ -629,7 +629,7 @@ function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL
 }
 
 function tng_npHotspot_closer($feedback = NULL, $image = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $hotspotclose = '';
     $hotspotclose = $hotspotclose . '],' .   '"feedback"' . ':' . '"' . $feedback . '"' ;
@@ -648,7 +648,7 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL) {
 
 
 function tng_npDragAndMatch_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback =  NULL, $req = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $dragandrop = '';
     $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropMatch"' ;
@@ -675,7 +675,7 @@ function tng_npDragAndMatch_maker($id = NULL, $class = NULL, $positive_feedback 
 }
 
 function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback =  NULL, $req = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $dragandrop = '';
     $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"' ;
@@ -702,7 +702,7 @@ function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_f
 }
 
 function tng_npReveal_maker($id = NULL, $class = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $reveal = '';
     $reveal = $reveal . '{' . '"type"' . ':' . '"npReveal"' ;
@@ -724,7 +724,7 @@ function tng_npReveal_maker($id = NULL, $class = NULL) {
 
 
 function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $buttonImage = NULL, $buttonAltText = NULL, $comp_type =  NULL, $comp_id = NULL, $comp_src = NULL, $comp_alt = NULL, $comp_baseURL = NULL, $comp_types = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $reveal = '';
     $reveal = $reveal . '{' ;
@@ -778,7 +778,7 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
 }
 
 function tng_npFlashCard_maker($id = NULL, $class = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $flashcard = '';
     $flashcard = $flashcard . '{' . '"type"' . ':' . '"npFlashCards"' ;
@@ -800,7 +800,7 @@ function tng_npFlashCard_maker($id = NULL, $class = NULL) {
 
 
 function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $contentBack = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $flashcard = '';
     $flashcard = $flashcard .     '{' ;
@@ -825,7 +825,7 @@ function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $content
 }
 
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $match = '';
     $match = $match . '{' . '"type"' . ':' . '"npMatch"' ;
@@ -863,7 +863,7 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
 
 
 function tng_npMatchRow_maker($title = NULL, $position = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $match = '{';
     $match = $match .     '"type"' . ':' . '"npMatchRow"' ;
@@ -885,7 +885,7 @@ function tng_npMatchRow_maker($title = NULL, $position = NULL) {
 
 
 function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $match = '';
     $match = $match . '{';
@@ -915,7 +915,7 @@ function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL
 
 
 function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, $content = NULL, $image = NULL, $matching_content = NULL, $matching_image = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $dragdropbutton = '';
     $dragdropbutton = $dragdropbutton . '{' ;
@@ -945,7 +945,7 @@ function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, 
 
 
 function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $hotspotclose = '';
     $hotspotclose = $hotspotclose . '],' .   '"feedback"' . ':' . '"' . $feedback . '"' ;
@@ -966,7 +966,7 @@ function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
 function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading = NULL, $content = NULL,
                           $component_type = NULL,  $component_id = NULL, $component_src = NULL,
                           $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   try {
     $list = '';
     $list = $list . '{' . '"type"' . ':' . '"npList"' ;
@@ -1091,7 +1091,7 @@ function tng_value_from_pair ($string) {
  * @param $csv_fields - the triplet of information is a csv separated field set, with product name, image, and date of creation
  */
 function tng_create_perfect_partners($path, $csv_fields) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('perfect partner paths');
     dpm($path);
@@ -1157,7 +1157,7 @@ function tng_create_perfect_partners($path, $csv_fields) {
  *
  */
 function process_product($product_values, $labels, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);
@@ -1411,7 +1411,7 @@ function process_product($product_values, $labels, $language, $nid) {
  * If passed a '1' for standalone will create a complete manifest for reNutriv, otherwise just the npHotSpot
  */
 function process_hotspot($hotspot_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
 
   $bg_newplayer_background = 'newplayer-background';
   $outside_padding = 'outside-padding';
@@ -1500,6 +1500,106 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
   }
 }
 
+
+/**
+ * @param $story_values
+ * @param $language
+ * @param $nid
+ * @return mixed
+ *
+ * If passed a '1' for standalone will create a complete manifest for reNutriv, otherwise just the npHotSpot
+ */
+function process_story($story_values, $language, $nid, $module, $standalone = NULL) {
+  $tng_debug =1;
+
+  $bg_newplayer_background = 'newplayer-background';
+  $outside_padding = 'outside-padding';
+  $renutriv_logo_image = 'renutriv-logo-image';
+  $h3_headline = 'h3 headline';
+  $close_html = '] },';
+  $close_hot_spot  = '] } ] } ] } ]';
+
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find a reasonable number of fields, layout the page
+  $min_product_fields = 1;
+  $max_product_fields = 20;
+  $num_fields = count($story_values);
+  if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
+    $title = $story_values['title_field'];
+    $title = str_replace(" ", "-", $title);
+    $feature_chunk = tng_npFeature_maker($module, '', '[]', '0.0.1');
+    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_content = $language_strings[1];
+    $manifest_title = 'Story-Manifest-' . $title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for hot spot page.');
+    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
+    $background_chunk = tng_npHTML_basic_maker('background-image', '','', '', '', '', '', FALSE );
+    $background_chunk = rtrim($background_chunk, ', ');
+    $subtitle = $story_values['field_subtitle'];
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $instructions = $story_values['field_hot_spot_instructions'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','',$instructions, '', FALSE);
+    $whole_story = '';
+    if ($standalone == 1) {
+      $whole_story= $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    }
+    if ($story_values['field_hot_spot_collection']) {
+      $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
+      $whole_story = $whole_story . $hot_top;
+
+      foreach ($story_values as $key=>$value) {
+        if ($tng_debug == 1) {
+          dpm('**** data ****' . $key . ' : ' . $value);
+        }
+        if ($key == 'field_hot_spot_collection') {
+          // remove brackets and curly braces [] {}
+          $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
+          $sploder = explode('",', $trim_str);
+          if ($tng_debug == 1) {
+            dpm($sploder);
+          }
+          $count_of_elements = count($sploder);
+          // for each triplet, grab the data and package it up as text, x and y coordinate
+          for ($i=0; $i < $count_of_elements; $i += 3) {
+            $t = tng_value_from_pair($sploder[$i]);
+            $x = tng_value_from_pair($sploder[$i+1]);
+            $y = tng_value_from_pair($sploder[$i+2]);
+            $xy_combo = $x . ' ' . $y;
+            $hotspot_detail = tng_hotspot_button_maker($xy_combo, $t, '');
+            $whole_story = $whole_story . $hotspot_detail;
+          }
+          $whole_story = rtrim($whole_story, ', ');
+        }
+      }
+      $main_image = tng_convert_drupal_to_mean_filename($story_values['field_hot_spot_image'],'','');
+      $end_hot_spot = tng_npHotspot_closer('', $main_image);
+      if ($standalone == 1) {
+        $whole_story = $whole_story . $end_hot_spot . $close_hot_spot;
+      } else {
+        $whole_story =  $whole_story . $end_hot_spot ;
+      }
+      if ($tng_debug == 1) {
+        dpm($whole_story);
+      }
+    }
+
+    // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product
+    $new_nid = tng_create_manifest_node($whole_story, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    // return the new nid to set it on the parent node
+    return $new_nid;
+  } else {
+    if ($tng_debug == 1) {
+      dpm('Received more or less items than we expected for our hotspot, so we are not processing it.');
+    }
+  }
+}
+
+
 /**
  * @param $dragmatch_values
  * @param $language
@@ -1507,7 +1607,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
  * @return mixed
  */
 function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('drag match object');
     dpm($dragmatch);
@@ -1626,7 +1726,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
  * @return mixed
  */
 function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('drag match prioritize object');
     dpm($dragprioritize);
@@ -1745,7 +1845,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
  * @return mixed
  */
 function process_reveal($reveal_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('reveal object');
     dpm($reveal_values);
@@ -1845,23 +1945,6 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           }
           $revealnumber +=1;
 
-          // the array assignment makes for predictable order of our trio of data
-//          if ($key[0] == '"field_reveal_hero" ' || $key[0] == '"field_reveal_thumbnail" ') {
-//            $image_or_video = 'npImage';
-//            $first_image = str_replace('"', '', $key[1] .':' . $key[2]);
-//            $first_image = tng_convert_drupal_to_mean_filename($first_image,'','','true');
-//            $reveal_detail = tng_npRevealItem_maker($reveal , '', $stripped_text_two, $thumb_image, '' , $image_or_video, '', $first_image, '', '', '');
-//            $increment = 3;
-//          }
-//          else {
-//            if ($key[0] == '"field_reveal_text" ') {
-//              $image_or_video = 'npVideo';
-//              $first_image = str_replace('"', '', $key_two[1] .':' . $key_two[2]);
-//              $first_image = tng_convert_drupal_to_mean_filename($first_image,'','','true');
-//              $reveal_detail = tng_npRevealItem_maker($reveal , '', $stripped_text_one, $thumb_image, '' , $image_or_video, '','',  '', $first_image,  'mp4');
-//              $increment = 2;
-//            }
-//          }
           $whole_reveal = $whole_reveal . $reveal_detail;
         }
         $whole_reveal = rtrim($whole_reveal, ', ');
@@ -1897,7 +1980,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
  * @return mixed
  */
 function process_flashcards($flashcard_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('flash card object');
     dpm($flashcard_values);
@@ -2058,7 +2141,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
 }
 
 /**
- * @param $listobject = array of list pieces to form our manifest
+ * @param $badgeobject = array of list pieces to form our manifest
  * @param $language = language
  * @param $nid
  * @return mixed
@@ -2067,7 +2150,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
  *
  */
 function process_list($listobject, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2156,11 +2239,10 @@ function process_list($listobject, $language, $nid) {
  * @param $nid
  * @return mixed
  *
- * The assumption here is that a badge item will always be a part of series of components, hence the final ',' at the end of it.
  *
  */
 function process_badge($badgeobject, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2169,28 +2251,36 @@ function process_badge($badgeobject, $language, $nid) {
     dpm('badge object');
     dpm($badgeobject);
   }
-
   // and if we find between 1 and 20 fields, layout the page
-  $min_badge_fields = 1;
-  $max_badge_fields = 20;
+  $min_batch_fields = 1;
+  $max_batch_fields = 20;
   $num_fields = count($badgeobject);
 
   //leave this check for now, although it may not be needed.
-  if ($num_fields >= $min_badge_fields && $num_fields <= $max_badge_fields) {
-    // here we process the fields we find for our badge passed in the array of $object_values
-    // start by telling the processor how many fields we found
+  if ($num_fields >= $min_batch_fields && $num_fields <= $max_batch_fields) {
     $title = $badgeobject['title_field'];
+    $title = rtrim($title,' ');
+    // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
-    if ($tng_debug == 1) {
-      dpm('****title****');
-      dpm($title);
+    $title = str_replace("/", "-", $title);
+    $name = rtrim($title, ' ');
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_title = 'Badge-Manifest-' . $name;
+    $markets = $badgeobject['field_markets'];
+    if ($badgeobject['field_badge_icon']) {
+      $badge_icon = $badgeobject['field_badge_icon'];
+      $mean_image_name = tng_convert_drupal_to_mean_filename($badge_icon, '', '', FALSE);
     }
 
-    if ($badgeobject['field_badge_icon']) {
-    }
+    $badge_description = $badgeobject['field_badge_description'];
+    $badge_unearned_description = $badgeobject['field_badge_unearned_description'];
+    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description);
+    // return the new nid to set it on the parent node
+    return $new_nid;
   } else {
     if ($tng_debug == 1) {
-      dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
+      dpm('Received more or less items than we expected for our badge, so we are not processing it.');
     }
   }
 }
@@ -2202,7 +2292,7 @@ function process_badge($badgeobject, $language, $nid) {
  * @return mixed
  */
 function process_matchgame($matchgame_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('match game object');
     dpm($matchgame_values);
@@ -2358,7 +2448,7 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
  * @return mixed - return the node id, $nid, of the newly created manifest.
  */
 function process_question_and_answer($object_values, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('**language**' . $language);
     dpm('process question and answer');
@@ -2467,7 +2557,7 @@ function process_question_and_answer($object_values, $language, $nid) {
 }
 
 function process_content_object($object_values, $language, $nid) {
-  $tng_debug =0;
+  $tng_debug =1;
   $min_product_fields = 1;
   $max_product_fields = 50;
   $num_fields = count($object_values);
@@ -2597,7 +2687,7 @@ function process_content_object($object_values, $language, $nid) {
 function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL) {
 
   global $user;
-  $tng_debug =0;
+  $tng_debug =1;
 
   // don't make a new manifest node if we already have one
   if (!isset($nid))
@@ -2719,12 +2809,99 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
   }
 }
 
+
+function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL) {
+
+  global $user;
+  $tng_debug =1;
+
+  // don't make a new manifest node if we already have one
+  if (!isset($nid))
+  {
+    if ($tng_debug == 1) {
+      dpm('creating a new nid node manifest');
+      dpm('node type : ' . $node_type);
+      dpm('node title : ' . $node_title);
+      dpm('node markets : ' . $markets);
+      dpm('node language : ' . $node_language);
+      dpm('node nid : ' . $nid);
+      dpm('node badge icon : ' . $node_badge_icon);
+      dpm('node badge description : ' . $node_badge_description);
+      dpm('node badge unearned description : ' . $node_badge_unearned_description);
+    }
+    $node = new stdClass();
+    $node->title = $node_title;
+    // markets needs to be added to our manifest, so create a csv list
+    $cnt_markets = count($markets);
+    $market_csv = '';
+    for ($c=0; $c < $cnt_markets; $c++) {
+      $market_csv = $market_csv . $markets[$c] . ',';
+    }
+    if (isset($market_csv)) {
+      $market_csv = rtrim($market_csv, ', ');
+    }
+    if ($tng_debug == 1) {
+      dpm('whole market');
+      dpm($market_csv);
+    }
+    $node->type = $node_type;
+    node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
+    //language will not be set on the manifest but each manifest contains language specific goods
+    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
+    //otherwise it will create a node with no body content, see the process_product function for more on language setting
+    $node->language = LANGUAGE_NONE;
+    $node->field_manifest_markets[$node->language][] = array(
+      'value' => $market_csv,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'language' we save it separately in a new field
+    $node->field_manifest_language[$node->language][] = array(
+      'value' => $node_language,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'thumbnail link' we save it separately in a new field
+    $node->field_badge_image[$node->language][] = array(
+      'value' => $node_badge_icon,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display text' we save it separately in a new field
+    $node->field_badge_description[$node->language][] = array(
+      'value' => $node_badge_description,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'display title' we save it separately in a new field
+    $node->field_badge_unearned_description[$node->language][] = array(
+      'value' => $node_badge_unearned_description,
+      'format' => 'plain_text',
+    );
+
+    //$node->language = $node_language; // unfortunately this doesn't work
+    $node->uid = $user->uid;
+    $node->status = 1; //(1 or 0): published or not
+    $node->promote = 0; //(1 or 0): promoted to front page
+    $node->comment = 0; // 0 = comments disabled, 1 = read only, 2 = read/write
+
+
+    $node = node_submit($node); // Prepare node for saving
+    node_save($node);
+    if ($tng_debug == 1) {
+      dpm($node);
+    }
+    return $node->nid;
+  }
+}
+
+
 /**
  * @param $value - full pathname of the local drupal image file
  * @return string - return the path which we will expect on the MEAN server side 'assets + stylepath'
  */
 function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL, $public_process = NULL) {
-  $tng_debug =0;
+  $tng_debug =1;
   $remote_picture_name = '';
   //short circuit this if there isn't a system path
   if (substr($value,0,6) == 'assets') {
@@ -2747,11 +2924,21 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
         $justpath = str_replace('product_detail', 'tile_thumbnail', $justpath);
       }
     }
-    $needle = "/default/files/";
+    //bizarre image string case for badge icons: todo: ask Ryan why?
+    $needle = "/default/files/styles//public/";
     $match = strpos($justpath, $needle);
-    $match = $match + strlen($needle);
-    $submatch =  substr($justpath, $match);
-    $remote_picture_name = 'assets/' . $submatch;
+    if ($match < 0) {
+      $needle = "/default/files/";
+      $match = strpos($justpath, $needle);
+      $match = $match + strlen($needle);
+      $submatch =  substr($justpath, $match);
+      $remote_picture_name = 'assets/' . $submatch;
+    } else {
+      $match = $match + strlen($needle);
+      $submatch =  substr($justpath, $match);
+      $remote_picture_name = 'assets/styles/' . $submatch;
+    }
+
     if ($tng_debug == 1) {
       dpm('***incoming path');
       dpm($value);
@@ -2772,7 +2959,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  * Either way, we need this to go away, so we unset the manifest field manually.
  */
 function tng_shadow_node_presave($entity) {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm("inside node presave");
     dpm($entity);
@@ -2807,7 +2994,7 @@ function tng_shadow_node_presave($entity) {
 
 
 function tng_shadow_shadow_request_alter($entity) {
-  $tng_debug =0;
+  $tng_debug =1;
   $translated_labels[] ='';
   try {
     if ($tng_debug == 1) {
@@ -3406,9 +3593,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       }
     }
-
-  }
-  catch (exception $e) {
+  }  catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -3416,7 +3601,7 @@ function tng_shadow_shadow_request_alter($entity) {
 }
 
 function get_language_from_uri () {
-  $tng_debug =0;
+  $tng_debug =1;
   $uri_language = '';
   $language_url = $_SERVER['REQUEST_URI'];
   $lang_splitter = explode('/', $language_url);

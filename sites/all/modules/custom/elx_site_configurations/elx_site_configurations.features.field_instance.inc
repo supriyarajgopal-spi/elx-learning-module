@@ -237,6 +237,47 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-badge_manifest-field_badge_description'
+  $field_instances['node-badge_manifest-field_badge_description'] = array(
+    'bundle' => 'badge_manifest',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_badge_description',
+    'label' => 'Badge earned description',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-badge_manifest-field_badge_image'
   $field_instances['node-badge_manifest-field_badge_image'] = array(
     'bundle' => 'badge_manifest',
@@ -278,8 +319,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge_manifest-field_badge_manifest_earned'
-  $field_instances['node-badge_manifest-field_badge_manifest_earned'] = array(
+  // Exported field_instance: 'node-badge_manifest-field_badge_unearned_description'
+  $field_instances['node-badge_manifest-field_badge_unearned_description'] = array(
     'bundle' => 'badge_manifest',
     'default_value' => NULL,
     'deleted' => 0,
@@ -290,7 +331,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -300,48 +341,7 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_badge_manifest_earned',
-    'label' => 'Badge earned description',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_badge_manifest_unearned'
-  $field_instances['node-badge_manifest-field_badge_manifest_unearned'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_badge_manifest_unearned',
+    'field_name' => 'field_badge_unearned_description',
     'label' => 'Badge unearned description',
     'required' => 0,
     'settings' => array(

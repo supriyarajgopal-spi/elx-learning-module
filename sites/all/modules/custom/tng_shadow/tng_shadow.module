@@ -2856,7 +2856,7 @@ function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $n
     );
 
     // since we can't save a manifest node with a 'language' we save it separately in a new field
-    $node->field_manifest_language[$node->language][] = array(
+    $node->field_language[$node->language][] = array(
       'value' => $node_language,
       'format' => 'plain_text',
     );

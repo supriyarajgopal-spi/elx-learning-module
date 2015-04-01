@@ -18,7 +18,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     'options' => array(
       'state' => 'visible',
       'condition' => 'value',
-      'grouping' => 'AND',
+      'grouping' => 'OR',
       'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
@@ -138,14 +138,13 @@ function elx_site_configurations_conditional_fields_default_fields() {
         ),
       ),
       'selector' => '',
-      'values_set' => 1,
+      'values_set' => 3,
       'value_form' => 'popquiz',
-      'value' => array(
-        0 => array(
-          'value' => 'popquiz',
-        ),
+      'values' => array(
+        0 => 'trivia',
+        1 => 'popquiz',
       ),
-      'values' => array(),
+      'value' => array(),
     ),
   );
 

@@ -2044,7 +2044,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       // for each quad of content, a bit of messy processing
       // the content is within quotes and need removing, the images need style work and charm
       $flashcardnumber = 0;
-      //depending on what the cards look like, we'll end up with 2,3 or 4 cards per set.
+      //depending on what the cards look like, we'll end up with a front and a back.
       for ($i=0; $i < $count_of_elements; $i += 2) {
         // check for images so we know how to process
         $front_http = strpos($sploder[$i],'http');
@@ -2115,12 +2115,13 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
         }
        $whole_flashcard = $whole_flashcard . $flashcard_detail;
       }
+
       $whole_flashcard = rtrim($whole_flashcard, ', ');
     }
     if ($standalone == 1) {
       $whole_flashcard = $whole_flashcard .  $close_flashcard;
     } else {
-      $whole_flashcard = $whole_flashcard ;
+      $whole_flashcard = $whole_flashcard . '] }';
     }
     if ($tng_debug == 1) {
       dpm($whole_flashcard);
@@ -2856,7 +2857,7 @@ function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $n
     );
 
     // since we can't save a manifest node with a 'language' we save it separately in a new field
-    $node->field_manifest_language[$node->language][] = array(
+    $node->field_language[$node->language][] = array(
       'value' => $node_language,
       'format' => 'plain_text',
     );
@@ -2927,13 +2928,14 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
     //bizarre image string case for badge icons: todo: ask Ryan why?
     $needle = "/default/files/styles//public/";
     $match = strpos($justpath, $needle);
-    if ($match < 0) {
-      $needle = "/default/files/";
+    if ($match > 0) {
+      //$needle = "/default/files/";
       $match = strpos($justpath, $needle);
       $match = $match + strlen($needle);
       $submatch =  substr($justpath, $match);
       $remote_picture_name = 'assets/' . $submatch;
     } else {
+      $needle = "/default/files/";
       $match = $match + strlen($needle);
       $submatch =  substr($justpath, $match);
       $remote_picture_name = 'assets/styles/' . $submatch;
@@ -3568,7 +3570,7 @@ function tng_shadow_shadow_request_alter($entity) {
           node_save($entity);
         }
       } elseif ($entity_type == 'flash_cards') {
-        $new_nid = process_flashcards($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $new_nid = process_flashcards($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '1');
         if (isset($new_nid)) {
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;
           node_save($entity);

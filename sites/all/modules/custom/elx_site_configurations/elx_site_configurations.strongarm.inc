@@ -125,6 +125,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_story';
+  $strongarm->value = 0;
+  $export['comment_anonymous_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_tools';
   $strongarm->value = 0;
   $export['comment_anonymous_tools'] = $strongarm;
@@ -258,6 +265,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_story';
+  $strongarm->value = 1;
+  $export['comment_default_mode_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_tools';
   $strongarm->value = 1;
   $export['comment_default_mode_tools'] = $strongarm;
@@ -366,6 +380,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_per_page_reveal';
   $strongarm->value = '50';
   $export['comment_default_per_page_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_story';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -517,6 +538,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_story';
+  $strongarm->value = 1;
+  $export['comment_form_location_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_tools';
   $strongarm->value = 1;
   $export['comment_form_location_tools'] = $strongarm;
@@ -657,6 +685,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_story';
+  $strongarm->value = '1';
+  $export['comment_preview_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_tools';
   $strongarm->value = '1';
   $export['comment_preview_tools'] = $strongarm;
@@ -681,6 +716,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_reveal';
   $strongarm->value = '1';
   $export['comment_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_story';
+  $strongarm->value = '1';
+  $export['comment_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -786,6 +828,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_subject_field_reveal';
   $strongarm->value = 1;
   $export['comment_subject_field_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_story';
+  $strongarm->value = 1;
+  $export['comment_subject_field_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1416,6 +1465,45 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__story';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'language' => array(
+          'weight' => '1',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__tools';
   $strongarm->value = array(
     'view_modes' => array(
@@ -1745,6 +1833,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_story';
+  $strongarm->value = '4';
+  $export['language_content_type_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_tools';
   $strongarm->value = '4';
   $export['language_content_type_tools'] = $strongarm;
@@ -2048,6 +2143,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_story';
+  $strongarm->value = array();
+  $export['menu_options_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_tools';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -2158,6 +2260,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'menu_parent_reveal';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_story';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2305,6 +2414,15 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_story';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_tools';
   $strongarm->value = array(
     0 => 'status',
@@ -2420,6 +2538,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_story';
+  $strongarm->value = '1';
+  $export['node_preview_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_tools';
   $strongarm->value = '1';
   $export['node_preview_tools'] = $strongarm;
@@ -2528,6 +2653,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_submitted_reveal';
   $strongarm->value = 0;
   $export['node_submitted_reveal'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_story';
+  $strongarm->value = 0;
+  $export['node_submitted_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

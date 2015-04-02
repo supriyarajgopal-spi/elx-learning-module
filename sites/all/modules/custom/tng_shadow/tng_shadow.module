@@ -14,7 +14,8 @@
  *
  * the _date_diff function will return the data in an array with name/value pairs for 'y', 'm', 'd'
  */
-function tng_date_difference_creator ($date) {
+function tng_date_difference_creator($date)
+{
   $calc_date = _date_diff(strtotime($date), time());
   $years = $calc_date['y'];
   $months = $calc_date['m'];
@@ -49,8 +50,9 @@ function tng_date_difference_creator ($date) {
  *    - date of when product was introduced (a string like '3 months ago')
  *
  */
-function tng_title_image_date_extractor ($targetid) {
-  $tng_debug =1;
+function tng_title_image_date_extractor($targetid)
+{
+  $tng_debug = 1;
   try {
     $title = 'title_field';
     $image = 'field_product_image';
@@ -59,7 +61,7 @@ function tng_title_image_date_extractor ($targetid) {
     $entity = node_load($targetid);
     $language = $entity->language;
     $date = $entity->created;
-    $date = format_date($date,$type = 'short');
+    $date = format_date($date, $type = 'short');
     $calc_date = tng_date_difference_creator($date);
     $product_title = $entity->title_field[$language][0]['value'] . '/' . $targetid;
     $results[$title] = $product_title;
@@ -67,8 +69,7 @@ function tng_title_image_date_extractor ($targetid) {
     $results[$image] = $thumb;
     $results[$creation_date] = $calc_date;
     return $results;
-  }
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -82,8 +83,9 @@ function tng_title_image_date_extractor ($targetid) {
  *
  *
  */
-function tng_manifest_extractor ($targetid, $language) {
-  $tng_debug =1;
+function tng_manifest_extractor($targetid, $language)
+{
+  $tng_debug = 1;
   try {
     if ($tng_debug == 1) {
       dpm('language passed to manifest extractor');
@@ -99,14 +101,12 @@ function tng_manifest_extractor ($targetid, $language) {
       dpm($results);
     }
     return $results;
-  }
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
-
 
 
 /**
@@ -117,8 +117,9 @@ function tng_manifest_extractor ($targetid, $language) {
  *
  * tng_npFeature_maker - given the required parameter $id, build a valid npFeature code chunk
  */
-function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $timestamp = NULL) {
-  $tng_debug =1;
+function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $timestamp = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($id)) {
       if (!isset($req)) {
@@ -129,16 +130,16 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
       }
       if (!isset($timestamp)) {
         $format_string = 'Y-M-D_h:m:s';
-        $time_string = date ($format_string);
+        $time_string = date($format_string);
       }
       $feature = '[ {';
-      $feature = $feature . '"type"' . ':' . '"npFeature"' ;
-      $feature = $feature . ',' . '"data"' . ': {' .  '"id"' . ': ' . '"' . $id . '"';
+      $feature = $feature . '"type"' . ':' . '"npFeature"';
+      $feature = $feature . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
       //NewPlayerV2 will bomb if it finds something it can't load and that thing is required, like a missing css file, for now don't add it
       $feature = $feature . ',' . '"class"' . ': ' . '"' . $class . '"';
       //$feature = $feature . ',' . '"req"' . ': ' . $req;
-      $feature = $feature . ',' . '"version"' . ': '  . '"'. $version. '"';
-      $feature = $feature . ',' . '"timestamp"' . ': '  . '"' . $time_string . '"';
+      $feature = $feature . ',' . '"version"' . ': ' . '"' . $version . '"';
+      $feature = $feature . ',' . '"timestamp"' . ': ' . '"' . $time_string . '"';
       $feature = $feature . '},';
       return $feature;
     } else {
@@ -147,9 +148,7 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
       }
       return null;
     }
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -165,8 +164,9 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
  *
  * tng_npContent_maker - given the required parameter $id, build a valid npContent code chunk
  */
-function tng_npContent_maker($id, $language, $title = NULL, $description = NULL) {
-  $tng_debug =1;
+function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($id) && isset($language)) {
       if (!isset($title)) {
@@ -176,11 +176,11 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
         $description = '"Sample presentation"';
       }
       $content = '"components": [ {';
-      $content = $content . '"type"' . ':' . '"npContent"' ;
-      $content = $content . ',' . '"data"' . ': {' .  '"id"' . ': ' .'"' .  $id . '"';
-      $content = $content . ',' . '"language"' . ': ' . '"' . $language . '"' ;
-      $content = $content . ',' . '"title"' . ': '  .'"' . $title . '"' ;
-      $content = $content . ',' . '"description"' . ': ' . '"' . $description .' "' ;
+      $content = $content . '"type"' . ':' . '"npContent"';
+      $content = $content . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $content = $content . ',' . '"language"' . ': ' . '"' . $language . '"';
+      $content = $content . ',' . '"title"' . ': ' . '"' . $title . '"';
+      $content = $content . ',' . '"description"' . ': ' . '"' . $description . ' "';
       $content = $content . '},';
       $content = $content . '"components": [ ';
       return $content;
@@ -190,9 +190,7 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
       }
       return null;
     }
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -210,8 +208,9 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
  *
  * tng_npPageStart_maker - given the required parameter $id, build a valid npPage code chunk
  */
-function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL,  $required = NULL) {
-  $tng_debug =1;
+function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($id)) {
       if (!isset($title)) {
@@ -221,12 +220,12 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
         $required = 'false';
       }
       $page = '{';
-      $page = $page . '"type"' . ':' . '"npPage"' ;
-      $page = $page . ',' . '"data"' . ': {' .  '"id"' . ': '  . '"' .  $id . '"';
-      $page = $page . ',' . '"parentId"' . ': ' .'"' . $parentid .'"' ;
-      $page = $page . ',' . '"title"' . ': ' .  '"' . $title .'"' ;
-      $page = $page . ',' . '"inMenu"' . ': '  .$inmenu  ;
-      $page = $page . ',' . '"required"' . ': '  . $required ;
+      $page = $page . '"type"' . ':' . '"npPage"';
+      $page = $page . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
+      $page = $page . ',' . '"title"' . ': ' . '"' . $title . '"';
+      $page = $page . ',' . '"inMenu"' . ': ' . $inmenu;
+      $page = $page . ',' . '"required"' . ': ' . $required;
       $page = $page . '}, ';
       $page = $page . '"components": [ ';
       return $page;
@@ -236,9 +235,7 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
       }
       return null;
     }
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -249,7 +246,8 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
 /**
  * @return string pages can contain many different objects, like images, html, questions, answers, etc
  */
-function tng_npPageEndMaker() {
+function tng_npPageEndMaker()
+{
   return "] }";
 }
 
@@ -258,18 +256,19 @@ function tng_npPageEndMaker() {
  * @param null $menuitemstype
  * @return null|string
  */
-function tng_npMenu_maker ($id, $menuitemstype = NULL) {
-  $tng_debug =1;
+function tng_npMenu_maker($id, $menuitemstype = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($id)) {
       if (!isset($menuitemstype)) {
         $menuitemstype = 'globalMenu';
       }
-      $menu =        '{';
-      $menu = $menu .  '"type"' . ':' . '"npMenu"' ;
-      $menu = $menu .  ',' . '"data"' . ': {' .  '"id"' . ': '  . '"' .  $id . '"';
-      $menu = $menu .  ',' .   '"items"' . ': [' .'"' . $menuitemstype .'" ]' ;
-      $menu = $menu .         '} ';
+      $menu = '{';
+      $menu = $menu . '"type"' . ':' . '"npMenu"';
+      $menu = $menu . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $menu = $menu . ',' . '"items"' . ': [' . '"' . $menuitemstype . '" ]';
+      $menu = $menu . '} ';
       $menu = $menu . '},';
       return $menu;
     } else {
@@ -278,15 +277,12 @@ function tng_npMenu_maker ($id, $menuitemstype = NULL) {
       }
       return null;
     }
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
-
 
 
 /**
@@ -296,21 +292,22 @@ function tng_npMenu_maker ($id, $menuitemstype = NULL) {
  * @param null $class - the button class
  * @return null|string - button manifest chunk is returned (null if no link is given)
  */
-function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle = NULL) {
-  $tng_debug =1;
+function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($link)) {
       if (!isset($buttontitle)) {
         $buttontitle = 'Next';
       }
-      $page =        ',{';
-      $page = $page .  '"type"' . ':' . '"npButton"' ;
-      $page = $page .  ',' . '"data"' . ': {' .  '"link"' . ': '  . '"' .  $link . '"';
-      $page = $page .  ',' .   '"type"' . ': ' .'"' . $type .'"' ;
-      $page = $page .  ',' .   '"class"' . ': ' .'"' . $class .'"' ;
-      $page = $page .  ',' .   '"content"' . ': ' .'"' . $buttontitle .'"' ;
-      $page = $page .         '}, ';
-      $page = $page . '"components"' . ': []' ;
+      $page = ',{';
+      $page = $page . '"type"' . ':' . '"npButton"';
+      $page = $page . ',' . '"data"' . ': {' . '"link"' . ': ' . '"' . $link . '"';
+      $page = $page . ',' . '"type"' . ': ' . '"' . $type . '"';
+      $page = $page . ',' . '"class"' . ': ' . '"' . $class . '"';
+      $page = $page . ',' . '"content"' . ': ' . '"' . $buttontitle . '"';
+      $page = $page . '}, ';
+      $page = $page . '"components"' . ': []';
       $page = $page . '}';
       return $page;
     } else {
@@ -319,8 +316,7 @@ function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle =
       }
       return null;
     }
-  }
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -338,26 +334,27 @@ function tng_npButton_maker ($link, $type = NULL , $class = NULL, $buttontitle =
  * @param null $feedback_incorrect - the default incorrect answer text, can also be over-written by incorrect value in npAnswer
  * @return null|string
  */
-function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL) {
-  $tng_debug =1;
+function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($question_text)) {
       // we assume radio button versus checkbox if you don't supply a choice
       if (!isset($type)) {
         $type = 'radio';
       }
-      $question =             '"type"' . ':' . '"npQuestion"' ;
+      $question = '"type"' . ':' . '"npQuestion"';
       $question = $question . ',' . '"data"' . ': {';
-      $question = $question .         '"required"' . ': '  . $required ;
-      $question = $question . ',' .   '"forced"' . ': '  . $forced ;
-      $question = $question . ',' .   '"type"' . ': '  . '"'. $type . '"';
-      $question = $question . ',' .   '"difficulty"' . ': '  . '"' . $difficulty . '"';
-      $question = $question . ',' .   '"content"' . ': '  . '"' . $question_text  .'"';
-      $question = $question . ',' .   '"feedback"' . ': {';
-      $question = $question .           '"immediate"' . ': ' .  '"' . $feedback_immediate .'"' ;
-      $question = $question . ',' .     '"correct"' . ': ' .'"' . $feedback_correct .'"' ;
-      $question = $question . ',' .     '"incorrect"' . ': ' . '"' . $feedback_incorrect .'"' ;
-      $question = $question .         '}';
+      $question = $question . '"required"' . ': ' . $required;
+      $question = $question . ',' . '"forced"' . ': ' . $forced;
+      $question = $question . ',' . '"type"' . ': ' . '"' . $type . '"';
+      $question = $question . ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
+      $question = $question . ',' . '"content"' . ': ' . '"' . $question_text . '"';
+      $question = $question . ',' . '"feedback"' . ': {';
+      $question = $question . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
+      $question = $question . ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
+      $question = $question . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
+      $question = $question . '}';
       $question = $question . '}, ';
       $question = $question . '"components": [';
       return $question;
@@ -367,8 +364,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       }
       return null;
     }
-  }
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -383,19 +379,20 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
  * @param null $feedback_incorrect - will over-write default incorrect answer from npQuestion
  * @return null|string
  */
-function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedback_incorrect = NULL) {
-  $tng_debug =1;
+function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedback_incorrect = NULL)
+{
+  $tng_debug = 1;
   try {
     if (isset($label)) {
       $answer = '{';
-      $answer = $answer . '"type"' . ':' . '"npAnswer"' ;
+      $answer = $answer . '"type"' . ':' . '"npAnswer"';
       $answer = $answer . ',' . '"data"' . ': {';
-      $answer = $answer .         '"label"' . ': '  . '"' . $label .'"';
-      $answer = $answer . ',' .   '"correct"' . ': '  . $correct ;
-      $answer = $answer . ',' .   '"feedback"' . ': {';
+      $answer = $answer . '"label"' . ': ' . '"' . $label . '"';
+      $answer = $answer . ',' . '"correct"' . ': ' . $correct;
+      $answer = $answer . ',' . '"feedback"' . ': {';
       //$answer = $answer . ',' .     '"immediate"' . ': ' .  $feedback_immediate ;
       if (!empty($feedback_correct)) {
-        $answer = $answer       .     '"correct"' . ': ' .'"' . $feedback_correct .'"' ;
+        $answer = $answer . '"correct"' . ': ' . '"' . $feedback_correct . '"';
       } else {
         if ($tng_debug == 1) {
           dpm('no correct answer found');
@@ -403,13 +400,13 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
       }
       // if both correct and incorrect values use a comma between them, otherwise not
       if (!empty($feedback_incorrect) && !empty($feedback_correct)) {
-        $answer = $answer . ',' .     '"incorrect"' . ': ' .'"' . $feedback_incorrect .'"' ;
+        $answer = $answer . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       } elseif (!empty($feedback_incorrect)) {
-        $answer = $answer .           '"incorrect"' . ': ' .'"' . $feedback_incorrect .'"' ;
+        $answer = $answer . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       }
-      $answer = $answer .          '}';
-      $answer = $answer .        '}';
-      $answer = $answer .   '},';
+      $answer = $answer . '}';
+      $answer = $answer . '}';
+      $answer = $answer . '},';
       return $answer;
     } else {
       if ($tng_debug == 1) {
@@ -417,8 +414,7 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
       }
       return null;
     }
-  }
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -429,51 +425,50 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
  * @param null $class = define a class for the HTML element, for example 'h3 sans-head'
  * @param null $data_ng_click = define a class for angular hook
  * @param null $xplugin = np-expandable will do accordion functionality
- * @param null $data-collapse = state of collapsed or not element
+ * @param null $data -collapse = state of collapsed or not element
  * @param null $content = typically the raw HTML for the <div>
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  * @open_component FALSE = pass TRUE to leave the component nesting openn (say for background padding)
  */
-function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $link = NULL, $open_component = FALSE) {
-  $tng_debug =1;
+function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $link = NULL, $open_component = FALSE)
+{
+  $tng_debug = 1;
   try {
-    $content = str_replace('"','\"',$content);
+    $content = str_replace('"', '\"', $content);
     $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npHTML"' ;
-    $html = $html . ',' . '"data"' . ': {' ;
+    $html = $html . '{' . '"type"' . ':' . '"npHTML"';
+    $html = $html . ',' . '"data"' . ': {';
     if ($id) {
-      $html = $html .         '"id"' . ': ' . '"' . $id . '"' ;
+      $html = $html . '"id"' . ': ' . '"' . $id . '"';
     }
     if ($class) {
-      $html = $html .         '"class"' . ': ' . '"' . $class . '"' ;
+      $html = $html . '"class"' . ': ' . '"' . $class . '"';
     }
     if ($data_ng_click) {
-      $html = $html . ',' .   '"data-ng:click"' . ': ' . '"' . $data_ng_click . '"' ;
+      $html = $html . ',' . '"data-ng:click"' . ': ' . '"' . $data_ng_click . '"';
     }
     if ($xplugin) {
-      $html = $html . ',' .   '"xplugin"' . ': ' . '"' . $xplugin . '"' ;
+      $html = $html . ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
     }
     if ($data_collapse) {
-      $html = $html . ',' .   '"data-collapse"' . ': ' . '"' . $data_collapse . '"' ;
+      $html = $html . ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
     }
     if ($content) {
-      $html = $html . ',' .   '"content"' . ': ' . '"' . $content . '"' ;
+      $html = $html . ',' . '"content"' . ': ' . '"' . $content . '"';
     }
     if ($link) {
-      $html = $html . ',' .   '"link"' . ': ' . '"' . $link . '"' ;
+      $html = $html . ',' . '"link"' . ': ' . '"' . $link . '"';
     }
     $html = $html . '},'; // matches data line
     // if the component should be left open pass TRUE for the variable
-    if ($open_component == TRUE ) {
-      $html = $html . '"components"' . ': [' ;
+    if ($open_component == TRUE) {
+      $html = $html . '"components"' . ': [';
     } else {
-      $html = $html . '"components"' . ': [ ]' ;
+      $html = $html . '"components"' . ': [ ]';
       $html = $html . '}, '; // matches data line
     }
     return $html;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -488,35 +483,34 @@ function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL
  * @param null $content = typically the raw HTML for the <div>
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  */
-function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $xplugin = null, $content_one, $id_two = NULL,  $class_two = null, $data_collapse = null, $content_two = NULL) {
-  $tng_debug =1;
+function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $xplugin = null, $content_one, $id_two = NULL, $class_two = null, $data_collapse = null, $content_two = NULL)
+{
+  $tng_debug = 1;
   try {
-    $content_one = str_replace('"','\"',$content_one);
-    $content_two = str_replace('"','\"',$content_two);
+    $content_one = str_replace('"', '\"', $content_one);
+    $content_two = str_replace('"', '\"', $content_two);
 
     $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npHTML"' ;
-    $html = $html . ',' . '"data"' . ': {' ;
-    $html = $html .         '"id"' . ': ' .  '"' . $id_one . '"';
-    $html = $html . ',' .   '"class"' . ': ' . '"' . $class_one . '"';
-    $html = $html . ',' .   '"data-ng:click"' . ': ' . '"' . $data_ng . '"';
-    $html = $html . ',' .   '"xplugin"' . ': ' . '"' . $xplugin . '"';
-    $html = $html . ',' .   '"content"' . ': ' . '"' . $content_one . '"';
+    $html = $html . '{' . '"type"' . ':' . '"npHTML"';
+    $html = $html . ',' . '"data"' . ': {';
+    $html = $html . '"id"' . ': ' . '"' . $id_one . '"';
+    $html = $html . ',' . '"class"' . ': ' . '"' . $class_one . '"';
+    $html = $html . ',' . '"data-ng:click"' . ': ' . '"' . $data_ng . '"';
+    $html = $html . ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
+    $html = $html . ',' . '"content"' . ': ' . '"' . $content_one . '"';
     $html = $html . '},'; // matches data line
-    $html = $html . '"components"' . ': [ {'  ;
-    $html = $html . '"type"' . ':' . '"npHTML"' ;
-    $html = $html . ',' . '"data"' . ': {' ;
-    $html = $html .          '"id"' . ': ' . '"' . $id_two . '"';
-    $html = $html . ',' .    '"class"' . ': ' . '"' . $class_two . '"';
-    $html = $html . ',' .    '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
-    $html = $html . ',' .    '"content"' . ': ' . '"' . $content_two . '"';
+    $html = $html . '"components"' . ': [ {';
+    $html = $html . '"type"' . ':' . '"npHTML"';
+    $html = $html . ',' . '"data"' . ': {';
+    $html = $html . '"id"' . ': ' . '"' . $id_two . '"';
+    $html = $html . ',' . '"class"' . ': ' . '"' . $class_two . '"';
+    $html = $html . ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
+    $html = $html . ',' . '"content"' . ': ' . '"' . $content_two . '"';
     $html = $html . '}, '; // matches data line
     $html = $html . '"components": []';
     $html = $html . '} ] },'; // matches components line
     return $html;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -530,26 +524,25 @@ function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $x
  * @param null $open_component = pass TRUE to leave the component nesting open
  * @return null|string = returns an NewPlayerV2 string of nice json for an HTML element
  */
-function tng_npColumn_maker($class = NULL,  $columns = NULL, $open_component = FALSE) {
-  $tng_debug =1;
+function tng_npColumn_maker($class = NULL, $columns = NULL, $open_component = FALSE)
+{
+  $tng_debug = 1;
   try {
     $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npColumn"' ;
-    $html = $html . ',' . '"data"' . ': {' ;
-    $html = $html .          '"class"' . ': ' . '"' . $class . '"' ;
-    $html = $html . ',' .    '"cols"' . ': ' . '"' . $columns . '"' ;
+    $html = $html . '{' . '"type"' . ':' . '"npColumn"';
+    $html = $html . ',' . '"data"' . ': {';
+    $html = $html . '"class"' . ': ' . '"' . $class . '"';
+    $html = $html . ',' . '"cols"' . ': ' . '"' . $columns . '"';
     $html = $html . '},'; // matches data line
     // if the component should be left open pass TRUE for the variable
     if ($open_component) {
-      $html = $html . '"components"' . ': [' ;
+      $html = $html . '"components"' . ': [';
     } else {
-      $html = $html . '"components"' . ': [ ]' ;
+      $html = $html . '"components"' . ': [ ]';
       $html = $html . '}, '; // matches data line
     }
     return $html;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -563,26 +556,25 @@ function tng_npColumn_maker($class = NULL,  $columns = NULL, $open_component = F
  * @param $alt - optional alt text for image
  * @return null|string
  */
-function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL) {
-  $tng_debug =1;
+function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL)
+{
+  $tng_debug = 1;
   //guard against bad image data and short circuit 'assets/' to '' to return a harmless npImage link
   if (!(strlen($src) > 8)) {
     $src = '';
   }
   try {
     $image = '';
-    $image = $image . '{' . '"type"' . ':' . '"npImage"' ;
-    $image = $image . ',' . '"data"' . ': {' .  '"src"' . ': ' . '"' . $src . '"';
-    $image = $image . ',' . '"id"' . ': ' . '"' . $id . '"' ;
-    $image = $image . ',' . '"class"' . ': ' . '"' . $class . '"' ;
-    $image = $image . ',' . '"alt"' . ': ' . '"' . $alt . '"' ;
+    $image = $image . '{' . '"type"' . ':' . '"npImage"';
+    $image = $image . ',' . '"data"' . ': {' . '"src"' . ': ' . '"' . $src . '"';
+    $image = $image . ',' . '"id"' . ': ' . '"' . $id . '"';
+    $image = $image . ',' . '"class"' . ': ' . '"' . $class . '"';
+    $image = $image . ',' . '"alt"' . ': ' . '"' . $alt . '"';
     $image = $image . '}, '; // matches data line
     $image = $image . '"components": [ ]';
     $image = $image . '}'; // matches components line
     return $image;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -590,56 +582,53 @@ function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL) 
 
 }
 
-function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback = NULL) {
-  $tng_debug =1;
+function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback = NULL)
+{
+  $tng_debug = 1;
   try {
     $hotspot = '';
-    $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"' ;
+    $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"';
     $hotspot = $hotspot . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
-    $hotspot = $hotspot . ',' .   '"class"' . ':' . '"' . $class . '"';
-    $hotspot = $hotspot . ',' .   '"req"'   . ':' .  '[' . $req . ']';
-    $hotspot = $hotspot . ',' .   '"hotspotButtons"' . ':' . '[' ;
+    $hotspot = $hotspot . ',' . '"class"' . ':' . '"' . $class . '"';
+    $hotspot = $hotspot . ',' . '"req"' . ':' . '[' . $req . ']';
+    $hotspot = $hotspot . ',' . '"hotspotButtons"' . ':' . '[';
     return $hotspot;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL) {
-  $tng_debug =1;
+function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL)
+{
+  $tng_debug = 1;
   try {
     $hotspotbutton = '';
-    $hotspotbutton = $hotspotbutton . '{' ;
-    $hotspotbutton = $hotspotbutton .       '"class"' . ':' . '"' . $class . '"';
-    $hotspotbutton = $hotspotbutton . ',' .   '"feedback"' . ':' . '"' . $feedback . '"';
-    $hotspotbutton = $hotspotbutton . ',' .   '"image"' . ':' . '"' . $image . '"';
-    $hotspotbutton = $hotspotbutton . '},' ;
+    $hotspotbutton = $hotspotbutton . '{';
+    $hotspotbutton = $hotspotbutton . '"class"' . ':' . '"' . $class . '"';
+    $hotspotbutton = $hotspotbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotbutton = $hotspotbutton . ',' . '"image"' . ':' . '"' . $image . '"';
+    $hotspotbutton = $hotspotbutton . '},';
     return $hotspotbutton;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
-    dpm($e);
+      dpm($e);
     }
   }
 }
 
-function tng_npHotspot_closer($feedback = NULL, $image = NULL) {
-  $tng_debug =1;
+function tng_npHotspot_closer($feedback = NULL, $image = NULL)
+{
+  $tng_debug = 1;
   try {
     $hotspotclose = '';
-    $hotspotclose = $hotspotclose . '],' .   '"feedback"' . ':' . '"' . $feedback . '"' ;
-    $hotspotclose = $hotspotclose . ','  .   '"image"' . ":" . '"' . $image . '"';
-    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]' ;
-    $hotspotclose = $hotspotclose . '}'  ;
+    $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotclose = $hotspotclose . ',' . '"image"' . ":" . '"' . $image . '"';
+    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]';
+    $hotspotclose = $hotspotclose . '}';
     return $hotspotclose;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -647,75 +636,72 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL) {
 }
 
 
-function tng_npDragAndMatch_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback =  NULL, $req = NULL) {
-  $tng_debug =1;
+function tng_npDragAndMatch_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $req = NULL)
+{
+  $tng_debug = 1;
   try {
     $dragandrop = '';
-    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropMatch"' ;
+    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropMatch"';
     $dragandrop = $dragandrop . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $dragandrop = $dragandrop . ',' .   '"class"' . ':' . '"' . $class . '"';
+      $dragandrop = $dragandrop . ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($positive_feedback) {
-      $dragandrop = $dragandrop . ',' .   '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+      $dragandrop = $dragandrop . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
     }
     if ($negative_feedback) {
-      $dragandrop = $dragandrop . ',' .   '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+      $dragandrop = $dragandrop . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
     }
-    $dragandrop = $dragandrop . ',' .   '"req"'   . ':' .  '[' . $req . ']';
-    $dragandrop = $dragandrop . ',' .   '"draggableButtons"' . ':' . '[' ;
+    $dragandrop = $dragandrop . ',' . '"req"' . ':' . '[' . $req . ']';
+    $dragandrop = $dragandrop . ',' . '"draggableButtons"' . ':' . '[';
     return $dragandrop;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback =  NULL, $req = NULL) {
-  $tng_debug =1;
+function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $req = NULL)
+{
+  $tng_debug = 1;
   try {
     $dragandrop = '';
-    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"' ;
+    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"';
     $dragandrop = $dragandrop . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $dragandrop = $dragandrop . ',' .   '"class"' . ':' . '"' . $class . '"';
+      $dragandrop = $dragandrop . ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($positive_feedback) {
-      $dragandrop = $dragandrop . ',' .   '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+      $dragandrop = $dragandrop . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
     }
     if ($negative_feedback) {
-      $dragandrop = $dragandrop . ',' .   '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+      $dragandrop = $dragandrop . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
     }
-    $dragandrop = $dragandrop . ',' .   '"req"'   . ':' .  '[' . $req . ']';
-    $dragandrop = $dragandrop . ',' .   '"draggableButtons"' . ':' . '[' ;
+    $dragandrop = $dragandrop . ',' . '"req"' . ':' . '[' . $req . ']';
+    $dragandrop = $dragandrop . ',' . '"draggableButtons"' . ':' . '[';
     return $dragandrop;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function tng_npReveal_maker($id = NULL, $class = NULL) {
-  $tng_debug =1;
+function tng_npReveal_maker($id = NULL, $class = NULL)
+{
+  $tng_debug = 1;
   try {
     $reveal = '';
-    $reveal = $reveal . '{' . '"type"' . ':' . '"npReveal"' ;
+    $reveal = $reveal . '{' . '"type"' . ':' . '"npReveal"';
     $reveal = $reveal . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $reveal = $reveal . ',' .   '"class"' . ':' . '"' . $class . '"';
+      $reveal = $reveal . ',' . '"class"' . ':' . '"' . $class . '"';
     }
-    $reveal = $reveal . '},' ;
-    $reveal = $reveal . '"revealItems"' . ': [' ;
+    $reveal = $reveal . '},';
+    $reveal = $reveal . '"revealItems"' . ': [';
     return $reveal;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -723,75 +709,73 @@ function tng_npReveal_maker($id = NULL, $class = NULL) {
 }
 
 
-function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $buttonImage = NULL, $buttonAltText = NULL, $comp_type =  NULL, $comp_id = NULL, $comp_src = NULL, $comp_alt = NULL, $comp_baseURL = NULL, $comp_types = NULL) {
-  $tng_debug =1;
+function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $buttonImage = NULL, $buttonAltText = NULL, $comp_type = NULL, $comp_id = NULL, $comp_src = NULL, $comp_alt = NULL, $comp_baseURL = NULL, $comp_types = NULL)
+{
+  $tng_debug = 1;
   try {
     $reveal = '';
-    $reveal = $reveal . '{' ;
+    $reveal = $reveal . '{';
     if ($id) {
-      $reveal = $reveal .         '"id"' . ':' . '"' . $id . '"';
+      $reveal = $reveal . '"id"' . ':' . '"' . $id . '"';
     }
     if ($heading) {
-      $reveal = $reveal . ',' .   '"heading"' . ':' . '"' . $heading . '"';
+      $reveal = $reveal . ',' . '"heading"' . ':' . '"' . $heading . '"';
     }
     if ($content) {
-      $reveal = $reveal . ',' .   '"content"' . ':' . '"' . $content . '"';
+      $reveal = $reveal . ',' . '"content"' . ':' . '"' . $content . '"';
     }
     if ($buttonImage) {
-      $reveal = $reveal . ',' .   '"buttonImage"' . ':' . '"' . $buttonImage . '"';
+      $reveal = $reveal . ',' . '"buttonImage"' . ':' . '"' . $buttonImage . '"';
     }
     if ($buttonAltText) {
-      $reveal = $reveal . ',' .   '"buttonAltText"' . ':' . '"' . $buttonAltText . '"';
+      $reveal = $reveal . ',' . '"buttonAltText"' . ':' . '"' . $buttonAltText . '"';
     }
-    $reveal = $reveal . ',' .     '"components"' . ': [' ;
-    $reveal = $reveal .            '{';
+    $reveal = $reveal . ',' . '"components"' . ': [';
+    $reveal = $reveal . '{';
     if ($comp_type) {
-      $reveal = $reveal .            '"type"' . ':' . '"' . $comp_type . '"';
+      $reveal = $reveal . '"type"' . ':' . '"' . $comp_type . '"';
     }
-    $reveal = $reveal        . ',' . '"data":' .'{';
+    $reveal = $reveal . ',' . '"data":' . '{';
     if ($comp_id) {
-      $reveal = $reveal .              '"id"' . ':' . '"' . $comp_id . '"';
+      $reveal = $reveal . '"id"' . ':' . '"' . $comp_id . '"';
     }
     if ($comp_src) {
-      $reveal = $reveal .              '"src"' . ':' . '"' . $comp_src . '"';
+      $reveal = $reveal . '"src"' . ':' . '"' . $comp_src . '"';
     }
     if ($comp_alt) {
-      $reveal = $reveal . ',' .        '"alt"' . ':' . '"' . $comp_alt . '"';
+      $reveal = $reveal . ',' . '"alt"' . ':' . '"' . $comp_alt . '"';
     }
     if ($comp_baseURL) {
-      $reveal = $reveal .              '"baseURL"' . ':' . '"' . $comp_baseURL . '"';
+      $reveal = $reveal . '"baseURL"' . ':' . '"' . $comp_baseURL . '"';
     }
     if ($comp_types) {
-      $reveal = $reveal . ',' .        '"types"' . ':' . '["' . $comp_types . '"]';
+      $reveal = $reveal . ',' . '"types"' . ':' . '["' . $comp_types . '"]';
     }
-    $reveal = $reveal .               '},';
-    $reveal = $reveal .               '"components"' . ':' . '[]';
-    $reveal = $reveal .            '} ] },';
+    $reveal = $reveal . '},';
+    $reveal = $reveal . '"components"' . ':' . '[]';
+    $reveal = $reveal . '} ] },';
     return $reveal;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function tng_npFlashCard_maker($id = NULL, $class = NULL) {
-  $tng_debug =1;
+function tng_npFlashCard_maker($id = NULL, $class = NULL)
+{
+  $tng_debug = 1;
   try {
     $flashcard = '';
-    $flashcard = $flashcard . '{' . '"type"' . ':' . '"npFlashCards"' ;
+    $flashcard = $flashcard . '{' . '"type"' . ':' . '"npFlashCards"';
     $flashcard = $flashcard . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $flashcard = $flashcard . ',' .   '"class"' . ':' . '"' . $class . '"';
+      $flashcard = $flashcard . ',' . '"class"' . ':' . '"' . $class . '"';
     }
-    $flashcard = $flashcard . '},' ;
-    $flashcard = $flashcard . '"flashCards"' . ': [' ;
+    $flashcard = $flashcard . '},';
+    $flashcard = $flashcard . '"flashCards"' . ': [';
     return $flashcard;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -799,62 +783,60 @@ function tng_npFlashCard_maker($id = NULL, $class = NULL) {
 }
 
 
-function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $contentBack = NULL) {
-  $tng_debug =1;
+function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $contentBack = NULL)
+{
+  $tng_debug = 1;
   try {
     $flashcard = '';
-    $flashcard = $flashcard .     '{' ;
+    $flashcard = $flashcard . '{';
     if ($title) {
-      $flashcard = $flashcard .      '"title"' . ':' . '"' . $title . '"';
+      $flashcard = $flashcard . '"title"' . ':' . '"' . $title . '"';
     }
     if ($contentFront) {
-      $flashcard = $flashcard       .'"contentFront"' . ':' . '"' . $contentFront . '"';
+      $flashcard = $flashcard . '"contentFront"' . ':' . '"' . $contentFront . '"';
     }
     if ($contentBack) {
-      $flashcard = $flashcard . ',' .'"contentBack"' . ':' . '"' . $contentBack . '"';
+      $flashcard = $flashcard . ',' . '"contentBack"' . ':' . '"' . $contentBack . '"';
     }
-    $flashcard = $flashcard .      '},';
+    $flashcard = $flashcard . '},';
     return $flashcard;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL) {
-  $tng_debug =1;
+function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
+{
+  $tng_debug = 1;
   try {
     $match = '';
-    $match = $match . '{' . '"type"' . ':' . '"npMatch"' ;
-    $match = $match . ',' . '"data"' . ': {' ;
+    $match = $match . '{' . '"type"' . ':' . '"npMatch"';
+    $match = $match . ',' . '"data"' . ': {';
     if ($difficulty) {
-      $match = $match .         '"id"' . ':' . '"' . $id . '"';
+      $match = $match . '"id"' . ':' . '"' . $id . '"';
     }
     if ($difficulty) {
-      $match = $match . ',' .   '"difficulty"' . ':'  . $difficulty ;
+      $match = $match . ',' . '"difficulty"' . ':' . $difficulty;
     }
     if ($content) {
-      $match = $match . ',' .   '"content"' . ':' . '"' . $content . '"';
+      $match = $match . ',' . '"content"' . ':' . '"' . $content . '"';
     }
-    $match = $match . ',' .     '"feedback"' . ':' . '{' ;
+    $match = $match . ',' . '"feedback"' . ':' . '{';
     if ($immediate) {
-      $match = $match          .   '"immediate"' . ':' .  $immediate ;
+      $match = $match . '"immediate"' . ':' . $immediate;
     }
     if ($correct) {
-      $match = $match . ',' .   '"correct"' . ':' . '"' . $correct . '"';
+      $match = $match . ',' . '"correct"' . ':' . '"' . $correct . '"';
     }
     if ($incorrect) {
-      $match = $match . ',' .   '"incorrect"' . ':' . '"' . $incorrect . '"';
+      $match = $match . ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
     }
-    $match = $match . '} },' ;
-    $match = $match . '"components"' . ': [' ;
+    $match = $match . '} },';
+    $match = $match . '"components"' . ': [';
     return $match;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -862,21 +844,20 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
 }
 
 
-function tng_npMatchRow_maker($title = NULL, $position = NULL) {
-  $tng_debug =1;
+function tng_npMatchRow_maker($title = NULL, $position = NULL)
+{
+  $tng_debug = 1;
   try {
     $match = '{';
-    $match = $match .     '"type"' . ':' . '"npMatchRow"' ;
-    $match = $match . ',' . '"data"' . ':' . '{' ;
+    $match = $match . '"type"' . ':' . '"npMatchRow"';
+    $match = $match . ',' . '"data"' . ':' . '{';
     if ($position) {
-      $match = $match .          '"position"' . ':' . '"' . $position .'"';
+      $match = $match . '"position"' . ':' . '"' . $position . '"';
     }
-    $match = $match .      '},';
-    $match = $match .      '"components"' . ':' . '[';
+    $match = $match . '},';
+    $match = $match . '"components"' . ':' . '[';
     return $match;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -884,28 +865,27 @@ function tng_npMatchRow_maker($title = NULL, $position = NULL) {
 }
 
 
-function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL) {
-  $tng_debug =1;
+function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL)
+{
+  $tng_debug = 1;
   try {
     $match = '';
     $match = $match . '{';
     if ($type) {
-      $match = $match .      '"type"' . ':' . '"' . $type . '"';
+      $match = $match . '"type"' . ':' . '"' . $type . '"';
     }
-    $match = $match . ',' .       '"data"' . ':' . '{';
+    $match = $match . ',' . '"data"' . ':' . '{';
     if ($label) {
-      $match = $match       .'"label"' . ':' . '"' . $label . '"';
+      $match = $match . '"label"' . ':' . '"' . $label . '"';
     }
     if ($correct >= 0) {
-      $match = $match . ',' .'"correct"' . ':' .  $correct ;
+      $match = $match . ',' . '"correct"' . ':' . $correct;
     }
-    $match = $match .  '},';
-    $match = $match .  '"components"' . ':' . '[]';
-    $match = $match .  '},';
+    $match = $match . '},';
+    $match = $match . '"components"' . ':' . '[]';
+    $match = $match . '},';
     return $match;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -913,30 +893,28 @@ function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL
 }
 
 
-
-function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, $content = NULL, $image = NULL, $matching_content = NULL, $matching_image = NULL) {
-  $tng_debug =1;
+function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, $content = NULL, $image = NULL, $matching_content = NULL, $matching_image = NULL)
+{
+  $tng_debug = 1;
   try {
     $dragdropbutton = '';
-    $dragdropbutton = $dragdropbutton . '{' ;
+    $dragdropbutton = $dragdropbutton . '{';
     if ($id) {
-      $dragdropbutton = $dragdropbutton .       '"id"' . ':' . '"' . $id . '"';
+      $dragdropbutton = $dragdropbutton . '"id"' . ':' . '"' . $id . '"';
     }
     if ($class) {
       $dragdropbutton = $dragdropbutton . ',' . '"class"' . ':' . '"' . $class . '"';
     }
-    if ($feedback ) {
+    if ($feedback) {
       $dragdropbutton = $dragdropbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
     }
-    $dragdropbutton = $dragdropbutton       . '"content"' . ':' . '"' . $content . '"';
+    $dragdropbutton = $dragdropbutton . '"content"' . ':' . '"' . $content . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"image"' . ':' . '"' . $image . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
     $dragdropbutton = $dragdropbutton . ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
-    $dragdropbutton = $dragdropbutton . '},' ;
+    $dragdropbutton = $dragdropbutton . '},';
     return $dragdropbutton;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -944,18 +922,17 @@ function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, 
 }
 
 
-function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
-  $tng_debug =1;
+function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL)
+{
+  $tng_debug = 1;
   try {
     $hotspotclose = '';
-    $hotspotclose = $hotspotclose . '],' .   '"feedback"' . ':' . '"' . $feedback . '"' ;
-    $hotspotclose = $hotspotclose . ','  .   '"image"' . ":" . '"' . $image . '"';
-    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]' ;
-    $hotspotclose = $hotspotclose . '}'  ;
+    $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotclose = $hotspotclose . ',' . '"image"' . ":" . '"' . $image . '"';
+    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]';
+    $hotspotclose = $hotspotclose . '}';
     return $hotspotclose;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -964,36 +941,37 @@ function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL) {
 
 
 function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading = NULL, $content = NULL,
-                          $component_type = NULL,  $component_id = NULL, $component_src = NULL,
-                          $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL) {
-  $tng_debug =1;
+                          $component_type = NULL, $component_id = NULL, $component_src = NULL,
+                          $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL)
+{
+  $tng_debug = 1;
   try {
     $list = '';
-    $list = $list . '{' . '"type"' . ':' . '"npList"' ;
-    $list = $list . ',' . '"data"' . ': {' ;
+    $list = $list . '{' . '"type"' . ':' . '"npList"';
+    $list = $list . ',' . '"data"' . ': {';
     if ($id) {
-      $list = $list .         '"id"' . ':'  . '"' . $id . '"';
+      $list = $list . '"id"' . ':' . '"' . $id . '"';
     }
     if ($class) {
-      $list = $list .         '"class"' . ':' . '"' . $class . '"';
+      $list = $list . '"class"' . ':' . '"' . $class . '"';
     }
     if ($data_ng) {
-      $list = $list . ',' .   '"data-ng:wrap"'   . ':' .  '"'  . $data_ng . '"';
+      $list = $list . ',' . '"data-ng:wrap"' . ':' . '"' . $data_ng . '"';
     }
     if ($heading) {
-      $list = $list . ',' .   '"heading"'   . ':' .  '"'  . $heading . '"';
+      $list = $list . ',' . '"heading"' . ':' . '"' . $heading . '"';
     }
     if ($content) {
-      $list = $list . ',' .   '"content"'   . ':' .  '"'  . $content . '"';
+      $list = $list . ',' . '"content"' . ':' . '"' . $content . '"';
     }
-    $list = $list . '},'  ;
-    $list = $list .       '"components"' . ':' . '[' ;
-    $list = $list .         '{' ;
+    $list = $list . '},';
+    $list = $list . '"components"' . ':' . '[';
+    $list = $list . '{';
     if ($component_type) {
-      $list = $list .           '"type"' . ':' . '"' . $component_type . '"';
-      $list = $list . ',         "data"' . ': {' ;
+      $list = $list . '"type"' . ':' . '"' . $component_type . '"';
+      $list = $list . ',         "data"' . ': {';
       if ($component_id) {
-        $list = $list .             '"id"' . ':' . '"' . $component_id . '"';
+        $list = $list . '"id"' . ':' . '"' . $component_id . '"';
       }
       if ($component_src) {
         $list = $list . '             "src"' . ':' . '"' . $component_src . '"';
@@ -1010,19 +988,17 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
       if ($data_baseurl) {
         $list = $list . ',            "types"' . ':' . '"[' . $data_types . ']"';
       }
-      $list = $list .            '},' ;
-      $list = $list .          '"components"' . ':' . '[]';
-      $list = $list .      '}';
-      $list = $list .    ']';
-      $list = $list .  '},';
+      $list = $list . '},';
+      $list = $list . '"components"' . ':' . '[]';
+      $list = $list . '}';
+      $list = $list . ']';
+      $list = $list . '},';
     } else {
-      $list = rtrim($list,'{ ');
+      $list = rtrim($list, '{ ');
       $list = $list . '] },';
     }
     return $list;
-  }
-
-  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
@@ -1033,21 +1009,23 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
 /**
  * @return string - when we create manifest objects we need to finish things with proper entity closing } and ]
  */
-function tng_npPageContentFeatureCleanup() {
-  $cleanup =  '] ';  // close the component brace started before the npPage
-  $cleanup = $cleanup . '} ';  // close the component brace started before the npContent
-  $cleanup = $cleanup . '] ';  // close the component bracket started before the npContent
-  $cleanup = $cleanup . '} ';  // close the most outer curly brace started before the npFeature
-  $cleanup = $cleanup . ']';   // close the most outer brace started before the npFeature
+function tng_npPageContentFeatureCleanup()
+{
+  $cleanup = '] '; // close the component brace started before the npPage
+  $cleanup = $cleanup . '} '; // close the component brace started before the npContent
+  $cleanup = $cleanup . '] '; // close the component bracket started before the npContent
+  $cleanup = $cleanup . '} '; // close the most outer curly brace started before the npFeature
+  $cleanup = $cleanup . ']'; // close the most outer brace started before the npFeature
   return $cleanup;
 }
 
 /**
  * @return string - when we create manifest objects we need to finish things with proper entity closing } and ]
  */
-function tng_npPageCleanup() {
-  $cleanup = '] ';             // close the component started in the npPage
-  $cleanup = $cleanup . '} ';  // close the curly started before the npPage
+function tng_npPageCleanup()
+{
+  $cleanup = '] '; // close the component started in the npPage
+  $cleanup = $cleanup . '} '; // close the curly started before the npPage
   return $cleanup;
 }
 
@@ -1057,19 +1035,19 @@ function tng_npPageCleanup() {
  *
  * @return array the $manifest_language returned has the language-country in the 0th element and the content line in the 1st element
  */
-function make_language_strings($language_key) {
+function make_language_strings($language_key)
+{
   $country_only = '';
-  $language_only = substr($language_key,0);
+  $language_only = substr($language_key, 0);
 
   if ($language_key == 'und') {
     $manifest_language[] = 'en';
     $manifest_language[] = 'content_' . 'en';
   }
-  if (strlen($language_key) > 2)
-  {
+  if (strlen($language_key) > 2) {
     $country_only = strtoupper(substr($language_key, 2));
     $manifest_language[] = $language_only . '-' . $country_only;
-    $manifest_language[] = 'content_' . $language_only .'-' . $country_only;
+    $manifest_language[] = 'content_' . $language_only . '-' . $country_only;
 
   } else {
     $manifest_language[] = $language_only;
@@ -1079,10 +1057,11 @@ function make_language_strings($language_key) {
 }
 
 
-function tng_value_from_pair ($string) {
+function tng_value_from_pair($string)
+{
   $q = explode(':', $string);
   $quest = trim($q[1], ' "');
-  return  $quest;
+  return $quest;
 }
 
 
@@ -1090,8 +1069,9 @@ function tng_value_from_pair ($string) {
  * @param $path - the path is the base path of an image, currently hi-res but will be a thumbnail image later
  * @param $csv_fields - the triplet of information is a csv separated field set, with product name, image, and date of creation
  */
-function tng_create_perfect_partners($path, $csv_fields) {
-  $tng_debug =1;
+function tng_create_perfect_partners($path, $csv_fields)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('perfect partner paths');
     dpm($path);
@@ -1108,29 +1088,29 @@ function tng_create_perfect_partners($path, $csv_fields) {
   if ($perfect_element_count > 3) {
     $first_exp = explode("//", $separator[1]);
     $second_exp = explode("//", $separator[4]);
-    $tid_one = explode("/",$separator[0]);
+    $tid_one = explode("/", $separator[0]);
     // we now use the link name to call an api with, see manifest for details
-    $separator[0] = '<a href=' . '\''  . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
-    $tid_two = explode("/",$separator[3]);
-    $separator[3] = '<a href=' . '\''  . '#/' . $tid_two[1] . '\'>' . $tid_two[0] . '</a>';
-    $perfect_fields[] = $path . '/'. $first_exp[1];
+    $separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    $tid_two = explode("/", $separator[3]);
+    $separator[3] = '<a href=' . '\'' . '#/' . $tid_two[1] . '\'>' . $tid_two[0] . '</a>';
+    $perfect_fields[] = $path . '/' . $first_exp[1];
     $perfect_fields[] = $separator[0];
     $perfect_fields[] = $separator[2];
-    $perfect_fields[] = $path . '/'. $second_exp[1];
+    $perfect_fields[] = $path . '/' . $second_exp[1];
     $perfect_fields[] = $separator[3];
     $perfect_fields[] = $separator[5];
   } else {
     // we guard against no perfect partner data at all
     if (strlen($csv_fields) < 2) {
-      $perfect_fields = array('','','');
+      $perfect_fields = array('', '', '');
       return $perfect_fields;
     }
-    $tid_one = explode("/",$separator[0]);
+    $tid_one = explode("/", $separator[0]);
     // we now use the link name to call an api with, see manifest for details
-    $separator[0] = '<a href=' . '\''  . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    $separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
     $first_exp = explode("//", $separator[1]);
-    $perfect_fields[] =  $path . '/'. $first_exp[1];
-    $perfect_fields[] =  $separator[0];
+    $perfect_fields[] = $path . '/' . $first_exp[1];
+    $perfect_fields[] = $separator[0];
     $perfect_fields[] = $separator[2];
   }
   return $perfect_fields;
@@ -1156,8 +1136,9 @@ function tng_create_perfect_partners($path, $csv_fields) {
  *  field_related_products
  *
  */
-function process_product($product_values, $labels, $language, $nid) {
-  $tng_debug =1;
+function process_product($product_values, $labels, $language, $nid)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);
@@ -1181,7 +1162,7 @@ function process_product($product_values, $labels, $language, $nid) {
   $btn_alt_favorite = 'btn-open-favorites';
   $close_html = '] },';
   $close_perfect = '] } ] },';
-  $column_close = '] } ] } ] },' ;
+  $column_close = '] } ] } ] },';
   $close_product = '] } ] } ] } ] } ]';
   $col_sm4 = 'col-sm-4';
   $switch_collapse = 'isCollapsed = !isCollapsed';
@@ -1201,7 +1182,7 @@ function process_product($product_values, $labels, $language, $nid) {
 
     //title field has the unique 'admin name' title
     $title = $product_values['title_field'];
-    $title = rtrim($title,' ');
+    $title = rtrim($title, ' ');
     // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
     $title = str_replace("/", "-", $title);
@@ -1225,24 +1206,24 @@ function process_product($product_values, $labels, $language, $nid) {
     $favorite_link = '/api/favorites/product/' . $manifest_title;
     $product_filter_categories = $product_values['field_product_categories'];
     $product_keywords = $product_values['field_tags_keywords'];
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for product page.');
-    $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','', '', FALSE);
-    $background_padding = tng_npHTML_basic_maker('',$bg_outside_padding,'','','','','', TRUE);
-    $title_chunk = tng_npHTML_basic_maker('','h1','','','', $display_title,'',  FALSE);
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for product page.');
+    $products_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
+    $background_padding = tng_npHTML_basic_maker('', $bg_outside_padding, '', '', '', '', '', TRUE);
+    $title_chunk = tng_npHTML_basic_maker('', 'h1', '', '', '', $display_title, '', FALSE);
     $subtitle = $product_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '','','',$subtitle,'',  FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '', '', '', $subtitle, '', FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
     $image_path = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], '', FALSE);
     $thumbnail_teaser = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], 'teaser', TRUE);
     $thumbnail_archive = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], 'archive', TRUE);
-    $image_chunk = tng_npImage_maker('', $image_path, 'topImage img-responsive', $title );
-    $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding,'','','','', '', TRUE);
+    $image_chunk = tng_npImage_maker('', $image_path, 'topImage img-responsive', $title);
+    $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding, '', '', '', '', '', TRUE);
     $translated_why = $labels['field_why_there_s_only_one'];
     if (!$translated_why) {
       $translated_why = 'WHY THERE\'S ONLY ONE';
     }
-    $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '','','', $translated_why, '', TRUE);
-    $why_content = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_why_there_s_only_one'], '', FALSE);
+    $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '', '', '', $translated_why, '', TRUE);
+    $why_content = tng_npHTML_basic_maker('', $h4_sans_normal, '', '', '', $product_values['field_why_there_s_only_one'], '', FALSE);
     $why_content = rtrim($why_content, ', ');
     $translated_demo = $labels['field_demonstration'];
     if (!$translated_demo) {
@@ -1280,27 +1261,27 @@ function process_product($product_values, $labels, $language, $nid) {
     $perfect_chunk = tng_npHTML_basic_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, '', $translated_perfect, '', TRUE);
     $perfect_plus_chunk = tng_npHTML_basic_maker('', $collapse_element, '', '', $data_collapse, '', '', TRUE);
     $more_column = tng_npColumn_maker('row', '2', TRUE);
-    $row_chunk = tng_npHTML_basic_maker('', 'row', '','','', '', '', TRUE);
+    $row_chunk = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
     $strip = ltrim(rtrim(strip_tags($perfect_data[1])));
-    $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
 
     //$link_path = '/api/products/name/' . $perfect_data[1];
-    $first_image_chunk = tng_npImage_maker('', $perfect_data[0], $col_sm4, $perfect_data[1] ) . ',';
-    $disclaim_one_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[1], $dash_name, FALSE);
-    $disclaim_two_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[2], '', FALSE);
+    $first_image_chunk = tng_npImage_maker('', $perfect_data[0], $col_sm4, $perfect_data[1]) . ',';
+    $disclaim_one_chunk = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $perfect_data[1], $dash_name, FALSE);
+    $disclaim_two_chunk = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $perfect_data[2], '', FALSE);
     $disclaim_two_chunk = rtrim($disclaim_two_chunk, ', ');
     $disclaim_two_chunk = $disclaim_two_chunk . $close_html;
-    $next_disclaim = tng_npHTML_basic_maker('', 'row', '','','', '', '', TRUE);
+    $next_disclaim = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
     $strip = ltrim(rtrim(strip_tags($perfect_data[1])));
-    $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
     //$link_path = '/api/products/name/' . $perfect_data[4];
-    $second_image_chunk='';
-    $disclaim_second_chunk='';
-    $disclaim_last_chunk='';
+    $second_image_chunk = '';
+    $disclaim_second_chunk = '';
+    $disclaim_last_chunk = '';
     if (count($perfect_data) > 3) {
-      $second_image_chunk = tng_npImage_maker('', $perfect_data[3], $col_sm4, $perfect_data[4] ) . ',';
-      $disclaim_second_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[4], $dash_name, FALSE);
-      $disclaim_last_chunk = tng_npHTML_basic_maker('', $col_sm8, '','','', $perfect_data[5], '', FALSE);
+      $second_image_chunk = tng_npImage_maker('', $perfect_data[3], $col_sm4, $perfect_data[4]) . ',';
+      $disclaim_second_chunk = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $perfect_data[4], $dash_name, FALSE);
+      $disclaim_last_chunk = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $perfect_data[5], '', FALSE);
       $disclaim_last_chunk = rtrim($disclaim_last_chunk, ', ');
       // close the row component, end of column component, and another row component, and perfect partners
       $disclaim_last_chunk = $disclaim_last_chunk . $close_perfect;
@@ -1308,9 +1289,9 @@ function process_product($product_values, $labels, $language, $nid) {
       $next_disclaim = $next_disclaim . $close_perfect;
     }
 
-    $row_phrase = tng_npHTML_basic_maker('', 'row', '','','', '', '', TRUE);
-    $perfect_partner = tng_npHTML_basic_maker('', $h4_sans_normal, '','','', $product_values['field_perfect_partners_text'], '', FALSE);
-    $perfect_partner = rtrim($perfect_partner,', ');
+    $row_phrase = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
+    $perfect_partner = tng_npHTML_basic_maker('', $h4_sans_normal, '', '', '', $product_values['field_perfect_partners_text'], '', FALSE);
+    $perfect_partner = rtrim($perfect_partner, ', ');
     $perfect_partner = $perfect_partner . $column_close;
     $translated_story = $labels['field_story'];
     if (!$translated_story) {
@@ -1329,23 +1310,23 @@ function process_product($product_values, $labels, $language, $nid) {
     $next_button = rtrim($next_button, ', ');
     $next_button = $next_button . $column_close;
 
-    $more_outer_padding = tng_npHTML_basic_maker('', 'outside-padding', '','','','', '', TRUE);
+    $more_outer_padding = tng_npHTML_basic_maker('', 'outside-padding', '', '', '', '', '', TRUE);
     $similar_partner_data = $product_values['field_related_products'];
     $similar_data = tng_create_perfect_partners($basepath, $similar_partner_data);
     $similar_column = tng_npColumn_maker('row ', '2', TRUE);
-    $similar_row = tng_npHTML_basic_maker('', 'row', '', '','','', '', TRUE);
+    $similar_row = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
     // guard against creating an empty SEE SIMILAR PRODUCTS label
     if (strlen($similar_partner_data) > 5) {
-      $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '','','SEE SIMILAR PRODUCTS:', '', FALSE);
+      $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', 'SEE SIMILAR PRODUCTS:', '', FALSE);
     } else {
-      $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '','','', '', FALSE);
+      $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', '', '', FALSE);
     }
     $strip = ltrim(rtrim(strip_tags($similar_data[1])));
-    $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
     $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0], 'teaser', TRUE);
-    $similar_image_chunk = tng_npImage_maker('', $similar_image, $col_sm4_resp, $similar_data[1] ) . ',';
-    $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[1], $dash_name, FALSE);
-    $flexible_footer = tng_npHTML_basic_maker('', $col_sm8, '', '','', $similar_data[2], '', FALSE);
+    $similar_image_chunk = tng_npImage_maker('', $similar_image, $col_sm4_resp, $similar_data[1]) . ',';
+    $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $similar_data[1], $dash_name, FALSE);
+    $flexible_footer = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $similar_data[2], '', FALSE);
     $flexible_footer = rtrim($flexible_footer, ', ');
     $flexible_footer = $flexible_footer . $close_html;
 
@@ -1353,29 +1334,29 @@ function process_product($product_values, $labels, $language, $nid) {
     $suggested_partner_data = $product_values['field_just_for_you'];
     if ($suggested_partner_data) {
       $suggested_data = tng_create_perfect_partners($basepath, $suggested_partner_data);
-      $suggested_row = tng_npHTML_basic_maker('', 'row', '','','','', '', TRUE);
-      $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '','','','SUGGESTED FOR YOU', '', FALSE);
+      $suggested_row = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
+      $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', 'SUGGESTED FOR YOU', '', FALSE);
       $strip = ltrim(rtrim(strip_tags($suggested_data[1])));
-      $dash_name =  $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+      $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
       $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0], 'teaser', TRUE);
-      $suggested_image_chunk = tng_npImage_maker('', $suggested_image, $col_sm4_resp, $suggested_data[1] ) . ',';
-      $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '','','', $suggested_data[1], $dash_name, FALSE);
-      $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '','','',$suggested_data[2], '', FALSE);
+      $suggested_image_chunk = tng_npImage_maker('', $suggested_image, $col_sm4_resp, $suggested_data[1]) . ',';
+      $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $suggested_data[1], $dash_name, FALSE);
+      $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $suggested_data[2], '', FALSE);
       $suggested_footer_creation_date = rtrim($suggested_footer_creation_date, ', ');
     } else {
-      $suggested_row = tng_npHTML_basic_maker('', 'row', '','','','', '', TRUE);
-      $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '','','','', '', FALSE);
-      $suggested_image_chunk = tng_npImage_maker('', '', $col_sm4_resp, '' ) . ',';
-      $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '','','', '', '', FALSE);
-      $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '','','','', '', FALSE);
+      $suggested_row = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
+      $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', '', '', FALSE);
+      $suggested_image_chunk = tng_npImage_maker('', '', $col_sm4_resp, '') . ',';
+      $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '', '', '', '', '', FALSE);
+      $suggested_footer_creation_date = tng_npHTML_basic_maker('', $col_sm8, '', '', '', '', '', FALSE);
       $suggested_footer_creation_date = rtrim($suggested_footer_creation_date, ', ');
     }
 
     // assemble the product from our chunks of data
-    $whole_product = $feature_chunk . $content_chunk . $products_background . $background_padding . $title_chunk . $subtitle_chunk . $column_chunk . $image_chunk . ',' .  $inside_padding . $why_there . $why_content . $column_close .  $demonstration;
+    $whole_product = $feature_chunk . $content_chunk . $products_background . $background_padding . $title_chunk . $subtitle_chunk . $column_chunk . $image_chunk . ',' . $inside_padding . $why_there . $why_content . $column_close . $demonstration;
     $whole_product = $whole_product . $benefits . $if_she_asks;
     // we will always have one similar product, but might have two, so perfect_data should have either 3 or 6 elements to it.
-    $whole_product = $whole_product . $perfect_chunk . $perfect_plus_chunk . $more_column . $row_chunk . $first_image_chunk . $disclaim_one_chunk . $disclaim_two_chunk . $next_disclaim ;
+    $whole_product = $whole_product . $perfect_chunk . $perfect_plus_chunk . $more_column . $row_chunk . $first_image_chunk . $disclaim_one_chunk . $disclaim_two_chunk . $next_disclaim;
     if (count($perfect_data > 3)) {
       $whole_product = $whole_product . $second_image_chunk . $disclaim_second_chunk . $disclaim_last_chunk;
     }
@@ -1410,15 +1391,16 @@ function process_product($product_values, $labels, $language, $nid) {
  *
  * If passed a '1' for standalone will create a complete manifest for reNutriv, otherwise just the npHotSpot
  */
-function process_hotspot($hotspot_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_hotspot($hotspot_values, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
 
   $bg_newplayer_background = 'newplayer-background';
   $outside_padding = 'outside-padding';
   $renutriv_logo_image = 'renutriv-logo-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_hot_spot  = '] } ] } ] } ]';
+  $close_hot_spot = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find a reasonable number of fields, layout the page
@@ -1434,25 +1416,25 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Hotspot-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for hot spot page.');
-    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker('background-image', '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for hot spot page.');
+    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker('background-image', '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $hotspot_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $instructions = $hotspot_values['field_hot_spot_instructions'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','',$instructions, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructions, '', FALSE);
     $whole_hotspot = '';
     if ($standalone == 1) {
-      $whole_hotspot= $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_hotspot = $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($hotspot_values['field_hot_spot_collection']) {
       $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
       $whole_hotspot = $whole_hotspot . $hot_top;
 
-      foreach ($hotspot_values as $key=>$value) {
+      foreach ($hotspot_values as $key => $value) {
         if ($tng_debug == 1) {
           dpm('**** data ****' . $key . ' : ' . $value);
         }
@@ -1465,10 +1447,10 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
           }
           $count_of_elements = count($sploder);
           // for each triplet, grab the data and package it up as text, x and y coordinate
-          for ($i=0; $i < $count_of_elements; $i += 3) {
+          for ($i = 0; $i < $count_of_elements; $i += 3) {
             $t = tng_value_from_pair($sploder[$i]);
-            $x = tng_value_from_pair($sploder[$i+1]);
-            $y = tng_value_from_pair($sploder[$i+2]);
+            $x = tng_value_from_pair($sploder[$i + 1]);
+            $y = tng_value_from_pair($sploder[$i + 2]);
             $xy_combo = $x . ' ' . $y;
             $hotspot_detail = tng_hotspot_button_maker($xy_combo, $t, '');
             $whole_hotspot = $whole_hotspot . $hotspot_detail;
@@ -1476,12 +1458,12 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
           $whole_hotspot = rtrim($whole_hotspot, ', ');
         }
       }
-      $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image'],'','');
+      $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image'], '', '');
       $end_hot_spot = tng_npHotspot_closer('', $main_image);
       if ($standalone == 1) {
         $whole_hotspot = $whole_hotspot . $end_hot_spot . $close_hot_spot;
       } else {
-        $whole_hotspot =  $whole_hotspot . $end_hot_spot ;
+        $whole_hotspot = $whole_hotspot . $end_hot_spot;
       }
       if ($tng_debug == 1) {
         dpm($whole_hotspot);
@@ -1509,15 +1491,16 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
  *
  * If passed a '1' for standalone will create a complete manifest for reNutriv, otherwise just the npHotSpot
  */
-function process_story($story_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_story($story_values, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
 
   $bg_newplayer_background = 'newplayer-background';
   $outside_padding = 'outside-padding';
   $renutriv_logo_image = 'renutriv-logo-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_hot_spot  = '] } ] } ] } ]';
+  $close_hot_spot = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find a reasonable number of fields, layout the page
@@ -1533,25 +1516,25 @@ function process_story($story_values, $language, $nid, $module, $standalone = NU
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Story-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for hot spot page.');
-    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker('background-image', '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for hot spot page.');
+    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker('background-image', '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $story_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $instructions = $story_values['field_hot_spot_instructions'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','',$instructions, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructions, '', FALSE);
     $whole_story = '';
     if ($standalone == 1) {
-      $whole_story= $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_story = $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($story_values['field_hot_spot_collection']) {
       $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
       $whole_story = $whole_story . $hot_top;
 
-      foreach ($story_values as $key=>$value) {
+      foreach ($story_values as $key => $value) {
         if ($tng_debug == 1) {
           dpm('**** data ****' . $key . ' : ' . $value);
         }
@@ -1564,10 +1547,10 @@ function process_story($story_values, $language, $nid, $module, $standalone = NU
           }
           $count_of_elements = count($sploder);
           // for each triplet, grab the data and package it up as text, x and y coordinate
-          for ($i=0; $i < $count_of_elements; $i += 3) {
+          for ($i = 0; $i < $count_of_elements; $i += 3) {
             $t = tng_value_from_pair($sploder[$i]);
-            $x = tng_value_from_pair($sploder[$i+1]);
-            $y = tng_value_from_pair($sploder[$i+2]);
+            $x = tng_value_from_pair($sploder[$i + 1]);
+            $y = tng_value_from_pair($sploder[$i + 2]);
             $xy_combo = $x . ' ' . $y;
             $hotspot_detail = tng_hotspot_button_maker($xy_combo, $t, '');
             $whole_story = $whole_story . $hotspot_detail;
@@ -1575,12 +1558,12 @@ function process_story($story_values, $language, $nid, $module, $standalone = NU
           $whole_story = rtrim($whole_story, ', ');
         }
       }
-      $main_image = tng_convert_drupal_to_mean_filename($story_values['field_hot_spot_image'],'','');
+      $main_image = tng_convert_drupal_to_mean_filename($story_values['field_hot_spot_image'], '', '');
       $end_hot_spot = tng_npHotspot_closer('', $main_image);
       if ($standalone == 1) {
         $whole_story = $whole_story . $end_hot_spot . $close_hot_spot;
       } else {
-        $whole_story =  $whole_story . $end_hot_spot ;
+        $whole_story = $whole_story . $end_hot_spot;
       }
       if ($tng_debug == 1) {
         dpm($whole_story);
@@ -1606,8 +1589,9 @@ function process_story($story_values, $language, $nid, $module, $standalone = NU
  * @param $nid
  * @return mixed
  */
-function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('drag match object');
     dpm($dragmatch);
@@ -1619,7 +1603,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_drag_drop  = '] } ] } ] } ]';
+  $close_drag_drop = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 20 fields, layout the page
@@ -1648,18 +1632,18 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Drag-Match-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for drag and drop page.');
-    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for drag and drop page.');
+    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $dragmatch['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $introductory_text = $dragmatch['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
     if ($standalone == 1) {
-      $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
 
 
@@ -1668,7 +1652,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
         $drag_top = tng_npDragAndMatch_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragdrop = $whole_dragdrop . $drag_top;
 
-        foreach ($dragmatch as $key=>$value) {
+        foreach ($dragmatch as $key => $value) {
           if ($tng_debug == 1) {
             dpm('**** data ****' . $key . ' : ' . $value);
           }
@@ -1682,11 +1666,11 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
             $count_of_elements = count($sploder);
             // for each pair of matching content, grab the data and package it up as content, matching content
             $boxnumber = 0;
-            for ($i=0; $i < $count_of_elements; $i += 2) {
+            for ($i = 0; $i < $count_of_elements; $i += 2) {
               //$box = 'box' . $boxnumber;
               //$boxnumber +=1;
               $left_text_or_image = tng_value_from_pair($sploder[$i]);
-              $right_text_or_image = tng_value_from_pair($sploder[$i+1]);
+              $right_text_or_image = tng_value_from_pair($sploder[$i + 1]);
               $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, '', $right_text_or_image, '');
               $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
             }
@@ -1725,8 +1709,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
  * @param $nid
  * @return mixed
  */
-function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
-  $tng_debug =1;
+function process_dragmatch_prioritize($dragprioritize, $language, $nid)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('drag match prioritize object');
     dpm($dragprioritize);
@@ -1738,7 +1723,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_drag_drop  = '] } ] } ] } ]';
+  $close_drag_drop = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 20 fields, layout the page
@@ -1775,25 +1760,25 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Drag-Prioritize-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for drag match prioritize.');
-    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for drag match prioritize.');
+    $dragmatch_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $dragprioritize['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $introductory_text = $dragprioritize['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
 
-    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
     if ($dragprioritize['field_drag_priority_collection']) {
       {
         $drag_top = tng_npDragAndMatchPriority_maker('container', '', $correct_feedback, $incorrect_feedback, '');
         $whole_dragdrop = $whole_dragdrop . $drag_top;
 
-        foreach ($dragprioritize as $key=>$value) {
+        foreach ($dragprioritize as $key => $value) {
           if ($tng_debug == 1) {
             dpm('**** data ****' . $key . ' : ' . $value);
           }
@@ -1807,7 +1792,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
             $count_of_elements = count($sploder);
             // for each pair of matching content, grab the data and package it up as content, matching content
             $boxnumber = 0;
-            for ($i=0; $i < $count_of_elements; $i += 1) {
+            for ($i = 0; $i < $count_of_elements; $i += 1) {
               //$box = 'box' . $boxnumber;
               //$boxnumber +=1;
               $left_text_or_image = tng_value_from_pair($sploder[$i]);
@@ -1844,8 +1829,9 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid) {
  * @param $nid
  * @return mixed
  */
-function process_reveal($reveal_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_reveal($reveal_values, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('reveal object');
     dpm($reveal_values);
@@ -1857,7 +1843,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_reveal  = '] } ] } ] } ] } ]';
+  $close_reveal = '] } ] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP reveal page
   // and if we find between 1 and 20 fields, layout the page
@@ -1879,98 +1865,98 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Reveal-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for reveal.');
-    $reveal_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for reveal.');
+    $reveal_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $reveal_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $introductory_text = $reveal_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
     $whole_reveal = '';
     if ($standalone == 1) {
-      $whole_reveal = $feature_chunk . $content_chunk . $reveal_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_reveal = $feature_chunk . $content_chunk . $reveal_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($reveal_values['field_reveal_collection']) {
-        $reveal_top = tng_npReveal_maker('reveal-test-id', 'reveal-test-class');
-        $whole_reveal = $whole_reveal . $reveal_top;
-        $all_of_them = $reveal_values['field_reveal_collection'];
-        $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
-        $sploder = explode('",', $trim_str);
-        $count_of_elements = count($sploder);
-        if ($tng_debug == 1) {
-          dpm($sploder);
-        }
-        $thumb_path = 'assets/styles/reveal_thumbnail/public/';
-        $hero_path = 'assets/styles/reveal_hero/public/';
-        // for each trio of content, a bit of messy processing
-        // the content is within quotes and need removing, the images need style work and charm
-        $revealnumber = 0;
-        $increment = 3;
-        for ($i=0; $i < $count_of_elements; $i += $increment) {
-          $key = explode(':', $sploder[$i]);
-          $key_two = explode(':', $sploder[$i+1]);
-          $reveal = 'reveal-' . $revealnumber;
-          if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_text" ') {
-            $reveal = 'reveal-' . $revealnumber;
-            $thumb_splode = explode(':', $sploder[$i]);
-            $remo = str_replace('//', '', $thumb_splode[2]);
-            $thumb_image = $thumb_path . $remo;
-            $thumb_image = tng_convert_drupal_to_mean_filename($thumb_image,'','','true');
-            $video_splode = explode(':', $sploder[$i+2]);
-            $video_url = str_replace('"', '', $video_splode[1] .':' . $video_splode[2]);
-            $video_url = tng_convert_drupal_to_mean_filename($video_url,'','','true');
-            $value = explode(':', $sploder[$i+1]);
-            $stripped_text_one = str_replace(' "', '', $value[1]);
-            $stripped_text_one = str_replace('" ', '', $stripped_text_one);
-            $stripped_text_one = str_replace('"', '', $stripped_text_one);
-            $image_or_video = 'npVideo';
-            $reveal_detail = tng_npRevealItem_maker($reveal , '', $stripped_text_one, $thumb_image, '' , $image_or_video, '','',  '', $video_url,  'mp4');
-            $increment = 3;
-          } else if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_hero" ') {
-            $thumb_splode = explode(':', $sploder[$i]);
-            $remo = str_replace('//', '', $thumb_splode[2]);
-            $thumb_image = $thumb_path . $remo;
-            $value_two = explode(':', $sploder[$i+2]);
-            $stripped_text_two = str_replace('" ', '', $value_two[1]);
-            $stripped_text_two = str_replace(' "', '', $stripped_text_two);
-            $stripped_text_two = str_replace('"', '', $stripped_text_two);
-            $image_or_video = 'npImage';
-            $remo = str_replace('//', '', $key[2]);
-            $first_image = $hero_path . $remo;
-            $reveal_detail = tng_npRevealItem_maker($reveal , '', $stripped_text_two, $thumb_image, '' , $image_or_video, '', $first_image, '', '', '');
-            $increment = 3;
-          }
-          $revealnumber +=1;
-
-          $whole_reveal = $whole_reveal . $reveal_detail;
-        }
-        $whole_reveal = rtrim($whole_reveal, ', ');
-        }
-
-        if ($standalone == 1) {
-          $whole_reveal = $whole_reveal .  $close_reveal;
-        } else {
-          $whole_reveal = $whole_reveal .  '] }';
-        }
-        if ($tng_debug == 1) {
-          dpm($whole_reveal);
-        }
-
-      // when we edit a new node for a reveal (or make it for the first time), create a new object_manifest
-      // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_reveal, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
-      // return the new nid to set it on the parent node
-      return $new_nid;
-
-    } else {
+      $reveal_top = tng_npReveal_maker('reveal-test-id', 'reveal-test-class');
+      $whole_reveal = $whole_reveal . $reveal_top;
+      $all_of_them = $reveal_values['field_reveal_collection'];
+      $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
+      $sploder = explode('",', $trim_str);
+      $count_of_elements = count($sploder);
       if ($tng_debug == 1) {
-        dpm('Received more or less items than we expected for our reveal prioritize, so we are not processing it.');
+        dpm($sploder);
       }
+      $thumb_path = 'assets/styles/reveal_thumbnail/public/';
+      $hero_path = 'assets/styles/reveal_hero/public/';
+      // for each trio of content, a bit of messy processing
+      // the content is within quotes and need removing, the images need style work and charm
+      $revealnumber = 0;
+      $increment = 3;
+      for ($i = 0; $i < $count_of_elements; $i += $increment) {
+        $key = explode(':', $sploder[$i]);
+        $key_two = explode(':', $sploder[$i + 1]);
+        $reveal = 'reveal-' . $revealnumber;
+        if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_text" ') {
+          $reveal = 'reveal-' . $revealnumber;
+          $thumb_splode = explode(':', $sploder[$i]);
+          $remo = str_replace('//', '', $thumb_splode[2]);
+          $thumb_image = $thumb_path . $remo;
+          $thumb_image = tng_convert_drupal_to_mean_filename($thumb_image, '', '', 'true');
+          $video_splode = explode(':', $sploder[$i + 2]);
+          $video_url = str_replace('"', '', $video_splode[1] . ':' . $video_splode[2]);
+          $video_url = tng_convert_drupal_to_mean_filename($video_url, '', '', 'true');
+          $value = explode(':', $sploder[$i + 1]);
+          $stripped_text_one = str_replace(' "', '', $value[1]);
+          $stripped_text_one = str_replace('" ', '', $stripped_text_one);
+          $stripped_text_one = str_replace('"', '', $stripped_text_one);
+          $image_or_video = 'npVideo';
+          $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_one, $thumb_image, '', $image_or_video, '', '', '', $video_url, 'mp4');
+          $increment = 3;
+        } else if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_hero" ') {
+          $thumb_splode = explode(':', $sploder[$i]);
+          $remo = str_replace('//', '', $thumb_splode[2]);
+          $thumb_image = $thumb_path . $remo;
+          $value_two = explode(':', $sploder[$i + 2]);
+          $stripped_text_two = str_replace('" ', '', $value_two[1]);
+          $stripped_text_two = str_replace(' "', '', $stripped_text_two);
+          $stripped_text_two = str_replace('"', '', $stripped_text_two);
+          $image_or_video = 'npImage';
+          $remo = str_replace('//', '', $key[2]);
+          $first_image = $hero_path . $remo;
+          $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, $thumb_image, '', $image_or_video, '', $first_image, '', '', '');
+          $increment = 3;
+        }
+        $revealnumber += 1;
+
+        $whole_reveal = $whole_reveal . $reveal_detail;
+      }
+      $whole_reveal = rtrim($whole_reveal, ', ');
+    }
+
+    if ($standalone == 1) {
+      $whole_reveal = $whole_reveal . $close_reveal;
+    } else {
+      $whole_reveal = $whole_reveal . '] }';
+    }
+    if ($tng_debug == 1) {
+      dpm($whole_reveal);
+    }
+
+    // when we edit a new node for a reveal (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product
+    $new_nid = tng_create_manifest_node($whole_reveal, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    // return the new nid to set it on the parent node
+    return $new_nid;
+
+  } else {
+    if ($tng_debug == 1) {
+      dpm('Received more or less items than we expected for our reveal prioritize, so we are not processing it.');
     }
   }
+}
 
 
 /**
@@ -1979,8 +1965,9 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
  * @param $nid
  * @return mixed
  */
-function process_flashcards($flashcard_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_flashcards($flashcard_values, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('flash card object');
     dpm($flashcard_values);
@@ -1992,7 +1979,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_flashcard  = '] } ] } ] } ] } ]';
+  $close_flashcard = '] } ] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP flash page
   // and if we find between 1 and 20 fields, layout the page
@@ -2015,18 +2002,18 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Flashcard-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for flashcards.');
-    $flashcard_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for flashcards.');
+    $flashcard_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $flashcard_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $instructions, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructions, '', FALSE);
     $whole_flashcard = '';
     if ($standalone == 1) {
-      $whole_flashcard = $feature_chunk . $content_chunk . $flashcard_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_flashcard = $feature_chunk . $content_chunk . $flashcard_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($flashcard_values['field_flash_card_collection']) {
       $flashcard_top = tng_npFlashCard_maker('flash-cards-test-id', 'flash-cards-test-class');
@@ -2045,81 +2032,81 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       // the content is within quotes and need removing, the images need style work and charm
       $flashcardnumber = 0;
       //depending on what the cards look like, we'll end up with a front and a back.
-      for ($i=0; $i < $count_of_elements; $i += 2) {
+      for ($i = 0; $i < $count_of_elements; $i += 2) {
         // check for images so we know how to process
-        $front_http = strpos($sploder[$i],'http');
-        $back_http = strpos($sploder[$i+1], 'http');
+        $front_http = strpos($sploder[$i], 'http');
+        $back_http = strpos($sploder[$i + 1], 'http');
         if ($front_http === false && $back_http === false) {
           // it has text only
           $key = explode(':', $sploder[$i], 2);
-          $key_two = explode(':', $sploder[$i+1], 2);
-          $omni_one = str_replace('"','\'',$key[1]);
-          $omni_two = str_replace('"','\'',$key_two[1]);
-          $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
-        } else if ($front_http >= 0 && $back_http === false){
+          $key_two = explode(':', $sploder[$i + 1], 2);
+          $omni_one = str_replace('"', '\'', $key[1]);
+          $omni_two = str_replace('"', '\'', $key_two[1]);
+          $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
+        } else if ($front_http >= 0 && $back_http === false) {
           $key = explode(':', $sploder[$i], 2);
-          $start_pos1 = strpos($key[1],'http');
+          $start_pos1 = strpos($key[1], 'http');
           $end_pos1 = strpos($key[1], '?');
-          $str_beg_one = substr($key[1],0,$start_pos1);
-          $str_end_one = substr($key[1],$end_pos1);
-          $url1 = substr($key[1], $start_pos1, $end_pos1-$start_pos1);
+          $str_beg_one = substr($key[1], 0, $start_pos1);
+          $str_end_one = substr($key[1], $end_pos1);
+          $url1 = substr($key[1], $start_pos1, $end_pos1 - $start_pos1);
           $asset_url1 = tng_convert_drupal_to_mean_filename($url1);
           $omni_one = $str_beg_one . $asset_url1 . $str_end_one;
-          $omni_one = str_replace('"','\'',$omni_one);
-          $key_two = explode(':', $sploder[$i+2], 2);
-          $omni_two = str_replace('"','\'',$key_two[1]);
+          $omni_one = str_replace('"', '\'', $omni_one);
+          $key_two = explode(':', $sploder[$i + 2], 2);
+          $omni_two = str_replace('"', '\'', $key_two[1]);
           //if ($key[0] == '"field_back_card" ') {
           //  $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
           //}
-          $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
-        } else if ($back_http  >= 0 && $front_http === false) {
+          $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
+        } else if ($back_http >= 0 && $front_http === false) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
-          $key_two = explode(':', $sploder[$i+1], 2);
+          $key_two = explode(':', $sploder[$i + 1], 2);
           $start_pos2 = strpos($key_two[1], 'http');
           $end_pos2 = strpos($key_two[1], '?');
-          $str_beg_two = substr($key_two[1],0,$start_pos2);
-          $str_end_two = substr($key_two[1],$end_pos2);
-          $url2 = substr($key_two[1], $start_pos2, $end_pos2-$start_pos2);
+          $str_beg_two = substr($key_two[1], 0, $start_pos2);
+          $str_end_two = substr($key_two[1], $end_pos2);
+          $url2 = substr($key_two[1], $start_pos2, $end_pos2 - $start_pos2);
           $asset_url2 = tng_convert_drupal_to_mean_filename($url2);
           $omni_two = $str_beg_two . $asset_url2 . $str_end_two;
-          $omni_two = str_replace('"','\'',$omni_two);
+          $omni_two = str_replace('"', '\'', $omni_two);
           $key = explode(':', $sploder[$i], 2);
-          $omni_one = str_replace('"','\'',$key[1]);
-          $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
-        } else if ($back_http  >= 0 && $front_http >= 0) {
+          $omni_one = str_replace('"', '\'', $key[1]);
+          $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
+        } else if ($back_http >= 0 && $front_http >= 0) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
           $key = explode(':', $sploder[$i], 2);
-          $key_two = explode(':', $sploder[$i+1], 2);
-          $start_pos1 = strpos($key[1],'http');
+          $key_two = explode(':', $sploder[$i + 1], 2);
+          $start_pos1 = strpos($key[1], 'http');
           $end_pos1 = strpos($key[1], '?');
           $start_pos2 = strpos($key_two[1], 'http');
           $end_pos2 = strpos($key_two[1], '?');
 
-          $str_beg_one = substr($key[1],0,$start_pos1);
-          $str_end_one = substr($key[1],$end_pos1);
-          $str_beg_two = substr($key_two[1],0,$start_pos2);
-          $str_end_two = substr($key_two[1],$end_pos2);
-          $url1 = substr($key[1], $start_pos1, $end_pos1-$start_pos1);
-          $url2 = substr($key_two[1], $start_pos2, $end_pos2-$start_pos2);
+          $str_beg_one = substr($key[1], 0, $start_pos1);
+          $str_end_one = substr($key[1], $end_pos1);
+          $str_beg_two = substr($key_two[1], 0, $start_pos2);
+          $str_end_two = substr($key_two[1], $end_pos2);
+          $url1 = substr($key[1], $start_pos1, $end_pos1 - $start_pos1);
+          $url2 = substr($key_two[1], $start_pos2, $end_pos2 - $start_pos2);
 
           $asset_url1 = tng_convert_drupal_to_mean_filename($url1);
           $asset_url2 = tng_convert_drupal_to_mean_filename($url2);
           $omni_one = $str_beg_one . $asset_url1 . $str_end_one;
           $omni_two = $str_beg_two . $asset_url2 . $str_end_two;
-          $omni_one = str_replace('"','\'',$omni_one);
-          $omni_two = str_replace('"','\'',$omni_two);
+          $omni_one = str_replace('"', '\'', $omni_one);
+          $omni_two = str_replace('"', '\'', $omni_two);
           // the array assignment makes for predictable order of our duo set of data
-          $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
+          $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         }
-       $whole_flashcard = $whole_flashcard . $flashcard_detail;
+        $whole_flashcard = $whole_flashcard . $flashcard_detail;
       }
 
       $whole_flashcard = rtrim($whole_flashcard, ', ');
     }
     if ($standalone == 1) {
-      $whole_flashcard = $whole_flashcard .  $close_flashcard;
+      $whole_flashcard = $whole_flashcard . $close_flashcard;
     } else {
       $whole_flashcard = $whole_flashcard . '] }';
     }
@@ -2150,8 +2137,9 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
  * The assumption here is that a list item will always be a part of series of components, hence the final ',' at the end of it.
  *
  */
-function process_list($listobject, $language, $nid) {
-  $tng_debug =1;
+function process_list($listobject, $language, $nid)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2194,24 +2182,26 @@ function process_list($listobject, $language, $nid) {
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
       $count_of_elements = count($sploder);
-      for ($i=0; $i < $count_of_elements; $i+=2) {
+      for ($i = 0; $i < $count_of_elements; $i += 2) {
         $key = explode(':', $sploder[$i]);
         if ($key[0] == '"field_list_image" ') {
-          $first_image = str_replace('"', '', $key[1] .':' . $key[2]);
-          $first_image = tng_convert_drupal_to_mean_filename($first_image,'','','true');
-          $value = explode(':', $sploder[$i+1]);
+          $first_image = str_replace('"', '', $key[1] . ':' . $key[2]);
+          $first_image = tng_convert_drupal_to_mean_filename($first_image, '', '', 'true');
+          $value = explode(':', $sploder[$i + 1]);
           $second_text = str_replace('"', '', $value[1]);
-          $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text,'npImage','', $first_image ,'', '' ,'','');
+          $second_text = preg_replace('/\s+/S', " ", $second_text);
+          $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text, 'npImage', '', $first_image, '', '', '', '');
           $whole_list = $whole_list . $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
           $first_text = str_replace('"', '', $key[1]);
-          $value = explode(':', $sploder[$i+1]);
+          $first_text = preg_replace('/\s+/S', " ", $first_text);
+          $value = explode(':', $sploder[$i + 1]);
           if (count($value) > 1) {
             $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
-            $second_video = tng_convert_drupal_to_mean_filename($second_video,'','', 'true');
-            $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text,'npVideo','', '' ,'', '' , $second_video,'mp4');
+            $second_video = tng_convert_drupal_to_mean_filename($second_video, '', '', 'true');
+            $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, 'npVideo', '', '', '', '', $second_video, 'mp4');
           } else {
-            $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text,'','', '' ,'', '' , '','');
+            $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, '', '', '', '', '', '', '');
           }
           $whole_list = $whole_list . $listobject_detail;
         }
@@ -2222,15 +2212,15 @@ function process_list($listobject, $language, $nid) {
       dpm('****finished List manifest****');
       dpm($whole_list);
     }
-      // when we edit a new node for a list (or make it for the first time), create a new object_manifest
-      // to create an updated manifest, delete the old manifest and re-edit the product
-      $new_nid = tng_create_manifest_node($whole_list, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
-      // return the new nid to set it on the parent node
-      return $new_nid;
-    } else {
-      if ($tng_debug == 1) {
-        dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
-      }
+    // when we edit a new node for a list (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product
+    $new_nid = tng_create_manifest_node($whole_list, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    // return the new nid to set it on the parent node
+    return $new_nid;
+  } else {
+    if ($tng_debug == 1) {
+      dpm('Received more or less items than we expected for our drag match prioritize, so we are not processing it.');
+    }
   }
 }
 
@@ -2242,8 +2232,9 @@ function process_list($listobject, $language, $nid) {
  *
  *
  */
-function process_badge($badgeobject, $language, $nid) {
-  $tng_debug =1;
+function process_badge($badgeobject, $language, $nid)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2260,7 +2251,7 @@ function process_badge($badgeobject, $language, $nid) {
   //leave this check for now, although it may not be needed.
   if ($num_fields >= $min_batch_fields && $num_fields <= $max_batch_fields) {
     $title = $badgeobject['title_field'];
-    $title = rtrim($title,' ');
+    $title = rtrim($title, ' ');
     // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
     $title = str_replace("/", "-", $title);
@@ -2292,8 +2283,9 @@ function process_badge($badgeobject, $language, $nid) {
  * @param $nid
  * @return mixed
  */
-function process_matchgame($matchgame_values, $language, $nid, $module, $standalone = NULL) {
-  $tng_debug =1;
+function process_matchgame($matchgame_values, $language, $nid, $module, $standalone = NULL)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('match game object');
     dpm($matchgame_values);
@@ -2305,8 +2297,8 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_matchgame  = '] } ] } ] } ] } ]';
-  $close_bare_match  = '] }';
+  $close_matchgame = '] } ] } ] } ] } ]';
+  $close_bare_match = '] }';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP flash page
   // and if we find between 1 and 20 fields, layout the page
@@ -2333,19 +2325,19 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Matchgame-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'Manifest for matchgames.');
-    $matchgame_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for matchgames.');
+    $matchgame_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
     $background_chunk = rtrim($background_chunk, ', ');
     $subtitle = $matchgame_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '','','', $subtitle, '', FALSE);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
     $introductory_text = $matchgame_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
     $whole_matchgame = '';
     if ($standalone == 1) {
-      $whole_matchgame = $feature_chunk . $content_chunk . $matchgame_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_matchgame = $feature_chunk . $content_chunk . $matchgame_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
 
     if ($matchgame_values['field_match_collection']) {
@@ -2358,23 +2350,23 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       if ($tng_debug == 1) {
         dpm($sploder);
       }
-      for ($i=0; $i < $count_of_elements; $i += 3) {
+      for ($i = 0; $i < $count_of_elements; $i += 3) {
         $bot_values[] = (explode(':', $sploder[$i], 2));
-        $mid_values[] = (explode(':', $sploder[$i+1], 2));
-        $top_values[] = (explode(':', $sploder[$i+2], 2));
+        $mid_values[] = (explode(':', $sploder[$i + 1], 2));
+        $top_values[] = (explode(':', $sploder[$i + 2], 2));
       }
       // process the bottom, middle and top text or image match pairs
       $top_count = count($top_values);
-      $row_maker = tng_npMatchRow_maker('', 'top','');
+      $row_maker = tng_npMatchRow_maker('', 'top', '');
       $whole_matchgame = $whole_matchgame . $row_maker;
-      for ($k=0; $k < $top_count; $k += 1) {
+      for ($k = 0; $k < $top_count; $k += 1) {
         if ($top_values[$k][0] == '"field_top_match_image" ') {
-          $drupal_image_name = str_replace('"','', $top_values[$k][1]);
+          $drupal_image_name = str_replace('"', '', $top_values[$k][1]);
           $mean_image_name = tng_convert_drupal_to_mean_filename($drupal_image_name, '', '', FALSE);
           $src_str = '<img src=\"' . $mean_image_name . '\"/>';
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k + 1);
         } else {
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"','', $top_values[$k][1]), $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $top_values[$k][1]), $k + 1);
         }
         $whole_matchgame = $whole_matchgame . $answer;
       }
@@ -2382,16 +2374,16 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       $whole_matchgame = $whole_matchgame . $close_html;
 
       $mid_count = count($mid_values);
-      $row_maker = tng_npMatchRow_maker('', 'middle','');
+      $row_maker = tng_npMatchRow_maker('', 'middle', '');
       $whole_matchgame = $whole_matchgame . $row_maker;
-      for ($k=0; $k < $mid_count; $k += 1) {
+      for ($k = 0; $k < $mid_count; $k += 1) {
         if ($mid_values[$k][0] == '"field_middle_match_image" ') {
-          $drupal_image_name = str_replace('"','', $mid_values[$k][1]);
+          $drupal_image_name = str_replace('"', '', $mid_values[$k][1]);
           $mean_image_name = tng_convert_drupal_to_mean_filename($drupal_image_name, '', '', FALSE);
           $src_str = '<img src=\"' . $mean_image_name . '\"/>';
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k + 1);
         } else {
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"','', $mid_values[$k][1]), $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $mid_values[$k][1]), $k + 1);
         }
         $whole_matchgame = $whole_matchgame . $answer;
       }
@@ -2399,30 +2391,30 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       $whole_matchgame = $whole_matchgame . $close_html;
 
       $bot_count = count($bot_values);
-      $row_maker = tng_npMatchRow_maker('', 'bottom','');
+      $row_maker = tng_npMatchRow_maker('', 'bottom', '');
       $whole_matchgame = $whole_matchgame . $row_maker;
-      for ($k=0; $k < $bot_count; $k += 1) {
+      for ($k = 0; $k < $bot_count; $k += 1) {
         if ($bot_values[$k][0] == '"field_bottom_match_image" ') {
-          $drupal_image_name = str_replace('"','', $bot_values[$k][1]);
+          $drupal_image_name = str_replace('"', '', $bot_values[$k][1]);
           $mean_image_name = tng_convert_drupal_to_mean_filename($drupal_image_name, '', '', FALSE);
           $src_str = '<img src=\"' . $mean_image_name . '\"/>';
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', $src_str, $k + 1);
         } else {
-          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"','', $bot_values[$k][1]), $k+1);
+          $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $bot_values[$k][1]), $k + 1);
         }
         $whole_matchgame = $whole_matchgame . $answer;
       }
       if (($top_count == $mid_count) && ($mid_count == $bot_count)) {
-          dpm('matching count are good');
+        dpm('matching count are good');
       }
       $whole_matchgame = rtrim($whole_matchgame, ', ');
       $whole_matchgame = $whole_matchgame . $close_html;
       $whole_matchgame = rtrim($whole_matchgame, ', ');
     }
     if ($standalone == 1) {
-      $whole_matchgame = $whole_matchgame .  $close_matchgame;
+      $whole_matchgame = $whole_matchgame . $close_matchgame;
     } else {
-      $whole_matchgame = $whole_matchgame .  $close_bare_match;
+      $whole_matchgame = $whole_matchgame . $close_bare_match;
     }
     if ($tng_debug == 1) {
       dpm($whole_matchgame);
@@ -2448,8 +2440,9 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
  * @param $nid - id of the node we processed to get the array info in $object_values
  * @return mixed - return the node id, $nid, of the newly created manifest.
  */
-function process_question_and_answer($object_values, $language, $nid) {
-  $tng_debug =1;
+function process_question_and_answer($object_values, $language, $nid)
+{
+  $tng_debug = 1;
   if ($tng_debug == 1) {
     dpm('**language**' . $language);
     dpm('process question and answer');
@@ -2475,15 +2468,15 @@ function process_question_and_answer($object_values, $language, $nid) {
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $page_chunk = tng_npPageStart_maker($title, '', $title, 'true',  'true');
+    $page_chunk = tng_npPageStart_maker($title, '', $title, 'true', 'true');
 
-    $whole_qa =  $page_chunk;
+    $whole_qa = $page_chunk;
     $ba = '';
     $correct_answer_text = '';
     $incorrect_answer_text = '';
     //$whole_qa =  $whole_qa . $page_chunk;
     // paragraphs are
-    foreach ($object_values as $key=>$value) {
+    foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {
         dpm('**** data ****' . $key . ' : ' . $value);
       }
@@ -2496,14 +2489,17 @@ function process_question_and_answer($object_values, $language, $nid) {
         }
         $count_of_elements = count($sploder);
         // for each pair, grab the data and package it for npQuestion, npAnswer
-        for ($i=0; $i < $count_of_elements; $i++) {
+        for ($i = 0; $i < $count_of_elements; $i++) {
           if (strpos($sploder[$i], 'field_question_text') !== FALSE) {
             $q = tng_value_from_pair($sploder[$i]);
             $question_text = $q;
           } elseif (strpos($sploder[$i], 'field_answer_feedback') !== FALSE) {
             $answer_feedback = tng_value_from_pair($sploder[$i]);
-            $answer_text = tng_value_from_pair($sploder[$i+1]);
-            $answer_correctness = tng_value_from_pair($sploder[$i+2]);
+            $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
+            $answer_text = tng_value_from_pair($sploder[$i + 1]);
+            $answer_text = preg_replace('/\s+/S', " ", $answer_text);
+            $answer_correctness = tng_value_from_pair($sploder[$i + 2]);
+            $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
             if ($answer_correctness == 1) {
               $ap = tng_npAnswer_maker($answer_text, 'true', $answer_feedback, '');
               $correct_answer_text = $answer_feedback;
@@ -2519,7 +2515,7 @@ function process_question_and_answer($object_values, $language, $nid) {
         $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
         //$ba =  $np . $ba . $bt;
-        $ba =  $np . $ba ;
+        $ba = $np . $ba;
 
         // remove the final comma from any number of question/multiple answers bits
         $ba = rtrim($ba, ',');
@@ -2527,9 +2523,9 @@ function process_question_and_answer($object_values, $language, $nid) {
         $ba = '{' . $ba . ']},';
         $whole_qa = $whole_qa . $ba;
       } elseif ($key == 'field_answer_image') {
-        $truth = tng_convert_drupal_to_mean_filename($value, '','');
+        $truth = tng_convert_drupal_to_mean_filename($value, '', '');
         $image_chunk = tng_npImage_maker('', $truth, '', '');
-        $whole_qa = $whole_qa . $image_chunk ;
+        $whole_qa = $whole_qa . $image_chunk;
       }
 //      else {
 //        $fix_value = str_replace('"','\"',$value);
@@ -2557,8 +2553,9 @@ function process_question_and_answer($object_values, $language, $nid) {
   }
 }
 
-function process_content_object($object_values, $language, $nid) {
-  $tng_debug =1;
+function process_content_object($object_values, $language, $nid)
+{
+  $tng_debug = 1;
   $min_product_fields = 1;
   $max_product_fields = 50;
   $num_fields = count($object_values);
@@ -2569,8 +2566,12 @@ function process_content_object($object_values, $language, $nid) {
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_contentobject  = '] } ] } ] } ]';
-
+  $close_contentobject = '] } ] } ] } ]';
+  $story_default = 'storyDefault';
+  $story_background_class = 'background-brand-primary-light outside-padding';
+  $image_hero_center = 'hero img-responsive center-block';
+  $title_class_center = 'h5 col-sm-12 sans-head center-block center-padding';
+  $h1_header = 'h1 header';
 
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     // here we process the fields we find for our hot spot passed in the array of $object_values
@@ -2584,22 +2585,27 @@ function process_content_object($object_values, $language, $nid) {
       dpm('title : ' . $title);
     }
     $learning_category = rtrim($object_values['field_learning_category'], ',');
-    //$learning_category_id = '';
+    //when one doesn't select the learning category, it comes as ''
     if ($learning_category == 'Re-Nutriv') {
       $learning_category_id = 'reNutriv';
     } else if ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';
     } else if ($learning_category == 'GMTC') {
       $learning_category_id = 'GMTC';
-    } else  {
-      $learning_category_id = 'Story';
+    } else {
+      if ($tng_debug == 1) {
+        dpm('We did not specify a category!');
+      }
     }
 
     $content_object_type = rtrim($object_values['field_content_object_type'], ',');
+    // assume we are making a Learning Object as the default
+    $making_story = false;
     if ($content_object_type == 'Learning Content') {
       $content_object_prefix = 'Learning-Content-';
     } else if ($content_object_type == 'Story') {
       $content_object_prefix = 'Story-';
+      $making_story = true;
     }
 
     $num_mkts = count($object_values['field_markets']);
@@ -2612,27 +2618,51 @@ function process_content_object($object_values, $language, $nid) {
     $content_keywords = $object_values['field_tags_keywords'];
     $intro_text = strip_tags($object_values['field_intro']);
     $headline = $object_values['field_headline'];
-    $feature_chunk = tng_npFeature_maker($learning_category_id, '', '[]', '0.0.1');
+    if ($making_story) {
+      $feature_chunk = tng_npFeature_maker($story_default, '', '[]', '0.0.1');
+    } else {
+      $feature_chunk = tng_npFeature_maker($learning_category_id, '', '[]', '0.0.1');
+    }
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = $content_object_prefix . str_replace(" ", "-", $title);
     $newplayer_api_link = '/api/contents/name/' . $manifest_title;
-    $thumbnail_teaser = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '', FALSE);
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language,  $manifest_title, 'This manifest creates a multi-page content object .');
-    $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '','','','','','', TRUE);
-    $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '','', '', '', '', '', FALSE );
-    $background_chunk = rtrim($background_chunk, ', ');
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '','','','', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE) ;
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
-    $introductory_text = $object_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
-    //$instructions_chunk = rtrim($instructions_chunk, ', ');
-    $whole_object  =  $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $close_html. $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    $thumbnail_teaser = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], 'teaser', TRUE);
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
 
-    foreach ($object_values as $key=>$value) {
+    if ($making_story) {
+      $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
+      $background_chunk = tng_npHTML_basic_maker('', $story_background_class, '', '', '', '', '', FALSE);
+    } else {
+      $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+      $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
+    }
+    $hero_image_chunk = '';
+    if ($object_values['field_hero_image']) {
+      $hero_img = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '','', FALSE);
+      $hero_image_chunk = tng_npImage_maker('', $hero_img, $image_hero_center);
+    }
+    $background_chunk = rtrim($background_chunk, ', ');
+    // title, then header, then text html chunks for a story
+    if ($making_story) {
+      $pulsed_title = str_replace(' ,','', $object_values['field_pulsed_content']);
+      $title_chunk = tng_npHTML_basic_maker('', $title_class_center, '', '', '', $pulsed_title, '', FALSE);
+      $header_chunk = tng_npHTML_basic_maker('', $h1_header, '', '', '', $headline, '', TRUE);
+    }
+    //$index_field = ;
+    //$obj = json_decode($object_values['$field_learning_objects[0]']);
+    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
+
+    $introductory_text = $object_values['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
+    //$instructions_chunk = rtrim($instructions_chunk, ', ');
+    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+
+    foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {
         dpm('**** data ****' . $key . ' : ' . $value);
       }
@@ -2640,7 +2670,7 @@ function process_content_object($object_values, $language, $nid) {
       if ($key == 'field_learning_objects') {
         $lo_count = count($value);
         $combo = '';
-        for ($los=0; $los < $lo_count; $los++) {
+        for ($los = 0; $los < $lo_count; $los++) {
           if ($tng_debug == 1) {
             dpm('learning objects');
             dpm($value[$los]);
@@ -2649,15 +2679,6 @@ function process_content_object($object_values, $language, $nid) {
         }
         $whole_object = $whole_object . $combo;
       }
-//      elseif ($key == 'field_hero_image') {
-//        $truth = tng_convert_drupal_to_mean_filename($value,'','');
-//        $image_chunk = tng_npImage_maker($truth);
-//        $whole_object = $whole_object . $image_chunk . ',';
-//      } else {
-//        //$html_chunk = tng_npHTML_maker('', '','field-label', $key,  $fix_value);
-//        //$html_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '','','', $introductory_text, '', FALSE);
-//        //$whole_object = $whole_object . $html_chunk ;
-//      }
 
     }
     // after looping the HTML or Image group, remove the final ','
@@ -2685,14 +2706,14 @@ function process_content_object($object_values, $language, $nid) {
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL) {
+function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL)
+{
 
   global $user;
-  $tng_debug =1;
+  $tng_debug = 1;
 
   // don't make a new manifest node if we already have one
-  if (!isset($nid))
-  {
+  if (!isset($nid)) {
     if ($tng_debug == 1) {
       dpm('creating a new nid node manifest');
       dpm('node data : ' . $node_data);
@@ -2714,7 +2735,7 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
     // markets needs to be added to our manifest, so create a csv list
     $cnt_markets = count($markets);
     $market_csv = '';
-    for ($c=0; $c < $cnt_markets; $c++) {
+    for ($c = 0; $c < $cnt_markets; $c++) {
       $market_csv = $market_csv . $markets[$c] . ',';
     }
     if (isset($market_csv)) {
@@ -2811,14 +2832,14 @@ function tng_create_manifest_node ($node_data, $node_type, $node_title, $node_su
 }
 
 
-function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL) {
+function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL)
+{
 
   global $user;
-  $tng_debug =1;
+  $tng_debug = 1;
 
   // don't make a new manifest node if we already have one
-  if (!isset($nid))
-  {
+  if (!isset($nid)) {
     if ($tng_debug == 1) {
       dpm('creating a new nid node manifest');
       dpm('node type : ' . $node_type);
@@ -2835,7 +2856,7 @@ function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $n
     // markets needs to be added to our manifest, so create a csv list
     $cnt_markets = count($markets);
     $market_csv = '';
-    for ($c=0; $c < $cnt_markets; $c++) {
+    for ($c = 0; $c < $cnt_markets; $c++) {
       $market_csv = $market_csv . $markets[$c] . ',';
     }
     if (isset($market_csv)) {
@@ -2901,17 +2922,18 @@ function tng_create_badge_manifest ($node_type, $node_title, $markets = NULL, $n
  * @param $value - full pathname of the local drupal image file
  * @return string - return the path which we will expect on the MEAN server side 'assets + stylepath'
  */
-function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL, $public_process = NULL) {
-  $tng_debug =1;
+function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL, $public_process = NULL)
+{
+  $tng_debug = 1;
   $remote_picture_name = '';
   //short circuit this if there isn't a system path
-  if (substr($value,0,6) == 'assets') {
+  if (substr($value, 0, 6) == 'assets') {
     return $value;
   }
   if ($public_process) {
     $justpath = parse_url($value);
     $justpath['path'] = trim($justpath['path'], ' ');
-    $pub_image = str_replace('public://','',$justpath);
+    $pub_image = str_replace('public://', '', $justpath);
     $remote_picture_name = 'assets/' . $pub_image['path'];
   } else {
     $justpath = parse_url($value, PHP_URL_PATH);
@@ -2929,23 +2951,22 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
     $needle = "/default/files/styles//public/";
     $match = strpos($justpath, $needle);
     if ($match > 0) {
-      //$needle = "/default/files/";
       $match = strpos($justpath, $needle);
       $match = $match + strlen($needle);
-      $submatch =  substr($justpath, $match);
+      $submatch = substr($justpath, $match);
       $remote_picture_name = 'assets/' . $submatch;
     } else {
       $needle = "/default/files/";
       $match = $match + strlen($needle);
-      $submatch =  substr($justpath, $match);
+      $submatch = substr($justpath, $match);
       $remote_picture_name = 'assets/styles/' . $submatch;
     }
 
     if ($tng_debug == 1) {
       dpm('***incoming path');
       dpm($value);
-      dpm('***path value***'. $justpath);
-      dpm('***index***'. $match);
+      dpm('***path value***' . $justpath);
+      dpm('***index***' . $match);
       dpm('sub match');
       dpm($submatch);
       dpm('remote picture name');
@@ -2995,12 +3016,13 @@ function tng_shadow_node_presave($entity) {
  */
 
 
-function tng_shadow_shadow_request_alter($entity) {
-  $tng_debug =1;
-  $translated_labels[] ='';
+function tng_shadow_shadow_request_alter($entity)
+{
+  $tng_debug = 1;
+  $translated_labels[] = '';
   try {
     if ($tng_debug == 1) {
-      dpm ($entity);
+      dpm($entity);
     }
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {
@@ -3012,13 +3034,12 @@ function tng_shadow_shadow_request_alter($entity) {
       if ($tng_debug == 1) {
         dpm('This node should be published.');
       }
-      $save_entity = node_load($entity->nid) ;
-      $entity_array = (array) $entity;
+      $save_entity = node_load($entity->nid);
+      $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
       //$language = $entity->language;
       $language = get_language_from_uri();
-      if (strlen($language) > 2)
-      {
+      if (strlen($language) > 2) {
         $language = $entity->language;
       }
       // for full manifest creation, set the module name here.
@@ -3028,7 +3049,7 @@ function tng_shadow_shadow_request_alter($entity) {
       global $namevalue;
       $pre_manifest = array();
       if ($tng_debug == 1) {
-        dpm ($entity_array);
+        dpm($entity_array);
         dpm($language);
       }
       // load the current entity in a wrapper
@@ -3051,9 +3072,9 @@ function tng_shadow_shadow_request_alter($entity) {
       }
       $children_nodes_to_process = element_children($node_fields);
       // we loop through the fields looking for a paragraph type to expand and rewrite
-      for ($i=0; $i < $number_of_fields; $i++) {
+      for ($i = 0; $i < $number_of_fields; $i++) {
         if ($tng_debug == 1) {
-          dpm('['. $i .']:' . $children_nodes_to_process[$i]);
+          dpm('[' . $i . ']:' . $children_nodes_to_process[$i]);
           dpm($children_nodes_to_process[$i]);
           dpm($wrapper->$children_nodes_to_process[$i]->value());
         }
@@ -3066,7 +3087,7 @@ function tng_shadow_shadow_request_alter($entity) {
         if ($info['type'] == 'paragraphs') {
           // the outer node type is a 'field_paragraph_multiple_choice', so save this name for later pre-manifest creation.
           $save_field_name = $children_nodes_to_process[$i];
-          $namevalue = '[ { ' ;
+          $namevalue = '[ { ';
           // if we have a paragraphs type, use a wrapper for easier reference
           $paragraphs = $wrapper->$info['field_name']->value();
           if ($tng_debug == 1) {
@@ -3109,9 +3130,9 @@ function tng_shadow_shadow_request_alter($entity) {
           $flashcard_possibilities = array('field_front_card_image', 'field_front_card', 'field_back_card_image', 'field_back_card');
           $matchgame_possibilities = array('field_top_match_text', 'field_top_match_image', 'field_middle_match_text', 'field_middle_match_image', 'field_bottom_match_text', 'field_bottom_match_image');
           // explore each paragraph
-          for ($p=0; $p < $number_of_paragraphs; $p++) {
+          for ($p = 0; $p < $number_of_paragraphs; $p++) {
             // and every field for each paragraph
-            for ($pf=0; $pf < $number_of_paragraph_fields; $pf++) {
+            for ($pf = 0; $pf < $number_of_paragraph_fields; $pf++) {
               // inside the fields within a paragraph the language variable is not used, it's 'und'
               $language = 'und';
               $field_name = $children_fields_to_process[$pf];
@@ -3126,23 +3147,23 @@ function tng_shadow_shadow_request_alter($entity) {
               if (in_array($name, $match_possibilites)) {
                 if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                   if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                   }
                   if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
+                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                   }
                   if ($tng_debug == 1) {
                     dpm('value after name' . $namevalue);
                   }
                 }
               } else {
-                if (in_array($name, $matchgame_possibilities)){
+                if (in_array($name, $matchgame_possibilities)) {
                   if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                     } else {
                       if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
+                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                       }
                     }
                     if ($tng_debug == 1) {
@@ -3151,84 +3172,82 @@ function tng_shadow_shadow_request_alter($entity) {
                   }
                 } else {
                   // we only care about the value cards, since images are not used
-                  if (in_array($name, $flashcard_possibilities)){
+                  if (in_array($name, $flashcard_possibilities)) {
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                       if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
+                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                       }
-                      if ($tng_debug == 1) {
-                        dpm('value after name' . $namevalue);
-                      }
-                    }
-                } else {
-                  if (in_array($name, $list_possibilities)){
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                      if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
-                      } else {
-                        if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                          $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
-                        }
-                      }
-                      if ($tng_debug == 1) {
-                        dpm('value after name' . $namevalue);
-                      }
-                    }
-                } else {
-                  if (in_array($name, $reveal_possibilities)){
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                      if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
-                      } else {
-                        if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                          $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
-                        }
-                      }
-                      if ($tng_debug == 1) {
-                        dpm('value after name' . $namevalue);
-                      }
-                    }
-                } else {
-                if (in_array($name, $drag_possibilities)){
-                  if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
-                    }
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri']. '",';
-                    }
-                      if ($tng_debug == 1) {
-                      dpm('value after name' . $namevalue);
-                    }
-                  }
-               } else {
-                  if (strlen(strstr($name,'field_hot_spot')) >0) {
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value']. '",';
                       if ($tng_debug == 1) {
                         dpm('value after name' . $namevalue);
                       }
                     }
                   } else {
-                    // the answer node itself has no value we can use, so don't include it
-                    if ($name == 'field_paragraph_answer'){
-                    }
-                    elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value']. '",';
-                      if ($tng_debug == 1) {
-                        dpm('value after name' . $namevalue);
+                    if (in_array($name, $list_possibilities)) {
+                      if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                        if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                          $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                        } else {
+                          if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                            $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                          }
+                        }
+                        if ($tng_debug == 1) {
+                          dpm('value after name' . $namevalue);
+                        }
                       }
-                    }
-                    else {
-                      $namevalue = $namevalue . '"' . $field_name . '" : ' . '"",';
+                    } else {
+                      if (in_array($name, $reveal_possibilities)) {
+                        if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                          if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                            $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                          } else {
+                            if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                            }
+                          }
+                          if ($tng_debug == 1) {
+                            dpm('value after name' . $namevalue);
+                          }
+                        }
+                      } else {
+                        if (in_array($name, $drag_possibilities)) {
+                          if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                            if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                            }
+                            if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                            }
+                            if ($tng_debug == 1) {
+                              dpm('value after name' . $namevalue);
+                            }
+                          }
+                        } else {
+                          if (strlen(strstr($name, 'field_hot_spot')) > 0) {
+                            if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                              if ($tng_debug == 1) {
+                                dpm('value after name' . $namevalue);
+                              }
+                            }
+                          } else {
+                            // the answer node itself has no value we can use, so don't include it
+                            if ($name == 'field_paragraph_answer') {
+                            } elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value'] . '",';
+                              if ($tng_debug == 1) {
+                                dpm('value after name' . $namevalue);
+                              }
+                            } else {
+                              $namevalue = $namevalue . '"' . $field_name . '" : ' . '"",';
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
               }
-            }
-          }
-        }
-      }
               $field_count = count($paragraphs->{$name}[$language]);
               // if there are no elements in the field don't process
               if ($field_count < 1) {
@@ -3236,15 +3255,15 @@ function tng_shadow_shadow_request_alter($entity) {
               } else {
                 // typical question
                 if ($tng_debug == 1) {
-                  dpm($field_count .  ' field(s) sets found for ' . $paragraphs->{$name}[$language][0]['value']);
+                  dpm($field_count . ' field(s) sets found for ' . $paragraphs->{$name}[$language][0]['value']);
                 }
                 if (($field_count == 1) && (isset($paragraphs->{$name}[$language][0]['value']))) {
                   if ($tng_debug == 1) {
-                    dpm('name : '. $name . ' value : ' . $paragraphs->{$name}[$language][0]['value']);
+                    dpm('name : ' . $name . ' value : ' . $paragraphs->{$name}[$language][0]['value']);
                   }
                 } else {
                   // typically answers
-                  for ($f=0; $f < $field_count; $f++) {
+                  for ($f = 0; $f < $field_count; $f++) {
                     $entity = paragraphs_item_load($paragraphs->{$name}[$language][$f]['value']);
                     if ($tng_debug == 1) {
                       dpm('**entity**');
@@ -3255,7 +3274,7 @@ function tng_shadow_shadow_request_alter($entity) {
                       dpm($para_inst);
                     }
                     $sub_children = element_children($para_inst);
-                    foreach ($sub_children as $key=>$value) {
+                    foreach ($sub_children as $key => $value) {
                       if ($tng_debug == 1) {
                         dpm('***key***');
                         dpm($key);
@@ -3296,7 +3315,7 @@ function tng_shadow_shadow_request_alter($entity) {
                           dpm($field_name);
                         }
                         $number_of_terms = count($entity_array[$field_name][$language]);
-                        for ($t=0; $t < $number_of_terms; $t++) {
+                        for ($t = 0; $t < $number_of_terms; $t++) {
                           $tids = array($entity_array[$field_name][$language][$t]['tid']);
                           $terms = taxonomy_term_load_multiple($tids);
                           foreach ($terms as $term) {
@@ -3319,14 +3338,13 @@ function tng_shadow_shadow_request_alter($entity) {
             dpm($namevalue);
           }
           $pre_manifest[$save_field_name] = $namevalue;
-          $manifest[]  = $namevalue;
-        }
-        elseif ($info['type'] == 'entityreference') {
+          $manifest[] = $namevalue;
+        } elseif ($info['type'] == 'entityreference') {
           // todo: think of a better way to process for entity references than to check the type for product
           if ($entity_type == 'product_detail') {
             //dpm('found an entity reference node to fetch and process');
             //dpm($entity_type);
-            $objects  = $wrapper->$info['field_name']->value();
+            $objects = $wrapper->$info['field_name']->value();
             //dpm('paragraphs');
             //dpm($objects);
             $num_entity_refs = count($wrapper->$info['field_name']->value());
@@ -3334,14 +3352,14 @@ function tng_shadow_shadow_request_alter($entity) {
             //dpm('found ' .  $num_entity_refs . ' entity references.');
             $csv = '';
             // here we load the triplets of info for title, image, and creation date
-            for ($num=0; $num < $num_entity_refs; $num++) {
+            for ($num = 0; $num < $num_entity_refs; $num++) {
               $targetid = $entity_array[$field_name][$language][$num]['target_id'];
               //dpm($targetid);
               $csv = '';
               $partnerinfo = tng_title_image_date_extractor($targetid);
               //dpm('post fetch');
               //dpm($partnerinfo);
-              foreach ($partnerinfo as $key ) {
+              foreach ($partnerinfo as $key) {
                 //dpm($key);
                 $csv = $csv . $key . ',';
               }
@@ -3357,10 +3375,10 @@ function tng_shadow_shadow_request_alter($entity) {
             $field_name = $info['field_name'];
             //dpm('field_name : ' . $field_name);
             //dpm('found ' .  $num_entity_refs . ' entity references.');
-            for ($num=0; $num < $num_entity_refs; $num++) {
+            for ($num = 0; $num < $num_entity_refs; $num++) {
               $targetid = $entity_array[$field_name][$language][$num]['target_id'];
               //dpm($targetid);
-              $learning_manifest  = tng_manifest_extractor($targetid, $language);
+              $learning_manifest = tng_manifest_extractor($targetid, $language);
               $pre_manifest[$field_name][$num] = $learning_manifest;
             }
             if ($tng_debug == 1) {
@@ -3368,8 +3386,7 @@ function tng_shadow_shadow_request_alter($entity) {
               dpm($pre_manifest);
             }
           }
-        }
-        elseif ($info['type'] == 'image') {
+        } elseif ($info['type'] == 'image') {
           //dpm('found an image');
           $field_name = $info['field_name'];
           //dpm('**field name**');
@@ -3408,12 +3425,11 @@ function tng_shadow_shadow_request_alter($entity) {
             $image_style_path = '';
           }
           $pre_manifest[$field_name] = $image_style_path[0];
-        }
-        elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
+        } elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
           $wrap_array = $wrapper->$children_nodes_to_process[$i]->value();
           if (is_array($wrap_array)) {
             $wrap = $wrap_array['value'];
-          } elseif(is_string($wrap_array)) {
+          } elseif (is_string($wrap_array)) {
             $wrap = $wrapper->$children_nodes_to_process[$i]->value();
           }
           // since we do field translation, we need a way of finding out if we are working on non-english languages
@@ -3427,11 +3443,10 @@ function tng_shadow_shadow_request_alter($entity) {
               dpm($instance);
               dpm('***label: ' . $my_translated_label);
             }
-            $translated_labels[$info['field_name']]= $my_translated_label;
+            $translated_labels[$info['field_name']] = $my_translated_label;
           }
           $pre_manifest[$children_nodes_to_process[$i]] = $wrap;
-        }
-        elseif ($info['type'] == 'file') {
+        } elseif ($info['type'] == 'file') {
           $field_name = $info['field_name'];
           $local_language = get_language_from_uri();
           if ($entity_array[$field_name][$local_language]) {
@@ -3443,15 +3458,14 @@ function tng_shadow_shadow_request_alter($entity) {
           } else {
             $pre_manifest[$field_name] = '';
           }
-        }
-        elseif ($info['type'] == 'taxonomy_term_reference') {
+        } elseif ($info['type'] == 'taxonomy_term_reference') {
           //dpm('found a taxonomy term reference');
           $field_name = $info['field_name'];
           $number_of_terms = count($entity_array[$field_name][$language]);
           //dpm('number of terms : '. $number_of_terms);
           //dpm($field_name);
           $collector = '';
-          for ($t=0; $t < $number_of_terms; $t++) {
+          for ($t = 0; $t < $number_of_terms; $t++) {
             $tids = array($entity_array[$field_name][$language][$t]['tid']);
             $terms = taxonomy_term_load_multiple($tids);
             foreach ($terms as $term) {
@@ -3461,14 +3475,12 @@ function tng_shadow_shadow_request_alter($entity) {
             }
           }
           $pre_manifest[$field_name] = $collector;
-        }
-        elseif (($info['type']== 'list_text')) {
+        } elseif (($info['type'] == 'list_text')) {
           //dpm('found some list_text ');
           $field_name = $info['field_name'];
           $pre_manifest[$field_name] = $wrapper->$children_nodes_to_process[$i]->value();;
           //dpm($pre_manifest);
-        }
-        elseif (($info['type']==  'list_boolean')) {
+        } elseif (($info['type'] == 'list_boolean')) {
           //dpm('found some list_boolean');
           $field_name = $info['field_name'];
           $bool = $wrapper->$children_nodes_to_process[$i]->value();
@@ -3479,13 +3491,11 @@ function tng_shadow_shadow_request_alter($entity) {
           }
           $pre_manifest[$field_name] = $bool;
           //dpm($pre_manifest);
-        }
-        elseif ($info['type'] == 'object_manifest') {
+        } elseif ($info['type'] == 'object_manifest') {
           //dpm('found me a manifest to play with');
           $field_name = $info['field_name'];
           $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
-        }
-        else {
+        } else {
           // todo: get through all our usual objects and do something useful/brilliant with an unknown type
           // this section needs work, since it must handle any types we don't know about.
           //dpm('not anything we have seen before, saving value on object : '. $info['type']);
@@ -3541,7 +3551,7 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       } elseif ($entity_type == 'drag_match') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_dragmatch($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'],$module_name,'0');
+        $new_nid = process_dragmatch($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;
@@ -3595,15 +3605,16 @@ function tng_shadow_shadow_request_alter($entity) {
         }
       }
     }
-  }  catch (exception $e) {
+  } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
     }
   }
 }
 
-function get_language_from_uri () {
-  $tng_debug =1;
+function get_language_from_uri()
+{
+  $tng_debug = 1;
   $uri_language = '';
   $language_url = $_SERVER['REQUEST_URI'];
   $lang_splitter = explode('/', $language_url);
@@ -3612,25 +3623,21 @@ function get_language_from_uri () {
     dpm('language url');
     dpm($language_url);
     dpm($lang_splitter);
-    dpm($lang_splitter[$ctr-1]);
+    dpm($lang_splitter[$ctr - 1]);
   }
-  if ($lang_splitter[$ctr-1]) {
-    $uri_language = $lang_splitter[$ctr-1];
+  if ($lang_splitter[$ctr - 1]) {
+    $uri_language = $lang_splitter[$ctr - 1];
   }
   return $uri_language;
 }
 
 function array_to_obj($array, &$obj)
 {
-  foreach ($array as $key => $value)
-  {
-    if (is_array($value))
-    {
+  foreach ($array as $key => $value) {
+    if (is_array($value)) {
       $obj->$key = new stdClass();
       array_to_obj($value, $obj->$key);
-    }
-    else
-    {
+    } else {
       $obj->$key = $value;
     }
   }
@@ -3639,11 +3646,12 @@ function array_to_obj($array, &$obj)
 
 function arrayToObject($array)
 {
-  $object= new stdClass();
-  return array_to_obj($array,$object);
+  $object = new stdClass();
+  return array_to_obj($array, $object);
 }
 
-function _wrapper_debug($w) {
+function _wrapper_debug($w)
+{
   $values = array();
   foreach ($w->getPropertyInfo() as $key => $val) {
     $values[$key] = $w->$key->value();
@@ -3774,7 +3782,7 @@ function _date_diff($one, $two)
   $result["i"] = $b["i"] - $a["i"];
   $result["s"] = $b["s"] - $a["s"];
   $result["invert"] = $invert ? 1 : 0;
-  $result["days"] = intval(abs(($one - $two)/86400));
+  $result["days"] = intval(abs(($one - $two) / 86400));
 
   if ($invert) {
     _date_normalize($a, $result);

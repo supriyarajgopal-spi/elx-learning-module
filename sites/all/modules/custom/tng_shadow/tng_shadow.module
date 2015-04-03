@@ -2642,7 +2642,7 @@ function process_content_object($object_values, $language, $nid)
     $hero_image_chunk = '';
     if ($object_values['field_hero_image']) {
       $hero_img = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '','', FALSE);
-      $hero_image_chunk = tng_npImage_maker('', $hero_img, $image_hero_center);
+      $hero_image_chunk = ',' . tng_npImage_maker('', $hero_img, $image_hero_center) ;
     }
     $background_chunk = rtrim($background_chunk, ', ');
     // title, then header, then text html chunks for a story
@@ -3497,23 +3497,7 @@ function tng_shadow_shadow_request_alter($entity)
           $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
         } else {
           // todo: get through all our usual objects and do something useful/brilliant with an unknown type
-          // this section needs work, since it must handle any types we don't know about.
-          //dpm('not anything we have seen before, saving value on object : '. $info['type']);
-          //dpm($info);
-          // if we have a title, it is language specific, if not use $language
-//        if ($children_nodes_to_process[$i] == 'title_field') {
-//          dpm($entity_array[$children_nodes_to_process[$i]][$entity_array['language']][0]['value']);
-//          //dpm($namevalue);
-//          $namevalue = $namevalue . $entity_array[$children_nodes_to_process[$i]][$entity_array['language']][0]['value'];
-//          dpm($namevalue);
-//          $manifest[]  = $namevalue;
-//        } else {
-//          //dpm($entity_array[$children_nodes_to_process[$i]][$language][0]['value']);
-//          //dpm($namevalue);
-//          $namevalue  = $namevalue . $entity_array[$children_nodes_to_process[$i]][$language][0]['value'];
-//          dpm($namevalue);
-//          $manifest[] = $namevalue;
-//        }
+
         }
       }
 

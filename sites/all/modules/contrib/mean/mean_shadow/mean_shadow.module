@@ -175,6 +175,11 @@ function mean_shadow_invoke_all_request_alter($entity) {
     }
   }
 
+  if (isset($entity->pass)) {
+    $plain_text_pass = aes_get_password($entity->uid, $decrypt = TRUE);
+    $entity->pass = $plain_text_pass;
+  }
+
   return $return;
 }
 

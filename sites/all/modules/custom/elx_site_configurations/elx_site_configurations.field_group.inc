@@ -553,7 +553,7 @@ function elx_site_configurations_field_group_info() {
         'classes' => 'group-questions field-group-fieldset',
         'description' => '<p>If this question is the first or last question in a quiz, check the appropriate box and enter the intro text or completion screen text.</p>',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'open',
     ),
   );
   $export['group_questions|node|question_and_answer|form'] = $field_group;

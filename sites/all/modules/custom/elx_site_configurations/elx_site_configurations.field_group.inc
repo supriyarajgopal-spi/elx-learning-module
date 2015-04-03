@@ -346,6 +346,7 @@ function elx_site_configurations_field_group_info() {
       'label' => 'Markets',
       'instance_settings' => array(
         'required_fields' => 1,
+        'id' => '',
         'classes' => 'group-market field-group-fieldset',
         'description' => '',
       ),
@@ -548,10 +549,11 @@ function elx_site_configurations_field_group_info() {
       'label' => 'First/last questions',
       'instance_settings' => array(
         'required_fields' => 1,
+        'id' => '',
         'classes' => 'group-questions field-group-fieldset',
         'description' => '<p>If this question is the first or last question in a quiz, check the appropriate box and enter the intro text or completion screen text.</p>',
       ),
-      'formatter' => 'collapsible',
+      'formatter' => 'open',
     ),
   );
   $export['group_questions|node|question_and_answer|form'] = $field_group;

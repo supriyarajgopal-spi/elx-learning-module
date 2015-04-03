@@ -5824,13 +5824,13 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tool_pdf',
-    'label' => 'Tool PDF',
+    'label' => 'Tool Media',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
-      'entity_translation_sync' => FALSE,
+      'entity_translation_sync' => 0,
       'file_directory' => '',
-      'file_extensions' => 'pdf',
+      'file_extensions' => 'pdf gif jpg png svg mp4 m4v mov flv f4v ogg ogv wmv vp6 vp5 mpg avi mpeg webm',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -5845,8 +5845,8 @@ function elx_site_configurations_field_default_field_instances() {
         'allowed_types' => array(
           'audio' => 0,
           'document' => 'document',
-          'image' => 0,
-          'video' => 0,
+          'image' => 'image',
+          'video' => 'video',
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -8272,7 +8272,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('This is the title used for administrative purposed. It should be unique to allow for easy identification.');
   t('Thumbnail link');
   t('Title');
-  t('Tool PDF');
+  t('Tool Media');
   t('Tool by role');
   t('Tool description');
   t('Tool thumbnail');

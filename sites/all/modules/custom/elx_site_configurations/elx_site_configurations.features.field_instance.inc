@@ -972,7 +972,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'content_object',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter the required percentage amount in order to pass.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -8244,6 +8244,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Drag select question');
   t('Drag select text');
   t('Enter correct or incorrect answer text, or upload answer image.');
+  t('Enter the required percentage amount in order to pass.');
   t('Featured');
   t('Final exam');
   t('First question in quiz');

@@ -337,7 +337,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Markets',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_markets',
     ),

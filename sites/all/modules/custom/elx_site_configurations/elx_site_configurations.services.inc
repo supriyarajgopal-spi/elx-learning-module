@@ -108,7 +108,9 @@ function elx_site_configurations_default_services_endpoint() {
   $endpoint->name = 'rest';
   $endpoint->server = 'rest_server';
   $endpoint->path = 'rest';
-  $endpoint->authentication = array();
+  $endpoint->authentication = array(
+    'services' => 'services',
+  );
   $endpoint->server_settings = array(
     'formatters' => array(
       'json' => TRUE,

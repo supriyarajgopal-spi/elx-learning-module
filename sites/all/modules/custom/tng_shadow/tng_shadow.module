@@ -807,6 +807,35 @@ function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $content
   }
 }
 
+function tng_npQuiz_maker($id = NULL, $class = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL)
+{
+  $tng_debug = 1;
+  try {
+    $quiz = '';
+    $quiz = $quiz . '{' . '"type"' . ':' . '"npQuiz"';
+    $quiz = $quiz . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    if ($class) {
+      $quiz = $quiz . ',' . '"class"' . ':' . '"' . $class . '"';
+    }
+    if ($assessed) {
+      $quiz = $quiz . ',' . '"assessed"' . ':' . '"' . $assessed . '"';
+    }
+    if ($questions) {
+      $quiz = $quiz . ',' . '"questions"' . ':' . '"' . $questions . '"';
+    }
+    if ($questions) {
+      $quiz = $quiz . ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
+    }
+    $quiz = $quiz . '},';
+    $quiz = $quiz . '"components"' . ': [';
+    return $quiz;
+  } catch (exception $e) {
+    if ($tng_debug == 1) {
+      dpm($e);
+    }
+  }
+}
+
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
   $tng_debug = 1;
@@ -1491,16 +1520,13 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
  *
  * If passed a '1' for standalone will create a complete manifest for reNutriv, otherwise just the npHotSpot
  */
-function process_story($story_values, $language, $nid, $module, $standalone = NULL)
+function process_story($story_values, $language, $nid, $standalone = NULL)
 {
   $tng_debug = 1;
 
   $bg_newplayer_background = 'newplayer-background';
-  $outside_padding = 'outside-padding';
-  $renutriv_logo_image = 'renutriv-logo-image';
-  $h3_headline = 'h3 headline';
-  $close_html = '] },';
-  $close_hot_spot = '] } ] } ] } ]';
+  $btn_favorite = 'col-sm-4 btn btn-favorite btn-open-favorites center-padding';
+  $close_story = '] } ] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find a reasonable number of fields, layout the page
@@ -1510,74 +1536,48 @@ function process_story($story_values, $language, $nid, $module, $standalone = NU
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     $title = $story_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    $feature_chunk = tng_npFeature_maker($module, '', '[]', '0.0.1');
+    $feature_chunk = tng_npFeature_maker('storyDefault', '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
     $manifest_title = 'Story-Manifest-' . $title;
-    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for hot spot page.');
-    $hotspot_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
-    $background_chunk = tng_npHTML_basic_maker('background-image', '', '', '', '', '', '', FALSE);
+    $favorite_link = '/api/favorites/story/' . $manifest_title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for story page.');
+    $story_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
+    $background_chunk = tng_npHTML_basic_maker('', 'background-brand-primary-light outside-padding', '', '', '', '', '', TRUE);
     $background_chunk = rtrim($background_chunk, ', ');
-    $subtitle = $story_values['field_subtitle'];
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $instructions = $story_values['field_hot_spot_instructions'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructions, '', FALSE);
     $whole_story = '';
     if ($standalone == 1) {
-      $whole_story = $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+      $whole_story = $feature_chunk . $content_chunk . $story_background . $background_chunk  ;
     }
-    if ($story_values['field_hot_spot_collection']) {
-      $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
-      $whole_story = $whole_story . $hot_top;
+    // story will have an image, some headline or title, then story text
+    $main_image = $story_values['field_story_image'];
+    $main_image = tng_convert_drupal_to_mean_filename($main_image);
+    $image_chunk = tng_npImage_maker('', $main_image, 'hero img-responsive center-block', '') . ',';
+    $header_text = $story_values['field_headline'];
+    $header_chunk = tng_npHTML_basic_maker('', 'h1 header', '', '', '', $header_text, '', TRUE);
+    $story_copy = $story_values['field_story_copy'];
+    $story_copy = preg_replace('/\s+/S', " ", $story_copy);
+    $story_chunk = tng_npHTML_basic_maker('','body-copy center-padding','','','', $story_copy, '', FALSE);
+    $story_chunk = rtrim($story_chunk, ', ');
+    // bad string characters go away, you are not welcome
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
+    $whole_story = $whole_story . $image_chunk . $header_chunk . $story_chunk . $like_button;
 
-      foreach ($story_values as $key => $value) {
-        if ($tng_debug == 1) {
-          dpm('**** data ****' . $key . ' : ' . $value);
-        }
-        if ($key == 'field_hot_spot_collection') {
-          // remove brackets and curly braces [] {}
-          $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
-          $sploder = explode('",', $trim_str);
-          if ($tng_debug == 1) {
-            dpm($sploder);
-          }
-          $count_of_elements = count($sploder);
-          // for each triplet, grab the data and package it up as text, x and y coordinate
-          for ($i = 0; $i < $count_of_elements; $i += 3) {
-            $t = tng_value_from_pair($sploder[$i]);
-            $x = tng_value_from_pair($sploder[$i + 1]);
-            $y = tng_value_from_pair($sploder[$i + 2]);
-            $xy_combo = $x . ' ' . $y;
-            $hotspot_detail = tng_hotspot_button_maker($xy_combo, $t, '');
-            $whole_story = $whole_story . $hotspot_detail;
-          }
-          $whole_story = rtrim($whole_story, ', ');
-        }
-      }
-      $main_image = tng_convert_drupal_to_mean_filename($story_values['field_hot_spot_image'], '', '');
-      $end_hot_spot = tng_npHotspot_closer('', $main_image);
-      if ($standalone == 1) {
-        $whole_story = $whole_story . $end_hot_spot . $close_hot_spot;
-      } else {
-        $whole_story = $whole_story . $end_hot_spot;
-      }
-      if ($tng_debug == 1) {
-        dpm($whole_story);
-      }
+    if ($standalone == 1) {
+      $whole_story = $whole_story . $close_story;
+    } else {
+      $whole_story = $whole_story . '] }';
     }
-
-    // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+    // when we edit a new node for a story (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_story, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    $new_nid = tng_create_manifest_node($whole_story, 'object_manifest', $manifest_title, '', '', $language, $nid, '', '', '', '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
     if ($tng_debug == 1) {
-      dpm('Received more or less items than we expected for our hotspot, so we are not processing it.');
+      dpm('Received more or less items than we expected for our story, so we are not processing it.');
     }
   }
 }
@@ -1616,8 +1616,6 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
   $incorrect_feedback = $dragmatch['field_custom_incorrect_feedback'];
   $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
   $placeholder = '<p>this is the placeholder content</p>';
-  $boxclass = 'box';
-  $boximage = '/assets/images/hotspot.png';
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragmatch['title_field'];
@@ -1665,14 +1663,11 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
             }
             $count_of_elements = count($sploder);
             // for each pair of matching content, grab the data and package it up as content, matching content
-            $boxnumber = 0;
             for ($i = 0; $i < $count_of_elements; $i += 2) {
-              //$box = 'box' . $boxnumber;
-              //$boxnumber +=1;
               $left_text_or_image = tng_value_from_pair($sploder[$i]);
               $right_text_or_image = tng_value_from_pair($sploder[$i + 1]);
-              $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, '', $right_text_or_image, '');
-              $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
+              $story_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, '', $right_text_or_image, '');
+              $whole_dragdrop = $whole_dragdrop . $story_detail;
             }
             $whole_dragdrop = rtrim($whole_dragdrop, ', ');
           }
@@ -2563,15 +2558,19 @@ function process_content_object($object_values, $language, $nid)
   $bg_newplayer_background = 'newplayer-background';
   $outside_padding = 'outside-padding';
   $renutriv_logo_image = 'renutriv-logo-image';
-  $renutriv_background_image = 'background-image';
+  $background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
   $close_contentobject = '] } ] } ] } ]';
   $story_default = 'storyDefault';
-  $story_background_class = 'background-brand-primary-light outside-padding';
   $image_hero_center = 'hero img-responsive center-block';
-  $title_class_center = 'h5 col-sm-12 sans-head center-block center-padding';
-  $h1_header = 'h1 header';
+  // need to find out how many learning objects there are
+  $number_of_questions = 0;
+  foreach ($object_values as $key => $value) {
+    if ($key == 'field_learning_objects') {
+      $number_of_questions = count($value);
+    }
+  }
 
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     // here we process the fields we find for our hot spot passed in the array of $object_values
@@ -2585,16 +2584,22 @@ function process_content_object($object_values, $language, $nid)
       dpm('title : ' . $title);
     }
     $learning_category = rtrim($object_values['field_learning_category'], ',');
-    //when one doesn't select the learning category, it comes as ''
-    if ($learning_category == 'Re-Nutriv') {
-      $learning_category_id = 'reNutriv';
-    } else if ($learning_category == 'ANR') {
+    //when one doesn't select the learning category, it comes as '', default to reNutriv
+    $learning_category_id = 'reNutriv';
+    if ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';
     } else if ($learning_category == 'GMTC') {
       $learning_category_id = 'GMTC';
-    } else {
-      if ($tng_debug == 1) {
-        dpm('We did not specify a category!');
+    }
+
+    $story_type = $object_values['field_story_type'];
+    if ($story_type == 'Pulsed Content') {
+      $pulsed_content_type = $object_values['field_pulsed_content'];
+      // Beth's Blog has a signature, others not
+      if ($pulsed_content_type == 'Beth\'s Blog') {
+        $pulsed_content_type = 'Beths-Blog';
+      } else {
+        $pulsed_content_type = str_replace(' ', '-', $pulsed_content_type);
       }
     }
 
@@ -2603,8 +2608,14 @@ function process_content_object($object_values, $language, $nid)
     $making_story = false;
     if ($content_object_type == 'Learning Content') {
       $content_object_prefix = 'Learning-Content-';
+      $field_learning_template = $object_values['field_learning_template'];
+      if ($field_learning_template == 'popquiz') {
+        $percentage_required_to_pass = $object_values['field_percentage_requirement'];
+        $field_final_exam = $object_values['field_final_exam'];
+        $content_object_prefix = 'Learning-Content-Pop-Quiz-';
+      }
     } else if ($content_object_type == 'Story') {
-      $content_object_prefix = 'Story-';
+      $content_object_prefix = 'Story-' . $pulsed_content_type;
       $making_story = true;
     }
 
@@ -2631,36 +2642,33 @@ function process_content_object($object_values, $language, $nid)
     $newplayer_api_link = '/api/contents/name/' . $manifest_title;
     $thumbnail_teaser = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], 'teaser', TRUE);
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
-
-    if ($making_story) {
-      $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
-      $background_chunk = tng_npHTML_basic_maker('', $story_background_class, '', '', '', '', '', FALSE);
-    } else {
-      $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
-      $background_chunk = tng_npHTML_basic_maker($renutriv_background_image, '', '', '', '', '', '', FALSE);
+    $quiz_chunk = '';
+    if ($field_learning_template == 'popquiz') {
+      $quiz_chunk = ',' . tng_npQuiz_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
+      $final_exam = true;
     }
+    $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
+    $background_chunk = tng_npHTML_basic_maker($background_image, '', '', '', '', '', '', FALSE);
+
     $hero_image_chunk = '';
-    if ($object_values['field_hero_image']) {
-      $hero_img = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '','', FALSE);
-      $hero_image_chunk = ',' . tng_npImage_maker('', $hero_img, $image_hero_center) ;
-    }
+//    if ($object_values['field_hero_image']) {
+//      $hero_img = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '','', FALSE);
+//      $hero_image_chunk = ',' . tng_npImage_maker('', $hero_img, $image_hero_center) ;
+//    }
     $background_chunk = rtrim($background_chunk, ', ');
-    // title, then header, then text html chunks for a story
-    if ($making_story) {
-      $pulsed_title = str_replace(' ,','', $object_values['field_pulsed_content']);
-      $title_chunk = tng_npHTML_basic_maker('', $title_class_center, '', '', '', $pulsed_title, '', FALSE);
-      $header_chunk = tng_npHTML_basic_maker('', $h1_header, '', '', '', $headline, '', TRUE);
-    }
-    //$index_field = ;
-    //$obj = json_decode($object_values['$field_learning_objects[0]']);
-    $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
-    $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
-
+    // headline is a required field for a CO, but not a story. same for the instructions text.
     $introductory_text = $object_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
-    //$instructions_chunk = rtrim($instructions_chunk, ', ');
-    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    if ($making_story) {
+      $headline_chunk = '';
+      $instructions_chunk = '';
+      $subtitle_chunk = tng_npHTML_basic_maker('', 'background-brand-primary-light outside-padding', '', '', '', '', '', TRUE);
+    } else {
+      $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
+      $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
+      $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
+      $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
+    }
+    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $quiz_chunk . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
     foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {
@@ -2684,6 +2692,9 @@ function process_content_object($object_values, $language, $nid)
     // after looping the HTML or Image group, remove the final ','
     $whole_object = rtrim($whole_object, ',');
     $whole_object = $whole_object . $close_contentobject;
+    if ($final_exam) {
+      $whole_object = $whole_object . '} ]';
+    }
     //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
     $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $intro_text, '', $content_keywords);
     // return the new nid to set it on the parent node
@@ -2947,7 +2958,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
         $justpath = str_replace('product_detail', 'tile_thumbnail', $justpath);
       }
     }
-    //bizarre image string case for badge icons: todo: ask Ryan why?
+    //bizarre image string case for badge icons: strange path due to svg image -- can't style them
     $needle = "/default/files/styles//public/";
     $match = strpos($justpath, $needle);
     if ($match > 0) {
@@ -2956,10 +2967,10 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
       $submatch = substr($justpath, $match);
       $remote_picture_name = 'assets/' . $submatch;
     } else {
-      $needle = "/default/files/";
+      $needle = "/sites/default/files/";
       $match = $match + strlen($needle);
       $submatch = substr($justpath, $match);
-      $remote_picture_name = 'assets/styles/' . $submatch;
+      $remote_picture_name = 'assets/' . $submatch;
     }
 
     if ($tng_debug == 1) {
@@ -3458,6 +3469,13 @@ function tng_shadow_shadow_request_alter($entity)
           } else {
             $pre_manifest[$field_name] = '';
           }
+        } elseif ($info['type'] == 'number_integer') {
+          $field_name = $info['field_name'];
+          if ($entity_array[$field_name][$language]) {
+            $pre_manifest[$field_name] = $entity_array[$field_name][$language][0]['value'];
+          } else {
+            $pre_manifest[$field_name] = '';
+          }
         } elseif ($info['type'] == 'taxonomy_term_reference') {
           //dpm('found a taxonomy term reference');
           $field_name = $info['field_name'];
@@ -3478,7 +3496,7 @@ function tng_shadow_shadow_request_alter($entity)
         } elseif (($info['type'] == 'list_text')) {
           //dpm('found some list_text ');
           $field_name = $info['field_name'];
-          $pre_manifest[$field_name] = $wrapper->$children_nodes_to_process[$i]->value();;
+          $pre_manifest[$field_name] = $wrapper->$children_nodes_to_process[$i]->value();
           //dpm($pre_manifest);
         } elseif (($info['type'] == 'list_boolean')) {
           //dpm('found some list_boolean');
@@ -3564,7 +3582,7 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'flash_cards') {
-        $new_nid = process_flashcards($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '1');
+        $new_nid = process_flashcards($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
         if (isset($new_nid)) {
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;
           node_save($entity);
@@ -3583,6 +3601,12 @@ function tng_shadow_shadow_request_alter($entity)
         }
       } elseif ($entity_type == 'badge') {
         $new_nid = process_badge($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id']);
+        if (isset($new_nid)) {
+          $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
+          node_save($save_entity);
+        }
+      } elseif ($entity_type == 'story') {
+        $new_nid = process_story($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'],'0');
         if (isset($new_nid)) {
           $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
           node_save($save_entity);

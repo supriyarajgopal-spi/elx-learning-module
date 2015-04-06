@@ -1810,6 +1810,7 @@ function elx_site_configurations_field_default_field_bases() {
           'object_manifest' => 'object_manifest',
           'question_and_answer' => 'question_and_answer',
           'reveal' => 'reveal',
+          'story' => 'story',
         ),
       ),
       'target_type' => 'node',

@@ -30,5 +30,5 @@ function elx_utility_change_text_field_max_length($field_name, $new_length) {
  */
 function elx_utility_update_7002() {
   /* Uncomment line below and change field to field machine name to update char length */
-  elx_utility_change_text_field_max_length('field_answer_feedback', 400);
+  // elx_utility_change_text_field_max_length('field_answer_feedback', 400);
 }

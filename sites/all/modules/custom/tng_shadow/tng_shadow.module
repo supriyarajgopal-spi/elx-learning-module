@@ -1562,8 +1562,10 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $label_chunk = tng_npHTML_basic_maker('','h5 col-sm-12 sans-head center-block center-padding','','','', $story_label, '', FALSE);
     $story_header = $story_values['field_story_headline'];
     $header_chunk = tng_npHTML_basic_maker('','h1 header','','','', $story_header, '', FALSE);
+    $signature_chunk = tng_npHTML_basic_maker('','beths-signature center-padding', '', '', '', '', '', FALSE);
+    //$signature_chunk = rtrim($signature_chunk, ', ');
     $like_button =  tng_npButton_maker($favorite_link, '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
-    $whole_story = $whole_story . $image_chunk . $label_chunk. $header_chunk . $story_chunk  .$like_button;
+    $whole_story = $whole_story . $image_chunk . $label_chunk. $header_chunk . $story_chunk . $signature_chunk .$like_button;
 
     if ($standalone == 1) {
       $whole_story = $whole_story . $close_story;

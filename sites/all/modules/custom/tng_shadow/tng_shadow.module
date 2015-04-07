@@ -2491,10 +2491,13 @@ function process_question_and_answer($object_values, $language, $nid)
           } elseif (strpos($sploder[$i], 'field_answer_feedback') !== FALSE) {
             $answer_feedback = tng_value_from_pair($sploder[$i]);
             $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
+            $answer_feedback = str_replace('"', '\"', $answer_feedback);
             $answer_text = tng_value_from_pair($sploder[$i + 1]);
             $answer_text = preg_replace('/\s+/S', " ", $answer_text);
+            $answer_text = str_replace('"', '\"', $answer_text);
             $answer_correctness = tng_value_from_pair($sploder[$i + 2]);
             $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
+            $answer_correctness = str_replace('"', '\"', $answer_correctness);
             if ($answer_correctness == 1) {
               $ap = tng_npAnswer_maker($answer_text, 'true', $answer_feedback, '');
               $correct_answer_text = $answer_feedback;

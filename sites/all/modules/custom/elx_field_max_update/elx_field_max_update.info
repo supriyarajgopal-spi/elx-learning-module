@@ -1,0 +1,4 @@
+name = ELX Field Length Update
+description = Updates max character length on existing text fields. Enable, run updates, then disable.
+core = 7.x
+package = ELX

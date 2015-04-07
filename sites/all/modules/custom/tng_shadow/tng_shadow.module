@@ -3604,7 +3604,7 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($save_entity);
         }
       } elseif ($entity_type == 'story') {
-        $new_nid = process_story($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'],'1');
+        $new_nid = process_story($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'],'0');
         if (isset($new_nid)) {
           $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
           node_save($save_entity);

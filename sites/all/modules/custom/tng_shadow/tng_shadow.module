@@ -300,7 +300,7 @@ function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = N
       if (!isset($buttontitle)) {
         $buttontitle = 'Next';
       }
-      $page = ',{';
+      $page = '{';
       $page = $page . '"type"' . ':' . '"npButton"';
       $page = $page . ',' . '"data"' . ': {' . '"link"' . ': ' . '"' . $link . '"';
       $page = $page . ',' . '"type"' . ': ' . '"' . $type . '"';
@@ -1562,17 +1562,12 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $label_chunk = tng_npHTML_basic_maker('','h5 col-sm-12 sans-head center-block center-padding','','','', $story_label, '', FALSE);
     $story_header = $story_values['field_story_headline'];
     $header_chunk = tng_npHTML_basic_maker('','h1 header','','','', $story_header, '', FALSE);
-    $signature_chunk = tng_npHTML_basic_maker('','beths-signature center-padding', '', '', '', '', '', FALSE);
-    $signature_chunk = rtrim($signature_chunk, ', ');
     $like_button =  tng_npButton_maker($favorite_link, '', $btn_favorite, '<span class=\'glyphicon glyphicon-heart-empty\' aria-hidden=\'true\'></span>  Favorite this');
-    $whole_story = $whole_story . $image_chunk . $label_chunk. $header_chunk . $story_chunk . $signature_chunk .$like_button;
+    $whole_story = $whole_story . $image_chunk . $label_chunk. $header_chunk . $story_chunk  .$like_button;
 
     if ($standalone == 1) {
       $whole_story = $whole_story . $close_story;
     }
-//    else {
-//      $whole_story = $whole_story . '] }';
-//    }
     // when we edit a new node for a story (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
     $new_nid = tng_create_manifest_node($whole_story, 'object_manifest', $manifest_title, '', '', $language, $nid, '', '', '', '', '', '');
@@ -2566,7 +2561,7 @@ function process_content_object($object_values, $language, $nid)
   $close_html = '] },';
   $close_contentobject = '] } ] } ] } ]';
   $story_default = 'storyDefault';
-  $image_hero_center = 'hero img-responsive center-block';
+  $story_bethsblog = 'storyBethsBlog';
   // need to find out how many learning objects there are
   $number_of_questions = 0;
   foreach ($object_values as $key => $value) {
@@ -2596,11 +2591,15 @@ function process_content_object($object_values, $language, $nid)
     }
 
     $story_type = $object_values['field_story_type'];
+    $story_type = str_replace(',', '', $story_type);
     if ($story_type == 'Pulsed Content') {
       $pulsed_content_type = $object_values['field_pulsed_content'];
+      $pulsed_content_type = str_replace(',', '', $pulsed_content_type);
+      $pulsed_content_type = str_replace('’', '', $pulsed_content_type);
       // Beth's Blog has a signature, others not
-      if ($pulsed_content_type == 'Beth\'s Blog') {
-        $pulsed_content_type = 'Beths-Blog';
+      if ($pulsed_content_type == "Beths Blog") {
+        $pulsed_content_type = 'Beths-Blog-';
+        $beth_blog = true;
       } else {
         $pulsed_content_type = str_replace(' ', '-', $pulsed_content_type);
       }
@@ -2633,7 +2632,11 @@ function process_content_object($object_values, $language, $nid)
     $intro_text = strip_tags($object_values['field_intro']);
     $headline = $object_values['field_headline'];
     if ($making_story) {
-      $feature_chunk = tng_npFeature_maker($story_default, '', '[]', '0.0.1');
+      if ($beth_blog) {
+        $feature_chunk = tng_npFeature_maker($story_bethsblog, '', '[]', '0.0.1');
+      } else {
+        $feature_chunk = tng_npFeature_maker($story_default, '', '[]', '0.0.1');
+      }
     } else {
       $feature_chunk = tng_npFeature_maker($learning_category_id, '', '[]', '0.0.1');
     }
@@ -2654,10 +2657,6 @@ function process_content_object($object_values, $language, $nid)
     $background_chunk = tng_npHTML_basic_maker($background_image, '', '', '', '', '', '', FALSE);
 
     $hero_image_chunk = '';
-//    if ($object_values['field_hero_image']) {
-//      $hero_img = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], '','', FALSE);
-//      $hero_image_chunk = ',' . tng_npImage_maker('', $hero_img, $image_hero_center) ;
-//    }
     $background_chunk = rtrim($background_chunk, ', ');
     // headline is a required field for a CO, but not a story. same for the instructions text.
     $introductory_text = $object_values['field_intro'];
@@ -2671,7 +2670,7 @@ function process_content_object($object_values, $language, $nid)
       $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
       $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     }
-    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $quiz_chunk . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $quiz_chunk . $hero_image_chunk . $close_html . $subtitle_chunk  . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
     foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {
@@ -2707,10 +2706,7 @@ function process_content_object($object_values, $language, $nid)
       dpm('Received more or less items than we expected for our content object, so we are not processing it.');
     }
   }
-
-
 }
-
 
 /**
  * @param $node_data - this is the full manifest to save on a separate node
@@ -2722,7 +2718,6 @@ function process_content_object($object_values, $language, $nid)
  */
 function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL)
 {
-
   global $user;
   $tng_debug = 0;
 
@@ -2996,7 +2991,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  * Either way, we need this to go away, so we unset the manifest field manually.
  */
 function tng_shadow_node_presave($entity) {
-  $tng_debug =1;
+  $tng_debug = 0;
   if ($tng_debug == 1) {
     dpm("inside node presave");
     dpm($entity);

@@ -2522,15 +2522,7 @@ function process_question_and_answer($object_values, $language, $nid)
         $image_chunk = tng_npImage_maker('', $truth, '', '');
         $whole_qa = $whole_qa . $image_chunk;
       }
-//      else {
-//        $fix_value = str_replace('"','\"',$value);
-//        $html_chunk = tng_npHTML_basic_maker('', 'field-label', '', '', '',  $fix_value, '', FALSE);
-//        $whole_qa = $whole_qa . $html_chunk ;
-//      }
     }
-    // after looping the HTML or Image group, remove the final ','
-    $whole_qa = rtrim($whole_qa, ', ');
-    //$finish_chunk = tng_npPageCleanup();
     $finish_chunk = $bt . ']' . '}';
     $whole_qa = $whole_qa . $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title

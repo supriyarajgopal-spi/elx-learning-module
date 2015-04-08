@@ -157,6 +157,38 @@ function elx_site_configurations_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_first_last_questions|node|trivia|form';
+  $field_group->group_name = 'group_first_last_questions';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'trivia';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'First/last questions',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_first_question_in_quiz',
+      1 => 'field_intro',
+      2 => 'field_last_question_in_quiz',
+      3 => 'field_completion_text',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'First/last questions',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-first-last-questions field-group-fieldset',
+        'description' => '<p>If this question is the first or last question in a quiz, check the appropriate box and enter the intro text or completion screen text.</p>',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_first_last_questions|node|trivia|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_flash|paragraphs_item|flash_card_collection|form';
   $field_group->group_name = 'group_flash';
   $field_group->entity_type = 'paragraphs_item';

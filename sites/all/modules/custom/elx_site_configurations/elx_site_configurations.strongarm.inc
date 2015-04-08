@@ -139,6 +139,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_trivia';
+  $strongarm->value = 0;
+  $export['comment_anonymous_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_badge';
   $strongarm->value = '0';
   $export['comment_badge'] = $strongarm;
@@ -279,6 +286,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_trivia';
+  $strongarm->value = 1;
+  $export['comment_default_mode_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_badge';
   $strongarm->value = '50';
   $export['comment_default_per_page_badge'] = $strongarm;
@@ -394,6 +408,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_per_page_tools';
   $strongarm->value = '50';
   $export['comment_default_per_page_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_trivia';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -552,6 +573,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_trivia';
+  $strongarm->value = 1;
+  $export['comment_form_location_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_hot_spots';
   $strongarm->value = '1';
   $export['comment_hot_spots'] = $strongarm;
@@ -695,6 +723,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_preview_tools';
   $strongarm->value = '1';
   $export['comment_preview_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_trivia';
+  $strongarm->value = '1';
+  $export['comment_preview_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -846,9 +881,23 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_trivia';
+  $strongarm->value = 1;
+  $export['comment_subject_field_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_tools';
   $strongarm->value = '2';
   $export['comment_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_trivia';
+  $strongarm->value = '1';
+  $export['comment_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1543,6 +1592,23 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__trivia';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_badge';
   $strongarm->value = 1;
   $export['i18n_node_extended_badge'] = $strongarm;
@@ -1843,6 +1909,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'language_content_type_tools';
   $strongarm->value = '4';
   $export['language_content_type_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_trivia';
+  $strongarm->value = '4';
+  $export['language_content_type_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2159,6 +2232,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_trivia';
+  $strongarm->value = array();
+  $export['menu_options_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_badge';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_badge'] = $strongarm;
@@ -2274,6 +2354,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'menu_parent_tools';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_trivia';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2433,6 +2520,15 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_trivia';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_badge';
   $strongarm->value = '1';
   $export['node_preview_badge'] = $strongarm;
@@ -2552,6 +2648,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_trivia';
+  $strongarm->value = '0';
+  $export['node_preview_trivia'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_badge';
   $strongarm->value = 0;
   $export['node_submitted_badge'] = $strongarm;
@@ -2667,6 +2770,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_submitted_tools';
   $strongarm->value = 1;
   $export['node_submitted_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_trivia';
+  $strongarm->value = 0;
+  $export['node_submitted_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

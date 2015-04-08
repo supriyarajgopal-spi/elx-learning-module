@@ -720,6 +720,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_difficulty',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -1560,6 +1563,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_is_required',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -2512,6 +2518,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_paragraph_multiple_choice',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -3000,6 +3009,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_question_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -3643,6 +3655,9 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_subtitle',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

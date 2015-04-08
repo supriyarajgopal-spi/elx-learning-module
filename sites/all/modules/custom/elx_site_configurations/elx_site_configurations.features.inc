@@ -163,6 +163,14 @@ function elx_site_configurations_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'trivia' => array(
+      'name' => t('Trivia'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Subtitle'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;

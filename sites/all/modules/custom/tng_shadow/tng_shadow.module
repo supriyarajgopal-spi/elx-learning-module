@@ -863,6 +863,36 @@ function tng_npQuiz_maker($id = NULL, $class = NULL, $assessed = NULL, $question
   }
 }
 
+
+function tng_npTrivia_maker($id = NULL, $class = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL)
+{
+  $tng_debug = 0;
+  try {
+    $quiz = '';
+    $quiz = $quiz . '{' . '"type"' . ':' . '"npTrivia"';
+    $quiz = $quiz . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    if ($class) {
+      $quiz = $quiz . ',' . '"class"' . ':' . '"' . $class . '"';
+    }
+    if ($assessed) {
+      $quiz = $quiz . ',' . '"assessed"' . ':' . '"' . $assessed . '"';
+    }
+    if ($questions) {
+      $quiz = $quiz . ',' . '"questions"' . ':' . '"' . $questions . '"';
+    }
+    if ($questions) {
+      $quiz = $quiz . ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
+    }
+    $quiz = $quiz . '},';
+    $quiz = $quiz . '"components"' . ': [';
+    return $quiz;
+  } catch (exception $e) {
+    if ($tng_debug == 1) {
+      dpm($e);
+    }
+  }
+}
+
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
   $tng_debug = 0;
@@ -2718,6 +2748,118 @@ function process_question_and_answer($object_values, $language, $nid)
   }
 }
 
+/**
+ * @param $object_values - is an array which holds all name/value pairs, for example 'field_difficulty : 1'
+ * @param $language - the language specified by the node
+ * @param $nid - id of the node we processed to get the array info in $object_values
+ * @return mixed - return the node id, $nid, of the newly created manifest.
+ */
+function process_trivia($object_values, $language, $nid)
+{
+  $tng_debug = 0;
+  if ($tng_debug == 1) {
+    dpm('**language**' . $language);
+    dpm('process trivia');
+    dpm($object_values);
+  }
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find between 1 and 10 fields, layout the page
+  $min_product_fields = 1;
+  $max_product_fields = 20;
+  $num_fields = count($object_values);
+  $difficulty = $object_values['field_difficulty'];
+  $required = $object_values['field_is_required'];
+
+  if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
+    // here we process the fields we find for our trivia and answer passed in the array of $object_values
+    //  start by telling the processor how many fields we found
+    $title = $object_values['title_field'];
+    $title = str_replace(" ", "-", $title);
+    $subtitle = $object_values['field_subtitle'];
+    if ($tng_debug == 1) {
+      dpm('Trivia had ' . $num_fields . ' fields.');
+      dpm('title : ' . $title);
+    }
+    $page_chunk = tng_npPageStart_maker($title, '', $title, 'true', 'true');
+
+    $whole_qa = $page_chunk;
+    $ba = '';
+    $correct_answer_text = '';
+    $incorrect_answer_text = '';
+    //$whole_qa =  $whole_qa . $page_chunk;
+    // paragraphs are
+    foreach ($object_values as $key => $value) {
+      if ($tng_debug == 1) {
+        dpm('**** data ****' . $key . ' : ' . $value);
+      }
+      if ($key == 'field_paragraph_multiple_choice') {
+        // remove brackets and curly braces [] {}
+        $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
+        $sploder = explode('",', $trim_str);
+        if ($tng_debug == 1) {
+          dpm($sploder);
+        }
+        $count_of_elements = count($sploder);
+        // for each pair, grab the data and package it for npQuestion, npAnswer
+        for ($i = 0; $i < $count_of_elements; $i++) {
+          if (strpos($sploder[$i], 'field_question_text') !== FALSE) {
+            $q = tng_value_from_pair($sploder[$i]);
+            $question_text = $q;
+          } elseif (strpos($sploder[$i], 'field_answer_feedback') !== FALSE) {
+            $answer_feedback = tng_value_from_pair($sploder[$i]);
+            $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
+            $answer_feedback = str_replace('"', '\"', $answer_feedback);
+            $answer_text = tng_value_from_pair($sploder[$i + 1]);
+            $answer_text = preg_replace('/\s+/S', " ", $answer_text);
+            $answer_text = str_replace('"', '\"', $answer_text);
+            $answer_correctness = tng_value_from_pair($sploder[$i + 2]);
+            $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
+            $answer_correctness = str_replace('"', '\"', $answer_correctness);
+            if ($answer_correctness == 1) {
+              $ap = tng_npAnswer_maker($answer_text, 'true', $answer_feedback, '');
+              $correct_answer_text = $answer_feedback;
+            } else {
+              $ap = tng_npAnswer_maker($answer_text, 'false', '', $answer_feedback);
+              $incorrect_answer_text = $answer_feedback;
+            }
+            $ba = $ba . $ap;
+          }
+        }
+        $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
+        // until Kory fixes the npAnswer to override the correct and incorrect text in each question we build the question after the answers
+        $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
+        //pre pend since we built the question after the answers
+        //$ba =  $np . $ba . $bt;
+        $ba = $np . $ba;
+
+        // remove the final comma from any number of question/multiple answers bits
+        $ba = rtrim($ba, ',');
+        //and complete the component started in the npComponent
+        $ba = '{' . $ba . ']},';
+        $whole_qa = $whole_qa . $ba;
+      } elseif ($key == 'field_answer_image') {
+        $truth = tng_convert_drupal_to_mean_filename($value, '', '');
+        $image_chunk = tng_npImage_maker('', $truth, '', '');
+        $whole_qa = $whole_qa . $image_chunk;
+      }
+    }
+    $finish_chunk = $bt . ']' . '}';
+    $whole_qa = $whole_qa . $finish_chunk;
+    // since we are processing partial np objects for Q & A, let's make this title a manifest title
+    $title = 'Trivia-Manifest - ' . $title;
+
+    // when we edit a new node for a trivia (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product or list or ...
+    $new_nid = tng_create_manifest_node($whole_qa, 'object_manifest', $title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    // return the new nid to set it on the parent node
+    return $new_nid;
+  } else {
+    if ($tng_debug == 1) {
+      dpm('Received more or less items than we expected for our trivia, so we are not processing it.');
+    }
+  }
+}
+
 function process_content_object($object_values, $language, $nid)
 {
   $tng_debug = 0;
@@ -2824,7 +2966,11 @@ function process_content_object($object_values, $language, $nid)
     if ($field_learning_template == 'popquiz') {
       $quiz_chunk = ',' . tng_npQuiz_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
       $final_exam = true;
+    } elseif  ($field_learning_template == 'trivia') {
+      $quiz_chunk = ',' . tng_npTrivia_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
+      $final_exam = true;
     }
+
     $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
     $background_chunk = tng_npHTML_basic_maker($background_image, '', '', '', '', '', '', FALSE);
 
@@ -3173,9 +3319,7 @@ function tng_shadow_node_presave($entity)
     // dpm('we think the manifest node is set');
     $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
     if (!$node_man) {
-      // dpm('we are unsetting the phantom');
       unset($entity->field_manifest);
-      // dpm($entity);
     }
   }
 }
@@ -3282,7 +3426,7 @@ function tng_shadow_shadow_request_alter($entity)
           //$paragraph_fields = field_info_instances('paragraphs_item', $paragraphs->bundle);
           if ($entity_type == 'hot_spots') {
             $bundler = 'hot_spot';
-          } elseif ($entity_type == 'question_and_answer') {
+          } elseif ($entity_type == 'question_and_answer' || $entity_type == 'trivia') {
             $bundler = $paragraphs->bundle;
           } elseif ($entity_type == 'drag_match') {
             $bundler = 'drag_match';
@@ -3742,6 +3886,14 @@ function tng_shadow_shadow_request_alter($entity)
       } elseif ($entity_type == 'drag_match') {
         //dpm('found a hot spot to work on');
         $new_nid = process_dragmatch($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        if (isset($new_nid)) {
+          //dpm('setting new manifest nid on hot spot entity');
+          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          node_save($entity);
+        }
+      } elseif ($entity_type == 'trivia') {
+        //dpm('found a hot spot to work on');
+        $new_nid = process_trivia($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;

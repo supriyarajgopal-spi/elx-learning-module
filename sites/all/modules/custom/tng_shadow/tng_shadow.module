@@ -353,6 +353,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question = $question . ',' . '"buttons"' . ':' . '{';
       $question = $question         . '"submit"' . ':' . '"Submit"';
       $question = $question . ','   . '"next"' . ':' . '"Next"';
+      //$question = $question . ','   . '"i18n"' . ':' . '{submit:' . 'BUTTON_SUBMIT', next: 'BUTTON_NEXT', favorite: FAVORITE_THIS}"'';
       $question = $question . '},';
       $question = $question . '"feedback"' . ': {';
       $question = $question       . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
@@ -3019,7 +3020,7 @@ function process_content_object($object_values, $language, $nid)
       $whole_object = $whole_object . '} ]';
     }
     //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $intro_text, '', $content_keywords);
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {

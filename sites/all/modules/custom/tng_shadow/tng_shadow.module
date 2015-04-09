@@ -350,8 +350,12 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question = $question . ',' . '"type"' . ': ' . '"' . $type . '"';
       $question = $question . ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
       $question = $question . ',' . '"content"' . ': ' . '"' . $question_text . '"';
-      $question = $question . ',' . '"feedback"' . ': {';
-      $question = $question . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
+      $question = $question . ',' . '"buttons"' . ':' . '{';
+      $question = $question         . '"submit"' . ':' . '"Submit"';
+      $question = $question . ','   . '"next"' . ':' . '"Next"';
+      $question = $question . '},';
+      $question = $question . '"feedback"' . ': {';
+      $question = $question       . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
       $question = $question . ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
       $question = $question . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       $question = $question . '}';
@@ -909,7 +913,6 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
     if ($content) {
       $match = $match . ',' . '"content"' . ':' . '"' . $content . '"';
     }
-    $match = $match . ',' . '"feedback"' . ':' . '{';
     if ($immediate) {
       $match = $match . '"immediate"' . ':' . $immediate;
     }
@@ -2928,7 +2931,7 @@ function process_content_object($object_values, $language, $nid)
       if ($field_learning_template == 'popquiz') {
         $percentage_required_to_pass = $object_values['field_percentage_requirement'];
         $field_final_exam = $object_values['field_final_exam'];
-        $content_object_prefix = 'Learning-Content-Pop-Quiz-';
+        $content_object_prefix = 'Learning-Content-';
       }
     } else if ($content_object_type == 'Story') {
       $content_object_prefix = 'Story-' . $pulsed_content_type;

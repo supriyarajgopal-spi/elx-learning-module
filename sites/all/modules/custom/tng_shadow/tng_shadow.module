@@ -2932,7 +2932,7 @@ function process_content_object($object_values, $language, $nid)
     if ($content_object_type == 'Learning Content') {
       $content_object_prefix = 'Learning-Content-';
       $field_learning_template = $object_values['field_learning_template'];
-      if ($field_learning_template == 'popquiz') {
+      if ($field_learning_template == 'popquiz' || $field_learning_template == 'trivia') {
         $percentage_required_to_pass = $object_values['field_percentage_requirement'];
         $field_final_exam = $object_values['field_final_exam'];
         $content_object_prefix = 'Learning-Content-';

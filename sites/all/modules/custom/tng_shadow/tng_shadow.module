@@ -2244,8 +2244,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           // it has text only
           $key = explode(':', $sploder[$i], 2);
           $key_two = explode(':', $sploder[$i + 1], 2);
-          $omni_one = str_replace('"', '\'', $key[1]);
-          $omni_two = str_replace('"', '\'', $key_two[1]);
+          $omni_one = str_replace('"', '', $key[1]);
+          $omni_two = str_replace('"', '', $key_two[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($front_http >= 0 && $back_http === false) {
           $key = explode(':', $sploder[$i], 2);
@@ -2256,9 +2256,9 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $url1 = substr($key[1], $start_pos1, $end_pos1 - $start_pos1);
           $asset_url1 = tng_convert_drupal_to_mean_filename($url1);
           $omni_one = $str_beg_one . $asset_url1 . $str_end_one;
-          $omni_one = str_replace('"', '\'', $omni_one);
+          $omni_one = str_replace('"', '', $omni_one);
           $key_two = explode(':', $sploder[$i + 2], 2);
-          $omni_two = str_replace('"', '\'', $key_two[1]);
+          $omni_two = str_replace('"', '', $key_two[1]);
           //if ($key[0] == '"field_back_card" ') {
           //  $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
           //}
@@ -2274,9 +2274,9 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $url2 = substr($key_two[1], $start_pos2, $end_pos2 - $start_pos2);
           $asset_url2 = tng_convert_drupal_to_mean_filename($url2);
           $omni_two = $str_beg_two . $asset_url2 . $str_end_two;
-          $omni_two = str_replace('"', '\'', $omni_two);
+          $omni_two = str_replace('"', '', $omni_two);
           $key = explode(':', $sploder[$i], 2);
-          $omni_one = str_replace('"', '\'', $key[1]);
+          $omni_one = str_replace('"', '', $key[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($back_http >= 0 && $front_http >= 0) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
@@ -2299,8 +2299,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $asset_url2 = tng_convert_drupal_to_mean_filename($url2);
           $omni_one = $str_beg_one . $asset_url1 . $str_end_one;
           $omni_two = $str_beg_two . $asset_url2 . $str_end_two;
-          $omni_one = str_replace('"', '\'', $omni_one);
-          $omni_two = str_replace('"', '\'', $omni_two);
+          $omni_one = str_replace('"', '', $omni_one);
+          $omni_two = str_replace('"', '', $omni_two);
           // the array assignment makes for predictable order of our duo set of data
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         }
@@ -2672,7 +2672,8 @@ function process_question_and_answer($object_values, $language, $nid)
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $page_chunk = tng_npPageStart_maker($title, '', $title, 'true', 'true');
+    $bt_idx = 1;
+    $page_chunk = tng_npPageStart_maker($bt_idx, '', $title, 'true', 'true');
 
     $whole_qa = $page_chunk;
     $ba = '';
@@ -2684,6 +2685,7 @@ function process_question_and_answer($object_values, $language, $nid)
       if ($tng_debug == 1) {
         dpm('**** data ****' . $key . ' : ' . $value);
       }
+      //$bt_idx = $bt_idx + 1;
       if ($key == 'field_paragraph_multiple_choice') {
         // remove brackets and curly braces [] {}
         $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
@@ -2692,6 +2694,7 @@ function process_question_and_answer($object_values, $language, $nid)
           dpm($sploder);
         }
         $count_of_elements = count($sploder);
+
         // for each pair, grab the data and package it for npQuestion, npAnswer
         for ($i = 0; $i < $count_of_elements; $i++) {
           if (strpos($sploder[$i], 'field_question_text') !== FALSE) {
@@ -2717,7 +2720,7 @@ function process_question_and_answer($object_values, $language, $nid)
             $ba = $ba . $ap;
           }
         }
-        $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
+        $bt = tng_npButton_maker($bt_idx, 'btn-next', '', 'Next');
         // until Kory fixes the npAnswer to override the correct and incorrect text in each question we build the question after the answers
         $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers

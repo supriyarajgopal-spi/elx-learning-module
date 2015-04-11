@@ -1102,7 +1102,7 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
         $list = $list . '            "poster"' . ':' . '"' . $data_poster . '"';
       }
       if ($data_baseurl) {
-        $list = $list . '            "baseUrl"' . ':' . '"../' . $data_baseurl . '"';
+        $list = $list . '            "baseURL"' . ':' . '"../' . $data_baseurl . '"';
       }
       if ($data_baseurl) {
         $list = $list . ',            "types"' . ':' . '["' . $data_types . '"]';

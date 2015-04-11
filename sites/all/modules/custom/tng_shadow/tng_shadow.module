@@ -1102,10 +1102,10 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
         $list = $list . '            "poster"' . ':' . '"' . $data_poster . '"';
       }
       if ($data_baseurl) {
-        $list = $list . '            "baseUrl"' . ':' . '"' . $data_baseurl . '"';
+        $list = $list . '            "baseUrl"' . ':' . '"../' . $data_baseurl . '"';
       }
       if ($data_baseurl) {
-        $list = $list . ',            "types"' . ':' . '"[' . $data_types . ']"';
+        $list = $list . ',            "types"' . ':' . '["' . $data_types . '"]';
       }
       $list = $list . '},';
       $list = $list . '"components"' . ':' . '[]';
@@ -2370,7 +2370,6 @@ function process_list($listobject, $language, $nid)
       dpm($title);
     }
     // the field layout is single or double column formatting
-    //todo: followup with Christian about what a two-column will look like
     $wrap = $listobject['field_layout'];
     if ($wrap == 1) {
       $data_ng_wrap = "true";

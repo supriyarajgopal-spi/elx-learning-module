@@ -745,6 +745,8 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
 {
   $tng_debug = 0;
   try {
+    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $comp_baseURL);
+
     $reveal = '';
     $reveal = $reveal . '{';
     if ($id) {
@@ -778,7 +780,7 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
       $reveal = $reveal . ',' . '"alt"' . ':' . '"' . $comp_alt . '"';
     }
     if ($comp_baseURL) {
-      $reveal = $reveal . '"baseURL"' . ':' . '"' . $comp_baseURL . '"';
+      $reveal = $reveal . '"baseURL"' . ':' . '"' . $withoutExt . '"';
     }
     if ($comp_types) {
       $reveal = $reveal . ',' . '"types"' . ':' . '["' . $comp_types . '"]';
@@ -1064,7 +1066,9 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
                           $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL)
 {
   $tng_debug = 0;
+
   try {
+    $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $data_baseurl);
     $list = '';
     $list = $list . '{' . '"type"' . ':' . '"npList"';
     $list = $list . ',' . '"data"' . ': {';
@@ -1102,7 +1106,7 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
         $list = $list . '            "poster"' . ':' . '"' . $data_poster . '"';
       }
       if ($data_baseurl) {
-        $list = $list . '            "baseURL"' . ':' . '"../' . $data_baseurl . '"';
+        $list = $list . '            "baseURL"' . ':' . '"../' . $withoutExt . '"';
       }
       if ($data_baseurl) {
         $list = $list . ',            "types"' . ':' . '["' . $data_types . '"]';

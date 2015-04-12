@@ -1635,7 +1635,7 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
     $manifest_content = $language_strings[1];
-    $manifest_title = 'Story-Manifest-' . $title;
+    $manifest_title = 'Story-' . $title;
     $favorite_link = '/api/favorites/story/' . $manifest_title;
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for story page.');
     $story_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
@@ -2941,7 +2941,7 @@ function process_content_object($object_values, $language, $nid)
         $content_object_prefix = 'Learning-Content-';
       }
     } else if ($content_object_type == 'Story') {
-      $content_object_prefix = 'Story-' . $pulsed_content_type;
+      $content_object_prefix = 'Story-'; // . $pulsed_content_type;
       $making_story = true;
     }
 

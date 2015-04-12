@@ -2662,7 +2662,6 @@ function process_question_and_answer($object_values, $language, $nid)
   $num_fields = count($object_values);
   $difficulty = $object_values['field_difficulty'];
   $required = $object_values['field_is_required'];
-  // todo: ask Ryan to add this type to show forced answers before proceeding
   //$forced = $object_values['field_forced'];
 
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
@@ -2675,20 +2674,17 @@ function process_question_and_answer($object_values, $language, $nid)
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $bt_idx = 1;
-    $page_chunk = tng_npPageStart_maker($bt_idx, '', $title, 'true', 'true');
+    $page_chunk = tng_npPageStart_maker('', '', $title, 'true', 'true');
 
     $whole_qa = $page_chunk;
     $ba = '';
     $correct_answer_text = '';
     $incorrect_answer_text = '';
-    //$whole_qa =  $whole_qa . $page_chunk;
     // paragraphs are
     foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {
         dpm('**** data ****' . $key . ' : ' . $value);
       }
-      //$bt_idx = $bt_idx + 1;
       if ($key == 'field_paragraph_multiple_choice') {
         // remove brackets and curly braces [] {}
         $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
@@ -2723,11 +2719,9 @@ function process_question_and_answer($object_values, $language, $nid)
             $ba = $ba . $ap;
           }
         }
-        $bt = tng_npButton_maker($bt_idx, 'btn-next', '', 'Next');
-        // until Kory fixes the npAnswer to override the correct and incorrect text in each question we build the question after the answers
+        $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
         $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
-        //$ba =  $np . $ba . $bt;
         $ba = $np . $ba;
 
         // remove the final comma from any number of question/multiple answers bits

@@ -2099,6 +2099,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
       }
       $thumb_path = 'assets/styles/reveal_thumbnail/public/';
       $hero_path = 'assets/styles/reveal_hero/public/';
+      $video_path = 'assets/';
       // for each trio of content, a bit of messy processing
       // the content is within quotes and need removing, the images need style work and charm
       $revealnumber = 0;
@@ -2136,6 +2137,20 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $first_image = $hero_path . $remo;
           $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, $thumb_image, '', $image_or_video, '', $first_image, '', '', '');
           $increment = 3;
+        }
+        else if ($key[0] == '"field_reveal_text" ' && $key_two[0] == '"field_reveal_hero_video" ') {
+          $thumb_splode = explode(':', $sploder[$i+1]);
+          $remo = str_replace('//', '', $thumb_splode[2]);
+          $video_image = $video_path . $remo;
+          $value_two = explode(':', $sploder[$i]);
+          $stripped_text_two = str_replace('" ', '', $value_two[1]);
+          $stripped_text_two = str_replace(' "', '', $stripped_text_two);
+          $stripped_text_two = str_replace('"', '', $stripped_text_two);
+          $image_or_video = 'npVideo';
+          //$remo = str_replace('//', '', $key[2]);
+          $first_image = $hero_path . $remo;
+          $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, '', '', $image_or_video, '', '', '', $video_image, '');
+          $increment = 2;
         }
         $revealnumber += 1;
 

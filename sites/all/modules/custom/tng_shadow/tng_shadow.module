@@ -2977,6 +2977,7 @@ function process_content_object($object_values, $language, $nid)
       dpm('number of markets found:');
       dpm($num_mkts);
     }
+    $content_object_points = $object_values['field_point_value'];
     $content_keywords = $object_values['field_tags_keywords'];
     $intro_text = strip_tags($object_values['field_intro']);
     $headline = $object_values['field_headline'];
@@ -3052,7 +3053,7 @@ function process_content_object($object_values, $language, $nid)
       $whole_object = $whole_object . '} ]';
     }
     //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords);
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords, $content_object_points);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -3070,7 +3071,7 @@ function process_content_object($object_values, $language, $nid)
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL)
+function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL, $node_points = NULL)
 {
   global $user;
   $tng_debug = 0;
@@ -3171,6 +3172,12 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     // since we can't save a manifest node with a 'keywords' we save it separately in a new field
     $node->field_manifest_keywords[$node->language][] = array(
       'value' => $node_keywords,
+      'format' => 'plain_text',
+    );
+
+    // since we can't save a manifest node with a 'points' we save it separately in a new field
+    $node->field_point_value[$node->language][] = array(
+      'value' => $node_points,
       'format' => 'plain_text',
     );
 

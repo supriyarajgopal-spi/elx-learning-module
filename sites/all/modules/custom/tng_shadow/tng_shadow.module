@@ -221,11 +221,22 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
       }
       $page = '{';
       $page = $page . '"type"' . ':' . '"npPage"';
-      $page = $page . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
-      $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
-      $page = $page . ',' . '"title"' . ': ' . '"' . $title . '"';
-      $page = $page . ',' . '"inMenu"' . ': ' . $inmenu;
-      $page = $page . ',' . '"required"' . ': ' . $required;
+      $page = $page . ',' . '"data"' . ': {' ;
+      if ($id) {
+        $page = $page . ',' . '"id"' . ': ' . '"' . $id . '"';
+      }
+      if ($parentid) {
+        $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
+      }
+      if ($title) {
+        $page = $page . ',' . '"title"' . ': ' . '"' . $title . '"';
+      }
+      if ($inmenu) {
+        $page = $page . ',' . '"inMenu"' . ': ' . $inmenu;
+      }
+      if ($required) {
+        $page = $page . ',' . '"required"' . ': ' . $required;
+      }
       $page = $page . '}, ';
       $page = $page . '"components": [ ';
       return $page;
@@ -1554,8 +1565,9 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
       $whole_hotspot = $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($hotspot_values['field_hot_spot_collection']) {
+      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
       $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
-      $whole_hotspot = $whole_hotspot . $hot_top;
+      $whole_hotspot = $whole_hotspot . $page_wrapper . $hot_top;
 
       foreach ($hotspot_values as $key => $value) {
         if ($tng_debug == 1) {
@@ -1584,9 +1596,10 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
       $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image'], '', '');
       $end_hot_spot = tng_npHotspot_closer('', $main_image);
       if ($standalone == 1) {
-        $whole_hotspot = $whole_hotspot . $end_hot_spot . $close_hot_spot;
+        $whole_hotspot = $whole_hotspot . $end_hot_spot . $close_hot_spot . '}]';
       } else {
-        $whole_hotspot = $whole_hotspot . $end_hot_spot;
+        $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+        $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
       }
       if ($tng_debug == 1) {
         dpm($whole_hotspot);
@@ -1697,7 +1710,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_drag_drop = '] } ] } ] } ]';
+  $close_drag_drop = '] } ] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
   // and if we find between 1 and 20 fields, layout the page
@@ -1741,8 +1754,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
 
     if ($dragmatch['field_drag_match_collection']) {
       {
+        $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
         $drag_top = tng_npDragAndDropMatch_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
-        $whole_dragdrop = $whole_dragdrop . $drag_top;
+        $whole_dragdrop = $whole_dragdrop . $page_wrapper. $drag_top;
 
         foreach ($dragmatch as $key => $value) {
           if ($tng_debug == 1) {
@@ -1771,7 +1785,8 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
         if ($standalone == 1) {
           $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
         } else {
-          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot;
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
         }
 
         if ($tng_debug == 1) {
@@ -1853,11 +1868,11 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
       $whole_dragselect = $feature_chunk . $content_chunk . $dragselect_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
 
-
     if ($dragselect['field_drag_select_collection']) {
       {
+        $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
         $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
-        $whole_dragselect = $whole_dragselect . $drag_top;
+        $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
         foreach ($dragselect as $key => $value) {
           if ($tng_debug == 1) {
@@ -1890,7 +1905,8 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
         if ($standalone == 1) {
           $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
         } else {
-          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot;
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
         }
 
         if ($tng_debug == 1) {
@@ -1898,7 +1914,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
         }
       }
 
-      // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+      // when we edit a new node for a dragselect (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
       $new_nid = tng_create_manifest_node($whole_dragselect, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
@@ -1999,12 +2015,8 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
             }
             $count_of_elements = count($sploder);
             // for each pair of matching content, grab the data and package it up as content, matching content
-            $boxnumber = 0;
             for ($i = 0; $i < $count_of_elements; $i += 1) {
-              //$box = 'box' . $boxnumber;
-              //$boxnumber +=1;
               $left_text_or_image = tng_value_from_pair($sploder[$i]);
-              //$right_text_or_image = value_from_pair($sploder[$i+1]);
               $hotspot_detail = tng_dragdrop_button_maker('', '', '', $left_text_or_image, $boximage, '', $boximage);
               $whole_dragdrop = $whole_dragdrop . $hotspot_detail;
             }
@@ -2018,7 +2030,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
         }
       }
 
-      // when we edit a new node for a hotspot (or make it for the first time), create a new object_manifest
+      // when we edit a new node for a dragmatch (or make it for the first time), create a new object_manifest
       // to create an updated manifest, delete the old manifest and re-edit the product
       $new_nid = tng_create_manifest_node($whole_dragdrop, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
       // return the new nid to set it on the parent node
@@ -2051,7 +2063,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_reveal = '] } ] } ] } ] } ]';
+  $close_reveal = '] } ] } ] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP reveal page
   // and if we find between 1 and 20 fields, layout the page
@@ -2088,8 +2100,9 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
       $whole_reveal = $feature_chunk . $content_chunk . $reveal_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($reveal_values['field_reveal_collection']) {
+      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
       $reveal_top = tng_npReveal_maker('reveal-test-id', 'reveal-test-class');
-      $whole_reveal = $whole_reveal . $reveal_top;
+      $whole_reveal = $whole_reveal . $page_wrapper . $reveal_top;
       $all_of_them = $reveal_values['field_reveal_collection'];
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
@@ -2148,7 +2161,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $stripped_text_two = str_replace('"', '', $stripped_text_two);
           $image_or_video = 'npVideo';
           //$remo = str_replace('//', '', $key[2]);
-          $first_image = $hero_path . $remo;
+          //$first_image = $hero_path . $remo;
           $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, '', '', $image_or_video, '', '', '', $video_image, '');
           $increment = 2;
         }
@@ -2162,7 +2175,8 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     if ($standalone == 1) {
       $whole_reveal = $whole_reveal . $close_reveal;
     } else {
-      $whole_reveal = $whole_reveal . '] }';
+      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+      $whole_reveal = $whole_reveal . ']},' . $button_chunk . ']}';
     }
     if ($tng_debug == 1) {
       dpm($whole_reveal);
@@ -2202,7 +2216,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   $renutriv_background_image = 'background-image';
   $h3_headline = 'h3 headline';
   $close_html = '] },';
-  $close_flashcard = '] } ] } ] } ] } ]';
+  $close_flashcard = '] } ] } ] } ] } ] } ]';
+  $close_bare_metal = '] } ] }';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP flash page
   // and if we find between 1 and 20 fields, layout the page
@@ -2239,8 +2254,9 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       $whole_flashcard = $feature_chunk . $content_chunk . $flashcard_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($flashcard_values['field_flash_card_collection']) {
+      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
       $flashcard_top = tng_npFlashCard_maker('flash-cards-test-id', 'flash-cards-test-class');
-      $whole_flashcard = $whole_flashcard . $flashcard_top;
+      $whole_flashcard = $whole_flashcard . $page_wrapper . $flashcard_top;
       $all_of_them = $flashcard_values['field_flash_card_collection'];
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       // take only the first two elements, 'field_back_card' and 'field_top_card'
@@ -2253,7 +2269,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       }
       // for each quad of content, a bit of messy processing
       // the content is within quotes and need removing, the images need style work and charm
-      $flashcardnumber = 0;
       //depending on what the cards look like, we'll end up with a front and a back.
       for ($i = 0; $i < $count_of_elements; $i += 2) {
         // check for images so we know how to process
@@ -2278,9 +2293,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $omni_one = str_replace('"', '', $omni_one);
           $key_two = explode(':', $sploder[$i + 2], 2);
           $omni_two = str_replace('"', '', $key_two[1]);
-          //if ($key[0] == '"field_back_card" ') {
-          //  $flashcard_detail = tng_npFlashCardItem_maker('' , $omni_two, $omni_one);
-          //}
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($back_http >= 0 && $front_http === false) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
@@ -2325,13 +2337,13 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
         }
         $whole_flashcard = $whole_flashcard . $flashcard_detail;
       }
-
       $whole_flashcard = rtrim($whole_flashcard, ', ');
     }
     if ($standalone == 1) {
       $whole_flashcard = $whole_flashcard . $close_flashcard;
     } else {
-      $whole_flashcard = $whole_flashcard . '] }';
+      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+      $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';;
     }
     if ($tng_debug == 1) {
       dpm($whole_flashcard);
@@ -2404,6 +2416,8 @@ function process_list($listobject, $language, $nid)
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
       $count_of_elements = count($sploder);
+      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+      $whole_list = $whole_list . $page_wrapper;
       for ($i = 0; $i < $count_of_elements; $i += 2) {
         $key = explode(':', $sploder[$i]);
         if ($key[0] == '"field_list_image" ') {
@@ -2425,11 +2439,13 @@ function process_list($listobject, $language, $nid)
           } else {
             $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, '', '', '', '', '', '', '');
           }
-          $whole_list = $whole_list . $listobject_detail;
+          $whole_list = $whole_list . $page_wrapper . $listobject_detail;
         }
       }
     }
-    $whole_list = rtrim($whole_list, ', ');
+    //$whole_list = rtrim($whole_list, ', ');
+    $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+    $whole_list = $whole_list . $button_chunk . ']}';
     if ($tng_debug == 1) {
       dpm('****finished List manifest****');
       dpm($whole_list);
@@ -2689,7 +2705,7 @@ function process_question_and_answer($object_values, $language, $nid)
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $page_chunk = tng_npPageStart_maker('', '', $title, 'true', 'true');
+    $page_chunk = tng_npPageStart_maker('', '', '', '', '');
 
     $whole_qa = $page_chunk;
     $ba = '';
@@ -2735,7 +2751,7 @@ function process_question_and_answer($object_values, $language, $nid)
           }
         }
         $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
-        $np = tng_npQuestion_maker($required, 'true', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
+        $np = tng_npQuestion_maker($required, 'false', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
         $ba = $np . $ba;
 
@@ -3004,6 +3020,7 @@ function process_content_object($object_values, $language, $nid)
     } else {
       $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
       $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
+      //$instructions_chunk = rtrim($instructions_chunk, ' ,');
       $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
       $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     }
@@ -3919,23 +3936,13 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_select') {
-        //dpm('found a drag select to work on');
-        if (isset($entity_array['field_manifest'][$language][0]['target_id'])) {
-          $new_nid = process_dragselect($pre_manifest, $language, null, $module_name, '1');
-        } else {
-          $new_nid = process_dragselect($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
-        }
-        if (isset($new_nid)) {
-          //special drupal bug we have no 'und' for language, although we should
-          if ($entity->field_manifest[$language][0]['target_id']) {
-            $entity->field_manifest[$language][0]['target_id'] = $new_nid;
-            node_save($entity);
-          } else {
-            $language = 'en';
-            $entity->field_manifest[$language][0]['target_id'] = $new_nid;
-            node_save($entity);
-          }
-        }
+        // there is a drupal bug that interacts with the mean shadow such that
+        // when you save a manifest, it throws an infinite loop bug where the
+        // language is only 'en' instead of the usual 'und' so we don't try to
+        // save the manifest on the node, we do it manually to avoid the loop problem.
+
+        $new_nid = process_dragselect($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+
       } elseif ($entity_type == 'drag_priorities') {
         //dpm('found a hot spot to work on');
         $new_nid = process_dragmatch_prioritize($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);

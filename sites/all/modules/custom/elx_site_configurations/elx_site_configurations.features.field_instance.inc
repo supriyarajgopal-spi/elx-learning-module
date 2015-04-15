@@ -5330,7 +5330,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -5371,7 +5371,96 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_next_button'
+  $field_instances['node-reveal-field_next_button'] = array(
+    'bundle' => 'reveal',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'If this content is chained together with other learning object(s) in a level tile, checking this creates a next button to use to navigate to the next piece of content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_next_button',
+    'label' => 'Create Next Button',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-reveal-field_next_button_label'
+  $field_instances['node-reveal-field_next_button_label'] = array(
+    'bundle' => 'reveal',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Next',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_next_button_label',
+    'label' => 'Next Button Label',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -5433,7 +5522,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -8887,6 +8976,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Correct answer');
   t('Correct feedback');
   t('Counter');
+  t('Create Next Button');
   t('Custom CTA');
   t('Custom correct feedback');
   t('Custom incorrect feedback');
@@ -8918,6 +9008,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Hot spot x cordinate');
   t('Hot spot y cordinate');
   t('If she asks, share');
+  t('If this content is chained together with other learning object(s) in a level tile, checking this creates a next button to use to navigate to the next piece of content.');
   t('Incorrect feeback');
   t('Intro text');
   t('Is required');
@@ -8943,6 +9034,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Middle match text');
   t('Multiple choice');
   t('Newplayer link');
+  t('Next Button Label');
   t('Object template');
   t('Percentage requirement');
   t('Perfect partners');

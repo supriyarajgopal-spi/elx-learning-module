@@ -1278,7 +1278,7 @@ function elx_site_configurations_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '4',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

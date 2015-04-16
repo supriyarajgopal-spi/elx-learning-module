@@ -1605,7 +1605,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 4,
@@ -2373,7 +2373,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -2657,7 +2657,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -2701,7 +2701,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -3035,7 +3035,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -3348,7 +3348,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -3738,7 +3738,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -5657,7 +5657,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,
@@ -7198,7 +7198,7 @@ function elx_site_configurations_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 3,

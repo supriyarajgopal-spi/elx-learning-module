@@ -1595,12 +1595,26 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
       }
       $main_image = tng_convert_drupal_to_mean_filename($hotspot_values['field_hot_spot_image'], '', '');
       $end_hot_spot = tng_npHotspot_closer('', $main_image);
+
       if ($standalone == 1) {
         $whole_hotspot = $whole_hotspot . $end_hot_spot . $close_hot_spot . '}]';
       } else {
-        $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-        $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
+        //field_next_button == checkbox, field_next_button_label is the button label
+        $create_button = $hotspot_values['field_next_button'];
+        $button_label = $hotspot_values['field_next_button_label'];
+        // the spanish word for next is 'siguiente'
+        if ($create_button == 1) {
+          if ($button_label) {
+            $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+          } else {
+            $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+          }
+          $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
+        } else {
+          $whole_hotspot = $whole_hotspot . ']}]}';
+        }
       }
+
       if ($tng_debug == 1) {
         dpm($whole_hotspot);
       }
@@ -1782,12 +1796,32 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
         }
         $end_dragdrop_spot = tng_npDragAndDrop_closer($placeholder, '');
 
+
         if ($standalone == 1) {
           $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
         } else {
-          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
+          //field_next_button == checkbox, field_next_button_label is the button label
+          $create_button = $dragmatch['field_next_button'];
+          $button_label = $dragmatch['field_next_button_label'];
+          // the spanish word for next is 'siguiente'
+          if ($create_button == 1) {
+            if ($button_label) {
+              $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+            } else {
+              $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+            }
+            $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
+          } else {
+            $whole_dragdrop = $whole_dragdrop . ']}]}';
+          }
         }
+
+//        if ($standalone == 1) {
+//          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
+//        } else {
+//          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+//          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
+//        }
 
         if ($tng_debug == 1) {
           dpm($whole_dragdrop);
@@ -1902,12 +1936,32 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
         }
         $end_dragdrop_spot = tng_npDragAndDrop_closer($placeholder, '');
 
+
         if ($standalone == 1) {
           $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
         } else {
-          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
+          //field_next_button == checkbox, field_next_button_label is the button label
+          $create_button = $dragselect['field_next_button'];
+          $button_label = $dragselect['field_next_button_label'];
+          // the spanish word for next is 'siguiente'
+          if ($create_button == 1) {
+            if ($button_label) {
+              $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+            } else {
+              $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+            }
+            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
+          } else {
+            $whole_dragselect = $whole_dragselect . ']}]}';
+          }
         }
+
+//        if ($standalone == 1) {
+//          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
+//        } else {
+//          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+//          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
+//        }
 
         if ($tng_debug == 1) {
           dpm($whole_dragselect);
@@ -2175,8 +2229,20 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     if ($standalone == 1) {
       $whole_reveal = $whole_reveal . $close_reveal;
     } else {
-      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-      $whole_reveal = $whole_reveal . ']},' . $button_chunk . ']}';
+      //field_next_button == checkbox, field_next_button_label is the button label
+      $create_button = $reveal_values['field_next_button'];
+      $button_label = $reveal_values['field_next_button_label'];
+      // the spanish word for next is 'siguiente'
+      if ($create_button == 1) {
+        if ($button_label) {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+        } else {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+        }
+        $whole_reveal = $whole_reveal . ']},' . $button_chunk . ']}';
+      } else {
+        $whole_reveal = $whole_reveal . ']}]}';
+      }
     }
     if ($tng_debug == 1) {
       dpm($whole_reveal);
@@ -2339,12 +2405,32 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       }
       $whole_flashcard = rtrim($whole_flashcard, ', ');
     }
+
     if ($standalone == 1) {
       $whole_flashcard = $whole_flashcard . $close_flashcard;
     } else {
-      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-      $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';;
+      //field_next_button == checkbox, field_next_button_label is the button label
+      $create_button = $flashcard_values['field_next_button'];
+      $button_label = $flashcard_values['field_next_button_label'];
+      // the spanish word for next is 'siguiente'
+      if ($create_button == 1) {
+        if ($button_label) {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+        } else {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+        }
+        $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';
+      } else {
+        $whole_flashcard = $whole_flashcard . ']}]}';
+      }
     }
+
+//    if ($standalone == 1) {
+//      $whole_flashcard = $whole_flashcard . $close_flashcard;
+//    } else {
+//      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+//      $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';
+//    }
     if ($tng_debug == 1) {
       dpm($whole_flashcard);
     }
@@ -2372,7 +2458,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
  * The assumption here is that a list item will always be a part of series of components, hence the final ',' at the end of it.
  *
  */
-function process_list($listobject, $language, $nid)
+function process_list($listobject, $language, $nid, $standalone = NULL)
 {
   $tng_debug = 0;
   if ($tng_debug == 1) {
@@ -2443,16 +2529,37 @@ function process_list($listobject, $language, $nid)
         }
       }
     }
-    //$whole_list = rtrim($whole_list, ', ');
-    $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-    $whole_list = $whole_list . $button_chunk . ']}';
+
+    if ($standalone == 1) {
+      $whole_list = $whole_list . ']}';
+    } else {
+      //field_next_button == checkbox, field_next_button_label is the button label
+      $create_button = $listobject['field_next_button'];
+      $button_label = $listobject['field_next_button_label'];
+      // the spanish word for next is 'siguiente'
+      if ($create_button == 1) {
+        if ($button_label) {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+        } else {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+        }
+        $whole_list = $whole_list . $button_chunk . ']}';
+      } else {
+        $whole_list = $whole_list . ']}]}';
+      }
+    }
+
+//    //$whole_list = rtrim($whole_list, ', ');
+//    $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+//    $whole_list = $whole_list . $button_chunk . ']}';
+
     if ($tng_debug == 1) {
       dpm('****finished List manifest****');
       dpm($whole_list);
     }
     // when we edit a new node for a list (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_list, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '');
+    $new_nid = tng_create_manifest_node($whole_list, 'object_manifest', $manifest_title, $subtitle, '', $language, $nid, '', '', '', '', '', '','');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -2649,11 +2756,32 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       $whole_matchgame = $whole_matchgame . $close_html;
       $whole_matchgame = rtrim($whole_matchgame, ', ');
     }
+
     if ($standalone == 1) {
       $whole_matchgame = $whole_matchgame . $close_matchgame;
     } else {
-      $whole_matchgame = $whole_matchgame . $close_bare_match;
+      //field_next_button == checkbox, field_next_button_label is the button label
+      $create_button = $matchgame_values['field_next_button'];
+      $button_label = $matchgame_values['field_next_button_label'];
+      // the spanish word for next is 'siguiente'
+      if ($create_button == 1) {
+        if ($button_label) {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+        } else {
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
+        }
+        $whole_matchgame = $whole_matchgame . $close_bare_match;
+      } else {
+        $whole_matchgame = $whole_matchgame . ']}]}';
+      }
     }
+
+//    if ($standalone == 1) {
+//      $whole_matchgame = $whole_matchgame . $close_matchgame;
+//    } else {
+//      $whole_matchgame = $whole_matchgame . $close_bare_match;
+//    }
+
     if ($tng_debug == 1) {
       dpm($whole_matchgame);
     }
@@ -2678,7 +2806,7 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
  * @param $nid - id of the node we processed to get the array info in $object_values
  * @return mixed - return the node id, $nid, of the newly created manifest.
  */
-function process_question_and_answer($object_values, $language, $nid)
+function process_question_and_answer($object_values, $language, $nid, $standalone = NULL)
 {
   $tng_debug = 0;
   if ($tng_debug == 1) {
@@ -2750,15 +2878,38 @@ function process_question_and_answer($object_values, $language, $nid)
             $ba = $ba . $ap;
           }
         }
-        $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
+
+        // refactor this after we see it in use with multiple Q's and A's
+        if ($standalone == 1) {
+          $whole_qa = $whole_qa ;   //. $close_matchgame;
+        } else {
+          //field_next_button == checkbox, field_next_button_label is the button label
+          $create_button = $object_values['field_next_button'];
+          $button_label = $object_values['field_next_button_label'];
+          // the spanish word for next is 'siguiente'
+          if ($create_button == 1) {
+            if ($button_label) {
+              $bt = tng_npButton_maker('', 'btn-next', '', $button_label);
+            } else {
+              $bt = tng_npButton_maker('', 'btn-next', '', 'Next');
+            }
+            $bt = rtrim($bt, ' ,');
+          }
+        }
+
+        //$bt = tng_npButton_maker('', 'btn-next', '', 'Next');
         $np = tng_npQuestion_maker($required, 'false', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
         $ba = $np . $ba;
 
         // remove the final comma from any number of question/multiple answers bits
         $ba = rtrim($ba, ',');
-        //and complete the component started in the npComponent
-        $ba = '{' . $ba . ']},';
+        //with a button on the set, we have a different, but happy ending
+        if ($create_button == 1) {
+          $ba = '{' . $ba . ']},';
+        } else {
+          $ba = '{' . $ba . ']}';
+        }
         $whole_qa = $whole_qa . $ba;
       } elseif ($key == 'field_answer_image') {
         $truth = tng_convert_drupal_to_mean_filename($value, '', '');
@@ -2766,7 +2917,7 @@ function process_question_and_answer($object_values, $language, $nid)
         $whole_qa = $whole_qa . $image_chunk;
       }
     }
-    $finish_chunk = $bt . ']' . '}';
+    $finish_chunk = $bt . ']}';
     $whole_qa = $whole_qa . $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title
     $title = 'Q-and-A-Manifest - ' . $title;
@@ -3960,7 +4111,7 @@ function tng_shadow_shadow_request_alter($entity)
         }
       } elseif ($entity_type == 'list') {
         //dpm('found a hot spot to work on');
-        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], '0');
         if (isset($new_nid)) {
           //dpm('setting new manifest nid on hot spot entity');
           $entity->field_manifest[$language][0]['target_id'] = $new_nid;
@@ -3985,7 +4136,7 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'question_and_answer') {
-        $new_nid = process_question_and_answer($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id']);
+        $new_nid = process_question_and_answer($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'], '0');
         if (isset($new_nid)) {
           $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
           node_save($save_entity);

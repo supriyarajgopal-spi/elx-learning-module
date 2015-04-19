@@ -14,6 +14,9 @@
  *
  * the _date_diff function will return the data in an array with name/value pairs for 'y', 'm', 'd'
  */
+
+$GLOBALS['reentry'] = 0;
+
 function tng_date_difference_creator($date)
 {
   $calc_date = _date_diff(strtotime($date), time());
@@ -223,7 +226,7 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
       $page = $page . '"type"' . ':' . '"npPage"';
       $page = $page . ',' . '"data"' . ': {' ;
       if ($id) {
-        $page = $page . ',' . '"id"' . ': ' . '"' . $id . '"';
+        $page = $page .  '"id"' . ': ' . '"' . $id . '"';
       }
       if ($parentid) {
         $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
@@ -928,7 +931,7 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
       $match = $match . ',' . '"content"' . ':' . '"' . $content . '"';
     }
     if ($immediate) {
-      $match = $match . '"immediate"' . ':' . $immediate;
+      $match = $match  . ',' . '"immediate"' . ':' . $immediate;
     }
     if ($correct) {
       $match = $match . ',' . '"correct"' . ':' . '"' . $correct . '"';
@@ -1606,12 +1609,13 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
         if ($create_button == 1) {
           if ($button_label) {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
+          // note if the user asks for a button, but doesn't give a label, we default to an 'en' one.
           } else {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
           }
           $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
         } else {
-          $whole_hotspot = $whole_hotspot . ']}]}';
+          $whole_hotspot = $whole_hotspot . ']}}]}';
         }
       }
 
@@ -1812,16 +1816,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
             }
             $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
           } else {
-            $whole_dragdrop = $whole_dragdrop . ']}]}';
+            $whole_dragdrop = $whole_dragdrop . ']}}]}';
           }
         }
-
-//        if ($standalone == 1) {
-//          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . $close_drag_drop;
-//        } else {
-//          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-//          $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
-//        }
 
         if ($tng_debug == 1) {
           dpm($whole_dragdrop);
@@ -1952,16 +1949,9 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
             }
             $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
           } else {
-            $whole_dragselect = $whole_dragselect . ']}]}';
+            $whole_dragselect = $whole_dragselect . ']}}]}';
           }
         }
-
-//        if ($standalone == 1) {
-//          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
-//        } else {
-//          $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-//          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
-//        }
 
         if ($tng_debug == 1) {
           dpm($whole_dragselect);
@@ -2192,17 +2182,21 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_one, $thumb_image, '', $image_or_video, '', '', '', $video_url, 'mp4');
           $increment = 3;
         } else if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_hero" ') {
+          $reveal = 'reveal-' . $revealnumber;
           $thumb_splode = explode(':', $sploder[$i]);
           $remo = str_replace('//', '', $thumb_splode[2]);
           $thumb_image = $thumb_path . $remo;
-          $value_two = explode(':', $sploder[$i + 2]);
-          $stripped_text_two = str_replace('" ', '', $value_two[1]);
-          $stripped_text_two = str_replace(' "', '', $stripped_text_two);
-          $stripped_text_two = str_replace('"', '', $stripped_text_two);
+          $thumb_image = tng_convert_drupal_to_mean_filename($thumb_image, '', '', 'true');
+          $hero_splode = explode(':', $sploder[$i + 1]);
+          $remo = str_replace('//', '', $hero_splode[2]);
+          $hero_image = $hero_path . $remo;
+          $hero_image = tng_convert_drupal_to_mean_filename($hero_image, '', '', 'true');
+          $value = explode(':', $sploder[$i + 2]);
+          $stripped_text_one = str_replace(' "', '', $value[1]);
+          $stripped_text_one = str_replace('" ', '', $stripped_text_one);
+          $stripped_text_one = str_replace('"', '', $stripped_text_one);
           $image_or_video = 'npImage';
-          $remo = str_replace('//', '', $key[2]);
-          $first_image = $hero_path . $remo;
-          $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, $thumb_image, '', $image_or_video, '', $first_image, '', '', '');
+          $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_one, $thumb_image, '', $image_or_video, '', $hero_image, '', '', '');
           $increment = 3;
         }
         else if ($key[0] == '"field_reveal_text" ' && $key_two[0] == '"field_reveal_hero_video" ') {
@@ -2214,8 +2208,6 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $stripped_text_two = str_replace(' "', '', $stripped_text_two);
           $stripped_text_two = str_replace('"', '', $stripped_text_two);
           $image_or_video = 'npVideo';
-          //$remo = str_replace('//', '', $key[2]);
-          //$first_image = $hero_path . $remo;
           $reveal_detail = tng_npRevealItem_maker($reveal, '', $stripped_text_two, '', '', $image_or_video, '', '', '', $video_image, '');
           $increment = 2;
         }
@@ -2425,12 +2417,6 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       }
     }
 
-//    if ($standalone == 1) {
-//      $whole_flashcard = $whole_flashcard . $close_flashcard;
-//    } else {
-//      $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-//      $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';
-//    }
     if ($tng_debug == 1) {
       dpm($whole_flashcard);
     }
@@ -2545,13 +2531,10 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
         }
         $whole_list = $whole_list . $button_chunk . ']}';
       } else {
-        $whole_list = $whole_list . ']}]}';
+        $whole_list = rtrim($whole_list, ', ');
+        $whole_list = $whole_list . ']}';
       }
     }
-
-//    //$whole_list = rtrim($whole_list, ', ');
-//    $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
-//    $whole_list = $whole_list . $button_chunk . ']}';
 
     if ($tng_debug == 1) {
       dpm('****finished List manifest****');
@@ -2775,12 +2758,6 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         $whole_matchgame = $whole_matchgame . ']}]}';
       }
     }
-
-//    if ($standalone == 1) {
-//      $whole_matchgame = $whole_matchgame . $close_matchgame;
-//    } else {
-//      $whole_matchgame = $whole_matchgame . $close_bare_match;
-//    }
 
     if ($tng_debug == 1) {
       dpm($whole_matchgame);
@@ -3227,7 +3204,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
   global $user;
   $tng_debug = 0;
 
-  // don't make a new manifest node if we already have one
+  // create a new manifest here
   if (!isset($nid)) {
     if ($tng_debug == 1) {
       dpm('creating a new nid node manifest');
@@ -3349,6 +3326,36 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm($node);
     }
     return $node->nid;
+  // we already have a manifest, so update it with new data
+  } else {
+    $cnt_markets = count($markets);
+    $market_csv = '';
+    for ($c = 0; $c < $cnt_markets; $c++) {
+      $market_csv = $market_csv . $markets[$c] . ',';
+    }
+    if (isset($market_csv)) {
+      $market_csv = rtrim($market_csv, ', ');
+    }
+    if ($tng_debug == 1) {
+      dpm('whole market');
+      dpm($market_csv);
+    }
+    $node = node_load($nid);
+    $node->body['und'][0]['value'] = $node_data;
+    $node->type = $node_type;
+    $node->title = $node_title;
+    $node->field_manifest_subtitle['und'][0]['value'] = $node_subtitle;
+    $node->field_intro_text['und'][0]['value'] = $node_subtitle;
+    $node->field_manifest_markets['und'][0]['value'] = $market_csv;
+    $node->field_manifest_language['und'][0]['value'] = $node_language;
+    $node->field_intro_text['und'][0]['value'] = $node_display_title;
+    $node->field_thumbnail_link['und'][0]['value'] = $node_thumbnail_link;
+    $node->field_newplayer_link['und'][0]['value'] = $node_newplayer_link;
+    $node->field_manifest_categories['und'][0]['value'] = $node_categories;
+    $node->field_manifest_keywords['und'][0]['value'] = $node_keywords;
+    $node->field_point_value['und'][0]['value'] = $node_points;
+    node_save($node);
+    return $node->nid;
   }
 }
 
@@ -3435,6 +3442,31 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
       dpm($node);
     }
     return $node->nid;
+  } else {
+    // markets needs to be added to our manifest, so create a csv list
+    $cnt_markets = count($markets);
+    $market_csv = '';
+    for ($c = 0; $c < $cnt_markets; $c++) {
+      $market_csv = $market_csv . $markets[$c] . ',';
+    }
+    if (isset($market_csv)) {
+      $market_csv = rtrim($market_csv, ', ');
+    }
+    if ($tng_debug == 1) {
+      dpm('whole market');
+      dpm($market_csv);
+    }
+
+    $node = node_load($nid);
+    $node->type = $node_type;
+    $node->title = $node_title;
+    $node->field_manifest_markets['und'][0]['value'] = $market_csv;
+    $node->field_language['und'][0]['value'] = $node_language;
+    $node->field_badge_image['und'][0]['value'] = $node_badge_icon;
+    $node->field_badge_description['und'][0]['value'] = $node_badge_description;
+    $node->field_badge_unearned_description['und'][0]['value'] = $node_badge_unearned_description;
+    node_save($node);
+    return $node->nid;
   }
 }
 
@@ -3502,21 +3534,21 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  * entity reference, when in fact it is a phantom (that or the cruft exists in the hook for form_alter).
  * Either way, we need this to go away, so we unset the manifest field manually.
  */
-function tng_shadow_node_presave($entity)
-{
-  $tng_debug = 0;
-  if ($tng_debug == 1) {
-    dpm("inside node presave");
-    dpm($entity);
-  }
-  if (isset($entity->field_manifest['und'][0]['target_id'])) {
-    // dpm('we think the manifest node is set');
-    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
-    if (!$node_man) {
-      unset($entity->field_manifest);
-    }
-  }
-}
+//function tng_shadow_node_presave($entity)
+//{
+//  $tng_debug = 0;
+//  if ($tng_debug == 1) {
+//    dpm("inside node presave");
+//    dpm($entity);
+//  }
+//  if (isset($entity->field_manifest['und'][0]['target_id'])) {
+//    // dpm('we think the manifest node is set');
+//    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
+//    if (!$node_man) {
+//      unset($entity->field_manifest);
+//    }
+//  }
+//}
 
 /**
  * @param $entity - This view entity is passed
@@ -3540,6 +3572,8 @@ function tng_shadow_shadow_request_alter($entity)
 {
   $tng_debug = 0;
   $translated_labels[] = '';
+  $GLOBALS['reentry']++;
+
   try {
     if ($tng_debug == 1) {
       dpm($entity);
@@ -3580,7 +3614,10 @@ function tng_shadow_shadow_request_alter($entity)
       // given our node entity type, get all the fields for it
       $entity_type = $entity->type;
       // this hook is intended for creating content, not to process manifests since they are made when we create a product
-      if ($entity_type == 'object_manifest') {
+      if ($entity_type == 'object_manifest' || $entity_type == 'badge_manifest') {
+        return;
+      }
+      if ($GLOBALS['reentry'] == 3) {
         return;
       }
       // field_info_instances holds the field values at the outermost level
@@ -4051,46 +4088,44 @@ function tng_shadow_shadow_request_alter($entity)
       //tng_test_product_creation();
       //return;
 
-      // if we have a product, convert it to a manifest
       if ($entity_type == 'product_detail') {
-        // the manifest field is where we store the nid value for the json manifest for NewPlayerV2.
-        $new_nid = process_product($pre_manifest, $translated_labels, $language, $entity_array['field_manifest'][$language][0]['target_id']);
-        // if we find a new nid, attach it to the parent node, otherwise don't do anything with it.
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'content_object') {
-        //dpm('found a content object to work on');
-        $new_nid = process_content_object($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_content_object($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'hot_spots') {
-        //dpm('found a hot spot to work on');
-        $new_nid = process_hotspot($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_hotspot($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_match') {
-        //dpm('found a hot spot to work on');
-        $new_nid = process_dragmatch($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_dragmatch($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'trivia') {
-        //dpm('found a hot spot to work on');
-        $new_nid = process_trivia($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_select') {
@@ -4098,59 +4133,75 @@ function tng_shadow_shadow_request_alter($entity)
         // when you save a manifest, it throws an infinite loop bug where the
         // language is only 'en' instead of the usual 'und' so we don't try to
         // save the manifest on the node, we do it manually to avoid the loop problem.
-
-        $new_nid = process_dragselect($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
-
-      } elseif ($entity_type == 'drag_priorities') {
-        //dpm('found a hot spot to work on');
-        $new_nid = process_dragmatch_prioritize($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id']);
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_dragselect($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          node_save($entity);
+        }
+      } elseif ($entity_type == 'drag_priorities') {
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_dragmatch_prioritize($pre_manifest, $local_language, $local_tid['target_id']);
+        if (isset($new_nid)) {
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'list') {
-        //dpm('found a hot spot to work on');
-        $new_nid = process_list($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_list($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
-          //dpm('setting new manifest nid on hot spot entity');
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'reveal') {
-        $new_nid = process_reveal($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_reveal($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'flash_cards') {
-        $new_nid = process_flashcards($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_flashcards($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'matching_game') {
-        $new_nid = process_matchgame($pre_manifest, $language, $entity_array['field_manifest'][$language][0]['target_id'], $module_name, '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_matchgame($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
-          $entity->field_manifest[$language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'question_and_answer') {
-        $new_nid = process_question_and_answer($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'], '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
+          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($save_entity);
         }
       } elseif ($entity_type == 'badge') {
-        $new_nid = process_badge($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id']);
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
+          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($save_entity);
         }
       } elseif ($entity_type == 'story') {
-        $new_nid = process_story($pre_manifest, $language, $entity_array['field_manifest']['en'][0]['target_id'], '0');
+        $local_language = $save_entity->language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$save_entity->language][0]['target_id'] = $new_nid;
+          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($save_entity);
         }
       }

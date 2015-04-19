@@ -1615,7 +1615,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
           }
           $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
         } else {
-          $whole_hotspot = $whole_hotspot . ']}}]}';
+          $whole_hotspot = $whole_hotspot . $end_hot_spot . ']}';
         }
       }
 
@@ -1739,8 +1739,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
   //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
   $correct_feedback = $dragmatch['field_custom_correct_feedback'];
   $incorrect_feedback = $dragmatch['field_custom_incorrect_feedback'];
-  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
-  $placeholder = '<p>this is the placeholder content</p>';
+  // the instructions actually are created and used in the content object, in the intro field.
+  $instructions = $dragmatch['field_intro'];
+  $placeholder = '<p></p>';
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragmatch['title_field'];
@@ -1816,7 +1817,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
             }
             $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
           } else {
-            $whole_dragdrop = $whole_dragdrop . ']}}]}';
+            $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ']}';
           }
         }
 
@@ -1869,8 +1870,8 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
 
   $correct_feedback = $dragselect['field_correct_feedback'];
   $incorrect_feedback = $dragselect['field_incorrect_feeback'];
-  $instructions = '<p>Drag only matching items and click select.</p>';
-  $placeholder = '<p>this is the placeholder content</p>';
+  $instructions = $dragselect['field_intro'];
+  $placeholder = '<p></p>';
   $question_text = $dragselect['field_drag_select_question'] . $instructions;
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
@@ -1947,9 +1948,9 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
             } else {
               $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
             }
-            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot. ',' . $button_chunk . ']}';
+            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . ',' . $button_chunk . ']}';
           } else {
-            $whole_dragselect = $whole_dragselect . ']}}]}';
+            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . ']}';
           }
         }
 

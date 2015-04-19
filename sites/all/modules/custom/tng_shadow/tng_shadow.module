@@ -366,7 +366,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question = $question . ',' . '"content"' . ': ' . '"' . $question_text . '"';
       $question = $question . ',' . '"buttons"' . ':' . '{';
       $question = $question         . '"submit"' . ':' . '"Submit"';
-      $question = $question . ','   . '"next"' . ':' . '"Next"';
+      //$question = $question . ','   . '"next"' . ':' . '"Next"';
       //$question = $question . ','   . '"i18n"' . ':' . '{submit:' . 'BUTTON_SUBMIT', next: 'BUTTON_NEXT', favorite: FAVORITE_THIS}"'';
       $question = $question . '},';
       $question = $question . '"feedback"' . ': {';
@@ -3139,7 +3139,7 @@ function process_content_object($object_values, $language, $nid)
     $thumbnail_teaser = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], 'teaser', TRUE);
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
     $quiz_chunk = '';
-    if ($field_learning_template == 'popquiz') {
+    if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
       $quiz_chunk = ',' . tng_npQuiz_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
       $final_exam = true;
     } elseif  ($field_learning_template == 'trivia') {
@@ -3165,7 +3165,7 @@ function process_content_object($object_values, $language, $nid)
       $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
       $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     }
-    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk . $quiz_chunk . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
+    $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk  . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk . $quiz_chunk;
 
     foreach ($object_values as $key => $value) {
       if ($tng_debug == 1) {

@@ -3344,11 +3344,11 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $node->body['und'][0]['value'] = $node_data;
     $node->type = $node_type;
     $node->title = $node_title;
+    $node->field_product_name['und'][0]['value'] = $node_display_title;
     $node->field_manifest_subtitle['und'][0]['value'] = $node_subtitle;
-    $node->field_intro_text['und'][0]['value'] = $node_subtitle;
     $node->field_manifest_markets['und'][0]['value'] = $market_csv;
     $node->field_manifest_language['und'][0]['value'] = $node_language;
-    $node->field_intro_text['und'][0]['value'] = $node_display_title;
+    $node->field_intro_text['und'][0]['value'] = $node_display_text;
     $node->field_thumbnail_link['und'][0]['value'] = $node_thumbnail_link;
     $node->field_newplayer_link['und'][0]['value'] = $node_newplayer_link;
     $node->field_manifest_categories['und'][0]['value'] = $node_categories;

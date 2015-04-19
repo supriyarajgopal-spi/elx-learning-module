@@ -2342,7 +2342,10 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
         } else if ($front_http >= 0 && $back_http === false) {
           $key = explode(':', $sploder[$i], 2);
           $start_pos1 = strpos($key[1], 'http');
-          $end_pos1 = strpos($key[1], '?');
+          $end_pos1 = strpos($key[1], '.jpg') + 4;
+          if ($end_pos1 == 4) {
+            $end_pos1 = strpos($key[1], '.gif') + 4;
+          }
           $str_beg_one = substr($key[1], 0, $start_pos1);
           $str_end_one = substr($key[1], $end_pos1);
           $url1 = substr($key[1], $start_pos1, $end_pos1 - $start_pos1);
@@ -2357,7 +2360,10 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           // then put it back together again for our flash cards front and back as they come in pairs.
           $key_two = explode(':', $sploder[$i + 1], 2);
           $start_pos2 = strpos($key_two[1], 'http');
-          $end_pos2 = strpos($key_two[1], '?');
+          $end_pos2 = strpos($key_two[1], '.jpg') + 4;
+          if ($end_pos2 == 4) {
+            $end_pos2 = strpos($key_two[1], '.gif') + 4;
+          }
           $str_beg_two = substr($key_two[1], 0, $start_pos2);
           $str_end_two = substr($key_two[1], $end_pos2);
           $url2 = substr($key_two[1], $start_pos2, $end_pos2 - $start_pos2);
@@ -2373,10 +2379,15 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $key = explode(':', $sploder[$i], 2);
           $key_two = explode(':', $sploder[$i + 1], 2);
           $start_pos1 = strpos($key[1], 'http');
-          $end_pos1 = strpos($key[1], '?');
+          $end_pos1 = strpos($key[1], '.jpg') + 4;
+          if ($end_pos1 == 4) {
+            $end_pos1 = strpos($key[1], '.gif') + 4;
+          }
           $start_pos2 = strpos($key_two[1], 'http');
-          $end_pos2 = strpos($key_two[1], '?');
-
+          $end_pos2 = strpos($key_two[1], '.jpg') + 4;
+          if ($end_pos2 == 4) {
+            $end_pos2 = strpos($key_two[1], '.gif') + 4;
+          }
           $str_beg_one = substr($key[1], 0, $start_pos1);
           $str_end_one = substr($key[1], $end_pos1);
           $str_beg_two = substr($key_two[1], 0, $start_pos2);

@@ -2523,7 +2523,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           } else {
             $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, '', '', '', '', '', '', '');
           }
-          $whole_list = $whole_list . $page_wrapper . $listobject_detail;
+          $whole_list = $whole_list . $listobject_detail;
         }
       }
     }

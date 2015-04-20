@@ -139,10 +139,11 @@ function elx_site_configurations_conditional_fields_default_fields() {
       ),
       'selector' => '',
       'values_set' => 3,
-      'value_form' => 'popquiz',
+      'value_form' => '_none',
       'values' => array(
         0 => 'trivia',
         1 => 'popquiz',
+        2 => 'drag_select',
       ),
       'value' => array(),
     ),

@@ -1849,6 +1849,7 @@ function elx_site_configurations_field_default_field_bases() {
         'popquiz' => 'Pop Quiz',
         'survey' => 'Survey',
         'trivia' => 'Trivia Game',
+        'drag_select' => 'Drag and Select',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

@@ -355,11 +355,16 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
     if (isset($question_text)) {
       // we assume radio button versus checkbox if you don't supply a choice
       if (!isset($type)) {
-        $type = 'radio';
+        $type = 'checkbox';
+      }
+      if (isset($required)) {
+        $req = 'true';
+      } else {
+        $req = 'false';
       }
       $question = '"type"' . ':' . '"npQuestion"';
       $question = $question . ',' . '"data"' . ': {';
-      $question = $question . '"required"' . ': ' . $required;
+      $question = $question . '"required"' . ': ' . $req;
       $question = $question . ',' . '"forced"' . ': ' . $forced;
       $question = $question . ',' . '"type"' . ': ' . '"' . $type . '"';
       $question = $question . ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
@@ -855,15 +860,15 @@ function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $content
   }
 }
 
-function tng_npQuiz_maker($id = NULL, $class = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL)
+function tng_npQuiz_maker($id = NULL, $type = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL, $forced = null, $randomized = null, $required = null)
 {
   $tng_debug = 0;
   try {
     $quiz = '';
     $quiz = $quiz . '{' . '"type"' . ':' . '"npQuiz"';
     $quiz = $quiz . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
-    if ($class) {
-      $quiz = $quiz . ',' . '"class"' . ':' . '"' . $class . '"';
+    if ($type) {
+      $quiz = $quiz . ',' . '"type"' . ':' . '"' . $type . '"';
     }
     if ($assessed) {
       $quiz = $quiz . ',' . '"assessed"' . ':' . '"' . $assessed . '"';
@@ -871,8 +876,17 @@ function tng_npQuiz_maker($id = NULL, $class = NULL, $assessed = NULL, $question
     if ($questions) {
       $quiz = $quiz . ',' . '"questions"' . ':' . '"' . $questions . '"';
     }
-    if ($questions) {
+    if ($passPercentage) {
       $quiz = $quiz . ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
+    }
+    if ($forced) {
+      $quiz = $quiz . ',' . '"forced"' . ':' . '"' . $forced . '"';
+    }
+    if ($randomized) {
+      $quiz = $quiz . ',' . '"randomized"' . ':' . '"' . $randomized . '"';
+    }
+    if ($required) {
+      $quiz = $quiz . ',' . '"required"' . ':' . '"' . $required . '"';
     }
     $quiz = $quiz . '},';
     $quiz = $quiz . '"components"' . ': [';
@@ -885,26 +899,40 @@ function tng_npQuiz_maker($id = NULL, $class = NULL, $assessed = NULL, $question
 }
 
 
-function tng_npTrivia_maker($id = NULL, $class = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL)
+function tng_npTrivia_maker($required = NULL, $forced = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
   $tng_debug = 0;
   try {
     $quiz = '';
+    $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
+    $quiz = $quiz . ',' .      '"data"' . ':' . '{';
+    $quiz = $quiz .  '},';
+    $quiz = $quiz .       '"components"' . ':' . '[';
     $quiz = $quiz . '{' . '"type"' . ':' . '"npTrivia"';
-    $quiz = $quiz . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
-    if ($class) {
-      $quiz = $quiz . ',' . '"class"' . ':' . '"' . $class . '"';
+    $quiz = $quiz . ',' . '"data"' . ': {' . '"required"' . ":"  . $required ;
+    if ($forced) {
+      $quiz = $quiz . ',' . '"forced"' . ':' .  $forced ;
     }
-    if ($assessed) {
-      $quiz = $quiz . ',' . '"assessed"' . ':' . '"' . $assessed . '"';
+    if ($difficulty) {
+      $quiz = $quiz . ',' . '"difficulty"' . ':'  . $difficulty ;
     }
-    if ($questions) {
-      $quiz = $quiz . ',' . '"questions"' . ':' . '"' . $questions . '"';
+    if ($content) {
+      $quiz = $quiz . ',' . '"content"' . ':' . '"' . $content . '"';
     }
-    if ($questions) {
-      $quiz = $quiz . ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
+//    if ($questions) {
+    $quiz = $quiz . ',' . '"feedback"' . ':' . '{'; //  . $passPercentage . '"';
+//    }
+    if ($immediate) {
+      $quiz = $quiz    . '"immediate"' . ':' . $immediate ;
     }
-    $quiz = $quiz . '},';
+    if ($correct) {
+      $quiz = $quiz    . ',' . '"correct"' . ':' . '"' . $correct . '"';
+    }
+    if ($incorrect) {
+      $quiz = $quiz    . ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
+    }
+    $quiz = $quiz          . '}'; // close the feedback
+    $quiz = $quiz . '},'; //close the data
     $quiz = $quiz . '"components"' . ': [';
     return $quiz;
   } catch (exception $e) {
@@ -913,6 +941,69 @@ function tng_npTrivia_maker($id = NULL, $class = NULL, $assessed = NULL, $questi
     }
   }
 }
+
+
+function tng_npAsResult_maker()
+{
+  $tng_debug = 0;
+  try {
+    $quiz = '';
+    $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
+    $quiz = $quiz . ',' .      '"data"' . ':' . '{';
+    $quiz = $quiz .  '},';
+    $quiz = $quiz .       '"components"' . ':' . '[';
+    $quiz = $quiz . '{' . '"type"' . ':' . '"npAsResult"';
+    $quiz = $quiz . ',' . '"id"' . ':' . '"summary"';
+    $quiz = $quiz . ',' . '"data"' . ': {' . '"feedback"' . ': {' ;
+    $quiz = $quiz       . '"pass"' . ':' . '"Congratulations, you scored :USERSCORE:% and have passed this module."';
+    $quiz = $quiz . ',' . '"fail"' . ':' . '"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"}';
+    $quiz = $quiz . ',' . '"achievements":[{"score":0.8';
+    $quiz = $quiz . ',' . '"compare":"gte"';
+    $quiz = $quiz . ',' . '"content":"In addition, you a grip of points!"}';
+    $quiz = $quiz . ',' . '{"score":1';
+    $quiz = $quiz . ',' . '"compare":"eq"';
+    $quiz = $quiz . ',' . '"content":"In addition, you get this badge and a grip of points!"}]}}]}';
+    return $quiz;
+  } catch (exception $e) {
+    if ($tng_debug == 1) {
+      dpm($e);
+    }
+  }
+}
+
+
+//{
+//  "type":"npPage",
+//   "data":{
+//
+//},
+//   "components":[
+//      {
+//        "type":"npAsResult",
+//         "id":"summary",
+//         "data":{
+//        "feedback":{
+//          "pass":"Congratulations, you scored :USERSCORE:% and have passed this module.",
+//               "fail":"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"
+//            },
+//            "achievements":[
+//               {
+//                 "score":0.8,
+//                  "compare":"gte",
+//                  "content":"In addition, you a grip of points!"
+//               },
+//               {
+//                 "score":1,
+//                  "compare":"eq",
+//                  "content":"In addition, you get this badge and a grip of points!"
+//               }
+//            ]
+//         }
+//      }
+//   ]
+//}
+
+
 
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
@@ -1609,7 +1700,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
         if ($create_button == 1) {
           if ($button_label) {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label);
-          // note if the user asks for a button, but doesn't give a label, we default to an 'en' one.
+            // note if the user asks for a button, but doesn't give a label, we default to an 'en' one.
           } else {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', 'Next');
           }
@@ -2513,7 +2604,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text, 'npImage', '', $first_image, '', '', '', '');
           $whole_list = $whole_list . $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
-          $first_text = str_replace('"', '', $key[1]);
+          $first_text = str_replace('"', '\"', $key[1]);
           $first_text = preg_replace('/\s+/S', " ", $first_text);
           $value = explode(':', $sploder[$i + 1]);
           if (count($value) > 1) {
@@ -2887,7 +2978,7 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
         }
 
         //$bt = tng_npButton_maker('', 'btn-next', '', 'Next');
-        $np = tng_npQuestion_maker($required, 'false', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
+        $np = tng_npQuestion_maker('true', 'false', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
         //pre pend since we built the question after the answers
         $ba = $np . $ba;
 
@@ -3100,7 +3191,7 @@ function process_content_object($object_values, $language, $nid)
     if ($content_object_type == 'Learning Content') {
       $content_object_prefix = 'Learning-Content-';
       $field_learning_template = $object_values['field_learning_template'];
-      if ($field_learning_template == 'popquiz' || $field_learning_template == 'trivia') {
+      if ($field_learning_template == 'popquiz' || $field_learning_template == 'trivia' || $field_learning_template == 'drag_select') {
         $percentage_required_to_pass = $object_values['field_percentage_requirement'];
         $field_final_exam = $object_values['field_final_exam'];
         $content_object_prefix = 'Learning-Content-';
@@ -3140,10 +3231,13 @@ function process_content_object($object_values, $language, $nid)
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
     $quiz_chunk = '';
     if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
+      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
       $final_exam = true;
-    } elseif  ($field_learning_template == 'trivia') {
-      $quiz_chunk = ',' . tng_npTrivia_maker('', '', $field_final_exam, $number_of_questions, $percentage_required_to_pass);
+    } elseif  ($field_learning_template == 'trivia'  && $field_final_exam == 1) {
+      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
+      $final_exam = true;
+    } elseif  ($field_learning_template == 'drag_select'  && $field_final_exam == 1) {
+      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
       $final_exam = true;
     }
 
@@ -3161,7 +3255,9 @@ function process_content_object($object_values, $language, $nid)
     } else {
       $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
       $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
-      //$instructions_chunk = rtrim($instructions_chunk, ' ,');
+      if ($final_exam) {
+        $instructions_chunk = rtrim($instructions_chunk, ' ,');
+      }
       $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
       $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     }
@@ -3175,18 +3271,52 @@ function process_content_object($object_values, $language, $nid)
       if ($key == 'field_learning_objects') {
         $lo_count = count($value);
         $combo = '';
+        if ($field_learning_template == 'trivia') {
+          $trivia_chunk = tng_npTrivia_maker('false', 'false', '1', 'Trivia content piece', 'true','That\'s right', 'That\'s not right');
+        }
         for ($los = 0; $los < $lo_count; $los++) {
           if ($tng_debug == 1) {
             dpm('learning objects');
             dpm($value[$los]);
           }
-          $combo = $combo . $value[$los] . ',';
+          //$combo = '';
+          if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
+            $mod_learn = $value[$los];
+            $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
+            $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
+            $combo = $combo . $mod_learn . ',';
+          } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1 ) {
+            $mod_learn = $value[$los];
+            $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
+            $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
+            $comp_start = strpos($mod_learn, '"components": [ {"type"');
+            $comp_start += 17;
+            $submatch = '{' . substr($mod_learn, $comp_start);
+            $mod_learn = $trivia_chunk . $submatch. ']}';
+            $combo = $combo . $mod_learn . ',';
+          } else {
+            $combo = $combo . $value[$los] . ',';
+          }
         }
-        $whole_object = $whole_object . $combo;
+        if ($field_learning_template == 'trivia' && $field_final_exam == 1) {
+          $trivia_chunk = rtrim($trivia_chunk, ', ');
+          $result_chunk = tng_npAsResult_maker();
+        }
+        elseif ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
+          $result_chunk = tng_npAsResult_maker();
+        }
       }
 
     }
+    $whole_object = $whole_object . $combo ;
+
     // after looping the HTML or Image group, remove the final ','
+    if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
+      $whole_object = $whole_object . $result_chunk;
+    } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
+      $whole_object = $whole_object . $trivia_chunk . $result_chunk;
+    }
+    //$whole_object = $whole_object . $result_chunk;
     $whole_object = rtrim($whole_object, ',');
     $whole_object = $whole_object . $close_contentobject;
     if ($final_exam) {
@@ -3338,7 +3468,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm($node);
     }
     return $node->nid;
-  // we already have a manifest, so update it with new data
+    // we already have a manifest, so update it with new data
   } else {
     $cnt_markets = count($markets);
     $market_csv = '';
@@ -4405,4 +4535,3 @@ function _date_diff($one, $two)
 
   return $result;
 }
-

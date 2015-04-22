@@ -26,6 +26,8 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.css', array('weight' => CSS_THEME));
     drupal_add_js(drupal_get_path('module', 'elx_utility')
     . '/admin.js');
+    drupal_add_js(drupal_get_path('module', 'elx_utility')
+    . '/jquery.alphanum.js');
   }
 }
 

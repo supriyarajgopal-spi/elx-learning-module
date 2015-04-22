@@ -3818,6 +3818,7 @@ function tng_shadow_shadow_request_alter($entity)
         if ($tng_debug == 1) {
           dpm('**type to process**');
           dpm($type);
+          dpm($info['type']);
         }
         if ($info['type'] == 'paragraphs') {
           // the outer node type is a 'field_paragraph_multiple_choice', so save this name for later pre-manifest creation.
@@ -4382,6 +4383,10 @@ function tng_shadow_shadow_request_alter($entity)
           $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($save_entity);
         }
+      } elseif ($entity_type == 'tools') {
+        $entity = tng_fix_tools($entity);
+
+        return $entity;
       }
     }
   } catch (exception $e) {
@@ -4389,6 +4394,37 @@ function tng_shadow_shadow_request_alter($entity)
       dpm($e);
     }
   }
+}
+
+/*
+ * Since tools don't have a manifest, they don't have the code that fixes file and images paths.
+ *
+ */
+function tng_fix_tools($entity)
+{
+  $node_fields = field_info_instances('node', 'tools');
+
+  // TODO:grab field names dynamically
+  // $info = field_info_field($sub_children[$key])
+  $field_names = array('field_tool_thumbnail', 'field_tool_pdf');
+
+  foreach ($field_names as $field_name) {
+    $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
+    foreach ($entity->$field_name as $language => $field) {
+      if (!isset($field[0]['uri'])) {
+        $fid = $field[0]['fid'];
+        if ($fid) {
+          $file = file_load($fid);
+          $style_path = image_style_path($image_style, $file->uri);
+          $file_mime = $file->filemime;
+          $entity->{$field_name}[$language][0]['uri'] = $style_path;
+          $entity->{$field_name}[$language][0]['filemime'] = $file_mime;
+        }
+      }
+    }
+  }
+
+  return $entity;
 }
 
 function get_language_from_uri()

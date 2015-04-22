@@ -211,7 +211,7 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
  *
  * tng_npPageStart_maker - given the required parameter $id, build a valid npPage code chunk
  */
-function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL)
+function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL, $instructional = NULL)
 {
   $tng_debug = 0;
   try {
@@ -233,6 +233,9 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
       }
       if ($title) {
         $page = $page . ',' . '"title"' . ': ' . '"' . $title . '"';
+      }
+      if ($instructional) {
+        $page = $page . ',' . '"instructional"' . ': ' . '"' . $instructional . '"';
       }
       if ($inmenu) {
         $page = $page . ',' . '"inMenu"' . ': ' . $inmenu;
@@ -1638,6 +1641,9 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
   if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
     $title = $hotspot_values['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($hotspot_values['field_intro'])) {
+      $instructional_text = $hotspot_values['field_intro'];
+    }
     $feature_chunk = tng_npFeature_maker($module, '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
@@ -1659,7 +1665,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
       $whole_hotspot = $feature_chunk . $content_chunk . $hotspot_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($hotspot_values['field_hot_spot_collection']) {
-      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+      $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
       $whole_hotspot = $whole_hotspot . $page_wrapper . $hot_top;
 
@@ -1830,13 +1836,14 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
   //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
   $correct_feedback = $dragmatch['field_custom_correct_feedback'];
   $incorrect_feedback = $dragmatch['field_custom_incorrect_feedback'];
-  // the instructions actually are created and used in the content object, in the intro field.
-  $instructions = $dragmatch['field_intro'];
   $placeholder = '<p></p>';
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragmatch['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($dragmatch['field_intro'])) {
+      $instructional_text = $dragmatch['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('**title drag and match**');
       dpm($title);
@@ -1864,7 +1871,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
 
     if ($dragmatch['field_drag_match_collection']) {
       {
-        $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+        $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
         $drag_top = tng_npDragAndDropMatch_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragdrop = $whole_dragdrop . $page_wrapper. $drag_top;
 
@@ -1968,6 +1975,9 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragselect['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($dragselect['field_intro'])) {
+      $instructional_text = $dragselect['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('**title drag and match**');
       dpm($title);
@@ -1993,7 +2003,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
 
     if ($dragselect['field_drag_select_collection']) {
       {
-        $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+        $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
         $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
@@ -2094,7 +2104,6 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
   //todo: we haven't implemented the feedback goodies yet, so let's set one and wait for Christian to implement it, then rework
   $correct_feedback = $dragprioritize['field_custom_correct_feedback'];
   $incorrect_feedback = $dragprioritize['field_custom_incorrect_feedback'];
-  $instructions = '<p>Drag each to it\'s matching match about etc. something Ultimate Diamond.</p>';
   $placeholder = '<p>this is the placeholder content</p>';
   $boxclass = 'box';
   $boximage = '/assets/images/hotspot.png';
@@ -2107,6 +2116,9 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
     dpm('****title****');
     dpm($title);
     $title = str_replace(" ", "-", $title);
+    if (isset($dragprioritize['field_intro'])) {
+      $instructional_text = $dragprioritize['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('**title drag and drop**');
       dpm($title);
@@ -2128,8 +2140,8 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $introductory_text = $dragprioritize['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
+    //$introductory_text = $dragprioritize['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', '', '', FALSE);
 
     $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
@@ -2210,6 +2222,10 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   if ($num_fields >= $min_reveal_fields && $num_fields <= $max_reveal_fields) {
     $title = $reveal_values['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($reveal_values['field_intro'])) {
+      $instructional_text = $reveal_values['field_intro'];
+    }
+
     if ($tng_debug == 1) {
       dpm('**title for reveal**');
       dpm($title);
@@ -2229,14 +2245,14 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $introductory_text = $reveal_values['field_intro'];
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
+    //$introductory_text = $reveal_values['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', '', '', FALSE);
     $whole_reveal = '';
     if ($standalone == 1) {
       $whole_reveal = $feature_chunk . $content_chunk . $reveal_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($reveal_values['field_reveal_collection']) {
-      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+      $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $reveal_top = tng_npReveal_maker('reveal-test-id', 'reveal-test-class');
       $whole_reveal = $whole_reveal . $page_wrapper . $reveal_top;
       $all_of_them = $reveal_values['field_reveal_collection'];
@@ -2379,6 +2395,9 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   if ($num_fields >= $min_flashcard_fields && $num_fields <= $max_flashcard_fields) {
     $title = $flashcard_values['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($flashcard_values['field_intro'])) {
+      $instructional_text = $flashcard_values['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('**title for flashcards**');
       dpm($title);
@@ -2404,7 +2423,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
       $whole_flashcard = $feature_chunk . $content_chunk . $flashcard_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
     if ($flashcard_values['field_flash_card_collection']) {
-      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+      $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $flashcard_top = tng_npFlashCard_maker('flash-cards-test-id', 'flash-cards-test-class');
       $whole_flashcard = $whole_flashcard . $page_wrapper . $flashcard_top;
       $all_of_them = $flashcard_values['field_flash_card_collection'];
@@ -2571,6 +2590,9 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
     $title = $listobject['title_field'];
     $title = str_replace(" ", "-", $title);
     $subtitle = $listobject['field_subtitle'];
+    if (isset($listobject['field_intro'])) {
+      $instructional_text = $listobject['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('****npLlist title****');
       dpm($title);
@@ -2591,7 +2613,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
       $count_of_elements = count($sploder);
-      $page_wrapper = tng_npPageStart_maker('', '', '', '', '');
+      $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $whole_list = $whole_list . $page_wrapper;
       for ($i = 0; $i < $count_of_elements; $i += 2) {
         $key = explode(':', $sploder[$i]);
@@ -2908,12 +2930,15 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($object_values['field_intro'])) {
+      $instructional_text = $object_values['field_intro'];
+    }
     $subtitle = $object_values['field_subtitle'];
     if ($tng_debug == 1) {
       dpm('Question and Answer had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $page_chunk = tng_npPageStart_maker('', '', '', '', '');
+    $page_chunk = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
 
     $whole_qa = $page_chunk;
     $ba = '';
@@ -3041,12 +3066,15 @@ function process_trivia($object_values, $language, $nid)
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($object_values['field_intro'])) {
+      $instructional_text = $object_values['field_intro'];
+    }
     $subtitle = $object_values['field_subtitle'];
     if ($tng_debug == 1) {
       dpm('Trivia had ' . $num_fields . ' fields.');
       dpm('title : ' . $title);
     }
-    $page_chunk = tng_npPageStart_maker($title, '', $title, 'true', 'true');
+    $page_chunk = tng_npPageStart_maker($nid, '', $title, 'true', 'true', $instructional_text);
 
     $whole_qa = $page_chunk;
     $ba = '';
@@ -3142,11 +3170,20 @@ function process_content_object($object_values, $language, $nid)
   $close_contentobject = '] } ] } ] } ]';
   $story_default = 'storyDefault';
   $story_bethsblog = 'storyBethsBlog';
-  // need to find out how many learning objects there are
+  // need to find out how many learning objects there are that we care about for scoring
   $number_of_questions = 0;
   foreach ($object_values as $key => $value) {
     if ($key == 'field_learning_objects') {
-      $number_of_questions = count($value);
+      // npDragAndDropSelect, npQuestion (npTrivia has npQuestions in it)
+      $num_learning_objs = count($value);
+      $num_with_qa_or_ds = 0;
+      for ($i=0; $i < $num_learning_objs; $i++) {
+        $has_question = strpos($value[$i], 'npQuestion');
+        $has_dragandselect = strpos($value[$i], 'npDragAndDropSelect');
+        if ($has_question > 0 || $has_dragandselect > 0) {
+          $number_of_questions += 1;
+        }
+      }
     }
   }
 
@@ -3279,7 +3316,6 @@ function process_content_object($object_values, $language, $nid)
             dpm('learning objects');
             dpm($value[$los]);
           }
-          //$combo = '';
           if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
             $mod_learn = $value[$los];
             $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
@@ -3290,8 +3326,9 @@ function process_content_object($object_values, $language, $nid)
             $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
             $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
             $comp_start = strpos($mod_learn, '"components": [ {"type"');
-            $comp_start += 17;
-            $submatch = '{' . substr($mod_learn, $comp_start);
+            // crispy code here, assuming the components model doesn't change.
+            $comp_start += 16;
+            $submatch = substr($mod_learn, $comp_start);
             $mod_learn = $trivia_chunk . $submatch. ']}';
             $combo = $combo . $mod_learn . ',';
           } else {
@@ -3312,9 +3349,9 @@ function process_content_object($object_values, $language, $nid)
 
     // after looping the HTML or Image group, remove the final ','
     if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
-      $whole_object = $whole_object . $result_chunk;
+      $whole_object = $whole_object . $result_chunk ;
     } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
-      $whole_object = $whole_object . $trivia_chunk . $result_chunk;
+      $whole_object = $whole_object . $result_chunk ;
     }
     //$whole_object = $whole_object . $result_chunk;
     $whole_object = rtrim($whole_object, ',');
@@ -3322,7 +3359,6 @@ function process_content_object($object_values, $language, $nid)
     if ($final_exam) {
       $whole_object = $whole_object . '} ]';
     }
-    //$new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords);
     $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords, $content_object_points);
     // return the new nid to set it on the parent node
     return $new_nid;

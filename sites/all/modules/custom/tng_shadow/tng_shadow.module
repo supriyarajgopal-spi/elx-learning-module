@@ -4405,19 +4405,24 @@ function tng_fix_tools($entity)
   $node_fields = field_info_instances('node', 'tools');
 
   // TODO:grab field names dynamically
-  // $info = field_info_field($sub_children[$key])
   $field_names = array('field_tool_thumbnail', 'field_tool_pdf');
 
   foreach ($field_names as $field_name) {
-    $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
     foreach ($entity->$field_name as $language => $field) {
       if (!isset($field[0]['uri'])) {
         $fid = $field[0]['fid'];
         if ($fid) {
           $file = file_load($fid);
-          $style_path = image_style_path($image_style, $file->uri);
+          $info = field_info_field($field_name);
+          if ($info['type'] == 'image') {
+            $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
+            $path = image_style_path($image_style, $file->uri);
+          }
+          else {
+            $path = $file->uri;
+          }
           $file_mime = $file->filemime;
-          $entity->{$field_name}[$language][0]['uri'] = $style_path;
+          $entity->{$field_name}[$language][0]['uri'] = $path;
           $entity->{$field_name}[$language][0]['filemime'] = $file_mime;
         }
       }

@@ -3704,7 +3704,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'list',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This is the title used for administrative purposed. It should be unique to allow for easy identification.',
+    'description' => 'This is the title used for administrative purposed. It should be unique to allow for easy identification. Some special character are prohibited, e.g. "?$#!@&"',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -10017,6 +10017,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('This is the name used to reference Products throughout the admin system. This name <b>MUST</b> be unique.');
   t('This is the title that will be displayed in the ELX system.');
   t('This is the title used for administrative purposed. It should be unique to allow for easy identification.');
+  t('This is the title used for administrative purposed. It should be unique to allow for easy identification. Some special character are prohibited, e.g. "?$#!@&"');
   t('Thumbnail link');
   t('Title');
   t('Tool Media');

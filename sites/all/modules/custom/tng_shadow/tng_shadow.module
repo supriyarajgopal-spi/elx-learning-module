@@ -1955,7 +1955,9 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
   $num_fields = count($dragselect);
 
   $correct_feedback = $dragselect['field_correct_feedback'];
+  $correct_feedback =  str_replace('"', '\"', $correct_feedback);
   $incorrect_feedback = $dragselect['field_incorrect_feeback'];
+  $incorrect_feedback =  str_replace('"', '\"', $incorrect_feedback);
   $intro_text = $dragselect['field_intro_text'];
   if (isset($intro_text)) {
     $instructional_text = $dragselect['field_intro_text'];

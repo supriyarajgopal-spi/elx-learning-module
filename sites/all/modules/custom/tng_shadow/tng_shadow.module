@@ -1479,7 +1479,8 @@ function process_product($product_values, $labels, $language, $nid)
     $more_column = tng_npColumn_maker('row', '2', TRUE);
     $row_chunk = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
     $strip = ltrim(rtrim(strip_tags($perfect_data[1])));
-    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    //$dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = '';
 
     //$link_path = '/api/products/name/' . $perfect_data[1];
     $first_image_chunk = tng_npImage_maker('', $perfect_data[0], $col_sm4, $perfect_data[1]) . ',';
@@ -1489,7 +1490,8 @@ function process_product($product_values, $labels, $language, $nid)
     $disclaim_two_chunk = $disclaim_two_chunk . $close_html;
     $next_disclaim = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
     $strip = ltrim(rtrim(strip_tags($perfect_data[1])));
-    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    //$dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = '';
     //$link_path = '/api/products/name/' . $perfect_data[4];
     $second_image_chunk = '';
     $disclaim_second_chunk = '';
@@ -1538,7 +1540,8 @@ function process_product($product_values, $labels, $language, $nid)
       $similar_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', '', '', FALSE);
     }
     $strip = ltrim(rtrim(strip_tags($similar_data[1])));
-    $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    //$dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+    $dash_name = '';
     $similar_image = tng_convert_drupal_to_mean_filename($similar_data[0], 'teaser', TRUE);
     $similar_image_chunk = tng_npImage_maker('', $similar_image, $col_sm4_resp, $similar_data[1]) . ',';
     $flexible_content = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $similar_data[1], $dash_name, FALSE);
@@ -1553,7 +1556,8 @@ function process_product($product_values, $labels, $language, $nid)
       $suggested_row = tng_npHTML_basic_maker('', 'row', '', '', '', '', '', TRUE);
       $suggested_content = tng_npHTML_basic_maker('', $h5_sans, '', '', '', 'SUGGESTED FOR YOU', '', FALSE);
       $strip = ltrim(rtrim(strip_tags($suggested_data[1])));
-      $dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+      //$dash_name = $prefix_url . 'Product-Manifest-' . str_replace(" ", "-", $strip);
+      $dash_name = '';
       $suggested_image = tng_convert_drupal_to_mean_filename($suggested_data[0], 'teaser', TRUE);
       $suggested_image_chunk = tng_npImage_maker('', $suggested_image, $col_sm4_resp, $suggested_data[1]) . ',';
       $suggested_footer = tng_npHTML_basic_maker('', $col_sm8, '', '', '', $suggested_data[1], $dash_name, FALSE);

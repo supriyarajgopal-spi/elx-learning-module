@@ -1949,11 +1949,13 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
 
   $correct_feedback = $dragselect['field_correct_feedback'];
   $incorrect_feedback = $dragselect['field_incorrect_feeback'];
-  if (isset($dragselect['field_intro_text'])) {
+  $intro_text = $dragselect['field_intro_text'];
+  if (isset($intro_text)) {
     $instructional_text = $dragselect['field_intro_text'];
   }
   $placeholder = '<p></p>';
-  $combine_question_text = $instructional_text . $dragselect['field_drag_select_question'];
+  $drag_question = $dragselect['field_drag_select_question'];
+  $combine_question_text = $instructional_text . $drag_question;
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragselect['title_field'];
@@ -4165,6 +4167,7 @@ function tng_shadow_shadow_request_alter($entity)
           }
           $pre_manifest[$field_name] = $image_style_path[0];
         } elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
+          $wrap = '';
           $wrap_array = $wrapper->$children_nodes_to_process[$i]->value();
           if (is_array($wrap_array)) {
             $wrap = $wrap_array['value'];

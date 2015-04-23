@@ -1302,10 +1302,12 @@ function tng_create_perfect_partners($path, $csv_fields)
     $first_exp = explode("//", $separator[1]);
     $second_exp = explode("//", $separator[4]);
     $tid_one = explode("/", $separator[0]);
-    // we now use the link name to call an api with, see manifest for details
-    $separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    // we now use the link name to call an api with, see manifest for details (request to remove was made, we comment for re-introduction later)
+    //$separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    $separator[0] = $tid_one[0];
     $tid_two = explode("/", $separator[3]);
-    $separator[3] = '<a href=' . '\'' . '#/' . $tid_two[1] . '\'>' . $tid_two[0] . '</a>';
+    //$separator[3] = '<a href=' . '\'' . '#/' . $tid_two[1] . '\'>' . $tid_two[0] . '</a>';
+    $separator[3] = $tid_two[0];
     $perfect_fields[] = $path . '/' . $first_exp[1];
     $perfect_fields[] = $separator[0];
     $perfect_fields[] = $separator[2];
@@ -1320,7 +1322,8 @@ function tng_create_perfect_partners($path, $csv_fields)
     }
     $tid_one = explode("/", $separator[0]);
     // we now use the link name to call an api with, see manifest for details
-    $separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    //$separator[0] = '<a href=' . '\'' . '#/' . $tid_one[1] . '\'>' . $tid_one[0] . '</a>';
+    $separator[0] = $tid_one[0];
     $first_exp = explode("//", $separator[1]);
     $perfect_fields[] = $path . '/' . $first_exp[1];
     $perfect_fields[] = $separator[0];

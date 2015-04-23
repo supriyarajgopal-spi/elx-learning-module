@@ -2609,15 +2609,21 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
         if ($key[0] == '"field_list_image" ') {
           $first_image = str_replace('"', '', $key[1] . ':' . $key[2]);
           $first_image = tng_convert_drupal_to_mean_filename($first_image, '', '', 'true');
-          $value = explode(':', $sploder[$i + 1]);
-          $second_text = str_replace(' "', '', $value[1]);
-          $second_text = preg_replace('/\s+/S', " ", $second_text);
+          $value = explode(':', $sploder[$i + 1], 2);
+          $second_text = preg_replace('/\s+/S', " ", $value[1]);
+          $second_text = ltrim($second_text, ' "');
+          $second_text = ltrim($second_text, '"');
+          $second_text = rtrim($second_text, '"');
+          $second_text = str_replace('"', '\"',$second_text);
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text, 'npImage', '', $first_image, '', '', '', '');
           $whole_list = $whole_list . $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
-          $first_text = str_replace(' "', '', $key[1]);
-          $first_text = preg_replace('/\s+/S', " ", $first_text);
-          $value = explode(':', $sploder[$i + 1]);
+          $first_text = preg_replace('/\s+/S', " ", $key[1]);
+          $first_text = ltrim($first_text, ' "');
+          $first_text = ltrim($first_text, '"');
+          $first_text = rtrim($first_text, '"');
+          $first_text = str_replace('"', '\"', $first_text);
+          $value = explode(':', $sploder[$i + 1], 2);
           if (count($value) > 1) {
             $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
             $second_video = tng_convert_drupal_to_mean_filename($second_video, '', '', 'true');

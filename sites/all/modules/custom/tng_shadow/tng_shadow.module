@@ -2201,8 +2201,8 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   if ($num_fields >= $min_reveal_fields && $num_fields <= $max_reveal_fields) {
     $title = $reveal_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($reveal_values['field_intro_text'])) {
-      $instructional_text = $reveal_values['field_intro_text'];
+    if (isset($reveal_values['field_intro'])) {
+      $instructional_text = $reveal_values['field_intro'];
     }
 
     if ($tng_debug == 1) {
@@ -2373,8 +2373,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   if ($num_fields >= $min_flashcard_fields && $num_fields <= $max_flashcard_fields) {
     $title = $flashcard_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($flashcard_values['field_intro_text'])) {
-      $instructional_text = $flashcard_values['field_intro_text'];
+    if (isset($flashcard_values['field_intro'])) {
+      $instructional_text = $flashcard_values['field_intro'];
     }
     if ($tng_debug == 1) {
       dpm('**title for flashcards**');

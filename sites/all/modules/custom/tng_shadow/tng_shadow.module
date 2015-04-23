@@ -946,7 +946,7 @@ function tng_npTrivia_maker($required = NULL, $forced = NULL, $difficulty = NULL
 }
 
 
-function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $perfect_text = null)
+function tng_npAsResult_maker()
 {
   $tng_debug = 0;
   try {
@@ -958,30 +958,14 @@ function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $pe
     $quiz = $quiz . '{' . '"type"' . ':' . '"npAsResult"';
     $quiz = $quiz . ',' . '"id"' . ':' . '"summary"';
     $quiz = $quiz . ',' . '"data"' . ': {' . '"feedback"' . ': {' ;
-    if ($pass) {
-      $quiz = $quiz       . '"pass"' . ':' . '"' . $pass . '"';
-    } else {
-      $quiz = $quiz       . '"pass"' . ':' . '"Congratulations, you scored :USERSCORE:% and have passed this module."';
-    }
-    if ($fail) {
-      $quiz = $quiz . ',' . '"fail"' . ':' . '"' . $fail .  '"}';
-    } else {
-      $quiz = $quiz . ',' . '"fail"' . ':' . '"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"}';
-    }
+    $quiz = $quiz       . '"pass"' . ':' . '"Congratulations, you scored :USERSCORE:% and have passed this module."';
+    $quiz = $quiz . ',' . '"fail"' . ':' . '"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"}';
     $quiz = $quiz . ',' . '"achievements":[{"score":0.8';
     $quiz = $quiz . ',' . '"compare":"gte"';
-    if ($pass_text) {
-      $quiz = $quiz . ',' . '"content":' . '"' . $pass_text . '"}';
-    } else {
-      $quiz = $quiz . ',' . '"content":"In addition, you scored some points!"}';
-    }
+    $quiz = $quiz . ',' . '"content":"In addition, you a grip of points!"}';
     $quiz = $quiz . ',' . '{"score":1';
     $quiz = $quiz . ',' . '"compare":"eq"';
-    if ($perfect_text) {
-      $quiz = $quiz . ',' . '"content":' . '"' . $perfect_text . '"}]}}]}';
-    } else {
-      $quiz = $quiz . ',' . '"content":"In addition, you get this badge and some points!"}]}}]}';
-    }
+    $quiz = $quiz . ',' . '"content":"In addition, you get this badge and a grip of points!"}]}}]}';
     return $quiz;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -989,6 +973,40 @@ function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $pe
     }
   }
 }
+
+
+//{
+//  "type":"npPage",
+//   "data":{
+//
+//},
+//   "components":[
+//      {
+//        "type":"npAsResult",
+//         "id":"summary",
+//         "data":{
+//        "feedback":{
+//          "pass":"Congratulations, you scored :USERSCORE:% and have passed this module.",
+//               "fail":"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"
+//            },
+//            "achievements":[
+//               {
+//                 "score":0.8,
+//                  "compare":"gte",
+//                  "content":"In addition, you a grip of points!"
+//               },
+//               {
+//                 "score":1,
+//                  "compare":"eq",
+//                  "content":"In addition, you get this badge and a grip of points!"
+//               }
+//            ]
+//         }
+//      }
+//   ]
+//}
+
+
 
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
@@ -1640,7 +1658,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $instructions = $hotspot_values['field_subtitle'];
+    $instructions = $hotspot_values['field_hot_spot_instructions'];
     $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructions, '', FALSE);
     $whole_hotspot = '';
     if ($standalone == 1) {
@@ -1843,8 +1861,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
     $subtitle = $dragmatch['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', '', '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $subtitle, '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
+    $introductory_text = $dragmatch['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
     if ($standalone == 1) {
       $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
@@ -1949,15 +1968,16 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
 
   $correct_feedback = $dragselect['field_correct_feedback'];
   $incorrect_feedback = $dragselect['field_incorrect_feeback'];
-  if (isset($dragselect['field_intro_text'])) {
-    $instructional_text = $dragselect['field_intro_text'];
-  }
+  $instructions = $dragselect['field_intro'];
   $placeholder = '<p></p>';
-  $combine_question_text = $instructional_text . $dragselect['field_drag_select_question'];
+  $question_text = $dragselect['field_drag_select_question'] . $instructions;
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragselect['title_field'];
     $title = str_replace(" ", "-", $title);
+    if (isset($dragselect['field_intro'])) {
+      $instructional_text = $dragselect['field_intro'];
+    }
     if ($tng_debug == 1) {
       dpm('**title drag and match**');
       dpm($title);
@@ -1976,14 +1996,14 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $instructional_text, '', FALSE);
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $question_text, '', FALSE);
     if ($standalone == 1) {
       $whole_dragselect = $feature_chunk . $content_chunk . $dragselect_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
     }
 
     if ($dragselect['field_drag_select_collection']) {
       {
-        $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
+        $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
         $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
@@ -2119,8 +2139,9 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
     $subtitle = $dragprioritize['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', '', '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $subtitle, '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
+    //$introductory_text = $dragprioritize['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', '', '', FALSE);
 
     $whole_dragdrop = $feature_chunk . $content_chunk . $dragmatch_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
 
@@ -2201,8 +2222,8 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
   if ($num_fields >= $min_reveal_fields && $num_fields <= $max_reveal_fields) {
     $title = $reveal_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($reveal_values['field_intro_text'])) {
-      $instructional_text = $reveal_values['field_intro_text'];
+    if (isset($reveal_values['field_intro'])) {
+      $instructional_text = $reveal_values['field_intro'];
     }
 
     if ($tng_debug == 1) {
@@ -2223,8 +2244,9 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     $subtitle = $reveal_values['field_subtitle'];
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
-    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', '', '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $subtitle, '', FALSE);
+    $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
+    //$introductory_text = $reveal_values['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', '', '', FALSE);
     $whole_reveal = '';
     if ($standalone == 1) {
       $whole_reveal = $feature_chunk . $content_chunk . $reveal_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
@@ -2373,8 +2395,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
   if ($num_fields >= $min_flashcard_fields && $num_fields <= $max_flashcard_fields) {
     $title = $flashcard_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($flashcard_values['field_intro_text'])) {
-      $instructional_text = $flashcard_values['field_intro_text'];
+    if (isset($flashcard_values['field_intro'])) {
+      $instructional_text = $flashcard_values['field_intro'];
     }
     if ($tng_debug == 1) {
       dpm('**title for flashcards**');
@@ -2599,12 +2621,12 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           $first_image = str_replace('"', '', $key[1] . ':' . $key[2]);
           $first_image = tng_convert_drupal_to_mean_filename($first_image, '', '', 'true');
           $value = explode(':', $sploder[$i + 1]);
-          $second_text = str_replace(' "', '', $value[1]);
+          $second_text = str_replace('"', '', $value[1]);
           $second_text = preg_replace('/\s+/S', " ", $second_text);
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text, 'npImage', '', $first_image, '', '', '', '');
           $whole_list = $whole_list . $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
-          $first_text = str_replace(' "', '', $key[1]);
+          $first_text = str_replace('"', '\"', $key[1]);
           $first_text = preg_replace('/\s+/S', " ", $first_text);
           $value = explode(':', $sploder[$i + 1]);
           if (count($value) > 1) {
@@ -2745,9 +2767,6 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
   if ($num_fields >= $min_matchgame_fields && $num_fields <= $max_matchgame_fields) {
     $title = $matchgame_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($listobject['field_intro'])) {
-      $instructional_text = $listobject['field_intro'];
-    }
     if ($tng_debug == 1) {
       dpm('**title for matchgames**');
       dpm($title);
@@ -2767,7 +2786,8 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
     $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
     $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
     $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $subtitle, '', FALSE);
-    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $subtitle, '', FALSE);
+    $introductory_text = $matchgame_values['field_intro'];
+    $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
     $whole_matchgame = '';
     if ($standalone == 1) {
       $whole_matchgame = $feature_chunk . $content_chunk . $matchgame_background . $background_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk;
@@ -2790,8 +2810,6 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       }
       // process the bottom, middle and top text or image match pairs
       $top_count = count($top_values);
-      $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-      $whole_matchgame = $whole_matchgame . $page_wrapper;
       $row_maker = tng_npMatchRow_maker('', 'top', '');
       $whole_matchgame = $whole_matchgame . $row_maker;
       for ($k = 0; $k < $top_count; $k += 1) {
@@ -2912,8 +2930,8 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    if (isset($listobject['field_intro'])) {
-      $instructional_text = $listobject['field_intro'];
+    if (isset($object_values['field_intro'])) {
+      $instructional_text = $object_values['field_intro'];
     }
     $subtitle = $object_values['field_subtitle'];
     if ($tng_debug == 1) {
@@ -3230,7 +3248,6 @@ function process_content_object($object_values, $language, $nid)
     $content_object_points = $object_values['field_point_value'];
     $content_keywords = $object_values['field_tags_keywords'];
     $intro_text = strip_tags($object_values['field_intro']);
-    $pass_text = '';
     $headline = $object_values['field_headline'];
     if ($making_story) {
       if ($beth_blog) {
@@ -3277,10 +3294,6 @@ function process_content_object($object_values, $language, $nid)
       $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
       if ($final_exam) {
         $instructions_chunk = rtrim($instructions_chunk, ' ,');
-        $pass_text = $object_values['field_exam_pass_feedback'];
-        $fail_text = $object_values['field_exam_fail_feedback'];
-        $pass_content = $object_values['field_exam_pass_content'];
-        $perfect_content = $object_values['field_exam_perfect_content'];
       }
       $subtitle_chunk = tng_npHTML_basic_maker('', $outside_padding, '', '', '', '', '', TRUE);
       $html_logo_chunk = tng_npHTML_basic_maker('', $renutriv_logo_image, '', '', '', '', '', FALSE);
@@ -3324,10 +3337,10 @@ function process_content_object($object_values, $language, $nid)
         }
         if ($field_learning_template == 'trivia' && $field_final_exam == 1) {
           $trivia_chunk = rtrim($trivia_chunk, ', ');
-          $result_chunk = tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
+          $result_chunk = tng_npAsResult_maker();
         }
-        elseif (($field_learning_template == 'popquiz' && $field_final_exam == 1) || ($field_learning_template == 'drag_select' && $field_final_exam == 1)) {
-          $result_chunk = tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
+        elseif ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
+          $result_chunk = tng_npAsResult_maker();
         }
       }
 
@@ -3335,7 +3348,7 @@ function process_content_object($object_values, $language, $nid)
     $whole_object = $whole_object . $combo ;
 
     // after looping the HTML or Image group, remove the final ','
-    if (($field_learning_template == 'popquiz' && $field_final_exam == 1) || ($field_learning_template == 'drag_select' && $field_final_exam == 1)) {
+    if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
       $whole_object = $whole_object . $result_chunk ;
     } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
       $whole_object = $whole_object . $result_chunk ;

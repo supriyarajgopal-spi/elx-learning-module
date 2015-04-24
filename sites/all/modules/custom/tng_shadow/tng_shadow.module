@@ -3523,12 +3523,15 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
   } else {
     $cnt_markets = count($markets);
     $market_csv = '';
-    for ($c = 0; $c < $cnt_markets; $c++) {
-      $market_csv = $market_csv . $markets[$c] . ',';
+    if ($markets > 0) {
+      for ($c = 0; $c < $cnt_markets; $c++) {
+        $market_csv = $market_csv . $markets[$c] . ',';
+      }
+      if (isset($market_csv)) {
+        $market_csv = rtrim($market_csv, ', ');
+      }
     }
-    if (isset($market_csv)) {
-      $market_csv = rtrim($market_csv, ', ');
-    }
+
     if ($tng_debug == 1) {
       dpm('whole market');
       dpm($market_csv);

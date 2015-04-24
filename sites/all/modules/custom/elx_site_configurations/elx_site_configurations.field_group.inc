@@ -568,22 +568,20 @@ function elx_site_configurations_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'First/last questions',
-    'weight' => '8',
+    'label' => 'Last question',
+    'weight' => '9',
     'children' => array(
-      0 => 'field_first_question_in_quiz',
+      0 => 'field_completion_text',
       1 => 'field_last_question_in_quiz',
-      2 => 'field_intro',
-      3 => 'field_completion_text',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'First/last questions',
+      'label' => 'Last question',
       'instance_settings' => array(
         'required_fields' => 1,
         'id' => '',
         'classes' => 'group-questions field-group-fieldset',
-        'description' => '<p>If this question is the first or last question in a quiz, check the appropriate box and enter the intro text or completion screen text.</p>',
+        'description' => '',
       ),
       'formatter' => 'open',
     ),

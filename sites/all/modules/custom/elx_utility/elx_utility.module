@@ -67,3 +67,14 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
     ))
     ->execute();
 }
+
+/**
+ * Implements hook_clone_node_alter().
+ */
+function elx_utility_clone_node_alter(&$node, $context) {
+  $lang = $node->language;
+  // Empty manifest reference
+  if (isset($node->field_manifest[$lang][0]['target_id'])) {
+    $node->field_manifest[$lang][0]['target_id'] = '';
+  }
+}

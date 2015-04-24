@@ -4379,24 +4379,24 @@ function tng_shadow_shadow_request_alter($entity)
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($save_entity);
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          node_save($entity);
         }
       } elseif ($entity_type == 'badge') {
         $local_language = $save_entity->language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($save_entity);
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          node_save($entity);
         }
       } elseif ($entity_type == 'story') {
         $local_language = $save_entity->language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
-          $save_entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($save_entity);
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          node_save($entity);
         }
       } elseif ($entity_type == 'tools') {
         $entity = tng_fix_tools($entity);

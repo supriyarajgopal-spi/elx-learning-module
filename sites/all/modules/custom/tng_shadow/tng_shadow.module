@@ -1411,6 +1411,10 @@ function process_product($product_values, $labels, $language, $nid)
       dpm('number of markets found:');
       dpm($num_mkts);
     }
+//    $product_points = $product_values['field_point_value'];
+//    if (!isset($product_values)) {
+//      $product_points = 50;
+//    }
 
     $feature_chunk = tng_npFeature_maker('products', 'productTemplate', '[]', '0.0.1');
     // language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
@@ -3396,7 +3400,9 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
 {
   global $user;
   $tng_debug = 0;
-
+  if ($node_final == null) {
+    $node_final = 0;
+  }
   // create a new manifest here
   if (!isset($nid)) {
     if ($tng_debug == 1) {
@@ -3414,6 +3420,8 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm('node display text : ' . $node_display_text);
       dpm('node categories : ' . $node_categories);
       dpm('node keywords : ' . $node_keywords);
+      dpm('node points : ' . $node_points);
+      dpm('node final exam : ' . $node_final);
     }
     $node = new stdClass();
     $node->title = $node_title;
@@ -3502,7 +3510,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       'format' => 'plain_text',
     );
 
-    // since we can't save a manifest node with a 'points' we save it separately in a new field
+    // since we can't save a manifest node with a 'final exam' we save it separately in a new field
     $node->field_final_exam[$node->language][] = array(
       'value' => $node_final,
       'format' => 'plain_text',
@@ -3556,6 +3564,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $node->field_manifest_categories['und'][0]['value'] = $node_categories;
     $node->field_manifest_keywords['und'][0]['value'] = $node_keywords;
     $node->field_point_value['und'][0]['value'] = $node_points;
+    $node->field_final_exam['und'][0]['value'] = $node_final;
     node_save($node);
     return $node->nid;
   }

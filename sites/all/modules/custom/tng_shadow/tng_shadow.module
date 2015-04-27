@@ -2006,7 +2006,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     if ($dragselect['field_drag_select_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
-        $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, 'true', '');
+        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '');
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
         foreach ($dragselect as $key => $value) {

@@ -664,7 +664,7 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL)
 
 
 
-function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $req = NULL)
+function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $required = NULL, $req = NULL)
 {
   $tng_debug = 0;
   try {
@@ -679,6 +679,9 @@ function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback
     }
     if ($negative_feedback) {
       $draganselect = $draganselect . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+    }
+    if ($required) {
+      $draganselect = $draganselect . ',' . '"required"' . ':' .  $required ;
     }
     $draganselect = $draganselect . ',' . '"req"' . ':' . '[' . $req . ']';
     $draganselect = $draganselect . ',' . '"draggableButtons"' . ':' . '[';
@@ -2003,7 +2006,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     if ($dragselect['field_drag_select_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
-        $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
+        $drag_top = tng_npDragAndSelect_maker('container', '', $correct_feedback, $incorrect_feedback, 'true', '');
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
         foreach ($dragselect as $key => $value) {
@@ -3205,6 +3208,7 @@ function process_content_object($object_values, $language, $nid)
     // here we process the fields we find for our hot spot passed in the array of $object_values
     //  start by telling the processor how many fields we found
     $title = $object_values['title_field'];
+    $featured_content = $object_values['field_featured'];
     if ($tng_debug == 1) {
       dpm('Content Object had ' . $num_fields . ' fields.');
       dpm('**language**' . $language);
@@ -3378,7 +3382,7 @@ function process_content_object($object_values, $language, $nid)
     if ($final_exam) {
       $whole_object = $whole_object . '} ]';
     }
-    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords, $content_object_points, $final_exam);
+    $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords, $content_object_points, $final_exam, $featured_content);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -3396,7 +3400,7 @@ function process_content_object($object_values, $language, $nid)
  * @param $nid - if this id is passed we won't make a new one, if not set create one
  * @return mixed - the nid is returned
  */
-function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL, $node_points = NULL, $node_final = NULL)
+function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL, $node_points = NULL, $node_final = NULL, $node_featured = NULL)
 {
   global $user;
   $tng_debug = 0;
@@ -3422,6 +3426,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm('node keywords : ' . $node_keywords);
       dpm('node points : ' . $node_points);
       dpm('node final exam : ' . $node_final);
+      dpm('node featured : ' . $node_featured);
     }
     $node = new stdClass();
     $node->title = $node_title;
@@ -3516,6 +3521,12 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       'format' => 'plain_text',
     );
 
+    // since we can't save a manifest node with a 'feature' we save it separately in a new field
+    $node->field_featured[$node->language][] = array(
+      'value' => $node_featured,
+      'format' => 'plain_text',
+    );
+
     //$node->language = $node_language; // unfortunately this doesn't work
     $node->uid = $user->uid;
     $node->status = 1; //(1 or 0): published or not
@@ -3565,6 +3576,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $node->field_manifest_keywords['und'][0]['value'] = $node_keywords;
     $node->field_point_value['und'][0]['value'] = $node_points;
     $node->field_final_exam['und'][0]['value'] = $node_final;
+    $node->field_featured['und'][0]['value'] = $node_featured;
     node_save($node);
     return $node->nid;
   }

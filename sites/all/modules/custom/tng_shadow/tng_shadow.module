@@ -1870,7 +1870,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
     if ($dragmatch['field_drag_match_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-        $drag_top = tng_npDragAndDropMatch_maker('container', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
+        $drag_top = tng_npDragAndDropMatch_maker('', '', $correct_feedback, $incorrect_feedback, '"mediaelement/GreenSock/TweenMax.js","mediaelement/GreenSock/utils/Draggable.js","mediaelement/angular-tweenmax-draggable.js"');
         $whole_dragdrop = $whole_dragdrop . $page_wrapper. $drag_top;
 
         foreach ($dragmatch as $key => $value) {
@@ -2151,7 +2151,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
 
     if ($dragprioritize['field_drag_priority_collection']) {
       {
-        $drag_top = tng_npDragAndMatchPriority_maker('container', '', $correct_feedback, $incorrect_feedback, '');
+        $drag_top = tng_npDragAndMatchPriority_maker('', '', $correct_feedback, $incorrect_feedback, '');
         $whole_dragdrop = $whole_dragdrop . $drag_top;
 
         foreach ($dragprioritize as $key => $value) {

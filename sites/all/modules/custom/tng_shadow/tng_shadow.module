@@ -964,26 +964,26 @@ function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $pe
     if ($pass) {
       $quiz = $quiz       . '"pass"' . ':' . '"' . $pass . '"';
     } else {
-      $quiz = $quiz       . '"pass"' . ':' . '"Congratulations, you scored :USERSCORE:% and have passed this module."';
+      $quiz = $quiz       . '"pass"' . ':' . '"You\'ve completed this topic! You scored :USERSCORE:%"';
     }
     if ($fail) {
       $quiz = $quiz . ',' . '"fail"' . ':' . '"' . $fail .  '"}';
     } else {
-      $quiz = $quiz . ',' . '"fail"' . ':' . '"Sorry, you scored :USERSCORE:% and you needed to score :MINSCORE:% to pass. Try it again!"}';
+      $quiz = $quiz . ',' . '"fail"' . ':' . '"You scored :USERSCORE:%. Consider going back and reviewing the material again."}';
     }
     $quiz = $quiz . ',' . '"achievements":[{"score":0.8';
     $quiz = $quiz . ',' . '"compare":"gte"';
     if ($pass_text) {
       $quiz = $quiz . ',' . '"content":' . '"' . $pass_text . '"}';
     } else {
-      $quiz = $quiz . ',' . '"content":"In addition, you scored some points!"}';
+      $quiz = $quiz . ',' . '"content":" "}';
     }
     $quiz = $quiz . ',' . '{"score":1';
     $quiz = $quiz . ',' . '"compare":"eq"';
     if ($perfect_text) {
       $quiz = $quiz . ',' . '"content":' . '"' . $perfect_text . '"}]}}]}';
     } else {
-      $quiz = $quiz . ',' . '"content":"In addition, you get this badge and some points!"}]}}]}';
+      $quiz = $quiz . ',' . '"content":" "}]}}]}';
     }
     return $quiz;
   } catch (exception $e) {

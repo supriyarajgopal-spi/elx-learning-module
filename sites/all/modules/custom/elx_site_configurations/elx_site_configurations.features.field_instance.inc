@@ -5772,7 +5772,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_why_there_s_only_one',
-    'label' => 'Why there\'s only one',
+    'label' => 'Why there\'s only 1',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -10242,7 +10242,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Upload video poster');
   t('Video poster image');
   t('Weight');
-  t('Why there\'s only one');
+  t('Why there\'s only 1');
 
   return $field_instances;
 }

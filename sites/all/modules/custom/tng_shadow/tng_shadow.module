@@ -211,11 +211,10 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
  *
  * tng_npPageStart_maker - given the required parameter $id, build a valid npPage code chunk
  */
-function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL, $instructional = NULL)
+function tng_npPageStart_maker($id = null, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL, $instructional = NULL)
 {
   $tng_debug = 0;
   try {
-    if (isset($id)) {
       if (!isset($title)) {
         $title = '"Page Title"';
       }
@@ -246,12 +245,6 @@ function tng_npPageStart_maker($id, $parentid = NULL, $title = NULL, $inmenu = N
       $page = $page . '}, ';
       $page = $page . '"components": [ ';
       return $page;
-    } else {
-      if ($tng_debug == 1) {
-        dpm('No id passed to npPage function!');
-      }
-      return null;
-    }
   } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
@@ -1313,10 +1306,12 @@ function tng_create_perfect_partners($path, $csv_fields)
     $separator[3] = $tid_two[0];
     $perfect_fields[] = $path . '/' . $first_exp[1];
     $perfect_fields[] = $separator[0];
-    $perfect_fields[] = $separator[2];
+    //$perfect_fields[] = $separator[2];
+    $perfect_fields[] = '';
     $perfect_fields[] = $path . '/' . $second_exp[1];
     $perfect_fields[] = $separator[3];
-    $perfect_fields[] = $separator[5];
+    //$perfect_fields[] = $separator[5];
+    $perfect_fields[] = '';
   } else {
     // we guard against no perfect partner data at all
     if (strlen($csv_fields) < 2) {
@@ -1330,7 +1325,8 @@ function tng_create_perfect_partners($path, $csv_fields)
     $first_exp = explode("//", $separator[1]);
     $perfect_fields[] = $path . '/' . $first_exp[1];
     $perfect_fields[] = $separator[0];
-    $perfect_fields[] = $separator[2];
+    //$perfect_fields[] = $separator[2];
+    $perfect_fields[] = '';
   }
   return $perfect_fields;
 }
@@ -1414,10 +1410,10 @@ function process_product($product_values, $labels, $language, $nid)
       dpm('number of markets found:');
       dpm($num_mkts);
     }
-//    $product_points = $product_values['field_point_value'];
-//    if (!isset($product_values)) {
-//      $product_points = 50;
-//    }
+    $product_points = $product_values['field_point_value'];
+    if ($product_points < 25) {
+      $product_points = 25;
+    }
 
     $feature_chunk = tng_npFeature_maker('products', 'productTemplate', '[]', '0.0.1');
     // language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
@@ -1443,7 +1439,7 @@ function process_product($product_values, $labels, $language, $nid)
     $inside_padding = tng_npHTML_basic_maker('', $bg_inside_padding, '', '', '', '', '', TRUE);
     $translated_why = $labels['field_why_there_s_only_one'];
     if (!$translated_why) {
-      $translated_why = 'WHY THERE\'S ONLY ONE';
+      $translated_why = 'WHY THERE\'S ONLY 1';
     }
     $why_there = tng_npHTML_basic_maker('', $h3_sans_head, '', '', '', $translated_why, '', TRUE);
     $why_content = tng_npHTML_basic_maker('', $h4_sans_normal, '', '', '', $product_values['field_why_there_s_only_one'], '', FALSE);
@@ -1600,7 +1596,7 @@ function process_product($product_values, $labels, $language, $nid)
 
     // when we edit a new node for a product (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
-    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords, '', '', '');
+    $new_nid = tng_create_manifest_node($whole_product, 'object_manifest', $manifest_title, $subtitle, $markets, $language, $nid, $display_title, $thumbnail_archive, $newplayer_api_link, $intro_text, $product_filter_categories, $product_keywords, $product_points, '', '', '');
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -1664,7 +1660,8 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
     }
     if ($hotspot_values['field_hot_spot_collection']) {
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-      $hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
+      //$hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
+      $hot_top = tng_npHotspot_maker('', 'test-strip', '');
       $whole_hotspot = $whole_hotspot . $page_wrapper . $hot_top;
 
       foreach ($hotspot_values as $key => $value) {
@@ -3368,7 +3365,6 @@ function process_content_object($object_values, $language, $nid)
           $result_chunk = tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
         }
       }
-
     }
     $whole_object = $whole_object . $combo ;
 

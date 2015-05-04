@@ -1057,7 +1057,7 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'size' => 60,
+        'size' => 120,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 22,
@@ -1143,7 +1143,7 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(
         'match_operator' => 'CONTAINS',
         'path' => '',
-        'size' => 60,
+        'size' => 150,
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 23,

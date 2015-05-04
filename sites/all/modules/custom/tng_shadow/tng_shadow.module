@@ -96,7 +96,7 @@ function tng_manifest_extractor($targetid, $language)
     }
     $learning_object_node = node_load($targetid);
     //todo: double-check the 'en' part with other languages
-    $lo_tid = $learning_object_node->field_manifest['en'][0]['target_id'];
+    $lo_tid = $learning_object_node->field_manifest[$language][0]['target_id'];
     $learning_object_manifest = node_load($lo_tid);
     // manifests are not language sensitive, so we are ok with using 'und' here (we write them after all)
     $results = $learning_object_manifest->body['und'][0]['value'];
@@ -224,9 +224,9 @@ function tng_npPageStart_maker($id = null, $parentid = NULL, $title = NULL, $inm
       $page = '{';
       $page = $page . '"type"' . ':' . '"npPage"';
       $page = $page . ',' . '"data"' . ': {' ;
-      if ($id) {
+      //if ($id) {
         $page = $page .  '"id"' . ': ' . '"' . $id . '"';
-      }
+      //}
       if ($parentid) {
         $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
       }
@@ -3825,10 +3825,9 @@ function tng_shadow_shadow_request_alter($entity)
       // needed to use the language from the url, since it wasn't writing other than english manifests
       //$language = $entity->language;
       $language = get_language_from_uri();
-      if (strlen($language) > 2) {
-        $language = $entity->language;
-      }
-      // for full manifest creation, set the module name here.
+      // save this language, since we need to use it later upon re-entry
+      $save_language = $language;
+      // for full manifest creation, set the module name here, default will be reNutriv
       $module_name = 'reNutriv';
       //$module_name = 'ANR';
       //$module_name = 'GMTC';
@@ -3878,12 +3877,12 @@ function tng_shadow_shadow_request_alter($entity)
           $save_field_name = $children_nodes_to_process[$i];
           $namevalue = '[ { ';
           // if we have a paragraphs type, use a wrapper for easier reference
-          $paragraphs = $wrapper->$info['field_name']->value();
+          $paragraphs = $wrapper->language($language)->$info['field_name']->value();
           if ($tng_debug == 1) {
             dpm('paragraphs');
             dpm($paragraphs);
           }
-          $number_of_paragraphs = count($wrapper->$info['field_name']->value());
+          $number_of_paragraphs = count($wrapper->language($language)->$info['field_name']->value());
           //dpm($number_of_paragraphs . ' ' . $info['field_name']  . ' paragraphs found.');
           // using the paragraphs bundle type (found here: /admin/structure/paragraphs), we can get all the fields we need to account for in our data
           //$paragraph_fields = field_info_instances('paragraphs_item', $paragraphs->bundle);
@@ -4150,10 +4149,10 @@ function tng_shadow_shadow_request_alter($entity)
           if ($entity_type == 'product_detail') {
             //dpm('found an entity reference node to fetch and process');
             //dpm($entity_type);
-            $objects = $wrapper->$info['field_name']->value();
+            $objects = $wrapper->language($language)->$info['field_name']->value();
             //dpm('paragraphs');
             //dpm($objects);
-            $num_entity_refs = count($wrapper->$info['field_name']->value());
+            $num_entity_refs = count($wrapper->language($language)->$info['field_name']->value());
             $field_name = $info['field_name'];
             //dpm('found ' .  $num_entity_refs . ' entity references.');
             $csv = '';
@@ -4177,13 +4176,12 @@ function tng_shadow_shadow_request_alter($entity)
 
           } elseif ($entity_type == 'content_object') {
             //dpm('found a content object entity reference, now loading manifests');
-            $num_entity_refs = count($wrapper->$info['field_name']->value());
+            $num_entity_refs = count($wrapper->language($language)->$info['field_name']->value());
             $field_name = $info['field_name'];
             //dpm('field_name : ' . $field_name);
             //dpm('found ' .  $num_entity_refs . ' entity references.');
             for ($num = 0; $num < $num_entity_refs; $num++) {
               $targetid = $entity_array[$field_name][$language][$num]['target_id'];
-              //dpm($targetid);
               $learning_manifest = tng_manifest_extractor($targetid, $language);
               $pre_manifest[$field_name][$num] = $learning_manifest;
             }
@@ -4233,11 +4231,11 @@ function tng_shadow_shadow_request_alter($entity)
           $pre_manifest[$field_name] = $image_style_path[0];
         } elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
           $wrap = '';
-          $wrap_array = $wrapper->$children_nodes_to_process[$i]->value();
+          $wrap_array = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
           if (is_array($wrap_array)) {
             $wrap = $wrap_array['value'];
           } elseif (is_string($wrap_array)) {
-            $wrap = $wrapper->$children_nodes_to_process[$i]->value();
+            $wrap = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
           }
           // since we do field translation, we need a way of finding out if we are working on non-english languages
           // and we rely on drupals url method to modify 'foreign' content, which is url and form-based, with the language at the end of the url '/es'
@@ -4292,12 +4290,12 @@ function tng_shadow_shadow_request_alter($entity)
         } elseif (($info['type'] == 'list_text')) {
           //dpm('found some list_text ');
           $field_name = $info['field_name'];
-          $pre_manifest[$field_name] = $wrapper->$children_nodes_to_process[$i]->value();
+          $pre_manifest[$field_name] = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
           //dpm($pre_manifest);
         } elseif (($info['type'] == 'list_boolean')) {
           //dpm('found some list_boolean');
           $field_name = $info['field_name'];
-          $bool = $wrapper->$children_nodes_to_process[$i]->value();
+          $bool = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
           if ($bool == TRUE) {
             $bool = 1;
           } elseif ($bool == FALSE) {
@@ -4322,7 +4320,8 @@ function tng_shadow_shadow_request_alter($entity)
       //return;
 
       if ($entity_type == 'product_detail') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if (isset($new_nid)) {
@@ -4330,7 +4329,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'content_object') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_content_object($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {
@@ -4338,7 +4338,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'hot_spots') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_hotspot($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4346,7 +4347,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_match') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragmatch($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4354,7 +4356,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'trivia') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4362,11 +4365,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_select') {
-        // there is a drupal bug that interacts with the mean shadow such that
-        // when you save a manifest, it throws an infinite loop bug where the
-        // language is only 'en' instead of the usual 'und' so we don't try to
-        // save the manifest on the node, we do it manually to avoid the loop problem.
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragselect($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4374,7 +4374,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'drag_priorities') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragmatch_prioritize($pre_manifest, $local_language, $local_tid['target_id']);
         if (isset($new_nid)) {
@@ -4382,7 +4383,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'list') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_list($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
@@ -4390,7 +4392,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'reveal') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_reveal($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4398,7 +4401,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'flash_cards') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_flashcards($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4406,7 +4410,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'matching_game') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_matchgame($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if (isset($new_nid)) {
@@ -4414,7 +4419,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'question_and_answer') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
@@ -4422,7 +4428,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'badge') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {
@@ -4430,7 +4437,8 @@ function tng_shadow_shadow_request_alter($entity)
           node_save($entity);
         }
       } elseif ($entity_type == 'story') {
-        $local_language = $save_entity->language;
+        //$local_language = $save_entity->language;
+        $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
@@ -4439,7 +4447,6 @@ function tng_shadow_shadow_request_alter($entity)
         }
       } elseif ($entity_type == 'tools') {
         $entity = tng_fix_tools($entity);
-
         return $entity;
       }
     }

@@ -18,7 +18,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_account_field_executive',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -51,7 +51,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_account_name',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -84,7 +84,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_city',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -117,7 +117,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_counter_manager',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -150,7 +150,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_country',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(),
     'indexes' => array(
@@ -436,7 +436,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_door',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -469,7 +469,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_education_manager_executiv',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -502,7 +502,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_employer_number',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -535,7 +535,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_field_sales_director_regio',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -601,7 +601,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_general_manager_brand_mana',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -634,7 +634,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_hire_date',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -700,9 +700,6 @@ function elx_users_feature_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_last_name',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -767,7 +764,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_market_administrator',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -800,7 +797,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_market_name',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(),
     'indexes' => array(
@@ -954,7 +951,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_region_list',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(),
     'indexes' => array(
@@ -989,7 +986,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_regional_vice_president',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
@@ -1022,7 +1019,7 @@ function elx_users_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_state',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(

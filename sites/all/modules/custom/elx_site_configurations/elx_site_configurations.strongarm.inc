@@ -96,6 +96,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_diary';
+  $strongarm->value = 0;
+  $export['comment_anonymous_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_disclaimer';
   $strongarm->value = 0;
   $export['comment_anonymous_disclaimer'] = $strongarm;
@@ -243,6 +250,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_diary';
+  $strongarm->value = 1;
+  $export['comment_default_mode_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_disclaimer';
   $strongarm->value = 1;
   $export['comment_default_mode_disclaimer'] = $strongarm;
@@ -369,6 +383,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_diary';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_disclaimer';
   $strongarm->value = '50';
   $export['comment_default_per_page_disclaimer'] = $strongarm;
@@ -474,6 +495,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_diary';
+  $strongarm->value = '1';
+  $export['comment_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_disclaimer';
   $strongarm->value = '1';
   $export['comment_disclaimer'] = $strongarm;
@@ -526,6 +554,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_form_location_content_object';
   $strongarm->value = 1;
   $export['comment_form_location_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_diary';
+  $strongarm->value = 1;
+  $export['comment_form_location_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -684,6 +719,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_diary';
+  $strongarm->value = '1';
+  $export['comment_preview_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_disclaimer';
   $strongarm->value = '1';
   $export['comment_preview_disclaimer'] = $strongarm;
@@ -834,6 +876,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_subject_field_content_object';
   $strongarm->value = 1;
   $export['comment_subject_field_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_diary';
+  $strongarm->value = 1;
+  $export['comment_subject_field_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1240,6 +1289,23 @@ function elx_site_configurations_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__diary';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'language' => array(
+          'weight' => '1',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1870,6 +1936,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_diary';
+  $strongarm->value = '4';
+  $export['language_content_type_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_disclaimer';
   $strongarm->value = '4';
   $export['language_content_type_disclaimer'] = $strongarm;
@@ -2094,6 +2167,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_diary';
+  $strongarm->value = array();
+  $export['menu_options_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_disclaimer';
   $strongarm->value = array();
   $export['menu_options_disclaimer'] = $strongarm;
@@ -2220,6 +2300,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'menu_parent_content_object';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_diary';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2352,6 +2439,15 @@ function elx_site_configurations_strongarm() {
     0 => 'status',
   );
   $export['node_options_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_diary';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2514,6 +2610,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_diary';
+  $strongarm->value = '0';
+  $export['node_preview_diary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_disclaimer';
   $strongarm->value = '0';
   $export['node_preview_disclaimer'] = $strongarm;
@@ -2636,6 +2739,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_submitted_content_object';
   $strongarm->value = 0;
   $export['node_submitted_content_object'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_diary';
+  $strongarm->value = 0;
+  $export['node_submitted_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

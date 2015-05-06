@@ -51,6 +51,14 @@ function elx_site_configurations_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'diary' => array(
+      'name' => t('Diary'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'disclaimer' => array(
       'name' => t('Disclaimer'),
       'base' => 'node_content',

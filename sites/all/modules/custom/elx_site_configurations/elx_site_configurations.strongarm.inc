@@ -993,7 +993,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_tools';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_tools'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1766,6 +1766,13 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_tools';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_tools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_options_badge';
   $strongarm->value = array();
   $export['i18n_node_options_badge'] = $strongarm;
@@ -1776,6 +1783,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'i18n_node_options_object_manifest';
   $strongarm->value = array();
   $export['i18n_node_options_object_manifest'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_tools';
+  $strongarm->value = array();
+  $export['i18n_node_options_tools'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2290,9 +2304,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_tools';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_tools'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2595,7 +2607,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_options_tools';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_tools'] = $strongarm;
 
@@ -2731,7 +2742,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_tools';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_tools'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2864,7 +2875,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_tools';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_tools'] = $strongarm;
 
   $strongarm = new stdClass();

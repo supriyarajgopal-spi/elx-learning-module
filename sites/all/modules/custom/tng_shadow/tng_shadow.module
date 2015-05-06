@@ -3220,8 +3220,14 @@ function process_content_object($object_values, $language, $nid)
     $learning_category_id = 'reNutriv';
     if ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';
+    } else if ($learning_category == 'ANR2') {
+      $learning_category_id = 'ANR2';
     } else if ($learning_category == 'GMTC') {
       $learning_category_id = 'GMTC';
+    } else if ($learning_category == 'BSFL') {
+      $learning_category_id = 'BSFL';
+    } else if ($learning_category == 'ND') {
+      $learning_category_id = 'ND';
     }
 
     $story_type = $object_values['field_story_type'];
@@ -3232,10 +3238,7 @@ function process_content_object($object_values, $language, $nid)
       $pulsed_content_type = str_replace('’', '', $pulsed_content_type);
       // Beth's Blog has a signature, others not
       if ($pulsed_content_type == "Beths Blog") {
-        $pulsed_content_type = 'Beths-Blog-';
         $beth_blog = true;
-      } else {
-        $pulsed_content_type = str_replace(' ', '-', $pulsed_content_type);
       }
     }
 

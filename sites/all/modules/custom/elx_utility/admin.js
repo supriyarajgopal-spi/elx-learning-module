@@ -89,6 +89,7 @@
         '#content-object-node-form div[id^="edit-field-markets-"],' +
         '#tools-node-form div[id^="edit-field-markets-"],' +
         '#badge-node-form div[id^="edit-field-markets-"],' +
+        '#diary-node-form div[id^="edit-field-markets-"],' +
         '#disclaimer-node-form div[id^="edit-field-markets-"]').drupalCheckAll(options);
 
       // Removes special characters from Administrative title field

@@ -1678,7 +1678,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'story_hero',
         ),
         'type' => 'image',
         'weight' => 5,
@@ -1692,7 +1692,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_story_image',
-    'label' => 'Story image',
+    'label' => 'Diary image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -10427,6 +10427,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Custom incorrect feedback');
   t('Customer questions');
   t('Demonstration');
+  t('Diary image');
   t('Difficulty');
   t('Disclaimer text');
   t('Display title');

@@ -1571,7 +1571,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1609,7 +1609,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1727,7 +1727,7 @@ function elx_site_configurations_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 

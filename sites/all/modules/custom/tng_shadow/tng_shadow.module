@@ -3813,6 +3813,7 @@ function tng_shadow_shadow_request_alter($entity)
     if ($tng_debug == 1) {
       dpm($entity);
     }
+    dpm('This node should be published.');
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {
       // Node is published.
@@ -3834,6 +3835,9 @@ function tng_shadow_shadow_request_alter($entity)
       $module_name = 'reNutriv';
       //$module_name = 'ANR';
       //$module_name = 'GMTC';
+      //$module_name = 'ANR2';
+      //$module_name = 'BSFL';
+      //$module_name = 'ND';
       global $namevalue;
       $pre_manifest = array();
       if ($tng_debug == 1) {

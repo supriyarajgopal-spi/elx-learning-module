@@ -3813,7 +3813,6 @@ function tng_shadow_shadow_request_alter($entity)
     if ($tng_debug == 1) {
       dpm($entity);
     }
-    dpm('This node should be published.');
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {
       // Node is published.

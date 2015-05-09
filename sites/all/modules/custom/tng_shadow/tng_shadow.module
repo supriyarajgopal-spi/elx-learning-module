@@ -4513,10 +4513,10 @@ function get_language_from_uri()
     dpm($lang_splitter);
     dpm($lang_splitter[$ctr - 1]);
   }
-  // if we are editing a 'default' language node, it won't have a language after the 'content' since it is the 'en' version
+  // if we are editing a 'default' language node, it won't have a language after the 'content' or 'edit' since it is the 'en' version
   // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
   if ($lang_splitter[$ctr - 1]) {
-    if (substr($lang_splitter[$ctr - 1], 0, 7) == 'content') {
+    if (substr($lang_splitter[$ctr - 1], 0, 7) == 'content' || substr($lang_splitter[$ctr - 1], 0, 4) == 'edit') {
       $uri_language = 'en';
     } else {
       $uri_language = $lang_splitter[$ctr - 1];

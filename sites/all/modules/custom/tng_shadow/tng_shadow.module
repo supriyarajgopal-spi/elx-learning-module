@@ -3810,6 +3810,7 @@ function tng_shadow_shadow_request_alter($entity)
   $GLOBALS['reentry']++;
 
   try {
+    $form_state['redirect'] = '';
     if ($tng_debug == 1) {
       dpm($entity);
     }
@@ -4512,8 +4513,14 @@ function get_language_from_uri()
     dpm($lang_splitter);
     dpm($lang_splitter[$ctr - 1]);
   }
+  // if we are editing a 'default' language node, it won't have a language after the 'content' since it is the 'en' version
+  // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
   if ($lang_splitter[$ctr - 1]) {
-    $uri_language = $lang_splitter[$ctr - 1];
+    if (substr($lang_splitter[$ctr - 1], 0, 7) == 'content') {
+      $uri_language = 'en';
+    } else {
+      $uri_language = $lang_splitter[$ctr - 1];
+    }
   }
   return $uri_language;
 }

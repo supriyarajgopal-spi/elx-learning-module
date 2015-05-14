@@ -52,20 +52,22 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $password = randomPassword();
   $encrypted_data = aes_encrypt($password);
-  $entity->pass = $password;
-  db_insert('aes_passwords')
-    ->fields(array(
-      'uid' => $entity->uid,
-      'pass' => $encrypted_data,
-    ))
-    ->execute();
-  $pass = user_hash_password($password);
-  db_update('users')
-    ->fields(array('pass' => $pass))
-    ->where("uid = :uid", array(
-      ':uid' => $entity->uid,
-    ))
-    ->execute();
+  if ($entity->pass == '') {
+    $entity->pass = $password;
+    db_insert('aes_passwords')
+      ->fields(array(
+        'uid' => $entity->uid,
+        'pass' => $encrypted_data,
+      ))
+      ->execute();
+    $pass = user_hash_password($password);
+    db_update('users')
+      ->fields(array('pass' => $pass))
+      ->where("uid = :uid", array(
+        ':uid' => $entity->uid,
+      ))
+      ->execute();
+  }
 }
 
 /**

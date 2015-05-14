@@ -3036,7 +3036,7 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
     $finish_chunk = $bt . ']}';
     $whole_qa = $whole_qa . $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title
-    $title = 'Q-and-A-Manifest - ' . $title;
+    $title = 'Q-and-A-Manifest-' . $title;
 
     // when we edit a new node for a question-answer (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product or list or ...
@@ -3851,6 +3851,10 @@ function tng_shadow_shadow_request_alter($entity)
       }
       // given our node entity type, get all the fields for it
       $entity_type = $entity->type;
+      if ($entity->entityType == 'paragraphs_item') {
+        return;
+        $entity_type = $entity->entityType;
+      }
       // this hook is intended for creating content, not to process manifests since they are made when we create a product
       if ($entity_type == 'object_manifest' || $entity_type == 'badge_manifest') {
         return;
@@ -4076,10 +4080,10 @@ function tng_shadow_shadow_request_alter($entity)
                 } else {
                   // typically answers
                   for ($f = 0; $f < $field_count; $f++) {
-                    $entity = paragraphs_item_load($paragraphs->{$name}[$language][$f]['value']);
+                    $para_entity = paragraphs_item_load($paragraphs->{$name}[$language][$f]['value']);
                     if ($tng_debug == 1) {
-                      dpm('**entity**');
-                      dpm($entity);
+                      dpm('**para_entity**');
+                      dpm($para_entity);
                     }
                     $para_inst = field_info_instances('paragraphs_item', $entity->bundle);
                     if ($tng_debug == 1) {
@@ -4094,12 +4098,12 @@ function tng_shadow_shadow_request_alter($entity)
                         dpm($value);
                       }
                       // if the value for a field is set, we will output it (and skip blank fields)
-                      if (isset($entity->{$value}[$language][0]['value'])) {
+                      if (isset($para_entity->{$value}[$language][0]['value'])) {
                         if ($tng_debug == 1) {
                           dpm($value);
-                          dpm($entity->{$value}[$language][0]['value']);
+                          dpm($para_entity->{$value}[$language][0]['value']);
                         }
-                        $namevalue = $namevalue . '"' . $value . '":"' . $entity->{$value}[$language][0]['value'] . '",';
+                        $namevalue = $namevalue . '"' . $value . '":"' . $para_entity->{$value}[$language][0]['value'] . '",';
                       }
                       $info = field_info_field($sub_children[$key]);
                       if ($tng_debug == 1) {

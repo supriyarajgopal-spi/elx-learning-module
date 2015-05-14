@@ -540,7 +540,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = 'group_question';
   $field_group->data = array(
     'label' => 'Question video',
-    'weight' => '3',
+    'weight' => '14',
     'children' => array(
       0 => 'field_question_video_file',
       1 => 'field_video_poster_img',
@@ -598,7 +598,7 @@ function elx_site_configurations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Last question',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'field_completion_text',
       1 => 'field_last_question_in_quiz',
@@ -630,9 +630,10 @@ function elx_site_configurations_field_group_info() {
     'label' => 'Question',
     'weight' => '0',
     'children' => array(
-      0 => 'field_question_text',
-      1 => 'field_question_image',
-      2 => 'group_question_video',
+      0 => 'field_question_image',
+      1 => 'field_question_text',
+      2 => 'field_question_label',
+      3 => 'group_question_video',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

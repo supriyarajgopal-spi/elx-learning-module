@@ -6347,6 +6347,51 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-question_and_answer-field_answer_label'
+  $field_instances['node-question_and_answer-field_answer_label'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Answer',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_answer_label',
+    'label' => 'Answer label',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-question_and_answer-field_completion_text'
   $field_instances['node-question_and_answer-field_completion_text'] = array(
     'bundle' => 'question_and_answer',
@@ -6640,7 +6685,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 120,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -6784,6 +6829,51 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-question_and_answer-field_question_label'
+  $field_instances['node-question_and_answer-field_question_label'] = array(
+    'bundle' => 'question_and_answer',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Question',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_question_label',
+    'label' => 'Question label',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 12,
     ),
   );
@@ -9978,51 +10068,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_answer_label'
-  $field_instances['paragraphs_item-multiple_choice_collection-field_answer_label'] = array(
-    'bundle' => 'multiple_choice_collection',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Answer',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_answer_label',
-    'label' => 'Answer label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_paragraph_answer'
   $field_instances['paragraphs_item-multiple_choice_collection-field_paragraph_answer'] = array(
     'bundle' => 'multiple_choice_collection',
@@ -10143,51 +10188,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_label'
-  $field_instances['paragraphs_item-multiple_choice_collection-field_question_label'] = array(
-    'bundle' => 'multiple_choice_collection',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Question',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_question_label',
-    'label' => 'Question label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 11,
     ),
   );
 

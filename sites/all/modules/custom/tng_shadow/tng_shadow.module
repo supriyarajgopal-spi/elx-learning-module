@@ -55,7 +55,7 @@ function tng_date_difference_creator($date)
  */
 function tng_title_image_date_extractor($targetid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $title = 'title_field';
     $image = 'field_product_image';
@@ -88,7 +88,7 @@ function tng_title_image_date_extractor($targetid)
  */
 function tng_manifest_extractor($targetid, $language)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if ($tng_debug == 1) {
       dpm('language passed to manifest extractor');
@@ -122,7 +122,7 @@ function tng_manifest_extractor($targetid, $language)
  */
 function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $timestamp = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($id)) {
       if (!isset($req)) {
@@ -169,7 +169,7 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
  */
 function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($id) && isset($language)) {
       if (!isset($title)) {
@@ -213,7 +213,7 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
  */
 function tng_npPageStart_maker($id = null, $parentid = NULL, $title = NULL, $inmenu = NULL, $required = NULL, $instructional = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
       if (!isset($title)) {
         $title = '"Page Title"';
@@ -268,7 +268,7 @@ function tng_npPageEndMaker()
  */
 function tng_npMenu_maker($id, $menuitemstype = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($id)) {
       if (!isset($menuitemstype)) {
@@ -304,7 +304,7 @@ function tng_npMenu_maker($id, $menuitemstype = NULL)
  */
 function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($link)) {
       if (!isset($buttontitle)) {
@@ -344,9 +344,9 @@ function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = N
  * @param null $feedback_incorrect - the default incorrect answer text, can also be over-written by incorrect value in npAnswer
  * @return null|string
  */
-function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL)
+function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL, $question_label = NULL, $answer_label = NULL, $submit_label = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($question_text)) {
       // we assume radio button versus checkbox if you don't supply a choice
@@ -365,12 +365,15 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question = $question . ',' . '"type"' . ': ' . '"' . $type . '"';
       $question = $question . ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
       $question = $question . ',' . '"content"' . ': ' . '"' . $question_text . '"';
-      $question = $question . ',' . '"buttons"' . ':' . '{';
-      $question = $question         . '"submit"' . ':' . '"Submit"';
-      //$question = $question . ','   . '"next"' . ':' . '"Next"';
+      $question = $question . ',' . '"questionLabel"' . ': ' . '"' . $question_label . '"';
+      $question = $question . ',' . '"answerLabel"' . ': ' . '"' . $answer_label . '"';
+      $question = $question . ',' . '"submitLabel"' . ': ' . '"' . $submit_label . '"';
+      //$question = $question . ',' . '"buttons"' . ':' . '{';
+      //$question = $question         . '"submit"' . ':' . '"Submit"';
+      //$question = $question . ','   . '"i18n"' . ':' . '{favorite: FAVORITE_THIS}';
       //$question = $question . ','   . '"i18n"' . ':' . '{submit:' . 'BUTTON_SUBMIT', next: 'BUTTON_NEXT', favorite: FAVORITE_THIS}"'';
-      $question = $question . '},';
-      $question = $question . '"feedback"' . ': {';
+      //$question = $question . '},';
+      $question = $question . ',' . '"feedback"' . ': {';
       $question = $question       . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
       $question = $question . ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
       $question = $question . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
@@ -401,7 +404,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
  */
 function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedback_incorrect = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     if (isset($label)) {
       $answer = '{';
@@ -452,7 +455,7 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
  */
 function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL, $xplugin = NULL, $data_collapse = NULL, $content = NULL, $link = NULL, $open_component = FALSE)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $content = str_replace('"', '\"', $content);
     $html = '';
@@ -505,7 +508,7 @@ function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL
  */
 function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $xplugin = null, $content_one, $id_two = NULL, $class_two = null, $data_collapse = null, $content_two = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $content_one = str_replace('"', '\"', $content_one);
     $content_two = str_replace('"', '\"', $content_two);
@@ -546,7 +549,7 @@ function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $x
  */
 function tng_npColumn_maker($class = NULL, $columns = NULL, $open_component = FALSE)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $html = '';
     $html = $html . '{' . '"type"' . ':' . '"npColumn"';
@@ -578,7 +581,7 @@ function tng_npColumn_maker($class = NULL, $columns = NULL, $open_component = FA
  */
 function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   //guard against bad image data and short circuit 'assets/' to '' to return a harmless npImage link
   if (!(strlen($src) > 8)) {
     $src = '';
@@ -604,7 +607,7 @@ function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL)
 
 function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $hotspot = '';
     $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"';
@@ -622,7 +625,7 @@ function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback =
 
 function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $hotspotbutton = '';
     $hotspotbutton = $hotspotbutton . '{';
@@ -640,7 +643,7 @@ function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL
 
 function tng_npHotspot_closer($feedback = NULL, $image = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $hotspotclose = '';
     $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
@@ -657,9 +660,9 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL)
 
 
 
-function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $required = NULL, $req = NULL)
+function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $required = NULL, $req = NULL, $select_label = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $draganselect = '';
     $draganselect = $draganselect . '{' . '"type"' . ':' . '"npDragAndDropSelect"';
@@ -672,6 +675,9 @@ function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback
     }
     if ($negative_feedback) {
       $draganselect = $draganselect . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+    }
+    if ($select_label) {
+      $draganselect = $draganselect . ',' . '"submitLabel"' . ':' . '"' . $select_label . '"';
     }
     if ($required) {
       $draganselect = $draganselect . ',' . '"required"' . ':' .  $required ;
@@ -688,7 +694,7 @@ function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback
 
 function tng_npDragAndDropMatch_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $req = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $draganselect = '';
     $draganselect = $draganselect . '{' . '"type"' . ':' . '"npDragAndDropMatch"';
@@ -714,7 +720,7 @@ function tng_npDragAndDropMatch_maker($id = NULL, $class = NULL, $positive_feedb
 
 function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $req = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $dragandrop = '';
     $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"';
@@ -740,7 +746,7 @@ function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_f
 
 function tng_npReveal_maker($id = NULL, $class = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $reveal = '';
     $reveal = $reveal . '{' . '"type"' . ':' . '"npReveal"';
@@ -761,7 +767,7 @@ function tng_npReveal_maker($id = NULL, $class = NULL)
 
 function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $buttonImage = NULL, $buttonAltText = NULL, $comp_type = NULL, $comp_id = NULL, $comp_src = NULL, $comp_alt = NULL, $comp_baseURL = NULL, $comp_types = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $comp_baseURL);
 
@@ -816,7 +822,7 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
 
 function tng_npFlashCard_maker($id = NULL, $class = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $flashcard = '';
     $flashcard = $flashcard . '{' . '"type"' . ':' . '"npFlashCards"';
@@ -837,7 +843,7 @@ function tng_npFlashCard_maker($id = NULL, $class = NULL)
 
 function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $contentBack = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $flashcard = '';
     $flashcard = $flashcard . '{';
@@ -861,7 +867,7 @@ function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $content
 
 function tng_npQuiz_maker($id = NULL, $type = NULL, $assessed = NULL, $questions = NULL, $passPercentage = NULL, $forced = null, $randomized = null, $required = null)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $quiz = '';
     $quiz = $quiz . '{' . '"type"' . ':' . '"npQuiz"';
@@ -900,7 +906,7 @@ function tng_npQuiz_maker($id = NULL, $type = NULL, $assessed = NULL, $questions
 
 function tng_npTrivia_maker($required = NULL, $forced = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $quiz = '';
     $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
@@ -944,7 +950,7 @@ function tng_npTrivia_maker($required = NULL, $forced = NULL, $difficulty = NULL
 
 function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $perfect_text = null)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $quiz = '';
     $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
@@ -988,7 +994,7 @@ function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $pe
 
 function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $immediate = NULL, $correct = NULL, $incorrect = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $match = '';
     $match = $match . '{' . '"type"' . ':' . '"npMatch"';
@@ -1024,7 +1030,7 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
 
 function tng_npMatchRow_maker($title = NULL, $position = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $match = '{';
     $match = $match . '"type"' . ':' . '"npMatchRow"';
@@ -1045,7 +1051,7 @@ function tng_npMatchRow_maker($title = NULL, $position = NULL)
 
 function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $match = '';
     $match = $match . '{';
@@ -1073,7 +1079,7 @@ function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL
 
 function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, $content = NULL, $image = NULL, $matching_content = NULL, $matching_image = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $dragdropbutton = '';
     $dragdropbutton = $dragdropbutton . '{';
@@ -1102,7 +1108,7 @@ function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, 
 
 function tng_dragselect_button_maker($id = NULL, $class = NULL, $select = NULL, $content = NULL, $image = NULL, $matching_content = NULL, $matching_image = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $dragselectbutton = '';
     $dragselectbutton = $dragselectbutton . '{';
@@ -1131,7 +1137,7 @@ function tng_dragselect_button_maker($id = NULL, $class = NULL, $select = NULL, 
 
 function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   try {
     $hotspotclose = '';
     $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
@@ -1151,7 +1157,7 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
                           $component_type = NULL, $component_id = NULL, $component_src = NULL,
                           $component_alt = NULL, $data_poster = NULL, $data_baseurl = NULL, $data_types = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
 
   try {
     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $data_baseurl);
@@ -1280,7 +1286,7 @@ function tng_value_from_pair($string)
  */
 function tng_create_perfect_partners($path, $csv_fields)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('perfect partner paths');
     dpm($path);
@@ -1353,7 +1359,7 @@ function tng_create_perfect_partners($path, $csv_fields)
  */
 function process_product($product_values, $labels, $language, $nid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);
@@ -1526,7 +1532,7 @@ function process_product($product_values, $labels, $language, $nid)
     $customer_questions = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_quest, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_customer_questions']);
     $button_column = tng_npColumn_maker('row button-padding', '2', TRUE);
     // todo: figure out a way to translate these buttons
-    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span>  Favorite this') . ',';
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span> i18n.FAVORITE_THIS')  . ',';;
     $next_button = tng_npButton_maker('Question1', '', $btn_fact_sheet, 'GET THE FULL FACT SHEET');
     $next_button = rtrim($next_button, ', ');
     $next_button = $next_button . $column_close;
@@ -1616,7 +1622,7 @@ function process_product($product_values, $labels, $language, $nid)
  */
 function process_hotspot($hotspot_values, $language, $nid, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
 
   $bg_newplayer_background = 'newplayer-background';
   $outside_padding = 'outside-padding';
@@ -1739,10 +1745,10 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
  */
 function process_story($story_values, $language, $nid, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
 
   $bg_newplayer_background = 'newplayer-background';
-  $btn_favorite = 'col-sm-4 btn btn-favorite btn-open-favorites center-padding';
+  $btn_alt_favorite = 'btn-open-favorites';
   $close_story = '] } ] } ] } ]';
 
   //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
@@ -1781,7 +1787,7 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $header_chunk = tng_npHTML_basic_maker('', 'h1 header', '', '', '', $story_header, '', FALSE);
     $signature_chunk = tng_npHTML_basic_maker('', 'beths-signature center-padding', '', '', '', '', '', FALSE);
     //$signature_chunk = rtrim($signature_chunk, ', ');
-    $like_button = tng_npButton_maker($favorite_link, '', $btn_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span>  Favorite this');
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span> i18n.FAVORITE_THIS');
     $whole_story = $whole_story . $image_chunk . $label_chunk . $header_chunk . $story_chunk . $signature_chunk . $like_button;
 
     if ($standalone == 1) {
@@ -1808,7 +1814,7 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
  */
 function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('drag match object');
     dpm($dragmatch);
@@ -1941,7 +1947,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
  */
 function process_dragselect($dragselect, $language, $nid = null, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('drag match object');
     dpm($dragselect);
@@ -1966,6 +1972,12 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
   $correct_feedback =  str_replace('"', '\"', $correct_feedback);
   $incorrect_feedback = $dragselect['field_incorrect_feeback'];
   $incorrect_feedback =  str_replace('"', '\"', $incorrect_feedback);
+  //$submit_button = $dragselect['field_create_submit_button'];
+  $submit_label =  $dragselect['field_submit_button_label'];
+  if (!isset($submit_label)) {
+    $submit_label = 'Submit';
+  }
+
   $intro_text = $dragselect['field_intro_text'];
   if (isset($intro_text)) {
     $instructional_text = $dragselect['field_intro_text'];
@@ -2003,7 +2015,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     if ($dragselect['field_drag_select_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
-        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '');
+        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $submit_label);
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
 
         foreach ($dragselect as $key => $value) {
@@ -2082,7 +2094,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
  */
 function process_dragmatch_prioritize($dragprioritize, $language, $nid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('drag match prioritize object');
     dpm($dragprioritize);
@@ -2200,7 +2212,7 @@ function process_dragmatch_prioritize($dragprioritize, $language, $nid)
  */
 function process_reveal($reveal_values, $language, $nid, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('reveal object');
     dpm($reveal_values);
@@ -2371,7 +2383,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
  */
 function process_flashcards($flashcard_values, $language, $nid, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('flash card object');
     dpm($flashcard_values);
@@ -2568,7 +2580,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
  */
 function process_list($listobject, $language, $nid, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2693,7 +2705,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
  */
 function process_badge($badgeobject, $language, $nid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('nid:');
     dpm($nid);
@@ -2717,7 +2729,7 @@ function process_badge($badgeobject, $language, $nid)
     $name = rtrim($title, ' ');
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
-    $manifest_title = 'Badge-Manifest-' . $name;
+    $manifest_title = '--' . $name;
     $markets = $badgeobject['field_markets'];
     if ($badgeobject['field_badge_icon']) {
       $badge_icon = $badgeobject['field_badge_icon'];
@@ -2744,7 +2756,7 @@ function process_badge($badgeobject, $language, $nid)
  */
 function process_matchgame($matchgame_values, $language, $nid, $module, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('match game object');
     dpm($matchgame_values);
@@ -2919,7 +2931,7 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
  */
 function process_question_and_answer($object_values, $language, $nid, $standalone = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('**language**' . $language);
     dpm('process question and answer');
@@ -3002,7 +3014,11 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
           //field_next_button == checkbox, field_next_button_label is the button label
           $create_button = $object_values['field_next_button'];
           $button_label = $object_values['field_next_button_label'];
-          // the spanish word for next is 'siguiente'
+          $submit_button = $object_values['field_create_submit_button'];
+          $submit_label =  $object_values['field_submit_button_label'];
+          $question_label = $object_values['field_question_label'];
+          $answer_label = $object_values['field_answer_label'];
+          // the spanish word for next is 'siguiente', french word for next is 'prochaine'
           if ($create_button == 1) {
             if ($button_label) {
               $bt = tng_npButton_maker('', 'btn-next', '', $button_label);
@@ -3012,9 +3028,12 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
             $bt = rtrim($bt, ' ,');
           }
         }
-
-        //$bt = tng_npButton_maker('', 'btn-next', '', 'Next');
-        $np = tng_npQuestion_maker('true', 'false', 'checkbox', $difficulty, $question_text, 'true', $correct_answer_text, $incorrect_answer_text);
+        if ($submit_button == 1) {
+          $immediate_value = 'false';
+        } else {
+          $immediate_value = 'true';
+        }
+        $np = tng_npQuestion_maker('true', 'false', 'checkbox', $difficulty, $question_text, $immediate_value, $correct_answer_text, $incorrect_answer_text, $question_label, $answer_label, $submit_label);
         //pre pend since we built the question after the answers
         $ba = $np . $ba;
 
@@ -3058,7 +3077,7 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
  */
 function process_trivia($object_values, $language, $nid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('**language**' . $language);
     dpm('process trivia');
@@ -3167,7 +3186,7 @@ function process_trivia($object_values, $language, $nid)
 
 function process_content_object($object_values, $language, $nid)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   $min_product_fields = 1;
   $max_product_fields = 50;
   $num_fields = count($object_values);
@@ -3404,7 +3423,7 @@ function process_content_object($object_values, $language, $nid)
 function tng_create_manifest_node($node_data, $node_type, $node_title, $node_subtitle, $markets = NULL, $node_language, $nid = NULL, $node_display_title = NULL, $node_thumbnail_link = NULL, $node_newplayer_link = NULL, $node_display_text = NULL, $node_categories = NULL, $node_keywords = NULL, $node_points = NULL, $node_final = NULL, $node_featured = NULL, $node_weight = NULL)
 {
   global $user;
-  $tng_debug = 0;
+  $tng_debug =0;
   if ($node_final == null) {
     $node_final = 0;
   }
@@ -3599,7 +3618,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
 {
 
   global $user;
-  $tng_debug = 0;
+  $tng_debug =0;
 
   // don't make a new manifest node if we already have one
   if (!isset($nid)) {
@@ -3712,7 +3731,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
  */
 function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_thumbnail = NULL, $public_process = NULL)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   $remote_picture_name = '';
   //short circuit this if there isn't a system path
   if (substr($value, 0, 6) == 'assets') {
@@ -3771,7 +3790,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  */
 //function tng_shadow_node_presave($entity)
 //{
-//  $tng_debug = 0;
+//  $tng_debug =0;
 //  if ($tng_debug == 1) {
 //    dpm("inside node presave");
 //    dpm($entity);
@@ -3805,7 +3824,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
 
 function tng_shadow_shadow_request_alter($entity)
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   $translated_labels[] = '';
   $GLOBALS['reentry']++;
 
@@ -3851,10 +3870,6 @@ function tng_shadow_shadow_request_alter($entity)
       }
       // given our node entity type, get all the fields for it
       $entity_type = $entity->type;
-      if ($entity->entityType == 'paragraphs_item') {
-        return;
-        $entity_type = $entity->entityType;
-      }
       // this hook is intended for creating content, not to process manifests since they are made when we create a product
       if ($entity_type == 'object_manifest' || $entity_type == 'badge_manifest') {
         return;
@@ -4085,7 +4100,7 @@ function tng_shadow_shadow_request_alter($entity)
                       dpm('**para_entity**');
                       dpm($para_entity);
                     }
-                    $para_inst = field_info_instances('paragraphs_item', $entity->bundle);
+                    $para_inst = field_info_instances('paragraphs_item', $para_entity->bundle);
                     if ($tng_debug == 1) {
                       dpm($para_inst);
                     }
@@ -4506,7 +4521,7 @@ function tng_fix_tools($entity)
 
 function get_language_from_uri()
 {
-  $tng_debug = 0;
+  $tng_debug =0;
   $uri_language = '';
   $language_url = $_SERVER['REQUEST_URI'];
   $lang_splitter = explode('/', $language_url);

@@ -1532,7 +1532,7 @@ function process_product($product_values, $labels, $language, $nid)
     $customer_questions = tng_npHTML_maker('', $h3_sans_head_collapse, $switch_collapse, $expand, $translated_quest, '', $h4_sans_normal_collapse, $data_collapse, $product_values['field_customer_questions']);
     $button_column = tng_npColumn_maker('row button-padding', '2', TRUE);
     // todo: figure out a way to translate these buttons
-    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span> i18n.FAVORITE_THIS')  . ',';;
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, 'i18n.FAVORITE_THIS')  . ',';;
     $next_button = tng_npButton_maker('Question1', '', $btn_fact_sheet, 'GET THE FULL FACT SHEET');
     $next_button = rtrim($next_button, ', ');
     $next_button = $next_button . $column_close;
@@ -1787,7 +1787,7 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $header_chunk = tng_npHTML_basic_maker('', 'h1 header', '', '', '', $story_header, '', FALSE);
     $signature_chunk = tng_npHTML_basic_maker('', 'beths-signature center-padding', '', '', '', '', '', FALSE);
     //$signature_chunk = rtrim($signature_chunk, ', ');
-    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, '<span class=\'elx-heart\' aria-hidden=\'true\'></span> i18n.FAVORITE_THIS');
+    $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, 'i18n.FAVORITE_THIS');
     $whole_story = $whole_story . $image_chunk . $label_chunk . $header_chunk . $story_chunk . $signature_chunk . $like_button;
 
     if ($standalone == 1) {

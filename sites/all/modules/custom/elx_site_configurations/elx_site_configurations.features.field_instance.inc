@@ -2259,88 +2259,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_next_button_label'
-  $field_instances['node-drag_match-field_next_button_label'] = array(
-    'bundle' => 'drag_match',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-drag_match-field_submit_button_label'
-  $field_instances['node-drag_match-field_submit_button_label'] = array(
-    'bundle' => 'drag_match',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_submit_button_label',
-    'label' => 'Submit Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-drag_match-field_subtitle'
   $field_instances['node-drag_match-field_subtitle'] = array(
     'bundle' => 'drag_match',
@@ -3112,88 +3030,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_next_button_label'
-  $field_instances['node-drag_select-field_next_button_label'] = array(
-    'bundle' => 'drag_select',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-drag_select-field_submit_button_label'
-  $field_instances['node-drag_select-field_submit_button_label'] = array(
-    'bundle' => 'drag_select',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_submit_button_label',
-    'label' => 'Submit Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-drag_select-field_subtitle'
   $field_instances['node-drag_select-field_subtitle'] = array(
     'bundle' => 'drag_select',
@@ -3475,47 +3311,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-flash_cards-field_next_button_label'
-  $field_instances['node-flash_cards-field_next_button_label'] = array(
-    'bundle' => 'flash_cards',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -3856,47 +3651,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_next_button_label'
-  $field_instances['node-hot_spots-field_next_button_label'] = array(
-    'bundle' => 'hot_spots',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-hot_spots-field_subtitle'
   $field_instances['node-hot_spots-field_subtitle'] = array(
     'bundle' => 'hot_spots',
@@ -4207,47 +3961,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-list-field_next_button_label'
-  $field_instances['node-list-field_next_button_label'] = array(
-    'bundle' => 'list',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -4597,47 +4310,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-matching_game-field_next_button_label'
-  $field_instances['node-matching_game-field_next_button_label'] = array(
-    'bundle' => 'matching_game',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -6347,51 +6019,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_answer_label'
-  $field_instances['node-question_and_answer-field_answer_label'] = array(
-    'bundle' => 'question_and_answer',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Answer',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_answer_label',
-    'label' => 'Answer label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 13,
-    ),
-  );
-
   // Exported field_instance: 'node-question_and_answer-field_completion_text'
   $field_instances['node-question_and_answer-field_completion_text'] = array(
     'bundle' => 'question_and_answer',
@@ -6733,46 +6360,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_next_button_label'
-  $field_instances['node-question_and_answer-field_next_button_label'] = array(
-    'bundle' => 'question_and_answer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-question_and_answer-field_paragraph_multiple_choice'
   $field_instances['node-question_and_answer-field_paragraph_multiple_choice'] = array(
     'bundle' => 'question_and_answer',
@@ -6833,51 +6420,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_question_label'
-  $field_instances['node-question_and_answer-field_question_label'] = array(
-    'bundle' => 'question_and_answer',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Question',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 16,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_question_label',
-    'label' => 'Question label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-question_and_answer-field_question_type'
   $field_instances['node-question_and_answer-field_question_type'] = array(
     'bundle' => 'question_and_answer',
@@ -6913,47 +6455,6 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-question_and_answer-field_submit_button_label'
-  $field_instances['node-question_and_answer-field_submit_button_label'] = array(
-    'bundle' => 'question_and_answer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_submit_button_label',
-    'label' => 'Submit Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
     ),
   );
 
@@ -7165,51 +6666,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-reveal-field_next_button_label'
-  $field_instances['node-reveal-field_next_button_label'] = array(
-    'bundle' => 'reveal',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Next',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -8357,47 +7813,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-trivia-field_next_button_label'
-  $field_instances['node-trivia-field_next_button_label'] = array(
-    'bundle' => 'trivia',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_next_button_label',
-    'label' => 'Next Button Label',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -10791,7 +10206,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Answer');
   t('Answer custom feedback');
   t('Answer image');
-  t('Answer label');
   t('Answer text');
   t('Autocomplete tags. Separate tags by commas.');
   t('Back card');
@@ -10878,7 +10292,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Middle match text');
   t('Multiple choice');
   t('Newplayer link');
-  t('Next Button Label');
   t('Object template');
   t('Order weight');
   t('Percentage requirement');
@@ -10893,7 +10306,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Product name');
   t('Pulsed content');
   t('Question image');
-  t('Question label');
   t('Question text');
   t('Question type');
   t('Question video');
@@ -10914,7 +10326,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Story label');
   t('Story type');
   t('Story video');
-  t('Submit Button Label');
   t('Subtitle');
   t('Tags/keywords');
   t('This is the name used to reference Products throughout the admin system. This name <b>MUST</b> be unique.');

@@ -1783,12 +1783,9 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
       } else {
         //field_next_button == checkbox, field_next_button_label is the button label
         $create_button = $hotspot_values['field_next_button'];
-        $button_label = $hotspot_values['field_next_button_label'];
         // the spanish word for next is 'siguiente'
         if ($create_button == 1) {
-          if ($button_label) {
-            $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
-          }
+          $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
           $whole_hotspot = $whole_hotspot . $end_hot_spot . ',' .$button_chunk . ']}';
         } else {
           $whole_hotspot = $whole_hotspot . $end_hot_spot . ']}';
@@ -1984,12 +1981,9 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
         } else {
           //field_next_button == checkbox, field_next_button_label is the button label
           $create_button = $dragmatch['field_next_button'];
-          $button_label = $dragmatch['field_next_button_label'];
           // the spanish word for next is 'siguiente'
           if ($create_button == 1) {
-            if ($button_label) {
-              $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
-            }
+            $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
             $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ',' . $button_chunk . ']}';
           } else {
             $whole_dragdrop = $whole_dragdrop . $end_dragdrop_spot . ']}';
@@ -2122,10 +2116,8 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
         if ($standalone == 1) {
           $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
         } else {
-          //field_next_button == checkbox, field_next_button_label is the button label
+          //field_next_button == checkbox, button labels are handled in the tng_npButton_maker code for en/es/frca
           $create_button = $dragselect['field_next_button'];
-          //$button_label = $dragselect['field_next_button_label'];
-          // the spanish word for next is 'siguiente'
           if ($create_button == 1) {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
             $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . ',' . $button_chunk . ']}';
@@ -2410,12 +2402,9 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     } else {
       //field_next_button == checkbox, field_next_button_label is the button label
       $create_button = $reveal_values['field_next_button'];
-      $button_label = $reveal_values['field_next_button_label'];
       // the spanish word for next is 'siguiente'
       if ($create_button == 1) {
-        if ($button_label) {
-          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
-        }
+        $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
         $whole_reveal = $whole_reveal . ']},' . $button_chunk . ']}';
       } else {
         $whole_reveal = $whole_reveal . ']}]}';
@@ -2602,12 +2591,8 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
     } else {
       //field_next_button == checkbox, field_next_button_label is the button label
       $create_button = $flashcard_values['field_next_button'];
-      $button_label = $flashcard_values['field_next_button_label'];
-      // the spanish word for next is 'siguiente'
       if ($create_button == 1) {
-        if ($button_label) {
-          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
-        }
+        $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
         $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';
       } else {
         $whole_flashcard = $whole_flashcard . ']}]}';
@@ -2724,14 +2709,10 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
     if ($standalone == 1) {
       $whole_list = $whole_list . ']}';
     } else {
-      //field_next_button == checkbox, field_next_button_label is the button label
+      //field_next_button == checkbox, button labels are handled in the tng_npButton_maker code for en/es/frca
       $create_button = $listobject['field_next_button'];
-      $button_label = $listobject['field_next_button_label'];
-      // the spanish word for next is 'siguiente'
       if ($create_button == 1) {
-        if ($button_label) {
-          $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
-        }
+        $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
         $whole_list = $whole_list . $button_chunk . ']}';
       } else {
         $whole_list = rtrim($whole_list, ', ');
@@ -3069,11 +3050,9 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
         if ($standalone == 1) {
           $whole_qa = $whole_qa ;   //. $close_matchgame;
         } else {
-          //field_next_button == checkbox, field_next_button_label is the button label
+          //field_next_button == checkbox, button labels are handled in the button code for en/es/frca
           $create_button = $object_values['field_next_button'];
-          //$button_label = $object_values['field_next_button_label'];
           $submit_button = $object_values['field_create_submit_button'];
-          //$submit_label =  $object_values['field_submit_button_label'];
           if ($create_button == 1) {
             $bt = tng_npButton_maker('', 'btn-next', '', '', $language);
             $bt = rtrim($bt, ' ,');

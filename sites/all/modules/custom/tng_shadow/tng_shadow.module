@@ -381,7 +381,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       //$question = $question . ','   . '"i18n"' . ':' . '{submit:' . 'BUTTON_SUBMIT', next: 'BUTTON_NEXT', favorite: FAVORITE_THIS}"'';
       //$question = $question . '},';
       $question = $question . ',' . '"feedback"' . ': {';
-      $question = $question       . '"immediate"' . ': ' . '"' . $feedback_immediate . '"';
+      $question = $question       . '"immediate"' . ': ' .  $feedback_immediate ;
       $question = $question . ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
       $question = $question . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       $question = $question . '}';

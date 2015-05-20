@@ -1880,6 +1880,73 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
   }
 }
 
+/**
+ * @param $diary_values
+ * @param $language
+ * @param $nid
+ * @return mixed
+ *
+ * If passed a '1' for standalone will create a complete manifest for New Dimension, otherwise just the np_diaryND
+ */
+function process_diary($diary_values, $language, $nid, $standalone = NULL)
+{
+  $tng_debug =0;
+
+  $bg_newplayer_background = 'newplayer-background';
+  //$btn_alt_favorite = 'btn-open-favorites';
+  $close_diary = '] } ] } ] } ]';
+
+  //create an npFeature, npContent, npPage, and multiple npHTML chunks to make a NP product page
+  // and if we find a reasonable number of fields, layout the page
+  $min_product_fields = 1;
+  $max_product_fields = 20;
+  $num_fields = count($diary_values);
+  if ($num_fields >= $min_product_fields && $num_fields <= $max_product_fields) {
+    $title_no_dashes = $diary_values['title_field'];
+    $title = $diary_values['title_field'];
+    $title = str_replace(" ", "-", $title);
+    $feature_chunk = tng_npFeature_maker('diaryDefault', '', '[]', '0.0.1');
+    //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
+    $language_strings = make_language_strings($language);
+    $manifest_language = $language_strings[0];
+    $manifest_content = $language_strings[1];
+    $manifest_title = '--' . $title;
+    //$favorite_link = '/api/favorites/diary/' . $manifest_title;
+    $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'Manifest for diary page.');
+    $diary_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', FALSE);
+    $background_chunk = tng_npHTML_basic_maker('', 'background-brand-primary-light outside-padding', '', '', '', '', '', TRUE);
+    $background_chunk = rtrim($background_chunk, ', ');
+    $whole_diary = '';
+    if ($standalone == 1) {
+      $whole_diary = $feature_chunk . $content_chunk . $diary_background . $background_chunk;
+    }
+    // diary will have an image, some headline or title, then diary text, input field, and a submit button
+    $main_image = $diary_values['field_story_image'];
+    $main_image = tng_convert_drupal_to_mean_filename($main_image);
+    $image_chunk = tng_npImage_maker('', $main_image, 'hero img-responsive center-block', '') . ',';
+    $diary_title = tng_npHTML_basic_maker('', 'h1 header', '', '', '', $title_no_dashes, '', FALSE);
+    $diary_copy = $diary_values['field_intro'];
+    $diary_copy = preg_replace('/\s+/S', " ", $diary_copy);
+    $diary_chunk = tng_npHTML_basic_maker('', 'body-copy center-padding', '', '', '', $diary_copy, '', FALSE);
+    $input_field = '"<input type=\'\' class=\'form-control\' id=\'diaryInput\' placeholder=\'Diary Entry\'>"';
+    $input_chunk = tng_npHTML_basic_maker('', 'body-copy center-padding input-field', '', '', '', $input_field, '', FALSE);
+    $whole_diary = $whole_diary . $image_chunk . $diary_title . $diary_chunk . $input_chunk ;
+
+    if ($standalone == 1) {
+      $whole_diary = $whole_diary . $close_diary;
+    }
+    // when we edit a new node for a diary (or make it for the first time), create a new object_manifest
+    // to create an updated manifest, delete the old manifest and re-edit the product
+    $new_nid = tng_create_manifest_node($whole_diary, 'object_manifest', $manifest_title, '', '', $language, $nid, '', '', '', '', '', '', '', '', '');
+    // return the new nid to set it on the parent node
+    return $new_nid;
+  } else {
+    if ($tng_debug == 1) {
+      dpm('Received more or less items than we expected for our diary, so we are not processing it.');
+    }
+  }
+}
+
 
 /**
  * @param $dragmatch_values
@@ -4484,6 +4551,14 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
+        if (isset($new_nid)) {
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          node_save($entity);
+        }
+      } elseif ($entity_type == 'diary') {
+        $local_language  = $save_language;
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $new_nid = process_diary($pre_manifest, $local_language, $local_tid, '0');
         if (isset($new_nid)) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);

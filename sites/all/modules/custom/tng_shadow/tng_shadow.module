@@ -3331,7 +3331,7 @@ function process_content_object($object_values, $language, $nid)
     $learning_category = rtrim($object_values['field_learning_category'], ',');
     //diaries are a special form of story so default it if none is given
     $learning_category_id = 'np_diaryND';
-    if ($learning_category == 'reNutriv') {
+    if ($learning_category == 'Re-Nutriv') {
       $learning_category_id = 'reNutriv';
     } else if ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';

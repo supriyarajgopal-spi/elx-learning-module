@@ -125,9 +125,6 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
   $tng_debug =0;
   try {
     if (isset($id)) {
-      if (!isset($req)) {
-        $req = '["../../../assets/anr.css"]';
-      }
       if (!isset($version)) {
         $version = '0.0.1';
       }
@@ -1905,7 +1902,7 @@ function process_diary($diary_values, $language, $nid, $standalone = NULL)
     $title_no_dashes = $diary_values['title_field'];
     $title = $diary_values['title_field'];
     $title = str_replace(" ", "-", $title);
-    $feature_chunk = tng_npFeature_maker('diaryDefault', '', '[]', '0.0.1');
+    $feature_chunk = tng_npFeature_maker('np_diaryND', '', '[]', '0.0.1');
     //language specific code here, we can only handle english, traditional and simplified chinese, if none of these default to english
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
@@ -1928,10 +1925,10 @@ function process_diary($diary_values, $language, $nid, $standalone = NULL)
     $diary_copy = $diary_values['field_intro'];
     $diary_copy = preg_replace('/\s+/S', " ", $diary_copy);
     $diary_chunk = tng_npHTML_basic_maker('', 'body-copy center-padding', '', '', '', $diary_copy, '', FALSE);
-    $input_field = '"<input type=\'\' class=\'form-control\' id=\'diaryInput\' placeholder=\'Diary Entry\'>"';
+    $input_field = '<input type=\'\' class=\'form-control\' id=\'diaryInput\' placeholder=\'Diary Entry\'>';
     $input_chunk = tng_npHTML_basic_maker('', 'body-copy center-padding input-field', '', '', '', $input_field, '', FALSE);
     $whole_diary = $whole_diary . $image_chunk . $diary_title . $diary_chunk . $input_chunk ;
-
+    $whole_diary = rtrim($whole_diary, ', ');
     if ($standalone == 1) {
       $whole_diary = $whole_diary . $close_diary;
     }
@@ -3332,9 +3329,11 @@ function process_content_object($object_values, $language, $nid)
       dpm('title : ' . $title);
     }
     $learning_category = rtrim($object_values['field_learning_category'], ',');
-    //when one doesn't select the learning category, it comes as '', default to reNutriv
-    $learning_category_id = 'reNutriv';
-    if ($learning_category == 'ANR') {
+    //diaries are a special form of story so default it if none is given
+    $learning_category_id = 'np_diaryND';
+    if ($learning_category == 'reNutriv') {
+      $learning_category_id = 'reNutriv';
+    } else if ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';
     } else if ($learning_category == 'ANR2') {
       $learning_category_id = 'ANR2';

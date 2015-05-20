@@ -2001,6 +2001,7 @@ function elx_site_configurations_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'diary' => 'diary',
           'drag_match' => 'drag_match',
           'drag_priorities' => 'drag_priorities',
           'drag_select' => 'drag_select',

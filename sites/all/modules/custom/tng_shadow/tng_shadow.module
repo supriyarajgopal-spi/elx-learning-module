@@ -344,7 +344,7 @@ function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = N
  * @param null $feedback_incorrect - the default incorrect answer text, can also be over-written by incorrect value in npAnswer
  * @return null|string
  */
-function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL, $language = NULL)
+function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $difficulty = NULL, $question_text, $feedback_immediate = NULL, $feedback_correct = NULL, $feedback_incorrect = NULL, $language = NULL, $question_image = NULL)
 {
   $tng_debug =0;
   try {
@@ -372,6 +372,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question = $question . ',' . '"questionLabel"' . ': ' . '"' . $question_label . '"';
       $question = $question . ',' . '"answerLabel"' . ': ' . '"' . $answer_label . '"';
       $question = $question . ',' . '"submitLabel"' . ': ' . '"' . $submit_label . '"';
+      $question = $question . ',' . '"questionImage"' . ': ' . '"' . $question_image . '"';
       //$question = $question . ',' . '"buttons"' . ':' . '{';
       //$question = $question         . '"submit"' . ':' . '"Submit"';
       //$question = $question . ','   . '"i18n"' . ':' . '{favorite: FAVORITE_THIS}';
@@ -1352,7 +1353,7 @@ function make_language_strings($language_key)
 
 function tng_value_from_pair($string)
 {
-  $q = explode(':', $string);
+  $q = explode('~', $string);
   $quest = trim($q[1], ' "');
   return $quest;
 }
@@ -2405,19 +2406,19 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
       $revealnumber = 0;
       $increment = 3;
       for ($i = 0; $i < $count_of_elements; $i += $increment) {
-        $key = explode(':', $sploder[$i]);
-        $key_two = explode(':', $sploder[$i + 1]);
+        $key = explode('~', $sploder[$i]);
+        $key_two = explode('~', $sploder[$i + 1]);
         $reveal = 'reveal-' . $revealnumber;
         if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_text" ') {
           $reveal = 'reveal-' . $revealnumber;
-          $thumb_splode = explode(':', $sploder[$i]);
-          $remo = str_replace('//', '', $thumb_splode[2]);
+          $thumb_splode = explode('~', $sploder[$i]);
+          $remo = str_replace(' "public://', '', $thumb_splode[1]);
           $thumb_image = $thumb_path . $remo;
           $thumb_image = tng_convert_drupal_to_mean_filename($thumb_image, '', '', 'true');
-          $video_splode = explode(':', $sploder[$i + 2]);
+          $video_splode = explode('~', $sploder[$i + 2]);
           $video_url = str_replace('"', '', $video_splode[1] . ':' . $video_splode[2]);
           $video_url = tng_convert_drupal_to_mean_filename($video_url, '', '', 'true');
-          $value = explode(':', $sploder[$i + 1]);
+          $value = explode('~', $sploder[$i + 1]);
           $stripped_text_one = str_replace(' "', '', $value[1]);
           $stripped_text_one = str_replace('" ', '', $stripped_text_one);
           $stripped_text_one = str_replace('"', '', $stripped_text_one);
@@ -2426,15 +2427,15 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $increment = 3;
         } else if ($key[0] == '"field_reveal_thumbnail" ' && $key_two[0] == '"field_reveal_hero" ') {
           $reveal = 'reveal-' . $revealnumber;
-          $thumb_splode = explode(':', $sploder[$i]);
-          $remo = str_replace('//', '', $thumb_splode[2]);
+          $thumb_splode = explode('~', $sploder[$i]);
+          $remo = str_replace(' "public://', '', $thumb_splode[1]);
           $thumb_image = $thumb_path . $remo;
           $thumb_image = tng_convert_drupal_to_mean_filename($thumb_image, '', '', 'true');
-          $hero_splode = explode(':', $sploder[$i + 1]);
-          $remo = str_replace('//', '', $hero_splode[2]);
+          $hero_splode = explode('~', $sploder[$i + 1]);
+          $remo = str_replace(' "public://', '', $hero_splode[1]);
           $hero_image = $hero_path . $remo;
           $hero_image = tng_convert_drupal_to_mean_filename($hero_image, '', '', 'true');
-          $value = explode(':', $sploder[$i + 2]);
+          $value = explode('~', $sploder[$i + 2]);
           $stripped_text_one = str_replace(' "', '', $value[1]);
           $stripped_text_one = str_replace('" ', '', $stripped_text_one);
           $stripped_text_one = str_replace('"', '', $stripped_text_one);
@@ -2443,10 +2444,10 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
           $increment = 3;
         }
         else if ($key[0] == '"field_reveal_text" ' && $key_two[0] == '"field_reveal_hero_video" ') {
-          $thumb_splode = explode(':', $sploder[$i+1]);
-          $remo = str_replace('//', '', $thumb_splode[2]);
+          $thumb_splode = explode('~', $sploder[$i+1]);
+          $remo = str_replace('//', '', $thumb_splode[1]);
           $video_image = $video_path . $remo;
-          $value_two = explode(':', $sploder[$i]);
+          $value_two = explode('~', $sploder[$i]);
           $stripped_text_two = str_replace('" ', '', $value_two[1]);
           $stripped_text_two = str_replace(' "', '', $stripped_text_two);
           $stripped_text_two = str_replace('"', '', $stripped_text_two);
@@ -2575,13 +2576,13 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
         $back_http = strpos($sploder[$i + 1], 'http');
         if ($front_http === false && $back_http === false) {
           // it has text only
-          $key = explode(':', $sploder[$i], 2);
-          $key_two = explode(':', $sploder[$i + 1], 2);
+          $key = explode('~', $sploder[$i], 2);
+          $key_two = explode('~', $sploder[$i + 1], 2);
           $omni_one = str_replace('"', '', $key[1]);
           $omni_two = str_replace('"', '', $key_two[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($front_http >= 0 && $back_http === false) {
-          $key = explode(':', $sploder[$i], 2);
+          $key = explode('~', $sploder[$i], 2);
           $start_pos1 = strpos($key[1], 'http');
           $end_pos1 = strpos($key[1], '.jpg') + 4;
           if ($end_pos1 == 4) {
@@ -2593,13 +2594,13 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $asset_url1 = tng_convert_drupal_to_mean_filename($url1);
           $omni_one = $str_beg_one . $asset_url1 . $str_end_one;
           $omni_one = str_replace('"', '', $omni_one);
-          $key_two = explode(':', $sploder[$i + 2], 2);
+          $key_two = explode('~', $sploder[$i + 2], 2);
           $omni_two = str_replace('"', '', $key_two[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($back_http >= 0 && $front_http === false) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
-          $key_two = explode(':', $sploder[$i + 1], 2);
+          $key_two = explode('~', $sploder[$i + 1], 2);
           $start_pos2 = strpos($key_two[1], 'http');
           $end_pos2 = strpos($key_two[1], '.jpg') + 4;
           if ($end_pos2 == 4) {
@@ -2611,14 +2612,14 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           $asset_url2 = tng_convert_drupal_to_mean_filename($url2);
           $omni_two = $str_beg_two . $asset_url2 . $str_end_two;
           $omni_two = str_replace('"', '', $omni_two);
-          $key = explode(':', $sploder[$i], 2);
+          $key = explode('~', $sploder[$i], 2);
           $omni_one = str_replace('"', '', $key[1]);
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         } else if ($back_http >= 0 && $front_http >= 0) {
           // a little bit of tedious string coding to take the full path url, extract it, change to mean style,
           // then put it back together again for our flash cards front and back as they come in pairs.
-          $key = explode(':', $sploder[$i], 2);
-          $key_two = explode(':', $sploder[$i + 1], 2);
+          $key = explode('~', $sploder[$i], 2);
+          $key_two = explode('~', $sploder[$i + 1], 2);
           $start_pos1 = strpos($key[1], 'http');
           $end_pos1 = strpos($key[1], '.jpg') + 4;
           if ($end_pos1 == 4) {
@@ -2739,11 +2740,11 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $whole_list = $whole_list . $page_wrapper;
       for ($i = 0; $i < $count_of_elements; $i += 2) {
-        $key = explode(':', $sploder[$i]);
+        $key = explode('~', $sploder[$i]);
         if ($key[0] == '"field_list_image" ') {
           $first_image = str_replace('"', '', $key[1] . ':' . $key[2]);
           $first_image = tng_convert_drupal_to_mean_filename($first_image, '', '', 'true');
-          $value = explode(':', $sploder[$i + 1], 2);
+          $value = explode('~', $sploder[$i + 1], 2);
           $second_text = preg_replace('/\s+/S', " ", $value[1]);
           $second_text = ltrim($second_text, ' "');
           $second_text = ltrim($second_text, '"');
@@ -2757,7 +2758,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           $first_text = ltrim($first_text, '"');
           $first_text = rtrim($first_text, '"');
           $first_text = str_replace('"', '\"', $first_text);
-          $value = explode(':', $sploder[$i + 1], 2);
+          $value = explode('~', $sploder[$i + 1], 2);
           if (count($value) > 1) {
             $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
             $second_video = tng_convert_drupal_to_mean_filename($second_video, '', '', 'true');
@@ -2929,9 +2930,9 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         dpm($sploder);
       }
       for ($i = 0; $i < $count_of_elements; $i += 3) {
-        $bot_values[] = (explode(':', $sploder[$i], 2));
-        $mid_values[] = (explode(':', $sploder[$i + 1], 2));
-        $top_values[] = (explode(':', $sploder[$i + 2], 2));
+        $bot_values[] = (explode('~', $sploder[$i], 2));
+        $mid_values[] = (explode('~', $sploder[$i + 1], 2));
+        $top_values[] = (explode('~', $sploder[$i + 2], 2));
       }
       // process the bottom, middle and top text or image match pairs
       $top_count = count($top_values);
@@ -3068,6 +3069,8 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
 
     $whole_qa = $page_chunk;
     $ba = '';
+    $img = '';
+    $with_image = false;
     $correct_answer_text = '';
     $incorrect_answer_text = '';
     // paragraphs are
@@ -3079,6 +3082,9 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
         // remove brackets and curly braces [] {}
         $trim_str = trim($value, "\x5B \x7B \x5D \x7D");
         $sploder = explode('",', $trim_str);
+        if (strpos($sploder[1], 'field_question_image') != false) {
+          $with_image = true;
+        }
         if ($tng_debug == 1) {
           dpm($sploder);
         }
@@ -3086,19 +3092,40 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
 
         // for each pair, grab the data and package it for npQuestion, npAnswer
         for ($i = 0; $i < $count_of_elements; $i++) {
-          if (strpos($sploder[$i], 'field_question_text') !== FALSE) {
+          $name_value = $sploder[$i];
+          if (strpos($name_value, 'field_question_image') !== FALSE) {
+            $img_str_size = strlen($name_value);
+            if ($img_str_size > 27) {
+              $img = tng_value_from_pair($sploder[$i]);
+              $with_image = true;
+            }
+          }  elseif (strpos($sploder[$i], 'field_question_text') !== FALSE) {
             $q = tng_value_from_pair($sploder[$i]);
             $question_text = $q;
           } elseif (strpos($sploder[$i], 'field_answer_feedback') !== FALSE) {
-            $answer_feedback = tng_value_from_pair($sploder[$i]);
-            $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
-            $answer_feedback = str_replace('"', '\"', $answer_feedback);
-            $answer_text = tng_value_from_pair($sploder[$i + 1]);
-            $answer_text = preg_replace('/\s+/S', " ", $answer_text);
-            $answer_text = str_replace('"', '\"', $answer_text);
-            $answer_correctness = tng_value_from_pair($sploder[$i + 2]);
-            $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
-            $answer_correctness = str_replace('"', '\"', $answer_correctness);
+            // if we have an image it's the first time through account for the offset
+            if ($with_image && $i == 0) {
+              $answer_feedback = tng_value_from_pair($sploder[$i]);
+              $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
+              $answer_feedback = str_replace('"', '\"', $answer_feedback);
+              $answer_text = tng_value_from_pair($sploder[$i + 2]);
+              $answer_text = preg_replace('/\s+/S', " ", $answer_text);
+              $answer_text = str_replace('"', '\"', $answer_text);
+              $answer_correctness = tng_value_from_pair($sploder[$i + 3]);
+              $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
+              $answer_correctness = str_replace('"', '\"', $answer_correctness);
+              $with_image = false;
+            } else {
+              $answer_feedback = tng_value_from_pair($sploder[$i]);
+              $answer_feedback = preg_replace('/\s+/S', " ", $answer_feedback);
+              $answer_feedback = str_replace('"', '\"', $answer_feedback);
+              $answer_text = tng_value_from_pair($sploder[$i + 1]);
+              $answer_text = preg_replace('/\s+/S', " ", $answer_text);
+              $answer_text = str_replace('"', '\"', $answer_text);
+              $answer_correctness = tng_value_from_pair($sploder[$i + 2]);
+              $answer_correctness = preg_replace('/\s+/S', " ", $answer_correctness);
+              $answer_correctness = str_replace('"', '\"', $answer_correctness);
+          }
             if ($answer_correctness == 1) {
               $ap = tng_npAnswer_maker($answer_text, 'true', $answer_feedback, '');
               $correct_answer_text = $answer_feedback;
@@ -3127,7 +3154,7 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
         } else {
           $immediate_value = 'true';
         }
-        $np = tng_npQuestion_maker('true', 'false', 'checkbox', $difficulty, $question_text, $immediate_value, $correct_answer_text, $incorrect_answer_text, $language);
+        $np = tng_npQuestion_maker('true', 'false', 'checkbox', $difficulty, $question_text, $immediate_value, $correct_answer_text, $incorrect_answer_text, $language, $img);
         //pre pend since we built the question after the answers
         $ba = $np . $ba;
 
@@ -4060,10 +4087,10 @@ function tng_shadow_shadow_request_alter($entity)
               if (in_array($name, $match_possibilites)) {
                 if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                   if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                   }
                   if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                   }
                   if ($tng_debug == 1) {
                     dpm('value after name' . $namevalue);
@@ -4073,10 +4100,10 @@ function tng_shadow_shadow_request_alter($entity)
                 if (in_array($name, $matchgame_possibilities)) {
                   if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                      $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                     } else {
                       if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                       }
                     }
                     if ($tng_debug == 1) {
@@ -4088,7 +4115,7 @@ function tng_shadow_shadow_request_alter($entity)
                   if (in_array($name, $flashcard_possibilities)) {
                     if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                       if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                       }
                       if ($tng_debug == 1) {
                         dpm('value after name' . $namevalue);
@@ -4098,10 +4125,10 @@ function tng_shadow_shadow_request_alter($entity)
                     if (in_array($name, $list_possibilities)) {
                       if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                         if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                          $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                          $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                         } else {
                           if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                           }
                         }
                         if ($tng_debug == 1) {
@@ -4112,10 +4139,10 @@ function tng_shadow_shadow_request_alter($entity)
                       if (in_array($name, $reveal_possibilities)) {
                         if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                           if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                           } else {
                             if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                             }
                           }
                           if ($tng_debug == 1) {
@@ -4126,10 +4153,10 @@ function tng_shadow_shadow_request_alter($entity)
                         if (in_array($name, $drag_possibilities)) {
                           if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                             if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                             }
                             if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                             }
                             if ($tng_debug == 1) {
                               dpm('value after name' . $namevalue);
@@ -4139,10 +4166,10 @@ function tng_shadow_shadow_request_alter($entity)
                           if (in_array($name, $drag_select_possibilities)) {
                             if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
                               if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                               }
                               if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
                               }
                               if ($tng_debug == 1) {
                                 dpm('value after name' . $namevalue);
@@ -4151,7 +4178,7 @@ function tng_shadow_shadow_request_alter($entity)
                           } else {
                             if (strlen(strstr($name, 'field_hot_spot')) > 0) {
                               if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
@@ -4160,12 +4187,12 @@ function tng_shadow_shadow_request_alter($entity)
                               // the answer node itself has no value we can use, so don't include it
                               if ($name == 'field_paragraph_answer') {
                               } elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" : "' . $paragraphs->{$name}[$language][0]['value'] . '",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs->{$name}[$language][0]['value'] . '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
                               } else {
-                                $namevalue = $namevalue . '"' . $field_name . '" : ' . '"",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ ' . '"",';
                               }
                             }
                           }
@@ -4184,12 +4211,15 @@ function tng_shadow_shadow_request_alter($entity)
                 if ($tng_debug == 1) {
                   dpm($field_count . ' field(s) sets found for ' . $paragraphs->{$name}[$language][0]['value']);
                 }
+
                 if (($field_count == 1) && (isset($paragraphs->{$name}[$language][0]['value']))) {
                   if ($tng_debug == 1) {
                     dpm('name : ' . $name . ' value : ' . $paragraphs->{$name}[$language][0]['value']);
                   }
+
                 } else {
-                  // typically answers
+                  // typically answers sometimes images?
+                  }
                   for ($f = 0; $f < $field_count; $f++) {
                     $para_entity = paragraphs_item_load($paragraphs->{$name}[$language][$f]['value']);
                     if ($tng_debug == 1) {
@@ -4200,7 +4230,11 @@ function tng_shadow_shadow_request_alter($entity)
                     if ($tng_debug == 1) {
                       dpm($para_inst);
                     }
-                    $sub_children = element_children($para_inst);
+                    if ($para_entity != false) {
+                      $sub_children = element_children($para_inst);
+                    } else {
+                      $sub_children = null;
+                    }
                     foreach ($sub_children as $key => $value) {
                       if ($tng_debug == 1) {
                         dpm('***key***');
@@ -4214,28 +4248,28 @@ function tng_shadow_shadow_request_alter($entity)
                           dpm($value);
                           dpm($para_entity->{$value}[$language][0]['value']);
                         }
-                        $namevalue = $namevalue . '"' . $value . '":"' . $para_entity->{$value}[$language][0]['value'] . '",';
+                        $namevalue = $namevalue . '"' . $value . '" ~ "' . $para_entity->{$value}[$language][0]['value'] . '",';
                       }
                       $info = field_info_field($sub_children[$key]);
+                      if ($info['type'] == 'image') {
+                        // rare, but you could attach an image to a question
+                        $img_name = 'field_question_image';
+                        $img_fid = $paragraphs->{$img_name}[$language][0]['fid'];
+                        if ($img_fid) {
+                          $file_id = file_load($img_fid);
+                          $uri = $file_id->uri;
+                          $pub_image = 'assets/' . str_replace('public://', '', $uri);
+                          $already_there = strpos($namevalue,'field_question_image' );
+                          if ( $already_there === false )
+                          {
+                            $namevalue = $namevalue . '"' . $img_name . '" ~ "' . $pub_image . '",';
+                          }
+                        }
                       if ($tng_debug == 1) {
                         dpm($info);
                       }
                       // expect 'file' or 'image' here
                       $field_name = $value;
-                      if ($info['type'] == 'image') {
-                        $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
-                        $fid = $entity_array[$field_name][$language][0]['fid'];
-                        if ($fid) {
-                          $file_id = file_load($fid);
-                          $uri = $file_id->uri;
-                          $image_style_path = image_style_url($image_style, $uri);
-                        } else {
-                          $image_style_path = '';
-                        }
-                        if ($tng_debug == 1) {
-                          dpm($field_name . ': ' . $image_style_path);
-                        }
-                      }
                       if ($info['type'] == 'taxonomy_term_reference') {
                         if ($tng_debug == 1) {
                           dpm('**inside taxonomy term reference**');
@@ -4284,8 +4318,6 @@ function tng_shadow_shadow_request_alter($entity)
               //dpm($targetid);
               $csv = '';
               $partnerinfo = tng_title_image_date_extractor($targetid);
-              //dpm('post fetch');
-              //dpm($partnerinfo);
               foreach ($partnerinfo as $key) {
                 //dpm($key);
                 $csv = $csv . $key . ',';

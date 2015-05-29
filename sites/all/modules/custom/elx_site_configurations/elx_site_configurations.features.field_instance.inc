@@ -2663,7 +2663,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -2708,6 +2708,70 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-drag_select-field_drag_select_background'
+  $field_instances['node-drag_select-field_drag_select_background'] = array(
+    'bundle' => 'drag_select',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'drag_select_background_image',
+        ),
+        'type' => 'image',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_drag_select_background',
+    'label' => 'Drag select background',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
     ),
   );
 
@@ -2777,7 +2841,7 @@ function elx_site_configurations_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -2818,7 +2882,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -2859,7 +2923,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -2900,7 +2964,7 @@ function elx_site_configurations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -2944,7 +3008,7 @@ function elx_site_configurations_field_default_field_instances() {
         'size' => 120,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -2988,7 +3052,7 @@ function elx_site_configurations_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -10200,6 +10264,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Display title');
   t('Drag match collection');
   t('Drag priority collection');
+  t('Drag select background');
   t('Drag select collection');
   t('Drag select image');
   t('Drag select question');

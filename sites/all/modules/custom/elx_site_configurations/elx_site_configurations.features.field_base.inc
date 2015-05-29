@@ -883,6 +883,42 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
+  // Exported field_base: 'field_drag_select_background'
+  $field_bases['field_drag_select_background'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_drag_select_background',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 1,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_drag_select_collection'
   $field_bases['field_drag_select_collection'] = array(
     'active' => 1,

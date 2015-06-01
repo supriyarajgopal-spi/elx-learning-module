@@ -2122,6 +2122,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
   $drag_question = $dragselect['field_drag_select_question'];
   $combine_question_text = $instructional_text . $drag_question;
   $drag_select_background_image = $dragselect['field_drag_select_background'];
+  $mean_back_image = tng_convert_drupal_to_mean_filename($drag_select_background_image);
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragselect['title_field'];
@@ -2152,7 +2153,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     if ($dragselect['field_drag_select_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
-        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $language, $drag_select_background_image);
+        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $language, $mean_back_image);
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
         $select_path = 'assets/styles/drag_select_image/public/';
 
@@ -4370,40 +4371,15 @@ function tng_shadow_shadow_request_alter($entity)
             }
           }
         } elseif ($info['type'] == 'image') {
-          //dpm('found an image');
           $field_name = $info['field_name'];
-          //dpm('**field name**');
-          //dpm($field_name);
           $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
-          //dpm('**image style**');
-          //dpm($image_style);
-          $image_name = explode('_', $image_style);
-          //dpm('**image name**');
-          //dpm($image_name);
-          $is_retina = array_pop($image_name);
-          //dpm('**is retina**');
-          //dpm($is_retina);
-          $non_retina_style = implode('_', $image_name);
-          $fid = $entity_array[$field_name][$language][0]['fid'];
-          //dpm('**fid**');
-          //dpm($fid);
-
+          $new_lang = $entity_array['language'];
+          $fid = $entity_array[$field_name][$new_lang][0]['fid'];
           if ($fid) {
             $file_id = file_load($fid);
             $uri = $file_id->uri;
             $style_path = image_style_url($image_style, $uri);
-            if ($is_retina == 'retina') {
-              $non_retina_path = image_style_url($non_retina_style, $uri);
-              //dpm('**non retina path**');
-              //dpm($non_retina_path);
-              $image_style_path = array($style_path, $non_retina_path);
-              //dpm('**image path style**');
-              //dpm($image_style_path);
-            } else {
-              $image_style_path = array($style_path);
-              //dpm('**$image_style_path**');
-              //dpm($image_style_path);
-            }
+            $image_style_path = array($style_path);
           } else {
             $image_style_path = '';
           }

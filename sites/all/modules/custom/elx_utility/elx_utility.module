@@ -26,6 +26,8 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.css', array('weight' => CSS_THEME));
     drupal_add_js(drupal_get_path('module', 'elx_utility')
     . '/admin.js');
+    drupal_add_js(drupal_get_path('module', 'elx_utility')
+    . '/jquery.alphanum.js');
   }
 }
 
@@ -33,7 +35,7 @@ function elx_utility_preprocess_html(&$variables) {
  * Random pass generator.
  */
 function randomPassword() {
-  $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+  $alphabet = "abcdefghijkmnopqrstuwxyzABCDEFGHJKMNPQRSTUWXYZ23456789";
   $pass = array(); //remember to declare $pass as an array
   $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
   for ($i = 0; $i < 8; $i++) {
@@ -50,18 +52,31 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $password = randomPassword();
   $encrypted_data = aes_encrypt($password);
-  $entity->pass = $password;
-  db_insert('aes_passwords')
-    ->fields(array(
-      'uid' => $entity->uid,
-      'pass' => $encrypted_data,
-    ))
-    ->execute();
-  $pass = user_hash_password($password);
-  db_update('users')
-    ->fields(array('pass' => $pass))
-    ->where("uid = :uid", array(
-      ':uid' => $entity->uid,
-    ))
-    ->execute();
+  if ($entity->pass == '') {
+    $entity->pass = $password;
+    db_insert('aes_passwords')
+      ->fields(array(
+        'uid' => $entity->uid,
+        'pass' => $encrypted_data,
+      ))
+      ->execute();
+    $pass = user_hash_password($password);
+    db_update('users')
+      ->fields(array('pass' => $pass))
+      ->where("uid = :uid", array(
+        ':uid' => $entity->uid,
+      ))
+      ->execute();
+  }
+}
+
+/**
+ * Implements hook_clone_node_alter().
+ */
+function elx_utility_clone_node_alter(&$node, $context) {
+  $lang = $node->language;
+  // Empty manifest reference
+  if (isset($node->field_manifest[$lang][0]['target_id'])) {
+    $node->field_manifest[$lang][0]['target_id'] = '';
+  }
 }

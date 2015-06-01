@@ -30,6 +30,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -301,6 +302,12 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_market_administrator']['id'] = 'field_market_administrator';
   $handler->display->display_options['fields']['field_market_administrator']['table'] = 'field_data_field_market_administrator';
   $handler->display->display_options['fields']['field_market_administrator']['field'] = 'field_market_administrator';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -388,9 +395,175 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
+  /* Filter criterion: User: Account/field executive (field_account_field_executive) */
+  $handler->display->display_options['filters']['field_account_field_executive_value']['id'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['table'] = 'field_data_field_account_field_executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['field'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator_id'] = 'field_account_field_executive_value_op';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Account/field executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator'] = 'field_account_field_executive_value_op';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['identifier'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Last access */
+  $handler->display->display_options['filters']['access']['id'] = 'access';
+  $handler->display->display_options['filters']['access']['table'] = 'users';
+  $handler->display->display_options['filters']['access']['field'] = 'access';
+  $handler->display->display_options['filters']['access']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['access']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['access']['expose']['operator_id'] = 'access_op';
+  $handler->display->display_options['filters']['access']['expose']['label'] = 'Last access';
+  $handler->display->display_options['filters']['access']['expose']['operator'] = 'access_op';
+  $handler->display->display_options['filters']['access']['expose']['identifier'] = 'access';
+  $handler->display->display_options['filters']['access']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['group'] = 1;
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roles';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+  );
+  /* Filter criterion: User: Region (field_region_list) */
+  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Market name (field_market_name) */
+  $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
+  $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator_id'] = 'field_market_name_value_op';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['label'] = 'Market name';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator'] = 'field_market_name_value_op';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['identifier'] = 'field_market_name_value';
+  $handler->display->display_options['filters']['field_market_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Market Administrator (field_market_administrator) */
+  $handler->display->display_options['filters']['field_market_administrator_value']['id'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['field'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator_id'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['label'] = 'Market Administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['identifier'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Account/field executive (field_account_field_executive) */
+  $handler->display->display_options['filters']['field_account_field_executive_value']['id'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['table'] = 'field_data_field_account_field_executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['field'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator_id'] = 'field_account_field_executive_value_op';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Account/field executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator'] = 'field_account_field_executive_value_op';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['identifier'] = 'field_account_field_executive_value';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Last access */
+  $handler->display->display_options['filters']['access']['id'] = 'access';
+  $handler->display->display_options['filters']['access']['table'] = 'users';
+  $handler->display->display_options['filters']['access']['field'] = 'access';
+  $handler->display->display_options['filters']['access']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['access']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['access']['expose']['operator_id'] = 'access_op';
+  $handler->display->display_options['filters']['access']['expose']['label'] = 'Last access';
+  $handler->display->display_options['filters']['access']['expose']['operator'] = 'access_op';
+  $handler->display->display_options['filters']['access']['expose']['identifier'] = 'access';
+  $handler->display->display_options['filters']['access']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/user-export';
 
   /* Display: Data export */
@@ -398,6 +571,14 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['attach_text'] = 'feed';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
@@ -555,6 +736,7 @@ function elx_users_feature_views_default_views() {
     t('Field Sales Director/Regional Education Director'),
     t('General Manager/Brand Manager'),
     t('Market Administrator'),
+    t('Last access'),
     t('Page'),
     t('Data export'),
     t('Status'),

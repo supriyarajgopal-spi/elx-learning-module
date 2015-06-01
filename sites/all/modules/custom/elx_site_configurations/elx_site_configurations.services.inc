@@ -13,102 +13,12 @@ function elx_site_configurations_default_services_endpoint() {
   $endpoint = new stdClass();
   $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
   $endpoint->api_version = 3;
-  $endpoint->name = 'json_feed';
-  $endpoint->server = 'rest_server';
-  $endpoint->path = 'elx-json';
-  $endpoint->authentication = array();
-  $endpoint->server_settings = array(
-    'formatters' => array(
-      'json' => TRUE,
-      'bencode' => FALSE,
-      'jsonp' => FALSE,
-      'php' => FALSE,
-      'xml' => FALSE,
-    ),
-    'parsers' => array(
-      'application/json' => TRUE,
-      'application/vnd.php.serialized' => TRUE,
-      'application/xml' => TRUE,
-      'multipart/form-data' => TRUE,
-      'text/xml' => TRUE,
-      'application/x-www-form-urlencoded' => FALSE,
-    ),
-  );
-  $endpoint->resources = array(
-    'elx-services' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'entity_node' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-      'relationships' => array(
-        'files' => array(
-          'enabled' => '1',
-        ),
-        'comments' => array(
-          'enabled' => '1',
-        ),
-      ),
-      'targeted_actions' => array(
-        'attach_file' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'entity_paragraphs_item' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'node' => array(
-      'operations' => array(
-        'retrieve' => array(
-          'enabled' => '1',
-        ),
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-      'relationships' => array(
-        'files' => array(
-          'enabled' => '1',
-        ),
-        'comments' => array(
-          'enabled' => '1',
-        ),
-      ),
-      'targeted_actions' => array(
-        'attach_file' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-  );
-  $endpoint->debug = 1;
-  $export['json_feed'] = $endpoint;
-
-  $endpoint = new stdClass();
-  $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
-  $endpoint->api_version = 3;
   $endpoint->name = 'rest';
   $endpoint->server = 'rest_server';
   $endpoint->path = 'rest';
-  $endpoint->authentication = array();
+  $endpoint->authentication = array(
+    'services' => 'services',
+  );
   $endpoint->server_settings = array(
     'formatters' => array(
       'json' => TRUE,

@@ -736,8 +736,7 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL)
 }
 
 
-
-function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $required = NULL, $req = NULL, $language = NULL)
+function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback = NULL, $negative_feedback = NULL, $required = NULL, $req = NULL, $language = NULL, $image = NULL)
 {
   $tng_debug =0;
   try {
@@ -751,6 +750,9 @@ function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback
     }
     if ($positive_feedback) {
       $draganselect = $draganselect . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+    }
+    if ($image) {
+      $draganselect = $draganselect . ',' . '"image"' . ':' . '"' . $image . '"';
     }
     if ($negative_feedback) {
       $draganselect = $draganselect . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
@@ -1933,6 +1935,10 @@ function process_diary($diary_values, $language, $nid, $standalone = NULL)
     if ($standalone == 1) {
       $whole_diary = $whole_diary . $close_diary;
     }
+
+    // implement the V3 from Creative Few which has fewer elements and is not a 'real' NewPlayer manifest
+    // todo: this ^
+
     // when we edit a new node for a diary (or make it for the first time), create a new object_manifest
     // to create an updated manifest, delete the old manifest and re-edit the product
     $new_nid = tng_create_manifest_node($whole_diary, 'object_manifest', $manifest_title, '', '', $language, $nid, '', '', '', '', '', '', '', '', '');
@@ -2074,6 +2080,7 @@ function process_dragmatch($dragmatch, $language, $nid, $module, $standalone = N
 }
 
 
+
 /**
  * @param $dragselect
  * @param $language
@@ -2114,6 +2121,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
   $placeholder = '<p></p>';
   $drag_question = $dragselect['field_drag_select_question'];
   $combine_question_text = $instructional_text . $drag_question;
+  $drag_select_background_image = $dragselect['field_drag_select_background'];
 
   if ($num_fields >= $min_dragdrop_fields && $num_fields <= $max_dragdrop_fields) {
     $title = $dragselect['title_field'];
@@ -2144,8 +2152,9 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
     if ($dragselect['field_drag_select_collection']) {
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
-        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $language);
+        $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $language, $drag_select_background_image);
         $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
+        $select_path = 'assets/styles/drag_select_image/public/';
 
         foreach ($dragselect as $key => $value) {
           if ($tng_debug == 1) {
@@ -2159,16 +2168,32 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
               dpm($sploder);
             }
             $count_of_elements = count($sploder);
-            // for each pair of matching content, grab the data and package it up as content, matching content
-            for ($i = 0; $i < $count_of_elements; $i += 2) {
-              // todo: this code needs to accommodate images on the left side as well.
-              // they are inserted into the 'image' field of the draggable button set
-              $left_text_or_image = tng_value_from_pair($sploder[$i]);
-              $right_text_or_image = tng_value_from_pair($sploder[$i + 1]);
-              if ($right_text_or_image == "1") {
-                $story_detail = tng_dragselect_button_maker('', '', 'true', $left_text_or_image, '', $right_text_or_image, '');
+            // there may be 2 or 3 parms, check for image field to know
+            for ($i = 0; $i < $count_of_elements; $i += $var_field_num) {
+              $has_image = strpos($sploder[$i], 'field_drag_select_image');
+              if ($has_image != false) {
+                $var_field_num = 3;
+                // they are inserted into the 'image' field of the draggable button set
+                $left_image = tng_value_from_pair($sploder[$i]);
+                $remo = str_replace('public://', '', $left_image);
+                $conv_image = $select_path . $remo;
+                $text = tng_value_from_pair($sploder[$i + 1]);
+                $correct_or_not = tng_value_from_pair($sploder[$i + 2]);
+                if ($correct_or_not == "1") {
+                  $story_detail = tng_dragselect_button_maker('', '', 'true', $text, $conv_image, '', '');
+                } else {
+                  $story_detail = tng_dragselect_button_maker('', '', 'false', $text, $conv_image, '', '');
+                }
               } else {
-                $story_detail = tng_dragselect_button_maker('', '', 'false', $left_text_or_image, '', $right_text_or_image, '');
+                $var_field_num = 2;
+                $left_text_or_image = tng_value_from_pair($sploder[$i]);
+                $right_text_or_image = tng_value_from_pair($sploder[$i + 1]);
+                if ($right_text_or_image == "1") {
+                  $story_detail = tng_dragselect_button_maker('', '', 'true', $left_text_or_image, '', '', '');
+                } else {
+                  $story_detail = tng_dragselect_button_maker('', '', 'false', $left_text_or_image, '', '', '');
+                }
+
               }
               $whole_dragselect = $whole_dragselect . $story_detail;
             }
@@ -2742,7 +2767,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
       for ($i = 0; $i < $count_of_elements; $i += 2) {
         $key = explode('~', $sploder[$i]);
         if ($key[0] == '"field_list_image" ') {
-          $first_image = str_replace('"', '', $key[1] . ':' . $key[2]);
+          $first_image = str_replace('"', '', $key[1] );
           $first_image = tng_convert_drupal_to_mean_filename($first_image, '', '', 'true');
           $value = explode('~', $sploder[$i + 1], 2);
           $second_text = preg_replace('/\s+/S', " ", $value[1]);
@@ -2760,7 +2785,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           $first_text = str_replace('"', '\"', $first_text);
           $value = explode('~', $sploder[$i + 1], 2);
           if (count($value) > 1) {
-            $second_video = str_replace('"', '', $value[1] . ':' . $value[2]);
+            $second_video = str_replace('"', '', $value[1]);
             $second_video = tng_convert_drupal_to_mean_filename($second_video, '', '', 'true');
             $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, 'npVideo', '', '', '', '', $second_video, 'mp4');
           } else {

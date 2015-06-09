@@ -1342,7 +1342,7 @@ function make_language_strings($language_key)
   }
   if (strlen($language_key) > 2) {
     $country_only = strtoupper(substr($language_key, 2));
-    $manifest_language[] = $language_only . '-' . $country_only;
+    $manifest_language[] = $language_only;
     $manifest_language[] = 'content_' . $language_only . '-' . $country_only;
 
   } else {

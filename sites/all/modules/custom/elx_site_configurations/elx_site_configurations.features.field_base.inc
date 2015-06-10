@@ -341,6 +341,27 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_badge_weight'
+  $field_bases['field_badge_weight'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_badge_weight',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_benefits'
   $field_bases['field_benefits'] = array(
     'active' => 1,

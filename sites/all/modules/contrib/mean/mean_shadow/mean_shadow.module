@@ -84,6 +84,19 @@ function mean_shadow_node_update($node) {
 }
 
 /**
+ * Implements hook_node_delete().
+ *
+ * @param $node
+ */
+function mean_shadow_node_delete($node) {
+  dpm('made it into the shadow node delete hook');
+  if (mean_shadow_should_shadow($node->type)) {
+    mean_shadow_request('delete', 'node', 'nid', $node);
+  }
+}
+
+
+/**
  * @param $type
  * @return mixed
  */
@@ -117,8 +130,10 @@ function mean_shadow_request($action, $schema, $key = '', $entity = NULL) {
       );
     }
 
-    // Allow alter before the request
-    mean_shadow_invoke_all_request_alter($entity);
+    // Allow alter before the request, but only for insert or update, not delete
+    if ($action != 'delete') {
+      mean_shadow_invoke_all_request_alter($entity);
+    }
 
     $json = '';
     $parts = array($port, $action, $schema);
@@ -145,14 +160,25 @@ function mean_shadow_request($action, $schema, $key = '', $entity = NULL) {
       }
     }
 
-    $request_headers = array('Content-Type' => 'application/json');
-    drupal_http_request($url, array(
-      'headers' => $request_headers,
-      'method' => 'POST',
-      'data' => $json,
-      'max_redirects' => 3,
-      'timeout' => 30.0
-    ));
+    if ($action == 'delete') {
+      $request_headers = array('Content-Type' => 'application/json');
+      drupal_http_request($url, array(
+        'headers' => $request_headers,
+        'method' => 'DELETE',
+        'data' => $json,
+        'max_redirects' => 3,
+        'timeout' => 5.0
+      ));
+    } else {
+      $request_headers = array('Content-Type' => 'application/json');
+      drupal_http_request($url, array(
+        'headers' => $request_headers,
+        'method' => 'POST',
+        'data' => $json,
+        'max_redirects' => 3,
+        'timeout' => 30.0
+      ));
+    }
   }
 }
 
@@ -160,7 +186,7 @@ function mean_shadow_request($action, $schema, $key = '', $entity = NULL) {
  * @param $entity
  * @return array|null
  */
-function mean_shadow_invoke_all_request_alter($entity) {
+function  mean_shadow_invoke_all_request_alter($entity) {
   $return = NULL;
 
   foreach (module_implements('shadow_request_alter') as $name) {

@@ -2867,10 +2867,10 @@ function process_badge($badgeobject, $language, $nid)
       $badge_icon = $badgeobject['field_badge_icon'];
       $mean_image_name = tng_convert_drupal_to_mean_filename($badge_icon, '', '', FALSE);
     }
-
+    $badge_weight =  (int) $badgeobject['field_badge_weight'];
     $badge_description = $badgeobject['field_badge_description'];
     $badge_unearned_description = $badgeobject['field_badge_unearned_description'];
-    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description);
+    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description, $badge_weight);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -3763,7 +3763,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
 }
 
 
-function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL)
+function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL, $node_badge_weight = NULL)
 {
 
   global $user;
@@ -3781,6 +3781,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
       dpm('node badge icon : ' . $node_badge_icon);
       dpm('node badge description : ' . $node_badge_description);
       dpm('node badge unearned description : ' . $node_badge_unearned_description);
+      dpm('node badge weight : ' . $node_badge_weight);
     }
     $node = new stdClass();
     $node->title = $node_title;
@@ -3814,22 +3815,24 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
       'format' => 'plain_text',
     );
 
-    // since we can't save a manifest node with a 'thumbnail link' we save it separately in a new field
     $node->field_badge_image[$node->language][] = array(
       'value' => $node_badge_icon,
       'format' => 'plain_text',
     );
 
-    // since we can't save a manifest node with a 'display text' we save it separately in a new field
     $node->field_badge_description[$node->language][] = array(
       'value' => $node_badge_description,
       'format' => 'plain_text',
     );
 
-    // since we can't save a manifest node with a 'display title' we save it separately in a new field
     $node->field_badge_unearned_description[$node->language][] = array(
       'value' => $node_badge_unearned_description,
       'format' => 'plain_text',
+    );
+
+    $node->field_badge_weight[$node->language][] = array(
+      'value' => $node_badge_weight,
+      'format' => 'integer',
     );
 
     //$node->language = $node_language; // unfortunately this doesn't work
@@ -3868,6 +3871,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $node->field_badge_image['und'][0]['value'] = $node_badge_icon;
     $node->field_badge_description['und'][0]['value'] = $node_badge_description;
     $node->field_badge_unearned_description['und'][0]['value'] = $node_badge_unearned_description;
+    $node->field_badge_weight['und'][0]['value'] = (int) $node_badge_weight;
     node_save($node);
     return $node->nid;
   }

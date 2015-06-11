@@ -2349,6 +2349,7 @@ function elx_site_configurations_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'badge_manifest' => 'badge_manifest',
           'object_manifest' => 'object_manifest',
         ),
       ),

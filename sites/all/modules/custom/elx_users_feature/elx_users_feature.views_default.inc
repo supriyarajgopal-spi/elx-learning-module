@@ -53,10 +53,14 @@ function elx_users_feature_views_default_views() {
     'field_counter_manager' => 'field_counter_manager',
     'field_education_manager_executiv' => 'field_education_manager_executiv',
     'field_hire_date' => 'field_hire_date',
-    'field_job_title' => 'field_job_title',
     'field_market_name' => 'field_market_name',
+    'field_regional_vice_president' => 'field_regional_vice_president',
     'status' => 'status',
     'language' => 'language',
+    'field_field_sales_director_regio' => 'field_field_sales_director_regio',
+    'field_general_manager_brand_mana' => 'field_general_manager_brand_mana',
+    'field_market_administrator' => 'field_market_administrator',
+    'access' => 'access',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -163,14 +167,14 @@ function elx_users_feature_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_job_title' => array(
+    'field_market_name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_market_name' => array(
+    'field_regional_vice_president' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -186,6 +190,34 @@ function elx_users_feature_views_default_views() {
     ),
     'language' => array(
       'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_field_sales_director_regio' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_general_manager_brand_mana' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_market_administrator' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -551,6 +583,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['access']['exposed'] = TRUE;
   $handler->display->display_options['filters']['access']['expose']['operator_id'] = 'access_op';
   $handler->display->display_options['filters']['access']['expose']['label'] = 'Last access';
+  $handler->display->display_options['filters']['access']['expose']['use_operator'] = TRUE;
   $handler->display->display_options['filters']['access']['expose']['operator'] = 'access_op';
   $handler->display->display_options['filters']['access']['expose']['identifier'] = 'access';
   $handler->display->display_options['filters']['access']['expose']['remember_roles'] = array(
@@ -692,6 +725,13 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_market_administrator']['id'] = 'field_market_administrator';
   $handler->display->display_options['fields']['field_market_administrator']['table'] = 'field_data_field_market_administrator';
   $handler->display->display_options['fields']['field_market_administrator']['field'] = 'field_market_administrator';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['path'] = 'admin/user-export/feed';
   $handler->display->display_options['displays'] = array(
     'page' => 'page',

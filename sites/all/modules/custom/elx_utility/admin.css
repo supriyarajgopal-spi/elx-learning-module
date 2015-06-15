@@ -18,3 +18,13 @@
   height: 125px;
   width: 125px;
 }
+
+.page-admin-user-export .views-exposed-form select option[value="<"],
+.page-admin-user-export .views-exposed-form select option[value="<="],
+.page-admin-user-export .views-exposed-form select option[value=">"],
+.page-admin-user-export .views-exposed-form select option[value=">="],
+.page-admin-user-export .views-exposed-form select option[value="between"],
+.page-admin-user-export .views-exposed-form select option[value="not between"],
+.page-admin-user-export .views-exposed-form select option[value="regular_expression"] {
+  display: none;
+}

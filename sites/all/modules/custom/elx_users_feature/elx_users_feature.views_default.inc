@@ -471,6 +471,141 @@ function elx_users_feature_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: User */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::one_time_login_send_register_no_approval_required' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Send welcome e-mail',
+    ),
+  );
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: First name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  /* Field: User: Employer number */
+  $handler->display->display_options['fields']['field_employer_number']['id'] = 'field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['table'] = 'field_data_field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['field'] = 'field_employer_number';
+  $handler->display->display_options['fields']['field_employer_number']['exclude'] = TRUE;
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Field: User: Door */
+  $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
+  $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
+  $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
+  $handler->display->display_options['fields']['field_door']['exclude'] = TRUE;
+  /* Field: User: Account name */
+  $handler->display->display_options['fields']['field_account_name']['id'] = 'field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
+  $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
+  /* Field: User: Account/field executive */
+  $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
+  $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
+  /* Field: User: City */
+  $handler->display->display_options['fields']['field_city']['id'] = 'field_city';
+  $handler->display->display_options['fields']['field_city']['table'] = 'field_data_field_city';
+  $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
+  $handler->display->display_options['fields']['field_city']['exclude'] = TRUE;
+  /* Field: User: State */
+  $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
+  $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
+  $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
+  /* Field: User: Country */
+  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  /* Field: User: Region */
+  $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
+  $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
+  /* Field: User: Counter manager */
+  $handler->display->display_options['fields']['field_counter_manager']['id'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['table'] = 'field_data_field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['field'] = 'field_counter_manager';
+  $handler->display->display_options['fields']['field_counter_manager']['exclude'] = TRUE;
+  /* Field: User: Education manager/executive */
+  $handler->display->display_options['fields']['field_education_manager_executiv']['id'] = 'field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
+  $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
+  /* Field: User: Hire date */
+  $handler->display->display_options['fields']['field_hire_date']['id'] = 'field_hire_date';
+  $handler->display->display_options['fields']['field_hire_date']['table'] = 'field_data_field_hire_date';
+  $handler->display->display_options['fields']['field_hire_date']['field'] = 'field_hire_date';
+  $handler->display->display_options['fields']['field_hire_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_hire_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: User: Market name */
+  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
+  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
+  /* Field: User: Regional Vice President */
+  $handler->display->display_options['fields']['field_regional_vice_president']['id'] = 'field_regional_vice_president';
+  $handler->display->display_options['fields']['field_regional_vice_president']['table'] = 'field_data_field_regional_vice_president';
+  $handler->display->display_options['fields']['field_regional_vice_president']['field'] = 'field_regional_vice_president';
+  $handler->display->display_options['fields']['field_regional_vice_president']['exclude'] = TRUE;
+  /* Field: User: Active */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['type'] = 'custom';
+  $handler->display->display_options['fields']['status']['type_custom_true'] = 'Active';
+  $handler->display->display_options['fields']['status']['type_custom_false'] = 'Inactive';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: User: Language */
+  $handler->display->display_options['fields']['language']['id'] = 'language';
+  $handler->display->display_options['fields']['language']['table'] = 'users';
+  $handler->display->display_options['fields']['language']['field'] = 'language';
+  $handler->display->display_options['fields']['language']['exclude'] = TRUE;
+  /* Field: User: Field Sales Director/Regional Education Director */
+  $handler->display->display_options['fields']['field_field_sales_director_regio']['id'] = 'field_field_sales_director_regio';
+  $handler->display->display_options['fields']['field_field_sales_director_regio']['table'] = 'field_data_field_field_sales_director_regio';
+  $handler->display->display_options['fields']['field_field_sales_director_regio']['field'] = 'field_field_sales_director_regio';
+  $handler->display->display_options['fields']['field_field_sales_director_regio']['exclude'] = TRUE;
+  /* Field: User: General Manager/Brand Manager */
+  $handler->display->display_options['fields']['field_general_manager_brand_mana']['id'] = 'field_general_manager_brand_mana';
+  $handler->display->display_options['fields']['field_general_manager_brand_mana']['table'] = 'field_data_field_general_manager_brand_mana';
+  $handler->display->display_options['fields']['field_general_manager_brand_mana']['field'] = 'field_general_manager_brand_mana';
+  $handler->display->display_options['fields']['field_general_manager_brand_mana']['exclude'] = TRUE;
+  /* Field: User: Market Administrator */
+  $handler->display->display_options['fields']['field_market_administrator']['id'] = 'field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['field'] = 'field_market_administrator';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Roles */
@@ -778,6 +913,9 @@ function elx_users_feature_views_default_views() {
     t('Market Administrator'),
     t('Last access'),
     t('Page'),
+    t('User'),
+    t('- Choose an operation -'),
+    t('Send welcome e-mail'),
     t('Data export'),
     t('Status'),
     t('Email'),

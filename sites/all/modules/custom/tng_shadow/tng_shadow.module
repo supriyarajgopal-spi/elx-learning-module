@@ -447,7 +447,7 @@ function tng_translate_submit_button ($language = NULL)
   }
   $submit_label = 'Submit';
   if ($language == 'frca') {
-    $submit_label = 'Soumettre';
+    $submit_label = 'Valider';
   } elseif ($language == 'es') {
     $submit_label = 'Presentar';
   }

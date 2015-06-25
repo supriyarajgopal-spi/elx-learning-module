@@ -25,8 +25,12 @@ function elx_site_configurations_wysiwyg_default_profiles() {
         'default' => array(
           'Bold' => 1,
           'Italic' => 1,
+          'BidiLtr' => 1,
+          'BidiRtl' => 1,
           'BulletedList' => 1,
           'NumberedList' => 1,
+          'Outdent' => 1,
+          'Indent' => 1,
           'Link' => 1,
           'Unlink' => 1,
           'Anchor' => 1,
@@ -46,7 +50,7 @@ function elx_site_configurations_wysiwyg_default_profiles() {
       'stylesSet' => 'Heading=p.header-dark
 Disclaimer=div.disclaimer',
       'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'advanced__active_tab' => 'edit-paste',
+      'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 1,
     ),
     'rdf_mapping' => array(),

@@ -1,5 +1,10 @@
 <?php
 
+//require_once 'includes/password.inc';
+//require_once 'sites/all/modules/contrib/aes/aes.module';
+//require_once 'includes/database/prefetch.inc';
+
+
 function elx_utility_node_validate($node, $form, &$form_state) {
   // dpm($node);
   // if ($node->type=='history' || $node->type=='teaser') {
@@ -69,6 +74,83 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
       ->execute();
   }
 }
+
+/**
+ * Implements hook_user_presave().
+ */
+
+function elx_utility_user_presave($edit, $account, $category) {
+  $tng_debug =0;
+  try {
+    if (!$account->pass == '') {
+      if ($tng_debug == 1) {
+        dpm("userid, we have a password in the presave routine so on we go", $account->uid);
+      }
+      $email = $edit['mail'];
+      $hash_pass_from_edit = $edit['pass'];
+      $my_user = user_load_by_mail($email);
+      $my_user_id = $my_user->uid;
+      $hash_from_existing_user = $my_user->pass;
+      if ($hash_from_existing_user != $hash_pass_from_edit) {
+        if ($tng_debug == 1) {
+          dpm("hash from existing user", $hash_from_existing_user);
+          dpm("hash from user being edited", $hash_pass_from_edit);
+        }
+      }
+      $pass = db_query("SELECT * FROM {aes_passwords} a WHERE a.uid = $my_user_id")->fetchObject()->pass;
+      $decrypted_aes = aes_decrypt( $pass );
+      if ( !empty($decrypted_aes) ) {
+        if ( !user_check_password($decrypted_aes, $my_user) ) {
+          if ($tng_debug == 1) {
+            dpm("we think the AES password is different from the existing user password", $decrypted_aes);
+            $str = "drush upwd $email --password='$decrypted_aes'";
+            dpm($str);
+          }
+          $str = "drush upwd $email --password='$decrypted_aes'";
+          shell_exec($str);
+        }
+      }
+    }
+  }
+  catch (exception $e) {
+    print($e);
+  }
+}
+
+/**
+ * Implements hook_user_postsave().
+ */
+
+//function elx_utility_user_update($edit, $account, $category) {
+//  try {
+//    $act_pwd = $account->pass;
+//    if ($act_pwd == '') {
+//      dpm("we don't seem to have a password in the update routine");
+//    } else {
+//      dpm("userid, we have a password in the update routine so on we go", $account->uid);
+//      $email = $edit['mail'];
+//      $hash_pass_from_edit = $edit['pass'];
+//      $my_user = user_load_by_mail($email);
+//      //dpm($my_user);
+//      $my_user_id = $my_user->uid;
+//      $hash_from_existing_user = $my_user->pass;
+//      if ($hash_from_existing_user != $hash_pass_from_edit) {
+//        dpm("we see different hashed passwords:");
+//        dpm("hash from existing user", $hash_from_existing_user);
+//        dpm("hash from user being edited", $hash_pass_from_edit);
+//      }
+//      $pass = db_query("SELECT * FROM {aes_passwords} a WHERE a.uid = $my_user_id")->fetchObject()->pass;
+//      $decrypted_aes = aes_decrypt( $pass );
+//      $different = user_check_password($decrypted_aes, $my_user);
+//      if ($different) {
+//        dpm("we think the AES password is different from the existing user password", $decrypted_aes);
+//      }
+//    }
+//  }
+//  catch (exception $e) {
+//    print($e);
+//  }
+//}
 
 /**
  * Implements hook_clone_node_alter().

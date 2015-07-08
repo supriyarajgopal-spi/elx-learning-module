@@ -58,6 +58,7 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
   $password = randomPassword();
   $encrypted_data = aes_encrypt($password);
   if ($entity->pass == '') {
+    watchdog('elx_utility_feeds_after_save', 'New user ' . $entity->uid . ' new password.');
     $entity->pass = $password;
     db_insert('aes_passwords')
       ->fields(array(
@@ -72,6 +73,8 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
         ':uid' => $entity->uid,
       ))
       ->execute();
+  } else {
+    watchdog('elx_utility_feeds_after_save', 'Existing user ' . $entity->uid . ' check password.');
   }
 }
 

@@ -414,6 +414,16 @@ function tng_translate_question_label ($language = NULL)
     $question_label = 'Question:';
   } elseif ($language == 'es') {
     $question_label = 'Pregunta:';
+  } elseif ($language == 'zhhans') {
+    $question_label = '问题:';
+  } elseif ($language == 'zhhant') {
+    $question_label = '問題:';
+  } elseif ($language == 'ko') {
+    $question_label = '질문:';
+  } elseif ($language == 'th') {
+    $question_label = 'คำถาม:';
+  } elseif ($language == 'id') {
+    $question_label = 'Pertanyaan:';
   }
   return $question_label;
 }
@@ -432,6 +442,16 @@ function tng_translate_answers_label ($language = NULL)
     $answer_label = 'Réponses:';
   } elseif ($language == 'es') {
     $answer_label = 'Respuestas:';
+  } elseif ($language == 'zhhans') {
+    $answer_label = '答案:';
+  } elseif ($language == 'zhhant') {
+    $answer_label = '答案:';
+  } elseif ($language == 'ko') {
+    $answer_label = '정답:';
+  } elseif ($language == 'th') {
+    $answer_label = 'คำตอบ:';
+  } elseif ($language == 'id') {
+    $answer_label = 'Jawaban:';
   }
   return $answer_label;
 }
@@ -447,10 +467,30 @@ function tng_translate_submit_button ($language = NULL)
   }
   $submit_label = 'Submit';
   if ($language == 'frca') {
+    //insert submit_label for french canadian (market code FRCA)
     $submit_label = 'Valider';
   } elseif ($language == 'es') {
+    //insert submit_label for spanish (market code ES)
     $submit_label = 'Presentar';
+  } elseif ($language == 'zhhans') {
+    //insert submit_label for simplified chinese (market code CH)
+    $submit_label = '提交';
+  } elseif ($language == 'zhhant') {
+    //insert submit_label for traditional chinese (market code HK)
+    $submit_label = '提交';
+  } elseif ($language == 'ko') {
+    //insert submit_label for korean (hangul) (market code KR
+    $submit_label = '제출';
+  } elseif ($language == 'th') {
+    //insert submit_label for thailand (market code TH)
+    $submit_label = 'นำเสนอ';
+  } elseif ($language == 'id') {
+    //insert submit_label for indonesian (market code ID)
+    $submit_label = 'Kumpulkan';
   }
+
+
+
   return $submit_label;
 }
 
@@ -468,6 +508,16 @@ function tng_translate_next_button ($language = NULL)
     $next_label = 'Prochaine';
   } elseif ($language == 'es') {
     $next_label = 'Siguiente';
+  } elseif ($language == 'zhhans') {
+    $next_label = '下一个';
+  } elseif ($language == 'zhhant') {
+    $next_label = '下一個';
+  } elseif ($language == 'ko') {
+    $next_label = 'Next';
+  } elseif ($language == 'th') {
+    $next_label = 'ถัดไป';
+  } elseif ($language == 'id') {
+    $next_label = 'Lanjut';
   }
   return $next_label;
 }

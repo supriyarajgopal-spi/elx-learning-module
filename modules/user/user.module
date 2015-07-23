@@ -422,7 +422,7 @@ function user_load_by_name($name) {
  * @todo D8: Drop $edit and fix user_save() to be consistent with others.
  */
 function user_save($account, $edit = array(), $category = 'account') {
-  error_log( 'user_save account' . $edit['pass'] );
+  //error_log( 'user_save account' . $edit['pass'] );
   if (isset($edit['pass'])) {
     $edit['plaintext_pass'] = $edit['pass'];
   }

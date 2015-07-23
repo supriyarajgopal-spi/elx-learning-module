@@ -1797,7 +1797,7 @@ function process_hotspot($hotspot_values, $language, $nid, $module, $standalone 
     }
     if ($hotspot_values['field_hot_spot_collection']) {
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-      //$hot_top = tng_npHotspot_maker('', 'test-strip', '"mediaelement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
+      //$hot_top = tng_npHotspot_maker('', 'test-strip', '"medielement/jquery-1.11.1.min.js","mediaelement/GreenSock/TweenMax.js","mediaelement/hotspot.css"');
       $hot_top = tng_npHotspot_maker('', 'test-strip', '');
       $whole_hotspot = $whole_hotspot . $page_wrapper . $hot_top;
 

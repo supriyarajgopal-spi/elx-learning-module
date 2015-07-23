@@ -110,7 +110,7 @@ function aes_load_phpsec() {
 function aes_show_password_page($access, $uid) {
   $viewing_method = variable_get("aes_viewing_method", "page");
   return user_access($access) && aes_password_exists($uid)
-    && ($viewing_method == "page" || $viewing_method == "both");
+  && ($viewing_method == "page" || $viewing_method == "both");
 }
 
 /**
@@ -531,17 +531,23 @@ function aes_user_delete($account) {
  * Implements hook_user_alter().
  */
 function aes_user_alter(&$edit, $account) {
+  $plain_text_password = isset($edit['plaintext_pass']) ? $edit['plaintext_pass'] : null;
+  error_log( 'aes_user_alter' . $plain_text_password );
   // Return immediately if the password is not in $_POST.
-  if (!isset($_POST['pass']) || !isset($_POST['pass']['pass1'])) {
+  if (!$plain_text_password && (!isset($_POST['pass']) || !isset($_POST['pass']['pass1']))) {
     return;
   }
-
+  //  if ($_POST && (!isset($_POST['pass']) || !isset($_POST['pass']['pass1']))) {
   // Get the password from $_POST here since it's already hashed in $edit.
-  $plain_text_password = $_POST['pass']['pass1'];
+  if (!isset($plain_text_password) && isset($_POST['pass']) && isset($_POST['pass']['pass1'])) {
+    $plain_text_password = $_POST['pass']['pass1'];
+  }
+  error_log( "aes_user_alter plain text password $plain_text_password" );
 
   if (!empty($plain_text_password) && $account->uid) {
 
     $password = aes_encrypt($plain_text_password);
+    error_log( "aes_user_alter aes_encrypt $password" );
 
     if (strlen($password) > AES_PASSWORD_MAX_LENGTH) {
       drupal_set_message(t("Couldn't update AES password since it's too long."), "error");

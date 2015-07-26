@@ -1567,6 +1567,10 @@ function process_product($product_values, $labels, $language, $nid)
     $background_padding = tng_npHTML_basic_maker('', $bg_outside_padding, '', '', '', '', '', TRUE);
     $title_chunk = tng_npHTML_basic_maker('', 'h1', '', '', '', $display_title, '', FALSE);
     $subtitle = $product_values['field_subtitle'];
+    //if the user does not supply a subtitle, put 2 blanks in so there isn't an 'undefined' shown on the front end.
+    if (strlen($subtitle) <= 0) {
+      $subtitle = "  ";
+    }
     $subtitle_chunk = tng_npHTML_basic_maker('', 'h2', '', '', '', $subtitle, '', FALSE);
     $column_chunk = tng_npColumn_maker('', '2', TRUE);
     $image_path = tng_convert_drupal_to_mean_filename($product_values['field_product_image'], '', FALSE);

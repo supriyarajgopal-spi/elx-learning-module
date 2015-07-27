@@ -553,6 +553,141 @@ function elx_site_configurations_conditional_fields_default_fields() {
   $items["node:content_object:4"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
+    'dependent' => 'field_featured_image',
+    'dependee' => 'field_featured',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'checked',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 2,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["node:content_object:5"] = array(
+    'entity' => 'node',
+    'bundle' => 'content_object',
     'dependent' => 'field_final_exam',
     'dependee' => 'field_learning_template',
     'options' => array(
@@ -689,7 +824,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items["node:content_object:5"] = array(
+  $items["node:content_object:6"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_percentage_requirement',
@@ -824,7 +959,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items["node:content_object:6"] = array(
+  $items["node:content_object:7"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_pulsed_content',
@@ -965,7 +1100,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items["node:content_object:7"] = array(
+  $items["node:content_object:8"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_pulsed_content',
@@ -1104,7 +1239,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items["node:content_object:8"] = array(
+  $items["node:content_object:9"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_story_type',
@@ -1245,7 +1380,7 @@ function elx_site_configurations_conditional_fields_default_fields() {
     ),
   );
 
-  $items["node:content_object:9"] = array(
+  $items["node:content_object:10"] = array(
     'entity' => 'node',
     'bundle' => 'content_object',
     'dependent' => 'field_story_type',

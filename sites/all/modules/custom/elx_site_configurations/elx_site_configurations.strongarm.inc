@@ -1282,7 +1282,7 @@ function elx_site_configurations_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
@@ -2493,6 +2493,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_options_content_object';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_content_object'] = $strongarm;
 
@@ -2620,6 +2621,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_options_story';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_story'] = $strongarm;
 

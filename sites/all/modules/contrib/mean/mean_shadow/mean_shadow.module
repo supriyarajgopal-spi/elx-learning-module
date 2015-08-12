@@ -160,25 +160,34 @@ function mean_shadow_request($action, $schema, $key = '', $entity = NULL) {
       }
     }
 
-    if ($action == 'delete') {
+//    if ($action == 'delete') {
+//      $request_headers = array('Content-Type' => 'application/json');
+//      drupal_http_request($url, array(
+//        'headers' => $request_headers,
+//        'method' => 'DELETE',
+//        'data' => $json,
+//        'max_redirects' => 3,
+//        'timeout' => 5.0
+//      ));
+//    } else {
       $request_headers = array('Content-Type' => 'application/json');
       drupal_http_request($url, array(
         'headers' => $request_headers,
-        'method' => 'DELETE',
-        'data' => $json,
-        'max_redirects' => 3,
-        'timeout' => 5.0
-      ));
-    } else {
-      $request_headers = array('Content-Type' => 'application/json');
-      drupal_http_request($url, array(
-        'headers' => $request_headers,
+//        'method' => 'DELETE',
+//        'data' => $json,
+//        'max_redirects' => 3,
+//        'timeout' => 5.0
+//      ));
+//    } else {
+//      $request_headers = array('Content-Type' => 'application/json');
+//      drupal_http_request($url, array(
+//        'headers' => $request_headers,
         'method' => 'POST',
         'data' => $json,
         'max_redirects' => 3,
         'timeout' => 30.0
       ));
-    }
+//    }
   }
 }
 

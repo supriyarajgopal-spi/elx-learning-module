@@ -497,6 +497,7 @@ function tng_translate_submit_button ($language = NULL)
 /**
  * @param null $language - supply the language and we make a translated 'next' button text
  * @return string
+ * todo: remove code based solution to the excel spreadsheet --> json method
  */
 function tng_translate_next_button ($language = NULL)
 {
@@ -1490,7 +1491,7 @@ function tng_create_perfect_partners($path, $csv_fields)
  */
 function process_product($product_values, $labels, $language, $nid)
 {
-  $tng_debug =0;
+  $tng_debug =1;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);

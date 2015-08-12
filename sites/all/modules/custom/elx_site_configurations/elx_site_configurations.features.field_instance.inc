@@ -694,7 +694,7 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -759,6 +759,7 @@ function elx_site_configurations_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'value' => 'Congratulations, you scored :USERSCORE:% and have passed this module.',
+        'format' => 'plain_text',
       ),
     ),
     'deleted' => 0,
@@ -784,7 +785,7 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3927,7 +3928,12 @@ function elx_site_configurations_field_default_field_instances() {
   // Exported field_instance: 'node-list-field_intro'
   $field_instances['node-list-field_intro'] = array(
     'bundle' => 'list',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<p>&nbsp;&nbsp;</p>',
+        'format' => 'full_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -6075,7 +6081,11 @@ function elx_site_configurations_field_default_field_instances() {
   // Exported field_instance: 'node-product_detail-field_subtitle'
   $field_instances['node-product_detail-field_subtitle'] = array(
     'bundle' => 'product_detail',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => ' ',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -9051,7 +9061,12 @@ function elx_site_configurations_field_default_field_instances() {
   // Exported field_instance: 'paragraphs_item-flash_card_collection-field_front_card'
   $field_instances['paragraphs_item-flash_card_collection-field_front_card'] = array(
     'bundle' => 'flash_card_collection',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => '<p>&nbsp;&nbsp;</p>',
+        'format' => 'full_html',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(

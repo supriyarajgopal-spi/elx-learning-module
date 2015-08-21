@@ -1491,7 +1491,7 @@ function tng_create_perfect_partners($path, $csv_fields)
  */
 function process_product($product_values, $labels, $language, $nid)
 {
-  $tng_debug =1;
+  $tng_debug =0;
   if ($tng_debug == 1) {
     dpm('product_values');
     dpm($product_values);

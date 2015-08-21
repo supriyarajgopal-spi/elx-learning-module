@@ -1223,7 +1223,7 @@ function elx_site_configurations_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

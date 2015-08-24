@@ -397,11 +397,10 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       dpm($e);
     }
   }
-
 }
 
 /**
- * @param null $language  - supply the language and we make a translated 'submit' button text
+ * @param null $language  - supply the language and we make a translated 'Question:' button text
  * @return string
  */
 function tng_translate_question_label ($language = NULL)
@@ -410,20 +409,95 @@ function tng_translate_question_label ($language = NULL)
     $language = 'en';
   }
   $question_label = 'Question:';
-  if ($language == 'frca') {
-    $question_label = 'Question:';
-  } elseif ($language == 'es') {
-    $question_label = 'Pregunta:';
-  } elseif ($language == 'zhhans') {
-    $question_label = '问题:';
-  } elseif ($language == 'zhhant') {
-    $question_label = '問題:';
-  } elseif ($language == 'ko') {
-    $question_label = '질문:';
-  } elseif ($language == 'th') {
-    $question_label = 'คำถาม:';
-  } elseif ($language == 'id') {
-    $question_label = 'Pertanyaan:';
+
+  switch ($language) {
+    case "frca":  // French (Canadian)
+      $question_label = 'Question:';
+      break;
+    case "fr":  // French (France)
+      $question_label = 'Question:';
+      break;
+    case "es":  // Spain or Puerto Rico
+      $question_label = 'Pregunta:';
+      break;
+    case "pr":  // Puerto Rico
+      $question_label = 'Pregunta:';
+      break;
+    case "zhhans":  // Chinese (simplified)
+      $question_label = '问题:';
+      break;
+    case "zhhant":  // Chinese (traditional)
+      $question_label = '問題:';
+      break;
+    case "ko":  // Korea
+      $question_label = '질문:';
+      break;
+    case "th":  // Thailand
+      $question_label = 'คำถาม:';
+      break;
+    case "id":  // Indonesia
+      $question_label = 'Pertanyaan:';
+      break;
+    case "jp":  // Japan
+      $question_label = '質問:';
+      break;
+    case "nl":  // Netherland
+      $question_label = 'Vraag';
+      break;
+    case "cz":  // Czech Republic
+      $question_label = 'Otázky:';
+      break;
+    case "de":  // Germany
+      $question_label = 'Frage:';
+      break;
+    case "gr":  // Greece
+      $question_label = 'Ερώτηση:';
+      break;
+    case "il":  // Israel
+      $question_label = 'שאלה:';
+      break;
+    case "it":  // Italian
+      $question_label = 'Domanda:';
+      break;
+    case "sa":  // Saudi Arabia
+      $question_label = 'أسئلة:';
+      break;
+    case "dk":  // Denmark
+      $question_label = 'Spørgsmål:';
+      break;
+    case "se":  // Sweden
+      $question_label = 'Fråga:';
+      break;
+    case "no":  // Norway
+      $question_label = 'Spørsmål:';
+      break;
+    case "pl":  // Poland
+      $question_label = 'Pytanie:';
+      break;
+    case "fi":  // Finland
+      $question_label = 'Kysymys: ';
+      break;
+    case "lt":  // Lithuania
+      $question_label = 'Klausimas:';
+      break;
+    case "lv":  // Latvia
+      $question_label = 'jautājums:';
+      break;
+    case "ru": // Russian Federation
+      $question_label = 'вопрос:';
+      break;
+    case "hu":  // Hungary
+      $question_label = 'Kérdés:';
+      break;
+    case "tr":  // Turkey
+      $question_label = 'Soru:';
+      break;
+    case "ro":  // Romania
+      $question_label = 'Intrebare';
+      break;
+//    case "country_match":
+//      $question_label = 'translated value for Question:';
+//      break;
   }
   return $question_label;
 }
@@ -434,25 +508,104 @@ function tng_translate_question_label ($language = NULL)
  */
 function tng_translate_answers_label ($language = NULL)
 {
+  // if language is not set, default to english
   if (!isset($language)) {
     $language = 'en';
   }
+  // and also default to english 'Answers:'
   $answer_label = 'Answers:';
-  if ($language == 'frca') {
-    $answer_label = 'Réponses:';
-  } elseif ($language == 'es') {
-    $answer_label = 'Respuestas:';
-  } elseif ($language == 'zhhans') {
-    $answer_label = '答案:';
-  } elseif ($language == 'zhhant') {
-    $answer_label = '答案:';
-  } elseif ($language == 'ko') {
-    $answer_label = '정답:';
-  } elseif ($language == 'th') {
-    $answer_label = 'คำตอบ:';
-  } elseif ($language == 'id') {
-    $answer_label = 'Jawaban:';
+
+  // otherwise, if a language is given set it here
+  switch ($language) {
+    case "frca":  // French (Canadian)
+      $answer_label = 'Réponses:';
+      break;
+    case "fr":  // French (France)
+      $answer_label = 'Réponses:';
+      break;
+    case "es":  // Spain or Puerto Rico
+      $answer_label = 'Respuestas:';
+      break;
+    case "pr":  // Puerto Rico
+      $answer_label = 'Respuestas:';
+      break;
+    case "zhhans":  // Chinese (simplified)
+      $answer_label = '答案:';
+      break;
+    case "zhhant":  // Chinese (traditional)
+      $answer_label = '答案:';
+      break;
+    case "ko":  // Korea
+      $answer_label = '정답:';
+      break;
+    case "th":  // Thailand
+      $answer_label = 'คำตอบ:';
+      break;
+    case "id":  // Indonesia
+      $answer_label = 'Jawaban:';
+      break;
+    case "jp":  // Japan
+      $answer_label = '答え:';
+      break;
+    case "nl":  // Netherland
+      $answer_label = 'Antwoord:';
+      break;
+    case "cz":  // Czech Republic
+      $answer_label = 'Odpovědi:';
+      break;
+    case "de":  // Germany
+      $answer_label = 'Antworten:';
+      break;
+    case "gr":  // Greece
+      $answer_label = 'Απαντήσεις:';
+      break;
+    case "il":  // Israel
+      $answer_label = 'תשובה:';
+      break;
+    case "it":  // Italian
+      $answer_label = 'Risposte:';
+      break;
+    case "sa":  // Saudi Arabia
+      $answer_label = 'أجوبة:';
+      break;
+    case "dk":  // Denmark
+      $answer_label = 'Svar:';
+      break;
+    case "se":  // Sweden
+      $answer_label = 'Svar:';
+      break;
+    case "no":  // Norway
+      $answer_label = 'Svar:';
+      break;
+    case "pl":  // Poland
+      $answer_label = 'Odpowiedź:';
+      break;
+    case "fi":  // Finland
+      $answer_label = 'Vastaus:';
+      break;
+    case "lt":  // Lithuania
+      $answer_label = 'Atsakymas:';
+      break;
+    case "lv":  // Latvia
+      $answer_label = 'Atbildes:';
+      break;
+    case "ru": // Russian Federation
+      $answer_label = 'ответы:';
+      break;
+    case "hu":  // Hungary
+      $answer_label = 'Válasz:';
+      break;
+    case "tr":  // Turkey
+      $answer_label = 'Cevaplar:';
+      break;
+    case "ro":  // Romania
+      $answer_label = 'Raspuns:';
+      break;
+//    case "country_match":
+//      $answer_label = 'translated value for Answers:';
+//      break;
   }
+
   return $answer_label;
 }
 
@@ -466,30 +619,97 @@ function tng_translate_submit_button ($language = NULL)
     $language = 'en';
   }
   $submit_label = 'Submit';
-  if ($language == 'frca') {
-    //insert submit_label for french canadian (market code FRCA)
-    $submit_label = 'Valider';
-  } elseif ($language == 'es') {
-    //insert submit_label for spanish (market code ES)
-    $submit_label = 'Presentar';
-  } elseif ($language == 'zhhans') {
-    //insert submit_label for simplified chinese (market code CH)
-    $submit_label = '提交';
-  } elseif ($language == 'zhhant') {
-    //insert submit_label for traditional chinese (market code HK)
-    $submit_label = '提交';
-  } elseif ($language == 'ko') {
-    //insert submit_label for korean (hangul) (market code KR
-    $submit_label = '제출';
-  } elseif ($language == 'th') {
-    //insert submit_label for thailand (market code TH)
-    $submit_label = 'นำเสนอ';
-  } elseif ($language == 'id') {
-    //insert submit_label for indonesian (market code ID)
-    $submit_label = 'Kumpulkan';
+
+  // otherwise, if a language is given set it here
+  switch ($language) {
+    case "frca":  // French (Canadian)
+      $submit_label = 'Valider';
+      break;
+    case "fr":  // French (France)
+      $submit_label = 'Valider';
+      break;
+    case "es":  // Spain or Puerto Rico
+      $submit_label = 'Presentar';
+      break;
+    case "pr":  // Puerto Rico
+      $submit_label = 'Presentar';
+      break;
+    case "zhhans":  // Chinese (simplified)
+      $submit_label = '提交';
+      break;
+    case "zhhant":  // Chinese (traditional)
+      $submit_label = '提交';
+      break;
+    case "ko":  // Korea
+      $submit_label = '제출';
+      break;
+    case "th":  // Thailand
+      $submit_label = 'นำเสนอ';
+      break;
+    case "id":  // Indonesia
+      $submit_label = 'Menyerahkan';
+      break;
+    case "jp":  // Japan
+      $submit_label = '提出します';
+      break;
+    case "nl":  // Netherlands
+      $submit_label = 'Voorleggen';
+      break;
+    case "cz":  // Czech Republic
+      $submit_label = 'Předložit';
+      break;
+    case "de":  // Germany
+      $submit_label = 'Einreichen';
+      break;
+    case "gr":  // Greece
+      $submit_label = 'Υποβολή';
+      break;
+    case "il":  // Israel
+      $submit_label = 'שלח';
+      break;
+    case "it":  // Italian
+      $submit_label = 'Presentare';
+      break;
+    case "sa":  // Saudi Arabia
+      $submit_label = 'عرض';
+      break;
+    case "dk":  // Denmark
+      $submit_label = 'Indsend';
+      break;
+    case "se":  // Sweden
+      $submit_label = 'Skicka in';
+      break;
+    case "no":  // Norway
+      $submit_label = 'Send inn';
+      break;
+    case "pl":  // Poland
+      $submit_label = 'Zatwierdź';
+      break;
+    case "fi":  // Finland
+      $submit_label = 'Esittää';
+      break;
+    case "lt":  // Lithuania
+      $submit_label = 'Pateikti';
+      break;
+    case "lv":  // Latvia
+      $submit_label = 'Iesniegt';
+      break;
+    case "ru": // Russian Federation
+      $submit_label = 'Отправить';
+      break;
+    case "hu":  // Hungary
+      $submit_label = 'Submit';
+      break;
+    case "tr":  // Turkey
+      $submit_label = 'Gönder';
+      break;
+    case "ro":  // Romania
+      $submit_label = 'Submit';
+      break;
+//    case "country_match":
+//      $submit_label = 'translated value for Submit';
+//      break;
   }
-
-
 
   return $submit_label;
 }
@@ -505,21 +725,98 @@ function tng_translate_next_button ($language = NULL)
     $language = 'en';
   }
   $next_label = 'Next';
-  if ($language == 'frca') {
-    $next_label = 'Prochaine';
-  } elseif ($language == 'es') {
-    $next_label = 'Siguiente';
-  } elseif ($language == 'zhhans') {
-    $next_label = '下一个';
-  } elseif ($language == 'zhhant') {
-    $next_label = '下一個';
-  } elseif ($language == 'ko') {
-    $next_label = 'Next';
-  } elseif ($language == 'th') {
-    $next_label = 'ถัดไป';
-  } elseif ($language == 'id') {
-    $next_label = 'Lanjut';
+
+  // otherwise, if a language is given set it here
+  switch ($language) {
+    case "frca":  // French (Canadian)
+      $next_label = 'Suivant';
+      break;
+    case "fr":  // French (France)
+      $next_label = 'Suivant';
+      break;
+    case "es":  // Spain or Puerto Rico
+      $next_label = 'Siguiente';
+      break;
+    case "pr":  // Puerto Rico
+      $next_label = 'Siguiente';
+      break;
+    case "zhhans":  // Chinese (simplified)
+      $next_label = '下一个';
+      break;
+    case "zhhant":  // Chinese (traditional)
+      $next_label = '下一個';
+      break;
+    case "ko":  // Korea
+      $next_label = 'Next';
+      break;
+    case "th":  // Thailand
+      $next_label = 'ถัดไป';
+      break;
+    case "id":  // Indonesia
+      $next_label = 'Lanjut';
+      break;
+    case "jp":  // Japan
+      $next_label = '次へ';
+      break;
+    case "nl":  // Netherlands
+      $next_label = 'Volgende';
+      break;
+    case "cz":  // Czech Republic
+      $next_label = 'Další';
+      break;
+    case "de":  // Germany
+      $next_label = 'Weiter';
+      break;
+    case "gr":  // Greece
+      $next_label = 'Επόμενο';
+      break;
+    case "il":  // Israel
+      $next_label = 'הבא';
+      break;
+    case "it":  // Italian
+      $next_label = 'Prossimo';
+      break;
+    case "sa":  // Saudi Arabia
+      $next_label = 'التالي';
+      break;
+    case "dk":  // Denmark
+      $next_label = 'Næste';
+      break;
+    case "se":  // Sweden
+      $next_label = 'Nästa';
+      break;
+    case "no":  // Norway
+      $next_label = 'Neste';
+      break;
+    case "pl":  // Poland
+      $next_label = 'Następny';
+      break;
+    case "fi":  // Finland
+      $next_label = 'Seuraava';
+      break;
+    case "lt":  // Lithuania
+      $next_label = 'Sekantis';
+      break;
+    case "lv":  // Latvia
+      $next_label = 'Nākošais';
+      break;
+    case "ru": // Russian Federation
+      $next_label = 'далее';
+      break;
+    case "hu":  // Hungary
+      $next_label = 'Következő';
+      break;
+    case "tr":  // Turkey
+      $next_label = 'Sonraki';
+      break;
+    case "ro":  // Romania
+      $next_label = 'Urmatorul';
+      break;
+//    case "country_match":
+//      $next_label = 'translated value for Next';
+//      break;
   }
+
   return $next_label;
 }
 
@@ -2910,9 +3207,13 @@ function process_badge($badgeobject, $language, $nid)
   if ($num_fields >= $min_batch_fields && $num_fields <= $max_batch_fields) {
     $title = $badgeobject['title_field'];
     $title = rtrim($title, ' ');
+    $english_title = $badgeobject['field_english_badge_title'];
+    $english_title = rtrim($english_title, ' ');
     // replace spaces and slashes with dashes for better matching later
     $title = str_replace(" ", "-", $title);
     $title = str_replace("/", "-", $title);
+    $english_title = str_replace(" ", "-", $english_title);
+    $english_title = str_replace("/", "-", $english_title);
     $name = rtrim($title, ' ');
     $language_strings = make_language_strings($language);
     $manifest_language = $language_strings[0];
@@ -2925,7 +3226,7 @@ function process_badge($badgeobject, $language, $nid)
     $badge_weight =  (int) $badgeobject['field_badge_weight'];
     $badge_description = $badgeobject['field_badge_description'];
     $badge_unearned_description = $badgeobject['field_badge_unearned_description'];
-    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description, $badge_weight);
+    $new_nid = tng_create_badge_manifest('badge_manifest', $manifest_title, $markets, $manifest_language, $nid, $mean_image_name, $badge_description, $badge_unearned_description, $badge_weight, $english_title);
     // return the new nid to set it on the parent node
     return $new_nid;
   } else {
@@ -3834,7 +4135,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
 }
 
 
-function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL, $node_badge_weight = NULL)
+function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $node_language, $nid = NULL, $node_badge_icon = NULL, $node_badge_description = NULL, $node_badge_unearned_description = NULL, $node_badge_weight = NULL, $node_badge_english_title = NULL)
 {
 
   global $user;
@@ -3853,9 +4154,11 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
       dpm('node badge description : ' . $node_badge_description);
       dpm('node badge unearned description : ' . $node_badge_unearned_description);
       dpm('node badge weight : ' . $node_badge_weight);
+      dpm('node badge english title : ' . $node_badge_english_title);
     }
     $node = new stdClass();
     $node->title = $node_title;
+    $node->field_english_badge_title = $node_badge_english_title;
     // markets needs to be added to our manifest, so create a csv list
     $cnt_markets = count($markets);
     $market_csv = '';
@@ -3937,6 +4240,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $node = node_load($nid);
     $node->type = $node_type;
     $node->title = $node_title;
+    $node->field_english_badge_title = $node_badge_english_title;
     $node->field_manifest_markets['und'][0]['value'] = $market_csv;
     $node->field_language['und'][0]['value'] = $node_language;
     $node->field_badge_image['und'][0]['value'] = $node_badge_icon;

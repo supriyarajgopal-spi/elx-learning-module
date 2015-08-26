@@ -698,13 +698,13 @@ function tng_translate_submit_button ($language = NULL)
       $submit_label = 'Отправить';
       break;
     case "hu":  // Hungary
-      $submit_label = 'Submit';
+      $submit_label = 'Küldés';
       break;
     case "tr":  // Turkey
       $submit_label = 'Gönder';
       break;
     case "ro":  // Romania
-      $submit_label = 'Submit';
+      $submit_label = 'Trimite';
       break;
 //    case "country_match":
 //      $submit_label = 'translated value for Submit';

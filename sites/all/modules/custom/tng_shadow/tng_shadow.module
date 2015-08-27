@@ -4158,7 +4158,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     }
     $node = new stdClass();
     $node->title = $node_title;
-    $node->field_original_engbadge_title = $node_badge_english_title;
+    //$node->field_original_engbadge_title = $node_badge_english_title;
     // markets needs to be added to our manifest, so create a csv list
     $cnt_markets = count($markets);
     $market_csv = '';
@@ -4209,6 +4209,11 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
       'format' => 'integer',
     );
 
+    $node->field_original_engbadge_title[$node->language][] = array(
+      'value' => $node_badge_english_title,
+      'format' => 'plain_text',
+    );
+
     //$node->language = $node_language; // unfortunately this doesn't work
     $node->uid = $user->uid;
     $node->status = 1; //(1 or 0): published or not
@@ -4240,7 +4245,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $node = node_load($nid);
     $node->type = $node_type;
     $node->title = $node_title;
-    $node->field_original_engbadge_title = $node_badge_english_title;
+    $node->field_original_engbadge_title['und'][0]['value'] = $node_badge_english_title;
     $node->field_manifest_markets['und'][0]['value'] = $market_csv;
     $node->field_language['und'][0]['value'] = $node_language;
     $node->field_badge_image['und'][0]['value'] = $node_badge_icon;

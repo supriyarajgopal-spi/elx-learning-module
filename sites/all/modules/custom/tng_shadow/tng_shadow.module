@@ -462,7 +462,7 @@ function tng_translate_question_label ($language = NULL)
     case "sa":  // Saudi Arabia
       $question_label = 'أسئلة:';
       break;
-    case "dk":  // Denmark
+    case "da":  // Denmark
       $question_label = 'Spørgsmål:';
       break;
     case "se":  // Sweden
@@ -568,7 +568,7 @@ function tng_translate_answers_label ($language = NULL)
     case "sa":  // Saudi Arabia
       $answer_label = 'أجوبة:';
       break;
-    case "dk":  // Denmark
+    case "da":  // Denmark
       $answer_label = 'Svar:';
       break;
     case "se":  // Sweden
@@ -673,7 +673,7 @@ function tng_translate_submit_button ($language = NULL)
     case "sa":  // Saudi Arabia
       $submit_label = 'عرض';
       break;
-    case "dk":  // Denmark
+    case "da":  // Denmark
       $submit_label = 'Indsend';
       break;
     case "se":  // Sweden
@@ -779,7 +779,7 @@ function tng_translate_next_button ($language = NULL)
     case "sa":  // Saudi Arabia
       $next_label = 'التالي';
       break;
-    case "dk":  // Denmark
+    case "da":  // Denmark
       $next_label = 'Næste';
       break;
     case "se":  // Sweden
@@ -4957,6 +4957,13 @@ function tng_shadow_shadow_request_alter($entity)
         }
       } elseif ($entity_type == 'badge') {
         $local_language  = $save_language;
+        // when you use the execute arbitrary php script
+        // it puts some weird crap in the language string
+        // like '/batch?id=11795&op=do ' so we fix it here if
+        if ((strlen($local_language) > 4)) {
+          //var_dump($pre_manifest);
+          $local_language = $entity->language;
+        }
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if (isset($new_nid)) {

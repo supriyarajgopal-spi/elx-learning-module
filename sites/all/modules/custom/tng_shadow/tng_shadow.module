@@ -450,7 +450,7 @@ function tng_translate_question_label ($language = NULL)
     case "de":  // Germany
       $question_label = 'Frage:';
       break;
-    case "gr":  // Greece
+    case "el":  // Greece
       $question_label = 'Ερώτηση:';
       break;
     case "il":  // Israel
@@ -556,7 +556,7 @@ function tng_translate_answers_label ($language = NULL)
     case "de":  // Germany
       $answer_label = 'Antworten:';
       break;
-    case "gr":  // Greece
+    case "el":  // Greece
       $answer_label = 'Απαντήσεις:';
       break;
     case "il":  // Israel
@@ -661,7 +661,7 @@ function tng_translate_submit_button ($language = NULL)
     case "de":  // Germany
       $submit_label = 'Einreichen';
       break;
-    case "gr":  // Greece
+    case "el":  // Greece
       $submit_label = 'Υποβολή';
       break;
     case "il":  // Israel
@@ -767,7 +767,7 @@ function tng_translate_next_button ($language = NULL)
     case "de":  // Germany
       $next_label = 'Weiter';
       break;
-    case "gr":  // Greece
+    case "el":  // Greece
       $next_label = 'Επόμενο';
       break;
     case "il":  // Israel

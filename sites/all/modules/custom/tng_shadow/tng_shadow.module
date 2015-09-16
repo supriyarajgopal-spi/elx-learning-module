@@ -420,7 +420,7 @@ function tng_translate_question_label ($language = NULL)
     case "es":  // Spain or Puerto Rico
       $question_label = 'Pregunta:';
       break;
-    case "pr":  // Puerto Rico
+    case "essp":  // Puerto Rico
       $question_label = 'Pregunta:';
       break;
     case "zhhans":  // Chinese (simplified)
@@ -438,13 +438,13 @@ function tng_translate_question_label ($language = NULL)
     case "id":  // Indonesia
       $question_label = 'Pertanyaan:';
       break;
-    case "jp":  // Japan
+    case "ja":  // Japan
       $question_label = '質問:';
       break;
     case "nl":  // Netherland
       $question_label = 'Vraag';
       break;
-    case "cz":  // Czech Republic
+    case "cs":  // Czech Republic
       $question_label = 'Otázky:';
       break;
     case "de":  // Germany
@@ -453,22 +453,22 @@ function tng_translate_question_label ($language = NULL)
     case "el":  // Greece
       $question_label = 'Ερώτηση:';
       break;
-    case "il":  // Israel
+    case "he":  // Israel
       $question_label = 'שאלה:';
       break;
     case "it":  // Italian
       $question_label = 'Domanda:';
       break;
-    case "sa":  // Saudi Arabia
+    case "ar":  // Saudi Arabia
       $question_label = 'أسئلة:';
       break;
     case "da":  // Denmark
       $question_label = 'Spørgsmål:';
       break;
-    case "se":  // Sweden
+    case "sv":  // Sweden
       $question_label = 'Fråga:';
       break;
-    case "no":  // Norway
+    case "nb":  // Norway
       $question_label = 'Spørsmål:';
       break;
     case "pl":  // Poland
@@ -526,7 +526,7 @@ function tng_translate_answers_label ($language = NULL)
     case "es":  // Spain or Puerto Rico
       $answer_label = 'Respuestas:';
       break;
-    case "pr":  // Puerto Rico
+    case "essp":  // Puerto Rico
       $answer_label = 'Respuestas:';
       break;
     case "zhhans":  // Chinese (simplified)
@@ -544,13 +544,13 @@ function tng_translate_answers_label ($language = NULL)
     case "id":  // Indonesia
       $answer_label = 'Jawaban:';
       break;
-    case "jp":  // Japan
+    case "ja":  // Japan
       $answer_label = '答え:';
       break;
     case "nl":  // Netherland
       $answer_label = 'Antwoord:';
       break;
-    case "cz":  // Czech Republic
+    case "cs":  // Czech Republic
       $answer_label = 'Odpovědi:';
       break;
     case "de":  // Germany
@@ -559,22 +559,22 @@ function tng_translate_answers_label ($language = NULL)
     case "el":  // Greece
       $answer_label = 'Απαντήσεις:';
       break;
-    case "il":  // Israel
+    case "he":  // Israel
       $answer_label = 'תשובה:';
       break;
     case "it":  // Italian
       $answer_label = 'Risposte:';
       break;
-    case "sa":  // Saudi Arabia
+    case "ar":  // Saudi Arabia
       $answer_label = 'أجوبة:';
       break;
     case "da":  // Denmark
       $answer_label = 'Svar:';
       break;
-    case "se":  // Sweden
+    case "sv":  // Sweden
       $answer_label = 'Svar:';
       break;
-    case "no":  // Norway
+    case "nb":  // Norway
       $answer_label = 'Svar:';
       break;
     case "pl":  // Poland
@@ -631,7 +631,7 @@ function tng_translate_submit_button ($language = NULL)
     case "es":  // Spain or Puerto Rico
       $submit_label = 'Presentar';
       break;
-    case "pr":  // Puerto Rico
+    case "essp":  // Puerto Rico
       $submit_label = 'Presentar';
       break;
     case "zhhans":  // Chinese (simplified)
@@ -649,13 +649,13 @@ function tng_translate_submit_button ($language = NULL)
     case "id":  // Indonesia
       $submit_label = 'Menyerahkan';
       break;
-    case "jp":  // Japan
+    case "ja":  // Japan
       $submit_label = '提出します';
       break;
     case "nl":  // Netherlands
       $submit_label = 'Voorleggen';
       break;
-    case "cz":  // Czech Republic
+    case "cs":  // Czech Republic
       $submit_label = 'Předložit';
       break;
     case "de":  // Germany
@@ -664,22 +664,22 @@ function tng_translate_submit_button ($language = NULL)
     case "el":  // Greece
       $submit_label = 'Υποβολή';
       break;
-    case "il":  // Israel
+    case "he":  // Israel
       $submit_label = 'שלח';
       break;
     case "it":  // Italian
       $submit_label = 'Presentare';
       break;
-    case "sa":  // Saudi Arabia
+    case "ar":  // Saudi Arabia
       $submit_label = 'عرض';
       break;
     case "da":  // Denmark
       $submit_label = 'Indsend';
       break;
-    case "se":  // Sweden
+    case "sv":  // Sweden
       $submit_label = 'Skicka in';
       break;
-    case "no":  // Norway
+    case "nb":  // Norway
       $submit_label = 'Send inn';
       break;
     case "pl":  // Poland
@@ -737,7 +737,7 @@ function tng_translate_next_button ($language = NULL)
     case "es":  // Spain or Puerto Rico
       $next_label = 'Siguiente';
       break;
-    case "pr":  // Puerto Rico
+    case "essp":  // Puerto Rico
       $next_label = 'Siguiente';
       break;
     case "zhhans":  // Chinese (simplified)
@@ -755,13 +755,13 @@ function tng_translate_next_button ($language = NULL)
     case "id":  // Indonesia
       $next_label = 'Lanjut';
       break;
-    case "jp":  // Japan
+    case "ja":  // Japan
       $next_label = '次へ';
       break;
     case "nl":  // Netherlands
       $next_label = 'Volgende';
       break;
-    case "cz":  // Czech Republic
+    case "cs":  // Czech Republic
       $next_label = 'Další';
       break;
     case "de":  // Germany
@@ -770,22 +770,22 @@ function tng_translate_next_button ($language = NULL)
     case "el":  // Greece
       $next_label = 'Επόμενο';
       break;
-    case "il":  // Israel
+    case "he":  // Israel
       $next_label = 'הבא';
       break;
     case "it":  // Italian
       $next_label = 'Prossimo';
       break;
-    case "sa":  // Saudi Arabia
+    case "ar":  // Saudi Arabia
       $next_label = 'التالي';
       break;
     case "da":  // Denmark
       $next_label = 'Næste';
       break;
-    case "se":  // Sweden
+    case "sv":  // Sweden
       $next_label = 'Nästa';
       break;
-    case "no":  // Norway
+    case "nb":  // Norway
       $next_label = 'Neste';
       break;
     case "pl":  // Poland

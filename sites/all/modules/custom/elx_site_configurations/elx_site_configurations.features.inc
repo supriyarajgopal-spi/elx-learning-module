@@ -99,6 +99,14 @@ function elx_site_configurations_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'guest_accounts' => array(
+      'name' => t('Guest Accounts'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'hot_spots' => array(
       'name' => t('Hot Spots'),
       'base' => 'node_content',

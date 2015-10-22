@@ -17,24 +17,25 @@
  */
 function elx_guest_urls_node_presave($node)
 {
+    $node_wrapper = entity_metadata_wrapper('node', $node);
 
     //Create an empty array to store generated URLs for each door
     $URLs = array();
 
     //Get account name, door, country, region list, and market name fields in vars
-    $acct = preg_replace('/\s+/', '', $node->title);
+    $acct = preg_replace('/\s+/', '', $node_wrapper->label());
     $account_name = 'account=' . $acct;
-    $country = 'country=' . $node->field_country['und'][0]['value'];
-    $region = 'region=' . $node->field_region_list['und'][0]['value'];
-    $market = 'market=' . $node->field_market_name['und'][0]['value'];
+    $country = 'country=' . $node_wrapper->field_country->value();
+    $region = 'region=' . $node_wrapper->field_region_list->value();
+    $market = 'market=' . $node_wrapper->field_market_name->value();
 
     //Get Doors (there may be multiple)
-    $doors = $node->field_door['und'];
+    $doors = $node_wrapper->field_door->value();
 
     //Loop Through Doors and create URL array for each
     if (is_array($doors)) {
         foreach ($doors as $door) {
-            $door_value = 'door=' . $door['value'];
+            $door_value = 'door=' . $door;
             $url_array = array(
                 $account_name,
                 $door_value,
@@ -46,7 +47,6 @@ function elx_guest_urls_node_presave($node)
         }
     }
 
-    $i = 0;
     foreach ($URLs as $url) {
         //Example URL: http://myelx.com/#/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
         $guest_url_value = 'http://myelx.com/#/signup?'; //TBD
@@ -58,8 +58,7 @@ function elx_guest_urls_node_presave($node)
         $guest_url_value .= $amp_separated;
 
         //Save each guest url in it's own field_guest_url
-        $node->field_guest_url['und'][$i]['url'] = $guest_url_value;
-        $i++;
+        $node_wrapper->field_guest_url[] = array('url' => $guest_url_value);
     }
 }
 

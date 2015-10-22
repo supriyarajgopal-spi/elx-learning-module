@@ -121,7 +121,7 @@ function guest_url_field_default_field_instances() {
 
 /**
  * Implements hook_enable().
- * Add field to store link to User, allow multiple values
+ * Add field to store link to Guest Account, allow multiple values
  */
 function elx_guest_urls_enable()
 {

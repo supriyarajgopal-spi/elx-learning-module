@@ -12,53 +12,55 @@
  *
  */
 
-
 /**
- * Implements hook_user_presave().
+ * Implements hook_node_presave().
  */
-function elx_guest_urls_user_presave(&$edit, $account, $category)
+function elx_guest_urls_node_presave($node)
 {
 
-    //Example URL: http://myelx.com/#/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
-    $guest_url_value = 'http://myelx.com/#/signup?'; //TBD
+    //Create an empty array to store generated URLs for each door
+    $URLs = array();
 
-    dpm($edit);
     //Get account name, door, country, region list, and market name fields in vars
-    $account_name = 'account=' . $edit['field_account_name']['und'][0]['value'];
-    $door = 'door=' . $edit['field_door']['und'][0]['value'];
-    $country = 'country=' . $edit['field_country']['und'][0]['value'];
-    $region = 'region=' . $edit['field_region_list']['und'][0]['value'];
-    $market = 'market=' . $edit['field_market_name']['und'][0]['value'];
+    $acct = preg_replace('/\s+/', '', $node->title);
+    $account_name = 'account=' . $acct;
+    $country = 'country=' . $node->field_country['und'][0]['value'];
+    $region = 'region=' . $node->field_region_list['und'][0]['value'];
+    $market = 'market=' . $node->field_market_name['und'][0]['value'];
 
-    $url_array = array(
-        $account_name,
-        $door,
-        $country,
-        $region,
-        $market
-    );
+    //Get Doors (there may be multiple)
+    $doors = $node->field_door['und'];
 
-    dpm($url_array);
+    //Loop Through Doors and create URL array for each
+    if (is_array($doors)) {
+        foreach ($doors as $door) {
+            $door_value = 'door=' . $door['value'];
+            $url_array = array(
+                $account_name,
+                $door_value,
+                $country,
+                $region,
+                $market
+            );
+            array_push($URLs, $url_array);
+        }
+    }
 
-    //Concatenate
-    $amp_separated = implode('&', $url_array);
+    $i = 0;
+    foreach ($URLs as $url) {
+        //Example URL: http://myelx.com/#/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
+        $guest_url_value = 'http://myelx.com/#/signup?'; //TBD
 
-    dpm($amp_separated);
+        //Concatenate
+        $amp_separated = implode('&', $url);
 
-    //Add to guest URL value
-    $guest_url_value .= $amp_separated;
+        //Add to guest URL value
+        $guest_url_value .= $amp_separated;
 
-    dpm($guest_url_value);
-
-
-    //Save in field_guest_url
-    $edit['field_guest_url']['und'][0]['url'] = $guest_url_value;
+        //Save each guest url in it's own field_guest_url
+        $node->field_guest_url['und'][$i]['url'] = $guest_url_value;
+        $i++;
+    }
 }
 
-/**
- * Implements hook_user_load().
- */
-function elx_guest_urls_user_load($users)
-{
 
-}

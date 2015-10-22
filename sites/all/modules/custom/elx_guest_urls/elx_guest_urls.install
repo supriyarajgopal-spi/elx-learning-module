@@ -55,8 +55,8 @@ function guest_url_field_default_field_bases() {
 function guest_url_field_default_field_instances() {
     $field_instances = array();
 
-    $field_instances['user-user-field_guest_url'] = array(
-        'bundle' => 'user',
+    $field_instances['node-guest_accounts-field_guest_url'] = array(
+        'bundle' => 'guest_accounts',
         'default_value' => NULL,
         'deleted' => 0,
         'description' => '',
@@ -66,10 +66,16 @@ function guest_url_field_default_field_instances() {
                 'module' => 'link',
                 'settings' => array(),
                 'type' => 'link_default',
-                'weight' => 26,
+                'weight' => 6,
+            ),
+            'teaser' => array(
+                'label' => 'above',
+                'settings' => array(),
+                'type' => 'hidden',
+                'weight' => 0,
             ),
         ),
-        'entity_type' => 'user',
+        'entity_type' => 'node',
         'field_name' => 'field_guest_url',
         'label' => 'ELX Guest URL',
         'required' => 0,
@@ -80,7 +86,7 @@ function guest_url_field_default_field_instances() {
                 'configurable_class' => 0,
                 'configurable_title' => 0,
                 'rel' => '',
-                'target' => '_blank',
+                'target' => 'default',
                 'title' => '',
             ),
             'display' => array(
@@ -94,7 +100,7 @@ function guest_url_field_default_field_instances() {
             'title_maxlength' => 128,
             'title_value' => '',
             'url' => 0,
-            'user_register_form' => 1,
+            'user_register_form' => FALSE,
             'validate_url' => 1,
         ),
         'widget' => array(
@@ -102,14 +108,16 @@ function guest_url_field_default_field_instances() {
             'module' => 'link',
             'settings' => array(),
             'type' => 'link_field',
-            'weight' => 1,
+            'weight' => 6,
         ),
     );
 
+    // Translatables
     t('ELX Guest URL');
 
     return $field_instances;
 }
+
 
 /**
  * Implements hook_enable().
@@ -124,9 +132,9 @@ function elx_guest_urls_enable()
         field_create_field($guest_url_base['field_guest_url']);
     }
 
-    field_create_instance($guest_instance['user-user-field_guest_url']);
+    field_create_instance($guest_instance['node-guest_accounts-field_guest_url']);
 
-    drupal_set_message($message = t('ELX Guest URL field was added to User entity.'), $type = 'status');
+    drupal_set_message($message = t('ELX Guest URL field was added to Guest Account entity.'), $type = 'status');
 }
 
 
@@ -141,7 +149,7 @@ function elx_guest_urls_disable()
         $limit = variable_get('field_purge_batch_size', 10);
         field_purge_batch($limit);
 
-        drupal_set_message($message = t('ELX Guest URL field was removed from User entity.'), $type = 'status');
+        drupal_set_message($message = t('ELX Guest URL field was removed from Guest Account entity.'), $type = 'status');
     }
 
 }

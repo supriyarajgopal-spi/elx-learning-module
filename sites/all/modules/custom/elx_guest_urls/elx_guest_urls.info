@@ -1,0 +1,5 @@
+name = ELX Guest URLs
+description = Creates a Guest URL for each ELX User account using field_account_name, field_door, field_country, field_region_list, and field_market_name. One URL for each door.
+core = 7.x
+package = ELX
+dependencies[] = link

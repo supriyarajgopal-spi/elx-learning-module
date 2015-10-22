@@ -1,0 +1,64 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Adrienne Cabouet
+ * Creates a Guest URL for each ELX User account using:
+ * -field_account_name,
+ * -field_door,
+ * -field_country,
+ * -field_region_list,
+ * -field_market_name.
+ * One URL for each door.
+ *
+ */
+
+
+/**
+ * Implements hook_user_presave().
+ */
+function elx_guest_urls_user_presave(&$edit, $account, $category)
+{
+
+    //Example URL: http://myelx.com/#/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
+    $guest_url_value = 'http://myelx.com/#/signup?'; //TBD
+
+    dpm($edit);
+    //Get account name, door, country, region list, and market name fields in vars
+    $account_name = 'account=' . $edit['field_account_name']['und'][0]['value'];
+    $door = 'door=' . $edit['field_door']['und'][0]['value'];
+    $country = 'country=' . $edit['field_country']['und'][0]['value'];
+    $region = 'region=' . $edit['field_region_list']['und'][0]['value'];
+    $market = 'market=' . $edit['field_market_name']['und'][0]['value'];
+
+    $url_array = array(
+        $account_name,
+        $door,
+        $country,
+        $region,
+        $market
+    );
+
+    dpm($url_array);
+
+    //Concatenate
+    $amp_separated = implode('&', $url_array);
+
+    dpm($amp_separated);
+
+    //Add to guest URL value
+    $guest_url_value .= $amp_separated;
+
+    dpm($guest_url_value);
+
+
+    //Save in field_guest_url
+    $edit['field_guest_url']['und'][0]['url'] = $guest_url_value;
+}
+
+/**
+ * Implements hook_user_load().
+ */
+function elx_guest_urls_user_load($users)
+{
+
+}

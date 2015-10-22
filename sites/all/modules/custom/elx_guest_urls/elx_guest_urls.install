@@ -65,7 +65,7 @@ function guest_url_field_default_field_instances() {
                 'label' => 'above',
                 'module' => 'link',
                 'settings' => array(),
-                'type' => 'link_default',
+                'type' => 'link_url',
                 'weight' => 6,
             ),
             'teaser' => array(

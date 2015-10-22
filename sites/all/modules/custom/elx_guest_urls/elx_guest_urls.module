@@ -20,6 +20,9 @@ function elx_guest_urls_node_presave($node)
     $node_wrapper = entity_metadata_wrapper('node', $node);
 
     if($node_wrapper->getBundle() == 'guest_accounts'){
+        //Clear out any existing guest URLs
+        $node_wrapper->field_guest_url->set(NULL);
+
         //Create an empty array to store for each guest URL to be generated
         $URLs = array();
 

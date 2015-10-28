@@ -25,6 +25,7 @@ function elx_guest_urls_node_presave($node)
 
         //Create an empty array to store for each guest URL to be generated
         $URLs = array();
+        $completed_urls = array();
 
         //Get account name, country, region list, and market name fields in vars
         $acct = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
@@ -61,11 +62,14 @@ function elx_guest_urls_node_presave($node)
             //Add to guest URL stub
             $guest_url_value .= $amp_separated;
 
-            //Save each generated guest url in it's own key in field_guest_url
-            $node_wrapper->field_guest_url[] = array('url' => $guest_url_value);
-        }
-    }
+            array_push($completed_urls, $guest_url_value);
 
+        }
+
+        //Save each generated guest url in it's own key in field_guest_url
+        $node_wrapper->field_guest_url = $completed_urls;
+    }
 }
+
 
 

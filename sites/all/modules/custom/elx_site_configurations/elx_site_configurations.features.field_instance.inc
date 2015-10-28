@@ -3787,6 +3787,47 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-guest_accounts-field_guest_url'
+  $field_instances['node-guest_accounts-field_guest_url'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_guest_url',
+    'label' => 'Guest URL',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 180,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-guest_accounts-field_market_name'
   $field_instances['node-guest_accounts-field_market_name'] = array(
     'bundle' => 'guest_accounts',
@@ -10832,6 +10873,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Front card');
   t('Front card image');
   t('Fun fact sheet');
+  t('Guest URL');
   t('Headline');
   t('Hero image');
   t('Hot spot collection');

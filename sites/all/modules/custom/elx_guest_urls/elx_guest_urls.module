@@ -17,7 +17,6 @@
  */
 function elx_guest_urls_node_presave($node)
 {
-    dpm($node);
     $node_wrapper = entity_metadata_wrapper('node', $node);
 
     if($node_wrapper->getBundle() == 'guest_accounts'){

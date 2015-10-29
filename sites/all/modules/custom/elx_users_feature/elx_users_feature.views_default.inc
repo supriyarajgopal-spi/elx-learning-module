@@ -246,7 +246,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  /* Field: Field: Door */
+  /* Field: User: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
   $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
@@ -269,11 +269,11 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
   $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
   $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
-  /* Field: Field: Country */
+  /* Field: User: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
-  /* Field: Field: Region */
+  /* Field: User: Region */
   $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
@@ -298,7 +298,7 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Market name */
+  /* Field: User: Market name */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
@@ -366,7 +366,7 @@ function elx_users_feature_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  /* Filter criterion: Field: Region (field_region_list) */
+  /* Filter criterion: User: Region (field_region_list) */
   $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
@@ -387,7 +387,7 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: Field: Market name (field_market_name) */
+  /* Filter criterion: User: Market name (field_market_name) */
   $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
   $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
@@ -512,7 +512,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  /* Field: Field: Door */
+  /* Field: User: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
   $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
@@ -535,11 +535,11 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
   $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
   $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
-  /* Field: Field: Country */
+  /* Field: User: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
-  /* Field: Field: Region */
+  /* Field: User: Region */
   $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
@@ -564,7 +564,7 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Market name */
+  /* Field: User: Market name */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
@@ -629,7 +629,7 @@ function elx_users_feature_views_default_views() {
     8 => 0,
     9 => 0,
   );
-  /* Filter criterion: Field: Region (field_region_list) */
+  /* Filter criterion: User: Region (field_region_list) */
   $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
@@ -650,7 +650,7 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: Field: Market name (field_market_name) */
+  /* Filter criterion: User: Market name (field_market_name) */
   $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
   $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
@@ -787,7 +787,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
   $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
   $handler->display->display_options['fields']['field_account_name']['label'] = 'Account Name';
-  /* Field: Field: Door */
+  /* Field: User: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
   $handler->display->display_options['fields']['field_door']['field'] = 'field_door';
@@ -799,16 +799,16 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_state']['id'] = 'field_state';
   $handler->display->display_options['fields']['field_state']['table'] = 'field_data_field_state';
   $handler->display->display_options['fields']['field_state']['field'] = 'field_state';
-  /* Field: Field: Country */
+  /* Field: User: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
-  /* Field: Field: Region */
+  /* Field: User: Region */
   $handler->display->display_options['fields']['field_region_list']['id'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['label'] = 'Region Code';
-  /* Field: Field: Market name */
+  /* Field: User: Market name */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';

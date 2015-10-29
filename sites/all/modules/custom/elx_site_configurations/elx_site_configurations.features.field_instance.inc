@@ -3666,244 +3666,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_account_status'
-  $field_instances['node-guest_accounts-field_account_status'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => array(
-      0 => array(
-        'value' => 'active',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_account_status',
-    'label' => 'Account Status',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-guest_accounts-field_country'
-  $field_instances['node-guest_accounts-field_country'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_country',
-    'label' => 'Country',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-guest_accounts-field_door'
-  $field_instances['node-guest_accounts-field_door'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_door',
-    'label' => 'Door',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-guest_accounts-field_guest_url'
-  $field_instances['node-guest_accounts-field_guest_url'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_guest_url',
-    'label' => 'Guest URL',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 180,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-guest_accounts-field_market_name'
-  $field_instances['node-guest_accounts-field_market_name'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_market_name',
-    'label' => 'Market',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-guest_accounts-field_region_list'
-  $field_instances['node-guest_accounts-field_region_list'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_region_list',
-    'label' => 'Region',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-hot_spots-field_hot_spot_collection'
   $field_instances['node-hot_spots-field_hot_spot_collection'] = array(
     'bundle' => 'hot_spots',
@@ -10807,7 +10569,6 @@ function elx_site_configurations_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('1 = easiest<br>
 5 = hardest');
-  t('Account Status');
   t('Add a collection of multiple choice question and answers.');
   t('Add a matching set of text or images.');
   t('Add text or upload an image to display in list items.');
@@ -10836,7 +10597,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Correct answer');
   t('Correct feedback');
   t('Counter');
-  t('Country');
   t('Create Next Button');
   t('Create Submit Button');
   t('Custom CTA');
@@ -10848,7 +10608,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Difficulty');
   t('Disclaimer text');
   t('Display title');
-  t('Door');
   t('Drag match collection');
   t('Drag priority collection');
   t('Drag select background');
@@ -10873,7 +10632,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Front card');
   t('Front card image');
   t('Fun fact sheet');
-  t('Guest URL');
   t('Headline');
   t('Hero image');
   t('Hot spot collection');
@@ -10902,7 +10660,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('List text');
   t('List video');
   t('Manifest');
-  t('Market');
   t('Markets');
   t('Match collection');
   t('Middle match image');
@@ -10927,7 +10684,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Question text');
   t('Question type');
   t('Question video');
-  t('Region');
   t('Related products');
   t('Reveal collection');
   t('Reveal hero image');

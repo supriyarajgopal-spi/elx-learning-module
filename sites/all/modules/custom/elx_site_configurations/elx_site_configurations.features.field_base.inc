@@ -1539,6 +1539,8 @@ function elx_site_configurations_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'text',

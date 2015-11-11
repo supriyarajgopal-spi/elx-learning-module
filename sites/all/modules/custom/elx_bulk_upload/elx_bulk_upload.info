@@ -1,0 +1,4 @@
+name = ELX Bulk Upload
+description = Enables bulk content uploads.
+core = 7.x
+package = ELX

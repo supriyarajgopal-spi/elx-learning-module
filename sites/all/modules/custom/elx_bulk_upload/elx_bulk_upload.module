@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implemantation of hook_menu.
+ */
+function elx_bulk_upload_menu(){
+  $items['elx/text-tool'] = array(
+    'title' => 'Wysiwyg Tool',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('elx_bulk_upload_html_tool'),
+    'description' => 'Configure client-side editors.',
+    'access callback' => TRUE,
+    'expanded' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Callback to just create the WYSIWIG form element and nothing else.
+ */
+
+function elx_bulk_upload_html_tool($form, &$form_state) {
+  $form['keywords'] = array(
+    '#title' => t('Keywords'),
+    '#type' => 'text_format',
+    '#description' => t('Please enter the translated text here and then click "disable rich text" to obtain the proper html code for your translation'),
+    '#format'=>'full_html'
+  );
+  return $form;
+}

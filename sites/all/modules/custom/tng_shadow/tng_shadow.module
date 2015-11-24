@@ -3746,20 +3746,30 @@ function process_content_object($object_values, $language, $nid)
       dpm($featured_content_image);
     }
     $learning_category = rtrim($object_values['field_learning_category'], ',');
-    //diaries are a special form of story so default it if none is given
-    $learning_category_id = 'np_diaryND';
     if ($learning_category == 'Re-Nutriv') {
       $learning_category_id = 'reNutriv';
-    } else if ($learning_category == 'ANR') {
+    }
+    elseif ($learning_category == 'ANR') {
       $learning_category_id = 'ANR';
-    } else if ($learning_category == 'ANR2') {
+    }
+    elseif ($learning_category == 'ANR2') {
       $learning_category_id = 'ANR2';
-    } else if ($learning_category == 'GMTC') {
+    }
+    elseif ($learning_category == 'GMTC') {
       $learning_category_id = 'GMTC';
-    } else if ($learning_category == 'BSFL') {
+    }
+    elseif ($learning_category == 'BSFL') {
       $learning_category_id = 'BSFL';
-    } else if ($learning_category == 'ND') {
+    }
+    elseif ($learning_category == 'ND') {
       $learning_category_id = 'ND';
+    }
+    elseif ($learning_category == 'Holiday') {
+      $learning_category_id = 'holiday';
+    }
+    else {
+      //diaries are a special form of story so default it if none is given
+      $learning_category_id = 'np_diaryND';
     }
 
     $story_type = $object_values['field_story_type'];

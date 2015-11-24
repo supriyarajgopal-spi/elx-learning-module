@@ -55,6 +55,7 @@ function elx_guest_urls_node_presave($node)
         foreach ($URLs as $url) {
             //Example URL: http://myelx.com/#/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
             $guest_url_value = 'http://myelx.com/#/signup?'; //TBD
+            //$guest_url_value = 'http://stagemyelxrp.cloudapp.net/#/signup?';
 
             //Concatenate
             $amp_separated = implode('&', $url);
@@ -70,6 +71,7 @@ function elx_guest_urls_node_presave($node)
         $node_wrapper->field_guest_url = $completed_urls;
     }
 }
+
 
 
 

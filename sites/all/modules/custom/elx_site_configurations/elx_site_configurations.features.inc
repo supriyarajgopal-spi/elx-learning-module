@@ -102,9 +102,9 @@ function elx_site_configurations_node_info() {
     'guest_accounts' => array(
       'name' => t('Guest Accounts'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Guest Account Content Type'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Account Name'),
       'help' => '',
     ),
     'hot_spots' => array(

@@ -172,7 +172,7 @@ function elx_bulk_upload_form_submit($form, &$form_state) {
 function _elx_bulk_upload_parse_csv($directory, $project) {
   
   //dpm($directory.'/'.$project.'/content.csv');
-  $handle = fopen($directory.'/content.csv', 'r');
+  $handle = fopen($directory.'/'.$project.'/content.csv', 'r');
   if($handle){
     $fields = fgetcsv($handle);
     while (!feof($handle)) {

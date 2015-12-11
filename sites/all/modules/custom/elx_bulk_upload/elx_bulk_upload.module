@@ -13,6 +13,15 @@ function elx_bulk_upload_menu(){
     'access callback' => TRUE,
     'expanded' => TRUE,
   );
+  $items['admin/content/bulk-upload'] = array(
+    'title' => 'Wysiwyg Tool',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('elx_bulk_upload_form'),
+    'description' => 'Configure client-side editors.',
+    'access callback' => TRUE,
+    'expanded' => TRUE,
+  );
   return $items;
 }
 
@@ -27,5 +36,388 @@ function elx_bulk_upload_html_tool($form, &$form_state) {
     '#description' => t('Please enter the translated text here and then click "disable rich text" to obtain the proper html code for your translation'),
     '#format'=>'full_html'
   );
+  dpm($form);
   return $form;
+}
+
+
+
+function elx_bulk_upload_form($form, &$form_state) {
+  
+  $form['upload'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Bulk Upload Content'),
+    '#collapsible' => FALSE,
+  );
+  $form['upload']['type'] = array(
+    '#type' => 'select',
+    '#options' => array(
+      'learning_content' => t('Learning Content'),
+      'product' => t('Product Details'),
+      'story' => t('Stories'),
+    ),
+    '#description' => t('Please choose what kind of content will be uploaded'),
+  );
+  $form['upload']['file'] = array(
+    '#type' => 'file',
+    '#title' => t('Zip File'),
+    //"#upload_validators"  => array("file_validate_extensions" => array("zip")),
+    
+  );
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'upload',
+    
+  );
+  
+  return $form;
+}
+
+function elx_bulk_upload_form_validate($form, &$form_state) {
+  $file = file_save_upload('file', array(
+    // Validate extensions.
+    'file_validate_extensions' => array('zip'),
+  ), FALSE, FILE_EXISTS_REPLACE);
+  // If the file passed validation:
+  if ($file) {
+    // Move the file into the Drupal file system.
+    //if ($file = file_move($file, 'public://')) {
+      // Save the file for use in the submit handler.
+      dpm($file);
+      $form_state['storage']['file'] = $file;
+    //}
+    //else {
+      //form_set_error('file', t("Failed to write the uploaded file to the site's file folder."));
+    //}
+  }
+  else {
+    form_set_error('file', t('No file was uploaded.'));
+  }
+}
+
+function elx_bulk_upload_form_submit($form, &$form_state) {
+  module_load_include('inc', 'update', 'update.manager');
+  module_load_include('module', 'update');
+  //dpm($form_state);
+  $file = $form_state['storage']['file'];
+  // We are done with the file, remove it from storage.
+  unset($form_state['storage']['file']);
+  // Make the storage of the file permanent.
+  //$file->status = FALSE;
+  // Save file status.
+  //$finfo = file_save_upload('file');
+  // Set a response to the user.
+  drupal_set_message(t('The form has been submitted and the image has been saved, filename: @filename.', array('@filename' => $file->filename)));
+  $finfo = $file;
+  dpm($finfo);
+  $archive_file = $finfo->uri;
+  
+  $directory = _update_manager_extract_directory();
+  dpm($directory);
+  try {
+    $archive = update_manager_archive_extract($archive_file, $directory);
+  }
+  catch (Exception $e) {
+    form_set_error('file', $e->getMessage());
+    return;
+  }
+  
+  $files = $archive->listContents();
+  dpm($files);
+  if (!$files) {
+    form_set_error($field, t('Provided archive contains no files.'));
+    return;
+  }
+
+  // Unfortunately, we can only use the directory name to determine the project
+  // name. Some archivers list the first file as the directory (i.e., MODULE/)
+  // and others list an actual file (i.e., MODULE/README.TXT).
+  $project = strtok($files[0], '/\\');
+  dpm($project);
+  $archive_errors = update_manager_archive_verify($project, $archive_file, $directory);
+  if (!empty($archive_errors)) {
+    form_set_error($field, array_shift($archive_errors));
+    // @todo: Fix me in D8: We need a way to set multiple errors on the same
+    // form element and have all of them appear!
+    if (!empty($archive_errors)) {
+      foreach ($archive_errors as $error) {
+        drupal_set_message($error, 'error');
+      }
+    }
+  }
+  
+  $data = _elx_bulk_upload_parse_csv($directory, $project);
+  
+  switch($form_state['values']['type']){
+    case "learning_content":
+      elx_bulk_upload_process_learning_point($data);
+      break;
+    
+    case "product":
+      elx_bulk_upload_process_product($data);
+      break;
+    
+    case "story":
+      elx_bulk_upload_process_story($data);
+      break;
+  }
+  
+  //$archiver->extract($directory);
+  
+  //_elx_bulk_upload_validate_archive()
+  
+}
+
+function _elx_bulk_upload_parse_csv($directory, $project) {
+  
+  //dpm($directory.'/'.$project.'/content.csv');
+  $handle = fopen($directory.'/content.csv', 'r');
+  if($handle){
+    $fields = fgetcsv($handle);
+    while (!feof($handle)) {
+      $data[] = array_combine($fields, fgetcsv($handle));
+      //dpm($fields);
+    }
+  }
+  
+  
+  return $data;
+}
+
+function elx_bulk_upload_process_learning_point($data) {
+  foreach($data as $row){
+    switch($row['content_type']){
+      case "content_object":
+        _elx_buld_upload_process_content_object($row);
+        break;
+      case "hot_spot":
+        //_elx_buld_upload_process_hot_spot($row);
+        break;
+      case "question_answer":
+        //_elx_buld_upload_process_question_answer($row);
+        break;
+      case "list_item":
+        //_elx_buld_upload_process_list_item($row);
+        break;
+    }
+  }
+}
+
+function _elx_buld_upload_process_content_object($row){
+  
+  //loads the default language node to get not translateable values
+  
+  if($row['original_administrative_title']){
+    $query = new EntityFieldQuery();
+    $entities = $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('type', 'content_object')
+    ->propertyCondition('title', $row['original_administrative_title'])
+    ->propertyCondition('status', 1)
+    ->range(0,1)
+    ->execute();
+
+    if (!empty($entities['node'])) {
+      $original_node = node_load(array_shift(array_keys($entities['node'])));
+      unset($original_node->vid);
+      unset($original_node->nid);
+      unset($original_node->field_learning_objects);
+      unset($original_node->field_manifest);
+    }
+  }
+  
+  if($row['administrative_title']){
+    $query = new EntityFieldQuery();
+    $entities = $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('type', 'content_object')
+    ->propertyCondition('title', $row['administrative_title'])
+    ->propertyCondition('status', 1)
+    ->range(0,1)
+    ->execute();
+
+    if (!empty($entities['node'])) {
+      $node = node_load(array_shift(array_keys($entities['node'])));
+    }else{
+      $node = new stdClass();
+      $node->title = $row['administrative_title'];
+      $node->type = "content_object";
+      node_object_prepare($node);
+    }
+  }else{
+    $node = new stdClass();
+    $node->title = $row['original_administrative_title']." - FR";
+    $node->type = "content_object";
+    node_object_prepare($node);
+  }
+  dpm($row);
+  (!empty($row['language'])) ? $language = $row['language'] : $language = "en";
+  $node->title = $row['original_administrative_title']." - FR";
+  $node->language = $language;
+  $node->field_headline[$language][0]['value'] = $row['subtitle'];
+  $node->field_intro[$language][0]['value'] = $row['intro_html'];
+  $node->field_custom_cta[$language][0]['value'] = $row[''];
+  $node->field_exam_pass_feedback[$language][0]['value'] = $row[''];
+  $node->field_exam_fail_feedback[$language][0]['value'] = $row[''];
+  $node->field_exam_pass_content[$language][0]['value'] = $row[''];
+  $node->field_exam_perfect_content[$language][0]['value'] = $row[''];
+  
+  //Writing Keywords
+  if(!empty($row['content_object_tags_keywords'])){
+    $keywords = explode(',', $row['content_object_tags_keywords']);
+    if(is_array($keywords)){
+      foreach($keywords as $keyword){
+        $node->field_tags_keywords[$language][]['tid'] = $keyword;
+      } 
+    }else{
+        $node->field_tags_keywords[$language][]['tid'] = $row['content_object_tags_keywords'];
+    }
+  }
+  
+  //Writing Markets
+  if(!empty($row['content_object_markets'])){
+    $keywords = explode(',', $row['content_object_markets']);
+    if(is_array($keywords)){
+      foreach($keywords as $keyword){
+        $node->field_markets[$language][]['value'] = $keyword;
+      }
+    }else{
+        $node->field_markets[$language][]['value'] = $row['content_object_markets'];
+    }
+  }
+  
+  if($original_node){
+    $original_node->language = "DD";
+    //$node = array_merge($node,$original_node);
+    $node = (object) array_merge((array) $original_node, (array) $node);
+  }
+
+  
+  //dpm($original_node);
+  dpm($node);
+  
+}
+
+function elx_bulk_upload_process_product($data) {
+  //loads the default language node to get not translateable values
+  //dpm($data);
+  foreach($data as $row){
+    if($row['admin_title_field']){
+      $query = new EntityFieldQuery();
+      $entities = $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('type', 'product_detail')
+      ->propertyCondition('title', $row['original_administrative_title'])
+      ->propertyCondition('status', 1)
+      ->range(0,1)
+      ->execute();
+
+      if (!empty($entities['node'])) {
+        $original_node = node_load(array_shift(array_keys($entities['node'])));
+        unset($original_node->vid);
+        unset($original_node->nid);
+        unset($original_node->field_learning_objects);
+        unset($original_node->field_manifest);
+      }
+    }
+
+    if($row['admin_title_field']){
+      $query = new EntityFieldQuery();
+      $entities = $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('type', 'product_detail')
+      ->propertyCondition('title', $row['admin_title_feld'])
+      ->propertyCondition('status', 1)
+      ->range(0,1)
+      ->execute();
+
+      if (!empty($entities['node'])) {
+        $node = node_load(array_shift(array_keys($entities['node'])));
+      }else{
+        $node = new stdClass();
+        $node->title = $row['admin_title_field'];
+        $node->type = "product_detail";
+        node_object_prepare($node);
+        $node = node_submit($node);
+      }
+    }else{
+      $node = new stdClass();
+      $node->title = $row['admin_title_field'];
+      $node->type = "product_detail";
+      node_object_prepare($node);
+    }
+    dpm($row);
+    (!empty($row['language'])) ? $language = $row['language'] : $language = "en";
+    $node->title = $row['admin_title_field'];
+    $node->language = $language;
+    $node->field_display_title[$language][0]['value'] = $row['field_display_title'];
+    $node->field_subtitle[$language][0]['value'] = $row['field_subtitle'];
+    $node->field_season[$language][0]['value'] = $row['field_season'];
+    //$node->field_category[$language] = array();
+    $node->field_point_value[$language][0]['value'] = $row['field_point_value'];
+    $node->field_why_there_s_only_one[$language][0]['value'] = $row['field_why_there_s_only_one_html_translated'];
+    $node->field_why_there_s_only_one[$language][0]['format'] = 'full_html';
+    $node->field_demonstration[$language][0]['value'] = $row['field_demonstration_html_translated'];
+    $node->field_demonstration[$language][0]['format'] = 'full_html';
+    $node->field_benefits[$language][0]['value'] = $row['field_benefits_html_translated'];
+    $node->field_benefits[$language][0]['format'] = 'full_html';
+    $node->field_if_she_asks_share[$language][0]['value'] = $row['field_if_she_asks_share_html_translated'];
+    $node->field_if_she_asks_share[$language][0]['format'] = 'full_html';
+    $node->field_perfect_partners_text[$language][0]['value'] = $row['field_perfect_partners_text_html_translated'];
+    $node->field_perfect_partners_text[$language][0]['format'] = 'full_html';
+    $node->field_story[$language][0]['value'] = $row['field_story_html'];
+    $node->field_customer_questions[$language][0]['value'] = $row['field_customer_questions_html_translated'];
+    $node->field_customer_questions_html_translated[$language][0]['format'] = 'full_html';
+    //$node->field_related_products[$language][0]['value'] = $row[''];
+
+    //Writing Keywords
+    if(!empty($row['field_tags_keywords'])){
+      $keywords = explode(',', $row['field_tags_keywords']);
+      if(is_array($keywords)){
+        foreach($keywords as $keyword){
+          $term = array_shift(taxonomy_get_term_by_name($keyword, 'tags'));
+          if(!$term){
+            $term = new stdClass();
+            $term->vid = 1;
+            $term->name = $keyword;
+            $status = taxonomy_term_save($term);
+            $term = array_shift(taxonomy_get_term_by_name($keyword, 'tags'));
+            dpm($status);
+          }
+          dpm($term);
+          $node->field_tags_keywords[$language][]['tid'] = $term->tid;
+        } 
+      }else{
+          $term = array_shift(taxonomy_get_term_by_name($row['field_tags_keywords'], 'tags'));
+          $node->field_tags_keywords[$language][]['tid'] = $term->tid;
+      }
+    }
+
+    //Writing Markets
+    if(!empty($row['field_markets'])){
+      $keywords = explode(',', $row['field_markets']);
+      if(is_array($keywords)){
+        foreach($keywords as $keyword){
+          $node->field_markets[$language][]['value'] = $keyword;
+        }
+      }else{
+          
+          $node->field_markets[$language][]['value'] = $row['field_markets'];
+      }
+    }
+
+    /*if($original_node){
+      $original_node->language = "DD";
+      //$node = array_merge($node,$original_node);
+      $node = (object) array_merge((array) $original_node, (array) $node);
+    }*/
+
+    $node = node_submit($node);
+    dpm($node);
+    node_save($node);
+    //dpm($original_node);
+    dpm($node);
+  }
+  return "DONE";
+}
+
+function elx_bulk_upload_process_story($data) {
+  
 }

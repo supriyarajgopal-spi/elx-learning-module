@@ -58,6 +58,10 @@ function elx_bulk_upload_form($form, &$form_state) {
     ),
     '#description' => t('Please choose what kind of content will be uploaded'),
   );
+  $form['upload']['assets'] = array(
+  '#type' => 'plupload',
+  '#title' => t('Upload Assets'),
+);
   $form['upload']['file'] = array(
     '#type' => 'file',
     '#title' => t('Zip File'),
@@ -78,7 +82,8 @@ function elx_bulk_upload_form_validate($form, &$form_state) {
   $file = file_save_upload('file', array(
     // Validate extensions.
     'file_validate_extensions' => array('zip'),
-  ), FALSE, FILE_EXISTS_REPLACE);
+  ), FALSE, FILE_EXISTS_RENAME);
+  
   // If the file passed validation:
   if ($file) {
     // Move the file into the Drupal file system.
@@ -101,6 +106,7 @@ function elx_bulk_upload_form_submit($form, &$form_state) {
   module_load_include('module', 'update');
   //dpm($form_state);
   $file = $form_state['storage']['file'];
+  dpm($file);
   // We are done with the file, remove it from storage.
   unset($form_state['storage']['file']);
   // Make the storage of the file permanent.
@@ -151,11 +157,11 @@ function elx_bulk_upload_form_submit($form, &$form_state) {
   
   switch($form_state['values']['type']){
     case "learning_content":
-      elx_bulk_upload_process_learning_point($data);
+      elx_bulk_upload_process_learning_point($data, $directory, $project);
       break;
     
     case "product":
-      elx_bulk_upload_process_product($data);
+      elx_bulk_upload_process_product($data, $directory, $project);
       break;
     
     case "story":
@@ -171,22 +177,26 @@ function elx_bulk_upload_form_submit($form, &$form_state) {
 
 function _elx_bulk_upload_parse_csv($directory, $project) {
   
-  //dpm($directory.'/'.$project.'/content.csv');
+  dpm($directory.'/'.$project.'/content.csv');
   $handle = fopen($directory.'/'.$project.'/content.csv', 'r');
   if($handle){
     $fields = fgetcsv($handle);
+    dpm($fields);
     while (!feof($handle)) {
       $data[] = array_combine($fields, fgetcsv($handle));
-      //dpm($fields);
+      dpm($data);
+      return;
     }
   }
   
-  
+  dpm($data);
   return $data;
 }
 
-function elx_bulk_upload_process_learning_point($data) {
+function elx_bulk_upload_process_learning_point($data, $directory, $project) {
+  
   foreach($data as $row){
+    dpm($row);
     switch($row['content_type']){
       case "content_object":
         _elx_buld_upload_process_content_object($row);
@@ -286,21 +296,35 @@ function _elx_buld_upload_process_content_object($row){
   }
   
   if($original_node){
-    $original_node->language = "DD";
+    //$original_node->language = "en";
     //$node = array_merge($node,$original_node);
     $node = (object) array_merge((array) $original_node, (array) $node);
   }
 
   
   //dpm($original_node);
+  $node = node_submit($node);
+  node_save($node);
   dpm($node);
   
 }
 
-function elx_bulk_upload_process_product($data) {
+function elx_bulk_upload_process_product($data, $directory = NULL, $project = NULL) {
+  
+  //$file = file_save_data($directory.'/'.$project.'/'.$row['field_image'], 'public://'.str_replace('assets/images/', '', $row['field_image']));
+  //dsm($directory.'/'.$project.'/'.$row['field_image']);
   //loads the default language node to get not translateable values
   //dpm($data);
   foreach($data as $row){
+    //Save the images from the CSV row.
+    if($row['field_image']){
+      dsm($directory.'/'.$project.'/'.$row['field_image']);
+      $handle = fopen($directory.'/'.$project.'/'.$row['field_image'], 'r');
+      $file = file_save_data($handle, 'public://'.str_replace('assets/images/', '', $row['field_image']),FILE_EXISTS_REPLACE);
+      fclose($handle);
+      dpm($file);
+    }
+    
     if($row['admin_title_field']){
       $query = new EntityFieldQuery();
       $entities = $query->entityCondition('entity_type', 'node')
@@ -365,6 +389,7 @@ function elx_bulk_upload_process_product($data) {
     $node->field_story[$language][0]['value'] = $row['field_story_html'];
     $node->field_customer_questions[$language][0]['value'] = $row['field_customer_questions_html_translated'];
     $node->field_customer_questions_html_translated[$language][0]['format'] = 'full_html';
+    $node->field_product_image[$language][0] = (array) $file;
     //$node->field_related_products[$language][0]['value'] = $row[''];
 
     //Writing Keywords
@@ -379,9 +404,9 @@ function elx_bulk_upload_process_product($data) {
             $term->name = $keyword;
             $status = taxonomy_term_save($term);
             $term = array_shift(taxonomy_get_term_by_name($keyword, 'tags'));
-            dpm($status);
+            //dpm($status);
           }
-          dpm($term);
+          //dpm($term);
           $node->field_tags_keywords[$language][]['tid'] = $term->tid;
         } 
       }else{

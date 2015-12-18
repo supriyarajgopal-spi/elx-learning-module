@@ -4698,7 +4698,7 @@ function tng_shadow_shadow_request_alter($entity)
                     if ($para_entity != false) {
                       $sub_children = element_children($para_inst);
                     } else {
-                      $sub_children = null;
+                      $sub_children = array();
                     }
                     foreach ($sub_children as $key => $value) {
                       if ($tng_debug == 1) {
@@ -5093,22 +5093,19 @@ function get_language_from_uri()
 {
   $tng_debug =0;
   $uri_language = '';
-  $language_url = $_SERVER['REQUEST_URI'];
-  $lang_splitter = explode('/', $language_url);
-  $ctr = count($lang_splitter);
+  $lang_splitter = arg();
   if ($tng_debug == 1) {
     dpm('language url');
-    dpm($language_url);
     dpm($lang_splitter);
-    dpm($lang_splitter[$ctr - 1]);
+    dpm(end($lang_splitter));
   }
   // if we are editing a 'default' language node, it won't have a language after the 'content' or 'edit' since it is the 'en' version
   // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
-  if ($lang_splitter[$ctr - 1]) {
-    if (substr($lang_splitter[$ctr - 1], 0, 7) == 'content' || substr($lang_splitter[$ctr - 1], 0, 4) == 'edit') {
+  if (!empty($lang_splitter)) {
+    if (substr(end($lang_splitter), 0, 7) == 'content' || substr(end($lang_splitter), 0, 4) == 'edit') {
       $uri_language = 'en';
     } else {
-      $uri_language = $lang_splitter[$ctr - 1];
+      $uri_language = end($lang_splitter);
     }
   }
   return $uri_language;

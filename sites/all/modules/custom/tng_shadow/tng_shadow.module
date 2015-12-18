@@ -5102,7 +5102,7 @@ function get_language_from_uri()
   // if we are editing a 'default' language node, it won't have a language after the 'content' or 'edit' since it is the 'en' version
   // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
   if (!empty($lang_splitter)) {
-    if (substr(end($lang_splitter), 0, 7) == 'content' || substr(end($lang_splitter), 0, 4) == 'edit') {
+    if (strstr($language_url, 'content') || strstr($language_url, 'edit') || strstr($language_url, 'index.php')) {
       $uri_language = 'en';
     } else {
       $uri_language = end($lang_splitter);

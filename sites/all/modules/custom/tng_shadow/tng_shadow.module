@@ -4917,7 +4917,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4925,7 +4925,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_content_object($pre_manifest, $local_language, $local_tid);
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4933,7 +4933,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_hotspot($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4941,7 +4941,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragmatch($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4950,7 +4950,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4958,7 +4958,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragselect($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4966,7 +4966,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_dragmatch_prioritize($pre_manifest, $local_language, $local_tid['target_id']);
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4974,7 +4974,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_list($pre_manifest, $local_language, $local_tid, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4982,7 +4982,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_reveal($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4990,7 +4990,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_flashcards($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -4998,7 +4998,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_matchgame($pre_manifest, $local_language, $local_tid, $module_name, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5006,7 +5006,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5021,7 +5021,7 @@ function tng_shadow_shadow_request_alter($entity)
         }
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5029,7 +5029,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5037,7 +5037,7 @@ function tng_shadow_shadow_request_alter($entity)
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_diary($pre_manifest, $local_language, $local_tid, '0');
-        if (isset($new_nid)) {
+        if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5092,7 +5092,7 @@ function tng_fix_tools($entity)
 function get_language_from_uri()
 {
   $tng_debug =0;
-  $uri_language = '';
+  $uri_language = 'en';
   $lang_splitter = arg();
   if ($tng_debug == 1) {
     dpm('language url');
@@ -5101,10 +5101,8 @@ function get_language_from_uri()
   }
   // if we are editing a 'default' language node, it won't have a language after the 'content' or 'edit' since it is the 'en' version
   // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
-  if (!empty($lang_splitter)) {
-    if (end($lang_splitter) == 'content' || end($lang_splitter) == 'edit') {
-      $uri_language = 'en';
-    } else {
+  if (count($lang_splitter) > 1) {
+    if (in_array($lang_splitter[count($lang_splitter) - 1], array('content', 'edit'))) {
       $uri_language = end($lang_splitter);
     }
   }

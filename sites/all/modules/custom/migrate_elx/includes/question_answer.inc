@@ -32,11 +32,7 @@ class QuestionanswerMigration extends Migration {
 
     //Field ampping
     $this->addFieldMapping('title', 'administrative_title');
-    $this->addFieldMapping('field_subtitle', 'cult_csv');
-    $this->addFieldMapping('field_intro', 'grex_csv');
-    $this->addFieldMapping('field_completion_text', 'variety_csv');
-    //$this->addFieldMapping('field_plant_family', 'family_csv');
-    //$this->addFieldMapping('field_plant_genus', 'genus_csv');
+		
   }
 }
 

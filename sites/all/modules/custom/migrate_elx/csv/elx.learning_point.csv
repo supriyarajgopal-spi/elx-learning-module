@@ -1,53 +1,54 @@
-'item_id';'parent_item_id';'original_administrative_title';'parent_item_administrative_title';'content_type';'language';'administrative_title';'subtitle';'intro_html';'hero_image';'learning_object_weight';'content_object_point_value';'content_object_tags_keywords';'content_object_exam_pass_feedback_html';'content_object_exam_pass_content_html';'content_object_exam_perfect_content_html';'content_object_markets';'content_object_headline';'content_object_custom_cta';'reveal_group_thumbnail';'reveal_group_hero_image';'reveal_group_video';'reveal_group_text_html';'reveal_group_weight';'list_item_group_image';'list_item_group_video';'list_item_group_text_html';'list_item_group_weight';'qa_group_question_text';'qa_group_question_image';'qa_group_question_video';'qa_group_question_answers_array';'qa_question_weight';'hot_spot_image';'hot_spot_group_x_cordinate';'hot_spot_group_y_cordinate';'hot_spot_text_html';'hot_spot_weight'
-1;;'ND2 1.1 What You Really Need to Know About New Dimension';;'content_object';;;'What You Really Need to Know About New Dimension';'We know you can’t get enough of New Dimension, so this season, we have 3 first-of-a-kind breakthrough additions to collection! Click on to discover everything you really need to know about these New Dimension launches—in just minutes';'assets/images/LP1-1-Hero.jpg';;50;'New Dimension, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest. New Dimension Firm Fill Eye Creme, New Dimension Plump Fill Lip Treatment, New Dimension Tighten Tone Neck Chest, New Dimension Neck, New Dimension Chest, New Dimension video, What You Really Need to Know, What You Really Need to Know About New DImension, New Dimension Wave 2';;;;'
+item_id,parent_item_id,original_administrative_title,parent_item_administrative_title,content_type,language,administrative_title,subtitle,intro_html,create_next,create_submit,hero_image,learning_object_weight,content_object_point_value,content_object_tags_keywords,content_object_exam_pass_feedback_html,content_object_exam_pass_content_html,content_object_exam_perfect_content_html,content_object_markets,content_object_headline,content_object_custom_cta,reveal_group_thumbnail,reveal_group_hero_image,reveal_group_video,reveal_group_text_html,reveal_group_weight,list_item_group_image,list_item_group_video,list_item_group_text_html,list_item_group_weight,qa_question_type,qa_group_question_text,qa_group_question_image,qa_group_question_video,qa_group_question_answers_array,qa_is_required,qa_is_final,qa_completion_text,qa_question_weight,hot_spot_image,hot_spot_group_x_cordinate,hot_spot_group_y_cordinate,hot_spot_text_html,hot_spot_weight
+1,,ND2 1.1 What You Really Need to Know About New Dimension,,content_object,,,What You Really Need to Know About New Dimension,"We know you can’t get enough of New Dimension, so this season, we have 3 first-of-a-kind breakthrough additions to collection! Click on to discover everything you really need to know about these New Dimension launches—in just minutes",,,assets/images/LP1-1-Hero.jpg,,50,"New Dimension, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest. New Dimension Firm Fill Eye Creme, New Dimension Plump Fill Lip Treatment, New Dimension Tighten Tone Neck Chest, New Dimension Neck, New Dimension Chest, New Dimension video, What You Really Need to Know, What You Really Need to Know About New DImension, New Dimension Wave 2",,,,"
 US
 
 
-';'What You Really Need to Know About New Dimension';'Check It Out';;;;;;;;;;;;;;;;;;;
-2;1;'ND2 1.1 What You Really Need to Know About New Dimension';'ND2 1.1 What You Really Need to Know About New Dimension  ';'list_item';;'ND2 1.1 What You Really Need to Know About New Dimension  ';'What You Really Need to Know About New Dimension';;;;;;;;;;;;;;;;;;'assets/videos/LP1-1-Video-Mobile.mp4';'.';;;;;;;;;;;
-3;;'ND2 2.1 Do You Really Know How New Dimension Works';;'content_object';;;'Do You Really Know How New Dimension Works?';'Showing the three latest New Dimension launches is the perfect time to talk about New Dimension Shape + Fill Expert serum. Read these 5-star customer reviews from EsteeLauder.com, and see if you know what technology is behind the results they’re seeing!';'assets/image/LP2-1-Hero.jpg';;50;'New Dimension, New Dimension Shape Fill Expert Serum, New Dimension Serum, New Dimension Reviews, Serum, Reviews, New Dimension Quiz, New Dimension Serum Quiz, New Dimension Test, New Dimension Serum Test';;;;'US';'Do You Really Know How New Dimension Works? ';'Check It Out';;;;;;;;;;;;;;;;;;;
-4;3;'ND2 2.1 Do You Really Know How New Dimension Works';'ND2 2.1 Do You Really Know How New Dimension Works QA 1';'question_answer';;'ND2 2.1 Do You Really Know How New Dimension Works QA 1';'Do You Really Know How New Dimension Works?';;;;;;;;;;;;;;;;;;;;;'“I was blown away by this product! I’ve only been using it for three days and my skin is glowing!” - IlyWagner7, Age 25-35, Received a free trial of the product.
+",What You Really Need to Know About New Dimension,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+2,1,ND2 1.1 What You Really Need to Know About New Dimension,ND2 1.1 What You Really Need to Know About New Dimension  ,list_item,,ND2 1.1 What You Really Need to Know About New Dimension  ,What You Really Need to Know About New Dimension,,,,,,,,,,,,,,,,,,,,assets/videos/LP1-1-Video-Mobile.mp4,.,,,,,,,,,,,,,,,
+3,,ND2 2.1 Do You Really Know How New Dimension Works,,content_object,,,Do You Really Know How New Dimension Works?,"Showing the three latest New Dimension launches is the perfect time to talk about New Dimension Shape + Fill Expert serum. Read these 5-star customer reviews from EsteeLauder.com, and see if you know what technology is behind the results they’re seeing!",,,assets/image/LP2-1-Hero.jpg,,50,"New Dimension, New Dimension Shape Fill Expert Serum, New Dimension Serum, New Dimension Reviews, Serum, Reviews, New Dimension Quiz, New Dimension Serum Quiz, New Dimension Test, New Dimension Serum Test",,,,US,Do You Really Know How New Dimension Works? ,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+,,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works,question,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+4,3,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works QA 1,question_answer,,ND2 2.1 Do You Really Know How New Dimension Works QA 1,Do You Really Know How New Dimension Works?,,,,,,,,,,,,,,,,,,,,,,,,"“I was blown away by this product! I’ve only been using it for three days and my skin is glowing!” - IlyWagner7, Age 25-35, Received a free trial of the product.
 
-What technology is helping her see this result?';;;'[A. Shaping Technology and Skin Strengtheners,ANSWER_IMAGE,That’s not right. In just 3 days, the powerful Skin Refinishers dramatically transform skin’s texture, making it smoother, softer, and more radiant.,INCORRECT,1] 
+What technology is helping her see this result?",,,"[A. Shaping Technology and Skin Strengtheners,ANSWER_IMAGE,That’s not right. In just 3 days, the powerful Skin Refinishers dramatically transform skin’s texture, making it smoother, softer, and more radiant.,INCORRECT,1] 
 [B. Pro-Collagen Complex,ANSWER_IMAGE,That’s not right. In just 3 days, the powerful Skin Refinishers dramatically transform skin’s texture, making it smoother, softer, and more radiant.,INCORRECT, 2]
 [C. Powerful Skin Refinishers,ANSWER_IMAGE,You’re completely right! In just 3 days, the powerful Skin Refinishers dramatically transform skin’s texture, making it smoother, softer, and more radiant.,CORRECT,3]
 [D. Photo-Activated Lift Complex,ANSWER_IMAGE,That’s not right. In just 3 days, the powerful Skin Refinishers dramatically transform skin’s texture, making it smoother, softer, and more radiant,INCORRECT,4]
-';1;;;;;
-5;3;'ND2 2.1 Do You Really Know How New Dimension Works';'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'question_answer';;'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'Do You Really Know How New Dimension Works?';;;;;;;;;;;;;;;;;;;;;'“2 pumps of this silky, lightweight serum twice a day and my skin looks instantly firmer, tighter, and my wrinkles look more filled in! This is a great addition to my skincare regimen and I’m using it to slow down the aging clock. I LOVE the results!” Minniebella, Age 34-44.
+",,,,1,,,,,
+5,3,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works QA 2,question_answer,,ND2 2.1 Do You Really Know How New Dimension Works QA 2,Do You Really Know How New Dimension Works?,,,,,,,,,,,,,,,,,,,,,,,,"“2 pumps of this silky, lightweight serum twice a day and my skin looks instantly firmer, tighter, and my wrinkles look more filled in! This is a great addition to my skincare regimen and I’m using it to slow down the aging clock. I LOVE the results!” Minniebella, Age 34-44.
 
 Which technologies are helping her see these results?
-';;;'[A. Hydrating Complex, Shaping Technology, Skin Refinishers ,ANSWER_IMAGE,That’s not it. The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,INCORRECT,1]
+",,,"[A. Hydrating Complex, Shaping Technology, Skin Refinishers ,ANSWER_IMAGE,That’s not it. The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,INCORRECT,1]
 [B. Skin Strengtheners and Pro-Collagen Complex,ANSWER_IMAGE,That’s not it. The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,INCORRECT,2]
 [C. Shaping Technology, Pro-Collagen Complex and Skin Strengtheners,ANSWER_IMAGE,You’re a real expert! The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,CORRECT,3]
-[D. Hyaluronic Acid Essence and Skin Strengtheners,ANSWER_IMAGE,That’s not it. The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,INCORRECT, 4]';2;;;;;
-6;3;'ND2 2.1 Do You Really Know How New Dimension Works';'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'question_answer';;'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'Do You Really Know How New Dimension Works?';;;;;;;;;;;;;;;;;;;;;'“What a fabulous product, I love love love it! I saw results after 2 weeks, and I’m telling everyone they need this product ASAP.” Audra, Age 35-44, Received a free trial of the product.
+[D. Hyaluronic Acid Essence and Skin Strengtheners,ANSWER_IMAGE,That’s not it. The Shaping Technology, Pro-Collagen Complex, and Skin Strengtheners help to improve natural volume and structure, giving her all the great results she’s seeing.,INCORRECT, 4]",,,,2,,,,,
+6,3,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works QA 2,question_answer,,ND2 2.1 Do You Really Know How New Dimension Works QA 2,Do You Really Know How New Dimension Works?,,,,,,,,,,,,,,,,,,,,,,,,"“What a fabulous product, I love love love it! I saw results after 2 weeks, and I’m telling everyone they need this product ASAP.” Audra, Age 35-44, Received a free trial of the product.
 
 What technologies are helping her see these results?
-';;;'[A. Pro-Collagen Complex and Skin Strengtheners, Shaping Technology,ANSWER_IMAGE,You really know your New Dimension! The serum helps improve skin’s visible structure and smoothe the appearance of lines and wrinkles.,CORRECT,1]
+",,,"[A. Pro-Collagen Complex and Skin Strengtheners, Shaping Technology,ANSWER_IMAGE,You really know your New Dimension! The serum helps improve skin’s visible structure and smoothe the appearance of lines and wrinkles.,CORRECT,1]
 [B. Pro-Collagen Complex and Skin Refinishers,ANSWER_IMAGE,Sorry, that’s not it. The serum helps improve skin’s visible structure and smoothe the appearance of lines and wrinkles.,INCORRECT,2]
 [C. Hyaluronic Acid Essence, Hydrating Complex, Skin Refinishers ,ANSWER_IMAGE,Sorry, that’s not it. The serum helps improve skin’s visible structure and smoothe the appearance of lines and wrinkles.,INCORRECT,3]
 [D. Photo-Activated Lift Complex and Skin Strengtheners,ANSWER_IMAGE,Sorry, that’s not it. The serum helps improve skin’s visible structure and smoothe the appearance of lines and wrinkles.,INCORRECT,4]
-';3;;;;;
-7;3;'ND2 2.1 Do You Really Know How New Dimension Works';'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'question_answer';;'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'Do You Really Know How New Dimension Works?';;;;;;;;;;;;;;;;;;;;;'“After 2 weeks, I can see a difference in my skin—it’s smoother, radiant, even, and fuller! Bottom line: this is an amazing product!” - Nini1025, Age 25-34, Received a free trial of the product.
+",,,,3,,,,,
+7,3,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works QA 2,question_answer,,ND2 2.1 Do You Really Know How New Dimension Works QA 2,Do You Really Know How New Dimension Works?,,,,,,,,,,,,,,,,,,,,,,,,"“After 2 weeks, I can see a difference in my skin—it’s smoother, radiant, even, and fuller! Bottom line: this is an amazing product!” - Nini1025, Age 25-34, Received a free trial of the product.
 
 What technologies are helping her see these results?
-';;;'[A. Pro-Collagen Complex and Skin Strengtheners,ANSWER_IMAGE,That’s not right. Our-first-of-a-kind serum contains powerful skin refinishers that help reveal smoother, more even, and more radiant skin, and Shaping Technology that helps skin’s contours look more defined.,INCORRECT,1]
+",,,"[A. Pro-Collagen Complex and Skin Strengtheners,ANSWER_IMAGE,That’s not right. Our-first-of-a-kind serum contains powerful skin refinishers that help reveal smoother, more even, and more radiant skin, and Shaping Technology that helps skin’s contours look more defined.,INCORRECT,1]
 [B. Powerful Skin Refinishers and Shaping Technology ,ANSWER_IMAGE,Super! Our-first-of-a-kind serum contains powerful skin refinishers that help reveal smoother, more even, and more radiant skin, and Shaping Technology that helps skin’s contours look more defined.,CORRECT,2]
 [C. Powerful Skin Refinishers and Skin Strengtheners,ANSWER_IMAGE,That’s not right. Our-first-of-a-kind serum contains powerful skin refinishers that help reveal smoother, more even, and more radiant skin, and Shaping Technology that helps skin’s contours look more defined.,INCORRECT,3]
 [D. Skin Brighteners and Pro-Collagen Complex,ANSWER_IMAGE,That’s not right. Our-first-of-a-kind serum contains powerful skin refinishers that help reveal smoother, more even, and more radiant skin, and Shaping Technology that helps skin’s contours look more defined.,INCORRECT,4]
-';4;;;;;
-8;3;'ND2 2.1 Do You Really Know How New Dimension Works';'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'question_answer';;'ND2 2.1 Do You Really Know How New Dimension Works QA 2';'Do You Really Know How New Dimension Works?';;;;;;;;;;;;;;;;;;;;;'“This product is unlike any other. It’s brought volume to my face, and my contours look more defined! I never thought a beauty product could achieve that!” - Baturra, Age 45-54, Received a free trial of the product.
+",,,,4,,,,,
+8,3,ND2 2.1 Do You Really Know How New Dimension Works,ND2 2.1 Do You Really Know How New Dimension Works QA 2,question_answer,,ND2 2.1 Do You Really Know How New Dimension Works QA 2,Do You Really Know How New Dimension Works?,,,,,,,,,,,,,,,,,,,,,,,,"“This product is unlike any other. It’s brought volume to my face, and my contours look more defined! I never thought a beauty product could achieve that!” - Baturra, Age 45-54, Received a free trial of the product.
 
 What technologies are helping her see these results?
-';;;'[A. Shaping Technology, Pro-collagen Complex and Skin Strengtheners,ANSWER_IMAGE,Perfect! This amazing new product helps the look of skin’s natural volume and structure.,CORRECT,1]
+",,,"[A. Shaping Technology, Pro-collagen Complex and Skin Strengtheners,ANSWER_IMAGE,Perfect! This amazing new product helps the look of skin’s natural volume and structure.,CORRECT,1]
 [B. Skin Refinishers, Pro-collagen Complex, Photo-Activated Lift Complex,ANSWER_IMAGE,That’s not right. This amazing new product helps the look of skin’s natural volume and structure.,INCORRECT,2]
 [C. Skin Strengtheners, Collagen Support Technology, Skin Refinishers,ANSWER_IMAGE,That’s not right. This amazing new product helps the look of skin’s natural volume and structure.,INCORRECT,3]
 [D. Hyaluronic Acid, Shaping Technology, Pro-Collagen Complex,ANSWER_IMAGE,That’s not right. This amazing new product helps the look of skin’s natural volume and structure.,INCORRECT,4]
-';5;;;;;
-9;;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';;'content_object';;;'5 Proven Tips to Make Talking About New Dimension Easier ';'We’ve been selling New Dimension Shape + Fill Expert Serum for months, and we’ve definitely picked up some tested and proven tips (from you) along the way. Here’s what really works when talking about this breakthough serum with your customers. Try it!';'assets/images/LP2-1-Hero.jpg';;50;'New Dimension, New Dimension Serum, New Dimension Shape Fill Serum, Selling New Dimension, Talking About New Dimension, Tips, New Dimension Tips, New Dimension Talking Tips, new Dimension Selling Tips, New Dimension Selling Tool, New Dimension Headlines, New DImension Technology, New Dimension Gestures, Mirror, Mirror Gestures, Gestures, Beautiful Skin for Life, Contour Coaching, 3 Minute Beauty Contour Coaching';;;;'US';'5 Proven Tips to Make Talking About New Dimension Easier';'Check It Out';;;;;;;;;;;;;;;;;;;
-10;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 1 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 1 ';'5 Proven Tips to Make Talking About New Dimension Easier ';;;;;;;;;;;;;;;;;;;'<p><strong>#1 CUSTOMERS LOVE YOUR TESTIMONIALS</strong></p><p>If you haven&rsquo;t started using New Dimension Shape + Fill Expert serum, START NOW! Grab a bottle (even if you don&rsquo;t think it&rsquo;s for you) and take our 2-week challenge.&nbsp;</p><p>Use it every morning and evening for the next two weeks and track your results. Then, tell customers what you think (and notice the the compliments you&rsquo;re getting!)&mdash;nothing, and we mean nothing, sells a product better than your review.&nbsp;</p>
-';1;;;;;;;;;;
-11;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 2 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 2 ';'5 Proven Tips to Make Talking About New Dimension Easier ';;;;;;;;;;;;;;;;;;;'#2 HOOK HER WITH A HEADLINE 
+",,,,5,,,,,
+9,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,,content_object,,,5 Proven Tips to Make Talking About New Dimension Easier ,"We’ve been selling New Dimension Shape + Fill Expert Serum for months, and we’ve definitely picked up some tested and proven tips (from you) along the way. Here’s what really works when talking about this breakthough serum with your customers. Try it!",,,assets/images/LP2-1-Hero.jpg,,50,"New Dimension, New Dimension Serum, New Dimension Shape Fill Serum, Selling New Dimension, Talking About New Dimension, Tips, New Dimension Tips, New Dimension Talking Tips, new Dimension Selling Tips, New Dimension Selling Tool, New Dimension Headlines, New DImension Technology, New Dimension Gestures, Mirror, Mirror Gestures, Gestures, Beautiful Skin for Life, Contour Coaching, 3 Minute Beauty Contour Coaching",,,,US,5 Proven Tips to Make Talking About New Dimension Easier,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+10,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 1 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 1 ,5 Proven Tips to Make Talking About New Dimension Easier ,,,,,,,,,,,,,,,,,,,,,"<p><strong>#1 CUSTOMERS LOVE YOUR TESTIMONIALS</strong></p><p>If you haven&rsquo;t started using New Dimension Shape + Fill Expert serum, START NOW! Grab a bottle (even if you don&rsquo;t think it&rsquo;s for you) and take our 2-week challenge.&nbsp;</p><p>Use it every morning and evening for the next two weeks and track your results. Then, tell customers what you think (and notice the the compliments you&rsquo;re getting!)&mdash;nothing, and we mean nothing, sells a product better than your review.&nbsp;</p>
+",1,,,,,,,,,,,,,,
+11,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 2 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 2 ,5 Proven Tips to Make Talking About New Dimension Easier ,,,,,,,,,,,,,,,,,,,,,"#2 HOOK HER WITH A HEADLINE 
 
 We asked Beauty Advisors what works when introducing New Dimension and it’s quick headlines.  Here’s the top 4 headlines to start using now—
 
@@ -56,16 +57,16 @@ We asked Beauty Advisors what works when introducing New Dimension and it’s qu
 • See visible results—in just 3 days. And the results get even better—over time
 • Women love it. Read the rave reviews on esteelauder.com!
 P.S. These headlines are now on your updated New Dimension selling tool.
-';2;;;;;;;;;;
-12;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 3 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 3';'5 Proven Tips to Make Talking About New Dimension Easier ';;;;;;;;;;;;;;;;;;;'#3 TELL HER WHY IT’S SUCH AN INNOVATION
+",2,,,,,,,,,,,,,,
+12,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 3 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 3,5 Proven Tips to Make Talking About New Dimension Easier ,,,,,,,,,,,,,,,,,,,,,"#3 TELL HER WHY IT’S SUCH AN INNOVATION
 
 Over time our facial contours can begin to flatten out. We naturally lose the shape and fill, contouring and elasticity that give our faces a natural look of dimension.  New Dimension Shape + Fill Expert Serum firms and helps improve visible structure and volume to help your skin’s natural contours look more defined.
-';3;;;;;;;;;;
-13;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 4 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 4 ';'5 Proven Tips to Make Talking About New Dimension Easier ';;;;;;;;;;;;;;;;;;;'#4 USE YOUR TOOL…FOR HER! 
+",3,,,,,,,,,,,,,,
+13,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 4 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 4 ,5 Proven Tips to Make Talking About New Dimension Easier ,,,,,,,,,,,,,,,,,,,,,"#4 USE YOUR TOOL…FOR HER! 
 
 We’ve heard from some Beauty Advisors that they don’t need the tool with their customers. But guess what? Customers said the opposite! Customers told us they like seeing benefits in print. So the tool is really for her.
-';4;;;;;;;;;;
-14;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 5 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 5 ';'5 Proven Tips to Make Talking About New Dimension Easier ';'We’ve been selling New Dimension Shape + Fill Expert Serum for months, and we’ve definitely picked up some tested and proven tips (from you) along the way. Here’s what really works when talking about this breakthough serum with your customers. Try it!';;;;;;;;;;;;;;;;;;'#5 USE THE MIRROR AND GESTURES—IT WORKS.
+",4,,,,,,,,,,,,,,
+14,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 5 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 5 ,5 Proven Tips to Make Talking About New Dimension Easier ,"We’ve been selling New Dimension Shape + Fill Expert Serum for months, and we’ve definitely picked up some tested and proven tips (from you) along the way. Here’s what really works when talking about this breakthough serum with your customers. Try it!",,,,,,,,,,,,,,,,,,,,"#5 USE THE MIRROR AND GESTURES—IT WORKS.
 
 Talking about volume + structure and skin can sound like something out of a sci-fi movie to many customers. To get real—use your gestures. Simply hand your customer a mirror and ask her: 
 
@@ -78,8 +79,8 @@ Talking about volume + structure and skin can sound like something out of a sci-
 [Glide and lift hands along jawline to ear to explain structure]
 
 If she says, yes—New Dimension Shape + Fill Expert Serum is right for her. It’s that easy! 
-';5;;;;;;;;;;
-15;9;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ';'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 6 ';'list_item';;'ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 6 ';'5 Proven Tips to Make Talking About New Dimension Easier ';;;;;;;;;;;;;;;;;;;'BONUS: HOW TO REALLY WIN HER OVER
+",5,,,,,,,,,,,,,,
+15,9,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier ,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 6 ,list_item,,ND2 2.2 5 Proven Tips to Make Talking About New Dimension Easier - List 6 ,5 Proven Tips to Make Talking About New Dimension Easier ,,,,,,,,,,,,,,,,,,,,,"BONUS: HOW TO REALLY WIN HER OVER
 
 It’s about experience, experience, experience! 
 
@@ -88,14 +89,14 @@ Choose one of the two experiences she can’t get anywhere else:
 1. Share how New Dimension fits into her routine by introducing the Beautiful Skin for Life conversation.
 
 2. Show her how she can see contours instantly by teaching her our 3 Minute Beauty Contour Coaching techniques.
-';6;;;;;;;;;;
-16;;'ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ';;'content_object';;'ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ';'Perfectionist versus New Dimension—Which One is Right For Her? ';'Perfectionist and New Dimension serums both have amazing benefits, but some Beauty Advisors have said that it’s sometimes difficult to know which one to recommend. Read this quick guide to help you figure out which serum is right for her! ';'assets/images/LP2-3-Hero.jpg';;50;'Perfectionist, New Dimension, Perfectionist CP R Serum, New Dimension Serum, New Dimension Shape Fill Serum, Difference Between New Dimension and Perfectionist, Difference Between Perfectionist and New Dimension, Difference Perfectionist New Dimension';;;;'US';'Perfectionist versus New Dimension—Which One is Right For Her? ';'Check It Out';;;;;;;;;;;;;;;;;;;
-17;16;'ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ';'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 1 ';'list_item';;'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 1 ';'Perfectionist versus New Dimension—Which One is Right For Her? ';;;;;;;;;;;;;;;;;;;'Start with the Beautiful Skin For Life conversation to find out her skincare wishes. When she is looking in the mirror, show her the gestures for volume and structure. ';1;;;;;;;;;;
-18;16;'ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ';'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 2 ';'list_item';;'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 2 ';'Perfectionist versus New Dimension—Which One is Right For Her? ';;;;;;;;;;;;;;;;;;;'If her wish is for more visible volume/structure—show her New Dimension and explain the benefits.
+",6,,,,,,,,,,,,,,
+16,,ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ,,content_object,,ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ,Perfectionist versus New Dimension—Which One is Right For Her? ,"Perfectionist and New Dimension serums both have amazing benefits, but some Beauty Advisors have said that it’s sometimes difficult to know which one to recommend. Read this quick guide to help you figure out which serum is right for her! ",,,assets/images/LP2-3-Hero.jpg,,50,"Perfectionist, New Dimension, Perfectionist CP R Serum, New Dimension Serum, New Dimension Shape Fill Serum, Difference Between New Dimension and Perfectionist, Difference Between Perfectionist and New Dimension, Difference Perfectionist New Dimension",,,,US,Perfectionist versus New Dimension—Which One is Right For Her? ,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+17,16,ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 1 ,list_item,,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 1 ,Perfectionist versus New Dimension—Which One is Right For Her? ,,,,,,,,,,,,,,,,,,,,,"Start with the Beautiful Skin For Life conversation to find out her skincare wishes. When she is looking in the mirror, show her the gestures for volume and structure. ",1,,,,,,,,,,,,,,
+18,16,ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 2 ,list_item,,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 2 ,Perfectionist versus New Dimension—Which One is Right For Her? ,,,,,,,,,,,,,,,,,,,,,"If her wish is for more visible volume/structure—show her New Dimension and explain the benefits.
 
 If her wish is to address lines/wrinkles, demonstrate both serums. Point out the difference in texture/finish of each as well as the benefits. Let her decide based on her preference. 
-';2;;;;;;;;;;
-19;16;'ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ';'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 3 ';'list_item';;'ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 3 ';'Perfectionist versus New Dimension—Which One is Right For Her? ';;;;;;;;;;;;;;;;;;;'Texture:
+",2,,,,,,,,,,,,,,
+19,16,ND2 2.3 5 Perfectionist versus New Dimension—Which One is Right For Her ,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 3 ,list_item,,ND2 2.3 Perfectionist versus New Dimension—Which One is Right For Her- List 3 ,Perfectionist versus New Dimension—Which One is Right For Her? ,,,,,,,,,,,,,,,,,,,,,"Texture:
 New Dimension Shape + Fill Expert Serum: Silky
 Perfectionist [CP+R] Serum: Velvety
 Finish:
@@ -121,50 +122,53 @@ Shaping Technology
 Perfectionist [CP+R] Serum: 
 CPR-75  Technology
 
-';3;;;;;;;;;;
-20;;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';;'content_object';;;'What’s New! 3 Exciting New Dimension Innovations';'We have three industry-first New Dimension innovations heading to your counters—a Firm + Fill Eye System, Plump + Fill Lip Treatment, and a Tighten + Tone Neck/Chest Treatment. 
+",3,,,,,,,,,,,,,,
+20,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,,content_object,,,What’s New! 3 Exciting New Dimension Innovations,"We have three industry-first New Dimension innovations heading to your counters—a Firm + Fill Eye System, Plump + Fill Lip Treatment, and a Tighten + Tone Neck/Chest Treatment. 
 Guess what? All three of these targeted treatments— 
 • Are powered by the powerful technologies in New Dimension Shape + Fill Expert serum 
 • Give you instant and dramatic long-term benefits
 • Are first-of-its kind and unlike anything in the industry!
 Now click each product to find out what else you really need to know.
-';'assets/image/LP3-1-Hero.jpg';;50;'New Dimension, New Dimension Firm Fill Eye System, New Dimension Eye, New Dimension Firm Fill, Firm Fill Eye, Firm Fill, New Dimension Tighten Tone Neck Chest Treatment, New Dimension Neck Chest, New Dimension Neck, New Dimension Chest, New Dimension TIghten Tone, New Dimension Tighten, New Dimension Tone, TIghten Tone, New Dimension Plump Fill Lip Treatment, New Dimension Lip, New Dimension Plump Fill, Plump Fill, New Dimension product information, New Dimension what you need to know, New DImension need to know';;;;'US';'What’s New! 3 Exciting New Dimension Innovations';'Check It Out';;;;;;;;;;;;;;;;;;;
-21;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION FIRM + FILL EYE SYSTEM
-';;1;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDEye-Main.jpg';'F';8;'What will it really do for my eyes? 
+",,,assets/image/LP3-1-Hero.jpg,,50,"New Dimension, New Dimension Firm Fill Eye System, New Dimension Eye, New Dimension Firm Fill, Firm Fill Eye, Firm Fill, New Dimension Tighten Tone Neck Chest Treatment, New Dimension Neck Chest, New Dimension Neck, New Dimension Chest, New Dimension TIghten Tone, New Dimension Tighten, New Dimension Tone, TIghten Tone, New Dimension Plump Fill Lip Treatment, New Dimension Lip, New Dimension Plump Fill, Plump Fill, New Dimension product information, New Dimension what you need to know, New DImension need to know",,,,US,What’s New! 3 Exciting New Dimension Innovations,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+,,,,hot_spot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+21,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1,What’s New! 3 Exciting New Dimension Innovations,"NEW DIMENSION FIRM + FILL EYE SYSTEM
+",,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDEye-Main.jpg,F,8,"What will it really do for my eyes? 
 
 We’ve broken the rules on what an eye creme can do. This revolutionary 2-step eye treatment goes beyond hydration by visibly transforming the look of your eye area—imagine addressing virtually every eye wish all in one!
-';1
-22;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION FIRM + FILL EYE SYSTEM
-';;1;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDEye-Main.jpg';'J';11;'How fast will it really work? 
+",1
+22,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 1,What’s New! 3 Exciting New Dimension Innovations,"NEW DIMENSION FIRM + FILL EYE SYSTEM
+",,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDEye-Main.jpg,J,11,"How fast will it really work? 
 
 Instantly, the eye area will feel a rush of hydration and a tightening sensation, that’s the Firm working. Then, the Fill smoothes lines and wrinkles—eyes will look transformed.
 
 Over time, you’ll see brighter, more lifted and contoured-looking eyes, dark circles appear reduced.  
-';2
-23;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION PLUMP + FILL LIP TREATMENT';;2;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDLip-Main.jpg';'H';9;'What will it really do for my lips? 
+",2
+,,,,hot_spot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+23,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2,What’s New! 3 Exciting New Dimension Innovations,NEW DIMENSION PLUMP + FILL LIP TREATMENT,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDLip-Main.jpg,H,9,"What will it really do for my lips? 
 
 Our first-of-its-kind lip treatment will give you a luscious, plumped look.
 
 First, the serum, which is packed with serious skincare benefits, will smooth lines around the lips, help prevent lipstick from feathering for up to 8 hours and fill and define lips instantly. Then, the addictive balm, loaded with hyaluronic acid, will instantly condition and plump lips, leaving it with a beautiful shine.
-';1
-24;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION PLUMP + FILL LIP TREATMENT';;2;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDLip-Main.jpg';'I';14;'How fast will it really work? 
+",1
+24,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 2,What’s New! 3 Exciting New Dimension Innovations,NEW DIMENSION PLUMP + FILL LIP TREATMENT,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDLip-Main.jpg,I,14,"How fast will it really work? 
 
 Instantly, lip lines disappear and lips look enhanced, contoured, and defined. Lipcolor is prevented from feathering for up to 8 hours. 
 
 Over time, see less lines, and get ultra-hydrated, super smooth, and naturally fuller-looking lips.
-';2
-25;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT';;3;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDNeckChest-Main.jpg';'F';7;'What will it do?
+",2
+,,,,hot_spot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+25,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3,What’s New! 3 Exciting New Dimension Innovations,NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDNeckChest-Main.jpg,F,7,"What will it do?
 
 This advanced gravity-fighting treatment will lift and firm the look of the delicate neck/chest area, stopping the look of creasing and crepiness. Plus, it comes with our exclusive massage tool, which helps to increase microcirculation to visibly energize dull, dry skin. 
 Think neck/chest cremes are just for mature customers? Think again. “Tech neck”, the lines we get from looking down at our phones all day, affects us all!
-';1
-26;21;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations';'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3';'hot_spot';;'ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3';'What’s New! 3 Exciting New Dimension Innovations';'NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT';;3;;;;;;;;;;;;;;;;;;;;;;;'assets/image/LP3-1-NDNeckChest-Main.jpg';;;'How fast is it going to work?
+",1
+26,21,ND2 3.1 What’s New 3 Exciting New Dimension Innovations,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3,hot_spot_item,,ND2 3.1 What’s New 3 Exciting New Dimension Innovations Hot Spot 3,What’s New! 3 Exciting New Dimension Innovations,NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,assets/image/LP3-1-NDNeckChest-Main.jpg,,,"How fast is it going to work?
 Instantly, skin is intensely hydrated, brighter, and silky smooth. 
 
 Over time, you’ll see firmer, fresher, and more lifted-looking skin than you ever thought possible.  
-';2
-27;;'ND2 3.2 The Application Tips You Really Need to Know';;'content_object';;;'The Application Tips You Really Need to Know';;'assets/images/LP3-2-Hero.jpg';;50;'New Dimension application tips, New Dimension application, New Dimension how to apply, New Dimension how to, New Dimension tips, New Dimension, New Dimension gifs';;;;'US';'The Application Tips You Really Need to Know';'Check it Out';;;;;;;;;;;;;;;;;;;
-28;27;'ND2 3.2 The Application Tips You Really Need to Know';'ND2 3.2 The Application Tips You Really Need to Know - List 1';'list_item';;'ND2 3.2 The Application Tips You Really Need to Know - List 1';'The Application Tips You Really Need to Know';'NEW DIMENSION FIRM + FILL EYE SYSTEM';;;;;;;;;;;;;;;;'assets/images/LP3-2-NDEyeHowto-Main.gif ';;'How do I apply it?
+",2
+27,,ND2 3.2 The Application Tips You Really Need to Know,,content_object,,,The Application Tips You Really Need to Know,,,,assets/images/LP3-2-Hero.jpg,,50,"New Dimension application tips, New Dimension application, New Dimension how to apply, New Dimension how to, New Dimension tips, New Dimension, New Dimension gifs",,,,US,The Application Tips You Really Need to Know,Check it Out,,,,,,,,,,,,,,,,,,,,,,,
+28,27,ND2 3.2 The Application Tips You Really Need to Know,ND2 3.2 The Application Tips You Really Need to Know - List 1,list_item,,ND2 3.2 The Application Tips You Really Need to Know - List 1,The Application Tips You Really Need to Know,NEW DIMENSION FIRM + FILL EYE SYSTEM,,,,,,,,,,,,,,,,,,assets/images/LP3-2-NDEyeHowto-Main.gif ,,"How do I apply it?
 Special twist-and-lock lids on the jars protect the air-sensitive formulas inside—to open or close, simply press down and twist. Be sure the lids are locked into place after every use.
 
 Step 1: Firm 
@@ -183,8 +187,8 @@ Pro tips:
 • Guess what? This eye system will instantly brighten the eye area—you may not even need a concealer.
 
 • If you do wish to use a concealer, use a brush. You can also use a clean fingertip (not the one you used for the Eye System) and apply with a patting motion. This helps keep the Eye System in place for best results.
-';1;;;;;;;;;;
-29;27;'ND2 3.2 The Application Tips You Really Need to Know';'ND2 3.2 The Application Tips You Really Need to Know - List 2';'list_item';;'ND2 3.2 The Application Tips You Really Need to Know - List 2';'The Application Tips You Really Need to Know';'NEW DIMENSION PLUMP + FILL LIP TREATMENT';;;;;;;;;;;;;;;;'assets/images/LP3-2-NDLipHowto.gif';;'How do I apply it?
+",1,,,,,,,,,,,,,,
+29,27,ND2 3.2 The Application Tips You Really Need to Know,ND2 3.2 The Application Tips You Really Need to Know - List 2,list_item,,ND2 3.2 The Application Tips You Really Need to Know - List 2,The Application Tips You Really Need to Know,NEW DIMENSION PLUMP + FILL LIP TREATMENT,,,,,,,,,,,,,,,,,,assets/images/LP3-2-NDLipHowto.gif,,"How do I apply it?
 
 Step 1: Expert Filler 
 Apply serum around lips, just outside the lipline. Blend with fingertips. Use AM and PM.
@@ -194,82 +198,82 @@ Apply balm directly to lips, as often as desired. Follow with lipcolor if desire
 
 Pro tip:
 If applying lip liner, apply it before the hydrating Expert Plumper balm. Then, follow with lip color. 
-';2;;;;;;;;;;
-30;27;'ND2 3.2 The Application Tips You Really Need to Know';'ND2 3.2 The Application Tips You Really Need to Know - List 3';'list_item';;'ND2 3.2 The Application Tips You Really Need to Know - List 3';'The Application Tips You Really Need to Know';'NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT';;;;;;;;;;;;;;;;'assets/images/LP3-2-NDNeckChestHowto.gif';;'How do I apply it? 
+",2,,,,,,,,,,,,,,
+30,27,ND2 3.2 The Application Tips You Really Need to Know,ND2 3.2 The Application Tips You Really Need to Know - List 3,list_item,,ND2 3.2 The Application Tips You Really Need to Know - List 3,The Application Tips You Really Need to Know,NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT,,,,,,,,,,,,,,,,,,assets/images/LP3-2-NDNeckChestHowto.gif,,"How do I apply it? 
 
 AM and PM, apply generously over neck and chest area with your fingertips. Add a small amount directly onto the custom massager to ensure a smooth glide, then energize skin using 3 simple motions: 
 
 1. Start at center of chest and glide up one side of neck to just under chin, then back to ear, then down to collarbone. Repeat on same side, then twice on other side. 
 
-2. Sweep the massager back and forth across your upper chest in a shallow "smile" shape. 
+2. Sweep the massager back and forth across your upper chest in a shallow ""smile"" shape. 
 
 3. Finish by sweeping in a curving V shape from one shoulder to the other, dipping down in the center, then back. Clean the applicator thoroughly with tissue, making sure to remove all visible traces of the creme.
 
 Pro tip:
 Demonstrate the application technique on half of your customer’s neck so she can see and feel the difference!
-';3;;;;;;;;;;
-31;;'ND2 3.3 The Top 5 Customer Questions—Answered';;'content_object';;;'The Top 5 Customer Questions—Answered!';'Customers are sure to have questions about these high performance formulas. Read on to make sure you have the expert answers!';'assets/images/LP3-3-Hero.jpg';;50;'New Dimension customer questions, New Dimension, customer questions, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest, New Dimension Neck, New Dimension Chest, questions';;;;;'The Top 5 Customer Questions—Answered!';'Check It Out';;;;;;;;;;;;;;;;;;;
-32;31;'ND2 3.3 The Top 5 Customer Questions—Answered';'ND2 3.3 The Top 5 Customer Questions—Answered - List 1';'list_item';;'ND2 3.3 The Top 5 Customer Questions—Answered - List 1';'The Top 5 Customer Questions—Answered!';'NEW DIMENSION FIRM + FILL EYE SYSTEM';;;;;;;;;;;;;;;;;;'1. Do I need to use an additional eye creme with it?
+",3,,,,,,,,,,,,,,
+31,,ND2 3.3 The Top 5 Customer Questions—Answered,,content_object,,,The Top 5 Customer Questions—Answered!,Customers are sure to have questions about these high performance formulas. Read on to make sure you have the expert answers!,,,assets/images/LP3-3-Hero.jpg,,50,"New Dimension customer questions, New Dimension, customer questions, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest, New Dimension Neck, New Dimension Chest, questions",,,,,The Top 5 Customer Questions—Answered!,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+32,31,ND2 3.3 The Top 5 Customer Questions—Answered,ND2 3.3 The Top 5 Customer Questions—Answered - List 1,list_item,,ND2 3.3 The Top 5 Customer Questions—Answered - List 1,The Top 5 Customer Questions—Answered!,NEW DIMENSION FIRM + FILL EYE SYSTEM,,,,,,,,,,,,,,,,,,,,"1. Do I need to use an additional eye creme with it?
 No, it’s not necessary. This 2-step expert eye serum is all you need for a more hydrated, firmer, and more contoured eye area. However, if her eye area appears dry or she wishes for more hydration, recommend applying Advanced Night Repair Eye Serum first for an extra boost of hydration and repair. 
 
 2. Can I apply concealer on top of New Dimension Firm + Fill Eye System?
 When applying concealer on top, suggest using a formula with more “slip”, like Double Wear Stay-in-Place Flawless Wear Concealer. Recommend using a Concealer Brush to apply in a patting versus a sweeping motion—that way, she won’t move the Filler she just applied. If she wants to use her finger, she should apply her concealer with a clean finger, not the one she just applied her Filler with. 
-';1;;;;;;;;;;
-33;31;'ND2 3.3 The Top 5 Customer Questions—Answered';'ND2 3.3 The Top 5 Customer Questions—Answered - List 2';'list_item';;'ND2 3.3 The Top 5 Customer Questions—Answered - List 2';'The Top 5 Customer Questions—Answered!';'NEW DIMENSION PLUMP + FILL LIP TREATMENT';;;;;;;;;;;;;;;;;;'3. Can I apply lip color on top of the treatment?
+",1,,,,,,,,,,,,,,
+33,31,ND2 3.3 The Top 5 Customer Questions—Answered,ND2 3.3 The Top 5 Customer Questions—Answered - List 2,list_item,,ND2 3.3 The Top 5 Customer Questions—Answered - List 2,The Top 5 Customer Questions—Answered!,NEW DIMENSION PLUMP + FILL LIP TREATMENT,,,,,,,,,,,,,,,,,,,,"3. Can I apply lip color on top of the treatment?
 Of course! Any lip color can be applied directly on top of the New Dimension treatment balm. However, if she’s using a lip liner, recommend applying the lip liner first, then apply the treatment balm—because of its incredible hydration, the moisture it gives lips makes it harder to apply lip liner on top. Then, follow with your lip color. 
-';2;;;;;;;;;;
-34;31;'ND2 3.3 The Top 5 Customer Questions—Answered';'ND2 3.3 The Top 5 Customer Questions—Answered - List 3';'list_item';;'ND2 3.3 The Top 5 Customer Questions—Answered - List 3';'The Top 5 Customer Questions—Answered!';'NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT';;;;;;;;;;;;;;;;;;'4. Can I use New Dimension Tighten + Tone Neck/Chest Treatment on my face?
+",2,,,,,,,,,,,,,,
+34,31,ND2 3.3 The Top 5 Customer Questions—Answered,ND2 3.3 The Top 5 Customer Questions—Answered - List 3,list_item,,ND2 3.3 The Top 5 Customer Questions—Answered - List 3,The Top 5 Customer Questions—Answered!,NEW DIMENSION TIGHTEN + TONE NECK/CHEST TREATMENT,,,,,,,,,,,,,,,,,,,,"4. Can I use New Dimension Tighten + Tone Neck/Chest Treatment on my face?
 No, it’s not recommended. Because it’s specially formulated for the delicate neck/chest area, The New Dimension Tighten + Tone Neck/Chest Treatment has extra “slip” and emolliency so it doesn’t tug on skin, especially when she uses the massage tool. For facial skin, recommend that she use New Dimension Shape + Fill Expert Serum and a moisturizer that suits her skin wishes. 
 
 5. Would a younger customer benefit from using New Dimension Tighten + Tone Neck/Chest Treatment?
 Yes, the neck and chest area is one of the key areas to show signs of aging—it’s never too early to take extra care of this delicate skin. Plus, “tech neck”, the lines we get from looking down at our phones all day, affects all customers!
-';3;;;;;;;;;;
-35;;'ND2 3.4 Test Yourself The Latest New Dimension Additions';;'content_object';;;'Test Yourself: The Latest New Dimension Additions';'Think you’ve mastered  everything you really need to know about the latest New Dimension launches? Take this quick quiz and find out!';'assets/image/LP3-4-Hero.jpg';;50;'New Dimension quiz, New Dimension test, New Dimension, New Dimension Additions, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest, New Dimension Firm Fill Eye System, New Dimension Plump Fill Lip Treatment, New Dimension Tighten Tone Neck Chest Treatment';;;;'US';'Test Yourself: The Latest New Dimension Additions';'Check It Out';;;;;;;;;;;;;;;;;;;
-36;35;'ND2 3.4 Test Yourself The Latest New Dimension Additions';'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 1 ';'question_answer';;'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 1 ';'Test Yourself: The Latest New Dimension Additions';;;;;;;;;;;;;;;;;;;;;'1. What will New Dimension Firm + Fill Eye System do for her eye area?';;;'[A. Fill & smooth the look of lines, lift, eliminate flakiness ,ANSWER_IMAGE,No, that’s not it. New Dimension Firm + Fill Eye System addresses virtually every eye wish—that’s why she’ll love it!,INCORRECT,1]
+",3,,,,,,,,,,,,,,
+35,,ND2 3.4 Test Yourself The Latest New Dimension Additions,,content_object,,,Test Yourself: The Latest New Dimension Additions,Think you’ve mastered  everything you really need to know about the latest New Dimension launches? Take this quick quiz and find out!,,,assets/image/LP3-4-Hero.jpg,,50,"New Dimension quiz, New Dimension test, New Dimension, New Dimension Additions, New Dimension Eye, New Dimension Lip, New Dimension Neck Chest, New Dimension Firm Fill Eye System, New Dimension Plump Fill Lip Treatment, New Dimension Tighten Tone Neck Chest Treatment",,,,US,Test Yourself: The Latest New Dimension Additions,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+36,35,ND2 3.4 Test Yourself The Latest New Dimension Additions,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 1 ,question_answer,,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 1 ,Test Yourself: The Latest New Dimension Additions,,,,,,,,,,,,,,,,,,,,,,,,1. What will New Dimension Firm + Fill Eye System do for her eye area?,,,"[A. Fill & smooth the look of lines, lift, eliminate flakiness ,ANSWER_IMAGE,No, that’s not it. New Dimension Firm + Fill Eye System addresses virtually every eye wish—that’s why she’ll love it!,INCORRECT,1]
 [B. Brighten, even, reduce redness, fill & smooth the look of lines ,ANSWER_IMAGE,No, that’s not it. New Dimension Firm + Fill Eye System addresses virtually every eye wish—that’s why she’ll love it!,INCORRECT,2]
 [C. Even, brighten, reduce the look of spots, eliminate flakiness ,ANSWER_IMAGE,No, that’s not it. New Dimension Firm + Fill Eye System addresses virtually every eye wish—that’s why she’ll love it!,INCORRECT,3]
 [D. Lift, brighten, fill & smooth the look of lines, reduce the appearance of dark circles,ANSWER_IMAGE,You’re a New Dimension master! New Dimension Firm + Fill Eye System addresses virtually every eye wish—that’s why she’ll love it!,CORRECT,4]
-';1;;;;;
-37;35;'ND2 3.4 Test Yourself The Latest New Dimension Additions';'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 2';'question_answer';;'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 2';'Test Yourself: The Latest New Dimension Additions';;;;;;;;;;;;;;;;;;;;;'2. What are the two important benefits of New Dimension Plump + Fill Lip Treatment that you should share with every customer?';;;'[A. Minimizes lines around the lip, gradually tints lips,ANSWER_IMAGE,That’s not it. The New Dimension Plump + Fill Lip Treatment contains powerful technologies that help banish lines around the lips, which helps prevent lipstick from feathering and defines the look of lip contours.,INCORRECT,1]
+",,,,1,,,,,
+37,35,ND2 3.4 Test Yourself The Latest New Dimension Additions,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 2,question_answer,,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 2,Test Yourself: The Latest New Dimension Additions,,,,,,,,,,,,,,,,,,,,,,,,2. What are the two important benefits of New Dimension Plump + Fill Lip Treatment that you should share with every customer?,,,"[A. Minimizes lines around the lip, gradually tints lips,ANSWER_IMAGE,That’s not it. The New Dimension Plump + Fill Lip Treatment contains powerful technologies that help banish lines around the lips, which helps prevent lipstick from feathering and defines the look of lip contours.,INCORRECT,1]
 [B. Prevents lipstick feathering for up to 8 hours, minimizes lines around the lip area,ANSWER_IMAGE,That’s right! The New Dimension Plump + Fill Lip Treatment contains powerful technologies that help banish lines around the lips, which helps prevent lipstick from feathering and defines the look of lip contours.,CORRECT,2]
 [C. Immediately tightens and firms lip area, removes any flaky skin,ANSWER_IMAGE,That’s not it. The New Dimension Plump + Fill Lip Treatment contains powerful technologies that help banish lines around the lips, which helps prevent lipstick from feathering and defines the look of lip contours.,INCORRECT,3]
 [D. Gradually tints and plumps lips for up to 8 hours,ANSWER_IMAGE,That’s not it. The New Dimension Plump + Fill Lip Treatment contains powerful technologies that help banish lines around the lips, which helps prevent lipstick from feathering and defines the look of lip contours.,INCORRECT,4]
-';2;;;;;
-38;35;'ND2 3.4 Test Yourself The Latest New Dimension Additions';'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 3';'question_answer';;'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 3';'Test Yourself: The Latest New Dimension Additions';;;;;;;;;;;;;;;;;;;;;'3. Why is the New Dimension Tighten + Tone Neck/Chest Treatment a great product for customers of any age?';;;'[The treatment can be used on the face as well.,ANSWER_IMAGE,That’s not right. Lines and wrinkles are a concern for everyone.  ,INCORRECT,1]
+",,,,2,,,,,
+38,35,ND2 3.4 Test Yourself The Latest New Dimension Additions,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 3,question_answer,,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 3,Test Yourself: The Latest New Dimension Additions,,,,,,,,,,,,,,,,,,,,,,,,3. Why is the New Dimension Tighten + Tone Neck/Chest Treatment a great product for customers of any age?,,,"[The treatment can be used on the face as well.,ANSWER_IMAGE,That’s not right. Lines and wrinkles are a concern for everyone.  ,INCORRECT,1]
 [Neck creases form deep under the skin at a young age.,ANSWER_IMAGE,That’s not right. Lines and wrinkles are a concern for everyone.,INCORRECT,2]
 [“Tech neck” can affect everyone.,ANSWER_IMAGE,Perfect! Lines and wrinkles are a concern for everyone.,CORRECT,3]
 [None of the above.,ANSWER_IMAGE,That’s not right. Lines and wrinkles are a concern for everyone.,INCORRECT,4]
-';3;;;;;
-39;35;'ND2 3.4 Test Yourself The Latest New Dimension Additions';'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 4';'question_answer';;'ND2 3.4 Test Yourself The Latest New Dimension Additions QA 4';'Test Yourself: The Latest New Dimension Additions';;;;;;;;;;;;;;;;;;;;;'4. When using a Concealer Brush to apply concealer above the New Dimension Firm + Fill Eye System, use a _______ motion.';;;'[Rolling,ANSWER_IMAGE,That’s not right. Always apply concealer in a patting motion so it won’t move the Filler she’s just applied.  ,INCORRECT,1]
+",,,,3,,,,,
+39,35,ND2 3.4 Test Yourself The Latest New Dimension Additions,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 4,question_answer,,ND2 3.4 Test Yourself The Latest New Dimension Additions QA 4,Test Yourself: The Latest New Dimension Additions,,,,,,,,,,,,,,,,,,,,,,,,"4. When using a Concealer Brush to apply concealer above the New Dimension Firm + Fill Eye System, use a _______ motion.",,,"[Rolling,ANSWER_IMAGE,That’s not right. Always apply concealer in a patting motion so it won’t move the Filler she’s just applied.  ,INCORRECT,1]
 [Sweeping,ANSWER_IMAGE,That’s not right. Always apply concealer in a patting motion so it won’t move the Filler she’s just applied.  ,INCORRECT,2]
 [Gliding,ANSWER_IMAGE,That’s not right. Always apply concealer in a patting motion so it won’t move the Filler she’s just applied.  ,INCORRECT,3]
 [Patting,ANSWER_IMAGE,Yes! Always apply concealer in a patting motion so it won’t move the Filler she’s just applied.  ,CORRECT,4]
-';4;;;;;
-40;;'ND2 4.1 So You’ve Told Her About New Dimension…Now What  ';;'content_object';;;'So You’ve Told Her About New Dimension…Now What?';'Telling her about New Dimension is just the first step—take it to the next level by creating an experience she won’t forget. Click the images below to find out the best tips and phrases you can use to link to an experience!';'assets/image/LP4-1-Hero.jpg';;50;'New Dimension Experience, Experience, Creating an Experience, Beautiful Skin for Life, Contour Coaching, 3 Minute Beauty Contour Coaching, 3 Minute Beauty, Contouring, Contours, Contour,';;;;'US';'So You’ve Told Her About New Dimension…Now What?';'Check It Out';;;;;;;;;;;;;;;;;;;
-41;40;'ND2 4.1 So You’ve Told Her About New Dimension…Now What  ';'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 1';'list_item';;'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 1';'So You’ve Told Her About New Dimension…Now What?';;;;;;;;;;;;;;;;;;;'1. Teach her how to contour:
+",,,,4,,,,,
+40,,ND2 4.1 So You’ve Told Her About New Dimension…Now What  ,,content_object,,,So You’ve Told Her About New Dimension…Now What?,Telling her about New Dimension is just the first step—take it to the next level by creating an experience she won’t forget. Click the images below to find out the best tips and phrases you can use to link to an experience!,,,assets/image/LP4-1-Hero.jpg,,50,"New Dimension Experience, Experience, Creating an Experience, Beautiful Skin for Life, Contour Coaching, 3 Minute Beauty Contour Coaching, 3 Minute Beauty, Contouring, Contours, Contour,",,,,US,So You’ve Told Her About New Dimension…Now What?,Check It Out,,,,,,,,,,,,,,,,,,,,,,,
+41,40,ND2 4.1 So You’ve Told Her About New Dimension…Now What  ,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 1,list_item,,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 1,So You’ve Told Her About New Dimension…Now What?,,,,,,,,,,,,,,,,,,,,,"1. Teach her how to contour:
 
 Say: “If you have a few minutes, I’d love to show you how to get an instant transformation with our 3 Minute Beauty Contour Coaching™ technique. Which area of the face would you like to contour—your eyes, lip, or face?
 
 Pro tip: Offer to demonstrate the technique she’s chosen on one side of her face first so she can see the instant transformation. Then, complete the technique on the opposite side.
 P.S. Go to “Get in the Contouring Game!” to learn the 3 Minute Beauty Contour Coaching™ techniques!
-';;;;;;;;;;;
-42;40;'ND2 4.1 So You’ve Told Her About New Dimension…Now What  ';'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 2';'list_item';;'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 2';'So You’ve Told Her About New Dimension…Now What?';;;;;;;;;;;;;;;;;;;'2. Offer the Beautiful Skin for Life conversation:
+",,,,,,,,,,,,,,,
+42,40,ND2 4.1 So You’ve Told Her About New Dimension…Now What  ,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 2,list_item,,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 2,So You’ve Told Her About New Dimension…Now What?,,,,,,,,,,,,,,,,,,,,,"2. Offer the Beautiful Skin for Life conversation:
 
 Say: “If you have a few minutes, I’d like to talk about how New Dimension fits into your current skincare ritual…”
 
 Pro tip: Don’t forget to use your tool! Jot down the steps for her new routine, plus any tips you share about how to apply her products.
-';1;;;;;;;;;;
-43;40;'ND2 4.1 So You’ve Told Her About New Dimension…Now What  ';'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 3';'list_item';;'ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 3';'So You’ve Told Her About New Dimension…Now What?';;;;;;;;;;;;;;;;;;;'3. Show her the 3 new breakthroughs in the collection:
+",1,,,,,,,,,,,,,,
+43,40,ND2 4.1 So You’ve Told Her About New Dimension…Now What  ,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 3,list_item,,ND2 4.1 So You’ve Told Her About New Dimension…Now What - List 3,So You’ve Told Her About New Dimension…Now What?,,,,,,,,,,,,,,,,,,,,,"3. Show her the 3 new breakthroughs in the collection:
 
 Say: “Since you love New Dimension, we have 3 new products in the collection for the eyes, lips, and Neck/Chest—which would you like to experience?”
 
 Pro tip:  Demonstrate each of our first-of-a-kind products to your customer, and teach her how to apply them.  
-';2;;;;;;;;;;
-44;;'ND2 5.1 Get In the Contouring Game';;'content_object';;;'Get In the Contouring Game!';'Contouring isn’t going away—in fact, the trend’s only getting bigger according to Blair Patterson, Director of Global Artistry at Estée Lauder—so it’s time to get in the game. 
+",2,,,,,,,,,,,,,,
+44,,ND2 5.1 Get In the Contouring Game,,content_object,,,Get In the Contouring Game!,"Contouring isn’t going away—in fact, the trend’s only getting bigger according to Blair Patterson, Director of Global Artistry at Estée Lauder—so it’s time to get in the game. 
 
 To become a Contour Coach in no time, click below to learn our quick and easy 3 Minute Beauty techniques and learn pro tips (from Blair!) you’ll find first on ELX. 
-';'assets/images/LP5-1-Hero.jpg';;50;'Contouring, Contour Coaching, Contour Coach, Contours, Contour, 3 Minute Beauty Contour Coaching, 3 Minute Beauty Contouring, 3 Minute Beauty Contour, 3 Minute Beauty, New Dimension Tips, 3 Minute Beauty Tips, Contour Coaching Tips, Contouring Tips';;;;;'Get In the Contouring Game!';'Check it Out!';;;;;;;;;3;;;;;;;;;;
-45;44;'ND2 5.1 Get In the Contouring Game';'ND2 5.1 Get In the Contouring Game - List 1 ';'list_item';;'ND2 5.1 Get In the Contouring Game - List 1 ';'Get In the Contouring Game!';;;;;;;;;;;;;;;;;'assets/images/LP5-1-SculptedFace.jpg';'assets/video/LP5-1-SculptedFace.mp4';'SCULPTED FACE WITH SKY-HIGH CHEEKBONES
+",,,assets/images/LP5-1-Hero.jpg,,50,"Contouring, Contour Coaching, Contour Coach, Contours, Contour, 3 Minute Beauty Contour Coaching, 3 Minute Beauty Contouring, 3 Minute Beauty Contour, 3 Minute Beauty, New Dimension Tips, 3 Minute Beauty Tips, Contour Coaching Tips, Contouring Tips",,,,,Get In the Contouring Game!,Check it Out!,,,,,,,,,3,,,,,,,,,,,,,,
+45,44,ND2 5.1 Get In the Contouring Game,ND2 5.1 Get In the Contouring Game - List 1 ,list_item,,ND2 5.1 Get In the Contouring Game - List 1 ,Get In the Contouring Game!,,,,,,,,,,,,,,,,,,,assets/images/LP5-1-SculptedFace.jpg,assets/video/LP5-1-SculptedFace.mp4,"SCULPTED FACE WITH SKY-HIGH CHEEKBONES
 
 The Look I Want: Fullness in cheeks, a more sculpted jaw, and contoured angles.
 
@@ -287,8 +291,8 @@ Highlight Last: Apply the lighter highlighter creme down center of forehead, nos
 
 Pro Tip: Blend immediately after each area is contoured. Add more as needed for even more definition.
 *This is steps 1 & 2 of 3 Minute Beauty E-Z Contouring 
-';1;;;;;;;;;;
-46;44;'ND2 5.1 Get In the Contouring Game';'ND2 5.1 Get In the Contouring Game - List 2 ';'list_item';;'ND2 5.1 Get In the Contouring Game - List 2';'Get In the Contouring Game!';;;;;;;;;;;;;;;;;'LP5-1-DepthDefiningEyes.jpg';'LP5-1-DepthDefiningEyes.mp4 ';'DEPTH-DEFINING EYES
+",1,,,,,,,,,,,,,,
+46,44,ND2 5.1 Get In the Contouring Game,ND2 5.1 Get In the Contouring Game - List 2 ,list_item,,ND2 5.1 Get In the Contouring Game - List 2,Get In the Contouring Game!,,,,,,,,,,,,,,,,,,,LP5-1-DepthDefiningEyes.jpg,LP5-1-DepthDefiningEyes.mp4 ,"DEPTH-DEFINING EYES
 
 The Look I Want: Firmer, smoother, and more lifted look to my eyes.
 What You’ll Need: 
@@ -310,8 +314,8 @@ Highlight Sweep along the browbone, and then to the inner corner of the eye—to
 Contour Flip the applicator or brush, and apply contour along the lashline, focusing on the outer third of the eye and then up into the crease. Blend to soften the edges. 
 
 Pro Tip: Use corresponding eye shadows over the contour kit to add long-wear intensity and even more dramatic definition.
-';2;;;;;;;;;;
-47;44;'ND2 5.1 Get In the Contouring Game';'ND2 5.1 Get In the Contouring Game - List 3 ';'list_item';;'ND2 5.1 Get In the Contouring Game - List 3';'Get In the Contouring Game!';;;;;;;;;;;;;;;;;'LP5-1-ContouredBrows.jpg';;'CONTOURED BROWS
+",2,,,,,,,,,,,,,,
+47,44,ND2 5.1 Get In the Contouring Game,ND2 5.1 Get In the Contouring Game - List 3 ,list_item,,ND2 5.1 Get In the Contouring Game - List 3,Get In the Contouring Game!,,,,,,,,,,,,,,,,,,,LP5-1-ContouredBrows.jpg,,"CONTOURED BROWS
 
 The Look I Want: Fuller, more defined brows to lift my eyes.
 
@@ -333,8 +337,8 @@ For a sparse or thin brow, start at the top—apply color from the inner brow to
 Pro Tip: For both brow shapes, brush through brows to distribute color evenly and keep it looking natural. 
 
 *This is 3 Minute Beauty Perfect Brows
-';3;;;;;;;;;;
-48;44;'ND2 5.1 Get In the Contouring Game';'ND2 5.1 Get In the Contouring Game - List 4 ';'list_item';;'ND2 5.1 Get In the Contouring Game - List 4';'Get In the Contouring Game!';;;;;;;;;;;;;;;;;'LP5-1-PlumpLips.jpg';;'PLUMP, MULTI-DIMENSIONAL LIPS
+",3,,,,,,,,,,,,,,
+48,44,ND2 5.1 Get In the Contouring Game,ND2 5.1 Get In the Contouring Game - List 4 ,list_item,,ND2 5.1 Get In the Contouring Game - List 4,Get In the Contouring Game!,,,,,,,,,,,,,,,,,,,LP5-1-PlumpLips.jpg,,"PLUMP, MULTI-DIMENSIONAL LIPS
 
 The Look I Want: Natural-looking fullness, definition and hydration.
 
@@ -355,8 +359,8 @@ Color Last: Press lipstick on lightly until lines fade.
 Pro Tip: Use lip liner and lip color in nude shades to enhance your natural lip color.
 
 *This is the lip technique in 3 Minute Beauty E-Z Contouring
-';4;;;;;;;;;;
-49;44;'ND2 5.1 Get In the Contouring Game';'ND2 5.1 Get In the Contouring Game - List 5 ';'list_item';;'ND2 5.1 Get In the Contouring Game - List 5';'Get In the Contouring Game!';;;;;;;;;;;;;;;;;;;'SCULPTED, MORE DEFINED FACIAL CONTOURS 
+",4,,,,,,,,,,,,,,
+49,44,ND2 5.1 Get In the Contouring Game,ND2 5.1 Get In the Contouring Game - List 5 ,list_item,,ND2 5.1 Get In the Contouring Game - List 5,Get In the Contouring Game!,,,,,,,,,,,,,,,,,,,,,"SCULPTED, MORE DEFINED FACIAL CONTOURS 
 
 The Look I Want: More sculpted, defined, natural contours. 
 
@@ -373,52 +377,52 @@ Contour Next: Dust bronzer in a forward “E” from above brow to hairline, alo
 Pro Tip: Contour areas to shape or “push back”. Highlight to “pull forward”.
 
 *This is the 3 Minute Beauty Highlight and Contour Technique
-';5;;;;;;;;;;
-50;;'ND2 6.1 Take the New Dimension Challenge';;'content_object';;;'Take the New Dimension Challenge!';;'assets/images/LP6-1-Hero.jpg';;50;'New Dimension quiz, New Dimension test, New Dimension challenge';'Congratulations, you scored :USERSCORE:% and have passed this module.';'You''ve been awarded :POINTS:% points!';'Perfect! You''ve been awarded :POINTS:% points!';'US';'Take the New Dimension Challenge!';'Check It Out!';;;;;;;;;;;;;;;;;;;
-51;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 1 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 1 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'What should you say about New Dimension to hook a customer?
+",5,,,,,,,,,,,,,,
+50,,ND2 6.1 Take the New Dimension Challenge,,content_object,,,Take the New Dimension Challenge!,,,,assets/images/LP6-1-Hero.jpg,,50,"New Dimension quiz, New Dimension test, New Dimension challenge","Congratulations, you scored :USERSCORE:% and have passed this module.",You've been awarded :POINTS:% points!,Perfect! You've been awarded :POINTS:% points!,US,Take the New Dimension Challenge!,Check It Out!,,,,,,,,,,,,,,,,,,,,,,,
+51,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 1 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 1 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,"What should you say about New Dimension to hook a customer?
 
-';;;'[A. It’s our first fast-acting Shape + Fill treatment.,ANSWER_IMAGE,That’s not right. Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,INCORRECT,1]
+",,,"[A. It’s our first fast-acting Shape + Fill treatment.,ANSWER_IMAGE,That’s not right. Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,INCORRECT,1]
 [B. Skin is radiant—instantly.,ANSWER_IMAGE,That’s not right. Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,INCORRECT,2]
 [C. See visible results—in just 3 days. And the results get even better—over time.,ANSWER_IMAGE,That’s not right. Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,INCORRECT,3]
 [D. Women love it. Read the rave reviews on esteelauder.com!,ANSWER_IMAGE,That’s not right. Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,INCORRECT,4]
-[E. All of the above,ANSWER_IMAGE,You’re a New Dimension pro! Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,CORRECT,5]';1;;;;;
-52;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 2 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 2 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'Which of the following technologies do all three of the latest New Dimension innovations share?';;;'[A. Shaping Technology,ANSWER_IMAGE,Almost there! All 3 of our latest New Dimension innovations share powerful shaping and filling technologies that helps visibly improve skin’s natural volume and structure.,INCORRECT,1]
+[E. All of the above,ANSWER_IMAGE,You’re a New Dimension pro! Beauty Advisors have told us that sharing all of these headlines will get customers interested right away. Start using them today!,CORRECT,5]",,,,1,,,,,
+52,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 2 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 2 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,Which of the following technologies do all three of the latest New Dimension innovations share?,,,"[A. Shaping Technology,ANSWER_IMAGE,Almost there! All 3 of our latest New Dimension innovations share powerful shaping and filling technologies that helps visibly improve skin’s natural volume and structure.,INCORRECT,1]
 [B. Pro-Collagen Complex and Skin Strengtheners,ANSWER_IMAGE,Almost there! All 3 of our latest New Dimension innovations share powerful shaping and filling technologies that helps visibly improve skin’s natural volume and structure. ,INCORRECT,2]
 [C. Transformative Light Diffusing Optics,ANSWER_IMAGE,Almost there! All 3 of our latest New Dimension innovations share powerful shaping and filling technologies that helps visibly improve skin’s natural volume and structure. ,INCORRECT,3]
 [D. All of the above,ANSWER_IMAGE,Exactly! All 3 of our latest New Dimension innovations share powerful shaping and filling technologies that helps visibly improve skin’s natural volume and structure. ,CORRECT,4]
-';2;;;;;
-53;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 3 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 3 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'Why is the New Dimension Plump + Fill Lip Treatment unlike any other lip plumper on the market?';;;'[A. It helps improve lip’s natural volume and structure and prevents feathering for up to 8 hours.T,ANSWER_IMAGE,Perfect! New Dimension Plump + Fill Lip Treatment, unlike anything else on the market, has powerful skincare technologies that helps improve skin’s natural visible volume and structure for fuller, plumper, more defined-looking lips.,CORRECT,1]
+",,,,2,,,,,
+53,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 3 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 3 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,Why is the New Dimension Plump + Fill Lip Treatment unlike any other lip plumper on the market?,,,"[A. It helps improve lip’s natural volume and structure and prevents feathering for up to 8 hours.T,ANSWER_IMAGE,Perfect! New Dimension Plump + Fill Lip Treatment, unlike anything else on the market, has powerful skincare technologies that helps improve skin’s natural visible volume and structure for fuller, plumper, more defined-looking lips.,CORRECT,1]
 [B. It plumps lightly tints lips over time. ,ANSWER_IMAGE,That’s not it. New Dimension Plump + Fill Lip Treatment, unlike anything else on the market, has powerful skincare technologies that helps improve skin’s natural visible volume and structure for fuller, plumper, more defined-looking lips.,INCORRECT,2]
 [C. It creates fuller-looking lips for up to 8 hours.,ANSWER_IMAGE,That’s not it. New Dimension Plump + Fill Lip Treatment, unlike anything else on the market, has powerful skincare technologies that helps improve skin’s natural visible volume and structure for fuller, plumper, more defined-looking lips.,INCORRECT,3]
 [D. It blurs the appearance of lip lines for a more defined lip. ,ANSWER_IMAGE,That’s not it. New Dimension Plump + Fill Lip Treatment, unlike anything else on the market, has powerful skincare technologies that helps improve skin’s natural visible volume and structure for fuller, plumper, more defined-looking lips.,INCORRECT,4]
-';3;;;;;
-54;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 4 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 4 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'What’s the easiest way to pinpoint the lines to apply New Dimension Firm + Fill Eye System to?  ';;;'[A. Check in a magnifying mirror.,ANSWER_IMAGE,That’s not it. Pinpointing your lines really is as easy as smiling—give it a try and see for yourself.,INCORRECT,1]
+",,,,3,,,,,
+54,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 4 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 4 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,What’s the easiest way to pinpoint the lines to apply New Dimension Firm + Fill Eye System to?  ,,,"[A. Check in a magnifying mirror.,ANSWER_IMAGE,That’s not it. Pinpointing your lines really is as easy as smiling—give it a try and see for yourself.,INCORRECT,1]
 [B. Observe the driest areas of your skin. ,ANSWER_IMAGE,That’s not it. Pinpointing your lines really is as easy as smiling—give it a try and see for yourself.,INCORRECT,2]
 [C. Smile and see where lines form.,ANSWER_IMAGE,Exactly! Pinpointing your lines really is as easy as smiling—give it a try and see for yourself.,CORRECT,3]
 [D. Cleanse your face and clearly see where your lines are. ,ANSWER_IMAGE,That’s not it. Pinpointing your lines really is as easy as smiling—give it a try and see for yourself.,INCORRECT,4]
-';4;;;;;
-55;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 5 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 5 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'To apply the “Fill” portion, use a ________ amount of using a __________, from the outer corner in.';;;'[A. Generous, tapping motion,ANSWER_IMAGE,That’s not it. After applying the “Firm” creme, apply a pin-sized amount of “Fill” using a rolling motion, from the outer corner in. A little goes a long way!,INCORRECT,1]
+",,,,4,,,,,
+55,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 5 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 5 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,"To apply the “Fill” portion, use a ________ amount of using a __________, from the outer corner in.",,,"[A. Generous, tapping motion,ANSWER_IMAGE,That’s not it. After applying the “Firm” creme, apply a pin-sized amount of “Fill” using a rolling motion, from the outer corner in. A little goes a long way!,INCORRECT,1]
 [B. Pin-sized, rolling motion,ANSWER_IMAGE,You really know your New Dimension! After applying the “Firm” creme, apply a pin-sized amount of “Fill” using a rolling motion, from the outer corner in. A little goes a long way!,CORRECT,2]
 [C. Generous, blending motion,ANSWER_IMAGE,That’s not it. After applying the “Firm” creme, apply a pin-sized amount of “Fill” using a rolling motion, from the outer corner in. A little goes a long way!,INCORRECT,3]
 [D. Pin-sized, patting motion,ANSWER_IMAGE,That’s not it. After applying the “Firm” creme, apply a pin-sized amount of “Fill” using a rolling motion, from the outer corner in. A little goes a long way!,INCORRECT,4]
-';5;;;;;
-56;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 6 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 6 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'If a customer wishes to reduce lines/wrinkles, you should show her __________, and point out the ______________. ';;;'[A. Perfectionist [CP+R] Serum, the velvety texture and line-reducing benefits.,ANSWER_IMAGE,No, that’s not right. If a customer wishes to reduce lines/wrinkles, show her both serums, explain the difference in texture/benefits, and let her decide which she prefers.,INCORRECT,1]
+",,,,5,,,,,
+56,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 6 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 6 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,"If a customer wishes to reduce lines/wrinkles, you should show her __________, and point out the ______________. ",,,"[A. Perfectionist [CP+R] Serum, the velvety texture and line-reducing benefits.,ANSWER_IMAGE,No, that’s not right. If a customer wishes to reduce lines/wrinkles, show her both serums, explain the difference in texture/benefits, and let her decide which she prefers.,INCORRECT,1]
 [B. New Dimension Shape + Fill Expert Serum, silky texture and radiant finish.,ANSWER_IMAGE,No, that’s not right. If a customer wishes to reduce lines/wrinkles, show her both serums, explain the difference in texture/benefits, and let her decide which she prefers.,INCORRECT,2]
 [C. Both serums, difference in texture/benefits.,ANSWER_IMAGE,Aren’t you a pro? If a customer wishes to reduce lines/wrinkles, show her both serums, explain the difference in texture/benefits, and let her decide which she prefers.,CORRECT,3]
 [D. Both serums, difference in scent. ,ANSWER_IMAGE,No, that’s not right. If a customer wishes to reduce lines/wrinkles, show her both serums, explain the difference in texture/benefits, and let her decide which she prefers.,INCORRECT,4]
-';6;;;;;
-57;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 7 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 7 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'A customer says she likes the benefits of New Dimension Firm + Fill Eye System, but she wants more moisture. You recommend:';;;'[A. Using more of the “Firm” creme ,ANSWER_IMAGE,That’s not it. If she wants more hydration, show her how to layer Advanced Night Repair Serum underneath the New Dimension Firm + Fill Eye Area, and share the repair benefits she’ll get.,INCORRECT,1]
+",,,,6,,,,,
+57,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 7 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 7 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,"A customer says she likes the benefits of New Dimension Firm + Fill Eye System, but she wants more moisture. You recommend:",,,"[A. Using more of the “Firm” creme ,ANSWER_IMAGE,That’s not it. If she wants more hydration, show her how to layer Advanced Night Repair Serum underneath the New Dimension Firm + Fill Eye Area, and share the repair benefits she’ll get.,INCORRECT,1]
 [B. Applying the Eye System with a brush,ANSWER_IMAGE,That’s not it. If she wants more hydration, show her how to layer Advanced Night Repair Serum underneath the New Dimension Firm + Fill Eye Area, and share the repair benefits she’ll get.,INCORRECT,2]
 [C. Layering Advanced Night Repair Eye Serum underneath,ANSWER_IMAGE,Super! If she wants more hydration, show her how to layer Advanced Night Repair Serum underneath the New Dimension Firm + Fill Eye Area, and share the repair benefits she’ll get.,CORRECT,3]
 [D. Add a moisturizing concealer after the Eye System,ANSWER_IMAGE,That’s not it. If she wants more hydration, show her how to layer Advanced Night Repair Serum underneath the New Dimension Firm + Fill Eye Area, and share the repair benefits she’ll get.,INCORRECT,4]
-';7;;;;;
-58;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 8 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 8 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment plumps the delicate chest and neck area with moisture, _________, and ________.';;;'[A. Firms, moisturizes,ANSWER_IMAGE,Almost there! Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment will hydrate, smooth, and brighten the neck/chest area. Over time, it’ll firm and lift the look of skin, helping to fight visible gravity.,INCORRECT,1]
+",,,,7,,,,,
+58,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 8 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 8 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,"Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment plumps the delicate chest and neck area with moisture, _________, and ________.",,,"[A. Firms, moisturizes,ANSWER_IMAGE,Almost there! Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment will hydrate, smooth, and brighten the neck/chest area. Over time, it’ll firm and lift the look of skin, helping to fight visible gravity.,INCORRECT,1]
 [B. Reduces spots, smoothes,ANSWER_IMAGE,Almost there! Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment will hydrate, smooth, and brighten the neck/chest area. Over time, it’ll firm and lift the look of skin, helping to fight visible gravity.,INCORRECT,2]
 [C. Smoothes, firms,  brightens,ANSWER_IMAGE,That’s it! Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment will hydrate, smooth, firm, and brighten the neck/chest area. Over time, it’ll lift the look of skin, helping to fight visible gravity.,CORRECT,3]
 [D. Lifts, mattifies,ANSWER_IMAGE,Almost there! Instantly, the New Dimension Tighten + Tone Neck/Chest Treatment will hydrate, smooth, and brighten the neck/chest area. Over time, it’ll firm and lift the look of skin, helping to fight visible gravity.,INCORRECT,4]
-';8;;;;;
-59;50;'ND2 6.1 Take the New Dimension Challenge';'ND2 6.1 Take the New Dimension Challenge - Trivia 9 ';'question_answer';;'ND2 6.1 Take the New Dimension Challenge - Trivia 9 ';'Take the New Dimension Challenge!';;;;;;;;;;;;;;;;;;;;;'Why is it important to transition to the Beautiful Skin for Life conversation after introducing her to the New Dimension?';;;'[A. You can tell her more about the New Dimension story.,ANSWER_IMAGE,No, that’s not right. Introducing her to New Dimension isn’t enough—you have to create an experience around it by showing her how she can fit it into her ritual. Don’t forget that you can show her Contour Coaching™ and the new collection too!,INCORRECT,1]
+",,,,8,,,,,
+59,50,ND2 6.1 Take the New Dimension Challenge,ND2 6.1 Take the New Dimension Challenge - Trivia 9 ,question_answer,,ND2 6.1 Take the New Dimension Challenge - Trivia 9 ,Take the New Dimension Challenge!,,,,,,,,,,,,,,,,,,,,,,,,Why is it important to transition to the Beautiful Skin for Life conversation after introducing her to the New Dimension?,,,"[A. You can tell her more about the New Dimension story.,ANSWER_IMAGE,No, that’s not right. Introducing her to New Dimension isn’t enough—you have to create an experience around it by showing her how she can fit it into her ritual. Don’t forget that you can show her Contour Coaching™ and the new collection too!,INCORRECT,1]
 [B. You can help her organize her products into a ritual.,ANSWER_IMAGE,Perfect! Introducing her to New Dimension isn’t enough—you have to create an experience around it by showing her how she can fit it into her ritual. Don’t forget that you can show her Contour Coaching™ and the new collection too!,CORRECT,2]
 [C. You can sell her more products.,ANSWER_IMAGE,No, that’s not right. Introducing her to New Dimension isn’t enough—you have to create an experience around it by showing her how she can fit it into her ritual. Don’t forget that you can show her Contour Coaching™ and the new collection too!,INCORRECT,3]
 [D. You have to show her how to add more Estée Lauder products to her ritual.,ANSWER_IMAGE,No, that’s not right. Introducing her to New Dimension isn’t enough—you have to create an experience around it by showing her how she can fit it into her ritual. Don’t forget that you can show her Contour Coaching™ and the new collection too!,INCORRECT,4]
-';9;;;;;
+",,,,9,,,,,

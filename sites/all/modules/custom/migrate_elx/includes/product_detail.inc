@@ -29,11 +29,13 @@ class ProductdetailMigration extends Migration {
     );
 
     //Field ampping
+    $this->addFieldMapping('language')->defaultValue('en');
+    $this->addFieldMapping('translate')->defaultValue(true);
     $this->addFieldMapping('title', 'admin_title_field');
     //$this->addFieldMapping('title_field', 'admin_title_field');
     $this->addFieldMapping('field_display_title', 'field_display_title');
     $this->addFieldMapping('field_subtitle', 'field_subtitle');
-    $this->addFieldMapping('language')->defaultValue('es');
+    //$this->addFieldMapping('language')->defaultValue('en');
     $this->addFieldMapping('field_tags_keywords', 'field_tags_keywords')
     ->separator(',');
     $this->addFieldMapping('field_tags_keywords:create_term')

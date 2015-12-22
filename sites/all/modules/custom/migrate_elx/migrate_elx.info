@@ -1,0 +1,12 @@
+name = "Migrate from ELX CSV"
+description = "Module to migrate csv site content to Drupal 7"
+package = "Migration"
+core = 7.x
+dependencies[] = migrate
+files[] = includes/click_reveal.inc
+files[] = includes/question_answer.inc
+files[] = includes/list_item.inc
+files[] = includes/hot_spot.inc
+files[] = includes/content_object.inc
+files[] = includes/product_detail.inc
+files[] = includes/basic.inc

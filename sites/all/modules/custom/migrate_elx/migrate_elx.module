@@ -1,0 +1,42 @@
+<?php
+/*
+ * Impmentation of hook_migrate_api()
+ */
+
+function migrate_elx_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'groups' => array(
+      'elx' => array(
+        'title' => t('ELX Migrations'),
+      ),
+    ),
+    'migrations' => array(
+      'ProductDetail' => array(
+        'class_name' => 'ProductdetailMigration',
+        'group_name' => 'elx',
+      ),
+      'List' => array(
+        'class_name' => 'ListMigration',
+        'group_name' => 'elx',
+      ),
+    	'ListitemParagraph' => array(
+    		'class_name' => 'ListitemParagraphMigration',
+    		'group_name' => 'elx',
+    	),
+    	'Hotspot' => array(
+    		'class_name' => 'HotspotMigration',
+    		'group_name' => 'elx',
+    	),
+    	'HotspotitemParagraph' => array(
+    		'class_name' => 'HotspotitemParagraphMigration',
+    		'group_name' => 'elx',
+    	),
+    	'Contentobject' => array(
+    				'class_name' => 'ContentobjectMigration',
+    				'group_name' => 'elx',
+    	),
+    ),
+  );
+  return $api;
+}

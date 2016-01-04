@@ -54,7 +54,7 @@ function randomPassword() {
 /**
  * Implements hook_feeds_after_save().
  */
-function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+/*function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $password = randomPassword();
   $encrypted_data = aes_encrypt($password);
@@ -78,7 +78,7 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
     watchdog('elx_utility_feeds_after_save', 'Existing user ' . $entity->uid . ' check password.');
   }
 }
-
+*/
 /**
  * Implements hook_clone_node_alter().
  */

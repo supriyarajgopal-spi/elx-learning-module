@@ -40,3 +40,44 @@ function migrate_elx_migrate_api() {
   );
   return $api;
 }
+
+function migrate_elx_form_alter(&$form, &$form_state, $form_id){
+	if($form_id == 'feeds_import_form' && arg(1) == 'product_details' ){
+		//dpm($form);
+		$form['feeds']['elx_assets'] = array(
+			'#type' => 'plupload',
+			'#title' => t('Upload Assets'),
+			'#weight'=> -1,
+		);
+		$form['#submit'][] = 'migrate_elx_files_submit';
+	}
+}
+
+function migrate_elx_files_submit($form, &$form_state) {
+	dpm($form_state);
+	$saved_files = array(); //Array to capture file objects
+	$scheme = variable_get('file_default_scheme', 'public') . '://';
+	$directoryname = 'elx_bulk/assets'; // Directory where images are collected
+	$imagebankpath = $scheme . $directoryname;
+	file_prepare_directory($imagebankpath, FILE_CREATE_DIRECTORY); // Create the folder if it doesn't exist
+	// We can't use file_save_upload() because of
+	// http://www.jacobsingh.name/content/tight-coupling-no-not
+	// file_uri_to_object();
+	dpm($form_values);
+	foreach ($form_state['values']['feeds']['elx_assets'] as $uploaded_file) {
+		if ($uploaded_file['status'] == 'done') {
+			$source = $uploaded_file['tmppath'];
+			$destination = file_stream_wrapper_uri_normalize($imagebankpath .'/'. $uploaded_file['name']);
+			// Rename it to its original name, and put it in its final home.
+			// Note - not using file_move here because if we call file_get_mime
+			// (in file_uri_to_object) while it has a .tmp extension, it horks.
+			$destination = file_unmanaged_move($source, $destination, FILE_EXISTS_RENAME);
+			$file = plupload_file_uri_to_object($destination);
+			file_save($file);
+			$saved_files[] = $file;
+		}
+		else {
+			form_set_error('elx_assets', "Upload of {$uploaded_file['name']} failed");
+		}
+	}
+}

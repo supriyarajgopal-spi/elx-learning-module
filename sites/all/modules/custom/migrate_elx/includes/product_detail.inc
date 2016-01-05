@@ -11,7 +11,7 @@ class ProductdetailMigration extends Migration {
 
     //The Source of the import
     $this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.products.csv', array(), 
-    array('delimiter' => ';', 'header_rows' => 1, 'embedded_newlines'=> TRUE, 'enclosure'=>"'"));
+    array('delimiter' => ',', 'header_rows' => 1, 'embedded_newlines'=> TRUE, 'enclosure'=>'"'));
 
     $this->destination = new MigrateDestinationNode('product_detail', array('text_format' => 'full_html'));
 

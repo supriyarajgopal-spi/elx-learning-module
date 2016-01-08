@@ -4415,7 +4415,7 @@ function tng_shadow_shadow_request_alter($entity)
   $tng_debug =1;
   $translated_labels[] = '';
   $GLOBALS['reentry']++;
-
+  $entity->language = 'en';
   try {
     $form_state['redirect'] = '';
     if ($tng_debug == 1) {

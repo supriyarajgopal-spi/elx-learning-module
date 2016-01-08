@@ -4419,7 +4419,7 @@ function tng_shadow_shadow_request_alter($entity)
   try {
     $form_state['redirect'] = '';
     if ($tng_debug == 1) {
-      dpm($entity);
+      watchdog('tng_shadow','<pre>'.print_r($entity,1).'</pre>');
     }
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {

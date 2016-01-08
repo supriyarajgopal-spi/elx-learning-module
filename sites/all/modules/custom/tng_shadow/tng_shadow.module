@@ -4415,7 +4415,6 @@ function tng_shadow_shadow_request_alter($entity)
   $tng_debug =1;
   $translated_labels[] = '';
   $GLOBALS['reentry']++;
-  $entity->language = 'en';
   try {
     $form_state['redirect'] = '';
     if ($tng_debug == 1) {
@@ -4434,7 +4433,7 @@ function tng_shadow_shadow_request_alter($entity)
       $save_entity = node_load($entity->nid);
       $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
-      $language = $entity->language;
+      $language = 'en';
       //$language = get_language_from_uri();
       // save this language, since we need to use it later upon re-entry
       $save_language = $language;

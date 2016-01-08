@@ -5106,6 +5106,7 @@ function get_language_from_uri()
       $uri_language = end($lang_splitter);
     }
   }
+  $uri_language = 'en';
   return $uri_language;
 }
 

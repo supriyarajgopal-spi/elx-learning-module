@@ -5270,3 +5270,8 @@ function _date_diff($one, $two)
 
   return $result;
 }
+
+function tng_feeds_presave(FeedsSource $source, $entity, $item) {
+  dpm($entity);
+  dpm($item);
+}

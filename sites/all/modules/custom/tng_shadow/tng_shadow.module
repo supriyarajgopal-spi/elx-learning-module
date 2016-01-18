@@ -1,5 +1,6 @@
 <?php
 
+
 // The debug via dpm statements is simple. Each function that will use a dpm will define 'tng_debug = 1'
 // to use dpm statements and surround the dpm statements with :
 //   if ($tng_debug == 1) {
@@ -1022,38 +1023,6 @@ function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL)
     $image = $image . '"components": [ ]';
     $image = $image . '}'; // matches components line
     return $image;
-  } catch (exception $e) {
-    if ($tng_debug == 1) {
-      dpm($e);
-    }
-  }
-
-}
-
-/**
- * @param $src - the URI string for the video
- * @return null|string
- */
-function tng_npVideo_maker($src = NULL)
-{
-  $tng_debug =0;
-  //guard against bad video data and short circuit 'assets/' to '' to return a harmless npVideo link
-  if (!(strlen($src) > 8)) {
-    $src = '';
-  }
-  //if the video has an '.mp4' suffix, remove it since we name the suffix in the 'types'
-  if (strpos($src, '.mp4') !== FALSE) {
-    $src = substr($src, 0, strpos($src, '.mp4'));
-  }
-  try {
-    $video = '';
-    $video = $video . '{' . '"type"' . ':' . '"npVideo"';
-    $video = $video . ',' . '"data"' . ': {' . '"baseURL"' . ': ' . '"' . $src . '"';
-    $video = $video . ',' . '"types"' . ': ' . '["mp4"]';
-    $video = $video . '}, '; // matches data line
-    $video = $video . '"components": [ ]';
-    $video = $video . '}'; // matches components line
-    return $video;
   } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
@@ -2233,10 +2202,7 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     if ($standalone == 1) {
       $whole_story = $feature_chunk . $content_chunk . $story_background . $background_chunk;
     }
-    // story will have an image or a video, some headline or title, then story text
-    $main_video = $story_values['field_story_video'];
-    $main_video = tng_convert_drupal_to_mean_filename($main_video, '', '', false);
-    $video_chunk = tng_npVideo_maker($main_video) . ',';
+    // story will have an image, some headline or title, then story text
     $main_image = $story_values['field_story_image'];
     $main_image = tng_convert_drupal_to_mean_filename($main_image);
     $image_chunk = tng_npImage_maker('', $main_image, 'hero img-responsive center-block', '') . ',';
@@ -2250,12 +2216,8 @@ function process_story($story_values, $language, $nid, $standalone = NULL)
     $signature_chunk = tng_npHTML_basic_maker('', 'beths-signature center-padding', '', '', '', '', '', FALSE);
     //$signature_chunk = rtrim($signature_chunk, ', ');
     $like_button = tng_npButton_maker($favorite_link, '', $btn_alt_favorite, 'i18n.FAVORITE_THIS', $language);
-    // either we have a video or an image, build accordingly but use video preferentially
-    if (strlen($main_video) > 7) {
-      $whole_story = $whole_story . $video_chunk . $label_chunk . $header_chunk . $story_chunk . $signature_chunk . $like_button;
-    } else {
-      $whole_story = $whole_story . $image_chunk . $label_chunk . $header_chunk . $story_chunk . $signature_chunk . $like_button;
-    }
+    $whole_story = $whole_story . $image_chunk . $label_chunk . $header_chunk . $story_chunk . $signature_chunk . $like_button;
+
     if ($standalone == 1) {
       $whole_story = $whole_story . $close_story;
     }
@@ -4376,21 +4338,21 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  * entity reference, when in fact it is a phantom (that or the cruft exists in the hook for form_alter).
  * Either way, we need this to go away, so we unset the manifest field manually.
  */
-//function tng_shadow_node_presave($entity)
-//{
-//  $tng_debug =0;
-//  if ($tng_debug == 1) {
-//    dpm("inside node presave");
-//    dpm($entity);
-//  }
-//  if (isset($entity->field_manifest['und'][0]['target_id'])) {
-//    // dpm('we think the manifest node is set');
-//    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
-//    if (!$node_man) {
-//      unset($entity->field_manifest);
-//    }
-//  }
-//}
+/*function tng_shadow_node_presave($entity)
+{
+  $tng_debug =0;
+  if ($tng_debug == 1) {
+    dpm("inside node presave");
+    dpm($entity);
+  }
+  if (isset($entity->field_manifest['und'][0]['target_id'])) {
+    // dpm('we think the manifest node is set');
+    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
+    if (!$node_man) {
+      unset($entity->field_manifest);
+    }
+  }
+}*/
 
 /**
  * @param $entity - This view entity is passed
@@ -4412,6 +4374,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
 
 function tng_shadow_shadow_request_alter($entity)
 {
+
   $tng_debug =0;
   $translated_labels[] = '';
   $GLOBALS['reentry']++;
@@ -4434,8 +4397,8 @@ function tng_shadow_shadow_request_alter($entity)
       $save_entity = node_load($entity->nid);
       $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
-      //$language = $entity->language;
-      $language = get_language_from_uri();
+      $language = $entity->language;
+      //$language = get_language_from_uri();
       // save this language, since we need to use it later upon re-entry
       $save_language = $language;
       // for full manifest creation, set the module name here, default will be reNutriv
@@ -4834,7 +4797,7 @@ function tng_shadow_shadow_request_alter($entity)
           // since we do field translation, we need a way of finding out if we are working on non-english languages
           // and we rely on drupals url method to modify 'foreign' content, which is url and form-based, with the language at the end of the url '/es'
           if ($entity_type == 'product_detail') {
-            $uri_language = get_language_from_uri();
+            $uri_language = get_language_from_uri($entity);
             $instance = field_info_instance('node', $info['field_name'], 'product_detail');
             $my_translated_label = i18n_field_translate_property($instance, 'label', $uri_language);
             if ($tng_debug == 1) {
@@ -4847,7 +4810,7 @@ function tng_shadow_shadow_request_alter($entity)
           $pre_manifest[$children_nodes_to_process[$i]] = $wrap;
         } elseif ($info['type'] == 'file') {
           $field_name = $info['field_name'];
-          $local_language = get_language_from_uri();
+          $local_language = get_language_from_uri($entity);
           if ($entity_array[$field_name][$local_language]) {
             $fid = $entity_array[$field_name][$local_language][0]['fid'];
             $file_id = file_load($fid);
@@ -4914,11 +4877,23 @@ function tng_shadow_shadow_request_alter($entity)
       //return;
 
       if ($entity_type == 'product_detail') {
+        print_r($entity->language);
+
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        $local_tid = $entity_array['field_manifest']['en'][0]['target_id'];
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
-          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
+          $handler = entity_translation_get_handler('node', $entity);
+
+          $translation = array(
+              'translate' => 0,
+              'status' => 1,
+              'language' => $entity->language,
+              'source' => 'en',
+          );
+
+          $handler->setTranslation($translation, $entity);
+          $entity->field_manifest[$entity->language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'content_object') {
@@ -5089,7 +5064,7 @@ function tng_fix_tools($entity)
   return $entity;
 }
 
-function get_language_from_uri()
+function get_language_from_uri($entity = NULL)
 {
   $tng_debug =0;
   $uri_language = 'en';
@@ -5105,6 +5080,9 @@ function get_language_from_uri()
     if (in_array($lang_splitter[count($lang_splitter) - 2], array('content', 'edit'))) {
       $uri_language = end($lang_splitter);
     }
+  }
+  if(isset($entity)){
+    $uri_language = $entity->language;
   }
   return $uri_language;
 }
@@ -5271,9 +5249,3 @@ function _date_diff($one, $two)
   return $result;
 }
 
-function tng_entity_presave($entity, $type) {
-  if($type == 'node' && $entity->type == 'product_detail'){
-    dpm($entity);
-  }
-
-}

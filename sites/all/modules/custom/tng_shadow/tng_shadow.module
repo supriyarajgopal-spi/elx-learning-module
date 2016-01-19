@@ -304,9 +304,7 @@ function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = N
 {
   $tng_debug =0;
   try {
-    if (!isset($language)) {
-      $language = 'en';
-    }
+
     if (strlen($buttontitle) == 0) {
       $buttontitle = tng_translate_next_button($language);
     }
@@ -406,9 +404,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
  */
 function tng_translate_question_label ($language = NULL)
 {
-  if (!isset($language)) {
-    $language = 'en';
-  }
+
   $question_label = 'Question:';
 
   switch ($language) {
@@ -510,9 +506,7 @@ function tng_translate_question_label ($language = NULL)
 function tng_translate_answers_label ($language = NULL)
 {
   // if language is not set, default to english
-  if (!isset($language)) {
-    $language = 'en';
-  }
+
   // and also default to english 'Answers:'
   $answer_label = 'Answers:';
 
@@ -616,9 +610,7 @@ function tng_translate_answers_label ($language = NULL)
  */
 function tng_translate_submit_button ($language = NULL)
 {
-  if (!isset($language)) {
-    $language = 'en';
-  }
+
   $submit_label = 'Submit';
 
   // otherwise, if a language is given set it here
@@ -722,9 +714,7 @@ function tng_translate_submit_button ($language = NULL)
  */
 function tng_translate_next_button ($language = NULL)
 {
-  if (!isset($language)) {
-    $language = 'en';
-  }
+
   $next_label = 'Next';
 
   // otherwise, if a language is given set it here
@@ -5067,7 +5057,7 @@ function tng_fix_tools($entity)
 function get_language_from_uri($entity = NULL)
 {
   $tng_debug =0;
-  $uri_language = 'en';
+  //$uri_language = 'en';
   $lang_splitter = arg();
   if ($tng_debug == 1) {
     dpm('language url');

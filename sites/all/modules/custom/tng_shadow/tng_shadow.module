@@ -4867,10 +4867,9 @@ function tng_shadow_shadow_request_alter($entity)
       //return;
 
       if ($entity_type == 'product_detail') {
-        print_r($entity->language);
 
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest']['en'][0]['target_id'];
+        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $handler = entity_translation_get_handler('node', $entity);
@@ -4878,12 +4877,12 @@ function tng_shadow_shadow_request_alter($entity)
           $translation = array(
               'translate' => 0,
               'status' => 1,
-              'language' => $entity->language,
+              'language' => $local_language,
               'source' => 'en',
           );
 
           $handler->setTranslation($translation, $entity);
-          $entity->field_manifest[$entity->language][0]['target_id'] = $new_nid;
+          $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
       } elseif ($entity_type == 'content_object') {

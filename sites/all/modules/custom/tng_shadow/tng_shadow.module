@@ -4387,8 +4387,8 @@ function tng_shadow_shadow_request_alter($entity)
       $save_entity = node_load($entity->nid);
       $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
-      $language = $entity->language;
-      //$language = get_language_from_uri();
+      //$language = $entity->language;
+      $language = get_language_from_uri();
       // save this language, since we need to use it later upon re-entry
       $save_language = $language;
       // for full manifest creation, set the module name here, default will be reNutriv

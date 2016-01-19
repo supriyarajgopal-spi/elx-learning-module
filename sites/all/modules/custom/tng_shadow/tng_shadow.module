@@ -4388,7 +4388,7 @@ function tng_shadow_shadow_request_alter($entity)
       $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
       //$language = $entity->language;
-      $language = get_language_from_uri();
+      $language = get_language_from_uri($entity);
       // save this language, since we need to use it later upon re-entry
       $save_language = $language;
       // for full manifest creation, set the module name here, default will be reNutriv
@@ -4866,22 +4866,13 @@ function tng_shadow_shadow_request_alter($entity)
       //tng_test_product_creation();
       //return;
 
+      $entity->is_new = FALSE;
       if ($entity_type == 'product_detail') {
 
         $local_language = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
-          $handler = entity_translation_get_handler('node', $entity);
-
-          $translation = array(
-              'translate' => 0,
-              'status' => 1,
-              'language' => $local_language,
-              'source' => 'en',
-          );
-
-          $handler->setTranslation($translation, $entity);
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
           node_save($entity);
         }
@@ -5056,22 +5047,23 @@ function tng_fix_tools($entity)
 function get_language_from_uri($entity = NULL)
 {
   $tng_debug =0;
-  //$uri_language = 'en';
   $lang_splitter = arg();
   if ($tng_debug == 1) {
     dpm('language url');
     dpm($lang_splitter);
     dpm(end($lang_splitter));
   }
-  // if we are editing a 'default' language node, it won't have a language after the 'content' or 'edit' since it is the 'en' version
-  // more properly it will be whatever the default language for the node it, but for EL the default language is 'en'
-  if (count($lang_splitter) > 1) {
-    if (in_array($lang_splitter[count($lang_splitter) - 2], array('content', 'edit'))) {
-      $uri_language = end($lang_splitter);
-    }
+  if (in_array($lang_splitter[count($lang_splitter) - 2], array('content', 'edit'))) {
+    $uri_language = end($lang_splitter);
   }
-  if(isset($entity)){
+  elseif ($lang_splitter[count($lang_splitter) - 4] == 'edit' && $lang_splitter[count($lang_splitter) - 3] == 'add') {
+    $uri_language = end($lang_splitter);
+  }
+  elseif (!isset($uri_language) && isset($entity) && $entity->language) {
     $uri_language = $entity->language;
+  }
+  else {
+    $uri_language = language_from_default();
   }
   return $uri_language;
 }

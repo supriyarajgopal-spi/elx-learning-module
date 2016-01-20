@@ -4377,6 +4377,14 @@ function tng_shadow_node_presave($entity)
     if ($tng_debug == 1) {
       dpm($entity);
     }
+    $handler = entity_translation_get_handler('node', $entity);
+    $translations = $handler->getTranslations();
+    if (empty($translations->original)) {
+      $handler->initTranslations();
+    }
+    if ($handler->initOriginalTranslation()) {
+      field_attach_presave('node', $entity);
+    }
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {
       // Node is published.

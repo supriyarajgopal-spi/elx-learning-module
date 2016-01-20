@@ -63,15 +63,18 @@ function tng_title_image_date_extractor($targetid)
     $creation_date = 'created';
     $results = array();
     $entity = node_load($targetid);
-    $language = $entity->language;
+    $language = get_language_from_uri($entity);
+    $results[$title] = '';
+    if (isset($entity->title_field[$language][0]['value'])) {
+      $results[$title] .= $entity->title_field[$language][0]['value'] . '/';
+    }
+    $results[$title] .= $targetid;
+    if (isset($entity->field_product_image[$language][0]['uri'])) {
+      $results[$image] = $entity->field_product_image[$language][0]['uri'];
+    }
     $date = $entity->created;
-    $date = format_date($date, $type = 'short');
-    $calc_date = tng_date_difference_creator($date);
-    $product_title = $entity->title_field[$language][0]['value'] . '/' . $targetid;
-    $results[$title] = $product_title;
-    $thumb = $entity->field_product_image[$language][0]['uri'];
-    $results[$image] = $thumb;
-    $results[$creation_date] = $calc_date;
+    $date = format_date($date, 'short');
+    $results[$creation_date] = tng_date_difference_creator($date);
     return $results;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -4362,7 +4365,7 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  */
 
 
-function tng_shadow_shadow_request_alter($entity)
+function tng_shadow_node_presave($entity)
 {
 
   $tng_debug =0;
@@ -4740,8 +4743,6 @@ function tng_shadow_shadow_request_alter($entity)
                 //dpm($key);
                 $csv = $csv . $key . ',';
               }
-              //dpm($csv);
-              $pre_manifest[$field_name] = $csv;
             }
             $csv = rtrim($csv, ', ');
             $pre_manifest[$field_name] = $csv;
@@ -4766,14 +4767,13 @@ function tng_shadow_shadow_request_alter($entity)
           $field_name = $info['field_name'];
           $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
           $new_lang = $entity_array['language'];
-          $fid = $entity_array[$field_name][$new_lang][0]['fid'];
-          if ($fid) {
-            $file_id = file_load($fid);
+          if (isset($entity_array[$field_name][$new_lang][0]['fid'])) {
+            $file_id = file_load($entity_array[$field_name][$new_lang][0]['fid']);
             $uri = $file_id->uri;
             $style_path = image_style_url($image_style, $uri);
             $image_style_path = array($style_path);
           } else {
-            $image_style_path = '';
+            $image_style_path = array('');
           }
           $pre_manifest[$field_name] = $image_style_path[0];
         } elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
@@ -4801,9 +4801,8 @@ function tng_shadow_shadow_request_alter($entity)
         } elseif ($info['type'] == 'file') {
           $field_name = $info['field_name'];
           $local_language = get_language_from_uri($entity);
-          if ($entity_array[$field_name][$local_language]) {
-            $fid = $entity_array[$field_name][$local_language][0]['fid'];
-            $file_id = file_load($fid);
+          if (isset($entity_array[$field_name][$local_language][0]['fid'])) {
+            $file_id = file_load($entity_array[$field_name][$local_language][0]['fid']);
             $uri = $file_id->uri;
             $thefilepath = file_create_url($uri);
             $pre_manifest[$field_name] = $thefilepath;
@@ -4820,7 +4819,12 @@ function tng_shadow_shadow_request_alter($entity)
         } elseif ($info['type'] == 'taxonomy_term_reference') {
           //dpm('found a taxonomy term reference');
           $field_name = $info['field_name'];
-          $number_of_terms = count($entity_array[$field_name][$language]);
+          if (isset($entity_array[$field_name][$language])) {
+            $number_of_terms = count($entity_array[$field_name][$language]);
+          }
+          else {
+            $number_of_terms = 0;
+          }
           //dpm('number of terms : '. $number_of_terms);
           //dpm($field_name);
           $collector = '';
@@ -4866,7 +4870,6 @@ function tng_shadow_shadow_request_alter($entity)
       //tng_test_product_creation();
       //return;
 
-      $entity->is_new = FALSE;
       if ($entity_type == 'product_detail') {
 
         $local_language = $save_language;
@@ -4874,7 +4877,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'content_object') {
         $local_language = $save_language;
@@ -4882,7 +4884,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_content_object($pre_manifest, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'hot_spots') {
         $local_language = $save_language;
@@ -4890,7 +4891,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_hotspot($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'drag_match') {
         $local_language = $save_language;
@@ -4898,7 +4898,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_dragmatch($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'trivia') {
         //$local_language = $save_entity->language;
@@ -4907,7 +4906,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'drag_select') {
         $local_language  = $save_language;
@@ -4915,7 +4913,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_dragselect($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'drag_priorities') {
         $local_language  = $save_language;
@@ -4923,7 +4920,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_dragmatch_prioritize($pre_manifest, $local_language, $local_tid['target_id']);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'list') {
         $local_language = $save_language;
@@ -4931,7 +4927,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_list($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'reveal') {
         $local_language  = $save_language;
@@ -4939,7 +4934,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_reveal($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'flash_cards') {
         $local_language  = $save_language;
@@ -4947,7 +4941,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_flashcards($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'matching_game') {
         $local_language  = $save_language;
@@ -4955,7 +4948,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_matchgame($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'question_and_answer') {
         $local_language = $save_language;
@@ -4963,7 +4955,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'badge') {
         $local_language  = $save_language;
@@ -4978,7 +4969,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'story') {
         $local_language  = $save_language;
@@ -4986,7 +4976,6 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'diary') {
         $local_language  = $save_language;
@@ -4994,11 +4983,9 @@ function tng_shadow_shadow_request_alter($entity)
         $new_nid = process_diary($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
-          node_save($entity);
         }
       } elseif ($entity_type == 'tools') {
         $entity = tng_fix_tools($entity);
-        return $entity;
       }
     }
   } catch (exception $e) {
@@ -5022,9 +5009,8 @@ function tng_fix_tools($entity)
   foreach ($field_names as $field_name) {
     foreach ($entity->$field_name as $language => $field) {
       if (!isset($field[0]['uri'])) {
-        $fid = $field[0]['fid'];
-        if ($fid) {
-          $file = file_load($fid);
+        if (isset($field[0]['fid'])) {
+          $file = file_load($field[0]['fid']);
           $info = field_info_field($field_name);
           if ($info['type'] == 'image') {
             $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
@@ -5048,15 +5034,16 @@ function get_language_from_uri($entity = NULL)
 {
   $tng_debug =0;
   $lang_splitter = arg();
+  $count = count($lang_splitter);
   if ($tng_debug == 1) {
     dpm('language url');
     dpm($lang_splitter);
     dpm(end($lang_splitter));
   }
-  if (in_array($lang_splitter[count($lang_splitter) - 2], array('content', 'edit'))) {
+  if ($count > 2 && in_array($lang_splitter[$count - 2], array('content', 'edit'))) {
     $uri_language = end($lang_splitter);
   }
-  elseif ($lang_splitter[count($lang_splitter) - 4] == 'edit' && $lang_splitter[count($lang_splitter) - 3] == 'add') {
+  elseif ($count > 3 && $lang_splitter[$count - 4] == 'edit' && $lang_splitter[$count - 3] == 'add') {
     $uri_language = end($lang_splitter);
   }
   elseif (!isset($uri_language) && isset($entity) && $entity->language) {

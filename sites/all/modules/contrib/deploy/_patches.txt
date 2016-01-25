@@ -1,0 +1,3 @@
+Added configurable timeout.
+https://www.drupal.org/node/2533036#comment-10784540
+https://www.drupal.org/files/issues/deploy-timeout-settings-2533036-3.patch

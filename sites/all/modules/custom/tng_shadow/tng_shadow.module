@@ -4377,14 +4377,6 @@ function tng_shadow_node_presave($entity)
     if ($tng_debug == 1) {
       dpm($entity);
     }
-    $handler = entity_translation_get_handler('node', $entity);
-    $translations = $handler->getTranslations();
-    if (empty($translations->original)) {
-      $handler->initTranslations();
-    }
-    if ($handler->initOriginalTranslation()) {
-      field_attach_presave('node', $entity);
-    }
     // if the node is not published
     if (!$entity->status == NODE_PUBLISHED) {
       // Node is published.
@@ -4395,7 +4387,6 @@ function tng_shadow_node_presave($entity)
       if ($tng_debug == 1) {
         dpm('This node should be published.');
       }
-      $save_entity = node_load($entity->nid);
       $entity_array = (array)$entity;
       // needed to use the language from the url, since it wasn't writing other than english manifests
       //$language = $entity->language;
@@ -4428,6 +4419,15 @@ function tng_shadow_node_presave($entity)
       }
       if ($GLOBALS['reentry'] == 3) {
         return;
+      }
+      // Set language for all fields.
+      $handler = entity_translation_get_handler('node', $entity);
+      $translations = $handler->getTranslations();
+      if (empty($translations->original)) {
+        $handler->initTranslations();
+      }
+      if ($handler->initOriginalTranslation()) {
+        field_attach_presave('node', $entity);
       }
       // field_info_instances holds the field values at the outermost level
       // paragraph types must be explored more, 'regular' value fields are written as is.
@@ -4908,7 +4908,6 @@ function tng_shadow_node_presave($entity)
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'trivia') {
-        //$local_language = $save_entity->language;
         $local_language  = $save_language;
         $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
         $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');

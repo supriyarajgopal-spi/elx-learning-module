@@ -4787,7 +4787,7 @@ function tng_shadow_node_presave($entity)
         } elseif ($info['type'] == 'text' || $info['type'] == 'text_long') {
           $wrap = '';
           $wrap_array = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
-          if (is_array($wrap_array)) {
+          if (isset($wrap_array['value'])) {
             $wrap = $wrap_array['value'];
           } elseif (is_string($wrap_array)) {
             $wrap = $wrapper->language($language)->$children_nodes_to_process[$i]->value();

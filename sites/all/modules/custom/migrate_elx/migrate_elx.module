@@ -48,6 +48,9 @@ function migrate_elx_form_alter(&$form, &$form_state, $form_id){
 			'#type' => 'plupload',
 			'#title' => t('Upload Assets'),
 			'#weight'=> -1,
+      '#plupload_settings' => array(
+        'max_file_size' => '268435456b',
+      ),
 		);
 		$form['#submit'][] = 'migrate_elx_files_submit';
 	}
@@ -71,8 +74,13 @@ function migrate_elx_files_submit($form, &$form_state) {
 			// Rename it to its original name, and put it in its final home.
 			// Note - not using file_move here because if we call file_get_mime
 			// (in file_uri_to_object) while it has a .tmp extension, it horks.
-			$destination = file_unmanaged_move($source, $destination, FILE_EXISTS_RENAME);
+			$destination = file_unmanaged_move($source, $destination, FILE_EXISTS_REPLACE);
 			$file = plupload_file_uri_to_object($destination);
+      $existing_files = file_load_multiple(array(), array('uri' => $destination));
+      if (!empty($existing_files)) {
+        $existing = reset($existing_files);
+        $file->fid = $existing->fid;
+      }
 			file_save($file);
 			$saved_files[] = $file;
 		}

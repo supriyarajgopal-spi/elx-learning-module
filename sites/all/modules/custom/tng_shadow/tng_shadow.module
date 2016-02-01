@@ -4881,84 +4881,144 @@ function tng_shadow_node_presave($entity)
       if ($entity_type == 'product_detail') {
 
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_product($pre_manifest, $translated_labels, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'content_object') {
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_content_object($pre_manifest, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'hot_spots') {
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_hotspot($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'drag_match') {
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_dragmatch($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'trivia') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_trivia($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'drag_select') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_dragselect($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'drag_priorities') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_dragmatch_prioritize($pre_manifest, $local_language, $local_tid['target_id']);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'list') {
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_list($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'reveal') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_reveal($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'flash_cards') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_flashcards($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'matching_game') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_matchgame($pre_manifest, $local_language, $local_tid, $module_name, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'question_and_answer') {
         $local_language = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_question_and_answer($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
@@ -4972,21 +5032,36 @@ function tng_shadow_node_presave($entity)
           //var_dump($pre_manifest);
           $local_language = $entity->language;
         }
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_badge($pre_manifest, $local_language, $local_tid);
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'story') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_story($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
       } elseif ($entity_type == 'diary') {
         $local_language  = $save_language;
-        $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
+          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        }
+        else {
+          $local_tid = NULL;
+        }
         $new_nid = process_diary($pre_manifest, $local_language, $local_tid, '0');
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;

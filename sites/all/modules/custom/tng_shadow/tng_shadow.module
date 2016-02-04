@@ -3831,13 +3831,13 @@ function process_content_object($object_values, $language, $nid)
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
     $quiz_chunk = '';
     if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
+      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
       $final_exam = true;
     } elseif  ($field_learning_template == 'trivia'  && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
+      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
       $final_exam = true;
     } elseif  ($field_learning_template == 'drag_select'  && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker('', 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
+      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
       $final_exam = true;
     }
 

@@ -75,6 +75,8 @@ function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $enti
         ':uid' => $entity->uid,
       ))
       ->execute();
+    $account = user_load($entity->uid);
+    drupal_mail('user', 'register_admin_created', $account->mail, $entity->language, array('account' => $account), variable_get('site_mail', 'noreply-myelx@estee.com'));
   }
 }
 

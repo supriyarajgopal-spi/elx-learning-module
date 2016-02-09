@@ -53,12 +53,13 @@ function randomPassword() {
 
 /**
  * Implements hook_feeds_after_save().
+ * Auto-generate user password on user feed import
  */
-/*function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
-  require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
-  $password = randomPassword();
-  $encrypted_data = aes_encrypt($password);
-  if ($entity->pass == '') {
+function elx_utility_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+  if (isset($entity->uid) && $entity->pass == '') {
+    require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
+    $password = randomPassword();
+    $encrypted_data = aes_encrypt($password);
     watchdog('elx_utility_feeds_after_save', 'New user ' . $entity->uid . ' new password.');
     $entity->pass = $password;
     db_insert('aes_passwords')
@@ -74,11 +75,9 @@ function randomPassword() {
         ':uid' => $entity->uid,
       ))
       ->execute();
-  } else {
-    watchdog('elx_utility_feeds_after_save', 'Existing user ' . $entity->uid . ' check password.');
   }
 }
-*/
+
 /**
  * Implements hook_clone_node_alter().
  */

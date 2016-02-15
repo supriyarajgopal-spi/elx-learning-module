@@ -45,11 +45,7 @@ class ListMigration extends migrate_elx_Basic_Migration {
   }
 
 
-  function prepareRow($row) {
-  	if($row->content_type != 'list_item'){
-  		return false;
-  	}
-  }
+
 
   /**
    * Prepare a proper unique key.
@@ -104,11 +100,6 @@ class ListitemParagraphMigration extends migrate_elx_Basic_Migration {
   }
 
 
-  function prepareRow($row) {
-  	if($row->content_type != 'list_item' || ($row->content_type == 'list_item' && !empty($row->list_item_group_image) && !empty($row->list_item_group_video) && !empty($row->list_item_group_text_html))){
-  		return false;
-  	}
-  }
 
   /*public function prepareKey($source_key, $row) {
       $row->item_id = $row->csvrownum;

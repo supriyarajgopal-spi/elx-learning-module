@@ -6,7 +6,7 @@ class HotspotMigration extends migrate_elx_Basic_Migration {
 
     //The dependencies.
     $this->dependencies = array('HotspotitemParagraph');
-    //$this->itemIdentifier = 'id';
+    $this->itemIdentifier = 'csvid';
     //The Description of the import. This desription is shown on the Migrate GUI
     $this->description = t('Import of product content.');
 
@@ -45,11 +45,6 @@ class HotspotMigration extends migrate_elx_Basic_Migration {
   }
 
 
-  function prepareRow($row) {
-  	if($row->content_type != 'hot_spot'){
-  		return false;
-  	}
-  }
   /*public function prepareKey($source_key, $row) {
     $key = array();
     $row->item_id = md5($row->administrative_title);
@@ -99,14 +94,6 @@ class HotspotitemParagraphMigration extends migrate_elx_Basic_Migration {
 		$this->addFieldMapping('field_name')->defaultValue('field_hot_spot_collection');
   }
 
-
-  function prepareRow($row) {
-  	$row->hot_spot_group_x_cordinate = "pos".$row->hot_spot_group_x_cordinate;
-  	$row->hot_spot_group_y_cordinate = "pos".$row->hot_spot_group_y_cordinate;
-  	if($row->content_type != 'hot_spot'){
-  		return false;
-  	}
-  }
 
   /*public function prepareKey($source_key, $row) {
     $key = array();

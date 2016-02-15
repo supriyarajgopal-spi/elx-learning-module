@@ -6,7 +6,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
 
     //The dependencies.
     $this->dependencies = array('List', 'Hotspot');
-    $this->itemIdentifier = 'parent_item_id';
+    $this->itemIdentifier = 'cdvid';
 
     //The Description of the import. This desription is shown on the Migrate GUI
     $this->description = t('Import of content objects.');

@@ -75,7 +75,7 @@ class HotspotitemParagraphMigration extends migrate_elx_Basic_Migration {
 		//The Source of the import
 		//$this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv', array(),
 	//	array('delimiter' => ',', 'header_rows' => 1, 'embedded_newlines'=> TRUE, 'enclosure'=>'"'));
-  $query = db_select('learning_point_csv', 'l')->fields('l')->condition('content_type', 'hot_spot_item' , '=');
+  $query = db_select('learning_point_csv', 'l')->fields('l')->condition('content_type', 'hot_spot' , '=');
   $this->source = new MigrateSourceSQL($query);
 		$this->destination = new MigrateDestinationParagraphsItem('hot_spot');
 

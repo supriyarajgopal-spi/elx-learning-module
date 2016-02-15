@@ -10,12 +10,12 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
 
     //The Description of the import. This desription is shown on the Migrate GUI
     $this->description = t('Import of content objects.');
-    $res = db_query("SELECT source FROM {feeds_source} WHERE id='learning_points'");
+    $res = db_query("SELECT source FROM {feeds_source} WHERE id='data_xls'");
     $source = $res->fetchAll();
     //dpm($source[0]->source);
     //The Source of the import
     //if(!$csv = drupal_realpath($source[0]->source)){
-      $csv = drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv';
+      //$csv = drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv';
     //}
     //$this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv', array(),
     //$this->source = new MigrateSourceCSV($csv, array(),
@@ -28,7 +28,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'id' => array(
+        'cid' => array(
           'type' => 'varchar',
       		'length' => 255,
       		'not null' => TRUE,

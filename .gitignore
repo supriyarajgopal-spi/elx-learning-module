@@ -8,3 +8,4 @@ sites/*/files
 sites/*/private
 
 meanio
+/nbproject/private/

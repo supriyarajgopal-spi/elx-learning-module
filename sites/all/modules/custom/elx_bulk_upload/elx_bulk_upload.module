@@ -13,15 +13,6 @@ function elx_bulk_upload_menu(){
     'access callback' => TRUE,
     'expanded' => TRUE,
   );
-  $items['admin/content/bulk-upload'] = array(
-    'title' => 'Wysiwyg Tool',
-    'type' => MENU_LOCAL_TASK,
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('elx_bulk_upload_form'),
-    'description' => 'Configure client-side editors.',
-    'access callback' => TRUE,
-    'expanded' => TRUE,
-  );
   return $items;
 }
 

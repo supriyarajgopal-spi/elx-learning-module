@@ -1,0 +1,74 @@
+app:
+  image: busybox
+  volumes:
+    - .:/var/www/app
+#    - ../nginx/conf/nginx.conf:/ect/nginx/nginx.conf:rw
+#    - /var/lib/mysql
+  tty: true
+
+web:
+  image: yappabe/nginx
+#  user: nginx
+  links:
+    - php
+  ports: 
+    - "80:80"
+  volumes_from:
+    - app:rw
+    # - ./nginx/html:/var/www
+    # - ./nginx/conf:/etc/nginx
+#    - ./nginx/logs:/usr/local/etc/nginx/logs
+#    - /var/www
+#  links:
+#    - db
+#    - memcache
+  environment:
+    DOCUMENT_ROOT: /var/www/app/
+    INDEX_FILE: index.php
+    PHP_FPM_SOCKET: php:9000
+    DB_HOST: db
+    DB_CLIENT: mysql
+    DB_USER: elx
+    DB_PASSWORD: elx
+    DB_PORT: 3306
+    DB_DATABASE: elx
+  links:
+    - db
+    - php
+#memcache:
+#  build: memcache/
+#  image: borja/docker-memcached
+#  ports:
+#    - "11211:11211"
+
+db:
+  image: mariadb
+  ports:
+    - "3306:3306"
+  volumes_from:
+    - app:rw
+  environment:
+    DEFAULT_USER: elx # A user with this name will be created
+    DEFAULT_PASS: elx
+    PORT: 3306
+    MYSQL_ROOT_PASSWORD: root
+    #STARTUP_SQL: sites/default/thehill.sql
+# It is recommended to use a separate container for data volumes. 
+# This provides some benefits, for e.g., the db container can be upgraded without affecting the data
+#db_data:
+#  image: busybox
+#  volumes:
+#    - ./db_data/data:/data
+memcached:
+  image: sameersbn/memcached:latest
+  ports:
+    - "11211:11211"
+  restart: always
+php:
+  image: yappabe/php:5.6
+  #user: nginx
+  #  ports: 
+  #    - "9000:9000"
+  volumes_from:
+    - app:rw
+  working_dir: /var/www/app

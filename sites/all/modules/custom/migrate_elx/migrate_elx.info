@@ -8,5 +8,4 @@ files[] = includes/question_answer.inc
 files[] = includes/list_item.inc
 files[] = includes/hot_spot.inc
 files[] = includes/content_object.inc
-files[] = includes/product_detail.inc
 files[] = includes/basic.inc

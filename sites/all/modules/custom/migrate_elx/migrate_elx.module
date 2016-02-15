@@ -42,7 +42,7 @@ function migrate_elx_migrate_api() {
 }
 
 function migrate_elx_form_alter(&$form, &$form_state, $form_id){
-	if($form_id == 'feeds_import_form' && arg(1) == 'product_details' ){
+	if($form_id == 'feeds_import_form' && (arg(1) == 'product_details' || arg(1) == 'learning_points') ){
 		//dpm($form);
 		$form['feeds']['elx_assets'] = array(
 			'#type' => 'plupload',
@@ -52,8 +52,17 @@ function migrate_elx_form_alter(&$form, &$form_state, $form_id){
         'max_file_size' => '268435456b',
       ),
 		);
+        //unset($form['#submit']);
 		$form['#submit'][] = 'migrate_elx_files_submit';
 	}
+}
+
+function migrate_elx_feeds_presave(FeedsSource $source, $entity, $item) {
+  //if ($source->id =='learning_points') {
+    // Skip saving this entity.
+    //$entity->feeds_item->skip = TRUE;
+  //}
+  //dpm('File has been uploaded and will be processed');
 }
 
 function migrate_elx_files_submit($form, &$form_state) {
@@ -87,4 +96,61 @@ function migrate_elx_files_submit($form, &$form_state) {
 			form_set_error('elx_assets', "Upload of {$uploaded_file['name']} failed");
 		}
 	}
+
+
+
+  migrate_static_registration(array('Contentobject'));
+  $migration = Migration::getInstance('Contentobject');
+  $result = $migration->processImport(array('force'=>TRUE));
+  dpm($result);
+}
+
+function migrate_elx_menu(){
+
+  $items['admin/content/bulk-upload'] = array(
+    'title' => 'Wysiwyg Tool',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('migrate_elx_upload_form'),
+    'description' => 'Configure client-side editors.',
+    'access callback' => TRUE,
+    'expanded' => TRUE,
+  );
+  return $items;
+}
+
+function migrate_elx_upload_form($form, &$form_state){
+
+  $form['upload'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Bulk Upload Content'),
+    '#collapsible' => FALSE,
+  );
+  /*$form['upload']['type'] = array(
+    '#type' => 'select',
+    '#options' => array(
+      'learning_content' => t('Learning Content'),
+      'product' => t('Product Details'),
+      'story' => t('Stories'),
+    ),
+    '#description' => t('Please choose what kind of content will be uploaded'),
+  );*/
+  $form['upload']['assets'] = array(
+  '#type' => 'plupload',
+  '#title' => t('Upload Assets'),
+);
+  $form['upload']['file'] = array(
+    '#type' => 'file',
+    '#title' => t('csv File'),
+    //"#upload_validators"  => array("file_validate_extensions" => array("zip")),
+
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'upload',
+
+  );
+
+  return $form;
 }

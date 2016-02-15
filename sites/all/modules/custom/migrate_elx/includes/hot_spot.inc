@@ -21,7 +21,7 @@ class HotspotMigration extends migrate_elx_Basic_Migration {
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'cid' => array(
+        'csvid' => array(
           'type' => 'int',
       		'unsigned' => true,
       		'not null' => TRUE,
@@ -39,7 +39,7 @@ class HotspotMigration extends migrate_elx_Basic_Migration {
     $this->addFieldMapping('field_subtitle', 'subtitle');
     $this->addFieldMapping('field_intro', 'intro_html');
     //$this->addFieldMapping('field_layout', 'field_layout');
-    $this->addFieldMapping('field_hot_spot_collection', 'cid')
+    $this->addFieldMapping('field_hot_spot_collection', 'csvid')
     ->sourceMigration('HotspotitemParagraph');
 
   }
@@ -83,7 +83,7 @@ class HotspotitemParagraphMigration extends migrate_elx_Basic_Migration {
 		$this->map = new MigrateSQLMap(
 		$this->machineName,
 		array(
-				'cid' => array(
+				'csvid' => array(
 					'type' => 'int',
       		'unsigned' => true,
       		'not null' => TRUE,

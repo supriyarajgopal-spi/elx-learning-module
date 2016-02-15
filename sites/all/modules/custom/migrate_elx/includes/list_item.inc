@@ -21,7 +21,7 @@ class ListMigration extends migrate_elx_Basic_Migration {
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'cid' => array(
+        'csvid' => array(
           'type' => 'int',
       		'unsigned' => true,
       		'not null' => TRUE,
@@ -39,7 +39,7 @@ class ListMigration extends migrate_elx_Basic_Migration {
     $this->addFieldMapping('language', 'language')
     ->defaultValue('en');
     //$this->addFieldMapping('field_layout', 'field_layout');
-    $this->addFieldMapping('field_list_item', 'cid')
+    $this->addFieldMapping('field_list_item', 'csvid')
     ->sourceMigration('ListitemParagraph');
 
   }
@@ -82,7 +82,7 @@ class ListitemParagraphMigration extends migrate_elx_Basic_Migration {
 		$this->map = new MigrateSQLMap(
 		$this->machineName,
 		array(
-				'cid' => array(
+				'csvid' => array(
 					'type' => 'varchar',
       		'length' => 255,
       		'not null' => TRUE,

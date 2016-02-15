@@ -28,7 +28,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'cid' => array(
+        'csvid' => array(
           'type' => 'varchar',
       		'length' => 255,
       		'not null' => TRUE,

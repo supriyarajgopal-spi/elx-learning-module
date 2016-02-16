@@ -67,7 +67,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 
 	   $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'paragraphs_item');
-        $query->entityCondition('bundle', $this->config['field_name']);
+        $query->entityCondition('bundle', 'hot_spot');
         $items  = isset($hostEntity->{$this->config['field_name']}[LANGUAGE_NONE]) ? $hostEntity->{$this->config['field_name']}[LANGUAGE_NONE] : array();
         $ids = field_collection_field_item_to_ids($items);
 		if(!empty($ids)){
@@ -222,7 +222,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     // Let other modules expose mapping targets.
     self::loadMappers();
     $entity_type = $this->entityType();
-    $bundle = $this->config['field_name'];
+    $bundle = 'hot_spot';#$this->config['field_name'];
     drupal_alter('feeds_processor_targets', $targets, $entity_type, $bundle);
 
     return $targets;

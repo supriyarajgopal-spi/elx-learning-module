@@ -83,11 +83,11 @@ function feeds_xls_permission(){
 
 /**
  * Implements hook_module_implements_alter
- * 
+ *
  * Until the feeds module stops using its own feeds_alter, and instead uses the
  * drupal_alter function, this hook is pointless.  Inestead we have altered the
  * weight of this module to be one more than the feeds module.
- * 
+ *
  */
 function feeds_xls_module_implements_alter(&$implementations, $hook){
   if($hook == 'feeds_processor_targets_alter' && isset($implementations['feeds_xls'])){
@@ -127,16 +127,16 @@ function feeds_xls_get_or_generate_feeds_item_entry($entity_type, $entity_id, $i
 
 /**
  * Implements hook_feeds_processor_targets_alter().
- * 
+ *
  * We alter the numeric field types so that fields that are set up with values
  * like:
- * 
+ *
  * 1|Something
  * 2|Rocking
  * 3|Banana
- * 
+ *
  * allow the entry of the text "Something", or "Rocking" instead of "1" or "2".
- * 
+ *
  * We alter date field types, so that "days since epoch" values can be imported
  * without changing the format in Excel
  */
@@ -199,11 +199,11 @@ function feeds_xls_feeds_set_target_date($source, $entity, $target, $value){
 
 /**
  * Callback for mapping text list fields.
- * 
+ *
  * Maps from a value to a key.
- * 
+ *
  */
-function feeds_xls_feeds_set_target_list_text($source, $entity, $target, $value){
+function feeds_xls_feeds_set_target_list_text($source, $entity, $target, $value, $arrayName = array()){
   if(!is_array($value)){
     $value = array(
       $value
@@ -225,7 +225,7 @@ function feeds_xls_feeds_set_target_list_text($source, $entity, $target, $value)
       unset($value[$k]);
     }
   }
-  text_feeds_set_target($source, $entity, $target, $value, TRUE);
+  text_feeds_set_target($source, $entity, $target, $value, array());
 }
 
 /**

@@ -246,7 +246,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     // Let other modules expose mapping targets.
     self::loadMappers();
     $entity_type = $this->entityType();
-    $bundle = 'hot_spot'; #$this->config['field_name'];
+    $bundle = $this->config['bundle'];
     drupal_alter('feeds_processor_targets', $targets, $entity_type, $bundle);
 
     return $targets;

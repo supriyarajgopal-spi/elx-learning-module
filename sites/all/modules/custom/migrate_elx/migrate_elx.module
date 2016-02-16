@@ -58,11 +58,11 @@ function migrate_elx_form_alter(&$form, &$form_state, $form_id){
 }
 
 function migrate_elx_feeds_presave(FeedsSource $source, $entity, $item) {
-  //if ($source->id =='learning_points') {
+  if ($source->id =='learning_points') {
     // Skip saving this entity.
-    //$entity->feeds_item->skip = TRUE;
-  //}
-  //dpm('File has been uploaded and will be processed');
+    $entity->feeds_item->skip = TRUE;
+  }
+  dpm('File has been uploaded and will be processed');
 }
 
 function migrate_elx_files_submit($form, &$form_state) {

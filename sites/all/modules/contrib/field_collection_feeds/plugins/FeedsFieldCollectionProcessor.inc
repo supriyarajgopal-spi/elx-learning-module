@@ -32,8 +32,9 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     //$paragraphs_item->setHostEntity($entity_type, $entity, LANGUAGE_NONE, FALSE);
     $paragraphs_item = new stdClass();
     $paragraphs_item->field_name = $this->config['field_name'];
+    $paragraphs_item->bundle = $this->config['host_entity_bundle'];
     $paragraphs_item->hostEntityType = $this->config['host_entity_type'];
-
+    //$paragraphs_item->hostEntityId = $this->config['host_entity_id'];
     return $paragraphs_item;
   }
 
@@ -67,9 +68,9 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 
 	   $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'paragraphs_item');
-        $query->entityCondition('bundle', 'hot_spot');
+        $query->entityCondition('bundle', $this->config['field_name']);
         $items  = isset($hostEntity->{$this->config['field_name']}[LANGUAGE_NONE]) ? $hostEntity->{$this->config['field_name']}[LANGUAGE_NONE] : array();
-        $ids = field_collection_field_item_to_ids($items);
+        $ids = paragraphs_field_item_to_ids($items);
 		if(!empty($ids)){
           $query->entityCondition('entity_id', $ids, 'IN');
 
@@ -107,6 +108,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     return array(
       'field_name' => NULL,
       'host_entity_type' => NULL,
+      'host_entity_bundle' => NULL,
       'is_field' => NULL,
       'guid_field_name' => '',
       'identifier_field_name' => '',
@@ -141,6 +143,14 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
       '#options' => $entity_types,
       '#default_value' => isset($this->config['host_entity_type']) ? $this->config['host_entity_type'] : NULL,
     );
+
+    $form['host_entity_bundle'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Host entity bundle'),
+      '#default_value' => isset($this->config['host_entity_bundle']) ? $this->config['host_entity_bundle'] : NULL,
+      //'#default_value' => isset($this->config['host_entity_type']) ? $this->config['host_entity_type'] : NULL,
+    );
+
     $form['is_field'] = array(
       '#type' => 'checkbox',
       '#title' => t('Is field'),
@@ -166,7 +176,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
    * Override setTargetElement to operate on a target item that is a entity.
    */
   //public function setTargetElement(FeedsSource $source, $target_item, $target_element, $value, $mapping) {
-  public function setTargetElement(FeedsSource $source, $target_item, $target_element, $value) {
+  public function setTargetElement(FeedsSource $source, $target_item, $target_element, $value, array $mapping = array()) {
 
     switch ($target_element) {
       case 'host_entity_guid':
@@ -176,9 +186,10 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
           $query->fieldCondition($this->config['guid_field_name'], 'value', $value);
         }
         else{
-          $query->propertyCondition($this->config['guid_field_name'], $value);
+          $query->propertyCondition($this->config['host_entity_guid'], $value);
         }
         $result = $query->execute();
+
         list($hostEntityType, $data) = each($result);
         $target_item->hostEntityId = $data ? key($data) : FALSE;
         break;
@@ -207,6 +218,19 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
       'description' => t('The globally unique identifier of the host entity. Must be unique. We used this value to fetch hostEntityId.'),
     );
 
+    // Add hostEntity GUID target
+    $targets['host_entity_id'] = array(
+      'name' => t('Host Entity ID'),
+      'description' => t('The globally unique identifier of the host entity. Must be unique. We used this value to fetch hostEntityId.'),
+    );
+
+    // Add hostEntity GUID target
+    $targets['host_entity_bunlde'] = array(
+      'name' => t('Host Entity ID'),
+      'description' => t('The globally unique identifier of the host entity. Must be unique. We used this value to fetch hostEntityId.'),
+    );
+
+
     // Add identifier field target
     $targets['identifier_field'] = array(
       'name' => t('Identifier Field'),
@@ -222,7 +246,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     // Let other modules expose mapping targets.
     self::loadMappers();
     $entity_type = $this->entityType();
-    $bundle = 'hot_spot';#$this->config['field_name'];
+    $bundle = 'hot_spot'; #$this->config['field_name'];
     drupal_alter('feeds_processor_targets', $targets, $entity_type, $bundle);
 
     return $targets;

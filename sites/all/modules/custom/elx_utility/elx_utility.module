@@ -90,3 +90,18 @@ function elx_utility_clone_node_alter(&$node, $context) {
     $node->field_manifest[$lang][0]['target_id'] = '';
   }
 }
+
+/**
+ * Implements hook_feeds_after_parse().
+ */
+function elx_utility_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
+  // add space to all field_keys for data_xls import
+  // some field_keys have spaces after parsing and can't alter mapping directly
+  if ($source->importer->id == 'data_xls') {
+    foreach ($result->items as $item_key => $item) {
+      foreach($item as $field_key => $field_val) {
+        $result->items[$item_key][$field_key . ' '] = $field_val;
+      }
+    }
+  }
+}

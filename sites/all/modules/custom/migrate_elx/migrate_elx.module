@@ -42,7 +42,7 @@ function migrate_elx_migrate_api() {
 }
 
 function migrate_elx_form_alter(&$form, &$form_state, $form_id){
-	if($form_id == 'feeds_import_form' && (arg(1) == 'product_details' || arg(1) == 'learning_points') ){
+	if($form_id == 'feeds_import_form' && (arg(1) == 'product_details' || arg(1) == 'data_xls') ){
 		//dpm($form);
 		$form['feeds']['elx_assets'] = array(
 			'#type' => 'plupload',

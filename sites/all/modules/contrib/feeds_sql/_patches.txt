@@ -1,0 +1,3 @@
+Fixed field names with uppercase characters.
+https://www.drupal.org/node/1763872#comment-10326341
+https://www.drupal.org/files/issues/field_names_must_be-1763872-15.patch

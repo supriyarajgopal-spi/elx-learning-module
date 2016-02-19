@@ -44,13 +44,6 @@ class FeedsSQLParser extends FeedsParser {
   }
 
   /**
-   * Override parent::getSourceElement() to use only lower keys.
-   */
-  public function getSourceElement(FeedsSource $source, FeedsParserResult $result, $element_key) {
-    return parent::getSourceElement($source, $result, drupal_strtolower($element_key));
-  }
-
-  /**
    * Define defaults.
    */
   public function sourceDefaults() {
@@ -127,7 +120,7 @@ class FeedsSQLParser extends FeedsParser {
     }
     return $form;
   }
-  
+
   /**
    * Validate entered query to make sure it works.
    */

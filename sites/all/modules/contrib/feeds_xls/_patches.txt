@@ -1,0 +1,3 @@
+Fixed values for list text fields being ignored.
+https://www.drupal.org/node/2651420#comment-10879646
+https://www.drupal.org/files/issues/ignored-list-text-values-2651420-4.patch

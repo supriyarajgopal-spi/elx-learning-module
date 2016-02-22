@@ -99,10 +99,10 @@ function migrate_elx_files_submit($form, &$form_state) {
 
 
 
-  migrate_static_registration(array('Contentobject'));
-  $migration = Migration::getInstance('Contentobject');
-  $result = $migration->processImport(array('force'=>TRUE));
-  dpm($result);
+  //migrate_static_registration(array('Contentobject'));
+  //$migration = Migration::getInstance('Contentobject');
+  //$result = $migration->processImport(array('force'=>TRUE));
+  //dpm($result);
 }
 
 function migrate_elx_menu(){

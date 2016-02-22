@@ -45,6 +45,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
     $this->addFieldMapping('field_markets', 'content_object_markets')->separator(',');
     //$this->addFieldMapping('language', 'language');
     $this->addFieldMapping('field_learning_objects', 'administrative_title')
+    ->separator(',')
     //
     ->sourceMigration(array('List','Hotspot'));
 

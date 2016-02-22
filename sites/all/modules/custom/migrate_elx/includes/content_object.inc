@@ -38,7 +38,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
     );
 
     //Field ampping
-    $this->addFieldMapping('title', 'original_administrative_title');
+    $this->addFieldMapping('title', 'administrative_title');
     $this->addFieldMapping('title_field', 'original_administrative_title');
     //$this->addFieldMapping('field_subtitle', 'subtitle');
     $this->addFieldMapping('field_intro', 'intro_html');

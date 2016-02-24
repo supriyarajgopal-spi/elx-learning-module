@@ -85,10 +85,6 @@ class FeedsExcelParser extends FeedsParser{
       $this->reader = $previous_this->reader;
       $this->chunk_filter = $previous_this->chunk_filter;
     }
-    // Upper case the mappings
-    foreach($source->importer->processor->config['mappings'] as $key => $mapping){
-      $source->importer->processor->config['mappings'][$key]['source'] = strtoupper($mapping['source']);
-    }
     // P A R S E !
     $rows = array();
     $this->chunk_filter->setRows($this->state->pointer, $this->chunk_size);
@@ -103,9 +99,9 @@ class FeedsExcelParser extends FeedsParser{
       foreach($cellIterator as $cell){
         if(!is_null($cell)){
           if(!isset($this->state->column_names)){
-            $row_values[] = strtoupper(trim($cell->getCalculatedValue()));
+            $row_values[] = trim($cell->getCalculatedValue());
           }else{
-            if(strlen(trim('' . $cell->getCalculatedValue())) || (count($this->state->column_names) ? $this->state->column_names[$column] : $column) == 'GUID'){
+            if(strlen(trim('' . $cell->getCalculatedValue())) || (count($this->state->column_names) && strtoupper($this->state->column_names[$column]) == 'GUID')){
               $row_values[count($this->state->column_names) ? $this->state->column_names[$column] : $column] = '' . $cell->getCalculatedValue();
             }
           }

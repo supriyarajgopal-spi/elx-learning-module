@@ -16,8 +16,6 @@
  * the _date_diff function will return the data in an array with name/value pairs for 'y', 'm', 'd'
  */
 
-$GLOBALS['reentry'] = 0;
-
 function tng_date_difference_creator($date)
 {
   $calc_date = _date_diff(strtotime($date), time());
@@ -4370,7 +4368,6 @@ function tng_shadow_node_presave($entity)
 
   $tng_debug =0;
   $translated_labels[] = '';
-  $GLOBALS['reentry']++;
 
   try {
     $form_state['redirect'] = '';
@@ -4415,9 +4412,6 @@ function tng_shadow_node_presave($entity)
       $entity_type = $entity->type;
       // this hook is intended for creating content, not to process manifests since they are made when we create a product
       if ($entity_type == 'object_manifest' || $entity_type == 'badge_manifest') {
-        return;
-      }
-      if ($GLOBALS['reentry'] == 3) {
         return;
       }
       // Set language for all fields.

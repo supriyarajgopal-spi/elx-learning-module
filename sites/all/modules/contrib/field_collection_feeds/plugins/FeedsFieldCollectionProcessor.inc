@@ -28,13 +28,11 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
    * Creates a new field collection item in memory and returns it.
    */
   protected function newEntity(FeedsSource $source) {
-    //$paragraphs_item = entity_create('paragraphs_item', array('field_name' => $this->config['field_name'], 'hostEntityType' => $this->config['host_entity_type']));
-    //$paragraphs_item->setHostEntity($entity_type, $entity, LANGUAGE_NONE, FALSE);
-    $paragraphs_item = new stdClass();
-    $paragraphs_item->field_name = $this->config['field_name'];
-    $paragraphs_item->bundle = $this->config['host_entity_bundle'];
-    $paragraphs_item->hostEntityType = $this->config['host_entity_type'];
-    $paragraphs_item->hostEntityId = $this->config['host_entity_id'];
+    $paragraphs_item = entity_create('paragraphs_item', array(
+      'field_name' => $this->config['field_name'],
+      'bundle' => $this->config['bundle'],
+      'hostEntityType' => $this->config['host_entity_type'],
+    ));
     return $paragraphs_item;
   }
 
@@ -54,37 +52,33 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
    */
   public function entitysave($entity) {
 
-    $values = (array)$entity;
-    $values['langcode'] = $values['Temporary target 1'];
     $skip_host_save = FALSE;
-    $paragraphs_item = entity_create('paragraphs_item', $values);
 
-    if (!empty($entity->hostEntityId)) {
-      $hostEntity_array = entity_load($this->config['host_entity_type'], array($entity->hostEntityId));
-      $hostEntity = reset($hostEntity_array);
-      $paragraphs_item->setHostEntity($this->config['host_entity_type'], $hostEntity, $values['langcode']);
+    $hostEntity = $entity->hostEntity();
+    if (!empty($hostEntity)) {
+      $entity->setHostEntity($this->config['host_entity_type'], $hostEntity, $entity->{'Temporary target 1'});
       //update by set item_id
 
-      if ($this->config['update_existing'] == FEEDS_UPDATE_EXISTING && isset($paragraphs_item->identifier_field) && isset($this->config['identifier_field_name'])) {
+      if ($this->config['update_existing'] == FEEDS_UPDATE_EXISTING && isset($entity->identifier_field) && isset($this->config['identifier_field_name'])) {
 
 	   $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'paragraphs_item');
         $query->entityCondition('bundle', $this->config['field_name']);
-        $items  = isset($hostEntity->{$this->config['field_name']}[$values['langcode']]) ? $hostEntity->{$this->config['field_name']}[$values['langcode']] : array();
+        $items  = isset($hostEntity->{$this->config['field_name']}[$entity->langcode()]) ? $hostEntity->{$this->config['field_name']}[$entity->langcode()] : array();
         $ids = paragraphs_field_item_to_ids($items);
 		if(!empty($ids)){
           $query->entityCondition('entity_id', $ids, 'IN');
 
-          $query->fieldCondition($this->config['identifier_field_name'], 'value', $paragraphs_item->identifier_field);
+          $query->fieldCondition($this->config['identifier_field_name'], 'value', $entity->identifier_field);
           $result = $query->execute();
 
           list($EntityType, $data) = each($result);
-          $paragraphs_item->item_id = $data ? key($data) : FALSE;
+          $entity->item_id = $data ? key($data) : FALSE;
 		}
-        if (!empty($paragraphs_item->item_id)) {
-          $paragraphs_item->is_new = NULL;
-		  $old_paragraphs_item = paragraphs_item_load($paragraphs_item->item_id);
-		  $paragraphs_item->revision_id = $old_paragraphs_item->revision_id;
+        if (!empty($entity->item_id)) {
+          $entity->is_new = NULL;
+		  $old_paragraphs_item = paragraphs_item_load($entity->item_id);
+		  $entity->revision_id = $old_paragraphs_item->revision_id;
           $skip_host_save = TRUE;
         }
         //drupal_set_message('123:'.$paragraphs_item->item_id);
@@ -93,7 +87,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 
     }
 
-    $paragraphs_item->save($skip_host_save);
+    $entity->save($skip_host_save);
   }
 
   /**
@@ -187,12 +181,15 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
           $query->fieldCondition($this->config['guid_field_name'], 'value', $value);
         }
         else{
-          $query->propertyCondition($this->config['host_entity_guid'], $value);
+          $query->propertyCondition($this->config['guid_field_name'], $value);
         }
         $result = $query->execute();
 
         list($hostEntityType, $data) = each($result);
-        $target_item->hostEntityId = $data ? key($data) : FALSE;
+        $entities = entity_load($hostEntityType, array(key($data)));
+        $entity = reset($entities);
+        // We don't create a link until we know the language.
+        $target_item->setHostEntity($hostEntityType, $entity, LANGUAGE_NONE, FALSE);
         break;
       default:
         parent::setTargetElement($source, $target_item, $target_element, $value);

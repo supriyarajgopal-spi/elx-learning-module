@@ -55,13 +55,14 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
   public function entitysave($entity) {
 
     $values = (array)$entity;
+    $values['langcode'] = $values['Temporary target 1'];
     $skip_host_save = FALSE;
     $paragraphs_item = entity_create('paragraphs_item', $values);
 
     if (!empty($entity->hostEntityId)) {
       $hostEntity_array = entity_load($this->config['host_entity_type'], array($entity->hostEntityId));
       $hostEntity = reset($hostEntity_array);
-      $paragraphs_item->setHostEntity($this->config['host_entity_type'], $hostEntity);
+      $paragraphs_item->setHostEntity($this->config['host_entity_type'], $hostEntity, $values['langcode']);
       //update by set item_id
 
       if ($this->config['update_existing'] == FEEDS_UPDATE_EXISTING && isset($paragraphs_item->identifier_field) && isset($this->config['identifier_field_name'])) {
@@ -69,7 +70,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 	   $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'paragraphs_item');
         $query->entityCondition('bundle', $this->config['field_name']);
-        $items  = isset($hostEntity->{$this->config['field_name']}[LANGUAGE_NONE]) ? $hostEntity->{$this->config['field_name']}[LANGUAGE_NONE] : array();
+        $items  = isset($hostEntity->{$this->config['field_name']}[$values['langcode']]) ? $hostEntity->{$this->config['field_name']}[$values['langcode']] : array();
         $ids = paragraphs_field_item_to_ids($items);
 		if(!empty($ids)){
           $query->entityCondition('entity_id', $ids, 'IN');

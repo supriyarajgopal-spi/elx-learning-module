@@ -34,7 +34,7 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
     $paragraphs_item->field_name = $this->config['field_name'];
     $paragraphs_item->bundle = $this->config['host_entity_bundle'];
     $paragraphs_item->hostEntityType = $this->config['host_entity_type'];
-    //$paragraphs_item->hostEntityId = $this->config['host_entity_id'];
+    $paragraphs_item->hostEntityId = $this->config['host_entity_id'];
     return $paragraphs_item;
   }
 

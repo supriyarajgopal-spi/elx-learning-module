@@ -11,16 +11,18 @@ class QuestionanswerMigration extends Migration {
     $this->description = t('Import of product content.');
 
     //The Source of the import
-    $this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv', array(),
-    array('delimiter' => ';', 'header_rows' => 1, 'embedded_newlines'=> TRUE, 'enclosure'=>"'"));
-    
-    $this->destination = new MigrateDestinationNode('question_and_answer');
+    //$this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv', array(),
+    //array('delimiter' => ';', 'header_rows' => 1, 'embedded_newlines'=> TRUE, 'enclosure'=>"'"));
+    $query = db_select('learning_point_csv', 'l')->fields('l')->condition('content_type', 'question_answer' , '=');
+    $this->source = new MigrateSourceSQL($query);
+    $this->destination = new MigrateDestinationNode('question_and_answer', array('text_format' => 'full_html'));
+
 
     //Source and destination relation for rollbacks
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'item_id' => array(
+        'csvid' => array(
           'type' => 'int',
           'unsigned' => TRUE,
           'not null' => TRUE,
@@ -32,7 +34,7 @@ class QuestionanswerMigration extends Migration {
 
     //Field ampping
     $this->addFieldMapping('title', 'administrative_title');
-		
+
   }
 }
 
@@ -91,7 +93,7 @@ class QuestionParagraphMigration extends migrate_elx_Basic_Migration {
 	}
 }
 
-class QuestionParagraphMigration extends migrate_elx_Basic_Migration {
+class AnswerParagraphMigration extends migrate_elx_Basic_Migration {
 	public function __construct() {
 		parent::__construct();
 
@@ -142,4 +144,3 @@ class QuestionParagraphMigration extends migrate_elx_Basic_Migration {
 		}
 	}
 }
-

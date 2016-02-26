@@ -14,14 +14,13 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
     $source = $res->fetchAll();
     //dpm($source[0]->source);
     //The Source of the import
-    //if(!$csv = drupal_realpath($source[0]->source)){
-      //$csv = drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv';
-    //}
+    if(!$csv = drupal_realpath($source[0]->source)){
+      $csv = drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv';
+    }
     //$this->source = new MigrateSourceCSV(drupal_get_path('module','migrate_elx') . '/csv/elx.learning_point.csv', array(),
-    //$this->source = new MigrateSourceCSV($csv, array(),
-    //array('delimiter' => ',', 'header_rows' => 1, 'embedded_newlines'=> TRUE));
-    $query = db_select('learning_point_csv', 'l')->fields('l')->condition('content_type', 'content_object' , '=');
-    $this->source = new MigrateSourceSQL($query);
+    $this->source = new MigrateSourceCSV($csv, array(), array('delimiter' => ',', 'header_rows' => 1, 'embedded_newlines'=> TRUE));
+
+    //$this->source = new MigrateSourceSQL('');
     $this->destination = new MigrateDestinationNode('content_object', array('text_format' => 'full_html'));
 
     //Source and destination relation for rollbacks
@@ -31,7 +30,7 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
         'csvid' => array(
           'type' => 'varchar',
       		'length' => 255,
-      		'not null' => TRUE,
+      		'not null' => TR
         )
       ),
       MigrateDestinationNode::getKeySchema()
@@ -39,15 +38,18 @@ class ContentobjectMigration extends migrate_elx_Basic_Migration {
 
     //Field ampping
     $this->addFieldMapping('title', 'administrative_title');
-    $this->addFieldMapping('title_field', 'original_administrative_title');
+    $this->addFieldMapping('title_field', 'administrative_title');
     //$this->addFieldMapping('field_subtitle', 'subtitle');
     $this->addFieldMapping('field_intro', 'intro_html');
-    $this->addFieldMapping('field_markets', 'content_object_markets')->separator(',');
+    $this->addFieldMapping('field_markets', 'content_object_markets')
+    ->separator(',');
+    $this->addFieldMapping('field_tags_keywords', 'content_object_tags_keywords')
+    ->separator(',');
     //$this->addFieldMapping('language', 'language');
     $this->addFieldMapping('field_learning_objects', 'administrative_title')
     ->separator(',')
     //
-    ->sourceMigration(array('List','Hotspot'));
+    ->sourceMigration(array('List','Hotspot','Questionanswer'));
 
   }
 

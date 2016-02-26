@@ -89,12 +89,12 @@ class ListitemParagraphMigration extends migrate_elx_Basic_Migration {
 		);
 
 		//Field ampping->defaultValue(DRUPAL_ROOT.'/sites/default/files/elx_bulk');
-		//$this->addFieldMapping('field_list_image', 'list_item_group_image');
-		//$this->addFieldMapping('field_list_image:source_dir')
-		//->defaultValue(DRUPAL_ROOT.'/sites/default/files/elx_bulk');
-		//$this->addFieldMapping('field_list_video', 'list_item_group_video');
-		//$this->addFieldMapping('field_list_video:source_dir')
-		//->defaultValue(DRUPAL_ROOT.'/sites/default/files/elx_bulk');
+		$this->addFieldMapping('field_list_image', 'list_item_group_image');
+		$this->addFieldMapping('field_list_image:source_dir')
+		->defaultValue(DRUPAL_ROOT.'/sites/default/files/elx_bulk');
+		$this->addFieldMapping('field_list_video', 'list_item_group_video');
+		$this->addFieldMapping('field_list_video:source_dir')
+		->defaultValue(DRUPAL_ROOT.'/sites/default/files/elx_bulk');
 		$this->addFieldMapping('field_list_text',  'list_item_group_text_html');
 		$this->addFieldMapping('field_name')->defaultValue('field_list_item');
   }

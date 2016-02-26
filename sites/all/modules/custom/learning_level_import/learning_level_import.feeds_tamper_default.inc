@@ -27,6 +27,37 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'content_objects-blank_source_3-copy';
+  $feeds_tamper->importer = 'content_objects';
+  $feeds_tamper->source = 'Blank source 3';
+  $feeds_tamper->plugin_id = 'copy';
+  $feeds_tamper->settings = array(
+    'to_from' => 'from',
+    'source' => 'administrative_title',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Copy source value';
+  $export['content_objects-blank_source_3-copy'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'content_objects-blank_source_3-php';
+  $feeds_tamper->importer = 'content_objects';
+  $feeds_tamper->source = 'Blank source 3';
+  $feeds_tamper->plugin_id = 'php';
+  $feeds_tamper->settings = array(
+    'php' => 'if ($result = db_query("SELECT f.entity_id FROM feeds_item f INNER JOIN learning_point_csv c ON f.guid = c.administrative_title WHERE f.entity_type = \'node\' AND c.parent_item_administrative_title = :title", array(\':title\' => $field))) {
+  return $result->fetchCol();
+}',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Execute php code';
+  $export['content_objects-blank_source_3-php'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'content_objects-content_object_markets-explode';
   $feeds_tamper->importer = 'content_objects';
   $feeds_tamper->source = 'content_object_markets';

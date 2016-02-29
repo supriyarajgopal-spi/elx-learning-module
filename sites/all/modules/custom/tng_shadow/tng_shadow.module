@@ -5308,10 +5308,12 @@ function tng_shadow_field_attach_delete($entity_type, $entity) {
  * Implements hook_cron().
  */
 function tng_shadow_cron() {
-  $result = db_query("SELECT n.nid FROM node n LEFT JOIN field_revision_field_manifest m ON n.nid = m.field_manifest_target_id WHERE n.type = 'object_manifest' AND m.field_manifest_target_id IS NULL");
   $queue = DrupalQueue::get('tng_shadow_orphan_manifests');
-  foreach ($result as $manifest) {
-    $queue->createItem($manifest->nid);
+  if ($queue->numberOfItems() == 0) {
+    $result = db_query("SELECT n.nid FROM node n LEFT JOIN field_revision_field_manifest m ON n.nid = m.field_manifest_target_id WHERE n.type = 'object_manifest' AND m.field_manifest_target_id IS NULL");
+    foreach ($result as $manifest) {
+      $queue->createItem($manifest->nid);
+    }
   }
 }
 

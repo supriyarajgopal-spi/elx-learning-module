@@ -5293,3 +5293,17 @@ function _date_diff($one, $two)
   return $result;
 }
 
+/**
+ * Implements hook_field_delete().
+ *
+ * Remove object manifests that are no longer attached to a node.
+ */
+function tng_shadow_field_attach_delete($entity_type, $entity) {
+  if ($entity_type == 'node' && !empty($entity->field_manifest)) {
+    foreach ($entity->field_manifest as $items) {
+      foreach ($items as $item) {
+        node_delete($item['target_id']);
+      }
+    }
+  }
+}

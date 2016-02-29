@@ -5300,19 +5300,37 @@ function _date_diff($one, $two)
  */
 function tng_shadow_field_attach_delete($entity_type, $entity) {
   if ($entity_type == 'node' && !empty($entity->field_manifest)) {
-    foreach ($entity->field_manifest as $items) {
-      foreach ($items as $item) {
-        $manifest = node_load($item['target_id']);
-        if (!empty($manifest)) {
-          // There is no support for removing content from the back end, so we
-          // unpublish it and remove it from all markets.
-          $manifest->status = NODE_NOT_PUBLISHED;
-          $manifest->field_manifest_markets = array();
-          node_save($manifest);
-          // Delete manifest from the back end.
-          node_delete($manifest->nid);
-        }
-      }
-    }
+    drupal_register_shutdown_function('drupal_cron_run');
   }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function tng_shadow_cron() {
+  $result = db_query("SELECT n.nid FROM node n LEFT JOIN field_revision_field_manifest m ON n.nid = m.field_manifest_target_id WHERE n.type = 'object_manifest' AND m.field_manifest_target_id IS NULL");
+  $queue = DrupalQueue::get('tng_shadow_orphan_manifests');
+  foreach ($result as $manifest) {
+    $queue->createItem($manifest->nid);
+  }
+}
+
+/**
+ * Implements hook_cron_queue_info().
+ */
+function tng_shadow_cron_queue_info() {
+  $queues['tng_shadow_orphan_manifests'] = array(
+    'worker callback' => 'node_delete',
+  );
+}
+
+/**
+ * Implements hook_delete().
+ */
+function object_manifest_delete($node) {
+  // There is no support for removing content from the back end, so we
+  // unpublish it and remove it from all markets.
+  $manifest->status = NODE_NOT_PUBLISHED;
+  $manifest->field_manifest_markets = array();
+  mean_shadow_node_update($node);
 }

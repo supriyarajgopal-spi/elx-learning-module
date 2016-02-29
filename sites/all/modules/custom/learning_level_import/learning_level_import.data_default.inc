@@ -350,6 +350,10 @@ function learning_level_import_data_default() {
         'type' => 'varchar',
         'length' => 255,
       ),
+      'content_object_learning_template' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
     ),
     'name' => 'learning_point_csv',
     'indexes' => array(
@@ -587,6 +591,9 @@ function learning_level_import_data_default() {
         'label' => 'content_object_category',
         'locked' => FALSE,
         'required' => FALSE,
+      ),
+      'content_object_learning_template' => array(
+        'label' => 'content_object_learning_template',
       ),
     ),
     'label_field' => '',

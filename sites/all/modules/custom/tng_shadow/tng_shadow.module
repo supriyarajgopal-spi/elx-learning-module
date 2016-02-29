@@ -5302,7 +5302,16 @@ function tng_shadow_field_attach_delete($entity_type, $entity) {
   if ($entity_type == 'node' && !empty($entity->field_manifest)) {
     foreach ($entity->field_manifest as $items) {
       foreach ($items as $item) {
-        node_delete($item['target_id']);
+        $manifest = node_load($item['target_id']);
+        if (!empty($manifest)) {
+          // There is no support for removing content from the back end, so we
+          // unpublish it and remove it from all markets.
+          $manifest->status = NODE_NOT_PUBLISHED;
+          $manifest->field_manifest_markets = array();
+          node_save($manifest);
+          // Delete manifest from the back end.
+          node_delete($manifest->nid);
+        }
       }
     }
   }

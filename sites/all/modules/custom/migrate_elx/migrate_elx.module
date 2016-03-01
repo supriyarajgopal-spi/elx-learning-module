@@ -62,7 +62,6 @@ function migrate_elx_feeds_presave(FeedsSource $source, $entity, $item) {
     // Skip saving this entity.
     $entity->feeds_item->skip = TRUE;
   }
-  dpm('File has been uploaded and will be processed');
 }
 
 function migrate_elx_files_submit($form, &$form_state) {

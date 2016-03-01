@@ -160,23 +160,23 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_custom_cta_-strip_tags';
+  $feeds_tamper->id = 'data_xls-content_object_custom_cta-strip_tags';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_custom_cta ';
+  $feeds_tamper->source = 'content_object_custom_cta';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
   $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Strip tags';
-  $export['data_xls-content_object_custom_cta_-strip_tags'] = $feeds_tamper;
+  $export['data_xls-content_object_custom_cta-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_custom_cta_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_custom_cta-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_custom_cta ';
+  $feeds_tamper->source = 'content_object_custom_cta';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -184,14 +184,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_custom_cta_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_custom_cta-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_exam_pass_content_html_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_exam_pass_content_html-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_exam_pass_content_html ';
+  $feeds_tamper->source = 'content_object_exam_pass_content_html';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -199,14 +199,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_exam_pass_content_html_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_exam_pass_content_html-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_exam_pass_feedback_html_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_exam_pass_feedback_html-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_exam_pass_feedback_html ';
+  $feeds_tamper->source = 'content_object_exam_pass_feedback_html';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -214,14 +214,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_exam_pass_feedback_html_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_exam_pass_feedback_html-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_exam_perfect_content_html_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_exam_perfect_content_html-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_exam_perfect_content_html ';
+  $feeds_tamper->source = 'content_object_exam_perfect_content_html';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -229,7 +229,7 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_exam_perfect_content_html_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_exam_perfect_content_html-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -259,6 +259,35 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-content_object_headline-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_learning_template-strip_tags';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_learning_template';
+  $feeds_tamper->plugin_id = 'strip_tags';
+  $feeds_tamper->settings = array(
+    'allowed_tags' => '',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Strip tags';
+  $export['data_xls-content_object_learning_template-strip_tags'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_learning_template-trim';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_learning_template';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['data_xls-content_object_learning_template-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -361,23 +390,23 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_point_value_-strip_tags';
+  $feeds_tamper->id = 'data_xls-content_object_point_value-strip_tags';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_point_value ';
+  $feeds_tamper->source = 'content_object_point_value';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
   $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Strip tags';
-  $export['data_xls-content_object_point_value_-strip_tags'] = $feeds_tamper;
+  $export['data_xls-content_object_point_value-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_point_value_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_point_value-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_point_value ';
+  $feeds_tamper->source = 'content_object_point_value';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -385,26 +414,26 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_point_value_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_point_value-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-array_filter';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-array_filter';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'array_filter';
   $feeds_tamper->settings = array();
   $feeds_tamper->weight = 10;
   $feeds_tamper->description = 'Filter empty items';
-  $export['data_xls-content_object_tags_keywords_-array_filter'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-array_filter'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-explode';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-explode';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => ',',
@@ -413,14 +442,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 8;
   $feeds_tamper->description = 'Explode';
-  $export['data_xls-content_object_tags_keywords_-explode'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-explode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-implode';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-implode';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'implode';
   $feeds_tamper->settings = array(
     'glue' => ',',
@@ -428,28 +457,28 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 12;
   $feeds_tamper->description = 'Implode';
-  $export['data_xls-content_object_tags_keywords_-implode'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-implode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-strip_tags';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-strip_tags';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
   $feeds_tamper->weight = 7;
   $feeds_tamper->description = 'Strip tags';
-  $export['data_xls-content_object_tags_keywords_-strip_tags'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-trim';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -457,19 +486,19 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 9;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-content_object_tags_keywords_-trim'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-content_object_tags_keywords_-unique';
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-unique';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'content_object_tags_keywords ';
+  $feeds_tamper->source = 'content_object_tags_keywords';
   $feeds_tamper->plugin_id = 'unique';
   $feeds_tamper->settings = array();
   $feeds_tamper->weight = 11;
   $feeds_tamper->description = 'Unique';
-  $export['data_xls-content_object_tags_keywords_-unique'] = $feeds_tamper;
+  $export['data_xls-content_object_tags_keywords-unique'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1028,23 +1057,23 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-parent_item_administrative_title_-strip_tags';
+  $feeds_tamper->id = 'data_xls-parent_item_administrative_title-strip_tags';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'parent_item_administrative_title ';
+  $feeds_tamper->source = 'parent_item_administrative_title';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Strip tags';
-  $export['data_xls-parent_item_administrative_title_-strip_tags'] = $feeds_tamper;
+  $export['data_xls-parent_item_administrative_title-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-parent_item_administrative_title_-trim';
+  $feeds_tamper->id = 'data_xls-parent_item_administrative_title-trim';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'parent_item_administrative_title ';
+  $feeds_tamper->source = 'parent_item_administrative_title';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -1052,7 +1081,7 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 5;
   $feeds_tamper->description = 'Trim';
-  $export['data_xls-parent_item_administrative_title_-trim'] = $feeds_tamper;
+  $export['data_xls-parent_item_administrative_title-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1086,9 +1115,9 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-explode_left_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-explode_left_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => '[',
@@ -1097,14 +1126,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 9;
   $feeds_tamper->description = 'Explode [';
-  $export['data_xls-qa_group_question_answers_array_-explode_left_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-explode_left_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-explode_right_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-explode_right_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => ']',
@@ -1113,14 +1142,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 15;
   $feeds_tamper->description = 'Explode ]';
-  $export['data_xls-qa_group_question_answers_array_-explode_right_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-explode_right_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-explode_square_brackets';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-explode_square_brackets';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => '][',
@@ -1129,14 +1158,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 18;
   $feeds_tamper->description = 'Explode ][';
-  $export['data_xls-qa_group_question_answers_array_-explode_square_brackets'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-explode_square_brackets'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-explode_vertical_dash';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-explode_vertical_dash';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => '|',
@@ -1145,14 +1174,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 12;
   $feeds_tamper->description = 'Explode |';
-  $export['data_xls-qa_group_question_answers_array_-explode_vertical_dash'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-explode_vertical_dash'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-implode_left_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-implode_left_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'implode';
   $feeds_tamper->settings = array(
     'glue' => '[',
@@ -1160,14 +1189,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 11;
   $feeds_tamper->description = 'Implode [';
-  $export['data_xls-qa_group_question_answers_array_-implode_left_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-implode_left_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-implode_right_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-implode_right_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'implode';
   $feeds_tamper->settings = array(
     'glue' => ']',
@@ -1175,14 +1204,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 17;
   $feeds_tamper->description = 'Implode ]';
-  $export['data_xls-qa_group_question_answers_array_-implode_right_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-implode_right_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-implode_square_brackets';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-implode_square_brackets';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'implode';
   $feeds_tamper->settings = array(
     'glue' => ']%n[',
@@ -1191,14 +1220,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 19;
   $feeds_tamper->description = 'Implode ][';
-  $export['data_xls-qa_group_question_answers_array_-implode_square_brackets'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-implode_square_brackets'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-implode_vertical_dash';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-implode_vertical_dash';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'implode';
   $feeds_tamper->settings = array(
     'glue' => '%s|%s',
@@ -1206,14 +1235,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 14;
   $feeds_tamper->description = 'Implode |';
-  $export['data_xls-qa_group_question_answers_array_-implode_vertical_dash'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-implode_vertical_dash'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-trim_left_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-trim_left_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -1221,14 +1250,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 10;
   $feeds_tamper->description = 'Trim [';
-  $export['data_xls-qa_group_question_answers_array_-trim_left_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-trim_left_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-trim_right_square_bracket';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-trim_right_square_bracket';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -1236,14 +1265,14 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 16;
   $feeds_tamper->description = 'Trim ]';
-  $export['data_xls-qa_group_question_answers_array_-trim_right_square_bracket'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-trim_right_square_bracket'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array_-trim_vertical_dash';
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-trim_vertical_dash';
   $feeds_tamper->importer = 'data_xls';
-  $feeds_tamper->source = 'qa_group_question_answers_array ';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -1251,7 +1280,7 @@ function learning_level_import_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 13;
   $feeds_tamper->description = 'Trim |';
-  $export['data_xls-qa_group_question_answers_array_-trim_vertical_dash'] = $feeds_tamper;
+  $export['data_xls-qa_group_question_answers_array-trim_vertical_dash'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

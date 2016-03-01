@@ -230,7 +230,7 @@ function learning_level_import_feeds_importer_default() {
       'config' => array(
         'mappings' => array(
           0 => array(
-            'source' => 'parent_item_administrative_title ',
+            'source' => 'parent_item_administrative_title',
             'target' => 'parent_item_administrative_title',
             'unique' => FALSE,
           ),
@@ -285,27 +285,27 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           11 => array(
-            'source' => 'content_object_point_value ',
+            'source' => 'content_object_point_value',
             'target' => 'content_object_point_value',
             'unique' => FALSE,
           ),
           12 => array(
-            'source' => 'content_object_tags_keywords ',
+            'source' => 'content_object_tags_keywords',
             'target' => 'content_object_tags_keywords',
             'unique' => FALSE,
           ),
           13 => array(
-            'source' => 'content_object_exam_pass_feedback_html ',
+            'source' => 'content_object_exam_pass_feedback_html',
             'target' => 'content_object_exam_pass_feedback_html',
             'unique' => FALSE,
           ),
           14 => array(
-            'source' => 'content_object_exam_pass_content_html ',
+            'source' => 'content_object_exam_pass_content_html',
             'target' => 'content_object_exam_pass_content_html',
             'unique' => FALSE,
           ),
           15 => array(
-            'source' => 'content_object_exam_perfect_content_html ',
+            'source' => 'content_object_exam_perfect_content_html',
             'target' => 'content_object_exam_perfect_content_html',
             'unique' => FALSE,
           ),
@@ -320,126 +320,131 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           18 => array(
-            'source' => 'content_object_custom_cta ',
+            'source' => 'content_object_custom_cta',
             'target' => 'content_object_custom_cta',
             'unique' => FALSE,
           ),
           19 => array(
+            'source' => 'content_object_learning_template',
+            'target' => 'content_object_learning_template',
+            'unique' => FALSE,
+          ),
+          20 => array(
             'source' => 'reveal_group_thumbnail',
             'target' => 'reveal_group_thumbnail',
             'unique' => FALSE,
           ),
-          20 => array(
+          21 => array(
             'source' => 'reveal_group_hero_image',
             'target' => 'reveal_group_hero_image',
             'unique' => FALSE,
           ),
-          21 => array(
+          22 => array(
             'source' => 'reveal_group_video',
             'target' => 'reveal_group_video',
             'unique' => FALSE,
           ),
-          22 => array(
+          23 => array(
             'source' => 'reveal_group_text_html',
             'target' => 'reveal_group_text_html',
             'unique' => FALSE,
           ),
-          23 => array(
+          24 => array(
             'source' => 'reveal_group_weight',
             'target' => 'reveal_group_weight',
             'unique' => FALSE,
           ),
-          24 => array(
-            'source' => 'qa_question_type',
-            'target' => 'qa_question_type',
-            'unique' => FALSE,
-          ),
           25 => array(
-            'source' => 'qa_group_question_text',
-            'target' => 'qa_group_question_text',
-            'unique' => FALSE,
-          ),
-          26 => array(
-            'source' => 'qa_group_question_image',
-            'target' => 'qa_group_question_image',
-            'unique' => FALSE,
-          ),
-          27 => array(
-            'source' => 'qa_group_question_video',
-            'target' => 'qa_group_question_video',
-            'unique' => FALSE,
-          ),
-          28 => array(
-            'source' => 'qa_group_question_answers_array ',
-            'target' => 'qa_group_question_answers_array',
-            'unique' => FALSE,
-          ),
-          29 => array(
-            'source' => 'qa_is_required',
-            'target' => 'qa_is_required',
-            'unique' => FALSE,
-          ),
-          30 => array(
-            'source' => 'qa_is_final',
-            'target' => 'qa_is_final',
-            'unique' => FALSE,
-          ),
-          31 => array(
-            'source' => 'qa_completion_text',
-            'target' => 'qa_completion_text',
-            'unique' => FALSE,
-          ),
-          32 => array(
-            'source' => 'qa_question_weight',
-            'target' => 'qa_question_weight',
-            'unique' => FALSE,
-          ),
-          33 => array(
-            'source' => 'hot_spot_image',
-            'target' => 'hot_spot_image',
-            'unique' => FALSE,
-          ),
-          34 => array(
-            'source' => 'hot_spot_group_x_cordinate',
-            'target' => 'hot_spot_group_x_cordinate',
-            'unique' => FALSE,
-          ),
-          35 => array(
-            'source' => 'hot_spot_group_y_cordinate',
-            'target' => 'hot_spot_group_y_cordinate',
-            'unique' => FALSE,
-          ),
-          36 => array(
-            'source' => 'hot_spot_text_html',
-            'target' => 'hot_spot_text_html',
-            'unique' => FALSE,
-          ),
-          37 => array(
-            'source' => 'hot_spot_weight',
-            'target' => 'hot_spot_weight',
-            'unique' => FALSE,
-          ),
-          38 => array(
             'source' => 'list_item_group_image',
             'target' => 'list_item_group_image',
             'unique' => FALSE,
           ),
-          39 => array(
+          26 => array(
             'source' => 'list_item_group_video',
             'target' => 'list_item_group_video',
             'unique' => FALSE,
           ),
-          40 => array(
+          27 => array(
             'source' => 'list_item_group_text_html',
             'target' => 'list_item_group_text_html',
             'unique' => FALSE,
           ),
-          41 => array(
+          28 => array(
             'source' => 'list_item_group_weight',
             'target' => 'list_item_group_weight',
             'unique' => FALSE,
           ),
+          29 => array(
+            'source' => 'qa_question_type',
+            'target' => 'qa_question_type',
+            'unique' => FALSE,
+          ),
+          30 => array(
+            'source' => 'qa_is_required',
+            'target' => 'qa_is_required',
+            'unique' => FALSE,
+          ),
+          31 => array(
+            'source' => 'qa_is_final',
+            'target' => 'qa_is_final',
+            'unique' => FALSE,
+          ),
+          32 => array(
+            'source' => 'qa_group_question_text',
+            'target' => 'qa_group_question_text',
+            'unique' => FALSE,
+          ),
+          33 => array(
+            'source' => 'qa_completion_text',
+            'target' => 'qa_completion_text',
+            'unique' => FALSE,
+          ),
+          34 => array(
+            'source' => 'qa_group_question_image',
+            'target' => 'qa_group_question_image',
+            'unique' => FALSE,
+          ),
+          35 => array(
+            'source' => 'qa_group_question_video',
+            'target' => 'qa_group_question_video',
+            'unique' => FALSE,
+          ),
+          36 => array(
+            'source' => 'qa_group_question_answers_array',
+            'target' => 'qa_group_question_answers_array',
+            'unique' => FALSE,
+          ),
+          37 => array(
+            'source' => 'qa_question_weight',
+            'target' => 'qa_question_weight',
+            'unique' => FALSE,
+          ),
+          38 => array(
+            'source' => 'hot_spot_image',
+            'target' => 'hot_spot_image',
+            'unique' => FALSE,
+          ),
+          39 => array(
+            'source' => 'hot_spot_group_x_cordinate',
+            'target' => 'hot_spot_group_x_cordinate',
+            'unique' => FALSE,
+          ),
+          40 => array(
+            'source' => 'hot_spot_group_y_cordinate',
+            'target' => 'hot_spot_group_y_cordinate',
+            'unique' => FALSE,
+          ),
+          41 => array(
+            'source' => 'hot_spot_text_html',
+            'target' => 'hot_spot_text_html',
+            'unique' => FALSE,
+          ),
           42 => array(
+            'source' => 'hot_spot_weight',
+            'target' => 'hot_spot_weight',
+            'unique' => FALSE,
+          ),
+          43 => array(
             'source' => 'guid',
             'target' => 'guid',
             'unique' => 1,

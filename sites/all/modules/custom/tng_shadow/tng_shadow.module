@@ -5300,7 +5300,11 @@ function _date_diff($one, $two)
  */
 function tng_shadow_field_attach_delete($entity_type, $entity) {
   if ($entity_type == 'node' && !empty($entity->field_manifest)) {
-    drupal_register_shutdown_function('drupal_cron_run');
+    foreach ($entity->field_manifest as $items) {
+      foreach ($items as $item) {
+        drupal_register_shutdown_function('node_delete', $item['target_id']);
+      }
+    }
   }
 }
 

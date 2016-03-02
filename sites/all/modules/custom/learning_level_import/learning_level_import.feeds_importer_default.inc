@@ -16,7 +16,7 @@ function learning_level_import_feeds_importer_default() {
   $feeds_importer->id = 'content_objects';
   $feeds_importer->config = array(
     'name' => 'Content Objects',
-    'description' => 'LL import 9',
+    'description' => 'LL import 11',
     'fetcher' => array(
       'plugin_key' => 'FeedsSQLFetcher',
       'config' => array(
@@ -1497,7 +1497,7 @@ function learning_level_import_feeds_importer_default() {
   $feeds_importer->id = 'reveal_collection';
   $feeds_importer->config = array(
     'name' => 'Reveal Collection',
-    'description' => '',
+    'description' => 'LL import 10',
     'fetcher' => array(
       'plugin_key' => 'FeedsSQLFetcher',
       'config' => array(
@@ -1635,7 +1635,7 @@ function learning_level_import_feeds_importer_default() {
   $feeds_importer->id = 'reveal_node';
   $feeds_importer->config = array(
     'name' => 'Reveal Node',
-    'description' => '',
+    'description' => 'LL import 9',
     'fetcher' => array(
       'plugin_key' => 'FeedsSQLFetcher',
       'config' => array(

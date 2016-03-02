@@ -182,6 +182,11 @@ function learning_level_import_feeds_importer_default() {
             'target' => 'field_learning_template',
             'unique' => FALSE,
           ),
+          19 => array(
+            'source' => 'Blank source 4',
+            'target' => 'field_final_exam',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',

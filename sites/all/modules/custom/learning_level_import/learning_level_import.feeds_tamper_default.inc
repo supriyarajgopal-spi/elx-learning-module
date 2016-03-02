@@ -58,6 +58,40 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'content_objects-blank_source_4-convert_boolean';
+  $feeds_tamper->importer = 'content_objects';
+  $feeds_tamper->source = 'Blank source 4';
+  $feeds_tamper->plugin_id = 'convert_boolean';
+  $feeds_tamper->settings = array(
+    'true_value' => 'trivia',
+    'false_value' => '',
+    'match_case' => 0,
+    'no_match' => 'false',
+    'other_text' => '',
+    'no_match_value' => FALSE,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Convert to boolean';
+  $export['content_objects-blank_source_4-convert_boolean'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'content_objects-blank_source_4-copy';
+  $feeds_tamper->importer = 'content_objects';
+  $feeds_tamper->source = 'Blank source 4';
+  $feeds_tamper->plugin_id = 'copy';
+  $feeds_tamper->settings = array(
+    'to_from' => 'from',
+    'source' => 'content_object_learning_template',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Copy source value';
+  $export['content_objects-blank_source_4-copy'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'content_objects-content_object_markets-explode';
   $feeds_tamper->importer = 'content_objects';
   $feeds_tamper->source = 'content_object_markets';

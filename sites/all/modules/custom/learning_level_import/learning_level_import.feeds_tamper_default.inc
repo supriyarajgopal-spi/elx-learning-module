@@ -1124,7 +1124,7 @@ function learning_level_import_feeds_tamper_default() {
     'limit' => '',
     'real_separator' => '[',
   );
-  $feeds_tamper->weight = 9;
+  $feeds_tamper->weight = 21;
   $feeds_tamper->description = 'Explode [';
   $export['data_xls-qa_group_question_answers_array-explode_left_square_bracket'] = $feeds_tamper;
 
@@ -1140,7 +1140,7 @@ function learning_level_import_feeds_tamper_default() {
     'limit' => '',
     'real_separator' => ']',
   );
-  $feeds_tamper->weight = 15;
+  $feeds_tamper->weight = 27;
   $feeds_tamper->description = 'Explode ]';
   $export['data_xls-qa_group_question_answers_array-explode_right_square_bracket'] = $feeds_tamper;
 
@@ -1156,7 +1156,7 @@ function learning_level_import_feeds_tamper_default() {
     'limit' => '',
     'real_separator' => '][',
   );
-  $feeds_tamper->weight = 18;
+  $feeds_tamper->weight = 30;
   $feeds_tamper->description = 'Explode ][';
   $export['data_xls-qa_group_question_answers_array-explode_square_brackets'] = $feeds_tamper;
 
@@ -1172,7 +1172,7 @@ function learning_level_import_feeds_tamper_default() {
     'limit' => '',
     'real_separator' => '|',
   );
-  $feeds_tamper->weight = 12;
+  $feeds_tamper->weight = 24;
   $feeds_tamper->description = 'Explode |';
   $export['data_xls-qa_group_question_answers_array-explode_vertical_dash'] = $feeds_tamper;
 
@@ -1187,7 +1187,7 @@ function learning_level_import_feeds_tamper_default() {
     'glue' => '[',
     'real_glue' => '[',
   );
-  $feeds_tamper->weight = 11;
+  $feeds_tamper->weight = 23;
   $feeds_tamper->description = 'Implode [';
   $export['data_xls-qa_group_question_answers_array-implode_left_square_bracket'] = $feeds_tamper;
 
@@ -1202,7 +1202,7 @@ function learning_level_import_feeds_tamper_default() {
     'glue' => ']',
     'real_glue' => ']',
   );
-  $feeds_tamper->weight = 17;
+  $feeds_tamper->weight = 29;
   $feeds_tamper->description = 'Implode ]';
   $export['data_xls-qa_group_question_answers_array-implode_right_square_bracket'] = $feeds_tamper;
 
@@ -1218,7 +1218,7 @@ function learning_level_import_feeds_tamper_default() {
     'real_glue' => ']
 [',
   );
-  $feeds_tamper->weight = 19;
+  $feeds_tamper->weight = 31;
   $feeds_tamper->description = 'Implode ][';
   $export['data_xls-qa_group_question_answers_array-implode_square_brackets'] = $feeds_tamper;
 
@@ -1233,9 +1233,23 @@ function learning_level_import_feeds_tamper_default() {
     'glue' => '%s|%s',
     'real_glue' => ' | ',
   );
-  $feeds_tamper->weight = 14;
+  $feeds_tamper->weight = 26;
   $feeds_tamper->description = 'Implode |';
   $export['data_xls-qa_group_question_answers_array-implode_vertical_dash'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-strip_tags';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
+  $feeds_tamper->plugin_id = 'strip_tags';
+  $feeds_tamper->settings = array(
+    'allowed_tags' => '',
+  );
+  $feeds_tamper->weight = 20;
+  $feeds_tamper->description = 'Strip tags';
+  $export['data_xls-qa_group_question_answers_array-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1248,7 +1262,7 @@ function learning_level_import_feeds_tamper_default() {
     'mask' => '',
     'side' => 'trim',
   );
-  $feeds_tamper->weight = 10;
+  $feeds_tamper->weight = 22;
   $feeds_tamper->description = 'Trim [';
   $export['data_xls-qa_group_question_answers_array-trim_left_square_bracket'] = $feeds_tamper;
 
@@ -1263,7 +1277,7 @@ function learning_level_import_feeds_tamper_default() {
     'mask' => '',
     'side' => 'trim',
   );
-  $feeds_tamper->weight = 16;
+  $feeds_tamper->weight = 28;
   $feeds_tamper->description = 'Trim ]';
   $export['data_xls-qa_group_question_answers_array-trim_right_square_bracket'] = $feeds_tamper;
 
@@ -1278,7 +1292,7 @@ function learning_level_import_feeds_tamper_default() {
     'mask' => '',
     'side' => 'trim',
   );
-  $feeds_tamper->weight = 13;
+  $feeds_tamper->weight = 25;
   $feeds_tamper->description = 'Trim |';
   $export['data_xls-qa_group_question_answers_array-trim_vertical_dash'] = $feeds_tamper;
 

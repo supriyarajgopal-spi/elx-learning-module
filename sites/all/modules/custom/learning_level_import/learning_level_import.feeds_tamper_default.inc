@@ -47,7 +47,7 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->source = 'Blank source 3';
   $feeds_tamper->plugin_id = 'php';
   $feeds_tamper->settings = array(
-    'php' => 'if ($result = db_query("SELECT f.entity_id FROM feeds_item f INNER JOIN learning_point_csv c ON f.guid = c.administrative_title WHERE f.entity_type = \'node\' AND c.parent_item_administrative_title = :title", array(\':title\' => $field))) {
+    'php' => 'if ($result = db_query("SELECT f.entity_id FROM feeds_item f INNER JOIN learning_point_csv c ON f.guid = c.administrative_title WHERE f.entity_type = \'node\' AND c.parent_item_administrative_title = :title GROUP BY f.entity_id", array(\':title\' => $field))) {
   return $result->fetchCol();
 }',
   );

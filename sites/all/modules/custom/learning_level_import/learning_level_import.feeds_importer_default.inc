@@ -1023,6 +1023,11 @@ function learning_level_import_feeds_importer_default() {
             'target' => 'guid',
             'unique' => 1,
           ),
+          7 => array(
+            'source' => 'Blank source 1',
+            'target' => 'field_layout',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',

@@ -4450,11 +4450,12 @@ function tng_shadow_node_presave($entity)
           $namevalue = '[ { ';
           // if we have a paragraphs type, use a wrapper for easier reference
           $paragraphs = $wrapper->language($language)->$info['field_name']->value();
+          // Ensure paragraphs variable is an array.
+          $paragraphs = is_array($paragraphs) ? $paragraphs : array($paragraphs);
           if ($tng_debug == 1) {
             dpm('paragraphs');
             dpm($paragraphs);
           }
-          $number_of_paragraphs = count($wrapper->language($language)->$info['field_name']->value());
           $match_possibilites = array('field_priority_image', 'field_priority_text');
           $drag_possibilities = array('field_left_drag_image', 'field_left_drag_text', 'field_right_drag_image', 'field_right_drag_text');
           $drag_select_possibilities = array('field_drag_select_image', 'field_drag_select_text', 'field_correct_answer');
@@ -4463,10 +4464,10 @@ function tng_shadow_node_presave($entity)
           $flashcard_possibilities = array('field_front_card_image', 'field_front_card', 'field_back_card_image', 'field_back_card');
           $matchgame_possibilities = array('field_top_match_text', 'field_top_match_image', 'field_middle_match_text', 'field_middle_match_image', 'field_bottom_match_text', 'field_bottom_match_image');
           // explore each paragraph
-          for ($p = 0; $p < $number_of_paragraphs; $p++) {
+          foreach ($paragraphs as $paragraph) {
             // Using the paragraph's bundle type, we can get all the fields we
             // need to account for in our data.
-            $paragraph_fields = field_info_instances('paragraphs_item', $paragraphs[$p]->bundle);
+            $paragraph_fields = field_info_instances('paragraphs_item', $paragraph->bundle);
             $number_of_paragraph_fields = count($paragraph_fields);
             if ($tng_debug == 1) {
               dpm('para fields');
@@ -4488,12 +4489,12 @@ function tng_shadow_node_presave($entity)
               }
               // todo: this should be collapsed and refactored once we're sure we don't need to process each type separately
               if (in_array($name, $match_possibilites)) {
-                if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                  if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                  if (isset($paragraph->{$name}[$language][0]['value'])) {
+                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                   }
-                  if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                  if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                   }
                   if ($tng_debug == 1) {
                     dpm('value after name' . $namevalue);
@@ -4501,12 +4502,12 @@ function tng_shadow_node_presave($entity)
                 }
               } else {
                 if (in_array($name, $matchgame_possibilities)) {
-                  if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                  if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                    if (isset($paragraph->{$name}[$language][0]['value'])) {
+                      $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                     } else {
-                      if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                      if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                       }
                     }
                     if ($tng_debug == 1) {
@@ -4516,9 +4517,9 @@ function tng_shadow_node_presave($entity)
                 } else {
                   // we only care about the value cards, since images are not used
                   if (in_array($name, $flashcard_possibilities)) {
-                    if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                      if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                    if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                      if (isset($paragraph->{$name}[$language][0]['value'])) {
+                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                       }
                       if ($tng_debug == 1) {
                         dpm('value after name' . $namevalue);
@@ -4526,12 +4527,12 @@ function tng_shadow_node_presave($entity)
                     }
                   } else {
                     if (in_array($name, $list_possibilities)) {
-                      if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                        if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                          $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                      if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                        if (isset($paragraph->{$name}[$language][0]['value'])) {
+                          $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                         } else {
-                          if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                          if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                           }
                         }
                         if ($tng_debug == 1) {
@@ -4540,12 +4541,12 @@ function tng_shadow_node_presave($entity)
                       }
                     } else {
                       if (in_array($name, $reveal_possibilities)) {
-                        if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                          if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                        if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                          if (isset($paragraph->{$name}[$language][0]['value'])) {
+                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                           } else {
-                            if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                            if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                             }
                           }
                           if ($tng_debug == 1) {
@@ -4554,12 +4555,12 @@ function tng_shadow_node_presave($entity)
                         }
                       } else {
                         if (in_array($name, $drag_possibilities)) {
-                          if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                            if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                          if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                            if (isset($paragraph->{$name}[$language][0]['value'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                             }
-                            if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                            if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                             }
                             if ($tng_debug == 1) {
                               dpm('value after name' . $namevalue);
@@ -4567,12 +4568,12 @@ function tng_shadow_node_presave($entity)
                           }
                         } else {
                           if (in_array($name, $drag_select_possibilities)) {
-                            if (isset($paragraphs[$p]->{$name}[$language][0]['value']) || isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                              if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                            if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                              if (isset($paragraph->{$name}[$language][0]['value'])) {
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                               }
-                              if (isset($paragraphs[$p]->{$name}[$language][0]['uri'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['uri'] . '",';
+                              if (isset($paragraph->{$name}[$language][0]['uri'])) {
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
                               }
                               if ($tng_debug == 1) {
                                 dpm('value after name' . $namevalue);
@@ -4580,8 +4581,8 @@ function tng_shadow_node_presave($entity)
                             }
                           } else {
                             if (strlen(strstr($name, 'field_hot_spot')) > 0) {
-                              if (isset($paragraphs[$p]->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                              if (isset($paragraph->{$name}[$language][0]['value'])) {
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
@@ -4590,7 +4591,7 @@ function tng_shadow_node_presave($entity)
                               // the answer node itself has no value we can use, so don't include it
                               if ($name == 'field_paragraph_answer') {
                               } elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraphs[$p]->{$name}[$language][0]['value'] . '",';
+                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
@@ -4605,26 +4606,26 @@ function tng_shadow_node_presave($entity)
                   }
                 }
               }
-              $field_count = count($paragraphs[$p]->{$name}[$language]);
+              $field_count = count($paragraph->{$name}[$language]);
               // if there are no elements in the field don't process
               if ($field_count < 1) {
                 continue;
               } else {
                 // typical question
                 if ($tng_debug == 1) {
-                  dpm($field_count . ' field(s) sets found for ' . $paragraphs[$p]->{$name}[$language][0]['value']);
+                  dpm($field_count . ' field(s) sets found for ' . $paragraph->{$name}[$language][0]['value']);
                 }
 
-                if (($field_count == 1) && (isset($paragraphs[$p]->{$name}[$language][0]['value']))) {
+                if (($field_count == 1) && (isset($paragraph->{$name}[$language][0]['value']))) {
                   if ($tng_debug == 1) {
-                    dpm('name : ' . $name . ' value : ' . $paragraphs[$p]->{$name}[$language][0]['value']);
+                    dpm('name : ' . $name . ' value : ' . $paragraph->{$name}[$language][0]['value']);
                   }
 
                 } else {
                   // typically answers sometimes images?
                   }
                   for ($f = 0; $f < $field_count; $f++) {
-                    $para_entity = paragraphs_item_load($paragraphs[$p]->{$name}[$language][$f]['value']);
+                    $para_entity = paragraphs_item_load($paragraph->{$name}[$language][$f]['value']);
                     if ($tng_debug == 1) {
                       dpm('**para_entity**');
                       dpm($para_entity);
@@ -4657,7 +4658,7 @@ function tng_shadow_node_presave($entity)
                       if ($info['type'] == 'image') {
                         // rare, but you could attach an image to a question
                         $img_name = 'field_question_image';
-                        $img_fid = $paragraphs[$p]->{$img_name}[$language][0]['fid'];
+                        $img_fid = $paragraph->{$img_name}[$language][0]['fid'];
                         if ($img_fid) {
                           $file_id = file_load($img_fid);
                           $uri = $file_id->uri;

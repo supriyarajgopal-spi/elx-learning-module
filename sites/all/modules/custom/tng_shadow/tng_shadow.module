@@ -29,14 +29,14 @@ function tng_date_difference_creator($date)
     $date_string = $years . ' year ';
   }
   if ($months > 1) {
-    $date_string . $date_string . $months . ' months ';
+    $date_string .= $months . ' months ';
   } elseif ($months > 0) {
-    $date_string = $date_string . $months . ' month ';
+    $date_string .= $months . ' month ';
   }
   if ($days > 1) {
-    $date_string = $date_string . $days . ' days';
+    $date_string .= $days . ' days';
   } elseif ($days > 0) {
-    $date_string = $date_string . $days . ' day';
+    $date_string .= $days . ' day';
   }
   return $date_string;
 }
@@ -97,15 +97,16 @@ function tng_manifest_extractor($targetid, $language)
       dpm($language);
     }
     $learning_object_node = node_load($targetid);
-    //todo: double-check the 'en' part with other languages
-    $lo_tid = $learning_object_node->field_manifest[$language][0]['target_id'];
-    $learning_object_manifest = node_load($lo_tid);
-    // manifests are not language sensitive, so we are ok with using 'und' here (we write them after all)
-    $results = $learning_object_manifest->body['und'][0]['value'];
-    if ($tng_debug == 1) {
-      dpm($results);
+    if (isset($learning_object_node->field_manifest[$language][0]['target_id'])) {
+      $lo_tid = $learning_object_node->field_manifest[$language][0]['target_id'];
+      $learning_object_manifest = node_load($lo_tid);
+      // manifests are not language sensitive, so we are ok with using 'und' here (we write them after all)
+      $results = $learning_object_manifest->body['und'][0]['value'];
+      if ($tng_debug == 1) {
+        dpm($results);
+      }
+      return $results;
     }
-    return $results;
   } catch (exception $e) {
     if ($tng_debug == 1) {
       dpm($e);
@@ -135,14 +136,13 @@ function tng_npFeature_maker($id, $class = NULL, $req = NULL, $version = NULL, $
         $time_string = date($format_string);
       }
       $feature = '[ {';
-      $feature = $feature . '"type"' . ':' . '"npFeature"';
-      $feature = $feature . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $feature .= '"type"' . ':' . '"npFeature"';
+      $feature .= ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
       //NewPlayerV2 will bomb if it finds something it can't load and that thing is required, like a missing css file, for now don't add it
-      $feature = $feature . ',' . '"class"' . ': ' . '"' . $class . '"';
-      //$feature = $feature . ',' . '"req"' . ': ' . $req;
-      $feature = $feature . ',' . '"version"' . ': ' . '"' . $version . '"';
-      $feature = $feature . ',' . '"timestamp"' . ': ' . '"' . $time_string . '"';
-      $feature = $feature . '},';
+      $feature .= ',' . '"class"' . ': ' . '"' . $class . '"';
+      $feature .= ',' . '"version"' . ': ' . '"' . $version . '"';
+      $feature .= ',' . '"timestamp"' . ': ' . '"' . $time_string . '"';
+      $feature .= '},';
       return $feature;
     } else {
       if ($tng_debug == 1) {
@@ -178,13 +178,13 @@ function tng_npContent_maker($id, $language, $title = NULL, $description = NULL)
         $description = '"Sample presentation"';
       }
       $content = '"components": [ {';
-      $content = $content . '"type"' . ':' . '"npContent"';
-      $content = $content . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
-      $content = $content . ',' . '"language"' . ': ' . '"' . $language . '"';
-      $content = $content . ',' . '"title"' . ': ' . '"' . $title . '"';
-      $content = $content . ',' . '"description"' . ': ' . '"' . $description . ' "';
-      $content = $content . '},';
-      $content = $content . '"components": [ ';
+      $content .= '"type"' . ':' . '"npContent"';
+      $content .= ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $content .= ',' . '"language"' . ': ' . '"' . $language . '"';
+      $content .= ',' . '"title"' . ': ' . '"' . $title . '"';
+      $content .= ',' . '"description"' . ': ' . '"' . $description . ' "';
+      $content .= '},';
+      $content .= '"components": [ ';
       return $content;
     } else {
       if ($tng_debug == 1) {
@@ -221,28 +221,26 @@ function tng_npPageStart_maker($id = null, $parentid = NULL, $title = NULL, $inm
         $required = 'false';
       }
       $page = '{';
-      $page = $page . '"type"' . ':' . '"npPage"';
-      $page = $page . ',' . '"data"' . ': {' ;
-      //if ($id) {
-        $page = $page .  '"id"' . ': ' . '"' . $id . '"';
-      //}
+      $page .= '"type"' . ':' . '"npPage"';
+      $page .= ',' . '"data"' . ': {' ;
+      $page .=  '"id"' . ': ' . '"' . $id . '"';
       if ($parentid) {
-        $page = $page . ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
+        $page .= ',' . '"parentId"' . ': ' . '"' . $parentid . '"';
       }
       if ($title) {
-        $page = $page . ',' . '"title"' . ': ' . '"' . $title . '"';
+        $page .= ',' . '"title"' . ': ' . '"' . $title . '"';
       }
       if ($instructional) {
-        $page = $page . ',' . '"instructional"' . ': ' . '"' . $instructional . '"';
+        $page .= ',' . '"instructional"' . ': ' . '"' . $instructional . '"';
       }
       if ($inmenu) {
-        $page = $page . ',' . '"inMenu"' . ': ' . $inmenu;
+        $page .= ',' . '"inMenu"' . ': ' . $inmenu;
       }
       if ($required) {
-        $page = $page . ',' . '"required"' . ': ' . $required;
+        $page .= ',' . '"required"' . ': ' . $required;
       }
-      $page = $page . '}, ';
-      $page = $page . '"components": [ ';
+      $page .= '}, ';
+      $page .= '"components": [ ';
       return $page;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -274,11 +272,11 @@ function tng_npMenu_maker($id, $menuitemstype = NULL)
         $menuitemstype = 'globalMenu';
       }
       $menu = '{';
-      $menu = $menu . '"type"' . ':' . '"npMenu"';
-      $menu = $menu . ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
-      $menu = $menu . ',' . '"items"' . ': [' . '"' . $menuitemstype . '" ]';
-      $menu = $menu . '} ';
-      $menu = $menu . '},';
+      $menu .= '"type"' . ':' . '"npMenu"';
+      $menu .= ',' . '"data"' . ': {' . '"id"' . ': ' . '"' . $id . '"';
+      $menu .= ',' . '"items"' . ': [' . '"' . $menuitemstype . '" ]';
+      $menu .= '} ';
+      $menu .= '},';
       return $menu;
     } else {
       if ($tng_debug == 1) {
@@ -311,14 +309,14 @@ function tng_npButton_maker($link, $type = NULL, $class = NULL, $buttontitle = N
     }
     if (isset($link)) {
       $page = '{';
-      $page = $page . '"type"' . ':' . '"npButton"';
-      $page = $page . ',' . '"data"' . ': {' . '"link"' . ': ' . '"' . $link . '"';
-      $page = $page . ',' . '"type"' . ': ' . '"' . $type . '"';
-      $page = $page . ',' . '"class"' . ': ' . '"' . $class . '"';
-      $page = $page . ',' . '"content"' . ': ' . '"' . $buttontitle . '"';
-      $page = $page . '}, ';
-      $page = $page . '"components"' . ': []';
-      $page = $page . '}';
+      $page .= '"type"' . ':' . '"npButton"';
+      $page .= ',' . '"data"' . ': {' . '"link"' . ': ' . '"' . $link . '"';
+      $page .= ',' . '"type"' . ': ' . '"' . $type . '"';
+      $page .= ',' . '"class"' . ': ' . '"' . $class . '"';
+      $page .= ',' . '"content"' . ': ' . '"' . $buttontitle . '"';
+      $page .= '}, ';
+      $page .= '"components"' . ': []';
+      $page .= '}';
       return $page;
     } else {
       if ($tng_debug == 1) {
@@ -363,28 +361,23 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
         $req = 'false';
       }
       $question = '"type"' . ':' . '"npQuestion"';
-      $question = $question . ',' . '"data"' . ': {';
-      $question = $question . '"required"' . ': ' . $req;
-      $question = $question . ',' . '"forced"' . ': ' . $forced;
-      $question = $question . ',' . '"type"' . ': ' . '"' . $type . '"';
-      $question = $question . ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
-      $question = $question . ',' . '"content"' . ': ' . '"' . $question_text . '"';
-      $question = $question . ',' . '"questionLabel"' . ': ' . '"' . $question_label . '"';
-      $question = $question . ',' . '"answerLabel"' . ': ' . '"' . $answer_label . '"';
-      $question = $question . ',' . '"submitLabel"' . ': ' . '"' . $submit_label . '"';
-      $question = $question . ',' . '"questionImage"' . ': ' . '"' . $question_image . '"';
-      //$question = $question . ',' . '"buttons"' . ':' . '{';
-      //$question = $question         . '"submit"' . ':' . '"Submit"';
-      //$question = $question . ','   . '"i18n"' . ':' . '{favorite: FAVORITE_THIS}';
-      //$question = $question . ','   . '"i18n"' . ':' . '{submit:' . 'BUTTON_SUBMIT', next: 'BUTTON_NEXT', favorite: FAVORITE_THIS}"'';
-      //$question = $question . '},';
-      $question = $question . ',' . '"feedback"' . ': {';
-      $question = $question       . '"immediate"' . ': ' .  $feedback_immediate ;
-      $question = $question . ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
-      $question = $question . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
-      $question = $question . '}';
-      $question = $question . '}, ';
-      $question = $question . '"components": [';
+      $question .= ',' . '"data"' . ': {';
+      $question .= '"required"' . ': ' . $req;
+      $question .= ',' . '"forced"' . ': ' . $forced;
+      $question .= ',' . '"type"' . ': ' . '"' . $type . '"';
+      $question .= ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
+      $question .= ',' . '"content"' . ': ' . '"' . $question_text . '"';
+      $question .= ',' . '"questionLabel"' . ': ' . '"' . $question_label . '"';
+      $question .= ',' . '"answerLabel"' . ': ' . '"' . $answer_label . '"';
+      $question .= ',' . '"submitLabel"' . ': ' . '"' . $submit_label . '"';
+      $question .= ',' . '"questionImage"' . ': ' . '"' . $question_image . '"';
+      $question .= ',' . '"feedback"' . ': {';
+      $question .= '"immediate"' . ': ' .  $feedback_immediate ;
+      $question .= ',' . '"correct"' . ': ' . '"' . $feedback_correct . '"';
+      $question .= ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
+      $question .= '}';
+      $question .= '}, ';
+      $question .= '"components": [';
       return $question;
     } else {
       if ($tng_debug == 1) {
@@ -825,14 +818,14 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
   try {
     if (isset($label)) {
       $answer = '{';
-      $answer = $answer . '"type"' . ':' . '"npAnswer"';
-      $answer = $answer . ',' . '"data"' . ': {';
-      $answer = $answer . '"label"' . ': ' . '"' . $label . '"';
-      $answer = $answer . ',' . '"correct"' . ': ' . $correct;
-      $answer = $answer . ',' . '"feedback"' . ': {';
+      $answer .= '"type"' . ':' . '"npAnswer"';
+      $answer .= ',' . '"data"' . ': {';
+      $answer .= '"label"' . ': ' . '"' . $label . '"';
+      $answer .= ',' . '"correct"' . ': ' . $correct;
+      $answer .= ',' . '"feedback"' . ': {';
       //$answer = $answer . ',' .     '"immediate"' . ': ' .  $feedback_immediate ;
       if (!empty($feedback_correct)) {
-        $answer = $answer . '"correct"' . ': ' . '"' . $feedback_correct . '"';
+        $answer .= '"correct"' . ': ' . '"' . $feedback_correct . '"';
       } else {
         if ($tng_debug == 1) {
           dpm('no correct answer found');
@@ -840,13 +833,13 @@ function tng_npAnswer_maker($label, $correct, $feedback_correct = NULL, $feedbac
       }
       // if both correct and incorrect values use a comma between them, otherwise not
       if (!empty($feedback_incorrect) && !empty($feedback_correct)) {
-        $answer = $answer . ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
+        $answer .= ',' . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       } elseif (!empty($feedback_incorrect)) {
-        $answer = $answer . '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
+        $answer .= '"incorrect"' . ': ' . '"' . $feedback_incorrect . '"';
       }
-      $answer = $answer . '}';
-      $answer = $answer . '}';
-      $answer = $answer . '},';
+      $answer .= '}';
+      $answer .= '}';
+      $answer .= '},';
       return $answer;
     } else {
       if ($tng_debug == 1) {
@@ -875,37 +868,36 @@ function tng_npHTML_basic_maker($id = NULL, $class = NULL, $data_ng_click = NULL
   $tng_debug =0;
   try {
     $content = str_replace('"', '\"', $content);
-    $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npHTML"';
-    $html = $html . ',' . '"data"' . ': {';
+    $html = '{' . '"type"' . ':' . '"npHTML"';
+    $html .= ',' . '"data"' . ': {';
     if ($id) {
-      $html = $html . '"id"' . ': ' . '"' . $id . '"';
+      $html .= '"id"' . ': ' . '"' . $id . '"';
     }
     if ($class) {
-      $html = $html . '"class"' . ': ' . '"' . $class . '"';
+      $html .= '"class"' . ': ' . '"' . $class . '"';
     }
     if ($data_ng_click) {
-      $html = $html . ',' . '"data-ng:click"' . ': ' . '"' . $data_ng_click . '"';
+      $html .= ',' . '"data-ng:click"' . ': ' . '"' . $data_ng_click . '"';
     }
     if ($xplugin) {
-      $html = $html . ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
+      $html .= ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
     }
     if ($data_collapse) {
-      $html = $html . ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
+      $html .= ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
     }
     if ($content) {
-      $html = $html . ',' . '"content"' . ': ' . '"' . $content . '"';
+      $html .= ',' . '"content"' . ': ' . '"' . $content . '"';
     }
     if ($link) {
-      $html = $html . ',' . '"link"' . ': ' . '"' . $link . '"';
+      $html .= ',' . '"link"' . ': ' . '"' . $link . '"';
     }
-    $html = $html . '},'; // matches data line
+    $html .= '},'; // matches data line
     // if the component should be left open pass TRUE for the variable
     if ($open_component == TRUE) {
-      $html = $html . '"components"' . ': [';
+      $html .= '"components"' . ': [';
     } else {
-      $html = $html . '"components"' . ': [ ]';
-      $html = $html . '}, '; // matches data line
+      $html .= '"components"' . ': [ ]';
+      $html .= '}, '; // matches data line
     }
     return $html;
   } catch (exception $e) {
@@ -930,25 +922,24 @@ function tng_npHTML_maker($id_one = null, $class_one = NULL, $data_ng = null, $x
     $content_one = str_replace('"', '\"', $content_one);
     $content_two = str_replace('"', '\"', $content_two);
 
-    $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npHTML"';
-    $html = $html . ',' . '"data"' . ': {';
-    $html = $html . '"id"' . ': ' . '"' . $id_one . '"';
-    $html = $html . ',' . '"class"' . ': ' . '"' . $class_one . '"';
-    $html = $html . ',' . '"data-ng:click"' . ': ' . '"' . $data_ng . '"';
-    $html = $html . ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
-    $html = $html . ',' . '"content"' . ': ' . '"' . $content_one . '"';
-    $html = $html . '},'; // matches data line
-    $html = $html . '"components"' . ': [ {';
-    $html = $html . '"type"' . ':' . '"npHTML"';
-    $html = $html . ',' . '"data"' . ': {';
-    $html = $html . '"id"' . ': ' . '"' . $id_two . '"';
-    $html = $html . ',' . '"class"' . ': ' . '"' . $class_two . '"';
-    $html = $html . ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
-    $html = $html . ',' . '"content"' . ': ' . '"' . $content_two . '"';
-    $html = $html . '}, '; // matches data line
-    $html = $html . '"components": []';
-    $html = $html . '} ] },'; // matches components line
+    $html = '{' . '"type"' . ':' . '"npHTML"';
+    $html .= ',' . '"data"' . ': {';
+    $html .= '"id"' . ': ' . '"' . $id_one . '"';
+    $html .= ',' . '"class"' . ': ' . '"' . $class_one . '"';
+    $html .= ',' . '"data-ng:click"' . ': ' . '"' . $data_ng . '"';
+    $html .= ',' . '"xplugin"' . ': ' . '"' . $xplugin . '"';
+    $html .= ',' . '"content"' . ': ' . '"' . $content_one . '"';
+    $html .= '},'; // matches data line
+    $html .= '"components"' . ': [ {';
+    $html .= '"type"' . ':' . '"npHTML"';
+    $html .= ',' . '"data"' . ': {';
+    $html .= '"id"' . ': ' . '"' . $id_two . '"';
+    $html .= ',' . '"class"' . ': ' . '"' . $class_two . '"';
+    $html .= ',' . '"data-collapse"' . ': ' . '"' . $data_collapse . '"';
+    $html .= ',' . '"content"' . ': ' . '"' . $content_two . '"';
+    $html .= '}, '; // matches data line
+    $html .= '"components": []';
+    $html .= '} ] },'; // matches components line
     return $html;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -968,18 +959,17 @@ function tng_npColumn_maker($class = NULL, $columns = NULL, $open_component = FA
 {
   $tng_debug =0;
   try {
-    $html = '';
-    $html = $html . '{' . '"type"' . ':' . '"npColumn"';
-    $html = $html . ',' . '"data"' . ': {';
-    $html = $html . '"class"' . ': ' . '"' . $class . '"';
-    $html = $html . ',' . '"cols"' . ': ' . '"' . $columns . '"';
-    $html = $html . '},'; // matches data line
+    $html = '{' . '"type"' . ':' . '"npColumn"';
+    $html .= ',' . '"data"' . ': {';
+    $html .= '"class"' . ': ' . '"' . $class . '"';
+    $html .= ',' . '"cols"' . ': ' . '"' . $columns . '"';
+    $html .= '},'; // matches data line
     // if the component should be left open pass TRUE for the variable
     if ($open_component) {
-      $html = $html . '"components"' . ': [';
+      $html .= '"components"' . ': [';
     } else {
-      $html = $html . '"components"' . ': [ ]';
-      $html = $html . '}, '; // matches data line
+      $html .= '"components"' . ': [ ]';
+      $html .= '}, '; // matches data line
     }
     return $html;
   } catch (exception $e) {
@@ -1004,15 +994,14 @@ function tng_npImage_maker($id = NULL, $src = NULL, $class = NULL, $alt = NULL)
     $src = '';
   }
   try {
-    $image = '';
-    $image = $image . '{' . '"type"' . ':' . '"npImage"';
-    $image = $image . ',' . '"data"' . ': {' . '"src"' . ': ' . '"' . $src . '"';
-    $image = $image . ',' . '"id"' . ': ' . '"' . $id . '"';
-    $image = $image . ',' . '"class"' . ': ' . '"' . $class . '"';
-    $image = $image . ',' . '"alt"' . ': ' . '"' . $alt . '"';
-    $image = $image . '}, '; // matches data line
-    $image = $image . '"components": [ ]';
-    $image = $image . '}'; // matches components line
+    $image = '{' . '"type"' . ':' . '"npImage"';
+    $image .= ',' . '"data"' . ': {' . '"src"' . ': ' . '"' . $src . '"';
+    $image .= ',' . '"id"' . ': ' . '"' . $id . '"';
+    $image .= ',' . '"class"' . ': ' . '"' . $class . '"';
+    $image .= ',' . '"alt"' . ': ' . '"' . $alt . '"';
+    $image .= '}, '; // matches data line
+    $image .= '"components": [ ]';
+    $image .= '}'; // matches components line
     return $image;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1026,12 +1015,11 @@ function tng_npHotspot_maker($id = NULL, $class = NULL, $req = NULL, $feedback =
 {
   $tng_debug =0;
   try {
-    $hotspot = '';
-    $hotspot = $hotspot . '{' . '"type"' . ':' . '"npHotspot"';
-    $hotspot = $hotspot . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
-    $hotspot = $hotspot . ',' . '"class"' . ':' . '"' . $class . '"';
-    $hotspot = $hotspot . ',' . '"req"' . ':' . '[' . $req . ']';
-    $hotspot = $hotspot . ',' . '"hotspotButtons"' . ':' . '[';
+    $hotspot = '{' . '"type"' . ':' . '"npHotspot"';
+    $hotspot .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $hotspot .= ',' . '"class"' . ':' . '"' . $class . '"';
+    $hotspot .= ',' . '"req"' . ':' . '[' . $req . ']';
+    $hotspot .= ',' . '"hotspotButtons"' . ':' . '[';
     return $hotspot;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1044,12 +1032,11 @@ function tng_hotspot_button_maker($class = NULL, $feedback = NULL, $image = NULL
 {
   $tng_debug =0;
   try {
-    $hotspotbutton = '';
-    $hotspotbutton = $hotspotbutton . '{';
-    $hotspotbutton = $hotspotbutton . '"class"' . ':' . '"' . $class . '"';
-    $hotspotbutton = $hotspotbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
-    $hotspotbutton = $hotspotbutton . ',' . '"image"' . ':' . '"' . $image . '"';
-    $hotspotbutton = $hotspotbutton . '},';
+    $hotspotbutton = '{';
+    $hotspotbutton .= '"class"' . ':' . '"' . $class . '"';
+    $hotspotbutton .= ',' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotbutton .= ',' . '"image"' . ':' . '"' . $image . '"';
+    $hotspotbutton .= '},';
     return $hotspotbutton;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1062,11 +1049,10 @@ function tng_npHotspot_closer($feedback = NULL, $image = NULL)
 {
   $tng_debug =0;
   try {
-    $hotspotclose = '';
-    $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
-    $hotspotclose = $hotspotclose . ',' . '"image"' . ":" . '"' . $image . '"';
-    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]';
-    $hotspotclose = $hotspotclose . '}';
+    $hotspotclose = '],' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotclose .= ',' . '"image"' . ":" . '"' . $image . '"';
+    $hotspotclose .= '},' . '"components"' . ':' . '[]';
+    $hotspotclose .= '}';
     return $hotspotclose;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1082,29 +1068,28 @@ function tng_npDragAndSelect_maker($id = NULL, $class = NULL, $positive_feedback
   try {
 
     $submit_label = tng_translate_submit_button($language);
-    $draganselect = '';
-    $draganselect = $draganselect . '{' . '"type"' . ':' . '"npDragAndDropSelect"';
-    $draganselect = $draganselect . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $draganselect = '{' . '"type"' . ':' . '"npDragAndDropSelect"';
+    $draganselect .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $draganselect = $draganselect . ',' . '"class"' . ':' . '"' . $class . '"';
+      $draganselect .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($positive_feedback) {
-      $draganselect = $draganselect . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+      $draganselect .= ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
     }
     if ($image) {
-      $draganselect = $draganselect . ',' . '"image"' . ':' . '"' . $image . '"';
+      $draganselect .= ',' . '"image"' . ':' . '"' . $image . '"';
     }
     if ($negative_feedback) {
-      $draganselect = $draganselect . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+      $draganselect .= ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
     }
     if ($submit_label) {
-      $draganselect = $draganselect . ',' . '"submitLabel"' . ':' . '"' . $submit_label . '"';
+      $draganselect .= ',' . '"submitLabel"' . ':' . '"' . $submit_label . '"';
     }
     if ($required) {
-      $draganselect = $draganselect . ',' . '"required"' . ':' .  $required ;
+      $draganselect .= ',' . '"required"' . ':' .  $required ;
     }
-    $draganselect = $draganselect . ',' . '"req"' . ':' . '[' . $req . ']';
-    $draganselect = $draganselect . ',' . '"draggableButtons"' . ':' . '[';
+    $draganselect .= ',' . '"req"' . ':' . '[' . $req . ']';
+    $draganselect .= ',' . '"draggableButtons"' . ':' . '[';
     return $draganselect;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1117,20 +1102,19 @@ function tng_npDragAndDropMatch_maker($id = NULL, $class = NULL, $positive_feedb
 {
   $tng_debug =0;
   try {
-    $draganselect = '';
-    $draganselect = $draganselect . '{' . '"type"' . ':' . '"npDragAndDropMatch"';
-    $draganselect = $draganselect . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $draganselect = '{' . '"type"' . ':' . '"npDragAndDropMatch"';
+    $draganselect .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $draganselect = $draganselect . ',' . '"class"' . ':' . '"' . $class . '"';
+      $draganselect .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($positive_feedback) {
-      $draganselect = $draganselect . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+      $draganselect .= ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
     }
     if ($negative_feedback) {
-      $draganselect = $draganselect . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+      $draganselect .= ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
     }
-    $draganselect = $draganselect . ',' . '"req"' . ':' . '[' . $req . ']';
-    $draganselect = $draganselect . ',' . '"draggableButtons"' . ':' . '[';
+    $draganselect .= ',' . '"req"' . ':' . '[' . $req . ']';
+    $draganselect .= ',' . '"draggableButtons"' . ':' . '[';
     return $draganselect;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1143,20 +1127,19 @@ function tng_npDragAndMatchPriority_maker($id = NULL, $class = NULL, $positive_f
 {
   $tng_debug =0;
   try {
-    $dragandrop = '';
-    $dragandrop = $dragandrop . '{' . '"type"' . ':' . '"npDragAndDropPrioritize"';
-    $dragandrop = $dragandrop . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $dragandrop = '{' . '"type"' . ':' . '"npDragAndDropPrioritize"';
+    $dragandrop .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $dragandrop = $dragandrop . ',' . '"class"' . ':' . '"' . $class . '"';
+      $dragandrop .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($positive_feedback) {
-      $dragandrop = $dragandrop . ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
+      $dragandrop .= ',' . '"positiveFeedback"' . ':' . '"' . $positive_feedback . '"';
     }
     if ($negative_feedback) {
-      $dragandrop = $dragandrop . ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
+      $dragandrop .= ',' . '"negativeFeedback"' . ':' . '"' . $negative_feedback . '"';
     }
-    $dragandrop = $dragandrop . ',' . '"req"' . ':' . '[' . $req . ']';
-    $dragandrop = $dragandrop . ',' . '"draggableButtons"' . ':' . '[';
+    $dragandrop .= ',' . '"req"' . ':' . '[' . $req . ']';
+    $dragandrop .= ',' . '"draggableButtons"' . ':' . '[';
     return $dragandrop;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1169,14 +1152,13 @@ function tng_npReveal_maker($id = NULL, $class = NULL)
 {
   $tng_debug =0;
   try {
-    $reveal = '';
-    $reveal = $reveal . '{' . '"type"' . ':' . '"npReveal"';
-    $reveal = $reveal . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $reveal = '{' . '"type"' . ':' . '"npReveal"';
+    $reveal .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $reveal = $reveal . ',' . '"class"' . ':' . '"' . $class . '"';
+      $reveal .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
-    $reveal = $reveal . '},';
-    $reveal = $reveal . '"revealItems"' . ': [';
+    $reveal .= '},';
+    $reveal .= '"revealItems"' . ': [';
     return $reveal;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1192,47 +1174,46 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
   try {
     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $comp_baseURL);
 
-    $reveal = '';
-    $reveal = $reveal . '{';
+    $reveal = '{';
     if ($id) {
-      $reveal = $reveal . '"id"' . ':' . '"' . $id . '"';
+      $reveal .= '"id"' . ':' . '"' . $id . '"';
     }
     if ($heading) {
-      $reveal = $reveal . ',' . '"heading"' . ':' . '"' . $heading . '"';
+      $reveal .= ',' . '"heading"' . ':' . '"' . $heading . '"';
     }
     if ($content) {
-      $reveal = $reveal . ',' . '"content"' . ':' . '"' . $content . '"';
+      $reveal .= ',' . '"content"' . ':' . '"' . $content . '"';
     }
     if ($buttonImage) {
-      $reveal = $reveal . ',' . '"buttonImage"' . ':' . '"' . $buttonImage . '"';
+      $reveal .= ',' . '"buttonImage"' . ':' . '"' . $buttonImage . '"';
     }
     if ($buttonAltText) {
-      $reveal = $reveal . ',' . '"buttonAltText"' . ':' . '"' . $buttonAltText . '"';
+      $reveal .= ',' . '"buttonAltText"' . ':' . '"' . $buttonAltText . '"';
     }
-    $reveal = $reveal . ',' . '"components"' . ': [';
-    $reveal = $reveal . '{';
+    $reveal .= ',' . '"components"' . ': [';
+    $reveal .= '{';
     if ($comp_type) {
-      $reveal = $reveal . '"type"' . ':' . '"' . $comp_type . '"';
+      $reveal .= '"type"' . ':' . '"' . $comp_type . '"';
     }
-    $reveal = $reveal . ',' . '"data":' . '{';
+    $reveal .= ',' . '"data":' . '{';
     if ($comp_id) {
-      $reveal = $reveal . '"id"' . ':' . '"' . $comp_id . '"';
+      $reveal .= '"id"' . ':' . '"' . $comp_id . '"';
     }
     if ($comp_src) {
-      $reveal = $reveal . '"src"' . ':' . '"' . $comp_src . '"';
+      $reveal .= '"src"' . ':' . '"' . $comp_src . '"';
     }
     if ($comp_alt) {
-      $reveal = $reveal . ',' . '"alt"' . ':' . '"' . $comp_alt . '"';
+      $reveal .= ',' . '"alt"' . ':' . '"' . $comp_alt . '"';
     }
     if ($comp_baseURL) {
-      $reveal = $reveal . '"baseURL"' . ':' . '"' . $withoutExt . '"';
+      $reveal .= '"baseURL"' . ':' . '"' . $withoutExt . '"';
     }
     if ($comp_types) {
-      $reveal = $reveal . ',' . '"types"' . ':' . '["' . $comp_types . '"]';
+      $reveal .= ',' . '"types"' . ':' . '["' . $comp_types . '"]';
     }
-    $reveal = $reveal . '},';
-    $reveal = $reveal . '"components"' . ':' . '[]';
-    $reveal = $reveal . '} ] },';
+    $reveal .= '},';
+    $reveal .= '"components"' . ':' . '[]';
+    $reveal .= '} ] },';
     return $reveal;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1245,14 +1226,13 @@ function tng_npFlashCard_maker($id = NULL, $class = NULL)
 {
   $tng_debug =0;
   try {
-    $flashcard = '';
-    $flashcard = $flashcard . '{' . '"type"' . ':' . '"npFlashCards"';
-    $flashcard = $flashcard . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $flashcard = '{' . '"type"' . ':' . '"npFlashCards"';
+    $flashcard .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($class) {
-      $flashcard = $flashcard . ',' . '"class"' . ':' . '"' . $class . '"';
+      $flashcard .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
-    $flashcard = $flashcard . '},';
-    $flashcard = $flashcard . '"flashCards"' . ': [';
+    $flashcard .= '},';
+    $flashcard .= '"flashCards"' . ': [';
     return $flashcard;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1266,18 +1246,17 @@ function tng_npFlashCardItem_maker($title = NULL, $contentFront = NULL, $content
 {
   $tng_debug =0;
   try {
-    $flashcard = '';
-    $flashcard = $flashcard . '{';
+    $flashcard = '{';
     if ($title) {
-      $flashcard = $flashcard . '"title"' . ':' . '"' . $title . '"';
+      $flashcard .= '"title"' . ':' . '"' . $title . '"';
     }
     if ($contentFront) {
-      $flashcard = $flashcard . '"contentFront"' . ':' . '"' . $contentFront . '"';
+      $flashcard .= '"contentFront"' . ':' . '"' . $contentFront . '"';
     }
     if ($contentBack) {
-      $flashcard = $flashcard . ',' . '"contentBack"' . ':' . '"' . $contentBack . '"';
+      $flashcard .= ',' . '"contentBack"' . ':' . '"' . $contentBack . '"';
     }
-    $flashcard = $flashcard . '},';
+    $flashcard .= '},';
     return $flashcard;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1290,32 +1269,31 @@ function tng_npQuiz_maker($id = NULL, $type = NULL, $assessed = NULL, $questions
 {
   $tng_debug =0;
   try {
-    $quiz = '';
-    $quiz = $quiz . '{' . '"type"' . ':' . '"npQuiz"';
-    $quiz = $quiz . ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
+    $quiz = '{' . '"type"' . ':' . '"npQuiz"';
+    $quiz .= ',' . '"data"' . ': {' . '"id"' . ":" . '"' . $id . '"';
     if ($type) {
-      $quiz = $quiz . ',' . '"type"' . ':' . '"' . $type . '"';
+      $quiz .= ',' . '"type"' . ':' . '"' . $type . '"';
     }
     if ($assessed) {
-      $quiz = $quiz . ',' . '"assessed"' . ':' . '"' . $assessed . '"';
+      $quiz .= ',' . '"assessed"' . ':' . '"' . $assessed . '"';
     }
     if ($questions) {
-      $quiz = $quiz . ',' . '"questions"' . ':' . '"' . $questions . '"';
+      $quiz .= ',' . '"questions"' . ':' . '"' . $questions . '"';
     }
     if ($passPercentage) {
-      $quiz = $quiz . ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
+      $quiz .= ',' . '"percentage"' . ':' . '"' . $passPercentage . '"';
     }
     if ($forced) {
-      $quiz = $quiz . ',' . '"forced"' . ':' . '"' . $forced . '"';
+      $quiz .= ',' . '"forced"' . ':' . '"' . $forced . '"';
     }
     if ($randomized) {
-      $quiz = $quiz . ',' . '"randomized"' . ':' . '"' . $randomized . '"';
+      $quiz .= ',' . '"randomized"' . ':' . '"' . $randomized . '"';
     }
     if ($required) {
-      $quiz = $quiz . ',' . '"required"' . ':' . '"' . $required . '"';
+      $quiz .= ',' . '"required"' . ':' . '"' . $required . '"';
     }
-    $quiz = $quiz . '},';
-    $quiz = $quiz . '"components"' . ': [';
+    $quiz .= '},';
+    $quiz .= '"components"' . ': [';
     return $quiz;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1329,37 +1307,34 @@ function tng_npTrivia_maker($required = NULL, $forced = NULL, $difficulty = NULL
 {
   $tng_debug =0;
   try {
-    $quiz = '';
-    $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
-    $quiz = $quiz . ',' .      '"data"' . ':' . '{';
-    $quiz = $quiz .  '},';
-    $quiz = $quiz .       '"components"' . ':' . '[';
-    $quiz = $quiz . '{' . '"type"' . ':' . '"npTrivia"';
-    $quiz = $quiz . ',' . '"data"' . ': {' . '"required"' . ":"  . $required ;
+    $quiz = '{' . '"type"' . ':' . '"npPage"';
+    $quiz .= ',' .      '"data"' . ':' . '{';
+    $quiz .= '},';
+    $quiz .= '"components"' . ':' . '[';
+    $quiz .= '{' . '"type"' . ':' . '"npTrivia"';
+    $quiz .= ',' . '"data"' . ': {' . '"required"' . ":"  . $required ;
     if ($forced) {
-      $quiz = $quiz . ',' . '"forced"' . ':' .  $forced ;
+      $quiz .= ',' . '"forced"' . ':' .  $forced ;
     }
     if ($difficulty) {
-      $quiz = $quiz . ',' . '"difficulty"' . ':'  . $difficulty ;
+      $quiz .= ',' . '"difficulty"' . ':'  . $difficulty ;
     }
     if ($content) {
-      $quiz = $quiz . ',' . '"content"' . ':' . '"' . $content . '"';
+      $quiz .= ',' . '"content"' . ':' . '"' . $content . '"';
     }
-//    if ($questions) {
-    $quiz = $quiz . ',' . '"feedback"' . ':' . '{'; //  . $passPercentage . '"';
-//    }
+    $quiz .= ',' . '"feedback"' . ':' . '{'; //  . $passPercentage . '"';
     if ($immediate) {
-      $quiz = $quiz    . '"immediate"' . ':' . $immediate ;
+      $quiz .= '"immediate"' . ':' . $immediate ;
     }
     if ($correct) {
-      $quiz = $quiz    . ',' . '"correct"' . ':' . '"' . $correct . '"';
+      $quiz .= ',' . '"correct"' . ':' . '"' . $correct . '"';
     }
     if ($incorrect) {
-      $quiz = $quiz    . ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
+      $quiz .= ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
     }
-    $quiz = $quiz          . '}'; // close the feedback
-    $quiz = $quiz . '},'; //close the data
-    $quiz = $quiz . '"components"' . ': [';
+    $quiz .= '}'; // close the feedback
+    $quiz .= '},'; //close the data
+    $quiz .= '"components"' . ': [';
     return $quiz;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1373,37 +1348,36 @@ function tng_npAsResult_maker($pass = null, $fail = null, $pass_text = null, $pe
 {
   $tng_debug =0;
   try {
-    $quiz = '';
-    $quiz = $quiz . '{' . '"type"' . ':' . '"npPage"';
-    $quiz = $quiz . ',' .      '"data"' . ':' . '{';
-    $quiz = $quiz .  '},';
-    $quiz = $quiz .       '"components"' . ':' . '[';
-    $quiz = $quiz . '{' . '"type"' . ':' . '"npAsResult"';
-    $quiz = $quiz . ',' . '"id"' . ':' . '"summary"';
-    $quiz = $quiz . ',' . '"data"' . ': {' . '"feedback"' . ': {' ;
+    $quiz = '{' . '"type"' . ':' . '"npPage"';
+    $quiz .= ',' .      '"data"' . ':' . '{';
+    $quiz .= '},';
+    $quiz .= '"components"' . ':' . '[';
+    $quiz .= '{' . '"type"' . ':' . '"npAsResult"';
+    $quiz .= ',' . '"id"' . ':' . '"summary"';
+    $quiz .= ',' . '"data"' . ': {' . '"feedback"' . ': {' ;
     if ($pass) {
-      $quiz = $quiz       . '"pass"' . ':' . '"' . $pass . '"';
+      $quiz .= '"pass"' . ':' . '"' . $pass . '"';
     } else {
-      $quiz = $quiz       . '"pass"' . ':' . '"You\'ve completed this topic! You scored :USERSCORE:%"';
+      $quiz .= '"pass"' . ':' . '"You\'ve completed this topic! You scored :USERSCORE:%"';
     }
     if ($fail) {
-      $quiz = $quiz . ',' . '"fail"' . ':' . '"' . $fail .  '"}';
+      $quiz .= ',' . '"fail"' . ':' . '"' . $fail .  '"}';
     } else {
-      $quiz = $quiz . ',' . '"fail"' . ':' . '"You scored :USERSCORE:%. Consider going back and reviewing the material again."}';
+      $quiz .= ',' . '"fail"' . ':' . '"You scored :USERSCORE:%. Consider going back and reviewing the material again."}';
     }
-    $quiz = $quiz . ',' . '"achievements":[{"score":0.8';
-    $quiz = $quiz . ',' . '"compare":"gte"';
+    $quiz .= ',' . '"achievements":[{"score":0.8';
+    $quiz .= ',' . '"compare":"gte"';
     if ($pass_text) {
-      $quiz = $quiz . ',' . '"content":' . '"' . $pass_text . '"}';
+      $quiz .= ',' . '"content":' . '"' . $pass_text . '"}';
     } else {
-      $quiz = $quiz . ',' . '"content":" "}';
+      $quiz .= ',' . '"content":" "}';
     }
-    $quiz = $quiz . ',' . '{"score":1';
-    $quiz = $quiz . ',' . '"compare":"eq"';
+    $quiz .= ',' . '{"score":1';
+    $quiz .= ',' . '"compare":"eq"';
     if ($perfect_text) {
-      $quiz = $quiz . ',' . '"content":' . '"' . $perfect_text . '"}]}}]}';
+      $quiz .= ',' . '"content":' . '"' . $perfect_text . '"}]}}]}';
     } else {
-      $quiz = $quiz . ',' . '"content":" "}]}}]}';
+      $quiz .= ',' . '"content":" "}]}}]}';
     }
     return $quiz;
   } catch (exception $e) {
@@ -1417,29 +1391,28 @@ function tng_npMatch_maker($id = NULL, $difficulty = NULL, $content = NULL, $imm
 {
   $tng_debug =0;
   try {
-    $match = '';
-    $match = $match . '{' . '"type"' . ':' . '"npMatch"';
-    $match = $match . ',' . '"data"' . ': {';
+    $match = '{' . '"type"' . ':' . '"npMatch"';
+    $match .= ',' . '"data"' . ': {';
     if ($difficulty) {
-      $match = $match . '"id"' . ':' . '"' . $id . '"';
+      $match .= '"id"' . ':' . '"' . $id . '"';
     }
     if ($difficulty) {
-      $match = $match . ',' . '"difficulty"' . ':' . $difficulty;
+      $match .= ',' . '"difficulty"' . ':' . $difficulty;
     }
     if ($content) {
-      $match = $match . ',' . '"content"' . ':' . '"' . $content . '"';
+      $match .= ',' . '"content"' . ':' . '"' . $content . '"';
     }
     if ($immediate) {
-      $match = $match  . ',' . '"immediate"' . ':' . $immediate;
+      $match .= ',' . '"immediate"' . ':' . $immediate;
     }
     if ($correct) {
-      $match = $match . ',' . '"correct"' . ':' . '"' . $correct . '"';
+      $match .= ',' . '"correct"' . ':' . '"' . $correct . '"';
     }
     if ($incorrect) {
-      $match = $match . ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
+      $match .= ',' . '"incorrect"' . ':' . '"' . $incorrect . '"';
     }
-    $match = $match . '} },';
-    $match = $match . '"components"' . ': [';
+    $match .= '} },';
+    $match .= '"components"' . ': [';
     return $match;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1454,13 +1427,13 @@ function tng_npMatchRow_maker($title = NULL, $position = NULL)
   $tng_debug =0;
   try {
     $match = '{';
-    $match = $match . '"type"' . ':' . '"npMatchRow"';
-    $match = $match . ',' . '"data"' . ':' . '{';
+    $match .= '"type"' . ':' . '"npMatchRow"';
+    $match .= ',' . '"data"' . ':' . '{';
     if ($position) {
-      $match = $match . '"position"' . ':' . '"' . $position . '"';
+      $match .= '"position"' . ':' . '"' . $position . '"';
     }
-    $match = $match . '},';
-    $match = $match . '"components"' . ':' . '[';
+    $match .= '},';
+    $match .= '"components"' . ':' . '[';
     return $match;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1474,21 +1447,20 @@ function tng_npMatchRowAnswer_maker($type = NULL, $label = NULL, $correct = NULL
 {
   $tng_debug =0;
   try {
-    $match = '';
-    $match = $match . '{';
+    $match = '{';
     if ($type) {
-      $match = $match . '"type"' . ':' . '"' . $type . '"';
+      $match .= '"type"' . ':' . '"' . $type . '"';
     }
-    $match = $match . ',' . '"data"' . ':' . '{';
+    $match .= ',' . '"data"' . ':' . '{';
     if ($label) {
-      $match = $match . '"label"' . ':' . '"' . $label . '"';
+      $match .= '"label"' . ':' . '"' . $label . '"';
     }
     if ($correct >= 0) {
       $match = $match . ',' . '"correct"' . ':' . $correct;
     }
-    $match = $match . '},';
-    $match = $match . '"components"' . ':' . '[]';
-    $match = $match . '},';
+    $match .= '},';
+    $match .= '"components"' . ':' . '[]';
+    $match .= '},';
     return $match;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1502,22 +1474,21 @@ function tng_dragdrop_button_maker($id = NULL, $class = NULL, $feedback = NULL, 
 {
   $tng_debug =0;
   try {
-    $dragdropbutton = '';
-    $dragdropbutton = $dragdropbutton . '{';
+    $dragdropbutton = '{';
     if ($id) {
-      $dragdropbutton = $dragdropbutton . '"id"' . ':' . '"' . $id . '"';
+      $dragdropbutton .= '"id"' . ':' . '"' . $id . '"';
     }
     if ($class) {
-      $dragdropbutton = $dragdropbutton . ',' . '"class"' . ':' . '"' . $class . '"';
+      $dragdropbutton .= ',' . '"class"' . ':' . '"' . $class . '"';
     }
     if ($feedback) {
-      $dragdropbutton = $dragdropbutton . ',' . '"feedback"' . ':' . '"' . $feedback . '"';
+      $dragdropbutton .= ',' . '"feedback"' . ':' . '"' . $feedback . '"';
     }
-    $dragdropbutton = $dragdropbutton . '"content"' . ':' . '"' . $content . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"image"' . ':' . '"' . $image . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
-    $dragdropbutton = $dragdropbutton . ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
-    $dragdropbutton = $dragdropbutton . '},';
+    $dragdropbutton .= '"content"' . ':' . '"' . $content . '"';
+    $dragdropbutton .= ',' . '"image"' . ':' . '"' . $image . '"';
+    $dragdropbutton .= ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
+    $dragdropbutton .= ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
+    $dragdropbutton .= '},';
     return $dragdropbutton;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1531,22 +1502,21 @@ function tng_dragselect_button_maker($id = NULL, $class = NULL, $select = NULL, 
 {
   $tng_debug =0;
   try {
-    $dragselectbutton = '';
-    $dragselectbutton = $dragselectbutton . '{';
+    $dragselectbutton = '{';
     if ($id) {
-      $dragselectbutton = $dragselectbutton . '"id"' . ':' . '"' . $id . '"';
+      $dragselectbutton .= '"id"' . ':' . '"' . $id . '"';
     }
     if ($class) {
-      $dragselectbutton = $dragselectbutton . '"class"' . ':' . '"' . $class . '"';
+      $dragselectbutton .= '"class"' . ':' . '"' . $class . '"';
     }
     if ($select) {
-      $dragselectbutton = $dragselectbutton .  '"select"' . ':' . '"' . $select . '"';
+      $dragselectbutton .= '"select"' . ':' . '"' . $select . '"';
     }
-    $dragselectbutton = $dragselectbutton . ',' . '"content"' . ':' . '"' . $content . '"';
-    $dragselectbutton = $dragselectbutton . ',' . '"image"' . ':' . '"' . $image . '"';
-    $dragselectbutton = $dragselectbutton . ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
-    $dragselectbutton = $dragselectbutton . ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
-    $dragselectbutton = $dragselectbutton . '},';
+    $dragselectbutton .= ',' . '"content"' . ':' . '"' . $content . '"';
+    $dragselectbutton .= ',' . '"image"' . ':' . '"' . $image . '"';
+    $dragselectbutton .= ',' . '"matchingContent"' . ':' . '"' . $matching_content . '"';
+    $dragselectbutton .= ',' . '"matchingImage"' . ':' . '"' . $matching_image . '"';
+    $dragselectbutton .= '},';
     return $dragselectbutton;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1560,11 +1530,10 @@ function tng_npDragAndDrop_closer($feedback = NULL, $image = NULL)
 {
   $tng_debug =0;
   try {
-    $hotspotclose = '';
-    $hotspotclose = $hotspotclose . '],' . '"feedback"' . ':' . '"' . $feedback . '"';
-    $hotspotclose = $hotspotclose . ',' . '"image"' . ":" . '"' . $image . '"';
-    $hotspotclose = $hotspotclose . '},' . '"components"' . ':' . '[]';
-    $hotspotclose = $hotspotclose . '}';
+    $hotspotclose = '],' . '"feedback"' . ':' . '"' . $feedback . '"';
+    $hotspotclose .= ',' . '"image"' . ":" . '"' . $image . '"';
+    $hotspotclose .= '},' . '"components"' . ':' . '[]';
+    $hotspotclose .= '}';
     return $hotspotclose;
   } catch (exception $e) {
     if ($tng_debug == 1) {
@@ -1582,56 +1551,55 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
 
   try {
     $withoutExt = preg_replace('/\\.[^.\\s]{3,4}$/', '', $data_baseurl);
-    $list = '';
-    $list = $list . '{' . '"type"' . ':' . '"npList"';
-    $list = $list . ',' . '"data"' . ': {';
+    $list = '{' . '"type"' . ':' . '"npList"';
+    $list .= ',' . '"data"' . ': {';
     if ($id) {
-      $list = $list . '"id"' . ':' . '"' . $id . '"';
+      $list .= '"id"' . ':' . '"' . $id . '"';
     }
     if ($class) {
-      $list = $list . '"class"' . ':' . '"' . $class . '"';
+      $list .= '"class"' . ':' . '"' . $class . '"';
     }
     if ($data_ng) {
-      $list = $list . ',' . '"data-ng:wrap"' . ':' . '"' . $data_ng . '"';
+      $list .= ',' . '"data-ng:wrap"' . ':' . '"' . $data_ng . '"';
     }
     if ($heading) {
-      $list = $list . ',' . '"heading"' . ':' . '"' . $heading . '"';
+      $list .= ',' . '"heading"' . ':' . '"' . $heading . '"';
     }
     if ($content) {
-      $list = $list . ',' . '"content"' . ':' . '"' . $content . '"';
+      $list .= ',' . '"content"' . ':' . '"' . $content . '"';
     }
-    $list = $list . '},';
-    $list = $list . '"components"' . ':' . '[';
-    $list = $list . '{';
+    $list .= '},';
+    $list .= '"components"' . ':' . '[';
+    $list .= '{';
     if ($component_type) {
-      $list = $list . '"type"' . ':' . '"' . $component_type . '"';
-      $list = $list . ',         "data"' . ': {';
+      $list .= '"type"' . ':' . '"' . $component_type . '"';
+      $list .= ',         "data"' . ': {';
       if ($component_id) {
-        $list = $list . '"id"' . ':' . '"' . $component_id . '"';
+        $list .= '"id"' . ':' . '"' . $component_id . '"';
       }
       if ($component_src) {
-        $list = $list . '             "src"' . ':' . '"' . $component_src . '"';
+        $list .= '             "src"' . ':' . '"' . $component_src . '"';
       }
       if ($component_alt) {
-        $list = $list . ',            "alt"' . ':' . '"' . $component_alt . '"';
+        $list .= ',            "alt"' . ':' . '"' . $component_alt . '"';
       }
       if ($data_poster) {
-        $list = $list . '            "poster"' . ':' . '"' . $data_poster . '"';
+        $list .= '            "poster"' . ':' . '"' . $data_poster . '"';
       }
       if ($data_baseurl) {
-        $list = $list . '            "baseURL"' . ':' . '"../' . $withoutExt . '"';
+        $list .= '            "baseURL"' . ':' . '"../' . $withoutExt . '"';
       }
       if ($data_baseurl) {
-        $list = $list . ',            "types"' . ':' . '["' . $data_types . '"]';
+        $list .= ',            "types"' . ':' . '["' . $data_types . '"]';
       }
-      $list = $list . '},';
-      $list = $list . '"components"' . ':' . '[]';
-      $list = $list . '}';
-      $list = $list . ']';
-      $list = $list . '},';
+      $list .= '},';
+      $list .= '"components"' . ':' . '[]';
+      $list .= '}';
+      $list .= ']';
+      $list .= '},';
     } else {
       $list = rtrim($list, '{ ');
-      $list = $list . '] },';
+      $list .= '] },';
     }
     return $list;
   } catch (exception $e) {
@@ -1648,10 +1616,10 @@ function tng_npList_maker($id = NULL, $class = NULL, $data_ng = NULL, $heading =
 function tng_npPageContentFeatureCleanup()
 {
   $cleanup = '] '; // close the component brace started before the npPage
-  $cleanup = $cleanup . '} '; // close the component brace started before the npContent
-  $cleanup = $cleanup . '] '; // close the component bracket started before the npContent
-  $cleanup = $cleanup . '} '; // close the most outer curly brace started before the npFeature
-  $cleanup = $cleanup . ']'; // close the most outer brace started before the npFeature
+  $cleanup .= '} '; // close the component brace started before the npContent
+  $cleanup .= '] '; // close the component bracket started before the npContent
+  $cleanup .= '} '; // close the most outer curly brace started before the npFeature
+  $cleanup .= ']'; // close the most outer brace started before the npFeature
   return $cleanup;
 }
 
@@ -1661,7 +1629,7 @@ function tng_npPageContentFeatureCleanup()
 function tng_npPageCleanup()
 {
   $cleanup = '] '; // close the component started in the npPage
-  $cleanup = $cleanup . '} '; // close the curly started before the npPage
+  $cleanup .= '} '; // close the curly started before the npPage
   return $cleanup;
 }
 
@@ -2498,7 +2466,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
       {
         $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $combine_question_text);
         $drag_top = tng_npDragAndSelect_maker('', '', $correct_feedback, $incorrect_feedback, 'true', '', $language, $mean_back_image);
-        $whole_dragselect = $whole_dragselect . $page_wrapper . $drag_top;
+        $whole_dragselect .= $page_wrapper . $drag_top;
         $select_path = 'assets/styles/drag_select_image/public/';
 
         foreach ($dragselect as $key => $value) {
@@ -2540,7 +2508,7 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
                 }
 
               }
-              $whole_dragselect = $whole_dragselect . $story_detail;
+              $whole_dragselect .= $story_detail;
             }
             $whole_dragselect = rtrim($whole_dragselect, ', ');
           }
@@ -2549,15 +2517,15 @@ function process_dragselect($dragselect, $language, $nid = null, $module, $stand
 
 
         if ($standalone == 1) {
-          $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . $close_drag_drop;
+          $whole_dragselect .= $end_dragdrop_spot . $close_drag_drop;
         } else {
           //field_next_button == checkbox, button labels are handled in the tng_npButton_maker code for en/es/frca
           $create_button = $dragselect['field_next_button'];
           if ($create_button == 1) {
             $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
-            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . ',' . $button_chunk . ']}';
+            $whole_dragselect .= $end_dragdrop_spot . ',' . $button_chunk . ']}';
           } else {
-            $whole_dragselect = $whole_dragselect . $end_dragdrop_spot . ']}';
+            $whole_dragselect .= $end_dragdrop_spot . ']}';
           }
         }
 
@@ -2760,7 +2728,7 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
     if ($reveal_values['field_reveal_collection']) {
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $reveal_top = tng_npReveal_maker('reveal-test-id', 'reveal-test-class');
-      $whole_reveal = $whole_reveal . $page_wrapper . $reveal_top;
+      $whole_reveal .= $page_wrapper . $reveal_top;
       $all_of_them = $reveal_values['field_reveal_collection'];
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
@@ -2827,22 +2795,22 @@ function process_reveal($reveal_values, $language, $nid, $module, $standalone = 
         }
         $revealnumber += 1;
 
-        $whole_reveal = $whole_reveal . $reveal_detail;
+        $whole_reveal .= $reveal_detail;
       }
       $whole_reveal = rtrim($whole_reveal, ', ');
     }
 
     if ($standalone == 1) {
-      $whole_reveal = $whole_reveal . $close_reveal;
+      $whole_reveal .= $close_reveal;
     } else {
       //field_next_button == checkbox, field_next_button_label is the button label
       $create_button = $reveal_values['field_next_button'];
       // the spanish word for next is 'siguiente'
       if ($create_button == 1) {
         $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
-        $whole_reveal = $whole_reveal . ']},' . $button_chunk . ']}';
+        $whole_reveal .= ']},' . $button_chunk . ']}';
       } else {
-        $whole_reveal = $whole_reveal . ']}]}';
+        $whole_reveal .= ']}]}';
       }
     }
     if ($tng_debug == 1) {
@@ -2926,7 +2894,7 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
     if ($flashcard_values['field_flash_card_collection']) {
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
       $flashcard_top = tng_npFlashCard_maker('flash-cards-test-id', 'flash-cards-test-class');
-      $whole_flashcard = $whole_flashcard . $page_wrapper . $flashcard_top;
+      $whole_flashcard .= $page_wrapper . $flashcard_top;
       $all_of_them = $flashcard_values['field_flash_card_collection'];
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       // take only the first two elements, 'field_back_card' and 'field_top_card'
@@ -3016,21 +2984,21 @@ function process_flashcards($flashcard_values, $language, $nid, $module, $standa
           // the array assignment makes for predictable order of our duo set of data
           $flashcard_detail = tng_npFlashCardItem_maker('', $omni_two, $omni_one);
         }
-        $whole_flashcard = $whole_flashcard . $flashcard_detail;
+        $whole_flashcard .= $flashcard_detail;
       }
       $whole_flashcard = rtrim($whole_flashcard, ', ');
     }
 
     if ($standalone == 1) {
-      $whole_flashcard = $whole_flashcard . $close_flashcard;
+      $whole_flashcard .= $close_flashcard;
     } else {
       //field_next_button == checkbox, field_next_button_label is the button label
       $create_button = $flashcard_values['field_next_button'];
       if ($create_button == 1) {
         $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
-        $whole_flashcard = $whole_flashcard . ']},' . $button_chunk . ']}';
+        $whole_flashcard .= ']},' . $button_chunk . ']}';
       } else {
-        $whole_flashcard = $whole_flashcard . ']}]}';
+        $whole_flashcard .= ']}]}';
       }
     }
 
@@ -3108,7 +3076,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
       $sploder = explode('",', $trim_str);
       $count_of_elements = count($sploder);
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-      $whole_list = $whole_list . $page_wrapper;
+      $whole_list .= $page_wrapper;
       for ($i = 0; $i < $count_of_elements; $i += 2) {
         $key = explode('~', $sploder[$i]);
         if ($key[0] == '"field_list_image" ') {
@@ -3121,7 +3089,7 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           $second_text = rtrim($second_text, '"');
           $second_text = str_replace('"', '\"',$second_text);
           $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $second_text, 'npImage', '', $first_image, '', '', '', '');
-          $whole_list = $whole_list . $listobject_detail;
+          $whole_list .= $listobject_detail;
         } else if ($key[0] == '"field_list_text" ') {
           $first_text = preg_replace('/\s+/S', " ", $key[1]);
           $first_text = ltrim($first_text, ' "');
@@ -3136,22 +3104,22 @@ function process_list($listobject, $language, $nid, $standalone = NULL)
           } else {
             $listobject_detail = tng_npList_maker('', 'h6 instructional', $data_ng_wrap, '', $first_text, '', '', '', '', '', '', '');
           }
-          $whole_list = $whole_list . $listobject_detail;
+          $whole_list .= $listobject_detail;
         }
       }
     }
 
     if ($standalone == 1) {
-      $whole_list = $whole_list . ']}';
+      $whole_list .= ']}';
     } else {
       //field_next_button == checkbox, button labels are handled in the tng_npButton_maker code for en/es/frca
       $create_button = $listobject['field_next_button'];
       if ($create_button == 1) {
         $button_chunk = tng_npButton_maker('', 'btn-next', '', '', $language);
-        $whole_list = $whole_list . $button_chunk . ']}';
+        $whole_list .= $button_chunk . ']}';
       } else {
         $whole_list = rtrim($whole_list, ', ');
-        $whole_list = $whole_list . ']}';
+        $whole_list .= ']}';
       }
     }
 
@@ -3295,7 +3263,7 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
 
     if ($matchgame_values['field_match_collection']) {
       $matchgame_top = tng_npMatch_maker('', '1', $content, 'true', $correct_feedback, $incorrect_feedback);
-      $whole_matchgame = $whole_matchgame . $matchgame_top;
+      $whole_matchgame .= $matchgame_top;
       $all_of_them = $matchgame_values['field_match_collection'];
       $trim_str = trim($all_of_them, "\x5B \x7B \x5D \x7D");
       $sploder = explode('",', $trim_str);
@@ -3311,9 +3279,9 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
       // process the bottom, middle and top text or image match pairs
       $top_count = count($top_values);
       $page_wrapper = tng_npPageStart_maker($nid, '', '', '', '', $instructional_text);
-      $whole_matchgame = $whole_matchgame . $page_wrapper;
+      $whole_matchgame .= $page_wrapper;
       $row_maker = tng_npMatchRow_maker('', 'top', '');
-      $whole_matchgame = $whole_matchgame . $row_maker;
+      $whole_matchgame .= $row_maker;
       for ($k = 0; $k < $top_count; $k += 1) {
         if ($top_values[$k][0] == '"field_top_match_image" ') {
           $drupal_image_name = str_replace('"', '', $top_values[$k][1]);
@@ -3323,14 +3291,14 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         } else {
           $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $top_values[$k][1]), $k + 1);
         }
-        $whole_matchgame = $whole_matchgame . $answer;
+        $whole_matchgame .= $answer;
       }
       $whole_matchgame = rtrim($whole_matchgame, ', ');
-      $whole_matchgame = $whole_matchgame . $close_html;
+      $whole_matchgame .= $close_html;
 
       $mid_count = count($mid_values);
       $row_maker = tng_npMatchRow_maker('', 'middle', '');
-      $whole_matchgame = $whole_matchgame . $row_maker;
+      $whole_matchgame .= $row_maker;
       for ($k = 0; $k < $mid_count; $k += 1) {
         if ($mid_values[$k][0] == '"field_middle_match_image" ') {
           $drupal_image_name = str_replace('"', '', $mid_values[$k][1]);
@@ -3340,14 +3308,14 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         } else {
           $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $mid_values[$k][1]), $k + 1);
         }
-        $whole_matchgame = $whole_matchgame . $answer;
+        $whole_matchgame .= $answer;
       }
       $whole_matchgame = rtrim($whole_matchgame, ', ');
-      $whole_matchgame = $whole_matchgame . $close_html;
+      $whole_matchgame .= $close_html;
 
       $bot_count = count($bot_values);
       $row_maker = tng_npMatchRow_maker('', 'bottom', '');
-      $whole_matchgame = $whole_matchgame . $row_maker;
+      $whole_matchgame .= $row_maker;
       for ($k = 0; $k < $bot_count; $k += 1) {
         if ($bot_values[$k][0] == '"field_bottom_match_image" ') {
           $drupal_image_name = str_replace('"', '', $bot_values[$k][1]);
@@ -3357,18 +3325,18 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         } else {
           $answer = tng_npMatchRowAnswer_maker('npAnswer', str_replace('"', '', $bot_values[$k][1]), $k + 1);
         }
-        $whole_matchgame = $whole_matchgame . $answer;
+        $whole_matchgame .= $answer;
       }
       if (($top_count == $mid_count) && ($mid_count == $bot_count)) {
         dpm('matching count are good');
       }
       $whole_matchgame = rtrim($whole_matchgame, ', ');
-      $whole_matchgame = $whole_matchgame . $close_html;
+      $whole_matchgame .= $close_html;
       $whole_matchgame = rtrim($whole_matchgame, ', ');
     }
 
     if ($standalone == 1) {
-      $whole_matchgame = $whole_matchgame . $close_matchgame;
+      $whole_matchgame .= $close_matchgame;
     } else {
       //field_next_button == checkbox, field_next_button_label is the button label
       $create_button = $matchgame_values['field_next_button'];
@@ -3378,9 +3346,9 @@ function process_matchgame($matchgame_values, $language, $nid, $module, $standal
         if ($button_label) {
           $button_chunk = tng_npButton_maker('', 'btn-next', '', $button_label, $language);
         }
-        $whole_matchgame = $whole_matchgame . $close_bare_match;
+        $whole_matchgame .= $close_bare_match;
       } else {
-        $whole_matchgame = $whole_matchgame . ']}]}';
+        $whole_matchgame .= ']}]}';
       }
     }
 
@@ -3507,14 +3475,12 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
               $ap = tng_npAnswer_maker($answer_text, 'false', '', $answer_feedback);
               $incorrect_answer_text = $answer_feedback;
             }
-            $ba = $ba . $ap;
+            $ba .= $ap;
           }
         }
 
         // refactor this after we see it in use with multiple Q's and A's
-        if ($standalone == 1) {
-          $whole_qa = $whole_qa ;   //. $close_matchgame;
-        } else {
+        if ($standalone != 1) {
           //field_next_button == checkbox, button labels are handled in the button code for en/es/frca
           $create_button = $object_values['field_next_button'];
           $submit_button = $object_values['field_create_submit_button'];
@@ -3540,15 +3506,15 @@ function process_question_and_answer($object_values, $language, $nid, $standalon
         } else {
           $ba = '{' . $ba . ']}';
         }
-        $whole_qa = $whole_qa . $ba;
+        $whole_qa .= $ba;
       } elseif ($key == 'field_answer_image') {
         $truth = tng_convert_drupal_to_mean_filename($value, '', '');
         $image_chunk = tng_npImage_maker('', $truth, '', '');
-        $whole_qa = $whole_qa . $image_chunk;
+        $whole_qa .= $image_chunk;
       }
     }
     $finish_chunk = $bt . ']}';
-    $whole_qa = $whole_qa . $finish_chunk;
+    $whole_qa .= $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title
     $title = 'Q-and-A-Manifest-' . $title;
 
@@ -3641,7 +3607,7 @@ function process_trivia($object_values, $language, $nid)
               $ap = tng_npAnswer_maker($answer_text, 'false', '', $answer_feedback);
               $incorrect_answer_text = $answer_feedback;
             }
-            $ba = $ba . $ap;
+            $ba .= $ap;
           }
         }
         $bt = tng_npButton_maker('', 'btn-next', '', '', $language);
@@ -3655,15 +3621,15 @@ function process_trivia($object_values, $language, $nid)
         $ba = rtrim($ba, ',');
         //and complete the component started in the npComponent
         $ba = '{' . $ba . ']},';
-        $whole_qa = $whole_qa . $ba;
+        $whole_qa .= $ba;
       } elseif ($key == 'field_answer_image') {
         $truth = tng_convert_drupal_to_mean_filename($value, '', '');
         $image_chunk = tng_npImage_maker('', $truth, '', '');
-        $whole_qa = $whole_qa . $image_chunk;
+        $whole_qa .= $image_chunk;
       }
     }
     $finish_chunk = $bt . ']' . '}';
-    $whole_qa = $whole_qa . $finish_chunk;
+    $whole_qa .= $finish_chunk;
     // since we are processing partial np objects for Q & A, let's make this title a manifest title
     $title = 'Trivia-Manifest - ' . $title;
 
@@ -3885,7 +3851,7 @@ function process_content_object($object_values, $language, $nid)
             $mod_learn = $value[$los];
             $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
             $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
-            $combo = $combo . $mod_learn . ',';
+            $combo .= $mod_learn . ',';
           } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1 ) {
             $mod_learn = $value[$los];
             $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
@@ -3895,9 +3861,9 @@ function process_content_object($object_values, $language, $nid)
             $comp_start += 16;
             $submatch = substr($mod_learn, $comp_start);
             $mod_learn = $trivia_chunk . $submatch. ']}';
-            $combo = $combo . $mod_learn . ',';
+            $combo .= $mod_learn . ',';
           } else {
-            $combo = $combo . $value[$los] . ',';
+            $combo .= $value[$los] . ',';
           }
         }
         if ($field_learning_template == 'trivia' && $field_final_exam == 1) {
@@ -3909,19 +3875,18 @@ function process_content_object($object_values, $language, $nid)
         }
       }
     }
-    $whole_object = $whole_object . $combo ;
+    $whole_object .= $combo ;
 
     // after looping the HTML or Image group, remove the final ','
     if (($field_learning_template == 'popquiz' && $field_final_exam == 1) || ($field_learning_template == 'drag_select' && $field_final_exam == 1)) {
-      $whole_object = $whole_object . $result_chunk ;
+      $whole_object .= $result_chunk ;
     } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
-      $whole_object = $whole_object . $result_chunk ;
+      $whole_object .= $result_chunk ;
     }
-    //$whole_object = $whole_object . $result_chunk;
     $whole_object = rtrim($whole_object, ',');
-    $whole_object = $whole_object . $close_contentobject;
+    $whole_object .= $close_contentobject;
     if ($final_exam) {
-      $whole_object = $whole_object . '} ]';
+      $whole_object .= '} ]';
     }
     $new_nid = tng_create_manifest_node($whole_object, 'object_manifest', $manifest_title, '', $markets, $language, $nid, '', $thumbnail_teaser, $newplayer_api_link, $headline, '', $content_keywords, $content_object_points, $final_exam, $featured_content, $object_weight, $featured_content_image);
     // return the new nid to set it on the parent node
@@ -3980,7 +3945,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $cnt_markets = count($markets);
     $market_csv = '';
     for ($c = 0; $c < $cnt_markets; $c++) {
-      $market_csv = $market_csv . $markets[$c] . ',';
+      $market_csv .= $markets[$c] . ',';
     }
     if (isset($market_csv)) {
       $market_csv = rtrim($market_csv, ', ');
@@ -3990,6 +3955,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm($market_csv);
     }
     $node->type = $node_type;
+    $node->status = $node_status;
     node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
     //language will not be set on the manifest but each manifest contains language specific goods
     //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
@@ -4108,7 +4074,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $market_csv = '';
     if ($markets > 0) {
       for ($c = 0; $c < $cnt_markets; $c++) {
-        $market_csv = $market_csv . $markets[$c] . ',';
+        $market_csv .= $markets[$c] . ',';
       }
       if (isset($market_csv)) {
         $market_csv = rtrim($market_csv, ', ');
@@ -4171,7 +4137,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $cnt_markets = count($markets);
     $market_csv = '';
     for ($c = 0; $c < $cnt_markets; $c++) {
-      $market_csv = $market_csv . $markets[$c] . ',';
+      $market_csv .= $markets[$c] . ',';
     }
     if (isset($market_csv)) {
       $market_csv = rtrim($market_csv, ', ');
@@ -4240,7 +4206,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $cnt_markets = count($markets);
     $market_csv = '';
     for ($c = 0; $c < $cnt_markets; $c++) {
-      $market_csv = $market_csv . $markets[$c] . ',';
+      $market_csv .= $markets[$c] . ',';
     }
     if (isset($market_csv)) {
       $market_csv = rtrim($market_csv, ', ');
@@ -4300,12 +4266,12 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
     $match = strpos($justpath, $needle);
     if ($match > 0) {
       $match = strpos($justpath, $needle);
-      $match = $match + strlen($needle);
+      $match += strlen($needle);
       $submatch = substr($justpath, $match);
       $remote_picture_name = 'assets/' . $submatch;
     } else {
       $needle = "/sites/default/files/";
-      $match = $match + strlen($needle);
+      $match += strlen($needle);
       $submatch = substr($justpath, $match);
       $remote_picture_name = 'assets/' . $submatch;
     }
@@ -4325,27 +4291,6 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
 }
 
 /**
- * @param $entity This function solves a strange problem where our form believes that there is an
- * entity reference, when in fact it is a phantom (that or the cruft exists in the hook for form_alter).
- * Either way, we need this to go away, so we unset the manifest field manually.
- */
-/*function tng_shadow_node_presave($entity)
-{
-  $tng_debug =0;
-  if ($tng_debug == 1) {
-    dpm("inside node presave");
-    dpm($entity);
-  }
-  if (isset($entity->field_manifest['und'][0]['target_id'])) {
-    // dpm('we think the manifest node is set');
-    $node_man = node_load($entity->field_manifest['und'][0]['target_id']);
-    if (!$node_man) {
-      unset($entity->field_manifest);
-    }
-  }
-}*/
-
-/**
  * @param $entity - This view entity is passed
  * from the shadow module to construct a valid JSON object that the NewPlayerV2 can consume.
  * We process the paragraph portion since shadowed entities does not.
@@ -4360,9 +4305,10 @@ function tng_convert_drupal_to_mean_filename($value, $thumb_type = NULL, $make_t
  *       else
  *         note the node and data in our premanifest object
  *   end
+ *
+ * Should be replaced with hook_entity_translation_insert() and
+ * hook_entity_translation_update() to solve language issues.
  */
-
-
 function tng_shadow_node_presave($entity)
 {
 
@@ -4374,9 +4320,11 @@ function tng_shadow_node_presave($entity)
     if ($tng_debug == 1) {
       dpm($entity);
     }
-    // if the node is not published
-    if (!$entity->status == NODE_PUBLISHED) {
-      // Node is published.
+    // needed to use the language from the url, since it wasn't writing other than english manifests
+    $language = get_language_from_uri($entity);
+    // If the node is not published and no manifest has been created.
+    if (!empty($entity->field_manifest[$language]) && in_array(NODE_NOT_PUBLISHED, array($entity->status, $entity->translations->data[$language]['status']))) {
+      // Node is not published.
       if ($tng_debug == 1) {
         dpm('This node should NOT be published.');
       }
@@ -4384,10 +4332,6 @@ function tng_shadow_node_presave($entity)
       if ($tng_debug == 1) {
         dpm('This node should be published.');
       }
-      $entity_array = (array)$entity;
-      // needed to use the language from the url, since it wasn't writing other than english manifests
-      //$language = $entity->language;
-      $language = get_language_from_uri($entity);
       // save this language, since we need to use it later upon re-entry
       $save_language = $language;
       // for full manifest creation, set the module name here, default will be reNutriv
@@ -4400,7 +4344,7 @@ function tng_shadow_node_presave($entity)
       global $namevalue;
       $pre_manifest = array();
       if ($tng_debug == 1) {
-        dpm($entity_array);
+        dpm($entity);
         dpm($language);
       }
       // load the current entity in a wrapper
@@ -4408,10 +4352,9 @@ function tng_shadow_node_presave($entity)
       if ($tng_debug == 1) {
         dpm(_wrapper_debug($wrapper));
       }
-      // given our node entity type, get all the fields for it
-      $entity_type = $entity->type;
-      // this hook is intended for creating content, not to process manifests since they are made when we create a product
-      if ($entity_type == 'object_manifest' || $entity_type == 'badge_manifest') {
+      // this hook is intended for creating content, not to process manifests
+      // since they are made when we create a product
+      if ($entity->type == 'object_manifest' || $entity->type == 'badge_manifest') {
         return;
       }
       // Set language for all fields.
@@ -4425,12 +4368,12 @@ function tng_shadow_node_presave($entity)
       }
       // field_info_instances holds the field values at the outermost level
       // paragraph types must be explored more, 'regular' value fields are written as is.
-      $node_fields = field_info_instances('node', $entity_type);
+      $node_fields = field_info_instances('node', $entity->type);
       $number_of_fields = count($node_fields);
       if ($tng_debug == 1) {
-        dpm('found ' . $number_of_fields . ' ' . $entity_type . ' fields ');
+        dpm('found ' . $number_of_fields . ' ' . $entity->type . ' fields ');
       }
-      $children_nodes_to_process = element_children($node_fields);
+      $children_nodes_to_process = array_keys($node_fields);
       // we loop through the fields looking for a paragraph type to expand and rewrite
       for ($i = 0; $i < $number_of_fields; $i++) {
         if ($tng_debug == 1) {
@@ -4482,6 +4425,7 @@ function tng_shadow_node_presave($entity)
               $field_name = $children_fields_to_process[$pf];
               $field_child_info = field_info_field($children_fields_to_process[$pf]);
               $name = $field_child_info['field_name'];
+              $info = field_info_field($name);
               if ($tng_debug == 1) {
                 dpm('field_name : ' . $field_name);
                 dpm($field_child_info);
@@ -4489,27 +4433,30 @@ function tng_shadow_node_presave($entity)
               }
               // todo: this should be collapsed and refactored once we're sure we don't need to process each type separately
               if (in_array($name, $match_possibilites)) {
-                if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                  $namevalue .= '"' . $field_name . '" ~ "';
                   if (isset($paragraph->{$name}[$language][0]['value'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                    $namevalue .= $paragraph->{$name}[$language][0]['value'];
                   }
-                  if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                    $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
+                  elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                    $namevalue .= $paragraph->{$name}[$language][0]['uri'];
                   }
+                  $namevalue .= '",';
                   if ($tng_debug == 1) {
                     dpm('value after name' . $namevalue);
                   }
                 }
               } else {
                 if (in_array($name, $matchgame_possibilities)) {
-                  if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                  if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                    $namevalue .= '"' . $field_name . '" ~ "';
                     if (isset($paragraph->{$name}[$language][0]['value'])) {
-                      $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
-                    } else {
-                      if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
-                      }
+                      $namevalue .= $paragraph->{$name}[$language][0]['value'];
                     }
+                    elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                      $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                    }
+                    $namevalue .= '",';
                     if ($tng_debug == 1) {
                       dpm('value after name' . $namevalue);
                     }
@@ -4517,86 +4464,99 @@ function tng_shadow_node_presave($entity)
                 } else {
                   // we only care about the value cards, since images are not used
                   if (in_array($name, $flashcard_possibilities)) {
-                    if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                    if (isset($info['columns']['value'])) {
+                      $namevalue .= '"' . $field_name . '" ~ "';
                       if (isset($paragraph->{$name}[$language][0]['value'])) {
-                        $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                        $namevalue .= $paragraph->{$name}[$language][0]['value'];
                       }
+                      $namevalue .= '",';
                       if ($tng_debug == 1) {
                         dpm('value after name' . $namevalue);
                       }
                     }
                   } else {
                     if (in_array($name, $list_possibilities)) {
-                      if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                      if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                        $namevalue .= '"' . $field_name . '" ~ "';
                         if (isset($paragraph->{$name}[$language][0]['value'])) {
-                          $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
-                        } else {
-                          if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
-                          }
+                          $namevalue .= $paragraph->{$name}[$language][0]['value'];
                         }
+                        elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                          $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                        }
+                        $namevalue .= '",';
                         if ($tng_debug == 1) {
                           dpm('value after name' . $namevalue);
                         }
                       }
                     } else {
                       if (in_array($name, $reveal_possibilities)) {
-                        if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                        if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                          $namevalue .= '"' . $field_name . '" ~ "';
                           if (isset($paragraph->{$name}[$language][0]['value'])) {
-                            $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
-                          } else {
-                            if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
-                            }
+                            $namevalue .= $paragraph->{$name}[$language][0]['value'];
                           }
+                          elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                            $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                          }
+                          $namevalue .= '",';
                           if ($tng_debug == 1) {
                             dpm('value after name' . $namevalue);
                           }
                         }
                       } else {
                         if (in_array($name, $drag_possibilities)) {
-                          if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                          if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                            $namevalue .= '"' . $field_name . '" ~ "';
                             if (isset($paragraph->{$name}[$language][0]['value'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                              $namevalue .= $paragraph->{$name}[$language][0]['value'];
                             }
-                            if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                              $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
+                            elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                              $namevalue .= $paragraph->{$name}[$language][0]['uri'];
                             }
+                            $namevalue .= '",';
                             if ($tng_debug == 1) {
                               dpm('value after name' . $namevalue);
                             }
                           }
                         } else {
                           if (in_array($name, $drag_select_possibilities)) {
-                            if (isset($paragraph->{$name}[$language][0]['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                            if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                              $namevalue .= '"' . $field_name . '" ~ "';
                               if (isset($paragraph->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                                $namevalue .= $paragraph->{$name}[$language][0]['value'];
                               }
-                              if (isset($paragraph->{$name}[$language][0]['uri'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['uri'] . '",';
+                              elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
+                                $namevalue .= $paragraph->{$name}[$language][0]['uri'];
                               }
+                              $namevalue .= '",';
                               if ($tng_debug == 1) {
                                 dpm('value after name' . $namevalue);
                               }
                             }
                           } else {
                             if (strlen(strstr($name, 'field_hot_spot')) > 0) {
-                              if (isset($paragraph->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                              if (isset($info['columns']['value'])) {
+                                $namevalue .= '"' . $field_name . '" ~ "';
+                                if (isset($paragraph->{$name}[$language][0]['value'])) {
+                                  $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                                }
+                                $namevalue .= '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
                               }
                             } else {
                               // the answer node itself has no value we can use, so don't include it
-                              if ($name == 'field_paragraph_answer') {
-                              } elseif (isset($paragraphs->{$name}[$language][0]['value'])) {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ "' . $paragraph->{$name}[$language][0]['value'] . '",';
+                              if ($name != 'field_paragraph_answer') {
+                                $namevalue .= '"' . $field_name . '" ~ "';
+                                if (isset($paragraph->{$name}[$language][0]['value'])) {
+                                  $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                                }
+                                $namevalue .= '",';
                                 if ($tng_debug == 1) {
                                   dpm('value after name' . $namevalue);
                                 }
-                              } else {
-                                $namevalue = $namevalue . '"' . $field_name . '" ~ ' . '"",';
                               }
                             }
                           }
@@ -4606,11 +4566,9 @@ function tng_shadow_node_presave($entity)
                   }
                 }
               }
-              $field_count = count($paragraph->{$name}[$language]);
               // if there are no elements in the field don't process
-              if ($field_count < 1) {
-                continue;
-              } else {
+              if (!empty($paragraph->{$name}) && !empty($paragraph->{$name}[$language])) {
+                $field_count = count($paragraph->{$name}[$language]);
                 // typical question
                 if ($tng_debug == 1) {
                   dpm($field_count . ' field(s) sets found for ' . $paragraph->{$name}[$language][0]['value']);
@@ -4620,26 +4578,15 @@ function tng_shadow_node_presave($entity)
                   if ($tng_debug == 1) {
                     dpm('name : ' . $name . ' value : ' . $paragraph->{$name}[$language][0]['value']);
                   }
-
-                } else {
-                  // typically answers sometimes images?
-                  }
-                  for ($f = 0; $f < $field_count; $f++) {
-                    $para_entity = paragraphs_item_load($paragraph->{$name}[$language][$f]['value']);
+                }
+                if ($info['type'] == 'paragraphs') {
+                  foreach ($paragraph->{$name}[$language] as $item) {
+                    $para_entity = paragraphs_item_load($item['value']);
+                    $para_inst = field_info_instances('paragraphs_item', $para_entity->bundle);
                     if ($tng_debug == 1) {
-                      dpm('**para_entity**');
-                      dpm($para_entity);
+                      dpm($para_inst);
                     }
-                    if ($para_entity != false) {
-                      $para_inst = field_info_instances('paragraphs_item', $para_entity->bundle);
-                      if ($tng_debug == 1) {
-                        dpm($para_inst);
-                      }
-                      $sub_children = element_children($para_inst);
-                    } else {
-                      $sub_children = array();
-                    }
-                    foreach ($sub_children as $key => $value) {
+                    foreach (element_children($para_inst) as $key => $value) {
                       if ($tng_debug == 1) {
                         dpm('***key***');
                         dpm($key);
@@ -4652,9 +4599,9 @@ function tng_shadow_node_presave($entity)
                           dpm($value);
                           dpm($para_entity->{$value}[$language][0]['value']);
                         }
-                        $namevalue = $namevalue . '"' . $value . '" ~ "' . $para_entity->{$value}[$language][0]['value'] . '",';
+                        $namevalue .= '"' . $value . '" ~ "' . $para_entity->{$value}[$language][0]['value'] . '",';
                       }
-                      $info = field_info_field($sub_children[$key]);
+                      $info = field_info_field($value);
                       if ($info['type'] == 'image') {
                         // rare, but you could attach an image to a question
                         $img_name = 'field_question_image';
@@ -4666,27 +4613,28 @@ function tng_shadow_node_presave($entity)
                           $already_there = strpos($namevalue,'field_question_image' );
                           if ( $already_there === false )
                           {
-                            $namevalue = $namevalue . '"' . $img_name . '" ~ "' . $pub_image . '",';
+                            $namevalue .= '"' . $img_name . '" ~ "' . $pub_image . '",';
                           }
                         }
-                      if ($tng_debug == 1) {
-                        dpm($info);
-                      }
-                      // expect 'file' or 'image' here
-                      $field_name = $value;
-                      if ($info['type'] == 'taxonomy_term_reference') {
                         if ($tng_debug == 1) {
-                          dpm('**inside taxonomy term reference**');
-                          dpm($field_name);
+                          dpm($info);
                         }
-                        $number_of_terms = count($entity_array[$field_name][$language]);
-                        for ($t = 0; $t < $number_of_terms; $t++) {
-                          $tids = array($entity_array[$field_name][$language][$t]['tid']);
-                          $terms = taxonomy_term_load_multiple($tids);
-                          foreach ($terms as $term) {
-                            $name = $term->name;
-                            if ($tng_debug == 1) {
-                              dpm($name);
+                        // expect 'file' or 'image' here
+                        $field_name = $value;
+                        if ($info['type'] == 'taxonomy_term_reference') {
+                          if ($tng_debug == 1) {
+                            dpm('**inside taxonomy term reference**');
+                            dpm($field_name);
+                          }
+                          $number_of_terms = count($entity->{$field_name}[$language]);
+                          for ($t = 0; $t < $number_of_terms; $t++) {
+                            $tids = array($entity->{$field_name}[$language][$t]['tid']);
+                            $terms = taxonomy_term_load_multiple($tids);
+                            foreach ($terms as $term) {
+                              $name = $term->name;
+                              if ($tng_debug == 1) {
+                                dpm($name);
+                              }
                             }
                           }
                         }
@@ -4706,9 +4654,9 @@ function tng_shadow_node_presave($entity)
           $manifest[] = $namevalue;
         } elseif ($info['type'] == 'entityreference') {
           // todo: think of a better way to process for entity references than to check the type for product
-          if ($entity_type == 'product_detail') {
+          if ($entity->type == 'product_detail') {
             //dpm('found an entity reference node to fetch and process');
-            //dpm($entity_type);
+            //dpm($entity->type);
             $objects = $wrapper->language($language)->$info['field_name']->value();
             //dpm('paragraphs');
             //dpm($objects);
@@ -4718,7 +4666,7 @@ function tng_shadow_node_presave($entity)
             $csv = '';
             // here we load the triplets of info for title, image, and creation date
             for ($num = 0; $num < $num_entity_refs; $num++) {
-              $targetid = $entity_array[$field_name][$language][$num]['target_id'];
+              $targetid = $entity->{$field_name}[$language][$num]['target_id'];
               //dpm($targetid);
               $csv = '';
               $partnerinfo = tng_title_image_date_extractor($targetid);
@@ -4730,14 +4678,14 @@ function tng_shadow_node_presave($entity)
             $csv = rtrim($csv, ', ');
             $pre_manifest[$field_name] = $csv;
 
-          } elseif ($entity_type == 'content_object') {
+          } elseif ($entity->type == 'content_object') {
             //dpm('found a content object entity reference, now loading manifests');
             $num_entity_refs = count($wrapper->language($language)->$info['field_name']->value());
             $field_name = $info['field_name'];
             //dpm('field_name : ' . $field_name);
             //dpm('found ' .  $num_entity_refs . ' entity references.');
             for ($num = 0; $num < $num_entity_refs; $num++) {
-              $targetid = $entity_array[$field_name][$language][$num]['target_id'];
+              $targetid = $entity->{$field_name}[$language][$num]['target_id'];
               $learning_manifest = tng_manifest_extractor($targetid, $language);
               $pre_manifest[$field_name][$num] = $learning_manifest;
             }
@@ -4749,9 +4697,9 @@ function tng_shadow_node_presave($entity)
         } elseif ($info['type'] == 'image') {
           $field_name = $info['field_name'];
           $image_style = $node_fields[$field_name]['display']['default']['settings']['image_style'];
-          $new_lang = $entity_array['language'];
-          if (isset($entity_array[$field_name][$new_lang][0]['fid'])) {
-            $file_id = file_load($entity_array[$field_name][$new_lang][0]['fid']);
+          $new_lang = $entity->language;
+          if (isset($entity->{$field_name}[$new_lang][0]['fid'])) {
+            $file_id = file_load($entity->{$field_name}[$new_lang][0]['fid']);
             $uri = $file_id->uri;
             $style_path = image_style_url($image_style, $uri);
             $image_style_path = array($style_path);
@@ -4769,7 +4717,7 @@ function tng_shadow_node_presave($entity)
           }
           // since we do field translation, we need a way of finding out if we are working on non-english languages
           // and we rely on drupals url method to modify 'foreign' content, which is url and form-based, with the language at the end of the url '/es'
-          if ($entity_type == 'product_detail') {
+          if ($entity->type == 'product_detail') {
             $uri_language = get_language_from_uri($entity);
             $instance = field_info_instance('node', $info['field_name'], 'product_detail');
             $my_translated_label = i18n_field_translate_property($instance, 'label', $uri_language);
@@ -4784,8 +4732,8 @@ function tng_shadow_node_presave($entity)
         } elseif ($info['type'] == 'file') {
           $field_name = $info['field_name'];
           $local_language = get_language_from_uri($entity);
-          if (isset($entity_array[$field_name][$local_language][0]['fid'])) {
-            $file_id = file_load($entity_array[$field_name][$local_language][0]['fid']);
+          if (isset($entity->{$field_name}[$local_language][0]['fid'])) {
+            $file_id = file_load($entity->{$field_name}[$local_language][0]['fid']);
             $uri = $file_id->uri;
             $thefilepath = file_create_url($uri);
             $pre_manifest[$field_name] = $thefilepath;
@@ -4794,40 +4742,41 @@ function tng_shadow_node_presave($entity)
           }
         } elseif ($info['type'] == 'number_integer') {
           $field_name = $info['field_name'];
-          if ($entity_array[$field_name][$language]) {
-            $pre_manifest[$field_name] = $entity_array[$field_name][$language][0]['value'];
+          if ($entity->{$field_name}[$language]) {
+            $pre_manifest[$field_name] = $entity->{$field_name}[$language][0]['value'];
           } else {
             $pre_manifest[$field_name] = '';
           }
         } elseif ($info['type'] == 'taxonomy_term_reference') {
           //dpm('found a taxonomy term reference');
           $field_name = $info['field_name'];
-          if (isset($entity_array[$field_name][$language])) {
-            $number_of_terms = count($entity_array[$field_name][$language]);
+          if (isset($entity->{$field_name}[$language])) {
+            $number_of_terms = count($entity->{$field_name}[$language]);
           }
           else {
             $number_of_terms = 0;
           }
-          //dpm('number of terms : '. $number_of_terms);
-          //dpm($field_name);
           $collector = '';
           for ($t = 0; $t < $number_of_terms; $t++) {
-            $tids = array($entity_array[$field_name][$language][$t]['tid']);
+            $tids = array($entity->{$field_name}[$language][$t]['tid']);
             $terms = taxonomy_term_load_multiple($tids);
             foreach ($terms as $term) {
               $name = $term->name;
-              //dpm($name);
-              $collector = $collector . $name . ',';
+              $collector .= $name . ',';
             }
           }
           $pre_manifest[$field_name] = $collector;
         } elseif (($info['type'] == 'list_text')) {
           //dpm('found some list_text ');
           $field_name = $info['field_name'];
-          $pre_manifest[$field_name] = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
-          //dpm($pre_manifest);
+          if ($field_name == 'field_markets' && in_array(NODE_NOT_PUBLISHED, array($entity->status, $entity->translations->data[$language]['status']))) {
+            // Hide unpublished nodes from all markets.
+            $pre_manifest[$field_name] = array();
+          }
+          else {
+            $pre_manifest[$field_name] = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
+          }
         } elseif (($info['type'] == 'list_boolean')) {
-          //dpm('found some list_boolean');
           $field_name = $info['field_name'];
           $bool = $wrapper->language($language)->$children_nodes_to_process[$i]->value();
           if ($bool == TRUE) {
@@ -4836,14 +4785,9 @@ function tng_shadow_node_presave($entity)
             $bool = 0;
           }
           $pre_manifest[$field_name] = $bool;
-          //dpm($pre_manifest);
         } elseif ($info['type'] == 'object_manifest') {
-          //dpm('found me a manifest to play with');
           $field_name = $info['field_name'];
-          $pre_manifest[$field_name] = $entity_array[$children_nodes_to_process[$i]]['und'][0]['value'];
-        } else {
-          // todo: get through all our usual objects and do something useful/brilliant with an unknown type
-
+          $pre_manifest[$field_name] = $entity->{$children_nodes_to_process[$i]}['und'][0]['value'];
         }
       }
 
@@ -4853,11 +4797,11 @@ function tng_shadow_node_presave($entity)
       //tng_test_product_creation();
       //return;
 
-      if ($entity_type == 'product_detail') {
+      if ($entity->type == 'product_detail') {
 
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4866,10 +4810,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'content_object') {
+      } elseif ($entity->type == 'content_object') {
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4878,10 +4822,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'hot_spots') {
+      } elseif ($entity->type == 'hot_spots') {
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4890,10 +4834,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'drag_match') {
+      } elseif ($entity->type == 'drag_match') {
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4902,10 +4846,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'trivia') {
+      } elseif ($entity->type == 'trivia') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4914,10 +4858,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'drag_select') {
+      } elseif ($entity->type == 'drag_select') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4926,10 +4870,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'drag_priorities') {
+      } elseif ($entity->type == 'drag_priorities') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4938,10 +4882,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'list') {
+      } elseif ($entity->type == 'list') {
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4950,10 +4894,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'reveal') {
+      } elseif ($entity->type == 'reveal') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4962,10 +4906,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'flash_cards') {
+      } elseif ($entity->type == 'flash_cards') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4974,10 +4918,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'matching_game') {
+      } elseif ($entity->type == 'matching_game') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4986,10 +4930,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'question_and_answer') {
+      } elseif ($entity->type == 'question_and_answer') {
         $local_language = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -4998,17 +4942,16 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'badge') {
-        $local_language  = $save_language;
+      } elseif ($entity->type == 'badge') {
+        $local_language = $save_language;
         // when you use the execute arbitrary php script
         // it puts some weird crap in the language string
         // like '/batch?id=11795&op=do ' so we fix it here if
         if ((strlen($local_language) > 4)) {
-          //var_dump($pre_manifest);
           $local_language = $entity->language;
         }
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -5017,10 +4960,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'story') {
+      } elseif ($entity->type == 'story') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -5029,10 +4972,10 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'diary') {
+      } elseif ($entity->type == 'diary') {
         $local_language  = $save_language;
-        if (isset($entity_array['field_manifest'][$local_language][0]['target_id'])) {
-          $local_tid = $entity_array['field_manifest'][$local_language][0]['target_id'];
+        if (isset($entity->field_manifest[$local_language][0]['target_id'])) {
+          $local_tid = $entity->field_manifest[$local_language][0]['target_id'];
         }
         else {
           $local_tid = NULL;
@@ -5041,7 +4984,7 @@ function tng_shadow_node_presave($entity)
         if ($new_nid != $local_tid) {
           $entity->field_manifest[$local_language][0]['target_id'] = $new_nid;
         }
-      } elseif ($entity_type == 'tools') {
+      } elseif ($entity->type == 'tools') {
         $entity = tng_fix_tools($entity);
       }
     }
@@ -5139,34 +5082,6 @@ function _wrapper_debug($w)
   }
   return $values;
 }
-
-/**
- * call this function to test the syntax creation of the maker routines.
- * check the output at this website: http://jsonformatter.curiousconcept.com/
- * jsonlint.com eats html chunks for some reason and can't be used to check with.
- */
-
-//function tng_test_product_creation() {
-//  $feature_chunk = tng_npFeature_maker('Sample Product Display', '["../../../assets/anr.css"]', '0.0.5', '2014-Dec-Mon_04:12:22');
-//  //dpm($feature_chunk);
-//  $content_chunk = tng_npContent_maker('content_en-US', 'en-US', 'Sample Manifest', 'Sample presentation');
-//  //dpm($content_chunk);
-//  $menu_chunk = tng_npMenu_maker('globalMenu', 'pages');
-//  //dpm($menu_chunk);
-//  $page_chunk = tng_npPageStart_maker('Welcome', '', 'Advanced Night Repair', 'true',  'false');
-//  //dpm($page_chunk);
-//  $html_chunk = tng_npHTML_maker('anrBenefits', 'field-label', 'Benefits',  '<ol><li>Instantly&mdash;lines and wrinkles look plumped and smoothed.</li><li>In just one week&mdash;skin doubles its own natural collagen production.*</li><li>In just 4 weeks&mdash;96% of women showed a significant reduction in the look of lines & wrinkles.**</ol>');
-//  //dpm($html_chunk);
-//  $more_html_chunk = tng_npHTML_maker('anrDemonstration', 'field-label', 'Demonstration',  '<p>Apply 1 dropper to the back of one hand and massage into skin.<\/p><p>Lightly spray the backs of both hands with water, then compare hands. Tell your customer to pretend the water is a moisturizer.<\/p><p>Ask her to notice how the skin treated with Advanced Night Repair holds moisture, while the untreated skin experiences moisture loss (the water quickly rolls off).<\/p>');
-//  //dpm($more_html_chunk);
-//  $end_page_chunk = tng_npPageEndMaker();
-//  $another_page_chunk = tng_npPageStart_maker('Page2', '', 'Beginning Night Repair', 'true',  'false');
-//
-//  $finish = tng_npPageContentFeatureCleanup();
-//  $combo =  $feature_chunk . $content_chunk . $menu_chunk . $page_chunk . $html_chunk. $end_page_chunk . ',' .  $another_page_chunk .  $html_chunk . ',' . $more_html_chunk . $end_page_chunk . $finish;
-//  dpm($combo);
-//}
-
 
 function _date_range_limit($start, $end, $adj, $a, $b, $result)
 {
@@ -5279,9 +5194,9 @@ function _date_diff($one, $two)
  *
  * Remove object manifests that are no longer attached to a node.
  */
-function tng_shadow_field_attach_delete($entity_type, $entity) {
-  if ($entity_type == 'node' && !empty($entity->field_manifest)) {
-    foreach ($entity->field_manifest as $items) {
+function tng_shadow_node_delete($node) {
+  if (!empty($node->field_manifest)) {
+    foreach ($node->field_manifest as $items) {
       foreach ($items as $item) {
         drupal_register_shutdown_function('node_delete', $item['target_id']);
       }

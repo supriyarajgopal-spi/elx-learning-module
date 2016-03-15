@@ -641,18 +641,18 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'administrative_title',
-            'target' => 'host_entity_guid',
-            'unique' => FALSE,
-          ),
-          4 => array(
             'source' => 'csvid',
             'target' => 'guid',
             'unique' => 1,
           ),
-          5 => array(
+          4 => array(
             'source' => 'language',
             'target' => 'Temporary target 1',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'administrative_title',
+            'target' => 'host_entity_guid',
             'unique' => FALSE,
           ),
         ),
@@ -729,18 +729,18 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'administrative_title',
-            'target' => 'host_entity_guid',
-            'unique' => FALSE,
-          ),
-          4 => array(
             'source' => 'csvid',
             'target' => 'guid',
             'unique' => 1,
           ),
-          5 => array(
+          4 => array(
             'source' => 'language',
             'target' => 'Temporary target 1',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'administrative_title',
+            'target' => 'host_entity_guid',
             'unique' => FALSE,
           ),
         ),
@@ -924,18 +924,18 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           5 => array(
-            'source' => 'entity_id',
-            'target' => 'host_entity_guid',
-            'unique' => FALSE,
-          ),
-          6 => array(
             'source' => 'Blank source 4',
             'target' => 'guid',
             'unique' => 1,
           ),
-          7 => array(
+          6 => array(
             'source' => 'Blank source 5',
             'target' => 'Temporary target 1',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'entity_id',
+            'target' => 'host_entity_guid',
             'unique' => FALSE,
           ),
         ),
@@ -1134,18 +1134,18 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
-            'source' => 'qa_group_question_text',
-            'target' => 'field_question_text',
-            'unique' => FALSE,
-          ),
-          2 => array(
             'source' => 'qa_group_question_video',
             'target' => 'field_question_video_file:uri',
             'unique' => FALSE,
           ),
+          2 => array(
+            'source' => 'qa_group_question_text',
+            'target' => 'field_question_text',
+            'unique' => FALSE,
+          ),
           3 => array(
-            'source' => 'administrative_title',
-            'target' => 'host_entity_guid',
+            'source' => 'qa_group_question_answers_array',
+            'target' => 'Temporary target 2',
             'unique' => FALSE,
           ),
           4 => array(
@@ -1159,8 +1159,8 @@ function learning_level_import_feeds_importer_default() {
             'unique' => FALSE,
           ),
           6 => array(
-            'source' => 'qa_group_question_answers_array',
-            'target' => 'Temporary target 2',
+            'source' => 'administrative_title',
+            'target' => 'host_entity_guid',
             'unique' => FALSE,
           ),
         ),
@@ -1223,38 +1223,38 @@ function learning_level_import_feeds_importer_default() {
         'identifier_field_name' => 'field_reveal_collection',
         'mappings' => array(
           0 => array(
-            'source' => 'administrative_title',
-            'target' => 'host_entity_guid',
-            'unique' => FALSE,
-          ),
-          1 => array(
-            'source' => 'csvid',
-            'target' => 'guid',
-            'unique' => 1,
-          ),
-          2 => array(
-            'source' => 'reveal_group_hero_image',
-            'target' => 'field_reveal_hero:uri',
-            'unique' => FALSE,
-          ),
-          3 => array(
-            'source' => 'reveal_group_video',
-            'target' => 'field_reveal_hero_video:uri',
-            'unique' => FALSE,
-          ),
-          4 => array(
             'source' => 'reveal_group_thumbnail',
             'target' => 'field_reveal_thumbnail:uri',
             'unique' => FALSE,
           ),
-          5 => array(
+          1 => array(
+            'source' => 'reveal_group_hero_image',
+            'target' => 'field_reveal_hero:uri',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'reveal_group_video',
+            'target' => 'field_reveal_hero_video:uri',
+            'unique' => FALSE,
+          ),
+          3 => array(
             'source' => 'reveal_group_text_html',
             'target' => 'field_reveal_text',
             'unique' => FALSE,
           ),
-          6 => array(
+          4 => array(
+            'source' => 'csvid',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          5 => array(
             'source' => 'language',
             'target' => 'Temporary target 1',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'administrative_title',
+            'target' => 'host_entity_guid',
             'unique' => FALSE,
           ),
         ),

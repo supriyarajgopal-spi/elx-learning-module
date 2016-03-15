@@ -183,11 +183,12 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
           }
           $result = $query->execute();
 
-          list($hostEntityType, $data) = each($result);
-          $entities = entity_load($hostEntityType, array(key($data)));
-          $entity = reset($entities);
-          // We don't create a link until we know the language.
-          $target_item->setHostEntity($hostEntityType, $entity, LANGUAGE_NONE, FALSE);
+          if (!empty($result)) {
+            list($hostEntityType, $data) = each($result);
+            $entities = entity_load($hostEntityType, array(key($data)));
+            $entity = reset($entities);
+            $target_item->setHostEntity($hostEntityType, $entity, $target_item->{'Temporary target 1'}, FALSE);
+          }
         }
         break;
       default:

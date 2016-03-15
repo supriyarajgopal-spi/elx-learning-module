@@ -55,8 +55,8 @@ function learning_level_import_feeds_importer_default() {
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
         'expire' => '-1',
-        'author' => '19371',
-        'authorize' => 1,
+        'author' => 0,
+        'authorize' => 0,
         'mappings' => array(
           0 => array(
             'source' => 'content_object_custom_cta',
@@ -845,7 +845,7 @@ function learning_level_import_feeds_importer_default() {
           'status' => '1',
           'promote' => 0,
           'sticky' => 0,
-          'author' => '19371',
+          'author' => 0,
           'log' => '',
           'revision' => 0,
           'comment' => '',
@@ -1070,7 +1070,7 @@ function learning_level_import_feeds_importer_default() {
           'status' => '1',
           'promote' => 0,
           'sticky' => 0,
-          'author' => '19371',
+          'author' => 0,
           'log' => '',
           'revision' => 0,
           'comment' => '',
@@ -1354,7 +1354,7 @@ function learning_level_import_feeds_importer_default() {
           'status' => '1',
           'promote' => 0,
           'sticky' => 0,
-          'author' => '19371',
+          'author' => 0,
           'log' => '',
           'revision' => 0,
           'comment' => '',

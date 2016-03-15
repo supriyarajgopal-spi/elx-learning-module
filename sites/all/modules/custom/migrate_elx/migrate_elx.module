@@ -65,7 +65,6 @@ function migrate_elx_feeds_presave(FeedsSource $source, $entity, $item) {
 }
 
 function migrate_elx_files_submit($form, &$form_state) {
-	dpm($form_state);
 	$saved_files = array(); //Array to capture file objects
 	$scheme = variable_get('file_default_scheme', 'public') . '://';
 	$directoryname = 'elx_bulk/assets'; // Directory where images are collected

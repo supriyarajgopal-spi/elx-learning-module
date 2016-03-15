@@ -47,11 +47,11 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->source = 'Blank source 3';
   $feeds_tamper->plugin_id = 'php';
   $feeds_tamper->settings = array(
-    'php' => 'if ($result = db_query("SELECT f.entity_id FROM feeds_item f INNER JOIN learning_point_csv c ON f.guid = c.administrative_title WHERE f.entity_type = \'node\' AND c.parent_item_administrative_title = :title GROUP BY f.entity_id", array(\':title\' => $field))) {
+    'php' => 'if ($result = db_query("SELECT DISTINCT f.entity_id FROM feeds_item f INNER JOIN learning_point_csv c ON f.guid = c.administrative_title WHERE f.entity_type = \'node\' AND c.parent_item_administrative_title = :title", array(\':title\' => $field))) {
   return $result->fetchCol();
 }',
   );
-  $feeds_tamper->weight = 1;
+  $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Execute php code';
   $export['content_objects-blank_source_3-php'] = $feeds_tamper;
 
@@ -124,6 +124,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-administrative_title-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'administrative_title';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-administrative_title-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-administrative_title-required';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'administrative_title';
@@ -165,6 +185,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_category-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_category';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_category-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-content_object_category-strip_tags';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'content_object_category';
@@ -190,6 +230,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-content_object_category-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_custom_cta-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_custom_cta';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_custom_cta-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -223,6 +283,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_exam_pass_content_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_exam_pass_content_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_exam_pass_content_html-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-content_object_exam_pass_content_html-trim';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'content_object_exam_pass_content_html';
@@ -234,6 +314,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-content_object_exam_pass_content_html-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_exam_pass_feedback_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_exam_pass_feedback_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_exam_pass_feedback_html-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -253,6 +353,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_exam_perfect_content_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_exam_perfect_content_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_exam_perfect_content_html-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-content_object_exam_perfect_content_html-trim';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'content_object_exam_perfect_content_html';
@@ -264,6 +384,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-content_object_exam_perfect_content_html-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_headline-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_headline';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_headline-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -477,6 +617,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 8;
   $feeds_tamper->description = 'Explode';
   $export['data_xls-content_object_tags_keywords-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-content_object_tags_keywords-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'content_object_tags_keywords';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 13;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-content_object_tags_keywords-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -806,6 +966,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-hot_spot_text_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'hot_spot_text_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-hot_spot_text_html-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-hot_spot_text_html-trim';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'hot_spot_text_html';
@@ -846,6 +1026,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-hot_spot_weight-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-intro_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'intro_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-intro_html-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -998,6 +1198,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-list_item_group_text_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'list_item_group_text_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-list_item_group_text_html-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-list_item_group_text_html-trim';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'list_item_group_text_html';
@@ -1091,6 +1311,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-parent_item_administrative_title-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'parent_item_administrative_title';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 6;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-parent_item_administrative_title-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-parent_item_administrative_title-strip_tags';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'parent_item_administrative_title';
@@ -1116,6 +1356,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 5;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-parent_item_administrative_title-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-qa_completion_text-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'qa_completion_text';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-qa_completion_text-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1209,6 +1469,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 24;
   $feeds_tamper->description = 'Explode |';
   $export['data_xls-qa_group_question_answers_array-explode_vertical_dash'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-qa_group_question_answers_array-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'qa_group_question_answers_array';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 32;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-qa_group_question_answers_array-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1378,6 +1658,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-qa_group_question_image-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-qa_group_question_text-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'qa_group_question_text';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-qa_group_question_text-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1625,6 +1925,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-reveal_group_text_html-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'reveal_group_text_html';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-reveal_group_text_html-find_replace'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'data_xls-reveal_group_text_html-trim';
   $feeds_tamper->importer = 'data_xls';
   $feeds_tamper->source = 'reveal_group_text_html';
@@ -1763,6 +2083,26 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Trim';
   $export['data_xls-reveal_group_weight-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'data_xls-subtitle-find_replace';
+  $feeds_tamper->importer = 'data_xls';
+  $feeds_tamper->source = 'subtitle';
+  $feeds_tamper->plugin_id = 'find_replace';
+  $feeds_tamper->settings = array(
+    'find' => '  ',
+    'replace' => ' ',
+    'case_sensitive' => 0,
+    'word_boundaries' => 0,
+    'whole' => 0,
+    'regex' => FALSE,
+    'func' => 'str_ireplace',
+  );
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Find replace';
+  $export['data_xls-subtitle-find_replace'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -2007,23 +2347,16 @@ function learning_level_import_feeds_tamper_default() {
   $feeds_tamper->source = 'qa_group_question_answers_array';
   $feeds_tamper->plugin_id = 'php';
   $feeds_tamper->settings = array(
-    'php' => 'foreach (explode("]\\n[", trim($field, \'[]\')) as $answer) {
-  $result = db_select(\'learning_point_answers\')
-    ->fields(\'learning_point_answers\')
-    ->condition(\'csvid\', $item[\'csvid\'])
-    ->condition(\'qa_group_question_answer\', $answer)
-    ->range(0, 1)
-    ->countQuery()
-    ->execute()
-    ->fetchField();
-  if (!$result) {
-    db_insert(\'learning_point_answers\')
-      ->fields(array(
-        \'csvid\' => $item[\'csvid\'],
-        \'qa_group_question_answer\' => $answer,
-      ))
-      ->execute();
-  }
+    'php' => 'db_delete(\'learning_point_answers\')
+  ->condition(\'csvid\', $item[\'csvid\'])
+  ->execute();
+foreach (explode("]\\n[", trim($field, \'[]\')) as $answer) {
+  db_insert(\'learning_point_answers\')
+    ->fields(array(
+      \'csvid\' => $item[\'csvid\'],
+      \'qa_group_question_answer\' => $answer,
+    ))
+    ->execute();
 }',
   );
   $feeds_tamper->weight = 1;

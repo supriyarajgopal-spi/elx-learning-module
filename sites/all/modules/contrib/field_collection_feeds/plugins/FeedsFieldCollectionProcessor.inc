@@ -56,17 +56,14 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 
     $hostEntity = $entity->hostEntity();
     if (!empty($hostEntity)) {
-      $entity->setHostEntity($this->config['host_entity_type'], $hostEntity, $entity->{'Temporary target 1'});
-      //update by set item_id
-
       if ($this->config['update_existing'] == FEEDS_UPDATE_EXISTING && isset($entity->identifier_field) && isset($this->config['identifier_field_name'])) {
 
-	   $query = new EntityFieldQuery();
+        $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'paragraphs_item');
         $query->entityCondition('bundle', $this->config['field_name']);
         $items  = isset($hostEntity->{$this->config['field_name']}[$entity->langcode()]) ? $hostEntity->{$this->config['field_name']}[$entity->langcode()] : array();
         $ids = paragraphs_field_item_to_ids($items);
-		if(!empty($ids)){
+        if(!empty($ids)){
           $query->entityCondition('entity_id', $ids, 'IN');
 
           $query->fieldCondition($this->config['identifier_field_name'], 'value', $entity->identifier_field);
@@ -77,8 +74,8 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 		}
         if (!empty($entity->item_id)) {
           $entity->is_new = NULL;
-		  $old_paragraphs_item = paragraphs_item_load($entity->item_id);
-		  $entity->revision_id = $old_paragraphs_item->revision_id;
+          $old_paragraphs_item = paragraphs_item_load($entity->item_id);
+          $entity->revision_id = $old_paragraphs_item->revision_id;
           $skip_host_save = TRUE;
         }
         //drupal_set_message('123:'.$paragraphs_item->item_id);
@@ -175,21 +172,23 @@ class FeedsFieldCollectionProcessor extends FeedsProcessor {
 
     switch ($target_element) {
       case 'host_entity_guid':
-        $query = new EntityFieldQuery();
-        $query->entityCondition('entity_type', $this->config['host_entity_type']);
-        if (!empty($this->config['is_field'])) {
-          $query->fieldCondition($this->config['guid_field_name'], 'value', $value);
-        }
-        else{
-          $query->propertyCondition($this->config['guid_field_name'], $value);
-        }
-        $result = $query->execute();
+        if (!empty($target_item->is_new)) {
+          $query = new EntityFieldQuery();
+          $query->entityCondition('entity_type', $this->config['host_entity_type']);
+          if (!empty($this->config['is_field'])) {
+            $query->fieldCondition($this->config['guid_field_name'], 'value', $value);
+          }
+          else{
+            $query->propertyCondition($this->config['guid_field_name'], $value);
+          }
+          $result = $query->execute();
 
-        list($hostEntityType, $data) = each($result);
-        $entities = entity_load($hostEntityType, array(key($data)));
-        $entity = reset($entities);
-        // We don't create a link until we know the language.
-        $target_item->setHostEntity($hostEntityType, $entity, LANGUAGE_NONE, FALSE);
+          list($hostEntityType, $data) = each($result);
+          $entities = entity_load($hostEntityType, array(key($data)));
+          $entity = reset($entities);
+          // We don't create a link until we know the language.
+          $target_item->setHostEntity($hostEntityType, $entity, LANGUAGE_NONE, FALSE);
+        }
         break;
       default:
         parent::setTargetElement($source, $target_item, $target_element, $value);

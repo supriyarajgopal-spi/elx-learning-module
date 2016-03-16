@@ -1182,7 +1182,7 @@ function tng_npRevealItem_maker($id = NULL, $heading = NULL, $content = NULL, $b
       $reveal .= ',' . '"heading"' . ':' . '"' . $heading . '"';
     }
     if ($content) {
-      $reveal .= ',' . '"content"' . ':' . '"' . $content . '"';
+      $reveal .= ',' . '"content"' . ':' . json_encode($content);
     }
     if ($buttonImage) {
       $reveal .= ',' . '"buttonImage"' . ':' . '"' . $buttonImage . '"';

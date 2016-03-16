@@ -28,7 +28,7 @@ function learning_level_import_feeds_importer_default() {
     'parser' => array(
       'plugin_key' => 'FeedsSQLParser',
       'config' => array(
-        'query' => 'SELECT DISTINCT administrative_title, language, content_object_markets, hero_image, content_object_headline, intro_html, content_object_point_value, content_object_custom_cta, content_object_exam_pass_content_html, content_object_exam_pass_feedback_html, content_object_exam_perfect_content_html, content_object_tags_keywords, learning_object_weight, content_object_category, content_object_learning_template, csvid FROM learning_point_csv WHERE content_type = \'Content_Object\'',
+        'query' => 'SELECT DISTINCT c.administrative_title, c.language, c.content_object_markets, c.hero_image, c.content_object_headline, c.intro_html, c.content_object_point_value, c.content_object_custom_cta, c.content_object_exam_pass_content_html, c.content_object_exam_pass_feedback_html, c.content_object_exam_perfect_content_html, c.content_object_tags_keywords, c.learning_object_weight, c.content_object_category, c.content_object_learning_template, c.csvid FROM learning_point_csv c INNER JOIN learning_point_csv cc ON c.administrative_title = cc.parent_item_administrative_title INNER JOIN feeds_item f ON cc.administrative_title = f.guid WHERE c.content_type = \'Content_Object\'',
         'database' => 'default',
         'mapping' => array(
           'administrative_title' => 'administrative_title',

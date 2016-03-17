@@ -60,7 +60,7 @@ class FeedsExcelParser extends FeedsParser{
     // Load the PHPExcel shenanigans
     // Note, we're caching this in a file as PDO/MySQL complain when it is 
     // included in the $this->state object (dodgy characters).
-    if(!$this->state->reader_object_cache_path || !file_exists($this->state->reader_object_cache_path)){
+    if(!isset($this->state->reader_object_cache_path) || !file_exists($this->state->reader_object_cache_path)){
       // We use drupal_realpath here as it appears that the ZipArchive class is
       // not able to handle our use of public://... Stream URIs.  This will need
       // to be fixed before Drupal 8.
@@ -75,7 +75,7 @@ class FeedsExcelParser extends FeedsParser{
         $this->reader->setReadDataOnly(true);
       }
       $tempnam = drupal_tempnam('temporary://', 'feeds_xls_data_');
-      chmod($tempnam, 0660);
+      @chmod($tempnam, 0660);
       file_put_contents($tempnam, serialize($this));
       $this->state->reader_object_cache_path = $tempnam;
       // Set pointer to 0

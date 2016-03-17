@@ -5,3 +5,8 @@ https://www.drupal.org/files/issues/ignored-list-text-values-2651420-4.patch
 Fixed a bug that breaks tamper plugins.
 https://www.drupal.org/node/2456403#comment-9801353
 https://www.drupal.org/files/issues/Fix_a_bug_that_break_feeds_tamper_plugins.patch
+
+Fixed error messages.
+https://www.drupal.org/node/2453795
+http://cgit.drupalcode.org/feeds_xls/patch/?id=2b390abd2ce0ffe3695338652e35a82e9967ba46
+http://cgit.drupalcode.org/feeds_xls/patch/?id=7c44b3a7db38df89dcef9301ebe8df3e91495468

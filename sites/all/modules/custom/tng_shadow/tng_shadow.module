@@ -5238,3 +5238,15 @@ function object_manifest_delete($node) {
   $manifest->field_manifest_markets = array();
   mean_shadow_node_update($node);
 }
+
+/**
+ * Implements hook_data_learning_point_csv_delete().
+ *
+ * Prevents the learning_point_answers from accumulating data from deleted
+ * items.
+ */
+function tng_shadow_data_learning_point_csv_delete($entity) {
+  db_delete('learning_point_answers')
+    ->condition('csvid', $entity->csvid)
+    ->execute();
+}

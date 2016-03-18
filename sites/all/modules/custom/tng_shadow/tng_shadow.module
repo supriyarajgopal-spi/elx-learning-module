@@ -3883,7 +3883,7 @@ function process_content_object($object_values, $language, $nid)
     } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
       $whole_object .= $result_chunk ;
     }
-    $whole_object = rtrim($whole_object, ',');
+    $whole_object = rtrim($whole_object, ' ,');
     $whole_object .= $close_contentobject;
     if ($final_exam) {
       $whole_object .= '} ]';

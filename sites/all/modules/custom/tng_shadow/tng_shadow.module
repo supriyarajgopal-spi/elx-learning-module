@@ -366,7 +366,7 @@ function tng_npQuestion_maker($required = NULL, $forced = NULL, $type = NULL, $d
       $question .= ',' . '"forced"' . ': ' . $forced;
       $question .= ',' . '"type"' . ': ' . '"' . $type . '"';
       $question .= ',' . '"difficulty"' . ': ' . '"' . $difficulty . '"';
-      $question .= ',' . '"content"' . ': ' . '"' . $question_text . '"';
+      $question .= ',' . '"content"' . ': ' . json_encode($question_text);
       $question .= ',' . '"questionLabel"' . ': ' . '"' . $question_label . '"';
       $question .= ',' . '"answerLabel"' . ': ' . '"' . $answer_label . '"';
       $question .= ',' . '"submitLabel"' . ': ' . '"' . $submit_label . '"';

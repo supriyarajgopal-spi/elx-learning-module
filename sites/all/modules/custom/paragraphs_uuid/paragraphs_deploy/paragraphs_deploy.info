@@ -1,0 +1,6 @@
+name = Paragraphs Deployment
+description = Paragraphs Deployment
+core = 7.x
+
+dependencies[] = paragraphs
+dependencies[] = paragraphs_uuid

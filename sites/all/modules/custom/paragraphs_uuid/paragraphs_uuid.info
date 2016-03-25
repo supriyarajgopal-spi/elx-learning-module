@@ -1,0 +1,8 @@
+name = Paragraphs UUID
+description = Paragraphs UUID
+core = 7.x
+
+dependencies[] = paragraphs
+dependencies[] = uuid
+
+files[] = controllers/UUIDParagraphsItemEntity.inc

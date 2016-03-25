@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file Deployment support for Paragraphs.
+ *
+ * This code is taken from this issue below to solve challenges with
+ * Paragraphs - https://www.drupal.org/project/paragraphs.
+ * This also implements the VUUID for paragraphs revisions.
+ */
+

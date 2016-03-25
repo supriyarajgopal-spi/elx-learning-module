@@ -1,0 +1,50 @@
+<?php
+/**
+ * @file
+ * Paragraphs UUID installation and schema hooks.
+ */
+
+/**
+ * Implements hook_schema_alter().
+ */
+function paragraphs_uuid_schema_alter(&$schema = array()) {
+  $field = uuid_schema_field_definition ();
+  $schema['paragraphs_item']['fields']['uuid'] = $field;
+  $schema['paragraphs_item_revision']['fields']['vuuid'] = $field;
+}
+
+/**
+ * Implements hook_install().
+ */
+function paragraphs_uuid_install() {
+  $field = uuid_schema_field_definition ();
+  if (! db_field_exists ( 'paragraphs_item', 'uuid' )) {
+    db_add_field ( 'paragraphs_item', 'uuid', $field );
+    db_add_index ( 'paragraphs_item', 'uuid', array(
+        'uuid'
+    ) );
+  }
+  if (! db_field_exists ( 'paragraphs_item_revision', 'vuuid' )) {
+    db_add_field ( 'paragraphs_item_revision', 'vuuid', $field );
+    db_add_index ( 'paragraphs_item_revision', 'vuuid', array(
+        'vuuid'
+    ) );
+  }
+}
+
+/**
+ * Implements hook_enable().
+ */
+function paragraphs_uuid_enable() {
+  uuid_sync_all ();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function paragraphs_uuid_uninstall() {
+  db_drop_field ( 'paragraphs_item', 'uuid' );
+  db_drop_index ( 'paragraphs_item', 'uuid' );
+  db_drop_field ( 'paragraphs_item_revision', 'vuuid' );
+  db_drop_index ( 'paragraphs_item_revision', 'vuuid' );
+}

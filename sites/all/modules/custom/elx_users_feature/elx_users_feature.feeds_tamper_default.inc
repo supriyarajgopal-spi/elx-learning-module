@@ -25,6 +25,21 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-email-trim';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Email';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['elx_users-email-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-language-czech';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Language';

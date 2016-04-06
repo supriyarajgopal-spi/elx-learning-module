@@ -5192,7 +5192,7 @@ function _date_diff($one, $two)
 /**
  * Implements hook_field_delete().
  *
- * Remove object manifests that are no longer attached to a node.
+ * Remove object manifests when their parent node is deleted.
  */
 function tng_shadow_node_delete($node) {
   if (!empty($node->field_manifest)) {
@@ -5229,21 +5229,9 @@ function tng_shadow_cron_queue_info() {
 }
 
 /**
- * Implements hook_delete().
- */
-function object_manifest_delete($node) {
-  // There is no support for removing content from the back end, so we
-  // unpublish it and remove it from all markets.
-  $manifest->status = NODE_NOT_PUBLISHED;
-  $manifest->field_manifest_markets = array();
-  mean_shadow_node_update($node);
-}
-
-/**
  * Implements hook_data_learning_point_csv_delete().
  *
- * Prevents the learning_point_answers from accumulating data from deleted
- * items.
+ * Remove deleted items from the learning_point_answers table.
  */
 function tng_shadow_data_learning_point_csv_delete($entity) {
   db_delete('learning_point_answers')

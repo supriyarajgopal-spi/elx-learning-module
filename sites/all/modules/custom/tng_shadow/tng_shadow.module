@@ -3797,15 +3797,15 @@ function process_content_object($object_values, $language, $nid)
     $thumbnail_teaser = tng_convert_drupal_to_mean_filename($object_values['field_hero_image'], 'teaser', TRUE);
     $content_chunk = tng_npContent_maker($manifest_content, $manifest_language, $manifest_title, 'This manifest creates a Story or Learning Object content object .');
     $quiz_chunk = '';
-    if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
-      $final_exam = true;
-    } elseif  ($field_learning_template == 'trivia'  && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
-      $final_exam = true;
-    } elseif  ($field_learning_template == 'drag_select'  && $field_final_exam == 1) {
-      $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
-      $final_exam = true;
+    if (!empty($field_final_exam)) {
+      switch ($field_learning_template) {
+        case 'popquiz':
+        case 'trivia':
+        case 'drag_select':
+          $quiz_chunk = ',' . tng_npQuiz_maker($nid, 'assessment', $field_final_exam, $number_of_questions, $percentage_required_to_pass, 'true', 'false');
+          $final_exam = true;
+          break;
+      }
     }
 
     $newplayer_background = tng_npHTML_basic_maker($bg_newplayer_background, '', '', '', '', '', '', TRUE);
@@ -3819,6 +3819,7 @@ function process_content_object($object_values, $language, $nid)
       $headline_chunk = '';
       $instructions_chunk = '';
       $subtitle_chunk = tng_npHTML_basic_maker('', 'background-brand-primary-light outside-padding', '', '', '', '', '', TRUE);
+      $html_logo_chunk = '';
     } else {
       $headline_chunk = tng_npHTML_basic_maker('', $h3_headline, '', '', '', $headline, '', FALSE);
       $instructions_chunk = tng_npHTML_basic_maker('', 'h6 instructional', '', '', '', $introductory_text, '', FALSE);
@@ -3834,58 +3835,53 @@ function process_content_object($object_values, $language, $nid)
     }
     $whole_object = $feature_chunk . $content_chunk . $newplayer_background . $background_chunk  . $hero_image_chunk . $close_html . $subtitle_chunk . $html_logo_chunk . $headline_chunk . $instructions_chunk . $quiz_chunk;
 
-    foreach ($object_values as $key => $value) {
-      if ($tng_debug == 1) {
-        dpm('**** data ****' . $key . ' : ' . $value);
+    if (!empty($object_values['field_learning_objects'])) {
+      $value = $object_values['field_learning_objects'];
+      $lo_count = count($value);
+      $combo = '';
+      if (isset($field_learning_template) && $field_learning_template == 'trivia') {
+        $trivia_chunk = tng_npTrivia_maker('false', 'false', '1', 'Trivia content piece', 'true','That\'s right', 'That\'s not right');
       }
-      // we treat the learning objects differently, since they are our pages in manifest form
-      if ($key == 'field_learning_objects') {
-        $lo_count = count($value);
-        $combo = '';
-        if ($field_learning_template == 'trivia') {
-          $trivia_chunk = tng_npTrivia_maker('false', 'false', '1', 'Trivia content piece', 'true','That\'s right', 'That\'s not right');
+      foreach ($value as $mod_learn) {
+        if ($tng_debug == 1) {
+          dpm('learning objects');
+          dpm($mod_learn);
         }
-        for ($los = 0; $los < $lo_count; $los++) {
-          if ($tng_debug == 1) {
-            dpm('learning objects');
-            dpm($value[$los]);
-          }
-          if ($field_learning_template == 'popquiz' && $field_final_exam == 1) {
-            $mod_learn = $value[$los];
-            $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
-            $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
-            $combo .= $mod_learn . ',';
-          } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1 ) {
-            $mod_learn = $value[$los];
-            $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
-            $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
-            $comp_start = strpos($mod_learn, '"components": [ {"type"');
-            // crispy code here, assuming the components model doesn't change.
-            $comp_start += 16;
-            $submatch = substr($mod_learn, $comp_start);
-            $mod_learn = $trivia_chunk . $submatch. ']}';
-            $combo .= $mod_learn . ',';
-          } else {
-            $combo .= $value[$los] . ',';
+        if (!empty($field_final_exam)) {
+          switch ($field_learning_template) {
+            case 'popquiz':
+              $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
+              $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
+              break;
+            case 'trivia':
+              $mod_learn = str_replace('npQuestion', 'npAsQuestion', $mod_learn);
+              $mod_learn = str_replace('npAnswer', 'npAsAnswer', $mod_learn);
+              $comp_start = strpos($mod_learn, '"components": [ {"type"');
+              // crispy code here, assuming the components model doesn't change.
+              $comp_start += 16;
+              $submatch = substr($mod_learn, $comp_start);
+              $mod_learn = $trivia_chunk . $submatch. ']}';
+              break;
           }
         }
-        if ($field_learning_template == 'trivia' && $field_final_exam == 1) {
-          $trivia_chunk = rtrim($trivia_chunk, ', ');
-          $result_chunk = tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
-        }
-        elseif (($field_learning_template == 'popquiz' && $field_final_exam == 1) || ($field_learning_template == 'drag_select' && $field_final_exam == 1)) {
-          $result_chunk = tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
+        $combo .= $mod_learn . ',';
+      }
+      $whole_object .= $combo;
+      if (!empty($field_final_exam)) {
+        switch ($field_learning_template) {
+          case 'trivia':
+            $trivia_chunk = rtrim($trivia_chunk, ', ');
+            $whole_object .= tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
+            break;
+          case 'popquiz':
+          case 'drag_select':
+            $whole_object .= tng_npAsResult_maker($pass_text, $fail_text, $pass_content, $perfect_content);
+            break;
         }
       }
     }
-    $whole_object .= $combo ;
 
     // after looping the HTML or Image group, remove the final ','
-    if (($field_learning_template == 'popquiz' && $field_final_exam == 1) || ($field_learning_template == 'drag_select' && $field_final_exam == 1)) {
-      $whole_object .= $result_chunk ;
-    } elseif ($field_learning_template == 'trivia' && $field_final_exam == 1) {
-      $whole_object .= $result_chunk ;
-    }
     $whole_object = rtrim($whole_object, ' ,');
     $whole_object .= $close_contentobject;
     if ($final_exam) {
@@ -3945,20 +3941,15 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $node = new stdClass();
     $node->title = $node_title;
     // markets needs to be added to our manifest, so create a csv list
-    $cnt_markets = count($markets);
     $market_csv = '';
-    for ($c = 0; $c < $cnt_markets; $c++) {
-      $market_csv .= $markets[$c] . ',';
-    }
-    if (isset($market_csv)) {
-      $market_csv = rtrim($market_csv, ', ');
+    if (!empty($markets)) {
+      $market_csv .= implode(',', $markets);
     }
     if ($tng_debug == 1) {
       dpm('whole market');
       dpm($market_csv);
     }
     $node->type = $node_type;
-    $node->status = $node_status;
     node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
     //language will not be set on the manifest but each manifest contains language specific goods
     //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
@@ -4073,15 +4064,9 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     return $node->nid;
     // we already have a manifest, so update it with new data
   } else {
-    $cnt_markets = count($markets);
     $market_csv = '';
-    if ($markets > 0) {
-      for ($c = 0; $c < $cnt_markets; $c++) {
-        $market_csv .= $markets[$c] . ',';
-      }
-      if (isset($market_csv)) {
-        $market_csv = rtrim($market_csv, ', ');
-      }
+    if (!empty($markets)) {
+      $market_csv .= implode(',', $markets);
     }
 
     if ($tng_debug == 1) {

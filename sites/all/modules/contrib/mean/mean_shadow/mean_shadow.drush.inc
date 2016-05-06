@@ -137,7 +137,7 @@ function _drush_mean_shadow_gen_query($type, $bundle) {
     case 'node':
       $q_str = 'SELECT nid as id FROM {node}';
       if (!empty($bundle)) {
-        $q = db_query($q_str . ' WHERE type = "%s";', $bundle);
+        $q = db_query($q_str . ' WHERE type = ?;', array($bundle));
       }
       else {
         $q = db_query($q_str . ';');

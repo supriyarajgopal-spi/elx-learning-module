@@ -4323,7 +4323,7 @@ function tng_shadow_node_presave($entity)
     // needed to use the language from the url, since it wasn't writing other than english manifests
     $language = get_language_from_uri($entity);
     // If the node is not published and no manifest has been created.
-    if (!empty($entity->field_manifest[$language]) && in_array(NODE_NOT_PUBLISHED, array($entity->status, $entity->translations->data[$language]['status']))) {
+    if (empty($entity->field_manifest[$language]) && in_array(NODE_NOT_PUBLISHED, array($entity->status, $entity->translations->data[$language]['status']))) {
       // Node is not published.
       if ($tng_debug == 1) {
         dpm('This node should NOT be published.');
@@ -5210,7 +5210,8 @@ function tng_shadow_node_delete($node) {
 function tng_shadow_cron() {
   $queue = DrupalQueue::get('tng_shadow_orphan_manifests');
   if ($queue->numberOfItems() == 0) {
-    $result = db_query("SELECT n.nid FROM node n LEFT JOIN field_revision_field_manifest m ON n.nid = m.field_manifest_target_id WHERE n.type = 'object_manifest' AND m.field_manifest_target_id IS NULL");
+    // Delete object manifests which are not attached to the current revision.
+    $result = db_query("SELECT n.nid FROM node n LEFT JOIN field_data_field_manifest m ON n.nid = m.field_manifest_target_id WHERE n.type = 'object_manifest' AND m.field_manifest_target_id IS NULL");
     foreach ($result as $manifest) {
       $queue->createItem($manifest->nid);
     }

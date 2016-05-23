@@ -3731,6 +3731,9 @@ function process_content_object($object_values, $language, $nid)
     elseif ($learning_category == 'SP') {
       $learning_category_id = 'SP';
     }
+    elseif ($learning_category == 'FP') {
+      $learning_category_id = 'FP';
+    }
     else {
       //diaries are a special form of story so default it if none is given
       $learning_category_id = 'np_diaryND';

@@ -96,7 +96,8 @@ function learning_level_import_feeds_importer_default() {
           7 => array(
             'source' => 'content_object_tags_keywords',
             'target' => 'field_tags_keywords',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           8 => array(
             'source' => 'language',

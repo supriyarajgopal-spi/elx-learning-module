@@ -36,7 +36,9 @@ function elx_preprocess_user_login(&$vars) {
 function elx_form_alter(&$form, &$form_state, $form_id) {
   global $language;
   $lang = $language->language;
-  print_r($lang);
+  //print_r($lang);
+  //var_dump($language);
+  
   if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
   	$user_login_final_validate_index = array_search('user_login_final_validate', $form['#validate']);
     if ($user_login_final_validate_index >= 0) {
@@ -44,7 +46,7 @@ function elx_form_alter(&$form, &$form_state, $form_id) {
     }
 	if (_elx_supported_languages($lang) && $lang != 'en' && $lang != 'en-US') {
 	  if ($language->language == 'zh' || $language->language == 'zh-Hant' || $language->language == 'zh-TW') {
-        $lang = 'zh-Hant';
+        $lang = 'zhhant';
 	  }
   	  // TODO:: Get language variables from json files
   	  $key_vars = ['LABEL_SIGNIN', 'EMAIL_ADDRESS', 'PASSWORD', 'REMEMBER_ME'];
@@ -267,7 +269,7 @@ function _elx_supported_languages($lang) {
   $supported = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es-SP', 'es',  
       'fi', 'fr-CA', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mo',
       'nb', 'nl', 'nn', 'no', 'pl', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-CN', 'zh-TW', 
-      'zh-Hans', 'zh-Hant', 'zh'];
+      'zh-Hans', 'zh-Hant', 'zhHans', 'zhHant', 'zh'];
 	  
   if (in_array($lang, $supported)) {
   	return TRUE;

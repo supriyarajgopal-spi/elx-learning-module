@@ -100,8 +100,8 @@ function tng_manifest_extractor($targetid, $language)
     if (isset($learning_object_node->field_manifest[$language][0]['target_id'])) {
       $lo_tid = $learning_object_node->field_manifest[$language][0]['target_id'];
       $learning_object_manifest = node_load($lo_tid);
-      // manifests are not language sensitive, so we are ok with using 'und' here (we write them after all)
-      $results = $learning_object_manifest->body['und'][0]['value'];
+      // manifests are not language sensitive, so we are ok with using LANGUAGE_NONE here (we write them after all)
+      $results = $learning_object_manifest->body[LANGUAGE_NONE][0]['value'];
       if ($tng_debug == 1) {
         dpm($results);
       }
@@ -1644,7 +1644,7 @@ function make_language_strings($language_key)
   $country_only = '';
   $language_only = substr($language_key, 0);
 
-  if ($language_key == 'und') {
+  if ($language_key == LANGUAGE_NONE) {
     $manifest_language[] = 'en';
     $manifest_language[] = 'content_' . 'en';
   }
@@ -3952,7 +3952,7 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
     $node->type = $node_type;
     node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
     //language will not be set on the manifest but each manifest contains language specific goods
-    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
+    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to LANGUAGE_NONE
     //otherwise it will create a node with no body content, see the process_product function for more on language setting
     $node->language = LANGUAGE_NONE;
     $node->field_manifest_markets[$node->language][] = array(
@@ -4074,23 +4074,23 @@ function tng_create_manifest_node($node_data, $node_type, $node_title, $node_sub
       dpm($market_csv);
     }
     $node = node_load($nid);
-    $node->body['und'][0]['value'] = $node_data;
+    $node->body[LANGUAGE_NONE][0]['value'] = $node_data;
     $node->type = $node_type;
     $node->title = $node_title;
-    $node->field_product_name['und'][0]['value'] = $node_display_title;
-    $node->field_manifest_subtitle['und'][0]['value'] = $node_subtitle;
-    $node->field_manifest_markets['und'][0]['value'] = $market_csv;
-    $node->field_manifest_language['und'][0]['value'] = $node_language;
-    $node->field_intro_text['und'][0]['value'] = $node_display_text;
-    $node->field_thumbnail_link['und'][0]['value'] = $node_thumbnail_link;
-    $node->field_newplayer_link['und'][0]['value'] = $node_newplayer_link;
-    $node->field_manifest_categories['und'][0]['value'] = $node_categories;
-    $node->field_manifest_keywords['und'][0]['value'] = $node_keywords;
-    $node->field_point_value['und'][0]['value'] = $node_points;
-    $node->field_final_exam['und'][0]['value'] = $node_final;
-    $node->field_featured['und'][0]['value'] = $node_featured;
-    $node->field_manifest_weight['und'][0]['value'] = $node_weight;
-    $node->field_manifest_featured_image['und'][0]['value'] = $node_featured_image;
+    $node->field_product_name[LANGUAGE_NONE][0]['value'] = $node_display_title;
+    $node->field_manifest_subtitle[LANGUAGE_NONE][0]['value'] = $node_subtitle;
+    $node->field_manifest_markets[LANGUAGE_NONE][0]['value'] = $market_csv;
+    $node->field_manifest_language[LANGUAGE_NONE][0]['value'] = $node_language;
+    $node->field_intro_text[LANGUAGE_NONE][0]['value'] = $node_display_text;
+    $node->field_thumbnail_link[LANGUAGE_NONE][0]['value'] = $node_thumbnail_link;
+    $node->field_newplayer_link[LANGUAGE_NONE][0]['value'] = $node_newplayer_link;
+    $node->field_manifest_categories[LANGUAGE_NONE][0]['value'] = $node_categories;
+    $node->field_manifest_keywords[LANGUAGE_NONE][0]['value'] = $node_keywords;
+    $node->field_point_value[LANGUAGE_NONE][0]['value'] = $node_points;
+    $node->field_final_exam[LANGUAGE_NONE][0]['value'] = $node_final;
+    $node->field_featured[LANGUAGE_NONE][0]['value'] = $node_featured;
+    $node->field_manifest_weight[LANGUAGE_NONE][0]['value'] = $node_weight;
+    $node->field_manifest_featured_image[LANGUAGE_NONE][0]['value'] = $node_featured_image;
     node_save($node);
     return $node->nid;
   }
@@ -4137,7 +4137,7 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $node->type = $node_type;
     node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
     //language will not be set on the manifest but each manifest contains language specific goods
-    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to 'und'
+    //this feels like a bug, but we work around not being able to create manifest with languages by setting manifest language to LANGUAGE_NONE
     //otherwise it will create a node with no body content, see the process_product function for more on language setting
     $node->language = LANGUAGE_NONE;
     $node->field_manifest_markets[$node->language][] = array(
@@ -4207,13 +4207,13 @@ function tng_create_badge_manifest($node_type, $node_title, $markets = NULL, $no
     $node = node_load($nid);
     $node->type = $node_type;
     $node->title = $node_title;
-    $node->field_original_engbadge_title['und'][0]['value'] = $node_badge_english_title;
-    $node->field_manifest_markets['und'][0]['value'] = $market_csv;
-    $node->field_language['und'][0]['value'] = $node_language;
-    $node->field_badge_image['und'][0]['value'] = $node_badge_icon;
-    $node->field_badge_description['und'][0]['value'] = $node_badge_description;
-    $node->field_badge_unearned_description['und'][0]['value'] = $node_badge_unearned_description;
-    $node->field_badge_weight['und'][0]['value'] = (int) $node_badge_weight;
+    $node->field_original_engbadge_title[LANGUAGE_NONE][0]['value'] = $node_badge_english_title;
+    $node->field_manifest_markets[LANGUAGE_NONE][0]['value'] = $market_csv;
+    $node->field_language[LANGUAGE_NONE][0]['value'] = $node_language;
+    $node->field_badge_image[LANGUAGE_NONE][0]['value'] = $node_badge_icon;
+    $node->field_badge_description[LANGUAGE_NONE][0]['value'] = $node_badge_description;
+    $node->field_badge_unearned_description[LANGUAGE_NONE][0]['value'] = $node_badge_unearned_description;
+    $node->field_badge_weight[LANGUAGE_NONE][0]['value'] = (int) $node_badge_weight;
     node_save($node);
     return $node->nid;
   }
@@ -4408,33 +4408,31 @@ function _tng_shadow_generate_manifest($node, $language) {
         $children_fields_to_process = element_children($paragraph_fields);
         // and every field for each paragraph
         for ($pf = 0; $pf < $number_of_paragraph_fields; $pf++) {
-          // inside the fields within a paragraph the language variable is not used, it's 'und'
-          $language = 'und';
           $field_name = $children_fields_to_process[$pf];
           $field_child_info = field_info_field($children_fields_to_process[$pf]);
           $name = $field_child_info['field_name'];
           $info = field_info_field($name);
           // todo: this should be collapsed and refactored once we're sure we don't need to process each type separately
           if (in_array($name, $match_possibilites)) {
-            if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+            if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
               $namevalue .= '"' . $field_name . '" ~ "';
-              if (isset($paragraph->{$name}[$language][0]['value'])) {
-                $namevalue .= $paragraph->{$name}[$language][0]['value'];
+              if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
               }
-              elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+              elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
               }
               $namevalue .= '",';
             }
           } else {
             if (in_array($name, $matchgame_possibilities)) {
-              if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+              if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
                 $namevalue .= '"' . $field_name . '" ~ "';
-                if (isset($paragraph->{$name}[$language][0]['value'])) {
-                  $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                  $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                 }
-                elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                  $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                  $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
                 }
                 $namevalue .= '",';
               }
@@ -4443,56 +4441,56 @@ function _tng_shadow_generate_manifest($node, $language) {
               if (in_array($name, $flashcard_possibilities)) {
                 if (isset($info['columns']['value'])) {
                   $namevalue .= '"' . $field_name . '" ~ "';
-                  if (isset($paragraph->{$name}[$language][0]['value'])) {
-                    $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                  if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                    $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                   }
                   $namevalue .= '",';
                 }
               } else {
                 if (in_array($name, $list_possibilities)) {
-                  if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                  if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
                     $namevalue .= '"' . $field_name . '" ~ "';
-                    if (isset($paragraph->{$name}[$language][0]['value'])) {
-                      $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                    if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                      $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                     }
-                    elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                      $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                    elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                      $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
                     }
                     $namevalue .= '",';
                   }
                 } else {
                   if (in_array($name, $reveal_possibilities)) {
-                    if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                    if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
                       $namevalue .= '"' . $field_name . '" ~ "';
-                      if (isset($paragraph->{$name}[$language][0]['value'])) {
-                        $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                      if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                        $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                       }
-                      elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                        $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                      elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                        $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
                       }
                       $namevalue .= '",';
                     }
                   } else {
                     if (in_array($name, $drag_possibilities)) {
-                      if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                      if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
                         $namevalue .= '"' . $field_name . '" ~ "';
-                        if (isset($paragraph->{$name}[$language][0]['value'])) {
-                          $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                        if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                          $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                         }
-                        elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                          $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                        elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                          $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
                         }
                         $namevalue .= '",';
                       }
                     } else {
                       if (in_array($name, $drag_select_possibilities)) {
-                        if (isset($info['columns']['value']) || isset($paragraph->{$name}[$language][0]['uri'])) {
+                        if (isset($info['columns']['value']) || isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
                           $namevalue .= '"' . $field_name . '" ~ "';
-                          if (isset($paragraph->{$name}[$language][0]['value'])) {
-                            $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                          if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                            $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                           }
-                          elseif (isset($paragraph->{$name}[$language][0]['uri'])) {
-                            $namevalue .= $paragraph->{$name}[$language][0]['uri'];
+                          elseif (isset($paragraph->{$name}[LANGUAGE_NONE][0]['uri'])) {
+                            $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['uri'];
                           }
                           $namevalue .= '",';
                         }
@@ -4500,8 +4498,8 @@ function _tng_shadow_generate_manifest($node, $language) {
                         if (strlen(strstr($name, 'field_hot_spot')) > 0) {
                           if (isset($info['columns']['value'])) {
                             $namevalue .= '"' . $field_name . '" ~ "';
-                            if (isset($paragraph->{$name}[$language][0]['value'])) {
-                              $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                            if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                              $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                             }
                             $namevalue .= '",';
                           }
@@ -4509,8 +4507,8 @@ function _tng_shadow_generate_manifest($node, $language) {
                           // the answer node itself has no value we can use, so don't include it
                           if ($name != 'field_paragraph_answer') {
                             $namevalue .= '"' . $field_name . '" ~ "';
-                            if (isset($paragraph->{$name}[$language][0]['value'])) {
-                              $namevalue .= $paragraph->{$name}[$language][0]['value'];
+                            if (isset($paragraph->{$name}[LANGUAGE_NONE][0]['value'])) {
+                              $namevalue .= $paragraph->{$name}[LANGUAGE_NONE][0]['value'];
                             }
                             $namevalue .= '",';
                           }
@@ -4523,22 +4521,22 @@ function _tng_shadow_generate_manifest($node, $language) {
             }
           }
           // if there are no elements in the field don't process
-          if (!empty($paragraph->{$name}) && !empty($paragraph->{$name}[$language])) {
-            $field_count = count($paragraph->{$name}[$language]);
+          if (!empty($paragraph->{$name}) && !empty($paragraph->{$name}[LANGUAGE_NONE])) {
+            $field_count = count($paragraph->{$name}[LANGUAGE_NONE]);
             if ($info['type'] == 'paragraphs') {
-              foreach ($paragraph->{$name}[$language] as $item) {
+              foreach ($paragraph->{$name}[LANGUAGE_NONE] as $item) {
                 $para_entity = paragraphs_item_load($item['value']);
                 $para_inst = field_info_instances('paragraphs_item', $para_entity->bundle);
                 foreach (element_children($para_inst) as $key => $value) {
                   // if the value for a field is set, we will output it (and skip blank fields)
-                  if (isset($para_entity->{$value}[$language][0]['value'])) {
-                    $namevalue .= '"' . $value . '" ~ "' . $para_entity->{$value}[$language][0]['value'] . '",';
+                  if (isset($para_entity->{$value}[LANGUAGE_NONE][0]['value'])) {
+                    $namevalue .= '"' . $value . '" ~ "' . $para_entity->{$value}[LANGUAGE_NONE][0]['value'] . '",';
                   }
                   $info = field_info_field($value);
                   if ($info['type'] == 'image') {
                     // rare, but you could attach an image to a question
                     $img_name = 'field_question_image';
-                    $img_fid = $paragraph->{$img_name}[$language][0]['fid'];
+                    $img_fid = $paragraph->{$img_name}[LANGUAGE_NONE][0]['fid'];
                     if ($img_fid) {
                       $file_id = file_load($img_fid);
                       $uri = $file_id->uri;
@@ -4547,18 +4545,6 @@ function _tng_shadow_generate_manifest($node, $language) {
                       if ( $already_there === false )
                       {
                         $namevalue .= '"' . $img_name . '" ~ "' . $pub_image . '",';
-                      }
-                    }
-                    // expect 'file' or 'image' here
-                    $field_name = $value;
-                    if ($info['type'] == 'taxonomy_term_reference') {
-                      $number_of_terms = count($node->{$field_name}[$language]);
-                      for ($t = 0; $t < $number_of_terms; $t++) {
-                        $tids = array($node->{$field_name}[$language][$t]['tid']);
-                        $terms = taxonomy_term_load_multiple($tids);
-                        foreach ($terms as $term) {
-                          $name = $term->name;
-                        }
                       }
                     }
                   }
@@ -4692,9 +4678,6 @@ function _tng_shadow_generate_manifest($node, $language) {
         $bool = 0;
       }
       $pre_manifest[$field_name] = $bool;
-    } elseif ($info['type'] == 'object_manifest') {
-      $field_name = $info['field_name'];
-      $pre_manifest[$field_name] = $node->{$children_nodes_to_process[$i]}['und'][0]['value'];
     }
   }
 

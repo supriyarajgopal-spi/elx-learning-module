@@ -1,0 +1,528 @@
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_NOT_FOUND"
+msgstr "Λυπούμαστε πολύ. Αυτή η ηλεκτρονική διεύθυνση δε φαίνεται να είναι συνδεδεμένη με ΕLX λογαριασμό. Παρακαλούμε προσπαθήστε με μια διαφορετική ηλεκτρονική διεύθυνση.  "
+
+#: sites/all/modules/custom/elx_languages
+msgid "INVALID_EMAIL_PASS"
+msgstr "Το email ή ο κωδικός πρόσβασης που εισάγατε δεν ταιριάζουν. Παρακαλούμε δοκιμάστε ξανά."
+
+#: sites/all/modules/custom/elx_languages
+msgid "ALERT_PRODUCTS"
+msgstr "Ανανέωση Προϊόντων… "
+
+#: sites/all/modules/custom/elx_languages
+msgid "BADGES"
+msgstr "Διακριτικά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_UPDATE"
+msgstr "Ανανέωση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_DETAILS"
+msgstr "ΛΕΠΤΟΜΕΡΕΙΕΣ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_TOOL"
+msgstr "Επισκόπηση Εργαλείου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Ένα Επίπεδο Πριν την Ολοκλήρωση:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COMAPRE_SCORE"
+msgstr "Σύγκριση Του Σκορ Μου με"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CONFIRM_PASSWORD"
+msgstr "Επιβεβαίωση Κωδικού Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. All worldwide rights reserved."
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_LANGUAGE"
+msgstr "Τρέχουσα Γλώσσα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_PASSWORD"
+msgstr "Τρέχων Κωδικός Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_LANGUAGE"
+msgstr "Επιλογή Γλώσσας"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Επεξεργαστείτε το Προφίλ και τον Κωδικό Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ADDRESS"
+msgstr "Ηλεκτρονική Διεύθυνση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "ΕΜΠΕΙΡΙΑ ΕΚΜΑΘΗΣΗΣ ESTEE LAUDER"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Περιηγηθείτε στα Επίπεδα Γνώσεων"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Περιηγηθείτε στη Βιβλιοθήκη Προϊόντων"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITE"
+msgstr "Προτιμήσεις"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITED_MESSAGE"
+msgstr "Τα αγαπημένα σας προϊόντα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIELDS_DONT_MATCH"
+msgstr "Τα πεδία δεν ταυτίζονται!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL"
+msgstr "Ο Κόσμος"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Όλες οι κατηγορίες"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_BESTSELLER"
+msgstr "Bestsellers"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_COMPLETED"
+msgstr "ΟΛΟΚΛΗΡΩΘΗΚΕ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FRAGRANCE"
+msgstr "Αρώματα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_IN_PROGRESS"
+msgstr "ΣΕ ΕΞΕΛΙΞΗ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MAKEUP"
+msgstr "Μακιγιάζ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_MARKET"
+msgstr "Η Χώρα μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_REGION"
+msgstr "Η Περιοχή μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_RETAILER"
+msgstr "Η Αλυσίδα Καταστημάτων "
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_STORE"
+msgstr "Το Κατάστημά μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_SKINCARE"
+msgstr "Περιποίηση ομορφιάς"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_PASSWORD"
+msgstr "Ξεχάσατε τον Κωδικό Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Αποτελέσματα Αναζήτησης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACTIVITIES"
+msgstr "Πρόσφατα Ολοκληρωμένες Δραστηριότητες"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LANGUAGE"
+msgstr "Επιλογή Γλώσσας"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LAST_LOGIN"
+msgstr "Τελευταία Σύνδεση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Ολοκληρωμένα Επίπεδα:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOCATION"
+msgstr "Περιοχή:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOGOUT"
+msgstr "ΑΠΟΣΥΝΔΕΣΗ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Ο ιστότοπος είναι υπό συντήρηση."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MARKET"
+msgstr "Αγορά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MEMBER"
+msgstr "Μέλος από:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_BADGES"
+msgstr "Τα Διακριτικά Μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_FAVORITES"
+msgstr "Οι Προτιμήσεις Μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "O Πίνακας Ιεράρχησής μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_POINTS"
+msgstr "Οι Πόντοι Μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_PROGRESS"
+msgstr "Η Πρόοδος μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_TOOLS"
+msgstr "Τα Εργαλεία Μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Επόμενο Επίπεδο"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_PROGRESS"
+msgstr "Η ΠΡΟΟΔΟΣ ΜΟΥ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNIN"
+msgstr "Σύνδεση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_STORE"
+msgstr "Κατάστημα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SUGGESTED"
+msgstr "Προτεινόμενο για Εσάς"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Επιλογή γλώσσας σε"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEADERBOARD"
+msgstr "Πίνακας Ιεράρχησης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVEL_FILTER_ALL"
+msgstr "ΟΛΑ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS"
+msgstr "Επίπεδα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_COMPLETED"
+msgstr "Ολοκληρωμένα Επίπεδα:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Καθένα από αυτά τα Επίπεδα δημιουργήθηκε για εσάς.  Για να γίνεστε όλο και καλύτερη σε ότι κι αν κάνετε. Εσείς αποφασίζετε, πως θα ζήσετε την εμπειρία και πως θα επιλέξετε να ανεβαίνετε τα Επίπεδα."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_CONTENT"
+msgstr "Φόρτωση Περιεχομένου…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_TOOLS"
+msgstr "Φόρτωση Εργαλείων…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_SUCCESS"
+msgstr "Επιτυχής Σύνδεση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_WAIT"
+msgstr "Παρακαλώ περιμένετε.."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGOUT_MESSAGE"
+msgstr "Έχετε αποσυνδεθεί. Θα τα ξαναπούμε σύντομα!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOG_OUT"
+msgstr "Αποσύνδεση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Αναζήτηση της ήδη υπάρχουσας σύνδεσης…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "Ζητούμε συγνώμη γιατί η ιστοσελίδα ELX είναι προσωρινά υπό συντήρηση. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_DASHBOARD"
+msgstr "Πίνακας Λειτουργιών"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_POINTS"
+msgstr "Οι Πόντοι μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_PROGRESS"
+msgstr "Η Πρόοδός μου"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEED_HELP"
+msgstr "ΧΡΕΙΑΖΕΣΤΕ ΒΟΗΘΕΙΑ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEW_PASSWORD"
+msgstr "Νέος Κωδικός Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NO_LEVELS"
+msgstr "Δεν Βρέθηκαν Πεδία."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD"
+msgstr "Κωδικός Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Το αίτημα για τον κωδικό πρόσβασης παραλήφθηκε"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROBLEM_LOADING"
+msgstr "Προέκυψε πρόβλημα στη φόρτωση του περιεχομένου, παρακαλούμε προσπαθήστε ξανά."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_LIBRARY"
+msgstr "ΒΙΒΛΙΟΘΗΚΗ ΠΡΟΪΟΝΤΩΝ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "ΒΙΒΛΙΟΘΗΚΗ ΠΡΟΪΟΝΤΩΝ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ACTIVATE"
+msgstr "Ενεργοποιήστε το δικό σας λογαριασμό Gravatar μέσω του μηνύματος επιβεβαίωσης που θα λάβετε."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Προσθέστε τη φωτογραφία του προφίλ σας στο Gravatar λογαριασμό σας."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Δημιουργήστε ένα δωρεάν λογαριασμό στο Gravatar"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Ακουλουθήστε τα βήματα:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_HELP"
+msgstr "Νέος χρήστης στο Gravatar και χρειάζεστε βοήθεια;"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_PERSONALIZE"
+msgstr "Θέλετε να βάλετε την προσωπική σας φωτογραφία στο προφίλ σας; Δημιουργήστε ένα λογαριασμό στο Gravatar, και προσθέστε τη φωτογραφία σας. Θα συνδεθείτε απευθείας στο ELX!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_UPDATES"
+msgstr "Το προφίλ σας στο ELX ανανεώνεται αυτόματα σε λίγα μόλις λεπτά!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "RECENT_BADGES"
+msgstr "Πρόσφατα Διακριτικά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REMEMBER_ME"
+msgstr "Να Θυμάστε"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REQUEST_PASSWORD"
+msgstr "Αίτημα για Νέο Κωδικό Πρόσβασης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_COUNT"
+msgstr "Παρουσιάσεις {{ start }} - {{ end }} από {{ total }}"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FILTER"
+msgstr "ΦΙΛΤΡΟ ΑΝΑ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_REFINE"
+msgstr "ΣΥΝΘΕΤΗ ΑΝΑΖΗΤΗΣΗ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT"
+msgstr "ΤΑΞΙΝΟΜΗΣΗ ΑΝΑ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_AZ"
+msgstr "Αλφαβητικά Α-Ω"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Τα Πιο Δημοφιλή"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_VIEW"
+msgstr "ΔΕΙΤΕ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_BADGES"
+msgstr "Δείτε Όλα τα Διακριτικά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_TOOLS"
+msgstr "Δείτε Όλα τα Εργαλεία"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_LEADERBOARD"
+msgstr "Δείτε τον Ολοκληρωμένο Πίνακα Ιεράρχησης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SERVER_ERROR"
+msgstr "Προέκυψε σφάλμα στο Server"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SIGN_IN"
+msgstr "ΣΥΝΔΕΣΗ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SORRY_NO_FAVORITES"
+msgstr "Λυπούμαστε, όχι προτιμήσεις"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUBMIT"
+msgstr "ΥΠΟΒΟΛΗ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUGGESTED_FOR_ME"
+msgstr "Προτεινόμενο για Εμένα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TERMS_AND_CONDITIONS"
+msgstr "ΠΟΛΙΤΙΚΗ ΠΡΟΣΤΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ / ΟΡΟΙ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_BADGES"
+msgstr "Διακριτικά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LEADERBOARD"
+msgstr "Πίνακας Ιεράρχησης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LOGIN"
+msgstr "Είσοδος"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_POINTS"
+msgstr "Πόντοι"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_RANK"
+msgstr "Κατάταξη"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_SPOTLIGHT"
+msgstr "Τα Σημαντικά"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TOOLS"
+msgstr "Εργαλεία"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNFAVORITE"
+msgstr "Μη επιλεγμένα"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNKNOWN_USER"
+msgstr "Άγνωστος Χρήστης"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Ανανέωση Γλώσσας"
+
+#: sites/all/modules/custom/elx_languages
+msgid "WHATS_NEW_TRENDING"
+msgstr "Τι είναι Νέο & Μοντέρνο"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVEL"
+msgstr "ΕΠΙΠΕΔΑ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_SEE_MORE"
+msgstr "ΕΝΗΜΕΡΩΘΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΟ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FIELD"
+msgstr "Αναζήτηση"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

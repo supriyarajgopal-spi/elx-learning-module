@@ -1,0 +1,532 @@
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_NOT_FOUND"
+msgstr "Het spijt ons. Het e-mailadres lijkt niet verbonden te zijn met een ELX-account. Probeer een ander e-mailadres.  "
+
+#: sites/all/modules/custom/elx_languages
+msgid "INVALID_EMAIL_PASS"
+msgstr "De ingevoerde email of paswoord is niet correct. Probeer het opnieuw."
+
+#: sites/all/modules/custom/elx_languages
+msgid "ALERT_PRODUCTS"
+msgstr "Producten updaten…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BADGES"
+msgstr "Badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_UPDATE"
+msgstr "Update"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_DETAILS"
+msgstr "Bekijk de details"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_TOOL"
+msgstr "bekijk de hulpmiddelen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Volgend niveau dat behaald kan worden:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COMAPRE_SCORE"
+msgstr "Vergelijk mijn score met"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CONFIRM_PASSWORD"
+msgstr "paswoord bevestigen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Alle wereldwijde rechten voorbehouden."
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_LANGUAGE"
+msgstr "actuele taal"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_PASSWORD"
+msgstr "actueel paswoord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_LANGUAGE"
+msgstr "taal kiezen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Profiel & wachtwoord bewerken"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ADDRESS"
+msgstr "E-mailadres"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "DE ESTÉE LAUDER-ERVARING"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Leerniveaus verkennen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Productbibliotheek verkennen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITE"
+msgstr "favoriet"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITED_MESSAGE"
+msgstr "jouw favoriet bericht"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIELDS_DONT_MATCH"
+msgstr "Velden komen niet overeen!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL"
+msgstr "De Wereld"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Alle categorieën"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_BESTSELLER"
+msgstr "Bestsellers"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_COMPLETED"
+msgstr "Vervolledigd"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FRAGRANCE"
+msgstr "Geuren"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_IN_PROGRESS"
+msgstr "Bezig"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MAKEUP"
+msgstr "Make-up"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_MARKET"
+msgstr "Onze market"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_REGION"
+msgstr "Mijn regio"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_RETAILER"
+msgstr "Mijn retailer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_STORE"
+msgstr "Mijn winkel"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_SKINCARE"
+msgstr "Huidverzorging"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_PASSWORD"
+msgstr "Paswoord vergeten"
+
+#: sites/all/modules/custom/elx_languages
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Zoekresultaten"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACTIVITIES"
+msgstr "Recent vervolledigde activiteiten:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LANGUAGE"
+msgstr "Voorkeurstaal:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LAST_LOGIN"
+msgstr "Laatste login:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Voltooide niveaus:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOCATION"
+msgstr "Plaats:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOGOUT"
+msgstr "uitloggen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "website in onderhoud"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MARKET"
+msgstr "markt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MEMBER"
+msgstr "Lid sinds:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_BADGES"
+msgstr "Mijn badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_FAVORITES"
+msgstr "Mijn favorieten"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Mijn scorebord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_POINTS"
+msgstr "Mijn punten:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_PROGRESS"
+msgstr "Mijn vooruitgang"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_TOOLS"
+msgstr "Mijn tools"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Volgend niveau:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_PROGRESS"
+msgstr "Mijn vooruitgang"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNIN"
+msgstr "Aanmelden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_STORE"
+msgstr "Winkel:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_USERNAME"
+msgstr "Gebruikersnaam:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SUGGESTED"
+msgstr "Aanbevolen voor jou:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "taal wordt bijgewerkt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEADERBOARD"
+msgstr "Scorebord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVEL_FILTER_ALL"
+msgstr "Alle"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS"
+msgstr "Niveaus"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_COMPLETED"
+msgstr " niveaus afgerond"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Elk van deze niveaus werd voor jou gecreëerd - om je nog beter te maken in wat je doet. Jij bepaalt hoe je de niveaus ervaart en hoe je naar een volgend niveau wil gaan."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_CONTENT"
+msgstr "Inhoud laden…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_TOOLS"
+msgstr "hulpmiddelen aan het laden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_SUCCESS"
+msgstr "Succesvol aangemeld"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_WAIT"
+msgstr "Gelieve even te wachten…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGOUT_MESSAGE"
+msgstr "Je bent uitgelogd. Tot snel!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOG_OUT"
+msgstr "uitloggen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Bestaande login opzoeken…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "De ELX website is in onderhoud. Kijk snel binnenkort. Onze excuses voor het ongemak."
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_DASHBOARD"
+msgstr "Mijn dashboard"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_POINTS"
+msgstr "Mijn punten"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_PROGRESS"
+msgstr "Mijn vooruitgang"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEED_HELP"
+msgstr "Hulp nodig?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEW_PASSWORD"
+msgstr "Nieuw wachtwoord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NO_LEVELS"
+msgstr "geen levels gevonden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD"
+msgstr "Wachtwoord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Paswoordaanvraag ontvangen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROBLEM_LOADING"
+msgstr "Er was een probleem met het laden van deze inhoud. Gelieve het opnieuw te proberen."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_LIBRARY"
+msgstr "Productbibliotheek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Productbibliotheek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ACTIVATE"
+msgstr "activeer jouw Gravatar account via jouw bevestingsmail"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ADD_PHOTO"
+msgstr "voeg je foto toe aan je Gravatar account"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "maak een gratis account aan op Gravatar"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Volg deze stappen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_HELP"
+msgstr "nieuw op Gravatar en hulp nodig?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_PERSONALIZE"
+msgstr "Zin om jouw profiel foto te personaliseren? Maak een account aan op Gravatar, en voeg je foto toe. Deze linkt automatisch naar je ELX!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_UPDATES"
+msgstr "Jouw ELX profiel wordt automatisch aangepast."
+
+#: sites/all/modules/custom/elx_languages
+msgid "RECENT_BADGES"
+msgstr "Recente badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REMEMBER_ME"
+msgstr "Gegevens onthouden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REQUEST_PASSWORD"
+msgstr "Nieuw wachtwoord aanvragen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_COUNT"
+msgstr "Producten {{ start }} - {{ end }} van {{ total }} worden weergegeven"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FILTER"
+msgstr "Filter op"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_REFINE"
+msgstr "Verfijn zoekopdracht"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT"
+msgstr "Sorteer volgens"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_AZ"
+msgstr "Titel A-Z"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Meest populaire"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_VIEW"
+msgstr "Bekijken"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_BADGES"
+msgstr "Alle badges bekijken"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_TOOLS"
+msgstr "Alle tools bekijken"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_LEADERBOARD"
+msgstr "Zie volledig scorebord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SERVER_ERROR"
+msgstr "Er is een fout opgetreden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SIGN_IN"
+msgstr "Inloggen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SORRY_NO_FAVORITES"
+msgstr "Sorry, geen favorieten."
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUBMIT"
+msgstr "Indienen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUGGESTED_FOR_ME"
+msgstr "Je zult ook houden van…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Privacybeleid en Algemene voorwaarden"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_BADGES"
+msgstr "Mijn badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LEADERBOARD"
+msgstr "Scorebord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LOGIN"
+msgstr "Login"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_POINTS"
+msgstr "Punten"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_RANK"
+msgstr "Rangschikking"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_SPOTLIGHT"
+msgstr "Spotlight"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TOOLS"
+msgstr "Tools"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNFAVORITE"
+msgstr "geen favoriet meer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNKNOWN_USER"
+msgstr "Onbekende gebruiker"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "updating taal "
+
+#: sites/all/modules/custom/elx_languages
+msgid "WHATS_NEW_TRENDING"
+msgstr "Ontdek wat nieuw en trendy is"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVEL"
+msgstr "Niveaus"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_SEE_MORE"
+msgstr "Meer bekijken"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FIELD"
+msgstr "zoek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIRST_NAME"
+msgstr "Voornaam"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LAST_NAME"
+msgstr "Achternaame"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNUP"
+msgstr "Login"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_EXISTS"
+msgstr "Dit e-mail adres bestaat al. Als u uw wachtwoord niet meer weet, klik op de link "wachtwoord vergeten" om een nieuw te krijgen."
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ERROR"
+msgstr "Het ingevoerde e-mailadres is niet correct. Controleer uw e-mailadres en probeer het opnieuw."
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNEXPECTED_ERROR"
+msgstr "Een onverwachte fout is opgetreden, probeer het later opnieuw."
+

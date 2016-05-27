@@ -1,0 +1,528 @@
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_NOT_FOUND"
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجال المحاولة مع بريد إلكتروني آخر. "
+
+#: sites/all/modules/custom/elx_languages
+msgid "INVALID_EMAIL_PASS"
+msgstr "نوان البريد الإلكتروني أو كلمة المرور التي أدخلتها غير مطابقة. حاول مرة أخرى."
+
+#: sites/all/modules/custom/elx_languages
+msgid "ALERT_PRODUCTS"
+msgstr "تحديث المنتجات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BADGES"
+msgstr "الشارات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_UPDATE"
+msgstr "تحديث"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_DETAILS"
+msgstr "مشاهدة التفاصيل"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_TOOL"
+msgstr "عرض الأداة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "أقرب مستوى للانتهاء:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COMAPRE_SCORE"
+msgstr "مقارنة نقاط أهدافي مع:  "
+
+#: sites/all/modules/custom/elx_languages
+msgid "CONFIRM_PASSWORD"
+msgstr "تأكيد كلمة السر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COPYRIGHT"
+msgstr "جميع حقوق الطبع محفوظة عالميا لمجموعة شركات ©Estée Lauder Inc"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_LANGUAGE"
+msgstr "اللغة الحالية"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_PASSWORD"
+msgstr "كلمة السر الحالية"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_LANGUAGE"
+msgstr "تعديل اللغة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "تعديل البيانات الشخصية & كلمة السر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ADDRESS"
+msgstr "عنوان البريد الكتروني"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "تجربة وخبرة إستي لودر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "مستوى الاستكشاف"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "استكشفي مكتبة المنتج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITE"
+msgstr "المفضلة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITED_MESSAGE"
+msgstr "منتجك المفضل"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIELDS_DONT_MATCH"
+msgstr "الحقول غير مطابقة!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL"
+msgstr "العالم"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "جميع الفئات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_BESTSELLER"
+msgstr "الأكثر مبيعا"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_COMPLETED"
+msgstr "انتهى"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FRAGRANCE"
+msgstr "العطر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_IN_PROGRESS"
+msgstr "قيد التقدم،"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MAKEUP"
+msgstr "الماكياج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_MARKET"
+msgstr "بلدي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_REGION"
+msgstr "منطقتي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_RETAILER"
+msgstr "متجري"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_STORE"
+msgstr "محلي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_SKINCARE"
+msgstr "عناية بالبشرة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_PASSWORD"
+msgstr "نسيت كلمة السر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "نتائج البحث "
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACTIVITIES"
+msgstr "الأنشطة التي أنهيتها/أكملتها مؤخرا:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LANGUAGE"
+msgstr "اللغة المختارة:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LAST_LOGIN"
+msgstr "آخر تاريخ لتسجيل الدخول:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "المستويات/المراحل التي تم إنهائها:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOCATION"
+msgstr "المكان:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOGOUT"
+msgstr "تسجيل الخروج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "الموقع يخضع لإجراءات الصيانة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MARKET"
+msgstr "السوق"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MEMBER"
+msgstr "عضوة منذ:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_BADGES"
+msgstr "شاراتي المكتسبة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_FAVORITES"
+msgstr "أفضلياتي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "قائمتي الخاصة بالريادة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_POINTS"
+msgstr "نقاطي:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_TOOLS"
+msgstr "أدواتي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_NEXT_LEVEL"
+msgstr "المستوى الأعلى التالي:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNIN"
+msgstr "تسجيل الدخول"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_STORE"
+msgstr "المتجر/المحل:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SUGGESTED"
+msgstr "المنتجات المقترحة لك:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "تحديث اللغة إلى"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEADERBOARD"
+msgstr "قائمتي الخاصة بالريادة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVEL_FILTER_ALL"
+msgstr "الكل،"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS"
+msgstr "المستويات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_COMPLETED"
+msgstr "المستويات/المراحل التي تم إنهائها:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_HEADER_TEXT"
+msgstr "لقد تم ابتكار كل مستوى من هذه المستويات خصيصا لكم - لتحسين والارتقاء بجودة ما تقومون به. كل واحد منكم هو من يقرر كيفية التجربة وكيفية الارتقاء بالمستوى.  "
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_CONTENT"
+msgstr "جاري تحميل المحتوى ..."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_TOOLS"
+msgstr "أدوات التحميل ..."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_SUCCESS"
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجاء المحاولة مع بريد إلكتروني آخر. هل أنت بحاجة لمزيد من المساعدة من استي لودر؟ "
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_WAIT"
+msgstr "الرجاء الانتظار..."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGOUT_MESSAGE"
+msgstr "لقد سجلت خروجك من الموقع. نراك قريبا!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOG_OUT"
+msgstr "تسجيل الخروج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOOKING_FOR_LOGIN"
+msgstr "البحث عن تسجيل دخول حالي... "
+
+#: sites/all/modules/custom/elx_languages
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "إن موقع ELX يخضع حاليا لإجراءات الصيانة. يرجى العودة لزيارة الموقع في أقرب وقت -- نأسف  لأي إزعاج. "
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_DASHBOARD"
+msgstr "لوحة الإعدادات الخاصة بي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_POINTS"
+msgstr "نقاطي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEED_HELP"
+msgstr "بحاجة لمساعدة؟"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEW_PASSWORD"
+msgstr "كلمة سر جديدة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NO_LEVELS"
+msgstr "لم يتم العثور على مستويات."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD"
+msgstr "كلمة السر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "تم استلام طلب كلمة السر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROBLEM_LOADING"
+msgstr "طرأت مشكلة في تحميل المحتوى، يرجى المحاولة مرة أخرى"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_LIBRARY"
+msgstr "مكتبة المنتج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "مكتبة المنتج"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ACTIVATE"
+msgstr "تفعيل حساب Gravatar من إيميل التأكيد."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ADD_PHOTO"
+msgstr "إضافة صورة البروفايل إلى حسابك Gravatar"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "إنشاء حساب مجاني مع Gravatar"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "اتباع الخطوات التالية:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_HELP"
+msgstr "جديد على Gravatar وبحاجة لقليل من المساعدة؟"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_PERSONALIZE"
+msgstr "تخصيص صورة البروفايل؟ إنشاء حساب Gravatar، وإضافة الصورة. سوف يتم ربطها  تلقائياً مع ELX!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_UPDATES"
+msgstr "يتم تحديث البروفايل الخاص بك المتعلق بـ ELX تلقائياً خلال وقت قصير!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "RECENT_BADGES"
+msgstr "شارات حديثة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REMEMBER_ME"
+msgstr "تذكرني"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REQUEST_PASSWORD"
+msgstr "طلب كلمة سر جديدة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_COUNT"
+msgstr "عرض  {{ start }} - {{ end }} of {{ total }}"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FILTER"
+msgstr "منقحة من قبل"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_REFINE"
+msgstr "بحث محسّن"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT"
+msgstr "الفرز حسب "
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_AZ"
+msgstr "العنوان أ - ي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_POPULAR"
+msgstr "الأشهر"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_VIEW"
+msgstr "عرض/إظهار"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_BADGES"
+msgstr "مشاهدة كل الشارات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_TOOLS"
+msgstr "مشاهدة كل الأدوات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_LEADERBOARD"
+msgstr "مشاهدة لوحة الرواد المتصدرين بأكلمها"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SERVER_ERROR"
+msgstr "يوجد عطل/ مشكلة في الخادم "
+
+#: sites/all/modules/custom/elx_languages
+msgid "SIGN_IN"
+msgstr "تسجيل الدخول"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SORRY_NO_FAVORITES"
+msgstr "عذراً، لا يوجد مفضلة."
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUBMIT"
+msgstr "إدخال"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUGGESTED_FOR_ME"
+msgstr "المنتجات المقترحة لك:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TERMS_AND_CONDITIONS"
+msgstr "سياسة الخصوصية و الشروط |  الأحكام"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_BADGES"
+msgstr "شاراتي"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LEADERBOARD"
+msgstr "لوحة الرواد المتصدرين"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LOGIN"
+msgstr "تسجيل الدخول"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_POINTS"
+msgstr "النقاط"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_RANK"
+msgstr "المرتبة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_SPOTLIGHT"
+msgstr "تسليط الأضواء"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TOOLS"
+msgstr "الأدوات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNFAVORITE"
+msgstr "غير مفضلة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNKNOWN_USER"
+msgstr "لم يتم التعرف على المستخدم"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "تحديث اللغة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "WHATS_NEW_TRENDING"
+msgstr "ما هو جديد & سائد/موضة"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_SEE_MORE"
+msgstr "مشاهدة المزيد"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVEL"
+msgstr "المستويات"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FIELD"
+msgstr "بحث"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

@@ -1,0 +1,530 @@
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_NOT_FOUND"
+msgstr "Vi ber om ursäkt. Den e-postadressen du angav verkar inte vara förknippad med ett ELX konto. Försök med en annan e-post adress.  "
+
+#: sites/all/modules/custom/elx_languages
+msgid "INVALID_EMAIL_PASS"
+msgstr "Mejlet eller lösenordet du angav matchar inte. Var god försök igen."
+
+#: sites/all/modules/custom/elx_languages
+msgid "ALERT_PRODUCTS"
+msgstr "Uppdaterar produkter…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BADGES"
+msgstr "Badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_UPDATE"
+msgstr "Uppdatera"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_DETAILS"
+msgstr "läs om detaljerna"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_TOOL"
+msgstr "Visa Verktyg"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Närmaste Nivå till att Slutföra:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COMAPRE_SCORE"
+msgstr "Jämför Mitt resultat med"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CONFIRM_PASSWORD"
+msgstr "Bekräfta Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Alla globala rättigheter är reserverade."
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_LANGUAGE"
+msgstr "Nuvarande Språk"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_PASSWORD"
+msgstr "Nuvarande Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_LANGUAGE"
+msgstr "Redigera Språk"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Redigera profil och lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ADDRESS"
+msgstr "E-Postadress"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "ESTÉE LAUDER UPPLEVELSEN"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Upptäck Kunskapsnivåerna"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Upptäck Produktbiblioteket"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITE"
+msgstr "Favorit"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITED_MESSAGE"
+msgstr "Din favorit produkt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIELDS_DONT_MATCH"
+msgstr "Fälten matchar inte!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL"
+msgstr "Världen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Alla Kategorier"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_BESTSELLER"
+msgstr "Bästsäljande"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_COMPLETED"
+msgstr "Avslutade"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FRAGRANCE"
+msgstr "Dofter"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_IN_PROGRESS"
+msgstr "Under utveckling"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MAKEUP"
+msgstr "Makeup"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_MARKET"
+msgstr "Mitt Land"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_REGION"
+msgstr "Min Region"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_RETAILER"
+msgstr "Min Återförsäljare"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_STORE"
+msgstr "Min Butik"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_SKINCARE"
+msgstr "Hudvård"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_PASSWORD"
+msgstr "Glömt Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Sökresultat"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACTIVITIES"
+msgstr "Senast Avslutade Aktiviteter:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LANGUAGE"
+msgstr "Språk:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LAST_LOGIN"
+msgstr "Senaste Login:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Uppnådda Nivåer:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOCATION"
+msgstr "Plats:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOGOUT"
+msgstr "Logga Ut"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Webbsidan är i underhållsläge"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MARKET"
+msgstr "Marknad"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MEMBER"
+msgstr "Medlem sedan:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_BADGES"
+msgstr "Mina Medaljer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_FAVORITES"
+msgstr "Mina Favoriter"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Min Resultatstavla"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_POINTS"
+msgstr "Mina poäng:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_PROGRESS"
+msgstr "Min statusöversikt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_TOOLS"
+msgstr "Mina Verktyg"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Till Nästa Nivå:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_PROGRESS"
+msgstr "Min statusöversikt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNIN"
+msgstr "Logga in"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_STORE"
+msgstr "Butik/Namn:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SUGGESTED"
+msgstr "Förslag till dig:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Spårket har uppdaterats till"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEADERBOARD"
+msgstr "Resultattavla"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVEL_FILTER_ALL"
+msgstr "Alla"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS"
+msgstr "Nivåer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_COMPLETED"
+msgstr "Uppnådda Nivåer:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre
+på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_CONTENT"
+msgstr "Laddar Innehåll…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_TOOLS"
+msgstr "Laddar Verktyg…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_SUCCESS"
+msgstr "Inloggningen lyckades"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_WAIT"
+msgstr "Vänligen vänta…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGOUT_MESSAGE"
+msgstr "Du har loggat ut. Vi ses snart igen!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOG_OUT"
+msgstr "Logga Ut"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Letar efter nuvarande login…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX hemsidan är för närvarande i underhållsläge. Kom tillbaka sen - vi ber om ursäkt för eventuella besvär."
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_DASHBOARD"
+msgstr "Min instrumentpanel"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_POINTS"
+msgstr "Mina Poäng"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_PROGRESS"
+msgstr "Min statusöversikt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEED_HELP"
+msgstr "Behöver du hjälp?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEW_PASSWORD"
+msgstr "Nytt Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NO_LEVELS"
+msgstr "Inga Nivåer hittades."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD"
+msgstr "Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Lösenordsförfrågan godkänd"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROBLEM_LOADING"
+msgstr "Det uppstod ett problem när detta skulle laddas, vänligen försök igen."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_LIBRARY"
+msgstr "Produktbibliotek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Produktbibliotek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktivera ditt Gravatar konto från din e-postbekräftelse."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Lägg till din profilbild på ditt Gravatar konto."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Skapa ett gratis konto med Gravatar"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Gör så här:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_HELP"
+msgstr "Ny på Gravatar och behöver lite hjälp?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_PERSONALIZE"
+msgstr "Vill du göra din profilbild personlig? Skapa ett konto med Gravatar, och lägg till ditt foto. Den linkar dig automatiskt vidare till ELX!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_UPDATES"
+msgstr "Din ELX profil uppdateras automatiskt alldeles snart!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "RECENT_BADGES"
+msgstr "Senaste Badges"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REMEMBER_ME"
+msgstr "Minnas Mig"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REQUEST_PASSWORD"
+msgstr "Begär Nytt Lösenord"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_COUNT"
+msgstr "Visar {{ start }} - {{ end }} av {{ total }}"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FILTER"
+msgstr "Filtrera efter"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_REFINE"
+msgstr "Avancerad sökning"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT"
+msgstr "Sortera efter"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_AZ"
+msgstr "Titlar A-Z"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Mest populär"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_VIEW"
+msgstr "Överblick"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_BADGES"
+msgstr "Visa alla medaljer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_TOOLS"
+msgstr "Visa alla verktyg"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_LEADERBOARD"
+msgstr "Se Fullstänid Överblick"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SERVER_ERROR"
+msgstr "Servern upptäckte ett fel"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SIGN_IN"
+msgstr "Logga In"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SORRY_NO_FAVORITES"
+msgstr "Tyvärr, inga favoriter."
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUBMIT"
+msgstr "Godkänn"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUGGESTED_FOR_ME"
+msgstr "Föreslås för mig"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Sekretess och Villkor | Villkor"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_BADGES"
+msgstr "Medaljer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LEADERBOARD"
+msgstr "Resultatstavla"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LOGIN"
+msgstr "LOGIN"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_POINTS"
+msgstr "Poäng"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_RANK"
+msgstr "Ranking"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_SPOTLIGHT"
+msgstr "Spotlight"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TOOLS"
+msgstr "Verktyg"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNFAVORITE"
+msgstr "inte min favorit"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNKNOWN_USER"
+msgstr "Okänd användare"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Uppdaterar språket"
+
+#: sites/all/modules/custom/elx_languages
+msgid "WHATS_NEW_TRENDING"
+msgstr "Vad är Nytt & Trendigt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVEL"
+msgstr "Nivåer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_SEE_MORE"
+msgstr "Visa mer"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FIELD"
+msgstr "SÖK"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACCOUNT"
+msgstr "Konto"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIRST_NAME"
+msgstr "Förnamn"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LAST_NAME"
+msgstr "Efternamn"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNUP"
+msgstr "Logga In"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_EXISTS"
+msgstr "E-postadressen finns redan. 
+Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ERROR"
+msgstr "E-postadresens har inte skrivs korrekt. Kontrollera din e-postadress och försök igen"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNEXPECTED_ERROR"
+msgstr "Det har skett ett fel. Försök igen senare."
+

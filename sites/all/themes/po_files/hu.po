@@ -1,0 +1,529 @@
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_NOT_FOUND"
+msgstr "Sajnáljuk! A megadott e-mail cím nem szerepel az ELX felhasználói rendszerben. Kérjük próbáld meg egy másik e-mail címmel!   "
+
+#: sites/all/modules/custom/elx_languages
+msgid "INVALID_EMAIL_PASS"
+msgstr "Helytelen felhasználónév vagy jelszó. Próbáld újra!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ALERT_PRODUCTS"
+msgstr "Termékek frissítése…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BADGES"
+msgstr "Jelvények"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_UPDATE"
+msgstr "Frissítés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_DETAILS"
+msgstr "tekintsd meg a részleteket!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_VIEW_TOOL"
+msgstr "Eszköz megtekintése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "A végzéshez legközelebbi szint:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COMAPRE_SCORE"
+msgstr "Hasonlítsd össze az eredményemet az övével:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CONFIRM_PASSWORD"
+msgstr "Jelszó megerősítése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Minden jog fenntartva."
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_LANGUAGE"
+msgstr "Jelenelegi nyelv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "CURRENT_PASSWORD"
+msgstr "Jelenlegi jelszó"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_LANGUAGE"
+msgstr "Nyelv szerkesztése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Profil és jelszó szerkesztése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ADDRESS"
+msgstr "E-mail cím"
+
+#: sites/all/modules/custom/elx_languages
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "AZ ESTÉE LAUDER ÉLMÉNY"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Fedezd fel a Tanulói Szinteket!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Ismerd meg a Termékkatalógust!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITE"
+msgstr "A kedvencekhez adva"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FAVORITED_MESSAGE"
+msgstr "Kedvenc terméked"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIELDS_DONT_MATCH"
+msgstr "A fájlok nem egyeznek!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL"
+msgstr "A Világ"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Minden kategória"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_BESTSELLER"
+msgstr "Legnépszerűbb termékek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_COMPLETED"
+msgstr "Elvégezve"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_FRAGRANCE"
+msgstr "Illat"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_IN_PROGRESS"
+msgstr "Folyamatban"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MAKEUP"
+msgstr "Smink"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_MARKET"
+msgstr "Országom"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_REGION"
+msgstr "Térségem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_RETAILER"
+msgstr "Kiskereskedelmi egységem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_MY_STORE"
+msgstr "Üzletem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_SKINCARE"
+msgstr "Bőrápolás"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FORGOT_PASSWORD"
+msgstr "Elfelejtett jelszó"
+
+#: sites/all/modules/custom/elx_languages
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Találatok"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACTIVITIES"
+msgstr "Utoljára elvégzett tevékenységek:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LANGUAGE"
+msgstr "Nyelv:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LAST_LOGIN"
+msgstr "Utolsó bejelentkezés:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Elvégzett szintek:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOCATION"
+msgstr "Helyszín:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LOGOUT"
+msgstr "Kijelentkezés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Az oldal karbantartás alatt áll. "
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MARKET"
+msgstr "Ország"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MEMBER"
+msgstr "Tagság kezdete:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_BADGES"
+msgstr "Jelvényeim:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_FAVORITES"
+msgstr "Kedvenceim:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Ranglista:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_POINTS"
+msgstr "Pontszámaim:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_PROGRESS"
+msgstr "Előmenetelem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_MY_TOOLS"
+msgstr "Eszközök:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Soron következő szint:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_PROGRESS"
+msgstr "Előmenetelem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNIN"
+msgstr "Belépés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_STORE"
+msgstr "Üzlet/pult:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SUGGESTED"
+msgstr "Neked ajánljuk:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "A nyelvi beállítás megváltoztatva"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEADERBOARD"
+msgstr "Ranglista"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVEL_FILTER_ALL"
+msgstr "Mind"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS"
+msgstr "Szintek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_COMPLETED"
+msgstr "Elvégzett szintek:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LEVELS_HEADER_TEXT"
+msgstr "A szintek mindegyikét neked dolgoztuk ki, hogy jobbá válhass abban, amit teszel. Te döntöd el, hogyan végzed el azokat és lépsz magasabb szintre."
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_CONTENT"
+msgstr "Tartalom betöltése…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOADING_TOOLS"
+msgstr "Eszközök betöltése…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_SUCCESS"
+msgstr "Sikeres bejelentkezés:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGIN_WAIT"
+msgstr "Várj…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOGOUT_MESSAGE"
+msgstr "Sikeresen kijelentkeztél. Várunk vissza!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOG_OUT"
+msgstr "Kijelentkezés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Létező felhasználónév keresése…"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "Az ELX honlap jelenleg
+karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_DASHBOARD"
+msgstr "Irányítópultom"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_POINTS"
+msgstr "Pontszámaim"
+
+#: sites/all/modules/custom/elx_languages
+msgid "MY_PROGRESS"
+msgstr "Előmenetelem"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEED_HELP"
+msgstr "Segítségre van szükséged?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NEW_PASSWORD"
+msgstr "Új jelszó"
+
+#: sites/all/modules/custom/elx_languages
+msgid "NO_LEVELS"
+msgstr "Nem találtunk ilyen szintet."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD"
+msgstr "Jelszó"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "A jelszó kérelmed beérkezett."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROBLEM_LOADING"
+msgstr "Probléma az oldal betöltésekor. Próbáld újra!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_LIBRARY"
+msgstr "Termékkatalógus"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Termékkatalógus"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktiváld Gravatar fiókodat a megerősítő e-mailben található utasítás szerint."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Profilkép hozzáadása a Gravatar fiókodhoz"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Ingyenes felhasználói fiók létrehozása a Gravatarral"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Végezd el a következő lépéseket:"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_HELP"
+msgstr "Új vagy a Gravatarban és segítségre van szükséged?"
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_PERSONALIZE"
+msgstr "Szeretnéd személyessé tenni a profilképedet? Hozz létre egy felhasználói fiókot a Gravatarral és töltsd fel a fényképedet. Automatikusan az ELX-hez kapcsolódik majd."
+
+#: sites/all/modules/custom/elx_languages
+msgid "PROFILE_UPDATES"
+msgstr "Az ELX profilod hamarosan automatikusan frissül."
+
+#: sites/all/modules/custom/elx_languages
+msgid "RECENT_BADGES"
+msgstr "Mostanában szerzett jelvényeim"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REMEMBER_ME"
+msgstr "Emlékezz rám!"
+
+#: sites/all/modules/custom/elx_languages
+msgid "REQUEST_PASSWORD"
+msgstr "Új jelszó kérése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_COUNT"
+msgstr "Megjelenített termékek {{ start }} - {{ end }} az {{ total }} közül"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FILTER"
+msgstr "Szűrés szempontja"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_REFINE"
+msgstr "A keresés finomítása"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT"
+msgstr "A rendezés szempontja"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_AZ"
+msgstr "Cím A-Z"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Legnépszerűbb"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_VIEW"
+msgstr "Megtekintés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_BADGES"
+msgstr "Minden jelvény megtekintése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_ALL_TOOLS"
+msgstr "Minden eszköz megtekintése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEE_LEADERBOARD"
+msgstr "A teljes ranglista megtekintése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SERVER_ERROR"
+msgstr "A szerver hibát észlelt"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SIGN_IN"
+msgstr "Bejelentkezés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SORRY_NO_FAVORITES"
+msgstr "Sajnáljuk, nincsenek kedvenceid."
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUBMIT"
+msgstr "Küldés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SUGGESTED_FOR_ME"
+msgstr "Nekem ajánlott"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Adatvédelem és felhasználói feltételek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_BADGES"
+msgstr "Jelvények"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LEADERBOARD"
+msgstr "Ranglista"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_LOGIN"
+msgstr "BELÉPÉS"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_POINTS"
+msgstr "Pontszám"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_RANK"
+msgstr "Helyezés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TITLE_SPOTLIGHT"
+msgstr "Rivaldafény"
+
+#: sites/all/modules/custom/elx_languages
+msgid "TOOLS"
+msgstr "Eszközök"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNFAVORITE"
+msgstr "Törlés a Kedvencek közül"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNKNOWN_USER"
+msgstr "Ismeretlen felhasználó"
+
+#: sites/all/modules/custom/elx_languages
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Nyelv megváltoztatása"
+
+#: sites/all/modules/custom/elx_languages
+msgid "WHATS_NEW_TRENDING"
+msgstr "Új és népszerű"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_LEVEL"
+msgstr "Szintek"
+
+#: sites/all/modules/custom/elx_languages
+msgid "BTN_SEE_MORE"
+msgstr "Még több megtekintése"
+
+#: sites/all/modules/custom/elx_languages
+msgid "SEARCH_FIELD"
+msgstr "Keresés"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: sites/all/modules/custom/elx_languages
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: sites/all/modules/custom/elx_languages
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: sites/all/modules/custom/elx_languages
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: sites/all/modules/custom/elx_languages
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

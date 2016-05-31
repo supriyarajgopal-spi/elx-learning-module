@@ -19,12 +19,6 @@ function elx_theme(&$existing, $type, $theme, $path) {
  * Override or insert variables into the user login page template.
  */
 function elx_preprocess_user_login(&$vars) {
-	//dsm("Test");
-	//dsm($vars);
-	//print_r($vars);
-	//kpr('Tracy vars');
-	//kpr($vars); 
-	
   $vars['intro_text'] = t('The Estee Lauder Experience');
   $vars['rendered'] = drupal_render_children($vars['form']); 
 }
@@ -36,21 +30,20 @@ function elx_preprocess_user_login(&$vars) {
 function elx_form_alter(&$form, &$form_state, $form_id) {
   global $language;
   $lang = $language->language;
-  //print_r($lang);
-  //var_dump($language);
-  
+  //elx_language_detect();
+  //elx_languages_json_to_po();
   if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
   	$user_login_final_validate_index = array_search('user_login_final_validate', $form['#validate']);
     if ($user_login_final_validate_index >= 0) {
       $form['#validate'][$user_login_final_validate_index] = 'elx_final_validate';
     }
-	if (_elx_supported_languages($lang) && $lang != 'en' && $lang != 'en-US') {
+	if (elx_languages_supported($lang) && $lang != 'en' && $lang != 'en-US') {
 	  if ($language->language == 'zh' || $language->language == 'zh-Hant' || $language->language == 'zh-TW') {
         $lang = 'zhhant';
 	  }
   	  // TODO:: Get language variables from json files
   	  $key_vars = ['LABEL_SIGNIN', 'EMAIL_ADDRESS', 'PASSWORD', 'REMEMBER_ME'];
-	  $trans_lang_array = _elx_get_language_translations($lang, $key_vars);
+	  $trans_lang_array = elx_languages_get_translations($lang, $key_vars);
 	  if (!empty($trans_lang_array)) {
 	    $lang_signin_label = $trans_lang_array['LABEL_SIGNIN'];
    	    //"EMAIL_ADDRESS":
@@ -113,7 +106,7 @@ function elx_final_validate($form, &$form_state) {
     else {
       $lang = $language->language;
 	  //TODO:: Need to add function for all the rest of the language changes
-	  if (_elx_supported_languages($lang) && $lang != 'en' && $lang != 'en-US') {
+	  if (elx_languages_supported($lang) && $lang != 'en' && $lang != 'en-US') {
 	  	//TODO:: Add other errors
 	    //"FORGOT_NOT_FOUND":
         //"EMAIL_ERROR":
@@ -121,7 +114,7 @@ function elx_final_validate($form, &$form_state) {
 	    //"UNKNOWN_USER":
 	    $key_vars = ['INVALID_EMAIL_PASS'];
 	    $invalid_error_key = 'INVALID_EMAIL_PASS';
-	    $validation_array = _elx_get_language_translations($lang, $key_vars);
+	    $validation_array = elx_languages_get_translations($lang, $key_vars);
 	    if (array_key_exists($invalid_error_key, $validation_array)) {
 	      $lang_invalid_email_pw = $validation_array[$invalid_error_key];
 	    }
@@ -257,49 +250,4 @@ function elx_css_alter(&$css) {
     $css['misc/ui/jquery.ui.theme.css']['data'] = drupal_get_path('theme', 'elx') . '/jquery.ui.theme.css';
     $css['misc/ui/jquery.ui.theme.css']['type'] = 'file';
   }
-}
-
-/*
- *  Helper function for what languages ELX supports
- * 
- * @params
- * $lang - user's choosen language
- */
-function _elx_supported_languages($lang) {
-  $supported = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es-SP', 'es',  
-      'fi', 'fr-CA', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mo',
-      'nb', 'nl', 'nn', 'no', 'pl', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-CN', 'zh-TW', 
-      'zh-Hans', 'zh-Hant', 'zhHans', 'zhHant', 'zh'];
-	  
-  if (in_array($lang, $supported)) {
-  	return TRUE;
-  }
-  else {
-  	return FALSE;
-  }
-}
-
-/*
- *  Helper function - parse json language files
- * 
- *  @params
- *  $lang - user's choosen language
- *  $key_vars - an array of keys we need translated
- */
-function _elx_get_language_translations($lang, $key_vars) {
-  global $base_url;
-  $file_name = $lang . '.json';
-  $json_path = $base_url . '/sites/all/themes/locales/' . $file_name;
-  $json_locale_file = file_get_contents($json_path);
-  $json_array = json_decode($json_locale_file, true);
-  $val_array = array();
-  foreach ($key_vars as $key) {
-  	if(array_key_exists($key, $json_array)) {
-      //key exists, do stuff
-	  $val = $json_array[$key];
-	  $val_array[$key] = $val;
-    }
-
-  }
-  return $val_array;
 }

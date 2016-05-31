@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجال المحاولة مع بريد إلكتروني آخر. "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "نوان البريد الإلكتروني أو كلمة المرور التي أدخلتها غير مطابقة. حاول مرة أخرى."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "تحديث المنتجات"
+
+#: /
+msgid "BADGES"
+msgstr "الشارات"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "تحديث"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "مشاهدة التفاصيل"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "عرض الأداة"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "أقرب مستوى للانتهاء:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "مقارنة نقاط أهدافي مع:  "
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "تأكيد كلمة السر"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "جميع حقوق الطبع محفوظة عالميا لمجموعة شركات ©Estée Lauder Inc"
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "اللغة الحالية"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "كلمة السر الحالية"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "تعديل اللغة"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "تعديل البيانات الشخصية & كلمة السر"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "عنوان البريد الكتروني"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "تجربة وخبرة إستي لودر"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "مستوى الاستكشاف"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "استكشفي مكتبة المنتج"
+
+#: /
+msgid "FAVORITE"
+msgstr "المفضلة"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "منتجك المفضل"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "الحقول غير مطابقة!"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "العالم"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "جميع الفئات"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "الأكثر مبيعا"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "انتهى"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "العطر"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "قيد التقدم،"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "الماكياج"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "بلدي"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "منطقتي"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "متجري"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "محلي"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "عناية بالبشرة"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "نسيت كلمة السر"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "نتائج البحث "
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "الأنشطة التي أنهيتها/أكملتها مؤخرا:"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "اللغة المختارة:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "آخر تاريخ لتسجيل الدخول:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "المستويات/المراحل التي تم إنهائها:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "المكان:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "تسجيل الخروج"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "الموقع يخضع لإجراءات الصيانة"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "السوق"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "عضوة منذ:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "شاراتي المكتسبة"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "أفضلياتي"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "قائمتي الخاصة بالريادة"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "نقاطي:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "أدواتي"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "المستوى الأعلى التالي:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "تسجيل الدخول"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "المتجر/المحل:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "المنتجات المقترحة لك:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "تحديث اللغة إلى"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "قائمتي الخاصة بالريادة"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "الكل،"
+
+#: /
+msgid "LEVELS"
+msgstr "المستويات"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "المستويات/المراحل التي تم إنهائها:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "لقد تم ابتكار كل مستوى من هذه المستويات خصيصا لكم - لتحسين والارتقاء بجودة ما تقومون به. كل واحد منكم هو من يقرر كيفية التجربة وكيفية الارتقاء بالمستوى.  "
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "جاري تحميل المحتوى ..."
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "أدوات التحميل ..."
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجاء المحاولة مع بريد إلكتروني آخر. هل أنت بحاجة لمزيد من المساعدة من استي لودر؟ "
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "الرجاء الانتظار..."
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "لقد سجلت خروجك من الموقع. نراك قريبا!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "تسجيل الخروج"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "البحث عن تسجيل دخول حالي... "
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "إن موقع ELX يخضع حاليا لإجراءات الصيانة. يرجى العودة لزيارة الموقع في أقرب وقت -- نأسف  لأي إزعاج. "
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "لوحة الإعدادات الخاصة بي"
+
+#: /
+msgid "MY_POINTS"
+msgstr "نقاطي"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "تقدمي وتطوري"
+
+#: /
+msgid "NEED_HELP"
+msgstr "بحاجة لمساعدة؟"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "كلمة سر جديدة"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "لم يتم العثور على مستويات."
+
+#: /
+msgid "PASSWORD"
+msgstr "كلمة السر"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "تم استلام طلب كلمة السر"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "طرأت مشكلة في تحميل المحتوى، يرجى المحاولة مرة أخرى"
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "مكتبة المنتج"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "مكتبة المنتج"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "تفعيل حساب Gravatar من إيميل التأكيد."
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "إضافة صورة البروفايل إلى حسابك Gravatar"
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "إنشاء حساب مجاني مع Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "اتباع الخطوات التالية:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "جديد على Gravatar وبحاجة لقليل من المساعدة؟"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "تخصيص صورة البروفايل؟ إنشاء حساب Gravatar، وإضافة الصورة. سوف يتم ربطها  تلقائياً مع ELX!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "يتم تحديث البروفايل الخاص بك المتعلق بـ ELX تلقائياً خلال وقت قصير!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "شارات حديثة"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "تذكرني"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "طلب كلمة سر جديدة"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "عرض  {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "منقحة من قبل"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "بحث محسّن"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "الفرز حسب "
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "العنوان أ - ي"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "الأشهر"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "عرض/إظهار"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "مشاهدة كل الشارات"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "مشاهدة كل الأدوات"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "مشاهدة لوحة الرواد المتصدرين بأكلمها"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "يوجد عطل/ مشكلة في الخادم "
+
+#: /
+msgid "SIGN_IN"
+msgstr "تسجيل الدخول"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "عذراً، لا يوجد مفضلة."
+
+#: /
+msgid "SUBMIT"
+msgstr "إدخال"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "المنتجات المقترحة لك:"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "سياسة الخصوصية و الشروط |  الأحكام"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "شاراتي"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "لوحة الرواد المتصدرين"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "تسجيل الدخول"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "النقاط"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "المرتبة"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "تسليط الأضواء"
+
+#: /
+msgid "TOOLS"
+msgstr "الأدوات"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "غير مفضلة"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "لم يتم التعرف على المستخدم"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "تحديث اللغة"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "ما هو جديد & سائد/موضة"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "مشاهدة المزيد"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "المستويات"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "بحث"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

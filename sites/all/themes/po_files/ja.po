@@ -1,0 +1,530 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "申し訳ございません。このemailアドレスはELXに登録されていません。違うアドレスで再度トライしてみて下さい。 "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "パスワード、E-mailアドレスがマッチしない場合、再度お試しください。"
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "アップデート中…"
+
+#: /
+msgid "BADGES"
+msgstr "バッジ"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "アップデート"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "詳細はこちら"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "ビューツール"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "レベルを完了して終了"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "マイスコアと比較"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "パスワード認定"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. All worldwide rights reserved."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "現在の言語"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "現在のパスワード"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "言語を選択"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "プロフィール、パスワードを編集する"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "Emailアドレス"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "ラーニングレベル"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "プロダクトライブラリーを探す"
+
+#: /
+msgid "FAVORITE"
+msgstr "お気に入り"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "お気に入りメッセージ"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "マッチしません"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "世界"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "すべてのカテゴリー"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "ベストセラーズ"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "完了"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "フレグランス"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "進行中"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "メークアップ"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "マイカントリー"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "マイリジョン"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "マイリテイラー"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "マイストア"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "リニュートリィブ"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "スキンケア"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "パスワードお忘れですか"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "検索結果"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "最近終わったアクテビティ"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "ご希望の言語"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "最後のログイン"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "完了したレベル"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "ロケーション"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "ログアウト"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "メンテナンス中"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "マーケット"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "メンバー開始日："
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "マイバッジ"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "マイフェイバリット"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "マイリーダーボード"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "マイポイント"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "進歩状況"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "マイツール"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "次のレベル："
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "進歩状況"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "サインイン"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "ストア/ドア："
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "あなたへのおすすめ："
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "言語をアップデート"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "リーダーボード"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "すべて"
+
+#: /
+msgid "LEVELS"
+msgstr "レベル"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "完了したレベル："
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "これらのレベルはあなたの為に創られました-あなたの仕事を助けるためです。どのように体験してどのようにレベルアップするかあなた自身で決定できます。"
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "ダウンロード中…"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "ツールをロード中"
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "ログイン成功"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "お待ちください….."
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "ログアウトされました。See you again soon!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "ログアウト"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "現在のログインを検索中…"
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELXウェブサイトは現在メンテナンス中です。
+しばらくして再度お試しください。
+ご迷惑をおかけしております。"
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "マイダッシュボード"
+
+#: /
+msgid "MY_POINTS"
+msgstr "マイポイント"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "進歩状況"
+
+#: /
+msgid "NEED_HELP"
+msgstr "ヘルプが必要ですか？"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "ニューパスワード"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "レベルが見つかりません"
+
+#: /
+msgid "PASSWORD"
+msgstr "パスワード"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "パスワードリクエストを受け取りました"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "問題が発生しました、再度お試し下さい。"
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "プロダクトライブラリー"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "プロダクトライブラリー"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "プロフィールを作成しましょう"
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "プロフィールに写真を追加しましょう"
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "アカウントを作成しましょう"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "使い方に沿って"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "プロフィールに関するヘルプ"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "プロフィールをカスタマイズしたいですか？Gravatarでアカウントを作成して写真を載せましょう。ここからＥＬＸは自動でリンクしています！"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "プロフィールアップデート"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "最新のバッジ"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "覚えてますか"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "新しいパスワードを申請"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "ディスプレイ {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "フィルターをかける"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "サーチする"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "ソートをかける"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Ｔｉｔｌｅ　Ａ－Ｚ"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "一番人気"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Ｖｉｅｗ"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "すべてのバッジを見る"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "すべてのツールを見る"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "リーダーボードを見ましょう"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "サーバーエラー"
+
+#: /
+msgid "SIGN_IN"
+msgstr "サインイン"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "お気に入りが見つかりません"
+
+#: /
+msgid "SUBMIT"
+msgstr "Ｓｕｂｍｉｔ"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "あなたへのおすすめ"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "プライバシーポリシー　＆タームズ・コンディション"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "バッジ"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "リーダーボード"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "ログイン"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "ポイント"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "ランク"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "Spotlight"
+
+#: /
+msgid "TOOLS"
+msgstr "ツール"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "気に入らない"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "見知らぬユーザー"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "言語をアップデート"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "新製品＆トレンド"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "レベル"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "もっと見てみましょう"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "検索"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

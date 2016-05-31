@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "מצטערים כתובת המייל אינה מופיעה ברישומים של אתר ELX בבקשה נסו מייל חלופי.  "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "האימייל או הסיסמא שהכנסת אינם תואמים , בבקשה נסי שוב."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "מעדכן מוצרים..."
+
+#: /
+msgid "BADGES"
+msgstr "תגים"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "עדכן "
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "צפי בפרטים"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "צפה בכלי "
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "השלב הקרוב ביותר לשלמות:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "השווה את הניקוד שלי ל"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "אשר סיסמא "
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. All worldwide rights reserved."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "שפה מועדפת:"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "סיסמא "
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "עריכת שפה "
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "עריכת פרופיל ו סיסמא "
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "כתובת אי מייל"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "החוויה של אסתי לאודר"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "סקרי את שלבי הלימוד"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "סקרי את ספריית המוצרים"
+
+#: /
+msgid "FAVORITE"
+msgstr "מועדפים"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "מוצרים מועדפים"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "שדות לא תואמים "
+
+#: /
+msgid "FILTER_ALL"
+msgstr "העולם"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "כל הקטגוריות"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "הנמכרים ביותר"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "הושלם "
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "חמישים"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "בישום"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "בתהליך"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "איפור"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "המדינה שלי"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "האזור שלי"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "הקמעונאי שלי"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "החנות שלי"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "טיפוח עור"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "עשר "
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "עשרים "
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "שכחתי ססמא"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "תוצאות חיפוש"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "פעילויות שהושלמו לאחרונה:"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "שפה מועדפת:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "התחברות אחרונה:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "שלבים שהושלמו:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "מיקום:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "יציאה "
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "אתר במצב אחזקה"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "שוק מקומי"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "חברה מאז: "
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "התגים שלי:"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "המועדפים שלי"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "ה- Leaderboard שלי"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "הנקודות שלי:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "ההתקדמות שלי"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "הכלים שלי"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "השלב הבא: "
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "ההתקדמות שלי"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "התחברות למערכת"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "נקודת מכירה:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "מומלץ עבורך:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "עדכן שפה "
+
+#: /
+msgid "LEADERBOARD"
+msgstr "לוח מנהיגות"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "הכל"
+
+#: /
+msgid "LEVELS"
+msgstr "רמות "
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "שלבים שהושלמו:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "כל אחד משלבים אלה נוצר עבורך - כדי להפוך אותך טובה יותר במה שאת עושה. את מחליטה כיצד לחוות אותם וכיצד את מעוניינת להתקדם מעלה בשלבים. "
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "טוען תוכן..."
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "מעלה כלים "
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "התחברת בהצלחה"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "אנא המתיני..."
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "יצאת מהמערכת. נתראה שוב בקרוב!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "יציאה "
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "מחפש אחר שם משתמש קיים..."
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "אתר במצב בנייה ועדכון"
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "הלוח שלי"
+
+#: /
+msgid "MY_POINTS"
+msgstr "הנקודות שלי"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "שלבים"
+
+#: /
+msgid "NEED_HELP"
+msgstr "זקוקה לעזרה?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "סיסמא חדשה "
+
+#: /
+msgid "NO_LEVELS"
+msgstr "לא נמצאו שלבים"
+
+#: /
+msgid "PASSWORD"
+msgstr "סיסמא"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "בקשת ססמא התקבלה"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "נתקלנו בבעייה בהעלאת תוכן זה, אנא נסי שנית."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "ספריית המוצרים"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "ספריית המוצרים"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "מייל אישור"
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "הוסף את תמונת הפרופיל שלך לחשבון גרוואטר"
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "צור חשבון חינם "
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "עקוב אחר הצעדים"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "חדש כאן וזקוק לעזרה ?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "רוצה לעדכן את תמונת הפרופיל שלךצור חשבון והוסף את תמונתך זה מתעדכן ישירות ב ELX "
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "פרופיל ה ELX שלך  מתכדען אוטומטית מייד"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "תגים אחרונים "
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "זכור אותי"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "דורש סיסמא חדשה"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "מציג {{ start }} -  {{ end }} מתוך {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "סינון לפי"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "חיפוש עדכני"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "מיון לפי"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "כותרת א-ת"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "הפופולריים ביותר"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "לצפייה"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "ראי את כל התגים שלי"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "ראי את כל הכלים שלי"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "ראי את ה- Leaderboard המלא"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "השרת נתקל בשגיאה"
+
+#: /
+msgid "SIGN_IN"
+msgstr "הרשם "
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "סליחה אין מועדפים"
+
+#: /
+msgid "SUBMIT"
+msgstr "שליחה "
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "הציעו לי"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "מדיניות פרטיות ותקנון האתר"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "תגים"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Leaderboard"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "התחבר"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "נקודות"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "דרגה"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "אור הזרקורים"
+
+#: /
+msgid "TOOLS"
+msgstr "כלים"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "לא מועדף"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "משתמש לא ידוע"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "מעדכן שפה "
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "מה חדש ועכשווי"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "רמות "
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "ראי עוד"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "חיפוש"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

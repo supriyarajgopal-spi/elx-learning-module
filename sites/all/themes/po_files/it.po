@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Purtroppo l'indirizzo email fornito non risulta associato ad alcun account ELX . Ti invitiamo a provare con una diversa email.   "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "L’email o la password inserite non sono corrette.  Per favore riprovare."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Caricamento Prodotti…"
+
+#: /
+msgid "BADGES"
+msgstr "Badge"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "Aggiornamento"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "Vedi i dettagli"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "Guarda Strumento"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Livello vicino al conseguimento:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Confronta il mio punteggio di"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "Conferma Password"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Tutti i diritti riservati."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "Lingua attuale"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "Password attuale"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "Inserisci lingua"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Modifica Profilo e Password"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "Indirizzo Email "
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Esplora i livelli di apprendimento"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Scopri i Prodotti"
+
+#: /
+msgid "FAVORITE"
+msgstr "Preferiti"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "I tuoi  prodotti preferiti"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "Campi non corrispondenti!"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Il Mondo"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Tutte le Categorie"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Bestseller"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Completato"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Fragranze"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "Caricamento "
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Makeup"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Paese"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Regione"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Cliente"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Punto Vendita"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "Skincare"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Password dimenticata"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Ricerca risultati"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Attività completate di recente:"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Lingua Preferita:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Ultimo Login:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Livelli completati:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Location:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "Esci"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Sito in manutenzione"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Mercato"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Membro da:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "I miei premi"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "I miei Preferiti"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "La mia classifica"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "I miei Punti:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Il mio Avanzamento"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "I miei Stumenti"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Prossimo Livello:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Il mio Avanzamento"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Registrati"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Punto Vendita"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Suggerimenti per te:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Lingua aggiornata a"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Classifica dei migliori"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Tutti"
+
+#: /
+msgid "LEVELS"
+msgstr "Livelli"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Livelli completati:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Ognuno di questi livelli è stato creato per Te, per migliorare il tuo lavoro. Sei tu a decidere come usarli e come salire di livello."
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Caricamento Contenuti…"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "Strumenti in caricamento.."
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Login riuscito"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Attendere prego…"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Ti sei disconnesso. A presto!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "Esci"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Cerca per "
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX è momentaneamente in manutenzione. Ti invitiamo a riprovare più tardi. Ci scusiamo per l'inconveniente."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Il mio menu rapido"
+
+#: /
+msgid "MY_POINTS"
+msgstr "I miei punti"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Mio avanzamento"
+
+#: /
+msgid "NEED_HELP"
+msgstr "Hai bisogno di aiuto?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "Nuova Password"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "Nessun livello trovato "
+
+#: /
+msgid "PASSWORD"
+msgstr "Password"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Richiesta password ricevuta"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "Si è verificato un problema durante il caricamento, si prega di riprovare."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Product Library"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Product Library"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Attiva il tuo account Gravatar dall'email di conferma."
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Aggiungi la foto del tuo profilo al tuo conto Gravatar."
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Crea un account gratuito con Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Segui questi passi:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Sei un nuovo utente Gravatar e hai bisogno di aiuto?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Desideri personalizzare la foto del tuo profilo? Crea un account con Gravatar e aggiungi la tua foto. Potrai collegarla automaticamente a ELX!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Il tuo profilo ELX si aggiorna automaticamente in un attimo!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Badge recenti"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Ricordami"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Richiedi Nuova Password"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Visualizzazione {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Filtra per"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Affina ricerca"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Ordina per"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Titoli A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Più popolari"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Vista"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Guarda tutti i badge"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Guarda tutti gli strumenti"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Guarda tutta la classifica"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Il server ha rilevato un errore"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Entra "
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Spiacenti, non risulta alcun prodotto preferito"
+
+#: /
+msgid "SUBMIT"
+msgstr "Invio"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Suggeriti per me"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Privacy Policy and Terms | Conditions"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Premi"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Classifica"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "ENTRA"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "Punti"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "Rank"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "In risalto"
+
+#: /
+msgid "TOOLS"
+msgstr "Strumenti"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "Prodotti non preferiti"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Utente sconosciuto"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Aggiornamento lingua"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "Novità & Trend"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Livelli"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Guarda ancora"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "Cerca"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "Nome"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Cognome"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Registrati"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "L'e-mail inserita esiste già. Se non ricordi la tua password, usa il link sotto per recuperarla."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "L'e-mail inserita non è corretta. Si prega di verificare e riprovare."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "Si è verificato un errore imprevisto, si prega di riprovare più tardi. "
+

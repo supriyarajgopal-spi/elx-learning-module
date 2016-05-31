@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Maaf, email anda belum terdaftar di sistem ELX kami. Cobalah email lain.   "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "Email atau password tidak sesuai. Silahkan coba lagi."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Memperbaharui produk…"
+
+#: /
+msgid "BADGES"
+msgstr "Lencana"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "Update"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "Tampilkan detil"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "Lihat Tpols"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Tingkat yang paling dekat untuk diselesaikan:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Bandingkan skor saya dengan"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "Konfirmasi Kata Sandi"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. All worldwide rights reserved."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "Bahasa saat ini"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "Kata Sandi Saat Ini"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "Mengedit Bahasa"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Edit Profil dan Password"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "Alamat email"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Jelajahi  Tingkat Pengetahuan Anda"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Jelajahi Perpustakaan Produk"
+
+#: /
+msgid "FAVORITE"
+msgstr "Memfavoritkan"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "Favorit Anda"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "Fields tidak cocok!"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Dunia"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Semua Kategori"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Bestseller"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Komplit"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Parfum"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "Dalam Proses"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Makeup"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Negara saya"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Region saya"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Retailer saya"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Toko saya"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "Skincare"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Lupa Password"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Hasil Pencarian"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Tingkatan yang sudah dilewati:"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Pilih Bahasa:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Login terakhir:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Tingkatan:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Lokasi:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "Keluar"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Situs dalam perbaikan"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Market"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Member dari:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "Lencana saya"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "Favorit saya"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Leaderboard saya"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "Point saya:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Kemajuan Saya"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "Tools saya"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Level selanjutnya:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Kemajuan Saya"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Sign in:"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Toko:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Disarankan untuk Anda"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Bahasa diperbarui untuk"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Leaderboard"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Semua"
+
+#: /
+msgid "LEVELS"
+msgstr "Levels"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Tingkat yang sudah dilewati:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "" Masing-masing Tingkat ini diciptakan untuk Anda - untuk membuat Anda lebih baik lagi. Anda bisa memutuskan bagaimana pengalaman Anda dan bagaimana Anda ingin naik tingkat ""
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Memuat Konten"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "Alat Loading ..."
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Login berhasil"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Harap Tunggu"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Anda sudah logged out- sampai jumpa"
+
+#: /
+msgid "LOG_OUT"
+msgstr "Keluar"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Mencari login yang sudah ada"
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "Situs ELX dalam perbaikan. Kami akan kembali secepatnya - Mohon maaf atas ketidaknyamanan ini."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Dashboard Saya"
+
+#: /
+msgid "MY_POINTS"
+msgstr "Nilai saya"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Perkembangan Saya"
+
+#: /
+msgid "NEED_HELP"
+msgstr "Perlu bantuan?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "Password Baru"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "Tidak ada Tingkat ditemukan "
+
+#: /
+msgid "PASSWORD"
+msgstr "Password"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Permintaan Password diterima "
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "Ada masalah saat memuat konten ini , silakan coba lagi ."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Perpustakaan produk"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Perpustakaan produk"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktifkan akun Gravatar Anda dari email konfirmasi "
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Tambahkan foto profil Anda untuk akun Gravatar Anda "
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Buat akun gratis dengan Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Ikuti langkah berikut:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Baru di Gravatar dan butuh bantuan?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Ingin personalisasi foto profil Anda? Buat account dengan Gravatar, dan tambahkan foto Anda. Secara otomatis link ke ELX!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Profil Anda update otomatis hanya dalam waktu singkat!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Lencana terakhir saya"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Ingatkan saya"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Meminta Password Baru"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Menampilkan {{ start }} - {{ end }} dari {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Pilihan filter"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Cari lagi"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Dipilih berdasarkan"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Title A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Paling Populer"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Tampilan"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Lihat Semua Lencana"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Lihat semua tools"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Lihat leaderboard penuh"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Server sedang mengalami masalah"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Sign in"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Maaf, tidak ada favorit ."
+
+#: /
+msgid "SUBMIT"
+msgstr "Kumpulkan"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Disarankan untuk saya"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Privacy Policy and Terms | Conditions"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Lencana"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Leaderboard"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "MASUK"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "Angka"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "Ranking"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "Spotlight"
+
+#: /
+msgid "TOOLS"
+msgstr "Tools"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "Tidak jadi difaforitkan"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Pengguna tidak diketahui"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Memperbarui bahasa"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "What's New & Trending"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Levels"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Lihat lagi"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "Cari"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

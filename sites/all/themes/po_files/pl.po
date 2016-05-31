@@ -1,0 +1,553 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta.  "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "Email bądź hasło, które wprowadziłeś jest nie poprawny. Spróbuj ponownie."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Uaktualnione produkty"
+
+#: /
+msgid "BADGES"
+msgstr "Odznaki"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "Zaktualizuj"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "zobacz szczegóły"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "Narzędzia"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Najbliższy poziom do ukończenia:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Porównaj mój wynik z "
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "Potwierdź hasło"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Wszelkie prawa zastrzeżone."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "Wybierz język"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "Aktualne hasło"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "Zmień język"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Edytuj profil i hasło"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "Adres email"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Poznaj Poziomy nauczania"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Poznaj Bibliotekę produktów"
+
+#: /
+msgid "FAVORITE"
+msgstr "ulubione"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "Ulubiony produkt"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "Niepasujące pola!"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Świat"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Wszystkie kategorie"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Bestsellery"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Zakończono"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Zapachy"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "W trakcie"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Makijaż"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Mój kraj"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Mój region"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Mój dostawca"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Mój sklep"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "Pielęgnacja"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Nie pamiętam hasła"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Rezultaty wyszukiwania"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Prawie ukończone aktywności: "
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Preferowany język:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Ostatnie logowanie:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Ukończone poziomy:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Lokalizacja:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "Wyloguj "
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Strona chwilowo  niedostępna"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Rynek"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Członek od:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "Moje odznaki"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "Moje ulubione"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Moja tablica wyników"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "Moje punkty:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Moje postępy"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "Moje narzędzia"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Następny poziom:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Moje postępy"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Zaloguj"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Sklep/Perfumeria:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Sugerowane dla Ciebie:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Aktualizuj język"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Tabela wyników"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Wszystko"
+
+#: /
+msgid "LEVELS"
+msgstr "Kursy"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Ukończone poziomy:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Każdy z poziomów został stworzony dla Ciebie -by pomóc Ci być jeszcze lepszym w tym co robisz. Ty decydujesz jak będziesz przez nie przechodzić."
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Wyszukuję…"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "Ładuję narzędzia..."
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Pomyślne logowanie "
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Proszę czekać…"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Wylogowałeś się. Do zobaczenia wkrótce…"
+
+#: /
+msgid "LOG_OUT"
+msgstr "Wyloguj "
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Szukam istniejącego loginu…"
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "Strona ELX chwilowo jest niedostępna. 
+Spróbuj później - przepraszamy za niedogodności."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Moja tablica"
+
+#: /
+msgid "MY_POINTS"
+msgstr "Moje punkty"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Moje postępy"
+
+#: /
+msgid "NEED_HELP"
+msgstr "Potrzebujesz pomocy?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "Nowe Hasło"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "Brak Kursów"
+
+#: /
+msgid "PASSWORD"
+msgstr "Hasło"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Otrzymano zgłoszenie hasła"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "Wystąpił problem, spróbuj ponownie"
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Biblioteka produktów"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Biblioteka produktów"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktywuj swój Gravatar klikając potwierdzenie przesłane na e-mail."
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Dodaj zdjęcie profilowe do konta Gravatar."
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Załuż darmowe konto na Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Postępuj wraz ze wskazówkami:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Jesteś tu nowy? Może pomóc?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Chcesz spersonalizować swoje zdjęcie? Załóż konto na Gravatar i dodaj zdjęcie. Zdjęcie automatycznie pojawi się na ELX! "
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Twój profil na ELX aktualizuje się automatycznie i bardzo szybko!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Aktualne odznaki"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Zapamiętaj mnie"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Podaj Nowe Hasło"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Wyświetl {{ start }} - {{ end }} ze {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Filtruj po"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Wyczyść wyszukiwanie"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Sortuj po"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Tytuły A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Najbardziej popularne"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Zobacz"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Zobacz wszystkie odznaki"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Zobacz wszystkie narzędzia"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Zobacz pełną tablicę wyników"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Serwer napotkał błąd"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Zaloguj"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Niestety nie masz ulubionych"
+
+#: /
+msgid "SUBMIT"
+msgstr "Zgłoś"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Sugestie dla mnie"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Polityka prywatności i Regulamin"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Odznaki"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Tablica wyników"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "Zaloguj"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "Punkty"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "Ranking"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "Zwróć uwagę"
+
+#: /
+msgid "TOOLS"
+msgstr "Narzędzia"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "nielubiane"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Nieznany użytkownik"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Aktualzacja języka"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "Trendy i Nowości"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Kursy"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Zobacz więcej"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "Szukaj"
+
+#: /
+msgid "Advanced_Night_Repair"
+msgstr "Advanced Night Repair"
+
+#: /
+msgid "Advanced_Night_Repair_2"
+msgstr "Advanced Night Repair 2"
+
+#: /
+msgid "Beautiful_Skin_for_Life"
+msgstr "Beautiful Skin for Life"
+
+#: /
+msgid "Greet_Meet_Treat_Complete"
+msgstr "Powitaj Zbuduj Relacje Rozpieść Sprzedaj"
+
+#: /
+msgid "New_Dimension"
+msgstr "New Dimension"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Konto"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "Imię"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Nazwisko"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Zarejestruj się"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "Ten adres email istnieje już w bazie danych. Jeśli nie pamiętasz swojego hasła proszę użuj linku poniżej, by je odświeżyć."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "Wprowadzony adres email jest nieprawidłowo sfromatowany. Proszę sprawdź swój adres email i spóbuj ponownie."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "Wystąpił nieoczekiwany błąd, proszę spróbować później."
+

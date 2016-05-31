@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "很抱歉，输入的电子邮箱似乎未设有 ELX 账户。请尝试其他电子邮箱。 "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "您输入的邮箱地址和密码不相符。 请再试一次。"
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "产品更新中"
+
+#: /
+msgid "BADGES"
+msgstr "徽章"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "更新"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "了解详情"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "查看工具"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "最接近完成的步骤"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "比较我的分数"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "确认密码"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© 雅诗兰黛公司，全球版权所有。"
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "目前语言"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "目前密码"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "编辑语言"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "编辑档案与密码"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "电子邮箱"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "雅诗兰黛体验"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "探索学习水平"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "探索产品库"
+
+#: /
+msgid "FAVORITE"
+msgstr "我的最爱"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "你最爱的产品"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "范围不符合！"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "世界"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "所有品类"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "畅销单品"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "已完成"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "香氛"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "进展中"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "彩妆"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "我的国家"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "我的地区"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "我的零售商"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "我的柜台"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "奢宠白金"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "护肤"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "忘记密码"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "搜寻结果"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "最近完成的活动："
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "选择语言："
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "上次登录："
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "已完成等级："
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "位置："
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "注销"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "网站维修中"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "市场"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "入会时间："
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "我的徽章"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "我的最爱"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "我的排行榜"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "我的积分："
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "我的进度"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "我的工具"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "下一等级："
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "我的进度"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "登录"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "柜台/店铺："
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "给您的建议："
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "语言已更新至"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "排行榜"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "全部"
+
+#: /
+msgid "LEVELS"
+msgstr "等级"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "已完成等级："
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "这里的每个级别都是为你所设计的，让你在自己的领域做得更好。你决定怎样的体验和如何升级。"
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "加载内容…"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "载入工具中…"
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "登录成功"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "请等待…"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "您已退出。期待您下次登录！"
+
+#: /
+msgid "LOG_OUT"
+msgstr "注销"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "查看当前登录状态…"
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX 网站目前正在维修中。请稍后再重新确认 - 对于造成任何不便，我们深感抱歉。"
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "控制面板"
+
+#: /
+msgid "MY_POINTS"
+msgstr "我的积分"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "我的进度"
+
+#: /
+msgid "NEED_HELP"
+msgstr "需要帮助吗？"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "新密码"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "无法找到等级。"
+
+#: /
+msgid "PASSWORD"
+msgstr "密码"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "密码请求已收到"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "此内容加载出现问题，请再试一次。"
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "产品库"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "产品库"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "从电子邮件确认函中启动你的Gravatar（全球通用大头贴）账号。"
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "将你的大头贴新增至Gravatar（全球通用大头贴）账号中。"
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "利用Gravatar（全球通用大头贴）建立免费账号"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "遵循以下步骤："
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "第一次使用Gravatar（全球通用大头贴）且需要协助吗？"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "想要打造个人化的大头贴吗？利用Gravatar（全球通用大头贴）建立账号，并新增你的照片，账号将自动连结至ELX！"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "你的ELX个人档案将立即自动更新！"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "最近的徽章"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "记住密码"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "要求建立新密码"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "显示 {{ total }} 的 {{ start }} - {{ end }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "筛选方式"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "高级搜索"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "排序"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "标题A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "最受欢迎"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "查看"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "查看所有徽章"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "查看所有工具"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "查看完整排行榜"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "服务器遇到一个错误"
+
+#: /
+msgid "SIGN_IN"
+msgstr "登录"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "抱歉，没有我的最爱"
+
+#: /
+msgid "SUBMIT"
+msgstr "提交"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "给我的建议"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "隐私政策和条款 | 条件"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "徽章"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "排行榜"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "登入"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "积分"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "等级"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "焦点"
+
+#: /
+msgid "TOOLS"
+msgstr "工具"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "取消最爱"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "未知用户"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "更新语言中"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "最新潮流&趋势"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "等级"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "了解更多"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "搜寻"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

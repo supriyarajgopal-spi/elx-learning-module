@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Deja, Jūsų nurodytas el. pašto adresas nėra susijęs nei su vienu „ELX“ profiliu. Pabandykite įvesti kitą adresą. "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "Neteisingai įvedėte elektroninį paštą ar slaptažodį. Prašau, pabandykite dar kartą."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Atnaujinimas prekės …"
+
+#: /
+msgid "BADGES"
+msgstr "Ženkliukai"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "atnaujinimas"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "peržiūrėti detales"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "peržiūrėti įrankius"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Artimiausias lygis iki pabaigos:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Palyginkite Mano rezultatą"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "patvirtinti slaptažodį"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estee Lauder Inc Visos teisės saugomos visame pasaulyje."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "dabartinė kalba"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "dabartinis slaptažodis"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "redaguoti kalba"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Keisti slaptažodį ir profilio duomenis "
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "El. pašto adresas"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "ESTEE LAUDER PATIRTIS"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Apžiūrėkite mokymosi lygius"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Apžiūrėkite produkto biblioteka"
+
+#: /
+msgid "FAVORITE"
+msgstr "išrinktieji"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "jūsų mėgstamas produktas"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "laukai nesutampa"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Visi"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Visos kategorijos"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Perkamiausios prekės"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Baigtas"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Kvepalai"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "Progrese"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Makiažas"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Mano šalis"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Mano regionas"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Mano mažmenininkas"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Mano parduotuvė"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "odos priežiūra"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Pamiršote slaptažodį"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "ieškokite rezultatų"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Neseniai atliktos veiklos"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Kalbos prioritetai:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Paskutinis prisijungimas:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Lygiai užbaigti:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Vieta:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "atsijungimas"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Puslapis kuriamas"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Rinka"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Užsiregistravo:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "Mano ženkliukai"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "Mano išrinktieji"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Mano lyderis"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "Mano Taškai"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Mano progresas"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "Mano įrankiai"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Kitas lygis:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Progresas"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Prisijungti"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Parduotuvė / durys:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Siūloma jums:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "kalbos atnaujinimas"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Rezultatų lentelė"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Visi"
+
+#: /
+msgid "LEVELS"
+msgstr "Lygiai "
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Lygiai Užbaigti:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Kiekvienas iš šių lygių buvo sukurtas jums, kad jums pagerinti  jūsų darbą. Galite nuspręsti,  patirti juos ir eiti lygiu aukštyn."
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Kraunasi.."
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "žiūrėkite įrankius"
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Vartotojas sėkmingas"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Prašome palaukti.."
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Jūs atsijungęs. Pasimatysime netrukus vėl!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "atsijungimas"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Ieško esamo prisijungimo "
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX puslapis kuriamas. Kviečiame apsilankyti vėliau - atsiprašome už nesklandumus."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Mano pagrindinis puslapis "
+
+#: /
+msgid "MY_POINTS"
+msgstr "Mano punktai "
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Mano progresas "
+
+#: /
+msgid "NEED_HELP"
+msgstr "Reikalinga pagalba?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "naujas slaptažodis"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "lygių nerasta"
+
+#: /
+msgid "PASSWORD"
+msgstr "Slaptažodis "
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Gauta slaptažodžio užklausa"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "Buvo problemų įkeliant šį turinį, bandykite dar kartą."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Prekės biblioteka"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Prekės biblioteka"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktyvuok savo Gravatar profilį  ir patvirtinkite elektroniniu paštu."
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Pridėti savo profilio nuotrauką į savo Gravatar  ."
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Sukurti nemokamą profilį su Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Atlikite šiuos veiksmus:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Naujienos Gravatar ir reikalinga pagalba?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Norite suasmeninti savo profilio nuotrauką? Sukurti profilį su Gravatar, ir pridėti savo nuotrauką. Automatiškai nuorodos į Elx!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Jūsų ELX aprašymas bus atnaujintas   automatiškai vos per trumpą laiką!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Naujausi ženkliukai "
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Išsaugoti "
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Gauti naują slaptažodį"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Rodoma {{ start }} - {{ end }} iš {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Filtruoti pagal"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Patikslinkite paiešką"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Rūšiuoti Pagal"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Pavadinimas A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Populiariausias"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Vaizdas"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Visi ženkliukai "
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Visi įrankiai "
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Pamatyti pilną lenta lyderių"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Serveris aptiko klaidą"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Prisijungti "
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Atsiprašome, bet jokių išrinktųjų."
+
+#: /
+msgid "SUBMIT"
+msgstr "Siųsti"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Patarimai "
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Privatumo politika ir taisyklės | Sąlyga"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Ženkliukai"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Lyderis"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "prisijungti"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "taškai"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "laipsnis"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "prožektorius"
+
+#: /
+msgid "TOOLS"
+msgstr "Įrankiai "
+
+#: /
+msgid "UNFAVORITE"
+msgstr "nemėgstamiausi"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Nežinomas vartotojas"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "atnaujinimas kalbos"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "Kas naujo ir tendencijos"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Lygiai"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Pamatyti daugiau"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "Ieškoti"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

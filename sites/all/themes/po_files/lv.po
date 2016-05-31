@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Diemžēl uzradītā e-mail adrese nav pierakstīta nevienam ELX kontam. Mēģini ierakstīt citu adresi.  "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "Epasts vai parole ko ievadījāt nesakrīt. Lūdzu mēğiniet vēlreiz."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Atjaunota meklēšana…"
+
+#: /
+msgid "BADGES"
+msgstr "Atzīmes"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "Atjaunots"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "skatīties detaļas"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "Pārskata rīks"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Tuvākais līmenis nobeigšanai:"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Salīdzināt manus rezultātus ar"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "Apliecināt paroli"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Visas starptautiskās tiesības aizsargātas."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "Valoda "
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "Pašreizējā parole"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "Mainīt valodu"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Rediģēt profilu un paroli"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "E-mail adrese"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "ESTEE LAUDER PIEREDZE"
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Apskatīt Mācību Līmeņus"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Apskatīt Produktu Bibleotēku"
+
+#: /
+msgid "FAVORITE"
+msgstr "Atzīmētie"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "Visbiešāk apskatītie produkti"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "Lauki nesakrīt"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Pasaule"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Visas kategorijas"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Visbiežāk Pārdotākie Produkti"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Pabeigts"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "50"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Aromāti"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "Procesā"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Dekoratīvā Kosmētika"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Mana Valsts"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Mans Reģions"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Mans Pārdošanas Tīkls"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Mans Veikals"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "Sejas Kopšanas Produkti"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "10"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "20"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Aizmirsāt Paroli"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Meklēšanas rezultāti"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Pēdējās Pabeigtās Aktivitātes"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Valodas izvēle:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Pēdējais Lietotājvārds:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Pabeigtie Līmeņi:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Atrašanās vieta:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "Iziet"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Saite apkalpošanas režīmā"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Tirgus"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Dalībnieks kopš:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "Manas Saites:"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "Manas Izvēlnes:"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Mans Banneris"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "Mani Punkti:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Mans progress"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "Mani Darbarīki"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Nākošais Līmenis:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Mans progress"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Pierakstīties"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Veikals:"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Ieteikumi:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Valoda nomainīta uz"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Rezultātu tabula"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Viss"
+
+#: /
+msgid "LEVELS"
+msgstr "Līmeņi"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Pabeigtie Līmeņi:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Katrs no šiem Līmeņiem bija izveidots Jums, lai palīdzētu labāk pildīt savu darbu. Jūs varat izvēlēties pati kādā kārtībā un kad tos pabeigt."
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Ielādē..."
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "Ielādē..."
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Ielāde neveiksmīga..."
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Ielāde veiksmīga"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Lūdzu uzgaidiet..."
+
+#: /
+msgid "LOG_OUT"
+msgstr "Iziet"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Mēklē Lietotājvārdu..."
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX lapar pašlaik strādā apkalpošanas režīmā. Lūdzu ienākt nedaudz vēlāk. Atvainojamies par sagādātajām neertībām."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Mans informācijas panelis"
+
+#: /
+msgid "MY_POINTS"
+msgstr "Mani punkti"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Mans progress"
+
+#: /
+msgid "NEED_HELP"
+msgstr "Nepieciešama Palīdzība?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "Jauna parole"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "Līmenis nav atrasts"
+
+#: /
+msgid "PASSWORD"
+msgstr "Parole"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Saņemts paroles pieprasījums"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "Ielādes kļūda, lūdzu mēģiniet vēl reiz."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Produktu Bibliotēka"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Produktu Bibliotēka"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Aktivizēt savu Gravatar lapu izmantojot aktivizācijas epastu"
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Pievieno profila bildi savam Gravatar"
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Izveidot bezmaksas lapu izmantojot Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Sekojiet šiem soļiem:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Pirmo reizi izmanto Gravatar un ir nepieciešama palīdzība?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Gribi personalizēt savu profila bildi? Izveido lapu ar Gravatar palīdzību un pievieno savu bildi. Tā automātiskie pievienosies ELX!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Tavs ELX profils atjaunosies automātiski īsā laika periodā!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Visjaunākās atzīmes"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Atceries"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Pieprasīt jaunu paroli"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Rāda {{ start }} - {{ end }} : {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Sakārtot Pēc"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Precīzēta Meklēšana"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Sortēt Pēc"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Nosaukumi A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Vispopilārākie"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Skatīt"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Visas atzīmes"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Visi rīki"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Pilns Baneris"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Servera kļūda"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Ielogot"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Piedosiet, nav atzīmēto."
+
+#: /
+msgid "SUBMIT"
+msgstr "Iesniegt"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Ierosinājumi"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Konfidencialitates polise un Noteikumi / Nosacījumi"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Nozīmītes"
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Baneri"
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "PIESLĒGŠANĀS"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "Punkti"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "Vieta"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "Uzmanīvas Centrs"
+
+#: /
+msgid "TOOLS"
+msgstr "Rīki"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "Atvienots"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Nezināms Lietotājs"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Atjauno valodu"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "Jaunumi un Trendi"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Līmeņi"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Apskati vairāk"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "meklēt"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

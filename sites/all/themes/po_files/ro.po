@@ -1,0 +1,528 @@
+#: /
+msgid "FORGOT_NOT_FOUND"
+msgstr "Ne pare rău. Această adresă de email nu pare să fie asociată cu un cont ELX. Te rugăm să încerci o altă adresă.  "
+
+#: /
+msgid "INVALID_EMAIL_PASS"
+msgstr "E-mailul sau parola introduse nu se potrivesc. Te rugam sa incerci din nou."
+
+#: /
+msgid "ALERT_PRODUCTS"
+msgstr "Actualizare Produse…"
+
+#: /
+msgid "BADGES"
+msgstr "Insigne"
+
+#: /
+msgid "BTN_UPDATE"
+msgstr "Actualizare"
+
+#: /
+msgid "BTN_VIEW_DETAILS"
+msgstr "Vezi detaliile"
+
+#: /
+msgid "BTN_VIEW_TOOL"
+msgstr "Vezi instrumente"
+
+#: /
+msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgstr "Cel mai apropiat nivel de completat"
+
+#: /
+msgid "COMAPRE_SCORE"
+msgstr "Compara scorul meu cu"
+
+#: /
+msgid "CONFIRM_PASSWORD"
+msgstr "Confirma parola"
+
+#: /
+msgid "COPYRIGHT"
+msgstr "© Estée Lauder Inc. Toate drepturile rezervate la nivel mondial."
+
+#: /
+msgid "CURRENT_LANGUAGE"
+msgstr "Limba curenta"
+
+#: /
+msgid "CURRENT_PASSWORD"
+msgstr "Parola curenta"
+
+#: /
+msgid "EDIT_LANGUAGE"
+msgstr "Editeaza limba"
+
+#: /
+msgid "EDIT_PROFILE_AND_PASSWORD"
+msgstr "Editează profilul & Parola"
+
+#: /
+msgid "EMAIL_ADDRESS"
+msgstr "Adresă de email"
+
+#: /
+msgid "ESTEE_LAUDER_EXPERIENCE"
+msgstr "EXPERIENTA ESTÉE LAUDER "
+
+#: /
+msgid "EXPLORE_LEARNING_LEVELS"
+msgstr "Exploreaza nivelurile"
+
+#: /
+msgid "EXPLORE_PRODUCT_LIBRARY"
+msgstr "Exploreaza biblioteca de produse"
+
+#: /
+msgid "FAVORITE"
+msgstr "Marcat ca favorit"
+
+#: /
+msgid "FAVORITED_MESSAGE"
+msgstr "Produsul tau favorit"
+
+#: /
+msgid "FIELDS_DONT_MATCH"
+msgstr "Campurile nu se potrivesc!"
+
+#: /
+msgid "FILTER_ALL"
+msgstr "Lumea"
+
+#: /
+msgid "FILTER_ALL_CATEGORIES"
+msgstr "Toate categoriile"
+
+#: /
+msgid "FILTER_BESTSELLER"
+msgstr "Cel mai bine vandut"
+
+#: /
+msgid "FILTER_COMPLETED"
+msgstr "Completat"
+
+#: /
+msgid "FILTER_FIFTY"
+msgstr "Cincizeci"
+
+#: /
+msgid "FILTER_FRAGRANCE"
+msgstr "Parfum"
+
+#: /
+msgid "FILTER_IN_PROGRESS"
+msgstr "In curs"
+
+#: /
+msgid "FILTER_MAKEUP"
+msgstr "Machiaj"
+
+#: /
+msgid "FILTER_MY_MARKET"
+msgstr "Tara mea"
+
+#: /
+msgid "FILTER_MY_REGION"
+msgstr "Regiunea mea"
+
+#: /
+msgid "FILTER_MY_RETAILER"
+msgstr "Lantul meu"
+
+#: /
+msgid "FILTER_MY_STORE"
+msgstr "Magazinul meu"
+
+#: /
+msgid "FILTER_RENUTRIV"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "FILTER_SKINCARE"
+msgstr "Skincare"
+
+#: /
+msgid "FILTER_TEN"
+msgstr "Zece"
+
+#: /
+msgid "FILTER_TWENTY"
+msgstr "Douazeci"
+
+#: /
+msgid "FORGOT_PASSWORD"
+msgstr "Ai uitat parola"
+
+#: /
+msgid "GLOBAL_SEARCH_TITLE"
+msgstr "Rezultatele cautarii"
+
+#: /
+msgid "LABEL_ACTIVITIES"
+msgstr "Activitati complrtate recent:"
+
+#: /
+msgid "LABEL_LANGUAGE"
+msgstr "Limba preferata:"
+
+#: /
+msgid "LABEL_LAST_LOGIN"
+msgstr "Ultima conectare:"
+
+#: /
+msgid "LABEL_LEVELS_COMPLETED"
+msgstr "Niveluri finalizate:"
+
+#: /
+msgid "LABEL_LOCATION"
+msgstr "Locatie:"
+
+#: /
+msgid "LABEL_LOGOUT"
+msgstr "Deconectare"
+
+#: /
+msgid "LABEL_MAINTENANCE_MODE"
+msgstr "Site in modul de intretinere"
+
+#: /
+msgid "LABEL_MARKET"
+msgstr "Tara"
+
+#: /
+msgid "LABEL_MEMBER"
+msgstr "Membru din:"
+
+#: /
+msgid "LABEL_MY_BADGES"
+msgstr "Insignele mele"
+
+#: /
+msgid "LABEL_MY_FAVORITES"
+msgstr "Favoritele mele"
+
+#: /
+msgid "LABEL_MY_LEADERBOARD"
+msgstr "Clasamentul meu"
+
+#: /
+msgid "LABEL_MY_POINTS"
+msgstr "Punctele mele:"
+
+#: /
+msgid "LABEL_MY_PROGRESS"
+msgstr "Progresul meu"
+
+#: /
+msgid "LABEL_MY_TOOLS"
+msgstr "Instrumentele mele"
+
+#: /
+msgid "LABEL_NEXT_LEVEL"
+msgstr "Nivelul urmator:"
+
+#: /
+msgid "LABEL_PROGRESS"
+msgstr "Progresul meu"
+
+#: /
+msgid "LABEL_SIGNIN"
+msgstr "Autentificare"
+
+#: /
+msgid "LABEL_STORE"
+msgstr "Magazin/Locatie"
+
+#: /
+msgid "LABEL_SUGGESTED"
+msgstr "Sugestii pentru tine:"
+
+#: /
+msgid "LANGUAGE_UPDATED_MESSAGE"
+msgstr "Limba actualizata"
+
+#: /
+msgid "LEADERBOARD"
+msgstr "Clasament"
+
+#: /
+msgid "LEVEL_FILTER_ALL"
+msgstr "Toate"
+
+#: /
+msgid "LEVELS"
+msgstr "Niveluri"
+
+#: /
+msgid "LEVELS_COMPLETED"
+msgstr "Niveluri finalizate:"
+
+#: /
+msgid "LEVELS_HEADER_TEXT"
+msgstr "Fiecare dintre aceste niveluri a fost creat pentru tine - pentru a excela in ceea ce faci. Tu decizi cum le experimentezi si modul in care doresti sa avansezi."
+
+#: /
+msgid "LOADING_CONTENT"
+msgstr "Se incarca continutul…"
+
+#: /
+msgid "LOADING_TOOLS"
+msgstr "Se incarca instrumentele…"
+
+#: /
+msgid "LOGIN_SUCCESS"
+msgstr "Autentificare reusita"
+
+#: /
+msgid "LOGIN_WAIT"
+msgstr "Te rugam sa astepti…"
+
+#: /
+msgid "LOGOUT_MESSAGE"
+msgstr "Deconectare. Ne vedem in curand!"
+
+#: /
+msgid "LOG_OUT"
+msgstr "Deconectare"
+
+#: /
+msgid "LOOKING_FOR_LOGIN"
+msgstr "Cautarea unei autentificari existente…"
+
+#: /
+msgid "MESSAGE_MAINTENANCE_MODE"
+msgstr "ELX este in prezent in modul de intretinere. Te rugam sa verifici din nou in curand - ne cerem scuze pentru orice inconvenient."
+
+#: /
+msgid "MY_DASHBOARD"
+msgstr "Panoul meu"
+
+#: /
+msgid "MY_POINTS"
+msgstr "Punctele mele"
+
+#: /
+msgid "MY_PROGRESS"
+msgstr "Progresul meu"
+
+#: /
+msgid "NEED_HELP"
+msgstr "Ai nevoie de ajutor?"
+
+#: /
+msgid "NEW_PASSWORD"
+msgstr "Parola noua"
+
+#: /
+msgid "NO_LEVELS"
+msgstr "Nici un nivel gasit"
+
+#: /
+msgid "PASSWORD"
+msgstr "Parolă"
+
+#: /
+msgid "PASSWORD_REQUEST_RECEIVED"
+msgstr "Cerere parola primita"
+
+#: /
+msgid "PROBLEM_LOADING"
+msgstr "A aparut o problema in incarcarea continutului, te rugam sa reincerci."
+
+#: /
+msgid "PRODUCT_LIBRARY"
+msgstr "Biblioteca de produse"
+
+#: /
+msgid "PRODUCT_SEARCH_TITLE"
+msgstr "Biblioteca de produse"
+
+#: /
+msgid "PROFILE_ACTIVATE"
+msgstr "Activeaza contul Gravatar din emailul de confirmare."
+
+#: /
+msgid "PROFILE_ADD_PHOTO"
+msgstr "Adauga fotografia de profil contului tau Gravatar."
+
+#: /
+msgid "PROFILE_CREATE_ACCOUNT"
+msgstr "Creeaza un cont gratuit cu Gravatar"
+
+#: /
+msgid "PROFILE_FOLLOW_STEPS"
+msgstr "Urmeaza pasii:"
+
+#: /
+msgid "PROFILE_HELP"
+msgstr "Nou in Gravatar si ai nevoie de ajutor?"
+
+#: /
+msgid "PROFILE_PERSONALIZE"
+msgstr "Vrei sa iti personalizezi fotografia de profil? Creaza un cont Gravatar si adauga-ti fotografia. Se va asocia automat cu ELX!"
+
+#: /
+msgid "PROFILE_UPDATES"
+msgstr "Profilul tau ELX se va actualiza automat in foarte scurt timp!"
+
+#: /
+msgid "RECENT_BADGES"
+msgstr "Insigne recente"
+
+#: /
+msgid "REMEMBER_ME"
+msgstr "Memorează cont"
+
+#: /
+msgid "REQUEST_PASSWORD"
+msgstr "Solicitare parola noua"
+
+#: /
+msgid "SEARCH_COUNT"
+msgstr "Afiseaza {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "SEARCH_FILTER"
+msgstr "Filtreaza dupa"
+
+#: /
+msgid "SEARCH_REFINE"
+msgstr "Cautare avansata"
+
+#: /
+msgid "SEARCH_SORT"
+msgstr "Sortare dupa"
+
+#: /
+msgid "SEARCH_SORT_AZ"
+msgstr "Titlu A-Z"
+
+#: /
+msgid "SEARCH_SORT_POPULAR"
+msgstr "Cel mai popular"
+
+#: /
+msgid "SEARCH_VIEW"
+msgstr "Vizualizeaza"
+
+#: /
+msgid "SEE_ALL_BADGES"
+msgstr "Vezi toate insignele"
+
+#: /
+msgid "SEE_ALL_TOOLS"
+msgstr "Vezi toate instrumentele"
+
+#: /
+msgid "SEE_LEADERBOARD"
+msgstr "Vezi clasamentul complet"
+
+#: /
+msgid "SERVER_ERROR"
+msgstr "Serverul a intampinat o eroare"
+
+#: /
+msgid "SIGN_IN"
+msgstr "Autentificare"
+
+#: /
+msgid "SORRY_NO_FAVORITES"
+msgstr "Ne pare rau, nici o favorita."
+
+#: /
+msgid "SUBMIT"
+msgstr "Trimite"
+
+#: /
+msgid "SUGGESTED_FOR_ME"
+msgstr "Sugestii pentru mine"
+
+#: /
+msgid "TERMS_AND_CONDITIONS"
+msgstr "Politica de confidentialitate | Termeni si conditii"
+
+#: /
+msgid "TITLE_BADGES"
+msgstr "Insigne "
+
+#: /
+msgid "TITLE_LEADERBOARD"
+msgstr "Clasament "
+
+#: /
+msgid "TITLE_LOGIN"
+msgstr "AUTENTIFICARE"
+
+#: /
+msgid "TITLE_POINTS"
+msgstr "Puncte"
+
+#: /
+msgid "TITLE_RANK"
+msgstr "Rang"
+
+#: /
+msgid "TITLE_SPOTLIGHT"
+msgstr "In centrul atentiei"
+
+#: /
+msgid "TOOLS"
+msgstr "Instrumente"
+
+#: /
+msgid "UNFAVORITE"
+msgstr "Nefavorit"
+
+#: /
+msgid "UNKNOWN_USER"
+msgstr "Utilizator necunoscut"
+
+#: /
+msgid "UPDATE_LANGUAGE_MESSAGE"
+msgstr "Actualizare limba"
+
+#: /
+msgid "WHATS_NEW_TRENDING"
+msgstr "Noutati si Tendinte"
+
+#: /
+msgid "LABEL_LEVEL"
+msgstr "Niveluri"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Vezi mai mult"
+
+#: /
+msgid "SEARCH_FIELD"
+msgstr "Cauta"
+
+#: /
+msgid "LABEL_ACCOUNT"
+msgstr "Account"
+
+#: /
+msgid "FIRST_NAME"
+msgstr "First Name"
+
+#: /
+msgid "LAST_NAME"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "EMAIL_EXISTS"
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "EMAIL_ERROR"
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later. "
+

@@ -439,6 +439,7 @@ function backup_migrate_backup_migrate_schedules() {
         'profile_id' => 'default',
         'period' => variable_get('nodesquirrel_schedule', 60*60*24),
         'enabled' => variable_get('nodesquirrel_schedule_enabled', TRUE) && variable_get('nodesquirrel_secret_key', FALSE) != FALSE,
+        'keep' => variable_get('nodesquirrel_schedule_keep', BACKUP_MIGRATE_SMART_DELETE)
       );
       $schedules['nodesquirrel'] = backup_migrate_crud_create_item('schedule', $schedule);
     }
@@ -1830,12 +1831,7 @@ function backup_migrate_exec($command, $args = array()) {
   $output = $result = NULL;
 
   // Run the command.
-  $temp_name = drupal_tempnam('temporary://', 'mysql');
-  exec($command . ' 2>' . realpath($temp_name), $output, $result);
-  if ($result !== 0 && isset($args['%file'])) {
-    file_put_contents($args['%file'], file_get_contents($temp_name), FILE_APPEND);
-  }
-  unlink($temp_name);
+  exec($command, $output, $result);
 
   return $result == 0;
 }

@@ -730,6 +730,7 @@ class backup_migrate_schedule extends backup_migrate_item {
    * Delete files keeping the specified number of hourly, daily, weekly and monthly backups.
    */
   function smart_delete_backups($destination, $files, $keep_subhourly = 3600, $keep_hourly = 24, $keep_daily = 14, $keep_weekly = PHP_INT_MAX, $keep_monthly = PHP_INT_MAX) {
+    // Each period must be an exact multiple of the next smallest period.
     $now = time();
     $periods = array(
       'subhourly' => array(
@@ -773,23 +774,35 @@ class backup_migrate_schedule extends backup_migrate_item {
         $sorted[$id] = $time;
       }
     }
-    arsort($sorted);
+    asort($sorted); // Sort files, oldest first.
 
-    $now = time();
+    // Reset internal pointer and get the oldest file time.
+    $oldest_file_time = reset($sorted);
+    $keep_files[key($sorted)] = key($sorted); // Save the oldest file.
+
     foreach ($periods as $i => $period) {
-      foreach ($sorted as $id => $time) {
-        if ($time < ($now - ($period['delta'] * $period['keep']))) {
-          break;
-        }
-        if ($period['last_time'] == 0 || $time <= ($period['last_time'] - $period['delta'])) {
-          $period['last_time'] = $time;
-          $keep_files[$id] = $id;
-        }
+      $period_keep_files = array();
+      $time = $oldest_file_time;
+
+      // Set time from which we start saving files.
+      $period_start_time = $now - (($period['keep'] + 1) * $period['delta']);
+
+      // Increment time till we get within one period time span of the period
+      // start time. This keeps all the different period starts aligned.
+      while ($time < $period_start_time) {
+        $time += $period['delta'];
       }
-      // Keep oldest backup or it will get deleted if it doesn't fall on an exact multiple of the period
-      if ($id) {
-        $keep_files[$id] = $id;
-      }
+
+      $file_id = $this->find_nearest_file($sorted, $time);
+
+      do {
+        $period_keep_files[$file_id] = $file_id;
+        $last_file_id = $file_id;
+        $time += $period['delta'];
+        $file_id = $this->find_nearest_file($sorted, $time);
+      } while ($time < $now);
+
+      $keep_files = array_merge($keep_files, $period_keep_files);
     }
 
     // Do the delete.
@@ -799,5 +812,34 @@ class backup_migrate_schedule extends backup_migrate_item {
       }
     }
   }
+
+  function find_nearest_file($files, $time) {
+    $last_file_id = NULL;
+    $last_file_time = NULL;
+
+    foreach ($files as $id => $file_time) {
+      if ($file_time >= $time) {
+        if ($last_file_time == NULL) {
+          return $id;
+        }
+        if ($file_time == $time) {
+          return $id;
+        }
+        $time_to_prev = $time - $last_file_time;
+        $time_to_next = $file_time - $time;
+        if ($time_to_prev >= $time_to_next) {
+          return $id;
+        }
+        else {
+          return $last_file_id;
+        }
+
+        break; // Shouldn't hit this but you never know.
+      }
+      $last_file_id = $id;
+      $last_file_time = $file_time;
+    }
+  }
+
 }
 

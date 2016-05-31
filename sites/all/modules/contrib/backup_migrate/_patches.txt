@@ -1,0 +1,3 @@
+Fixed smart delete not saving files for all periods.
+https://www.drupal.org/node/2606586#comment-11248103
+https://www.drupal.org/files/issues/smart_delete_not_saving-2606586-5.patch

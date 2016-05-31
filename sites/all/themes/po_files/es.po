@@ -1,553 +1,553 @@
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_NOT_FOUND"
 msgstr "Lo sentimos. Esta dirección de correo no está asociada con una cuenta de ELX. Prueba con otra dirección de correo.   "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "INVALID_EMAIL_PASS"
 msgstr "El correo electrónico o contraseña introducidos no coinciden. Por favor, inténtelo de nuevo."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ALERT_PRODUCTS"
 msgstr "Actualizando Productos…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BADGES"
 msgstr "Medallas"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_SEE_MORE"
 msgstr "Ver Más"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_UPDATE"
 msgstr "Actualización"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_DETAILS"
 msgstr "Vea los detalles"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_TOOL"
 msgstr "Vea la Herramienta"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CLOSEST_LEVEL_TO_COMPLETION"
 msgstr "Nivel Más Cercano Para Completar "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COMAPRE_SCORE"
 msgstr "Compare Mis Resultados Con"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CONFIRM_PASSWORD"
 msgstr "Confirme Contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COPYRIGHT"
 msgstr "© Estée Lauder Inc. Todos los derechos mundiales reservados"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_LANGUAGE"
 msgstr "Idioma Actual"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_PASSWORD"
 msgstr "Contraseña Actual"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_LANGUAGE"
 msgstr " Editar Idioma"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_PROFILE_AND_PASSWORD"
 msgstr "Editar Perfil y Contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ADDRESS"
 msgstr "Dirección de correo electrónico"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ESTEE_LAUDER_EXPERIENCE"
 msgstr "LA EXPERIENCIA ESTÉE LAUDER "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_LEARNING_LEVELS"
 msgstr "Explore Niveles De Aprendizaje"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_PRODUCT_LIBRARY"
 msgstr "Explore La Biblioteca De Productos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITE"
 msgstr "Favorito"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITED_MESSAGE"
 msgstr "Tu producto favorito"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIELDS_DONT_MATCH"
 msgstr "No concuerdan los campos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL"
 msgstr "El Mundo"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL_CATEGORIES"
 msgstr "Todas Las Categorías"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_BESTSELLER"
 msgstr "Los Más Vendidos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_COMPLETED"
 msgstr "Completado"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FIFTY"
 msgstr "50"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FRAGRANCE"
 msgstr "Fragancia"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_IN_PROGRESS"
 msgstr "En Progreso"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MAKEUP"
 msgstr "Maquillaje"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_MARKET"
 msgstr "Mi País"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_REGION"
 msgstr "Mi Región "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_RETAILER"
 msgstr "Mi Cuenta"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_STORE"
 msgstr "Mi Tienda"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_RENUTRIV"
 msgstr "Re-Nutriv"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_SKINCARE"
 msgstr "Tratamiento"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TEN"
 msgstr "10"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TWENTY"
 msgstr "20"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_PASSWORD"
 msgstr "Olvidé la contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "GLOBAL_SEARCH_TITLE"
 msgstr "Búsqueda de Resultados"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACTIVITIES"
 msgstr "Actividades Recientemente Completadas"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LANGUAGE"
 msgstr "Preferencia de Lenguage:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LAST_LOGIN"
 msgstr "Previo Acceso:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVEL"
 msgstr "Niveles"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVELS_COMPLETED"
 msgstr "Niveles Completados:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOCATION"
 msgstr "Localización: "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOGOUT"
 msgstr "FINALIZAR SESIÓN"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MAINTENANCE_MODE"
 msgstr "Site in Maintenance Mode"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MARKET"
 msgstr "Pais:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MEMBER"
 msgstr "Miembro Desde: "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_BADGES"
 msgstr "Mis Credenciales"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_FAVORITES"
 msgstr "Mis Favoritos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_LEADERBOARD"
 msgstr "Mi Tabla de Resultados"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_POINTS"
 msgstr "Mis Puntos: "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_PROGRESS"
 msgstr "Mi Progreso"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_TOOLS"
 msgstr "Mis Herramientas:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_NEXT_LEVEL"
 msgstr "Próximo Nivel Ascendente: "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_PROGRESS"
 msgstr "Progreso"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNIN"
 msgstr "Ingresar"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_STORE"
 msgstr "Tienda/Puerta"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SUGGESTED"
 msgstr "Sugerencias para usted: "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LANGUAGE_UPDATED_MESSAGE"
 msgstr "Idioma actualizado a"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEADERBOARD"
 msgstr "Tabla de Posiciones"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVEL_FILTER_ALL"
 msgstr "Todo"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS"
 msgstr "Niveles"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_COMPLETED"
 msgstr "Niveles Completados:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_HEADER_TEXT"
 msgstr "Cada uno de estos niveles ha sido creado para ti - para que seas aún mejor en lo que haces.  Tú decides cómo quieres experimentarlos y cómo quieres seguir subiendo de nivel."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_CONTENT"
 msgstr "Recibiendo Contenido"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_TOOLS"
 msgstr "Herramienta de Descarga"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOG_OUT"
 msgstr "Finalizar Sesión   "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_SUCCESS"
 msgstr "Registro Exitoso"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_WAIT"
 msgstr "Por favor espere…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGOUT_MESSAGE"
 msgstr "Ha finalizado su sesión.  ¡Nos vemos pronto! "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOOKING_FOR_LOGIN"
 msgstr "Buscando su acceso existente…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MESSAGE_MAINTENANCE_MODE"
 msgstr "The ELX website is currently in 
 maintenance mode. Please check back soon - we apologize for any inconvenience."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_DASHBOARD"
 msgstr "Mi tablero"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_POINTS"
 msgstr "Mis puntos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_PROGRESS"
 msgstr "Mi Progreso"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEED_HELP"
 msgstr "¿Necesita ayuda?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEW_PASSWORD"
 msgstr "Nueva Contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NO_LEVELS"
 msgstr "No se encontraron niveles"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD"
 msgstr "Contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD_REQUEST_RECEIVED"
 msgstr "Solicitud de contraseña recibida"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROBLEM_LOADING"
 msgstr "Hubo un problema cargando este contenido, por favor intente más tarde."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_LIBRARY"
 msgstr "Biblioteca de productos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_SEARCH_TITLE"
 msgstr "Biblioteca De Productos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ACTIVATE"
 msgstr "Activa tu cuenta Gravatar desde el correo de confirmación"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ADD_PHOTO"
 msgstr "Añade tu foto de perfil a tu cuenta Gravatar"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_CREATE_ACCOUNT"
 msgstr "Crea una cuenta gratis con Gravatar"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_FOLLOW_STEPS"
 msgstr "Sigues estos pasos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_HELP"
 msgstr "Nuevo en Gravatar y necesitas ayuda?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_PERSONALIZE"
 msgstr "Quieres personalizar tu foto de perfil? Crea una cuenta con Gravatar y añade tu foto. Se enlaza automaticamente con ELX!"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_UPDATES"
 msgstr "Tu perfil de ELX se actualiza automáticamente en un corto período de tiempo"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "RECENT_BADGES"
 msgstr "Últimas medallas"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REMEMBER_ME"
 msgstr "Recuerda mis datos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REQUEST_PASSWORD"
 msgstr "Solicita Nueva Contraseña"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_COUNT"
 msgstr "Mostrando {{ start }} - {{ end }} de {{ total }}"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FIELD"
 msgstr "Search"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FILTER"
 msgstr "Filtre Por"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_REFINE"
 msgstr "Defina La Búsqueda"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT"
 msgstr "Organice Por "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_AZ"
 msgstr "Título A-Z"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_POPULAR"
 msgstr "Más Popular"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_VIEW"
 msgstr "Ver"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_BADGES"
 msgstr "Ver Todas las Medallas"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_TOOLS"
 msgstr "Ver Todas las Herramientas"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_LEADERBOARD"
 msgstr "Ver Pantalla Completa de Resultados"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SERVER_ERROR"
 msgstr "El servidor ha encontrado un problema"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SIGN_IN"
 msgstr "Registrarse"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SORRY_NO_FAVORITES"
 msgstr "Disculpa, no hay favoritos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUBMIT"
 msgstr "Entregar"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUGGESTED_FOR_ME"
 msgstr "Sugerido para mí"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TERMS_AND_CONDITIONS"
 msgstr "Políticas y Términos de Privacidad / Condiciones"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_BADGES"
 msgstr "Credenciales"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LEADERBOARD"
 msgstr "Tabla de Resultados"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LOGIN"
 msgstr "Comenzar Sesión"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_POINTS"
 msgstr "Puntos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_RANK"
 msgstr "Categorias"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_SPOTLIGHT"
 msgstr "A La Luz (o En La Mirilla)"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TOOLS"
 msgstr "Herramientas  "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNFAVORITE"
 msgstr "Menos favoritos"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNKNOWN_USER"
 msgstr "Usuario Desconocido"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UPDATE_LANGUAGE_MESSAGE"
 msgstr "Actualizando Idiioma"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "WHATS_NEW_TRENDING"
 msgstr "Lo Nuevo y en tendencia"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "Advanced_Night_Repair"
 msgstr "Advanced Night Repair"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "Advanced_Night_Repair_2"
 msgstr "Advanced Night Repair 2"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "Beautiful_Skin_for_Life"
 msgstr "Piel Hermosa de por Vid"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "Greet_Meet_Treat_Complete"
 msgstr "Saluda, Conoce, Obsequia, Completa"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "New_Dimension"
 msgstr "New Dimension"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACCOUNT"
 msgstr "Account"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIRST_NAME"
 msgstr "First Name"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LAST_NAME"
 msgstr "Last Name"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_EXISTS"
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ERROR"
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNEXPECTED_ERROR"
 msgstr "An unexpected error has occurred, please try again later. "
 

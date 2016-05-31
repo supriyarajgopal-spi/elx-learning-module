@@ -1,528 +1,528 @@
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_NOT_FOUND"
 msgstr "Vi beklager, men den e-mail adressen stemmer ikke overens med noen ELX konto. Vennligst prøv en annen e-mail. "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "INVALID_EMAIL_PASS"
 msgstr "E-mailen eller passordet du brukte stemmer ikke. Vennligst prøv igjen."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ALERT_PRODUCTS"
 msgstr "Oppdaterer produkter"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BADGES"
 msgstr "Badges"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_UPDATE"
 msgstr "Oppdater"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_DETAILS"
 msgstr "se detaljer"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_TOOL"
 msgstr "Se verktøy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CLOSEST_LEVEL_TO_COMPLETION"
 msgstr "Nærmeste nivå før mål"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COMAPRE_SCORE"
 msgstr "Sammenlikn min poengsum med"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CONFIRM_PASSWORD"
 msgstr "Bekreft passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COPYRIGHT"
 msgstr "© Estée Lauder Inc. Alle rettigheter reservert."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_LANGUAGE"
 msgstr "Nåværende språk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_PASSWORD"
 msgstr "Nåværende passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_LANGUAGE"
 msgstr "Velg språk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_PROFILE_AND_PASSWORD"
 msgstr "Rediger profil & passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ADDRESS"
 msgstr "E-postadresse"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ESTEE_LAUDER_EXPERIENCE"
 msgstr "THE THE ESTÉE LAUDER EXPERIENCE"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_LEARNING_LEVELS"
 msgstr "Utforsk læringsnivåer"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_PRODUCT_LIBRARY"
 msgstr "Utforsk produkt biblioteket"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITE"
 msgstr "favoritt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITED_MESSAGE"
 msgstr "Ditt favoritt produkt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIELDS_DONT_MATCH"
 msgstr "Feltene matcher ikke"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL"
 msgstr "Verden"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL_CATEGORIES"
 msgstr "Alle kategorier"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_BESTSELLER"
 msgstr "Bestselgere"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_COMPLETED"
 msgstr "Ferdig"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FIFTY"
 msgstr "50"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FRAGRANCE"
 msgstr "Duft"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_IN_PROGRESS"
 msgstr "Jobber"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MAKEUP"
 msgstr "Makeup"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_MARKET"
 msgstr "Mitt land"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_REGION"
 msgstr "Min region"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_RETAILER"
 msgstr "Min forhandler"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_STORE"
 msgstr "Min butikk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_RENUTRIV"
 msgstr "Re-Nutriv"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_SKINCARE"
 msgstr "Hudpleie"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TEN"
 msgstr "10"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TWENTY"
 msgstr "20"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_PASSWORD"
 msgstr "Glemt passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "GLOBAL_SEARCH_TITLE"
 msgstr "søk resultater"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACTIVITIES"
 msgstr "Nylig gjennomførte aktiviteter"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LANGUAGE"
 msgstr "Ønsket språk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LAST_LOGIN"
 msgstr "Forrige innlogging"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVELS_COMPLETED"
 msgstr "Nivåer som er ferdig"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOCATION"
 msgstr "Sted:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOGOUT"
 msgstr "Logg ut"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MAINTENANCE_MODE"
 msgstr "Nettsiden er i vedlikeholdsmodus"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MARKET"
 msgstr "Marked"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MEMBER"
 msgstr "Medlem siden:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_BADGES"
 msgstr "Mine skilt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_FAVORITES"
 msgstr "Mine favoritter"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_LEADERBOARD"
 msgstr "Min rangering"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_POINTS"
 msgstr "Mine poeng"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_PROGRESS"
 msgstr "Min utvikling"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_TOOLS"
 msgstr "Mine verktøy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_NEXT_LEVEL"
 msgstr "Neste nivå:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_PROGRESS"
 msgstr "Min utvikling"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNIN"
 msgstr "Logg inn"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_STORE"
 msgstr "Butikk/Dør:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SUGGESTED"
 msgstr "Anbefalt for deg:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LANGUAGE_UPDATED_MESSAGE"
 msgstr "Språk oppdatert til"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEADERBOARD"
 msgstr "Navigasjonsboks"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVEL_FILTER_ALL"
 msgstr "Alle"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS"
 msgstr "Nivåer"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_COMPLETED"
 msgstr "Nivåer som er ferdig"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_HEADER_TEXT"
 msgstr "Disse ulike nivåene er spesielt utviklet for deg-får at du skal kunne bli enda bedre. Du bestemmer hvordan du skal komme til neste nivå"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_CONTENT"
 msgstr "Lader innhold"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_TOOLS"
 msgstr "Lader verktøy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_SUCCESS"
 msgstr "Innlogging vellykket"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_WAIT"
 msgstr "Vennligst vent"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGOUT_MESSAGE"
 msgstr "Du har logget ut. Ser deg snart igjen!"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOG_OUT"
 msgstr "Logg ut"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOOKING_FOR_LOGIN"
 msgstr "Ser etter eksisterende innlogging"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MESSAGE_MAINTENANCE_MODE"
 msgstr "ELX nettsiden er for tiden i vedlikeholdsmodus. Vennligst kom tilbake senere - vi beklager eventuelle ulemper dette medfører."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_DASHBOARD"
 msgstr "Mitt skrivebord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_POINTS"
 msgstr "Mine poeng"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_PROGRESS"
 msgstr "Min utvikling"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEED_HELP"
 msgstr "Trenger du hjelp?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEW_PASSWORD"
 msgstr "Nytt passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NO_LEVELS"
 msgstr "Ingen nivåer funnet"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD"
 msgstr "Passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD_REQUEST_RECEIVED"
 msgstr "Passord mottatt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROBLEM_LOADING"
 msgstr "Problemer med å laste innhold, prøv igjen senere"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_LIBRARY"
 msgstr "Produkt bibliotek"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_SEARCH_TITLE"
 msgstr "Produkt bibliotek"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ACTIVATE"
 msgstr "Aktiver din Gravatar konto fra bekreftelses mailen"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ADD_PHOTO"
 msgstr "Legg til ditt profilbilde til din Gravatar konto"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_CREATE_ACCOUNT"
 msgstr "Opprett en gratis konto med Gravatar"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_FOLLOW_STEPS"
 msgstr "Følg disse stegene"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_HELP"
 msgstr "Er du ny i Gravatar og trenger hjelp?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_PERSONALIZE"
 msgstr "Vil du ha et personlig profilbilde? Opprett en Gravatarkonto, og legg til ditt bilde. Det linkes automatisk til ELX"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_UPDATES"
 msgstr "Din ELX profil oppdateres automatisk innen kort tid!"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "RECENT_BADGES"
 msgstr "Siste Badges"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REMEMBER_ME"
 msgstr "Husk Meg"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REQUEST_PASSWORD"
 msgstr "Be om nytt passord"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_COUNT"
 msgstr "Viser {{ start }} - {{ end }} : {{ total }}"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FILTER"
 msgstr "Filtrer "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_REFINE"
 msgstr "avansert søk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT"
 msgstr "sorter etter"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_AZ"
 msgstr "tittel A-Å"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_POPULAR"
 msgstr "Mest populær"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_VIEW"
 msgstr "Se"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_BADGES"
 msgstr "Se alle merker"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_TOOLS"
 msgstr "Se alle verktøy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_LEADERBOARD"
 msgstr "Se full poengoversikt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SERVER_ERROR"
 msgstr "Serveren oppdaget en feil"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SIGN_IN"
 msgstr "Logg inn"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SORRY_NO_FAVORITES"
 msgstr "Beklager, ingen favoritter"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUBMIT"
 msgstr "Fullfør"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUGGESTED_FOR_ME"
 msgstr "Foreslått for Meg"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TERMS_AND_CONDITIONS"
 msgstr "Privacy Policy and Terms | Conditions"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_BADGES"
 msgstr "Skilt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LEADERBOARD"
 msgstr "Poengsum oversikt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LOGIN"
 msgstr "Logg inn"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_POINTS"
 msgstr "Poeng"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_RANK"
 msgstr "Rangering"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_SPOTLIGHT"
 msgstr "Spotlight"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TOOLS"
 msgstr "Verktøy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNFAVORITE"
 msgstr "Ingen favoritt"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNKNOWN_USER"
 msgstr "Ukjent bruker"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UPDATE_LANGUAGE_MESSAGE"
 msgstr "Oppdaterer språk"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "WHATS_NEW_TRENDING"
 msgstr "Hva er nytt & trendy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVEL"
 msgstr "Nivåer"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_SEE_MORE"
 msgstr "Se mer"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FIELD"
 msgstr "SØK"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACCOUNT"
 msgstr "Konto"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIRST_NAME"
 msgstr "Fornavn"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LAST_NAME"
 msgstr "Etternavn"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNUP"
 msgstr "Login"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_EXISTS"
 msgstr "E-kontoen finnes allerede. Hvis du ikke husker passordet, kan du klikke på Glemt Passord."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ERROR"
 msgstr "E post adressen er ikke skrevet riktig. Sjekk din e-post adresse og prøv igjen"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNEXPECTED_ERROR"
 msgstr "Det har vært en feil. Kan du prøve igjen senere."
 

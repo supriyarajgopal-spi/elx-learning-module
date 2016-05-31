@@ -1,534 +1,534 @@
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_NOT_FOUND"
 msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta.  "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "INVALID_EMAIL_PASS"
 msgstr "Sähköpostiosoite tai salasana jolla kirjauduit ei täsmää. Yritä uudestaan."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ALERT_PRODUCTS"
 msgstr "Tuotteiden päivitys…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BADGES"
 msgstr "Ansiomerkki"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_UPDATE"
 msgstr "Päivitä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_DETAILS"
 msgstr "Katso yksityiskohdat "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_VIEW_TOOL"
 msgstr "Katso Työvälineet"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CLOSEST_LEVEL_TO_COMPLETION"
 msgstr "Lähin täydentävä taso:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COMAPRE_SCORE"
 msgstr "Vertaa pisteitäni seuraavan henkilön pisteisiin:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CONFIRM_PASSWORD"
 msgstr "Vahvista Salasana"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "COPYRIGHT"
 msgstr "© Estée Lauder Inc. Kaikki kansainväliset oikeudet pidätetään."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_LANGUAGE"
 msgstr "Nykyinen Kieli"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "CURRENT_PASSWORD"
 msgstr "Nykyinen Salasana"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_LANGUAGE"
 msgstr "Vaihda Kieli"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EDIT_PROFILE_AND_PASSWORD"
 msgstr "Muuta profiiliani ja/tai salasanaani "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ADDRESS"
 msgstr "Sähköpostiosoite"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "ESTEE_LAUDER_EXPERIENCE"
 msgstr "THE ESTÉE LAUDER EXPERIENCE"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_LEARNING_LEVELS"
 msgstr "Tutustu oppimistasoihin"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EXPLORE_PRODUCT_LIBRARY"
 msgstr "Tutustu tuotekirjastoon"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITE"
 msgstr "Tykkää "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FAVORITED_MESSAGE"
 msgstr "Klikkaa suosikkia"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIELDS_DONT_MATCH"
 msgstr "Kentät eivät täsmää "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL"
 msgstr "Maailma"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_ALL_CATEGORIES"
 msgstr "Kaikki katekoriat"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_BESTSELLER"
 msgstr "Myydyimmät"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_COMPLETED"
 msgstr "Valmis"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FIFTY"
 msgstr "50"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_FRAGRANCE"
 msgstr "Tuoksu"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_IN_PROGRESS"
 msgstr "Keskeneräinen"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MAKEUP"
 msgstr "Meikki"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_MARKET"
 msgstr "Maa"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_REGION"
 msgstr "Alueeni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_RETAILER"
 msgstr "Jälleenmyyjäni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_MY_STORE"
 msgstr "Tavarataloni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_RENUTRIV"
 msgstr "Re-Nutriv"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_SKINCARE"
 msgstr "Ihonhoito"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TEN"
 msgstr "10"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FILTER_TWENTY"
 msgstr "20"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FORGOT_PASSWORD"
 msgstr "Salasana unohtunut"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "GLOBAL_SEARCH_TITLE"
 msgstr "Hakutulokset "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACTIVITIES"
 msgstr "Viimeksi valmistuneet tehtävät:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LANGUAGE"
 msgstr "Kielivalinta:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LAST_LOGIN"
 msgstr "Viimeisin sisäänkirjautuminen:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVELS_COMPLETED"
 msgstr "Suoritetut tasot:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOCATION"
 msgstr "Sijainti:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LOGOUT"
 msgstr "Uloskirjautuminen"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MAINTENANCE_MODE"
 msgstr "Sivusto ylläpitotilassa"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MARKET"
 msgstr " Markkina"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MEMBER"
 msgstr "Jäsenenä alkaen:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_BADGES"
 msgstr "Arvomerkki"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_FAVORITES"
 msgstr "Suosikkini"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_LEADERBOARD"
 msgstr "Oma pistetaulukko"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_POINTS"
 msgstr "Pisteeni:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_PROGRESS"
 msgstr "Edistymiseni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_MY_TOOLS"
 msgstr "Työvälineeni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_NEXT_LEVEL"
 msgstr "Seuraava ylempi taso:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_PROGRESS"
 msgstr "Edistymiseni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNIN"
 msgstr "Sisäänkirjautuminen:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_STORE"
 msgstr "Myymälä:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_USERNAME"
 msgstr "Käyttäjätunnus:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SUGGESTED"
 msgstr "Sinulle ehdotettu:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LANGUAGE_UPDATED_MESSAGE"
 msgstr "Päivitetty Kieli"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEADERBOARD"
 msgstr "Tulostilanne"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVEL_FILTER_ALL"
 msgstr "Kaikki"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS"
 msgstr "Tasot"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_COMPLETED"
 msgstr "Suoritetut tasot:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LEVELS_HEADER_TEXT"
 msgstr "Jokainen tasoista on tehty sinua varten-ollaksesi parempi
 siinä mitä teet. Sinä päätät miten käyt ne läpi ja kuinka haluat edetä."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_CONTENT"
 msgstr "Lataa sisältöä…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOADING_TOOLS"
 msgstr "Ole hyvä odota…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_SUCCESS"
 msgstr "Kirjautuminen onnistunut"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGIN_WAIT"
 msgstr "Ole hyvä odota…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOGOUT_MESSAGE"
 msgstr "Olet kirjautunut ulos.  Nähdään pian uudestaan!"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOG_OUT"
 msgstr "Uloskirjautuminen"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LOOKING_FOR_LOGIN"
 msgstr "Etsitään olemassa olevaa kirjautumista…"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MESSAGE_MAINTENANCE_MODE"
 msgstr "ELX sivusto on tällä hetkellä
 huolto tilassa. Tarkista tilanne myöhemmin - pahoittelemme häiriötä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_DASHBOARD"
 msgstr "Kojelautani"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_POINTS"
 msgstr "Pisteeni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "MY_PROGRESS"
 msgstr "Edistymiseni"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEED_HELP"
 msgstr "Tarvitsetko apua?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NEW_PASSWORD"
 msgstr "Uusi Salasana"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "NO_LEVELS"
 msgstr "Tasoja ei löydy"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD"
 msgstr "Salasana"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PASSWORD_REQUEST_RECEIVED"
 msgstr "Pyydetty salasana saatu"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROBLEM_LOADING"
 msgstr "Ongelma sisällön lataamisessa, ole hyvä ja yritä uudestaan."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_LIBRARY"
 msgstr "Tuotekirjasto"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PRODUCT_SEARCH_TITLE"
 msgstr "Tuotekirjasto"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ACTIVATE"
 msgstr "Aktivoi Gravatar tilisi vahvistus sähköpostilla"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_ADD_PHOTO"
 msgstr "Lisää kuvasi Gravatar tiliin"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_CREATE_ACCOUNT"
 msgstr "Luo ilmainen Gravatar tili"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_FOLLOW_STEPS"
 msgstr "Noudata näitä ohjeita:"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_HELP"
 msgstr "Uusi Gravatar käyttäjä ja tarvitset apua?"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_PERSONALIZE"
 msgstr "Haluatko vaihtaa profiilin kuvan? Tee tili Gravatariin  ja lisää kuva. Se linkittyy automaattisesti ELXään"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "PROFILE_UPDATES"
 msgstr "ELX profiilisi päivittyy automaattisesti hyvin nopeasti!"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "RECENT_BADGES"
 msgstr "Viimeisimmät ansiomerkkini"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REMEMBER_ME"
 msgstr "Muista minut"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "REQUEST_PASSWORD"
 msgstr "Pyydä uusi salasana"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_COUNT"
 msgstr "Hakutulos {{ start }} - {{ end }} of {{ total }}"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FILTER"
 msgstr "Suodata"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_REFINE"
 msgstr "Tarkenna hakua"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT"
 msgstr "Järjestä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_AZ"
 msgstr "Nimi A-Z"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_SORT_POPULAR"
 msgstr "Suosituimmat"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_VIEW"
 msgstr "Katso "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_BADGES"
 msgstr "Näytä kaikki ansiomerkit "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_ALL_TOOLS"
 msgstr "Katso kaikki työvälineet "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEE_LEADERBOARD"
 msgstr "Katso koko pistetaulukko"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SERVER_ERROR"
 msgstr "Palvelinvirhe"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SIGN_IN"
 msgstr "Kirjaudu sisään"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SORRY_NO_FAVORITES"
 msgstr "Valitan, ei tykkäystä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUBMIT"
 msgstr "Suorita"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SUGGESTED_FOR_ME"
 msgstr "Ehdotamme sinulle "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TERMS_AND_CONDITIONS"
 msgstr "Tietosuojakäytännön ehdot"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_BADGES"
 msgstr "Arvomerkki"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LEADERBOARD"
 msgstr "Pistetaulukko"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_LOGIN"
 msgstr "Kirjaudu Sisään"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_POINTS"
 msgstr "Pisteet"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_RANK"
 msgstr "Sijoitus"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TITLE_SPOTLIGHT"
 msgstr "Valokeilassa"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "TOOLS"
 msgstr "Työvälineet "
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNFAVORITE"
 msgstr "ei tykkäystä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNKNOWN_USER"
 msgstr "Tuntematon käyttäjä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UPDATE_LANGUAGE_MESSAGE"
 msgstr "ei tykkäystä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "WHATS_NEW_TRENDING"
 msgstr "Mitä uutta & Trendikästä"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_LEVEL"
 msgstr "Tasot"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "BTN_SEE_MORE"
 msgstr "Katso lisää"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "SEARCH_FIELD"
 msgstr "Hae"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_ACCOUNT"
 msgstr "Account"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "FIRST_NAME"
 msgstr "First Name"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LAST_NAME"
 msgstr "Last Name"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_EXISTS"
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "EMAIL_ERROR"
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
-#: sites/all/modules/custom/elx_languages
+#: /
 msgid "UNEXPECTED_ERROR"
 msgstr "An unexpected error has occurred, please try again later. "
 

@@ -360,14 +360,11 @@ msgstr "Gravatar’ın ne olduğunu bilmiyorum ve yardıma ihtiyacım var."
 
 #: /
 msgid "PROFILE_PERSONALIZE"
-msgstr "Profil fotoğrafınızı kişiselleştirmek mi istiyorsunuz?
-Sadece bir defaya mahsus Gravatar’a fotoğraf yükleyerek birçok yerde görüntülenmesini sağlayabilirsiniz. Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir.
-"
+msgstr "Profil fotoğrafınızı kişiselleştirmek mi istiyorsunuz? Sadece bir defaya mahsus Gravatar’a fotoğraf yükleyerek birçok yerde görüntülenmesini sağlayabilirsiniz. Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
 
 #: /
 msgid "PROFILE_UPDATES"
-msgstr "Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir.
-"
+msgstr "Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
 
 #: /
 msgid "RECENT_BADGES"

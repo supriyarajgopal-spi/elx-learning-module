@@ -264,8 +264,7 @@ msgstr "Suoritetut tasot:"
 
 #: /
 msgid "LEVELS_HEADER_TEXT"
-msgstr "Jokainen tasoista on tehty sinua varten-ollaksesi parempi
-siinä mitä teet. Sinä päätät miten käyt ne läpi ja kuinka haluat edetä."
+msgstr "Jokainen tasoista on tehty sinua varten-ollaksesi parempi siinä mitä teet. Sinä päätät miten käyt ne läpi ja kuinka haluat edetä."
 
 #: /
 msgid "LOADING_CONTENT"
@@ -297,8 +296,7 @@ msgstr "Etsitään olemassa olevaa kirjautumista…"
 
 #: /
 msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "ELX sivusto on tällä hetkellä
-huolto tilassa. Tarkista tilanne myöhemmin - pahoittelemme häiriötä"
+msgstr "ELX sivusto on tällä hetkellä huolto tilassa. Tarkista tilanne myöhemmin - pahoittelemme häiriötä"
 
 #: /
 msgid "MY_DASHBOARD"

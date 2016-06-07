@@ -292,8 +292,7 @@ msgstr "Szukam istniejącego loginu…"
 
 #: /
 msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "Strona ELX chwilowo jest niedostępna. 
-Spróbuj później - przepraszamy za niedogodności."
+msgstr "Strona ELX chwilowo jest niedostępna. Spróbuj później - przepraszamy za niedogodności."
 
 #: /
 msgid "MY_DASHBOARD"

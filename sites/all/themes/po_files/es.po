@@ -300,8 +300,7 @@ msgstr "Buscando su acceso existente…"
 
 #: /
 msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "The ELX website is currently in 
-maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
 
 #: /
 msgid "MY_DASHBOARD"

@@ -260,8 +260,7 @@ msgstr "Uppnådda Nivåer:"
 
 #: /
 msgid "LEVELS_HEADER_TEXT"
-msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre
-på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
+msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
 
 #: /
 msgid "LOADING_CONTENT"
@@ -517,8 +516,7 @@ msgstr "Logga In"
 
 #: /
 msgid "EMAIL_EXISTS"
-msgstr "E-postadressen finns redan. 
-Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
+msgstr "E-postadressen finns redan. Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
 
 #: /
 msgid "EMAIL_ERROR"

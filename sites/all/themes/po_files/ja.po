@@ -292,9 +292,7 @@ msgstr "現在のログインを検索中…"
 
 #: /
 msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "ELXウェブサイトは現在メンテナンス中です。
-しばらくして再度お試しください。
-ご迷惑をおかけしております。"
+msgstr "ELXウェブサイトは現在メンテナンス中です。しばらくして再度お試しください。ご迷惑をおかけしております。"
 
 #: /
 msgid "MY_DASHBOARD"

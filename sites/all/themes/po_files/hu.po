@@ -292,8 +292,7 @@ msgstr "Létező felhasználónév keresése…"
 
 #: /
 msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "Az ELX honlap jelenleg
-karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
+msgstr "Az ELX honlap jelenleg karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
 
 #: /
 msgid "MY_DASHBOARD"

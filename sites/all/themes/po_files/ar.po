@@ -1,489 +1,489 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجال المحاولة مع بريد إلكتروني آخر. "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجال المحاولة مع بريد إلكتروني آخر."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "نوان البريد الإلكتروني أو كلمة المرور التي أدخلتها غير مطابقة. حاول مرة أخرى."
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "تحديث المنتجات"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "الشارات"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "تحديث"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "مشاهدة التفاصيل"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "عرض الأداة"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "أقرب مستوى للانتهاء:"
 
 #: /
-msgid "COMAPRE_SCORE"
-msgstr "مقارنة نقاط أهدافي مع:  "
+msgid "Compare My score to"
+msgstr "مقارنة نقاط أهدافي مع:"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "تأكيد كلمة السر"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "جميع حقوق الطبع محفوظة عالميا لمجموعة شركات ©Estée Lauder Inc"
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "اللغة الحالية"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "كلمة السر الحالية"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "تعديل اللغة"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "تعديل البيانات الشخصية & كلمة السر"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "عنوان البريد الكتروني"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "تجربة وخبرة إستي لودر"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "مستوى الاستكشاف"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "استكشفي مكتبة المنتج"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "المفضلة"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "منتجك المفضل"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "الحقول غير مطابقة!"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "العالم"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "جميع الفئات"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "الأكثر مبيعا"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "انتهى"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "العطر"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "قيد التقدم،"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "الماكياج"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "بلدي"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "منطقتي"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "متجري"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "محلي"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "عناية بالبشرة"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "نسيت كلمة السر"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
-msgstr "نتائج البحث "
+msgid "Search Results"
+msgstr "نتائج البحث"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "الأنشطة التي أنهيتها/أكملتها مؤخرا:"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "اللغة المختارة:"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "آخر تاريخ لتسجيل الدخول:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "المستويات/المراحل التي تم إنهائها:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "المكان:"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "تسجيل الخروج"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "الموقع يخضع لإجراءات الصيانة"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "السوق"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "عضوة منذ:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "شاراتي المكتسبة"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "أفضلياتي"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "قائمتي الخاصة بالريادة"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "نقاطي:"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "تقدمي وتطوري"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "أدواتي"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "المستوى الأعلى التالي:"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "تقدمي وتطوري"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "تسجيل الدخول"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "المتجر/المحل:"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "المنتجات المقترحة لك:"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "تحديث اللغة إلى"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "قائمتي الخاصة بالريادة"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "الكل،"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "المستويات"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "المستويات/المراحل التي تم إنهائها:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
-msgstr "لقد تم ابتكار كل مستوى من هذه المستويات خصيصا لكم - لتحسين والارتقاء بجودة ما تقومون به. كل واحد منكم هو من يقرر كيفية التجربة وكيفية الارتقاء بالمستوى.  "
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "لقد تم ابتكار كل مستوى من هذه المستويات خصيصا لكم - لتحسين والارتقاء بجودة ما تقومون به. كل واحد منكم هو من يقرر كيفية التجربة وكيفية الارتقاء بالمستوى."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "جاري تحميل المحتوى ..."
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "أدوات التحميل ..."
 
 #: /
-msgid "LOGIN_SUCCESS"
-msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجاء المحاولة مع بريد إلكتروني آخر. هل أنت بحاجة لمزيد من المساعدة من استي لودر؟ "
+msgid "Login Successful"
+msgstr "نعتذر. يبدو أن هذا البريد الإلكتروني غير مرتبط أو لا يعود لحساب ELX. الرجاء المحاولة مع بريد إلكتروني آخر. هل أنت بحاجة لمزيد من المساعدة من استي لودر؟"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "الرجاء الانتظار..."
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "لقد سجلت خروجك من الموقع. نراك قريبا!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "تسجيل الخروج"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
-msgstr "البحث عن تسجيل دخول حالي... "
+msgid "Looking for existing login..."
+msgstr "البحث عن تسجيل دخول حالي..."
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "إن موقع ELX يخضع حاليا لإجراءات الصيانة. يرجى العودة لزيارة الموقع في أقرب وقت -- نأسف  لأي إزعاج. "
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "إن موقع ELX يخضع حاليا لإجراءات الصيانة. يرجى العودة لزيارة الموقع في أقرب وقت -- نأسف  لأي إزعاج."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "لوحة الإعدادات الخاصة بي"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "نقاطي"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "تقدمي وتطوري"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "بحاجة لمساعدة؟"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "كلمة سر جديدة"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "لم يتم العثور على مستويات."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "كلمة السر"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "تم استلام طلب كلمة السر"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "طرأت مشكلة في تحميل المحتوى، يرجى المحاولة مرة أخرى"
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "مكتبة المنتج"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "مكتبة المنتج"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "تفعيل حساب Gravatar من إيميل التأكيد."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "إضافة صورة البروفايل إلى حسابك Gravatar"
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "إنشاء حساب مجاني مع Gravatar"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "اتباع الخطوات التالية:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "جديد على Gravatar وبحاجة لقليل من المساعدة؟"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "تخصيص صورة البروفايل؟ إنشاء حساب Gravatar، وإضافة الصورة. سوف يتم ربطها  تلقائياً مع ELX!"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "يتم تحديث البروفايل الخاص بك المتعلق بـ ELX تلقائياً خلال وقت قصير!"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "شارات حديثة"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "تذكرني"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "طلب كلمة سر جديدة"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "عرض  {{ start }} - {{ end }} of {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "منقحة من قبل"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "بحث محسّن"
 
 #: /
-msgid "SEARCH_SORT"
-msgstr "الفرز حسب "
+msgid "Sort By"
+msgstr "الفرز حسب"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "العنوان أ - ي"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "الأشهر"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "عرض/إظهار"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "مشاهدة كل الشارات"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "مشاهدة كل الأدوات"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "مشاهدة لوحة الرواد المتصدرين بأكلمها"
 
 #: /
-msgid "SERVER_ERROR"
-msgstr "يوجد عطل/ مشكلة في الخادم "
+msgid "The server encountered an error"
+msgstr "يوجد عطل/ مشكلة في الخادم"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "تسجيل الدخول"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "عذراً، لا يوجد مفضلة."
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "إدخال"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "المنتجات المقترحة لك:"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "سياسة الخصوصية و الشروط |  الأحكام"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "شاراتي"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "لوحة الرواد المتصدرين"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "تسجيل الدخول"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "النقاط"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "المرتبة"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "تسليط الأضواء"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "الأدوات"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "غير مفضلة"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "لم يتم التعرف على المستخدم"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "تحديث اللغة"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "ما هو جديد & سائد/موضة"
 
 #: /
@@ -491,23 +491,23 @@ msgid "BTN_SEE_MORE"
 msgstr "مشاهدة المزيد"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "المستويات"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "بحث"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -515,14 +515,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

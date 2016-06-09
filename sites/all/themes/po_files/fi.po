@@ -1,237 +1,237 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta.  "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Sähköpostiosoite tai salasana jolla kirjauduit ei täsmää. Yritä uudestaan."
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "Tuotteiden päivitys…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Ansiomerkki"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Päivitä"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
-msgstr "Katso yksityiskohdat "
+msgid "view the details"
+msgstr "Katso yksityiskohdat"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Katso Työvälineet"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "Lähin täydentävä taso:"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "Vertaa pisteitäni seuraavan henkilön pisteisiin:"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Vahvista Salasana"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. Kaikki kansainväliset oikeudet pidätetään."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Nykyinen Kieli"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Nykyinen Salasana"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Vaihda Kieli"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
-msgstr "Muuta profiiliani ja/tai salasanaani "
+msgid "edit profile &amp; password"
+msgstr "Muuta profiiliani ja/tai salasanaani"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "Sähköpostiosoite"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "THE ESTÉE LAUDER EXPERIENCE"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Tutustu oppimistasoihin"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Tutustu tuotekirjastoon"
 
 #: /
-msgid "FAVORITE"
-msgstr "Tykkää "
+msgid "favorited"
+msgstr "Tykkää"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Klikkaa suosikkia"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
-msgstr "Kentät eivät täsmää "
+msgid "Fields do not match!"
+msgstr "Kentät eivät täsmää"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "Maailma"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Kaikki katekoriat"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "Myydyimmät"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "Valmis"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Tuoksu"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "Keskeneräinen"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Meikki"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Maa"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Alueeni"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "Jälleenmyyjäni"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Tavarataloni"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Ihonhoito"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Salasana unohtunut"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
-msgstr "Hakutulokset "
+msgid "Search Results"
+msgstr "Hakutulokset"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "Viimeksi valmistuneet tehtävät:"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Kielivalinta:"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "Viimeisin sisäänkirjautuminen:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Suoritetut tasot:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Sijainti:"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "Uloskirjautuminen"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "Sivusto ylläpitotilassa"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr " Markkina"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Jäsenenä alkaen:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Arvomerkki"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Suosikkini"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "Oma pistetaulukko"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Pisteeni:"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Edistymiseni"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Työvälineeni"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Seuraava ylempi taso:"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Edistymiseni"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Sisäänkirjautuminen:"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Myymälä:"
 
 #: /
@@ -239,259 +239,259 @@ msgid "LABEL_USERNAME"
 msgstr "Käyttäjätunnus:"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Sinulle ehdotettu:"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "Päivitetty Kieli"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Tulostilanne"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "Kaikki"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Tasot"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Suoritetut tasot:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
-msgstr "Jokainen tasoista on tehty sinua varten-ollaksesi parempi siinä mitä teet. Sinä päätät miten käyt ne läpi ja kuinka haluat edetä."
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Jokainen tasoista on tehty sinua varten-ollaksesi parempi  siinä mitä teet. Sinä päätät miten käyt ne läpi ja kuinka haluat edetä."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "Lataa sisältöä…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Ole hyvä odota…"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "Kirjautuminen onnistunut"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Ole hyvä odota…"
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Olet kirjautunut ulos.  Nähdään pian uudestaan!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "Uloskirjautuminen"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Etsitään olemassa olevaa kirjautumista…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "ELX sivusto on tällä hetkellä huolto tilassa. Tarkista tilanne myöhemmin - pahoittelemme häiriötä"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELX sivusto on tällä hetkellä  huolto tilassa. Tarkista tilanne myöhemmin - pahoittelemme häiriötä"
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Kojelautani"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Pisteeni"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Edistymiseni"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "Tarvitsetko apua?"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Uusi Salasana"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Tasoja ei löydy"
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Salasana"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "Pyydetty salasana saatu"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "Ongelma sisällön lataamisessa, ole hyvä ja yritä uudestaan."
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "Tuotekirjasto"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "Tuotekirjasto"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Aktivoi Gravatar tilisi vahvistus sähköpostilla"
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Lisää kuvasi Gravatar tiliin"
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Luo ilmainen Gravatar tili"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Noudata näitä ohjeita:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Uusi Gravatar käyttäjä ja tarvitset apua?"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "Haluatko vaihtaa profiilin kuvan? Tee tili Gravatariin  ja lisää kuva. Se linkittyy automaattisesti ELXään"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "ELX profiilisi päivittyy automaattisesti hyvin nopeasti!"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Viimeisimmät ansiomerkkini"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Muista minut"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Pyydä uusi salasana"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Hakutulos {{ start }} - {{ end }} of {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "Suodata"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "Tarkenna hakua"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "Järjestä"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Nimi A-Z"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "Suosituimmat"
 
 #: /
-msgid "SEARCH_VIEW"
-msgstr "Katso "
+msgid "View"
+msgstr "Katso"
 
 #: /
-msgid "SEE_ALL_BADGES"
-msgstr "Näytä kaikki ansiomerkit "
+msgid "See All Badges"
+msgstr "Näytä kaikki ansiomerkit"
 
 #: /
-msgid "SEE_ALL_TOOLS"
-msgstr "Katso kaikki työvälineet "
+msgid "See All Tools"
+msgstr "Katso kaikki työvälineet"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "Katso koko pistetaulukko"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "Palvelinvirhe"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "Kirjaudu sisään"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Valitan, ei tykkäystä"
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Suorita"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
-msgstr "Ehdotamme sinulle "
+msgid "Suggested for me:"
+msgstr "Ehdotamme sinulle"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "Tietosuojakäytännön ehdot"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Arvomerkki"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Pistetaulukko"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "Kirjaudu Sisään"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Pisteet"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Sijoitus"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Valokeilassa"
 
 #: /
-msgid "TOOLS"
-msgstr "Työvälineet "
+msgid "Tools"
+msgstr "Työvälineet"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "ei tykkäystä"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Tuntematon käyttäjä"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "ei tykkäystä"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "Mitä uutta & Trendikästä"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "Tasot"
 
 #: /
@@ -499,19 +499,19 @@ msgid "BTN_SEE_MORE"
 msgstr "Katso lisää"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "Hae"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -519,14 +519,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

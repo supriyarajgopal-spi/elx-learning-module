@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "很抱歉，輸入的電子郵件地址似乎未設有 ELX 帳戶。請嘗試其他電子郵件地址。 "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "很抱歉，輸入的電子郵件地址似乎未設有 ELX 帳戶。請嘗試其他電子郵件地址。"
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "您輸入的email或密碼錯誤，請再試一次。"
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "更新產品…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "徽章"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "更新"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "查看詳情"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "查看工具"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "將近完成的級別："
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "比較個人積分至"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "確認密碼"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc.全球版權所有。"
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "已設定之語言"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "已設定之密碼"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "更改語言"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "編輯檔案與密碼"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "電子郵件地址"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "雅詩蘭黛體驗"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "探索學習水平"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "探索產品資料庫"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "最愛"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "最愛的產品"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "輸入正確"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "世界"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "所有類別"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "暢銷產品"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "已完成"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "香氛"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "處理中"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "彩妝"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "我的國家"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "我的地區"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "我的零售商"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "我的商店"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv白金系列"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "護膚"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "忘記密碼"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "搜尋結果"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "最近完成的活動："
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "語言選擇："
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "最後登入："
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "完成級別："
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "地區："
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "登出"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "網站維修中"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "市場"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "成為會員日期："
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "我的獎章"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "我的最愛"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "我的排行榜"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "我的積分："
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "我的進度"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "我的工具"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "下一級別："
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "我的進度"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "註冊"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "店舖／專櫃："
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "為您建議："
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "已更新語言至"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "排行榜"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "所有"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "等級"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "完成級別："
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "每項等級都是為您而設，讓您精進技巧。您可決定如何體驗這些等級，以及如何升級。"
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "正在載入內容…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "工具載入中…"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "成功登入"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "請等候…"
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "您已登出。下次再見！"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "登出"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "正在尋找現登入會員…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
 msgstr "ELX 網站目前正在維修中。請稍後再重新確認 - 對於造成任何不便，我們深感抱歉。"
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "我的控制板面"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "我的積分"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "我的進度"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "需要協助？"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "新密碼"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "沒有相關級別之搜尋結果."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "密碼"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "已收到密碼請求"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "載入內容期間出現問題，請重新嘗試。"
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "產品資料庫"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "產品資料庫"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "從電子郵件確認函中啟動您的Gravatar帳號。"
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "將您的大頭貼新增至Gravatar帳號中。"
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "利用Gravatar建立免費帳號"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "遵循以下步驟："
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "第一次使用Gravatar且需要協助嗎？"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "想要打造自己專屬的個人照嗎？利用Gravatar建立帳號，並新增您的照片，帳號將自動連結至ELX！"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "您的ELX個人檔案將於短時間內自動更新！"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "新近的徽章"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "記住我"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "要求新密碼"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "顯示 {{ start }} 的 {{ end }} - {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "篩選條件"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "優化搜尋"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "分類條件"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "標題A-Z"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "最熱門"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "查看"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "查看所有徽章"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "查看所有工具"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "查看整個排行榜"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "伺服器出現錯誤"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "登入"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "對不起，沒有最愛"
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "提交"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "給我的建議"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "私隱政策及條款 | 條件"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "獎章"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "排行榜"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "登入"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "積分"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "等級"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "焦點"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "工具"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "從最愛中抽起"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "不明用戶"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "更新語言中"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "最新動向"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "等級"
 
 #: /
@@ -495,19 +495,19 @@ msgid "BTN_SEE_MORE"
 msgstr "瞭解更多"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "搜尋"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -515,14 +515,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

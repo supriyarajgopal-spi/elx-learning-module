@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Λυπούμαστε πολύ. Αυτή η ηλεκτρονική διεύθυνση δε φαίνεται να είναι συνδεδεμένη με ΕLX λογαριασμό. Παρακαλούμε προσπαθήστε με μια διαφορετική ηλεκτρονική διεύθυνση.  "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Λυπούμαστε πολύ. Αυτή η ηλεκτρονική διεύθυνση δε φαίνεται να είναι συνδεδεμένη με ΕLX λογαριασμό. Παρακαλούμε προσπαθήστε με μια διαφορετική ηλεκτρονική διεύθυνση."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Το email ή ο κωδικός πρόσβασης που εισάγατε δεν ταιριάζουν. Παρακαλούμε δοκιμάστε ξανά."
 
 #: /
-msgid "ALERT_PRODUCTS"
-msgstr "Ανανέωση Προϊόντων… "
+msgid "Updating search..."
+msgstr "Ανανέωση Προϊόντων…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Διακριτικά"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Ανανέωση"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "ΛΕΠΤΟΜΕΡΕΙΕΣ"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Επισκόπηση Εργαλείου"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "Ένα Επίπεδο Πριν την Ολοκλήρωση:"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "Σύγκριση Του Σκορ Μου με"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Επιβεβαίωση Κωδικού Πρόσβασης"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. All worldwide rights reserved."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Τρέχουσα Γλώσσα"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Τρέχων Κωδικός Πρόσβασης"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Επιλογή Γλώσσας"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "Επεξεργαστείτε το Προφίλ και τον Κωδικό Πρόσβασης"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "Ηλεκτρονική Διεύθυνση"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "ΕΜΠΕΙΡΙΑ ΕΚΜΑΘΗΣΗΣ ESTEE LAUDER"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Περιηγηθείτε στα Επίπεδα Γνώσεων"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Περιηγηθείτε στη Βιβλιοθήκη Προϊόντων"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "Προτιμήσεις"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Τα αγαπημένα σας προϊόντα"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "Τα πεδία δεν ταυτίζονται!"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "Ο Κόσμος"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Όλες οι κατηγορίες"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "Bestsellers"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "ΟΛΟΚΛΗΡΩΘΗΚΕ"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Αρώματα"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "ΣΕ ΕΞΕΛΙΞΗ"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Μακιγιάζ"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Η Χώρα μου"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Η Περιοχή μου"
 
 #: /
-msgid "FILTER_MY_RETAILER"
-msgstr "Η Αλυσίδα Καταστημάτων "
+msgid "My Retailer"
+msgstr "Η Αλυσίδα Καταστημάτων"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Το Κατάστημά μου"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Περιποίηση ομορφιάς"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Ξεχάσατε τον Κωδικό Πρόσβασης"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "Αποτελέσματα Αναζήτησης"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "Πρόσφατα Ολοκληρωμένες Δραστηριότητες"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Επιλογή Γλώσσας"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "Τελευταία Σύνδεση"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Ολοκληρωμένα Επίπεδα:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Περιοχή:"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "ΑΠΟΣΥΝΔΕΣΗ"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "Ο ιστότοπος είναι υπό συντήρηση."
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "Αγορά"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Μέλος από:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Τα Διακριτικά Μου"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Οι Προτιμήσεις Μου"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "O Πίνακας Ιεράρχησής μου"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Οι Πόντοι Μου"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Η Πρόοδος μου"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Τα Εργαλεία Μου"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Επόμενο Επίπεδο"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Η ΠΡΟΟΔΟΣ ΜΟΥ"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Σύνδεση"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Κατάστημα"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Προτεινόμενο για Εσάς"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "Επιλογή γλώσσας σε"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Πίνακας Ιεράρχησης"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "ΟΛΑ"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Επίπεδα"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Ολοκληρωμένα Επίπεδα:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "Καθένα από αυτά τα Επίπεδα δημιουργήθηκε για εσάς.  Για να γίνεστε όλο και καλύτερη σε ότι κι αν κάνετε. Εσείς αποφασίζετε, πως θα ζήσετε την εμπειρία και πως θα επιλέξετε να ανεβαίνετε τα Επίπεδα."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "Φόρτωση Περιεχομένου…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Φόρτωση Εργαλείων…"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "Επιτυχής Σύνδεση"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε.."
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Έχετε αποσυνδεθεί. Θα τα ξαναπούμε σύντομα!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "Αποσύνδεση"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Αναζήτηση της ήδη υπάρχουσας σύνδεσης…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
 msgstr "Ζητούμε συγνώμη γιατί η ιστοσελίδα ELX είναι προσωρινά υπό συντήρηση. Παρακαλούμε προσπαθήστε ξανά αργότερα."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Πίνακας Λειτουργιών"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Οι Πόντοι μου"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Η Πρόοδός μου"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "ΧΡΕΙΑΖΕΣΤΕ ΒΟΗΘΕΙΑ"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Νέος Κωδικός Πρόσβασης"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Δεν Βρέθηκαν Πεδία."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Κωδικός Πρόσβασης"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "Το αίτημα για τον κωδικό πρόσβασης παραλήφθηκε"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "Προέκυψε πρόβλημα στη φόρτωση του περιεχομένου, παρακαλούμε προσπαθήστε ξανά."
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "ΒΙΒΛΙΟΘΗΚΗ ΠΡΟΪΟΝΤΩΝ"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "ΒΙΒΛΙΟΘΗΚΗ ΠΡΟΪΟΝΤΩΝ"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Ενεργοποιήστε το δικό σας λογαριασμό Gravatar μέσω του μηνύματος επιβεβαίωσης που θα λάβετε."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Προσθέστε τη φωτογραφία του προφίλ σας στο Gravatar λογαριασμό σας."
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Δημιουργήστε ένα δωρεάν λογαριασμό στο Gravatar"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Ακουλουθήστε τα βήματα:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Νέος χρήστης στο Gravatar και χρειάζεστε βοήθεια;"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "Θέλετε να βάλετε την προσωπική σας φωτογραφία στο προφίλ σας; Δημιουργήστε ένα λογαριασμό στο Gravatar, και προσθέστε τη φωτογραφία σας. Θα συνδεθείτε απευθείας στο ELX!"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "Το προφίλ σας στο ELX ανανεώνεται αυτόματα σε λίγα μόλις λεπτά!"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Πρόσφατα Διακριτικά"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Να Θυμάστε"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Αίτημα για Νέο Κωδικό Πρόσβασης"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Παρουσιάσεις {{ start }} - {{ end }} από {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "ΦΙΛΤΡΟ ΑΝΑ"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "ΣΥΝΘΕΤΗ ΑΝΑΖΗΤΗΣΗ"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "ΤΑΞΙΝΟΜΗΣΗ ΑΝΑ"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Αλφαβητικά Α-Ω"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "Τα Πιο Δημοφιλή"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "ΔΕΙΤΕ"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "Δείτε Όλα τα Διακριτικά"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "Δείτε Όλα τα Εργαλεία"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "Δείτε τον Ολοκληρωμένο Πίνακα Ιεράρχησης"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "Προέκυψε σφάλμα στο Server"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "ΣΥΝΔΕΣΗ"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Λυπούμαστε, όχι προτιμήσεις"
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "ΥΠΟΒΟΛΗ"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "Προτεινόμενο για Εμένα"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "ΠΟΛΙΤΙΚΗ ΠΡΟΣΤΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ / ΟΡΟΙ"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Διακριτικά"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Πίνακας Ιεράρχησης"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "Είσοδος"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Πόντοι"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Κατάταξη"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Τα Σημαντικά"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "Εργαλεία"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "Μη επιλεγμένα"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Άγνωστος Χρήστης"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "Ανανέωση Γλώσσας"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "Τι είναι Νέο & Μοντέρνο"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "ΕΠΙΠΕΔΑ"
 
 #: /
@@ -495,19 +495,19 @@ msgid "BTN_SEE_MORE"
 msgstr "ΕΝΗΜΕΡΩΘΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΟ"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "Αναζήτηση"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -515,14 +515,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

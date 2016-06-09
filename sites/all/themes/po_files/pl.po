@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta.  "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Valitettavasti antamasi sähköpostisosoite ei liity ELX-tiliisi. Kokeile toista sähköpostiosoitetta."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Email bądź hasło, które wprowadziłeś jest nie poprawny. Spróbuj ponownie."
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "Uaktualnione produkty"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Odznaki"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Zaktualizuj"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "zobacz szczegóły"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Narzędzia"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "Najbliższy poziom do ukończenia:"
 
 #: /
-msgid "COMAPRE_SCORE"
-msgstr "Porównaj mój wynik z "
+msgid "Compare My score to"
+msgstr "Porównaj mój wynik z"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Potwierdź hasło"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. Wszelkie prawa zastrzeżone."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Wybierz język"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Aktualne hasło"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Zmień język"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "Edytuj profil i hasło"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "Adres email"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "THE ESTÉE LAUDER EXPERIENCE"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Poznaj Poziomy nauczania"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Poznaj Bibliotekę produktów"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "ulubione"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Ulubiony produkt"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "Niepasujące pola!"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "Świat"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Wszystkie kategorie"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "Bestsellery"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "Zakończono"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Zapachy"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "W trakcie"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Makijaż"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Mój kraj"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Mój region"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "Mój dostawca"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Mój sklep"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Pielęgnacja"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Nie pamiętam hasła"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "Rezultaty wyszukiwania"
 
 #: /
-msgid "LABEL_ACTIVITIES"
-msgstr "Prawie ukończone aktywności: "
+msgid "Recently Completed Activities:"
+msgstr "Prawie ukończone aktywności:"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Preferowany język:"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "Ostatnie logowanie:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Ukończone poziomy:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Lokalizacja:"
 
 #: /
-msgid "LABEL_LOGOUT"
-msgstr "Wyloguj "
+msgid "Log Out"
+msgstr "Wyloguj"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "Strona chwilowo  niedostępna"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "Rynek"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Członek od:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Moje odznaki"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Moje ulubione"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "Moja tablica wyników"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Moje punkty:"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Moje postępy"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Moje narzędzia"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Następny poziom:"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Moje postępy"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Zaloguj"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Sklep/Perfumeria:"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Sugerowane dla Ciebie:"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "Aktualizuj język"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Tabela wyników"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "Wszystko"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Kursy"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Ukończone poziomy:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "Każdy z poziomów został stworzony dla Ciebie -by pomóc Ci być jeszcze lepszym w tym co robisz. Ty decydujesz jak będziesz przez nie przechodzić."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "Wyszukuję…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Ładuję narzędzia..."
 
 #: /
-msgid "LOGIN_SUCCESS"
-msgstr "Pomyślne logowanie "
+msgid "Login Successful"
+msgstr "Pomyślne logowanie"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Proszę czekać…"
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Wylogowałeś się. Do zobaczenia wkrótce…"
 
 #: /
-msgid "LOG_OUT"
-msgstr "Wyloguj "
+msgid "Log Out"
+msgstr "Wyloguj"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Szukam istniejącego loginu…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "Strona ELX chwilowo jest niedostępna. Spróbuj później - przepraszamy za niedogodności."
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "Strona ELX chwilowo jest niedostępna.   Spróbuj później - przepraszamy za niedogodności."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Moja tablica"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Moje punkty"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Moje postępy"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "Potrzebujesz pomocy?"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Nowe Hasło"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Brak Kursów"
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Hasło"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "Otrzymano zgłoszenie hasła"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "Wystąpił problem, spróbuj ponownie"
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "Biblioteka produktów"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "Biblioteka produktów"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Aktywuj swój Gravatar klikając potwierdzenie przesłane na e-mail."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Dodaj zdjęcie profilowe do konta Gravatar."
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Załuż darmowe konto na Gravatar"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Postępuj wraz ze wskazówkami:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Jesteś tu nowy? Może pomóc?"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
-msgstr "Chcesz spersonalizować swoje zdjęcie? Załóż konto na Gravatar i dodaj zdjęcie. Zdjęcie automatycznie pojawi się na ELX! "
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Chcesz spersonalizować swoje zdjęcie? Załóż konto na Gravatar i dodaj zdjęcie. Zdjęcie automatycznie pojawi się na ELX!"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "Twój profil na ELX aktualizuje się automatycznie i bardzo szybko!"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Aktualne odznaki"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Zapamiętaj mnie"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Podaj Nowe Hasło"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Wyświetl {{ start }} - {{ end }} ze {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "Filtruj po"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "Wyczyść wyszukiwanie"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "Sortuj po"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Tytuły A-Z"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "Najbardziej popularne"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "Zobacz"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "Zobacz wszystkie odznaki"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "Zobacz wszystkie narzędzia"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "Zobacz pełną tablicę wyników"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "Serwer napotkał błąd"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "Zaloguj"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Niestety nie masz ulubionych"
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Zgłoś"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "Sugestie dla mnie"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "Polityka prywatności i Regulamin"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Odznaki"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Tablica wyników"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "Zaloguj"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Punkty"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Ranking"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Zwróć uwagę"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "Narzędzia"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "nielubiane"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Nieznany użytkownik"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "Aktualzacja języka"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "Trendy i Nowości"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "Kursy"
 
 #: /
@@ -495,27 +495,27 @@ msgid "BTN_SEE_MORE"
 msgstr "Zobacz więcej"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "Szukaj"
 
 #: /
-msgid "Advanced_Night_Repair"
+msgid "Advanced Night Repair"
 msgstr "Advanced Night Repair"
 
 #: /
-msgid "Advanced_Night_Repair_2"
+msgid "Advanced Night Repair 2"
 msgstr "Advanced Night Repair 2"
 
 #: /
-msgid "Beautiful_Skin_for_Life"
+msgid "Beautiful Skin for Life"
 msgstr "Beautiful Skin for Life"
 
 #: /
-msgid "Greet_Meet_Treat_Complete"
+msgid "Greet Meet Treat Complete"
 msgstr "Powitaj Zbuduj Relacje Rozpieść Sprzedaj"
 
 #: /
-msgid "New_Dimension"
+msgid "New Dimension"
 msgstr "New Dimension"
 
 #: /
@@ -523,15 +523,15 @@ msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Konto"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "Imię"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Nazwisko"
 
 #: /
@@ -539,11 +539,11 @@ msgid "LABEL_SIGNUP"
 msgstr "Zarejestruj się"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "Ten adres email istnieje już w bazie danych. Jeśli nie pamiętasz swojego hasła proszę użuj linku poniżej, by je odświeżyć."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "Wprowadzony adres email jest nieprawidłowo sfromatowany. Proszę sprawdź swój adres email i spóbuj ponownie."
 
 #: /

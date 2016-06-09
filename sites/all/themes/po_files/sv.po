@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Vi ber om ursäkt. Den e-postadressen du angav verkar inte vara förknippad med ett ELX konto. Försök med en annan e-post adress.  "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Vi ber om ursäkt. Den e-postadressen du angav verkar inte vara förknippad med ett ELX konto. Försök med en annan e-post adress."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Mejlet eller lösenordet du angav matchar inte. Var god försök igen."
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "Uppdaterar produkter…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Badges"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Uppdatera"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "läs om detaljerna"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Visa Verktyg"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "Närmaste Nivå till att Slutföra:"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "Jämför Mitt resultat med"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Bekräfta Lösenord"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. Alla globala rättigheter är reserverade."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Nuvarande Språk"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Nuvarande Lösenord"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Redigera Språk"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "Redigera profil och lösenord"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "E-Postadress"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "ESTÉE LAUDER UPPLEVELSEN"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Upptäck Kunskapsnivåerna"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Upptäck Produktbiblioteket"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "Favorit"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Din favorit produkt"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "Fälten matchar inte!"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "Världen"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Alla Kategorier"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "Bästsäljande"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "Avslutade"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Dofter"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "Under utveckling"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Makeup"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Mitt Land"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Min Region"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "Min Återförsäljare"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Min Butik"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Hudvård"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Glömt Lösenord"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "Sökresultat"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "Senast Avslutade Aktiviteter:"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Språk:"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "Senaste Login:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Uppnådda Nivåer:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Plats:"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "Logga Ut"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "Webbsidan är i underhållsläge"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "Marknad"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Medlem sedan:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Mina Medaljer"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Mina Favoriter"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "Min Resultatstavla"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Mina poäng:"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Min statusöversikt"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Mina Verktyg"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Till Nästa Nivå:"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Min statusöversikt"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Logga in"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Butik/Namn:"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Förslag till dig:"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "Spårket har uppdaterats till"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Resultattavla"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "Alla"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Nivåer"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Uppnådda Nivåer:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
-msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre  på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "Laddar Innehåll…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Laddar Verktyg…"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "Inloggningen lyckades"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Vänligen vänta…"
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Du har loggat ut. Vi ses snart igen!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "Logga Ut"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Letar efter nuvarande login…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
 msgstr "ELX hemsidan är för närvarande i underhållsläge. Kom tillbaka sen - vi ber om ursäkt för eventuella besvär."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Min instrumentpanel"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Mina Poäng"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Min statusöversikt"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "Behöver du hjälp?"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Nytt Lösenord"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Inga Nivåer hittades."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Lösenord"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "Lösenordsförfrågan godkänd"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "Det uppstod ett problem när detta skulle laddas, vänligen försök igen."
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "Produktbibliotek"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "Produktbibliotek"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Aktivera ditt Gravatar konto från din e-postbekräftelse."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Lägg till din profilbild på ditt Gravatar konto."
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Skapa ett gratis konto med Gravatar"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Gör så här:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Ny på Gravatar och behöver lite hjälp?"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "Vill du göra din profilbild personlig? Skapa ett konto med Gravatar, och lägg till ditt foto. Den linkar dig automatiskt vidare till ELX!"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "Din ELX profil uppdateras automatiskt alldeles snart!"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Senaste Badges"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Minnas Mig"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Begär Nytt Lösenord"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Visar {{ start }} - {{ end }} av {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "Filtrera efter"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "Avancerad sökning"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "Sortera efter"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Titlar A-Z"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "Mest populär"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "Överblick"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "Visa alla medaljer"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "Visa alla verktyg"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "Se Fullstänid Överblick"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "Servern upptäckte ett fel"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "Logga In"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Tyvärr, inga favoriter."
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Godkänn"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "Föreslås för mig"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "Sekretess och Villkor | Villkor"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Medaljer"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Resultatstavla"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "LOGIN"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Poäng"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Ranking"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Spotlight"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "Verktyg"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "inte min favorit"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Okänd användare"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "Uppdaterar språket"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "Vad är Nytt & Trendigt"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "Nivåer"
 
 #: /
@@ -495,19 +495,19 @@ msgid "BTN_SEE_MORE"
 msgstr "Visa mer"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "SÖK"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Konto"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "Förnamn"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Efternamn"
 
 #: /
@@ -515,11 +515,11 @@ msgid "LABEL_SIGNUP"
 msgstr "Logga In"
 
 #: /
-msgid "EMAIL_EXISTS"
-msgstr "E-postadressen finns redan. Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "E-postadressen finns redan.   Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "E-postadresens har inte skrivs korrekt. Kontrollera din e-postadress och försök igen"
 
 #: /

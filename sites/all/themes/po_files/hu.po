@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Sajnáljuk! A megadott e-mail cím nem szerepel az ELX felhasználói rendszerben. Kérjük próbáld meg egy másik e-mail címmel!   "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Sajnáljuk! A megadott e-mail cím nem szerepel az ELX felhasználói rendszerben. Kérjük próbáld meg egy másik e-mail címmel!"
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Helytelen felhasználónév vagy jelszó. Próbáld újra!"
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "Termékek frissítése…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Jelvények"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Frissítés"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "tekintsd meg a részleteket!"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Eszköz megtekintése"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "A végzéshez legközelebbi szint:"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "Hasonlítsd össze az eredményemet az övével:"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Jelszó megerősítése"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. Minden jog fenntartva."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Jelenelegi nyelv"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Jelenlegi jelszó"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Nyelv szerkesztése"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "Profil és jelszó szerkesztése"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "E-mail cím"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "AZ ESTÉE LAUDER ÉLMÉNY"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Fedezd fel a Tanulói Szinteket!"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Ismerd meg a Termékkatalógust!"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "A kedvencekhez adva"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Kedvenc terméked"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "A fájlok nem egyeznek!"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "A Világ"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Minden kategória"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "Legnépszerűbb termékek"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "Elvégezve"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Illat"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "Folyamatban"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Smink"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Országom"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Térségem"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "Kiskereskedelmi egységem"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Üzletem"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Bőrápolás"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Elfelejtett jelszó"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "Találatok"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "Utoljára elvégzett tevékenységek:"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Nyelv:"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "Utolsó bejelentkezés:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Elvégzett szintek:"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Helyszín:"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "Kijelentkezés"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
-msgstr "Az oldal karbantartás alatt áll. "
+msgid "Site in Maintenance Mode"
+msgstr "Az oldal karbantartás alatt áll."
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "Ország"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Tagság kezdete:"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Jelvényeim:"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Kedvenceim:"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "Ranglista:"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Pontszámaim:"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Előmenetelem"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Eszközök:"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Soron következő szint:"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Előmenetelem"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Belépés"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Üzlet/pult:"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Neked ajánljuk:"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "A nyelvi beállítás megváltoztatva"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Ranglista"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "Mind"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Szintek"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Elvégzett szintek:"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "A szintek mindegyikét neked dolgoztuk ki, hogy jobbá válhass abban, amit teszel. Te döntöd el, hogyan végzed el azokat és lépsz magasabb szintre."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "Tartalom betöltése…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Eszközök betöltése…"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "Sikeres bejelentkezés:"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Várj…"
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Sikeresen kijelentkeztél. Várunk vissza!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "Kijelentkezés"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Létező felhasználónév keresése…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "Az ELX honlap jelenleg karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "Az ELX honlap jelenleg  karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Irányítópultom"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Pontszámaim"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Előmenetelem"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "Segítségre van szükséged?"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Új jelszó"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Nem találtunk ilyen szintet."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Jelszó"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "A jelszó kérelmed beérkezett."
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "Probléma az oldal betöltésekor. Próbáld újra!"
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "Termékkatalógus"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "Termékkatalógus"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Aktiváld Gravatar fiókodat a megerősítő e-mailben található utasítás szerint."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Profilkép hozzáadása a Gravatar fiókodhoz"
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Ingyenes felhasználói fiók létrehozása a Gravatarral"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Végezd el a következő lépéseket:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Új vagy a Gravatarban és segítségre van szükséged?"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "Szeretnéd személyessé tenni a profilképedet? Hozz létre egy felhasználói fiókot a Gravatarral és töltsd fel a fényképedet. Automatikusan az ELX-hez kapcsolódik majd."
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "Az ELX profilod hamarosan automatikusan frissül."
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Mostanában szerzett jelvényeim"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Emlékezz rám!"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Új jelszó kérése"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Megjelenített termékek {{ start }} - {{ end }} az {{ total }} közül"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "Szűrés szempontja"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "A keresés finomítása"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "A rendezés szempontja"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Cím A-Z"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "Legnépszerűbb"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "Megtekintés"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "Minden jelvény megtekintése"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "Minden eszköz megtekintése"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "A teljes ranglista megtekintése"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "A szerver hibát észlelt"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "Bejelentkezés"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Sajnáljuk, nincsenek kedvenceid."
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Küldés"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "Nekem ajánlott"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "Adatvédelem és felhasználói feltételek"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Jelvények"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Ranglista"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "BELÉPÉS"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Pontszám"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Helyezés"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Rivaldafény"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "Eszközök"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "Törlés a Kedvencek közül"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Ismeretlen felhasználó"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "Nyelv megváltoztatása"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "Új és népszerű"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "Szintek"
 
 #: /
@@ -495,19 +495,19 @@ msgid "BTN_SEE_MORE"
 msgstr "Még több megtekintése"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "Keresés"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -515,14 +515,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

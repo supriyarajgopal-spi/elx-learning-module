@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "Üzgünüz. Girmiş olduğunuz e-mail adresi ELX datasındaki veriler ile eşleşmiyor. Başka bir email adresi ile deneyin.  "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Üzgünüz. Girmiş olduğunuz e-mail adresi ELX datasındaki veriler ile eşleşmiyor. Başka bir email adresi ile deneyin."
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "Girilen mail ya da şifre hatalı. Lütfen tekrar deneyiniz."
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "Ürünü güncelliyor..."
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "Uzmanlıklar"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "Güncelle"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "Detayları görüntüle"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "Başlıkları Görüntüle"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "Son Modül"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "Skorumu karşılaştır"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "Şifreyi Onayla"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. Tüm hakları saklıdır."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "Mevcut Dil"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "Mevcut Şifreniz"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "Dil Tercihini Değiştir"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "Profili Düzenle & Şifre"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "E-Mail"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "ESTÉE LAUDER DENEYİMİ"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "Öğrenme modüllerini keşfedin."
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "Ürün Kataloğunu Keşfedin"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "Favorilere Eklendi"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "Favori Ürününüz"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "Birbiriyle Uyumlu Olmayan Data"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "Dünya"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "Tüm Kategoriler"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "En çok Satanlar"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "Tamamlandı"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "Parfüm"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "İşleniyor"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "Makyaj"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "Ülke"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "Bölge"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "Bayi"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "Mağaza"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "Cilt Bakım"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "Şifremi Unuttum"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "Arama Sonuçları"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "En Son Tamamlanan Aktiviteler"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "Dil Tercihi"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "En Son Giriş:"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Tamamlanan Modüller"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "Lokasyon"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "Çıkış"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "Site Bakım Sürecinde"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "Ülke"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "Üye: ....'den beri"
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "Uzmanlıklarım"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "Favorilerim"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "Skorlarım"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "Puanlarım"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "Gelişimim"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "Başlıklar"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "Bir Sonraki Modül"
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "Gelişimim"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "Giriş"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "Mağaza"
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "Sizin için Önerilenler"
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "Seçili Dil Tercihi Değiştirildi"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Skor"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "Tümü"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "Modüller"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "Tamamlanan Modüller"
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "İçeriklerin hepsi yaptığınız işte en iyisi olmanız için size özel tasarlandı. Bu eşsiz içerikleri değerlendirerek tüm adımları tercihinize göre tamamlayınız."
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "İçeriği yüklüyor..."
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "Yükleme Araçları..."
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "Giriş başarılı"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "Çıkış yaptınız. Tekrar görüşmek üzere!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "Çıkış"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "Mevcut giriş"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
 msgstr "ELX şuan bakım sürecinde olduğundan geçici bir süre hizmet verememekteyiz. Lütfen kısa bir süre sonra tekrar deneyin.Anlayışınız için teşekkürler."
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "Puan Panom"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "Puanlarım"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "Durumum"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "Yardım?"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "Yeni Şifre"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "Hiçbir seviye bulunamadı."
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "Şifre"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
-msgstr "Parola "
+msgid "Password request received"
+msgstr "Parola"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "İçeriği yüklemede problem oluştu, lütfen tekrar deneyin."
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "Ürün Kataloğu"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "Ürün Kataloğu"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "Gravatar hesabınızı onay e-maili ile aktive ediniz."
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "Hesabınıza profil fotoğrafı ekleyiniz."
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "Gravatar ile ücretsiz hesap oluşturun"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "Aşağıdaki adımları takip edin:"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "Gravatar’ın ne olduğunu bilmiyorum ve yardıma ihtiyacım var."
 
 #: /
-msgid "PROFILE_PERSONALIZE"
-msgstr "Profil fotoğrafınızı kişiselleştirmek mi istiyorsunuz? Sadece bir defaya mahsus Gravatar’a fotoğraf yükleyerek birçok yerde görüntülenmesini sağlayabilirsiniz. Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Profil fotoğrafınızı kişiselleştirmek mi istiyorsunuz?  Sadece bir defaya mahsus Gravatar’a fotoğraf yükleyerek birçok yerde görüntülenmesini sağlayabilirsiniz. Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "Son Kazanılan Uzmanlıklar"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "Hatırla"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "Yeni Şifre Talebi"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "Görüntüle {{ start }} - {{ end }} of {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "Filtrele"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "Gelişmiş Arama"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "Sırala"
 
 #: /
-msgid "SEARCH_SORT_AZ"
-msgstr "A'dan Z'ye Sırala "
+msgid "Title A-Z"
+msgstr "A'dan Z'ye Sırala"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
-msgstr "En Popüler "
+msgid "Most Popular"
+msgstr "En Popüler"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "Görüntüle"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "Tüm Rozetler"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "Tüm Araçlar"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "Tüm Puan Tablosu"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "Sistemsel Hata"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "Giriş"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "Üzgünüz, hiç favoriniz yok."
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Gönder"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "Sizin için Önerilenler"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "Gizlilik Politikası ve Koşullar"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "Uzmanlıklarım"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "Skorlarım"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "GİRİŞ"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "Puanlar"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "Sıra"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "İlgi Çekenler"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "Başlıklar"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "favorilere eklenmedi"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "Tanımsız Kullanıcı"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "Dili güncelleniyor"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "En  Yeniler & Trendler"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "Modüller"
 
 #: /
@@ -495,27 +495,27 @@ msgid "BTN_SEE_MORE"
 msgstr "Daha Fazla Bilgi"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "Ara"
 
 #: /
-msgid "Advanced_Night_Repair"
+msgid "Advanced Night Repair"
 msgstr "Advanced Night Repair"
 
 #: /
-msgid "Advanced_Night_Repair_2"
+msgid "Advanced Night Repair 2"
 msgstr "Advanced Night Repair 2"
 
 #: /
-msgid "Beautiful_Skin_for_Life"
+msgid "Beautiful Skin for Life"
 msgstr "Beautiful Skin for Life"
 
 #: /
-msgid "Greet_Meet_Treat_Complete"
+msgid "Greet Meet Treat Complete"
 msgstr "KARŞILAMA, TANIŞMA, UYGULAMA, TAMAMLAMA"
 
 #: /
-msgid "New_Dimension"
+msgid "New Dimension"
 msgstr "New Dimension"
 
 #: /
@@ -523,15 +523,15 @@ msgid "Re-Nutriv"
 msgstr "Re-Nutriv"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Hesap"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "İsim"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Soyisim"
 
 #: /
@@ -539,11 +539,11 @@ msgid "LABEL_SIGNUP"
 msgstr "Giriş"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "Girmiş olduğunuz e-mail adresi kullanımda. Parolanızı hatırlamıyorsanız, parolamı unuttum bölümüne girin ve tekrar oluşturun"
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "Girmiş olduğunuz e-mail adresi uygun formatta değil. Lütfen e-mail adresinizi kontrol edin ve tekrar deneyin."
 
 #: /

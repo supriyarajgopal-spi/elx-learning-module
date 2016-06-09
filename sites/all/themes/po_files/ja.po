@@ -1,493 +1,493 @@
 #: /
-msgid "FORGOT_NOT_FOUND"
-msgstr "申し訳ございません。このemailアドレスはELXに登録されていません。違うアドレスで再度トライしてみて下さい。 "
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "申し訳ございません。このemailアドレスはELXに登録されていません。違うアドレスで再度トライしてみて下さい。"
 
 #: /
-msgid "INVALID_EMAIL_PASS"
+msgid "The email or password you entered do not match. Please try again."
 msgstr "パスワード、E-mailアドレスがマッチしない場合、再度お試しください。"
 
 #: /
-msgid "ALERT_PRODUCTS"
+msgid "Updating search..."
 msgstr "アップデート中…"
 
 #: /
-msgid "BADGES"
+msgid "Badges"
 msgstr "バッジ"
 
 #: /
-msgid "BTN_UPDATE"
+msgid "Update"
 msgstr "アップデート"
 
 #: /
-msgid "BTN_VIEW_DETAILS"
+msgid "view the details"
 msgstr "詳細はこちら"
 
 #: /
-msgid "BTN_VIEW_TOOL"
+msgid "View Tool"
 msgstr "ビューツール"
 
 #: /
-msgid "CLOSEST_LEVEL_TO_COMPLETION"
+msgid "Closest Level to Completion:"
 msgstr "レベルを完了して終了"
 
 #: /
-msgid "COMAPRE_SCORE"
+msgid "Compare My score to"
 msgstr "マイスコアと比較"
 
 #: /
-msgid "CONFIRM_PASSWORD"
+msgid "Password Confirm:"
 msgstr "パスワード認定"
 
 #: /
-msgid "COPYRIGHT"
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
 msgstr "© Estée Lauder Inc. All worldwide rights reserved."
 
 #: /
-msgid "CURRENT_LANGUAGE"
+msgid "Current Language"
 msgstr "現在の言語"
 
 #: /
-msgid "CURRENT_PASSWORD"
+msgid "Current Password"
 msgstr "現在のパスワード"
 
 #: /
-msgid "EDIT_LANGUAGE"
+msgid "Edit Language"
 msgstr "言語を選択"
 
 #: /
-msgid "EDIT_PROFILE_AND_PASSWORD"
+msgid "edit profile &amp; password"
 msgstr "プロフィール、パスワードを編集する"
 
 #: /
-msgid "EMAIL_ADDRESS"
+msgid "Email Address:"
 msgstr "Emailアドレス"
 
 #: /
-msgid "ESTEE_LAUDER_EXPERIENCE"
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
 msgstr "THE ESTÉE LAUDER EXPERIENCE"
 
 #: /
-msgid "EXPLORE_LEARNING_LEVELS"
+msgid "Explore Learning Levels"
 msgstr "ラーニングレベル"
 
 #: /
-msgid "EXPLORE_PRODUCT_LIBRARY"
+msgid "Browse the Product Library"
 msgstr "プロダクトライブラリーを探す"
 
 #: /
-msgid "FAVORITE"
+msgid "favorited"
 msgstr "お気に入り"
 
 #: /
-msgid "FAVORITED_MESSAGE"
+msgid "You fav prod"
 msgstr "お気に入りメッセージ"
 
 #: /
-msgid "FIELDS_DONT_MATCH"
+msgid "Fields do not match!"
 msgstr "マッチしません"
 
 #: /
-msgid "FILTER_ALL"
+msgid "The World"
 msgstr "世界"
 
 #: /
-msgid "FILTER_ALL_CATEGORIES"
+msgid "All Categories"
 msgstr "すべてのカテゴリー"
 
 #: /
-msgid "FILTER_BESTSELLER"
+msgid "Bestsellers"
 msgstr "ベストセラーズ"
 
 #: /
-msgid "FILTER_COMPLETED"
+msgid "Completed"
 msgstr "完了"
 
 #: /
-msgid "FILTER_FIFTY"
+msgid "50"
 msgstr "50"
 
 #: /
-msgid "FILTER_FRAGRANCE"
+msgid "Fragrance"
 msgstr "フレグランス"
 
 #: /
-msgid "FILTER_IN_PROGRESS"
+msgid "In Progress"
 msgstr "進行中"
 
 #: /
-msgid "FILTER_MAKEUP"
+msgid "Makeup"
 msgstr "メークアップ"
 
 #: /
-msgid "FILTER_MY_MARKET"
+msgid "My Market"
 msgstr "マイカントリー"
 
 #: /
-msgid "FILTER_MY_REGION"
+msgid "My Region"
 msgstr "マイリジョン"
 
 #: /
-msgid "FILTER_MY_RETAILER"
+msgid "My Retailer"
 msgstr "マイリテイラー"
 
 #: /
-msgid "FILTER_MY_STORE"
+msgid "My Store"
 msgstr "マイストア"
 
 #: /
-msgid "FILTER_RENUTRIV"
+msgid "Re-Nutriv"
 msgstr "リニュートリィブ"
 
 #: /
-msgid "FILTER_SKINCARE"
+msgid "Skincare"
 msgstr "スキンケア"
 
 #: /
-msgid "FILTER_TEN"
+msgid "10"
 msgstr "10"
 
 #: /
-msgid "FILTER_TWENTY"
+msgid "20"
 msgstr "20"
 
 #: /
-msgid "FORGOT_PASSWORD"
+msgid "Forgot Password"
 msgstr "パスワードお忘れですか"
 
 #: /
-msgid "GLOBAL_SEARCH_TITLE"
+msgid "Search Results"
 msgstr "検索結果"
 
 #: /
-msgid "LABEL_ACTIVITIES"
+msgid "Recently Completed Activities:"
 msgstr "最近終わったアクテビティ"
 
 #: /
-msgid "LABEL_LANGUAGE"
+msgid "Language:"
 msgstr "ご希望の言語"
 
 #: /
-msgid "LABEL_LAST_LOGIN"
+msgid "Last Login:"
 msgstr "最後のログイン"
 
 #: /
-msgid "LABEL_LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "完了したレベル"
 
 #: /
-msgid "LABEL_LOCATION"
+msgid "Location:"
 msgstr "ロケーション"
 
 #: /
-msgid "LABEL_LOGOUT"
+msgid "Log Out"
 msgstr "ログアウト"
 
 #: /
-msgid "LABEL_MAINTENANCE_MODE"
+msgid "Site in Maintenance Mode"
 msgstr "メンテナンス中"
 
 #: /
-msgid "LABEL_MARKET"
+msgid "Market:"
 msgstr "マーケット"
 
 #: /
-msgid "LABEL_MEMBER"
+msgid "Member Since:"
 msgstr "メンバー開始日："
 
 #: /
-msgid "LABEL_MY_BADGES"
+msgid "My Badges"
 msgstr "マイバッジ"
 
 #: /
-msgid "LABEL_MY_FAVORITES"
+msgid "My Favorites"
 msgstr "マイフェイバリット"
 
 #: /
-msgid "LABEL_MY_LEADERBOARD"
+msgid "My Leaderboard"
 msgstr "マイリーダーボード"
 
 #: /
-msgid "LABEL_MY_POINTS"
+msgid "My Points:"
 msgstr "マイポイント"
 
 #: /
-msgid "LABEL_MY_PROGRESS"
+msgid "My Progress"
 msgstr "進歩状況"
 
 #: /
-msgid "LABEL_MY_TOOLS"
+msgid "My Tools"
 msgstr "マイツール"
 
 #: /
-msgid "LABEL_NEXT_LEVEL"
+msgid "Next Level Up:"
 msgstr "次のレベル："
 
 #: /
-msgid "LABEL_PROGRESS"
+msgid "Progress:"
 msgstr "進歩状況"
 
 #: /
-msgid "LABEL_SIGNIN"
+msgid "Sign in"
 msgstr "サインイン"
 
 #: /
-msgid "LABEL_STORE"
+msgid "Store:"
 msgstr "ストア/ドア："
 
 #: /
-msgid "LABEL_SUGGESTED"
+msgid "Suggested for you:"
 msgstr "あなたへのおすすめ："
 
 #: /
-msgid "LANGUAGE_UPDATED_MESSAGE"
+msgid "Language updated to"
 msgstr "言語をアップデート"
 
 #: /
-msgid "LEADERBOARD"
+msgid "Leaderboard"
 msgstr "リーダーボード"
 
 #: /
-msgid "LEVEL_FILTER_ALL"
+msgid "All"
 msgstr "すべて"
 
 #: /
-msgid "LEVELS"
+msgid "Levels"
 msgstr "レベル"
 
 #: /
-msgid "LEVELS_COMPLETED"
+msgid "Levels Completed:"
 msgstr "完了したレベル："
 
 #: /
-msgid "LEVELS_HEADER_TEXT"
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
 msgstr "これらのレベルはあなたの為に創られました-あなたの仕事を助けるためです。どのように体験してどのようにレベルアップするかあなた自身で決定できます。"
 
 #: /
-msgid "LOADING_CONTENT"
+msgid "Loading Content..."
 msgstr "ダウンロード中…"
 
 #: /
-msgid "LOADING_TOOLS"
+msgid "Loading Tools..."
 msgstr "ツールをロード中"
 
 #: /
-msgid "LOGIN_SUCCESS"
+msgid "Login Successful"
 msgstr "ログイン成功"
 
 #: /
-msgid "LOGIN_WAIT"
+msgid "Please wait..."
 msgstr "お待ちください….."
 
 #: /
-msgid "LOGOUT_MESSAGE"
+msgid "You have logged out. See you again soon!"
 msgstr "ログアウトされました。See you again soon!"
 
 #: /
-msgid "LOG_OUT"
+msgid "Log Out"
 msgstr "ログアウト"
 
 #: /
-msgid "LOOKING_FOR_LOGIN"
+msgid "Looking for existing login..."
 msgstr "現在のログインを検索中…"
 
 #: /
-msgid "MESSAGE_MAINTENANCE_MODE"
-msgstr "ELXウェブサイトは現在メンテナンス中です。しばらくして再度お試しください。ご迷惑をおかけしております。"
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELXウェブサイトは現在メンテナンス中です。  しばらくして再度お試しください。  ご迷惑をおかけしております。"
 
 #: /
-msgid "MY_DASHBOARD"
+msgid "My Dashboard"
 msgstr "マイダッシュボード"
 
 #: /
-msgid "MY_POINTS"
+msgid "My Points:"
 msgstr "マイポイント"
 
 #: /
-msgid "MY_PROGRESS"
+msgid "My Progress"
 msgstr "進歩状況"
 
 #: /
-msgid "NEED_HELP"
+msgid "Need Help?"
 msgstr "ヘルプが必要ですか？"
 
 #: /
-msgid "NEW_PASSWORD"
+msgid "New Password"
 msgstr "ニューパスワード"
 
 #: /
-msgid "NO_LEVELS"
+msgid "No Levels found."
 msgstr "レベルが見つかりません"
 
 #: /
-msgid "PASSWORD"
+msgid "Password:"
 msgstr "パスワード"
 
 #: /
-msgid "PASSWORD_REQUEST_RECEIVED"
+msgid "Password request received"
 msgstr "パスワードリクエストを受け取りました"
 
 #: /
-msgid "PROBLEM_LOADING"
+msgid "There was a problem loading this content, please try again."
 msgstr "問題が発生しました、再度お試し下さい。"
 
 #: /
-msgid "PRODUCT_LIBRARY"
+msgid "Product Library"
 msgstr "プロダクトライブラリー"
 
 #: /
-msgid "PRODUCT_SEARCH_TITLE"
+msgid "Product Library"
 msgstr "プロダクトライブラリー"
 
 #: /
-msgid "PROFILE_ACTIVATE"
+msgid "Activate your Gravatar account from the confirmation email."
 msgstr "プロフィールを作成しましょう"
 
 #: /
-msgid "PROFILE_ADD_PHOTO"
+msgid "Add your profile photo to your Gravatar account."
 msgstr "プロフィールに写真を追加しましょう"
 
 #: /
-msgid "PROFILE_CREATE_ACCOUNT"
+msgid "Create a free account with Gravatar"
 msgstr "アカウントを作成しましょう"
 
 #: /
-msgid "PROFILE_FOLLOW_STEPS"
+msgid "Follow these steps:"
 msgstr "使い方に沿って"
 
 #: /
-msgid "PROFILE_HELP"
+msgid "New to Gravatar and need some help?"
 msgstr "プロフィールに関するヘルプ"
 
 #: /
-msgid "PROFILE_PERSONALIZE"
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
 msgstr "プロフィールをカスタマイズしたいですか？Gravatarでアカウントを作成して写真を載せましょう。ここからＥＬＸは自動でリンクしています！"
 
 #: /
-msgid "PROFILE_UPDATES"
+msgid "Your ELX profile updates automatically in just a short time!"
 msgstr "プロフィールアップデート"
 
 #: /
-msgid "RECENT_BADGES"
+msgid "Recent Badges:"
 msgstr "最新のバッジ"
 
 #: /
-msgid "REMEMBER_ME"
+msgid "Remember Me"
 msgstr "覚えてますか"
 
 #: /
-msgid "REQUEST_PASSWORD"
+msgid "Request"
 msgstr "新しいパスワードを申請"
 
 #: /
-msgid "SEARCH_COUNT"
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
 msgstr "ディスプレイ {{ start }} - {{ end }} of {{ total }}"
 
 #: /
-msgid "SEARCH_FILTER"
+msgid "Filter By"
 msgstr "フィルターをかける"
 
 #: /
-msgid "SEARCH_REFINE"
+msgid "Refine Search"
 msgstr "サーチする"
 
 #: /
-msgid "SEARCH_SORT"
+msgid "Sort By"
 msgstr "ソートをかける"
 
 #: /
-msgid "SEARCH_SORT_AZ"
+msgid "Title A-Z"
 msgstr "Ｔｉｔｌｅ　Ａ－Ｚ"
 
 #: /
-msgid "SEARCH_SORT_POPULAR"
+msgid "Most Popular"
 msgstr "一番人気"
 
 #: /
-msgid "SEARCH_VIEW"
+msgid "View"
 msgstr "Ｖｉｅｗ"
 
 #: /
-msgid "SEE_ALL_BADGES"
+msgid "See All Badges"
 msgstr "すべてのバッジを見る"
 
 #: /
-msgid "SEE_ALL_TOOLS"
+msgid "See All Tools"
 msgstr "すべてのツールを見る"
 
 #: /
-msgid "SEE_LEADERBOARD"
+msgid "See Full Leaderboard"
 msgstr "リーダーボードを見ましょう"
 
 #: /
-msgid "SERVER_ERROR"
+msgid "The server encountered an error"
 msgstr "サーバーエラー"
 
 #: /
-msgid "SIGN_IN"
+msgid "Sign In"
 msgstr "サインイン"
 
 #: /
-msgid "SORRY_NO_FAVORITES"
+msgid "Sorry, no favorites."
 msgstr "お気に入りが見つかりません"
 
 #: /
-msgid "SUBMIT"
+msgid "Submit"
 msgstr "Ｓｕｂｍｉｔ"
 
 #: /
-msgid "SUGGESTED_FOR_ME"
+msgid "Suggested for me:"
 msgstr "あなたへのおすすめ"
 
 #: /
-msgid "TERMS_AND_CONDITIONS"
+msgid "Privacy Policy/Terms &amp; Conditions"
 msgstr "プライバシーポリシー　＆タームズ・コンディション"
 
 #: /
-msgid "TITLE_BADGES"
+msgid "My Badges"
 msgstr "バッジ"
 
 #: /
-msgid "TITLE_LEADERBOARD"
+msgid "Leaderboard"
 msgstr "リーダーボード"
 
 #: /
-msgid "TITLE_LOGIN"
+msgid "LOGIN"
 msgstr "ログイン"
 
 #: /
-msgid "TITLE_POINTS"
+msgid "Points"
 msgstr "ポイント"
 
 #: /
-msgid "TITLE_RANK"
+msgid "Rank"
 msgstr "ランク"
 
 #: /
-msgid "TITLE_SPOTLIGHT"
+msgid "Spotlight"
 msgstr "Spotlight"
 
 #: /
-msgid "TOOLS"
+msgid "Tools"
 msgstr "ツール"
 
 #: /
-msgid "UNFAVORITE"
+msgid "unfavorited"
 msgstr "気に入らない"
 
 #: /
-msgid "UNKNOWN_USER"
+msgid "Unknown user"
 msgstr "見知らぬユーザー"
 
 #: /
-msgid "UPDATE_LANGUAGE_MESSAGE"
+msgid "Updating language"
 msgstr "言語をアップデート"
 
 #: /
-msgid "WHATS_NEW_TRENDING"
+msgid "What&apos;s New &amp; Trending"
 msgstr "新製品＆トレンド"
 
 #: /
-msgid "LABEL_LEVEL"
+msgid "Level:"
 msgstr "レベル"
 
 #: /
@@ -495,19 +495,19 @@ msgid "BTN_SEE_MORE"
 msgstr "もっと見てみましょう"
 
 #: /
-msgid "SEARCH_FIELD"
+msgid "Search"
 msgstr "検索"
 
 #: /
-msgid "LABEL_ACCOUNT"
+msgid "Account:"
 msgstr "Account"
 
 #: /
-msgid "FIRST_NAME"
+msgid "First Name:"
 msgstr "First Name"
 
 #: /
-msgid "LAST_NAME"
+msgid "Last Name:"
 msgstr "Last Name"
 
 #: /
@@ -515,14 +515,14 @@ msgid "LABEL_SIGNUP"
 msgstr "Sign Up"
 
 #: /
-msgid "EMAIL_EXISTS"
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
 
 #: /
-msgid "EMAIL_ERROR"
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
 msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
 
 #: /
 msgid "UNEXPECTED_ERROR"
-msgstr "An unexpected error has occurred, please try again later. "
+msgstr "An unexpected error has occurred, please try again later."
 

@@ -28,46 +28,34 @@ function elx_preprocess_user_login(&$vars) {
  *  Remove labels and add HTML5 placeholder attribute to login form
  */
 function elx_form_alter(&$form, &$form_state, $form_id) {
-  global $language;
-  $lang = $language->language;
-  //elx_language_detect();
+  // If we have a valid username - set the user's preferred language
+  if (!empty($form_state['input'])) {
+    $new_lang_code = elx_language_detect($form_state['input']['name']);
+	if (!empty($new_lang_code)) {
+	  $languages = language_list();
+	  if (isset($languages[$new_lang_code])) {
+	    global $language;
+        $language = $languages[$new_lang_code];
+	  }
+	}
+  }
   //elx_languages_json_to_po();
   if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
   	$user_login_final_validate_index = array_search('user_login_final_validate', $form['#validate']);
     if ($user_login_final_validate_index >= 0) {
       $form['#validate'][$user_login_final_validate_index] = 'elx_final_validate';
     }
-	if (elx_languages_supported($lang) && $lang != 'en' && $lang != 'en-US') {
-	  if ($language->language == 'zh' || $language->language == 'zh-Hant' || $language->language == 'zh-TW') {
-        $lang = 'zhhant';
-	  }
-  	  // TODO:: Get language variables from json files
-  	  $key_vars = ['LABEL_SIGNIN', 'EMAIL_ADDRESS', 'PASSWORD', 'REMEMBER_ME'];
-	  $trans_lang_array = elx_languages_get_translations($lang, $key_vars);
-	  if (!empty($trans_lang_array)) {
-	    $lang_signin_label = $trans_lang_array['LABEL_SIGNIN'];
-   	    //"EMAIL_ADDRESS":
-	    $lang_email = $trans_lang_array['EMAIL_ADDRESS'];
-	    //"PASSWORD":
-	    $lang_pw = $trans_lang_array['PASSWORD'];
-	    //"REMEMBER_ME":
-	    $lang_remember_me = $trans_lang_array['REMEMBER_ME'];
-	  }
-    }
-    // Default English
-    else {
-	  $lang_email = t(' Email Address: ');
-      $lang_pw = t(' Password: ');
-	  $lang_remember_me = t(' Remember Me ');
-	  $lang_signin_label = t(' SIGN IN ');
-    }
+	$lang_email = t('Email Address:');
+    $lang_pw = t('Password:');
+	$lang_remember_me = t('Remember Me');
+	$lang_signin_label = t('Sign In');
+
 	$form['name']['#attributes']['placeholder'] = t($lang_email);
     $form['pass']['#attributes']['placeholder'] = t($lang_pw);
     $form['name']['#title_display'] = "invisible";
     $form['pass']['#title_display'] = "invisible";
     $form['remember_me']['#title'] = t($lang_remember_me);
     $form['actions']['submit']['#value'] = t($lang_signin_label);
-    unset($lang);
   }
 }
 
@@ -85,7 +73,6 @@ function elx_form_user_login_alter(&$form, &$form_state) {
  *  Modify user_login_final_validate() with custom error messages
  */
 function elx_final_validate($form, &$form_state) {
-  global $language;
   if (empty($form_state['uid'])) {
     // Always register an IP-based failed login event.
     flood_register_event('failed_login_attempt_ip', variable_get('user_failed_login_ip_window', 3600));
@@ -104,24 +91,12 @@ function elx_final_validate($form, &$form_state) {
       }
     }
     else {
-      $lang = $language->language;
-	  //TODO:: Need to add function for all the rest of the language changes
-	  if (elx_languages_supported($lang) && $lang != 'en' && $lang != 'en-US') {
-	  	//TODO:: Add other errors
-	    //"FORGOT_NOT_FOUND":
-        //"EMAIL_ERROR":
-	    //"FORGOT_PASSWORD":
-	    //"UNKNOWN_USER":
-	    $key_vars = ['INVALID_EMAIL_PASS'];
-	    $invalid_error_key = 'INVALID_EMAIL_PASS';
-	    $validation_array = elx_languages_get_translations($lang, $key_vars);
-	    if (array_key_exists($invalid_error_key, $validation_array)) {
-	      $lang_invalid_email_pw = $validation_array[$invalid_error_key];
-	    }
-	  }
-      else {
-	    $lang_invalid_email_pw = 'The email or password you entered do not match. Please try again.';
-	  }
+	  //TODO:: Add other errors
+	  //"FORGOT_NOT_FOUND":
+      //"EMAIL_ERROR":
+      //"FORGOT_PASSWORD":
+      //"UNKNOWN_USER":
+	  $lang_invalid_email_pw = 'The email or password you entered do not match. Please try again.';
       form_set_error('name', t($lang_invalid_email_pw));
       watchdog('user', 'Login attempt failed for %user.', array('%user' => $form_state['values']['name']));
     }
@@ -131,7 +106,6 @@ function elx_final_validate($form, &$form_state) {
     // log in and out more than once in an hour.
     flood_clear_event('failed_login_attempt_user', $form_state['flood_control_user_identifier']);
   }
-  unset($lang);
 }
 
 

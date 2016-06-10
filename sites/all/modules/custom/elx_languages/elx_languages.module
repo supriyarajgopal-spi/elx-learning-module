@@ -4,26 +4,29 @@
  * Identifies languages.
  * 
  * @return
- *   returns an array with interface language, 
- *   user language if logged in and 
+ *   returns either interface language, 
+ *   user preferred language or 
  *   HTTP_ACCEPT_LANGUAGE modified to fit ELX site languages
+ *   or FALSE if none of the above languages were found
  * 
  */
-function elx_language_detect() {
+function elx_language_detect($input_name = NULL) {
   global $language;
   global $user;
-  // interface language
-  $interface_lang = isset($language->language) ? $language->language : FALSE;
-  $lang['interface_language'] = $interface_lang;
   
-  // user choosen language
+  // Logged-in user's choosen language
   if ($user->uid) {
     $user_lang = $user->language;
-	$lang['user_language'] = $user_lang;
+	return $user_lang;
   }
-  else {
-  	$user_lang = FALSE;
-	$lang['user_language'] = FALSE;
+  
+  // If passed an input_name - get user's choosen language
+  if (!empty($input_name)) {
+  	$get_user = user_load_by_name($input_name);
+	if (!empty($get_user)) {
+      $new_lang_code = $get_user->language;
+	  return $new_lang_code;
+	}
   }
 
   // Identify language from the Accept-language HTTP header we got.
@@ -38,14 +41,8 @@ function elx_language_detect() {
       'fi', 'fr-CA', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mo',
       'nb', 'nl', 'nn', 'no', 'pl', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-CN', 'zh-TW', 
       'zh-Hans', 'zh-Hant', 'zhHans', 'zhHant', 'zh'];
-
-  print_r(' LANG MATCH before the match ');
-  print_r($accept_lang_array);
   
   $lang_match = elx_language_find_match($supported, $accept_lang_array);
-  
-  print_r(' LANG MATCH before the ifs ');
-  print_r($lang_match);
   
   // french-canadian
   if ($lang_match === 'fr-CA') {
@@ -65,36 +62,30 @@ function elx_language_detect() {
   }
   // Chinese -> Traditional Chinese (FF only sends 'zh').
   if ($lang_match === 'zh') {
-    $lang_match = 'zhHant';
+    $lang_match = 'zhhant';
   }
   // zh-CN is much more common code for Simplified Chinese.
   if ($lang_match === 'zh-CN') {
-    $lang_match = 'zhHans';
+    $lang_match = 'zhhans';
   }
   // zh-TW is much more common code for Traditional Chinese.
   if ($lang_match == 'zh-TW') {
-    $lang_match = 'zhHant';
+    $lang_match = 'zhhant';
   }
-  // Default to english.
-  if (!$lang_match) {
-    $lang_match = 'en';
+  // Return HTTP_ACCEPT_LANGUAGE 
+  if ($lang_match) {
+	return $lang_match;
   }
-  $lang['http_accept'] = $lang_match;
   
-  dpm($interface_lang);
-  dpm(' accept lang ');
-  dpm($accept_lang);
-  dpm(' user lang ');
-  dpm($user_lang);
-
-  print_r($interface_lang);
-  print_r(' accept lang ');
-  print_r($accept_lang);
-  print_r(' user lang ');
-  print_r($user_lang);
-
-  var_dump($lang);
-  return $lang;
+  // Interface language
+  if (isset($language->language)) {
+    $interface_lang = isset($language->language) ? $language->language : FALSE;
+    $lang['interface_language'] = $interface_lang;
+    return $interface_lang;
+  }
+  else {
+  	return FALSE;
+  }
 }
 
 function elx_language_find_match($supported, $accepted) {
@@ -176,7 +167,11 @@ function elx_languages_json_to_po() {
   //TODO** Change static path to relative path of server
   $json_path = '/Users/tmyers/Documents/SPI/elx-learning-module/sites/all/themes/locales/';
   $fileSystemIterator = new FilesystemIterator($json_path);
-
+  
+  $en_file_path = '/Users/tmyers/Documents/SPI/elx-learning-module/sites/all/themes/locales/en.json';
+  $en_json_file = file_get_contents($en_file_path);
+  $en_json_array = json_decode($en_json_file, true);
+  
   $entries = array();
   foreach ($fileSystemIterator as $fileInfo){
     $entries[] = $fileInfo->getFilename();
@@ -191,11 +186,23 @@ function elx_languages_json_to_po() {
 
 	$po_file = fopen($new_file_path, 'w') or die('Unable to open file!');
 	foreach($json_array as $key => $value) {
-	  $po_key = str_replace(' ', '_', $key);
-	  $file_text = '#: /' . "\r\n" . 
-                    'msgid "'. $po_key .'"' . "\r\n" . 
-                    'msgstr "' . $value . '"' . "\r\n" ."\r\n";
-	  fwrite($po_file, $file_text);
+	  $value = trim(str_replace(array("\n", "\r"), ' ', $value));
+	  //get english string for msgid
+	  if (array_key_exists($key, $en_json_array)) {
+	    $en_value = strip_tags($en_json_array[$key]);
+	    //$en_value = str_replace(' ', '_', $en_value);
+	    $file_text = '#: /' . "\r\n" . 
+                      'msgid "'. $en_value .'"' . "\r\n" . 
+                      'msgstr "' . $value . '"' . "\r\n" ."\r\n";
+	    fwrite($po_file, $file_text);
+	  }
+	  else {
+	    //$po_key = str_replace(' ', '_', $key);
+	    $file_text = '#: /' . "\r\n" . 
+                      'msgid "'. $key .'"' . "\r\n" . 
+                      'msgstr "' . $value . '"' . "\r\n" ."\r\n";
+	    fwrite($po_file, $file_text);
+	  }
     }
   }
   return TRUE;

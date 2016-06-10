@@ -29,7 +29,7 @@ function elx_preprocess_user_login(&$vars) {
  */
 function elx_form_alter(&$form, &$form_state, $form_id) {
   // If we have a valid username - set the user's preferred language
-  if (!empty($form_state['input'])) {
+  if (!empty($form_state['input']['name'])) {
     $new_lang_code = elx_language_detect($form_state['input']['name']);
 	if (!empty($new_lang_code)) {
 	  $languages = language_list();

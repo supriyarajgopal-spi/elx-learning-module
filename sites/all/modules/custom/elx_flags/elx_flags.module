@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Flags feature.
+ */
+
+include_once 'elx_flags.features.inc';

@@ -1,0 +1,8 @@
+name = ELX Flags
+description = Feature for ELX flag configurations
+core = 7.x
+package = Features
+dependencies[] = flag
+features[features_api][] = api:2
+features[flag][] = favorites
+project path = sites/all/modules/custom

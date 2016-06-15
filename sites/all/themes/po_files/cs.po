@@ -1,0 +1,532 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Je nám líto. Zadaná e-mailová adresa nenáleží danému účtu ELX. Zkuste zadat jinou adresu."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Email nebo heslo nejsou správné. Zkuste to znovu."
+
+#: /
+msgid "Updating search..."
+msgstr "Aktualizované produkty"
+
+#: /
+msgid "Badges"
+msgstr "Odznaky"
+
+#: /
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: /
+msgid "view the details"
+msgstr "Více detailů"
+
+#: /
+msgid "View Tool"
+msgstr "Prohlédnout nástroj"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Minimální hranice pro splnění"
+
+#: /
+msgid "Compare My score to"
+msgstr "Porevnej se s ostaními"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Potvrdit heslo"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "Všechna vyhrazena Estée Lauder"
+
+#: /
+msgid "Current Language"
+msgstr "Aktuální jazyk"
+
+#: /
+msgid "Current Password"
+msgstr "Aktuální heslo"
+
+#: /
+msgid "Edit Language"
+msgstr "Změna jazyka"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Editovat profil a heslo"
+
+#: /
+msgid "Email Address:"
+msgstr "E-mailová adresa"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "Estée Lauder praxe"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Prozkoumejte výukové stupně"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Prozkoumejte knihovnu produktů"
+
+#: /
+msgid "favorited"
+msgstr "přidáno do oblíbených"
+
+#: /
+msgid "You fav prod"
+msgstr "Vaše oblíbené výrobky"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Pole se neshodují!"
+
+#: /
+msgid "The World"
+msgstr "Svět"
+
+#: /
+msgid "All Categories"
+msgstr "Všechny kategorie"
+
+#: /
+msgid "Bestsellers"
+msgstr "Bestselery"
+
+#: /
+msgid "Completed"
+msgstr "Dokončeno"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Vůně"
+
+#: /
+msgid "In Progress"
+msgstr "Zpracovává se"
+
+#: /
+msgid "Makeup"
+msgstr "Make up"
+
+#: /
+msgid "My Market"
+msgstr "Moje země"
+
+#: /
+msgid "My Region"
+msgstr "Můj region"
+
+#: /
+msgid "My Retailer"
+msgstr "Název parfumerie"
+
+#: /
+msgid "My Store"
+msgstr "Moje prodejna"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Péče o pleť"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Zapomenuté  heslo"
+
+#: /
+msgid "Search Results"
+msgstr "Výsledky vyhledávání"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Poslední dokončené aktivity"
+
+#: /
+msgid "Language:"
+msgstr "Výběr jazyka"
+
+#: /
+msgid "Last Login:"
+msgstr "Poslední přihlášení"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Úroveň dokončena"
+
+#: /
+msgid "Location:"
+msgstr "Umístění"
+
+#: /
+msgid "Log Out"
+msgstr "Odhlásit se"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Stránka je v režimu úpravy"
+
+#: /
+msgid "Market:"
+msgstr "Trh"
+
+#: /
+msgid "Member Since:"
+msgstr "Člen od:"
+
+#: /
+msgid "My Badges"
+msgstr "Můj odznak"
+
+#: /
+msgid "My Favorites"
+msgstr "Oblíbené"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Průběžné pořadí"
+
+#: /
+msgid "My Points:"
+msgstr "Moje body"
+
+#: /
+msgid "My Progress"
+msgstr "Můj pokrok"
+
+#: /
+msgid "My Tools"
+msgstr "Moje nástroje"
+
+#: /
+msgid "Next Level Up:"
+msgstr "O úroven výš"
+
+#: /
+msgid "Progress:"
+msgstr "Můj pokrok"
+
+#: /
+msgid "Sign in"
+msgstr "Přohlášení"
+
+#: /
+msgid "Store:"
+msgstr "Doporučení pro vás"
+
+#: /
+msgid "LABEL_USERNAME"
+msgstr "Uživatelské jméno"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Doporučení pro vás"
+
+#: /
+msgid "Language updated to"
+msgstr "Jazyk změněn na"
+
+#: /
+msgid "Leaderboard"
+msgstr "Tabulka výsledků"
+
+#: /
+msgid "All"
+msgstr "Vše"
+
+#: /
+msgid "Levels"
+msgstr "Úrovně"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Úrovně dokončeny"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Každá úroveň byla vytvořená pro vás - tak, abyste byli ještě lepší, v tom, co děláte. Rozhodněte se, jak je chcete praktikovat a dostat se o úroveň výš."
+
+#: /
+msgid "Loading Content..."
+msgstr "Stahování obsahu"
+
+#: /
+msgid "Loading Tools..."
+msgstr "Stahování obsahu"
+
+#: /
+msgid "Login Successful"
+msgstr "Úspěšné přihlášení"
+
+#: /
+msgid "Please wait..."
+msgstr "Prosím čekejte"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Právě jste se odhlásili. Brzy naviděnou"
+
+#: /
+msgid "Log Out"
+msgstr "Odhlásit se"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Hledání stávajícího přihlášení"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "Na stránkách ELX probíhají úpravy. Prosím přihlašte se později. Omlouváme se za případné potíže."
+
+#: /
+msgid "My Dashboard"
+msgstr "Můj hlavní panel"
+
+#: /
+msgid "My Points:"
+msgstr "Mon score"
+
+#: /
+msgid "My Progress"
+msgstr "Můj pokrok"
+
+#: /
+msgid "Need Help?"
+msgstr "Potřebujete pomoc?"
+
+#: /
+msgid "New Password"
+msgstr "Nové heslo"
+
+#: /
+msgid "No Levels found."
+msgstr "Nebyly nalezeny žádné úrovně."
+
+#: /
+msgid "Password:"
+msgstr "Heslo"
+
+#: /
+msgid "Password request received"
+msgstr "Obdrželi jste žádost o heslo"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Nastal problém se stahováním obsahu. Prosím zkuste to znovu."
+
+#: /
+msgid "Product Library"
+msgstr "Knihovna produktů"
+
+#: /
+msgid "Product Library"
+msgstr "Knihovna produktů"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Aktivujte si svůj účet služby Gravatar prostřednictvím odkazu v zaslaném e-mailu pro potvrzení o založení účtu."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Nahrajte svou profilovou fotografii k účtu služby Gravatar."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Vytvořte si zdarma účet ve službě Gravatar"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Postupujte podle těchto kroků:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Jste na stránkách služby Gravatar noví a potřebujete pomoc?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Chcete personalizovat svou profilovou fotografii? Vytvořte si účet ve službě Gravatar a nahrajte svou profilovou fotografii. Automaticky se propojí s vaším účtem na ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Váš profil na stránkách ELX se během krátké chvíle automaticky aktualizuje!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "Naposledy získané odznaky"
+
+#: /
+msgid "Remember Me"
+msgstr "Pamatovat si"
+
+#: /
+msgid "Request"
+msgstr "Vyžádat si nové heslo"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Zobrazeno  {{ start }} - {{ end }} z {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "Filtrovat podle"
+
+#: /
+msgid "Refine Search"
+msgstr "Upřesnit vyhledávání"
+
+#: /
+msgid "Sort By"
+msgstr "Řadit podle"
+
+#: /
+msgid "Title A-Z"
+msgstr "Název A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Nejpoopulárnějí"
+
+#: /
+msgid "View"
+msgstr "Zobrazit"
+
+#: /
+msgid "See All Badges"
+msgstr "Zobrazit všechny odznaky"
+
+#: /
+msgid "See All Tools"
+msgstr "Zobrazit všechny nástroje"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Zobrazit celkové průběžné pořadí"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Došlo k chybě na serveru"
+
+#: /
+msgid "Sign In"
+msgstr "Přihlášení"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Nemáte žádné oblíbené položky."
+
+#: /
+msgid "Submit"
+msgstr "Potvrdit"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Má doporučení"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Ochrana osobních údajů/podmínky"
+
+#: /
+msgid "My Badges"
+msgstr "Mé odznaky"
+
+#: /
+msgid "Leaderboard"
+msgstr "Průběžné pořadí"
+
+#: /
+msgid "LOGIN"
+msgstr "Přihlášení"
+
+#: /
+msgid "Points"
+msgstr "Body"
+
+#: /
+msgid "Rank"
+msgstr "Pořadí"
+
+#: /
+msgid "Spotlight"
+msgstr "Vyhledat"
+
+#: /
+msgid "Tools"
+msgstr "Nástroje"
+
+#: /
+msgid "unfavorited"
+msgstr "není již v oblíbených"
+
+#: /
+msgid "Unknown user"
+msgstr "Neznámý uživatel"
+
+#: /
+msgid "Updating language"
+msgstr "Aktualizace jazyka"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Co je nového"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "See More"
+
+#: /
+msgid "Level:"
+msgstr "Úrovně"
+
+#: /
+msgid "Search"
+msgstr "Hledání"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

@@ -1,0 +1,528 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Diemžēl uzradītā e-mail adrese nav pierakstīta nevienam ELX kontam. Mēģini ierakstīt citu adresi."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Epasts vai parole ko ievadījāt nesakrīt. Lūdzu mēğiniet vēlreiz."
+
+#: /
+msgid "Updating search..."
+msgstr "Atjaunota meklēšana…"
+
+#: /
+msgid "Badges"
+msgstr "Atzīmes"
+
+#: /
+msgid "Update"
+msgstr "Atjaunots"
+
+#: /
+msgid "view the details"
+msgstr "skatīties detaļas"
+
+#: /
+msgid "View Tool"
+msgstr "Pārskata rīks"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Tuvākais līmenis nobeigšanai:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Salīdzināt manus rezultātus ar"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Apliecināt paroli"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Visas starptautiskās tiesības aizsargātas."
+
+#: /
+msgid "Current Language"
+msgstr "Valoda"
+
+#: /
+msgid "Current Password"
+msgstr "Pašreizējā parole"
+
+#: /
+msgid "Edit Language"
+msgstr "Mainīt valodu"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Rediģēt profilu un paroli"
+
+#: /
+msgid "Email Address:"
+msgstr "E-mail adrese"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "ESTEE LAUDER PIEREDZE"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Apskatīt Mācību Līmeņus"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Apskatīt Produktu Bibleotēku"
+
+#: /
+msgid "favorited"
+msgstr "Atzīmētie"
+
+#: /
+msgid "You fav prod"
+msgstr "Visbiešāk apskatītie produkti"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Lauki nesakrīt"
+
+#: /
+msgid "The World"
+msgstr "Pasaule"
+
+#: /
+msgid "All Categories"
+msgstr "Visas kategorijas"
+
+#: /
+msgid "Bestsellers"
+msgstr "Visbiežāk Pārdotākie Produkti"
+
+#: /
+msgid "Completed"
+msgstr "Pabeigts"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Aromāti"
+
+#: /
+msgid "In Progress"
+msgstr "Procesā"
+
+#: /
+msgid "Makeup"
+msgstr "Dekoratīvā Kosmētika"
+
+#: /
+msgid "My Market"
+msgstr "Mana Valsts"
+
+#: /
+msgid "My Region"
+msgstr "Mans Reģions"
+
+#: /
+msgid "My Retailer"
+msgstr "Mans Pārdošanas Tīkls"
+
+#: /
+msgid "My Store"
+msgstr "Mans Veikals"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Sejas Kopšanas Produkti"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Aizmirsāt Paroli"
+
+#: /
+msgid "Search Results"
+msgstr "Meklēšanas rezultāti"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Pēdējās Pabeigtās Aktivitātes"
+
+#: /
+msgid "Language:"
+msgstr "Valodas izvēle:"
+
+#: /
+msgid "Last Login:"
+msgstr "Pēdējais Lietotājvārds:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Pabeigtie Līmeņi:"
+
+#: /
+msgid "Location:"
+msgstr "Atrašanās vieta:"
+
+#: /
+msgid "Log Out"
+msgstr "Iziet"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Saite apkalpošanas režīmā"
+
+#: /
+msgid "Market:"
+msgstr "Tirgus"
+
+#: /
+msgid "Member Since:"
+msgstr "Dalībnieks kopš:"
+
+#: /
+msgid "My Badges"
+msgstr "Manas Saites:"
+
+#: /
+msgid "My Favorites"
+msgstr "Manas Izvēlnes:"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Mans Banneris"
+
+#: /
+msgid "My Points:"
+msgstr "Mani Punkti:"
+
+#: /
+msgid "My Progress"
+msgstr "Mans progress"
+
+#: /
+msgid "My Tools"
+msgstr "Mani Darbarīki"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Nākošais Līmenis:"
+
+#: /
+msgid "Progress:"
+msgstr "Mans progress"
+
+#: /
+msgid "Sign in"
+msgstr "Pierakstīties"
+
+#: /
+msgid "Store:"
+msgstr "Veikals:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Ieteikumi:"
+
+#: /
+msgid "Language updated to"
+msgstr "Valoda nomainīta uz"
+
+#: /
+msgid "Leaderboard"
+msgstr "Rezultātu tabula"
+
+#: /
+msgid "All"
+msgstr "Viss"
+
+#: /
+msgid "Levels"
+msgstr "Līmeņi"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Pabeigtie Līmeņi:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Katrs no šiem Līmeņiem bija izveidots Jums, lai palīdzētu labāk pildīt savu darbu. Jūs varat izvēlēties pati kādā kārtībā un kad tos pabeigt."
+
+#: /
+msgid "Loading Content..."
+msgstr "Ielādē..."
+
+#: /
+msgid "Loading Tools..."
+msgstr "Ielādē..."
+
+#: /
+msgid "Login Successful"
+msgstr "Ielāde neveiksmīga..."
+
+#: /
+msgid "Please wait..."
+msgstr "Ielāde veiksmīga"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Lūdzu uzgaidiet..."
+
+#: /
+msgid "Log Out"
+msgstr "Iziet"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Mēklē Lietotājvārdu..."
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELX lapar pašlaik strādā apkalpošanas režīmā. Lūdzu ienākt nedaudz vēlāk. Atvainojamies par sagādātajām neertībām."
+
+#: /
+msgid "My Dashboard"
+msgstr "Mans informācijas panelis"
+
+#: /
+msgid "My Points:"
+msgstr "Mani punkti"
+
+#: /
+msgid "My Progress"
+msgstr "Mans progress"
+
+#: /
+msgid "Need Help?"
+msgstr "Nepieciešama Palīdzība?"
+
+#: /
+msgid "New Password"
+msgstr "Jauna parole"
+
+#: /
+msgid "No Levels found."
+msgstr "Līmenis nav atrasts"
+
+#: /
+msgid "Password:"
+msgstr "Parole"
+
+#: /
+msgid "Password request received"
+msgstr "Saņemts paroles pieprasījums"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Ielādes kļūda, lūdzu mēģiniet vēl reiz."
+
+#: /
+msgid "Product Library"
+msgstr "Produktu Bibliotēka"
+
+#: /
+msgid "Product Library"
+msgstr "Produktu Bibliotēka"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Aktivizēt savu Gravatar lapu izmantojot aktivizācijas epastu"
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Pievieno profila bildi savam Gravatar"
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Izveidot bezmaksas lapu izmantojot Gravatar"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Sekojiet šiem soļiem:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Pirmo reizi izmanto Gravatar un ir nepieciešama palīdzība?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Gribi personalizēt savu profila bildi? Izveido lapu ar Gravatar palīdzību un pievieno savu bildi. Tā automātiskie pievienosies ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Tavs ELX profils atjaunosies automātiski īsā laika periodā!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "Visjaunākās atzīmes"
+
+#: /
+msgid "Remember Me"
+msgstr "Atceries"
+
+#: /
+msgid "Request"
+msgstr "Pieprasīt jaunu paroli"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Rāda {{ start }} - {{ end }} : {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "Sakārtot Pēc"
+
+#: /
+msgid "Refine Search"
+msgstr "Precīzēta Meklēšana"
+
+#: /
+msgid "Sort By"
+msgstr "Sortēt Pēc"
+
+#: /
+msgid "Title A-Z"
+msgstr "Nosaukumi A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Vispopilārākie"
+
+#: /
+msgid "View"
+msgstr "Skatīt"
+
+#: /
+msgid "See All Badges"
+msgstr "Visas atzīmes"
+
+#: /
+msgid "See All Tools"
+msgstr "Visi rīki"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Pilns Baneris"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Servera kļūda"
+
+#: /
+msgid "Sign In"
+msgstr "Ielogot"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Piedosiet, nav atzīmēto."
+
+#: /
+msgid "Submit"
+msgstr "Iesniegt"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Ierosinājumi"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Konfidencialitates polise un Noteikumi / Nosacījumi"
+
+#: /
+msgid "My Badges"
+msgstr "Nozīmītes"
+
+#: /
+msgid "Leaderboard"
+msgstr "Baneri"
+
+#: /
+msgid "LOGIN"
+msgstr "PIESLĒGŠANĀS"
+
+#: /
+msgid "Points"
+msgstr "Punkti"
+
+#: /
+msgid "Rank"
+msgstr "Vieta"
+
+#: /
+msgid "Spotlight"
+msgstr "Uzmanīvas Centrs"
+
+#: /
+msgid "Tools"
+msgstr "Rīki"
+
+#: /
+msgid "unfavorited"
+msgstr "Atvienots"
+
+#: /
+msgid "Unknown user"
+msgstr "Nezināms Lietotājs"
+
+#: /
+msgid "Updating language"
+msgstr "Atjauno valodu"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Jaunumi un Trendi"
+
+#: /
+msgid "Level:"
+msgstr "Līmeņi"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Apskati vairāk"
+
+#: /
+msgid "Search"
+msgstr "meklēt"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

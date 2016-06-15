@@ -1,0 +1,552 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "The email or password you entered do not match. Please try again."
+
+#: /
+msgid "Updating search..."
+msgstr "Updating search..."
+
+#: /
+msgid "Advanced Night Repair"
+msgstr "Advanced Night Repair"
+
+#: /
+msgid "Advanced Night Repair 2"
+msgstr "Advanced Night Repair 2"
+
+#: /
+msgid "Badges"
+msgstr "Badges"
+
+#: /
+msgid "Update"
+msgstr "Update"
+
+#: /
+msgid "view the details"
+msgstr "view the details"
+
+#: /
+msgid "View Tool"
+msgstr "View Tool"
+
+#: /
+msgid "Beautiful Skin for Life"
+msgstr "Beautiful Skin for Life"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Closest Level to Completion:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Compare My score to"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Password Confirm:"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+
+#: /
+msgid "Current Language"
+msgstr "Current Language"
+
+#: /
+msgid "Current Password"
+msgstr "Current Password"
+
+#: /
+msgid "Edit Language"
+msgstr "Edit Language"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "edit profile &amp; password"
+
+#: /
+msgid "Email Address:"
+msgstr "Email Address:"
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "THE <strong>EST&#xC9;E LAUDER</strong> EXPERIENCE"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Explore Learning Levels"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Browse the Product Library"
+
+#: /
+msgid "favorited"
+msgstr "favorited"
+
+#: /
+msgid "You fav prod"
+msgstr "You fav prod"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Fields do not match!"
+
+#: /
+msgid "The World"
+msgstr "The World"
+
+#: /
+msgid "All Categories"
+msgstr "All Categories"
+
+#: /
+msgid "Bestsellers"
+msgstr "Bestsellers"
+
+#: /
+msgid "Completed"
+msgstr "Completed"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Fragrance"
+
+#: /
+msgid "Holidays"
+msgstr "Holidays"
+
+#: /
+msgid "In Progress"
+msgstr "In Progress"
+
+#: /
+msgid "Makeup"
+msgstr "Makeup"
+
+#: /
+msgid "My Market"
+msgstr "My Market"
+
+#: /
+msgid "My Region"
+msgstr "My Region"
+
+#: /
+msgid "My Retailer"
+msgstr "My Retailer"
+
+#: /
+msgid "My Store"
+msgstr "My Store"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Skincare"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "First Name:"
+msgstr "First Name:"
+
+#: /
+msgid "Forgot Password"
+msgstr "Forgot Password"
+
+#: /
+msgid "Search Results"
+msgstr "Search Results"
+
+#: /
+msgid "Greet Meet Treat Complete"
+msgstr "Greet Meet Treat Complete"
+
+#: /
+msgid "Account:"
+msgstr "Account:"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Recently Completed Activities:"
+
+#: /
+msgid "Language:"
+msgstr "Language:"
+
+#: /
+msgid "Last Login:"
+msgstr "Last Login:"
+
+#: /
+msgid "Level:"
+msgstr "Level:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Levels Completed:"
+
+#: /
+msgid "Location:"
+msgstr "Location:"
+
+#: /
+msgid "Log Out"
+msgstr "Log Out"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Site in Maintenance Mode"
+
+#: /
+msgid "Market:"
+msgstr "Market:"
+
+#: /
+msgid "Member Since:"
+msgstr "Member Since:"
+
+#: /
+msgid "My Badges"
+msgstr "My Badges"
+
+#: /
+msgid "My Favorites"
+msgstr "My Favorites"
+
+#: /
+msgid "My Leaderboard"
+msgstr "My Leaderboard"
+
+#: /
+msgid "My Points:"
+msgstr "My Points:"
+
+#: /
+msgid "My Progress"
+msgstr "My Progress"
+
+#: /
+msgid "My Tools"
+msgstr "My Tools"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Next Level Up:"
+
+#: /
+msgid "Progress:"
+msgstr "Progress:"
+
+#: /
+msgid "Sign in"
+msgstr "Sign in"
+
+#: /
+msgid "Store:"
+msgstr "Store:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Suggested for you:"
+
+#: /
+msgid "Language updated to"
+msgstr "Language updated to"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name:"
+
+#: /
+msgid "Leaderboard"
+msgstr "Leaderboard"
+
+#: /
+msgid "Levels"
+msgstr "Levels"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Levels Completed:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+
+#: /
+msgid "All"
+msgstr "All"
+
+#: /
+msgid "Loading Content..."
+msgstr "Loading Content..."
+
+#: /
+msgid "Loading Tools..."
+msgstr "Loading Tools..."
+
+#: /
+msgid "Login Successful"
+msgstr "Login Successful"
+
+#: /
+msgid "Please wait..."
+msgstr "Please wait..."
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "You have logged out. See you again soon!"
+
+#: /
+msgid "Log Out"
+msgstr "Log Out"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Looking for existing login..."
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+
+#: /
+msgid "My Dashboard"
+msgstr "My Dashboard"
+
+#: /
+msgid "My Points:"
+msgstr "My Points:"
+
+#: /
+msgid "My Progress"
+msgstr "My Progress"
+
+#: /
+msgid "Need Help?"
+msgstr "Need Help?"
+
+#: /
+msgid "New Password"
+msgstr "New Password"
+
+#: /
+msgid "No Levels found."
+msgstr "No Levels found."
+
+#: /
+msgid "New Dimension"
+msgstr "New Dimension"
+
+#: /
+msgid "Password:"
+msgstr "Password:"
+
+#: /
+msgid "Password request received"
+msgstr "Password request received"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "There was a problem loading this content, please try again."
+
+#: /
+msgid "Product Library"
+msgstr "Product Library"
+
+#: /
+msgid "Product Library"
+msgstr "Product Library"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Activate your Gravatar account from the confirmation email."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Add your profile photo to your Gravatar account."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Create a free account with Gravatar"
+
+#: /
+msgid "Follow these steps:"
+msgstr "<strong>Follow these steps:</strong>"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "New to Gravatar and need some help?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Want to personalize your profile photo?<br><a href="http://gravatar.com/" target="_blank">Create an account with Gravatar</a>, and add your photo. It links automatically to ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Your ELX profile updates automatically in just a short time!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "Recent Badges:"
+
+#: /
+msgid "Remember Me"
+msgstr "<span></span>Remember Me"
+
+#: /
+msgid "Request"
+msgstr "Request"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "<em>Displaying {{ start }} - {{ end }} of {{ total }}</em>"
+
+#: /
+msgid "Search"
+msgstr "Search"
+
+#: /
+msgid "Filter By"
+msgstr "Filter By"
+
+#: /
+msgid "Refine Search"
+msgstr "Refine Search"
+
+#: /
+msgid "Sort By"
+msgstr "Sort By"
+
+#: /
+msgid "Title A-Z"
+msgstr "Title A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Most Popular"
+
+#: /
+msgid "View"
+msgstr "View"
+
+#: /
+msgid "See All Badges"
+msgstr "See All Badges"
+
+#: /
+msgid "See All Tools"
+msgstr "See All Tools"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "See Full Leaderboard"
+
+#: /
+msgid "The server encountered an error"
+msgstr "The server encountered an error"
+
+#: /
+msgid "The server encountered an error"
+msgstr "The server encountered an error"
+
+#: /
+msgid "Sign In"
+msgstr "Sign In"
+
+#: /
+msgid "Sign up"
+msgstr "Sign up"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Sorry, no favorites."
+
+#: /
+msgid "Submit"
+msgstr "Submit"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Suggested for me:"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Privacy Policy/Terms &amp; Conditions"
+
+#: /
+msgid "My Badges"
+msgstr "My Badges"
+
+#: /
+msgid "Leaderboard"
+msgstr "Leaderboard"
+
+#: /
+msgid "LOGIN"
+msgstr "LOGIN"
+
+#: /
+msgid "Points"
+msgstr "Points"
+
+#: /
+msgid "Rank"
+msgstr "Rank"
+
+#: /
+msgid "Spotlight"
+msgstr "Spotlight"
+
+#: /
+msgid "Tools"
+msgstr "Tools"
+
+#: /
+msgid "unfavorited"
+msgstr "unfavorited"
+
+#: /
+msgid "Unknown user"
+msgstr "Unknown user"
+
+#: /
+msgid "Updating language"
+msgstr "Updating language"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "What&apos;s New &amp; Trending"
+

@@ -1,0 +1,528 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "申し訳ございません。このemailアドレスはELXに登録されていません。違うアドレスで再度トライしてみて下さい。"
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "パスワード、E-mailアドレスがマッチしない場合、再度お試しください。"
+
+#: /
+msgid "Updating search..."
+msgstr "アップデート中…"
+
+#: /
+msgid "Badges"
+msgstr "バッジ"
+
+#: /
+msgid "Update"
+msgstr "アップデート"
+
+#: /
+msgid "view the details"
+msgstr "詳細はこちら"
+
+#: /
+msgid "View Tool"
+msgstr "ビューツール"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "レベルを完了して終了"
+
+#: /
+msgid "Compare My score to"
+msgstr "マイスコアと比較"
+
+#: /
+msgid "Password Confirm:"
+msgstr "パスワード認定"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. All worldwide rights reserved."
+
+#: /
+msgid "Current Language"
+msgstr "現在の言語"
+
+#: /
+msgid "Current Password"
+msgstr "現在のパスワード"
+
+#: /
+msgid "Edit Language"
+msgstr "言語を選択"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "プロフィール、パスワードを編集する"
+
+#: /
+msgid "Email Address:"
+msgstr "Emailアドレス"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "ラーニングレベル"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "プロダクトライブラリーを探す"
+
+#: /
+msgid "favorited"
+msgstr "お気に入り"
+
+#: /
+msgid "You fav prod"
+msgstr "お気に入りメッセージ"
+
+#: /
+msgid "Fields do not match!"
+msgstr "マッチしません"
+
+#: /
+msgid "The World"
+msgstr "世界"
+
+#: /
+msgid "All Categories"
+msgstr "すべてのカテゴリー"
+
+#: /
+msgid "Bestsellers"
+msgstr "ベストセラーズ"
+
+#: /
+msgid "Completed"
+msgstr "完了"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "フレグランス"
+
+#: /
+msgid "In Progress"
+msgstr "進行中"
+
+#: /
+msgid "Makeup"
+msgstr "メークアップ"
+
+#: /
+msgid "My Market"
+msgstr "マイカントリー"
+
+#: /
+msgid "My Region"
+msgstr "マイリジョン"
+
+#: /
+msgid "My Retailer"
+msgstr "マイリテイラー"
+
+#: /
+msgid "My Store"
+msgstr "マイストア"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "リニュートリィブ"
+
+#: /
+msgid "Skincare"
+msgstr "スキンケア"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "パスワードお忘れですか"
+
+#: /
+msgid "Search Results"
+msgstr "検索結果"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "最近終わったアクテビティ"
+
+#: /
+msgid "Language:"
+msgstr "ご希望の言語"
+
+#: /
+msgid "Last Login:"
+msgstr "最後のログイン"
+
+#: /
+msgid "Levels Completed:"
+msgstr "完了したレベル"
+
+#: /
+msgid "Location:"
+msgstr "ロケーション"
+
+#: /
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "メンテナンス中"
+
+#: /
+msgid "Market:"
+msgstr "マーケット"
+
+#: /
+msgid "Member Since:"
+msgstr "メンバー開始日："
+
+#: /
+msgid "My Badges"
+msgstr "マイバッジ"
+
+#: /
+msgid "My Favorites"
+msgstr "マイフェイバリット"
+
+#: /
+msgid "My Leaderboard"
+msgstr "マイリーダーボード"
+
+#: /
+msgid "My Points:"
+msgstr "マイポイント"
+
+#: /
+msgid "My Progress"
+msgstr "進歩状況"
+
+#: /
+msgid "My Tools"
+msgstr "マイツール"
+
+#: /
+msgid "Next Level Up:"
+msgstr "次のレベル："
+
+#: /
+msgid "Progress:"
+msgstr "進歩状況"
+
+#: /
+msgid "Sign in"
+msgstr "サインイン"
+
+#: /
+msgid "Store:"
+msgstr "ストア/ドア："
+
+#: /
+msgid "Suggested for you:"
+msgstr "あなたへのおすすめ："
+
+#: /
+msgid "Language updated to"
+msgstr "言語をアップデート"
+
+#: /
+msgid "Leaderboard"
+msgstr "リーダーボード"
+
+#: /
+msgid "All"
+msgstr "すべて"
+
+#: /
+msgid "Levels"
+msgstr "レベル"
+
+#: /
+msgid "Levels Completed:"
+msgstr "完了したレベル："
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "これらのレベルはあなたの為に創られました-あなたの仕事を助けるためです。どのように体験してどのようにレベルアップするかあなた自身で決定できます。"
+
+#: /
+msgid "Loading Content..."
+msgstr "ダウンロード中…"
+
+#: /
+msgid "Loading Tools..."
+msgstr "ツールをロード中"
+
+#: /
+msgid "Login Successful"
+msgstr "ログイン成功"
+
+#: /
+msgid "Please wait..."
+msgstr "お待ちください….."
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "ログアウトされました。See you again soon!"
+
+#: /
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "現在のログインを検索中…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELXウェブサイトは現在メンテナンス中です。  しばらくして再度お試しください。  ご迷惑をおかけしております。"
+
+#: /
+msgid "My Dashboard"
+msgstr "マイダッシュボード"
+
+#: /
+msgid "My Points:"
+msgstr "マイポイント"
+
+#: /
+msgid "My Progress"
+msgstr "進歩状況"
+
+#: /
+msgid "Need Help?"
+msgstr "ヘルプが必要ですか？"
+
+#: /
+msgid "New Password"
+msgstr "ニューパスワード"
+
+#: /
+msgid "No Levels found."
+msgstr "レベルが見つかりません"
+
+#: /
+msgid "Password:"
+msgstr "パスワード"
+
+#: /
+msgid "Password request received"
+msgstr "パスワードリクエストを受け取りました"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "問題が発生しました、再度お試し下さい。"
+
+#: /
+msgid "Product Library"
+msgstr "プロダクトライブラリー"
+
+#: /
+msgid "Product Library"
+msgstr "プロダクトライブラリー"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "プロフィールを作成しましょう"
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "プロフィールに写真を追加しましょう"
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "アカウントを作成しましょう"
+
+#: /
+msgid "Follow these steps:"
+msgstr "使い方に沿って"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "プロフィールに関するヘルプ"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "プロフィールをカスタマイズしたいですか？Gravatarでアカウントを作成して写真を載せましょう。ここからＥＬＸは自動でリンクしています！"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "プロフィールアップデート"
+
+#: /
+msgid "Recent Badges:"
+msgstr "最新のバッジ"
+
+#: /
+msgid "Remember Me"
+msgstr "覚えてますか"
+
+#: /
+msgid "Request"
+msgstr "新しいパスワードを申請"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "ディスプレイ {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "フィルターをかける"
+
+#: /
+msgid "Refine Search"
+msgstr "サーチする"
+
+#: /
+msgid "Sort By"
+msgstr "ソートをかける"
+
+#: /
+msgid "Title A-Z"
+msgstr "Ｔｉｔｌｅ　Ａ－Ｚ"
+
+#: /
+msgid "Most Popular"
+msgstr "一番人気"
+
+#: /
+msgid "View"
+msgstr "Ｖｉｅｗ"
+
+#: /
+msgid "See All Badges"
+msgstr "すべてのバッジを見る"
+
+#: /
+msgid "See All Tools"
+msgstr "すべてのツールを見る"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "リーダーボードを見ましょう"
+
+#: /
+msgid "The server encountered an error"
+msgstr "サーバーエラー"
+
+#: /
+msgid "Sign In"
+msgstr "サインイン"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "お気に入りが見つかりません"
+
+#: /
+msgid "Submit"
+msgstr "Ｓｕｂｍｉｔ"
+
+#: /
+msgid "Suggested for me:"
+msgstr "あなたへのおすすめ"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "プライバシーポリシー　＆タームズ・コンディション"
+
+#: /
+msgid "My Badges"
+msgstr "バッジ"
+
+#: /
+msgid "Leaderboard"
+msgstr "リーダーボード"
+
+#: /
+msgid "LOGIN"
+msgstr "ログイン"
+
+#: /
+msgid "Points"
+msgstr "ポイント"
+
+#: /
+msgid "Rank"
+msgstr "ランク"
+
+#: /
+msgid "Spotlight"
+msgstr "Spotlight"
+
+#: /
+msgid "Tools"
+msgstr "ツール"
+
+#: /
+msgid "unfavorited"
+msgstr "気に入らない"
+
+#: /
+msgid "Unknown user"
+msgstr "見知らぬユーザー"
+
+#: /
+msgid "Updating language"
+msgstr "言語をアップデート"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "新製品＆トレンド"
+
+#: /
+msgid "Level:"
+msgstr "レベル"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "もっと見てみましょう"
+
+#: /
+msgid "Search"
+msgstr "検索"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

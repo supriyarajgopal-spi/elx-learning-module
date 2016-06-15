@@ -1,0 +1,528 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Vi ber om ursäkt. Den e-postadressen du angav verkar inte vara förknippad med ett ELX konto. Försök med en annan e-post adress."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Mejlet eller lösenordet du angav matchar inte. Var god försök igen."
+
+#: /
+msgid "Updating search..."
+msgstr "Uppdaterar produkter…"
+
+#: /
+msgid "Badges"
+msgstr "Badges"
+
+#: /
+msgid "Update"
+msgstr "Uppdatera"
+
+#: /
+msgid "view the details"
+msgstr "läs om detaljerna"
+
+#: /
+msgid "View Tool"
+msgstr "Visa Verktyg"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Närmaste Nivå till att Slutföra:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Jämför Mitt resultat med"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Bekräfta Lösenord"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Alla globala rättigheter är reserverade."
+
+#: /
+msgid "Current Language"
+msgstr "Nuvarande Språk"
+
+#: /
+msgid "Current Password"
+msgstr "Nuvarande Lösenord"
+
+#: /
+msgid "Edit Language"
+msgstr "Redigera Språk"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Redigera profil och lösenord"
+
+#: /
+msgid "Email Address:"
+msgstr "E-Postadress"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "ESTÉE LAUDER UPPLEVELSEN"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Upptäck Kunskapsnivåerna"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Upptäck Produktbiblioteket"
+
+#: /
+msgid "favorited"
+msgstr "Favorit"
+
+#: /
+msgid "You fav prod"
+msgstr "Din favorit produkt"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Fälten matchar inte!"
+
+#: /
+msgid "The World"
+msgstr "Världen"
+
+#: /
+msgid "All Categories"
+msgstr "Alla Kategorier"
+
+#: /
+msgid "Bestsellers"
+msgstr "Bästsäljande"
+
+#: /
+msgid "Completed"
+msgstr "Avslutade"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Dofter"
+
+#: /
+msgid "In Progress"
+msgstr "Under utveckling"
+
+#: /
+msgid "Makeup"
+msgstr "Makeup"
+
+#: /
+msgid "My Market"
+msgstr "Mitt Land"
+
+#: /
+msgid "My Region"
+msgstr "Min Region"
+
+#: /
+msgid "My Retailer"
+msgstr "Min Återförsäljare"
+
+#: /
+msgid "My Store"
+msgstr "Min Butik"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Hudvård"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Glömt Lösenord"
+
+#: /
+msgid "Search Results"
+msgstr "Sökresultat"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Senast Avslutade Aktiviteter:"
+
+#: /
+msgid "Language:"
+msgstr "Språk:"
+
+#: /
+msgid "Last Login:"
+msgstr "Senaste Login:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Uppnådda Nivåer:"
+
+#: /
+msgid "Location:"
+msgstr "Plats:"
+
+#: /
+msgid "Log Out"
+msgstr "Logga Ut"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Webbsidan är i underhållsläge"
+
+#: /
+msgid "Market:"
+msgstr "Marknad"
+
+#: /
+msgid "Member Since:"
+msgstr "Medlem sedan:"
+
+#: /
+msgid "My Badges"
+msgstr "Mina Medaljer"
+
+#: /
+msgid "My Favorites"
+msgstr "Mina Favoriter"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Min Resultatstavla"
+
+#: /
+msgid "My Points:"
+msgstr "Mina poäng:"
+
+#: /
+msgid "My Progress"
+msgstr "Min statusöversikt"
+
+#: /
+msgid "My Tools"
+msgstr "Mina Verktyg"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Till Nästa Nivå:"
+
+#: /
+msgid "Progress:"
+msgstr "Min statusöversikt"
+
+#: /
+msgid "Sign in"
+msgstr "Logga in"
+
+#: /
+msgid "Store:"
+msgstr "Butik/Namn:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Förslag till dig:"
+
+#: /
+msgid "Language updated to"
+msgstr "Spårket har uppdaterats till"
+
+#: /
+msgid "Leaderboard"
+msgstr "Resultattavla"
+
+#: /
+msgid "All"
+msgstr "Alla"
+
+#: /
+msgid "Levels"
+msgstr "Nivåer"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Uppnådda Nivåer:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Var och en av dessa Nivåer har utvecklats för dig- för att göra dig bättre  på det du gör. Du bestämmer själv hur du upplever dem och hur du vill uppnå till nästa Nivå."
+
+#: /
+msgid "Loading Content..."
+msgstr "Laddar Innehåll…"
+
+#: /
+msgid "Loading Tools..."
+msgstr "Laddar Verktyg…"
+
+#: /
+msgid "Login Successful"
+msgstr "Inloggningen lyckades"
+
+#: /
+msgid "Please wait..."
+msgstr "Vänligen vänta…"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Du har loggat ut. Vi ses snart igen!"
+
+#: /
+msgid "Log Out"
+msgstr "Logga Ut"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Letar efter nuvarande login…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELX hemsidan är för närvarande i underhållsläge. Kom tillbaka sen - vi ber om ursäkt för eventuella besvär."
+
+#: /
+msgid "My Dashboard"
+msgstr "Min instrumentpanel"
+
+#: /
+msgid "My Points:"
+msgstr "Mina Poäng"
+
+#: /
+msgid "My Progress"
+msgstr "Min statusöversikt"
+
+#: /
+msgid "Need Help?"
+msgstr "Behöver du hjälp?"
+
+#: /
+msgid "New Password"
+msgstr "Nytt Lösenord"
+
+#: /
+msgid "No Levels found."
+msgstr "Inga Nivåer hittades."
+
+#: /
+msgid "Password:"
+msgstr "Lösenord"
+
+#: /
+msgid "Password request received"
+msgstr "Lösenordsförfrågan godkänd"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Det uppstod ett problem när detta skulle laddas, vänligen försök igen."
+
+#: /
+msgid "Product Library"
+msgstr "Produktbibliotek"
+
+#: /
+msgid "Product Library"
+msgstr "Produktbibliotek"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Aktivera ditt Gravatar konto från din e-postbekräftelse."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Lägg till din profilbild på ditt Gravatar konto."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Skapa ett gratis konto med Gravatar"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Gör så här:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Ny på Gravatar och behöver lite hjälp?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Vill du göra din profilbild personlig? Skapa ett konto med Gravatar, och lägg till ditt foto. Den linkar dig automatiskt vidare till ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Din ELX profil uppdateras automatiskt alldeles snart!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "Senaste Badges"
+
+#: /
+msgid "Remember Me"
+msgstr "Minnas Mig"
+
+#: /
+msgid "Request"
+msgstr "Begär Nytt Lösenord"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Visar {{ start }} - {{ end }} av {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "Filtrera efter"
+
+#: /
+msgid "Refine Search"
+msgstr "Avancerad sökning"
+
+#: /
+msgid "Sort By"
+msgstr "Sortera efter"
+
+#: /
+msgid "Title A-Z"
+msgstr "Titlar A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Mest populär"
+
+#: /
+msgid "View"
+msgstr "Överblick"
+
+#: /
+msgid "See All Badges"
+msgstr "Visa alla medaljer"
+
+#: /
+msgid "See All Tools"
+msgstr "Visa alla verktyg"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Se Fullstänid Överblick"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Servern upptäckte ett fel"
+
+#: /
+msgid "Sign In"
+msgstr "Logga In"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Tyvärr, inga favoriter."
+
+#: /
+msgid "Submit"
+msgstr "Godkänn"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Föreslås för mig"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Sekretess och Villkor | Villkor"
+
+#: /
+msgid "My Badges"
+msgstr "Medaljer"
+
+#: /
+msgid "Leaderboard"
+msgstr "Resultatstavla"
+
+#: /
+msgid "LOGIN"
+msgstr "LOGIN"
+
+#: /
+msgid "Points"
+msgstr "Poäng"
+
+#: /
+msgid "Rank"
+msgstr "Ranking"
+
+#: /
+msgid "Spotlight"
+msgstr "Spotlight"
+
+#: /
+msgid "Tools"
+msgstr "Verktyg"
+
+#: /
+msgid "unfavorited"
+msgstr "inte min favorit"
+
+#: /
+msgid "Unknown user"
+msgstr "Okänd användare"
+
+#: /
+msgid "Updating language"
+msgstr "Uppdaterar språket"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Vad är Nytt & Trendigt"
+
+#: /
+msgid "Level:"
+msgstr "Nivåer"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Visa mer"
+
+#: /
+msgid "Search"
+msgstr "SÖK"
+
+#: /
+msgid "Account:"
+msgstr "Konto"
+
+#: /
+msgid "First Name:"
+msgstr "Förnamn"
+
+#: /
+msgid "Last Name:"
+msgstr "Efternamn"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Logga In"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "E-postadressen finns redan.   Om du inte kommer ihåg ditt lösenord, vänligen använd Glömt Lösenord länken ovan för att hämta det."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "E-postadresens har inte skrivs korrekt. Kontrollera din e-postadress och försök igen"
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "Det har skett ett fel. Försök igen senare."
+

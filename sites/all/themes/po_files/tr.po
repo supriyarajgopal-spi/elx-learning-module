@@ -1,0 +1,552 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Üzgünüz. Girmiş olduğunuz e-mail adresi ELX datasındaki veriler ile eşleşmiyor. Başka bir email adresi ile deneyin."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Girilen mail ya da şifre hatalı. Lütfen tekrar deneyiniz."
+
+#: /
+msgid "Updating search..."
+msgstr "Ürünü güncelliyor..."
+
+#: /
+msgid "Badges"
+msgstr "Uzmanlıklar"
+
+#: /
+msgid "Update"
+msgstr "Güncelle"
+
+#: /
+msgid "view the details"
+msgstr "Detayları görüntüle"
+
+#: /
+msgid "View Tool"
+msgstr "Başlıkları Görüntüle"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Son Modül"
+
+#: /
+msgid "Compare My score to"
+msgstr "Skorumu karşılaştır"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Şifreyi Onayla"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Tüm hakları saklıdır."
+
+#: /
+msgid "Current Language"
+msgstr "Mevcut Dil"
+
+#: /
+msgid "Current Password"
+msgstr "Mevcut Şifreniz"
+
+#: /
+msgid "Edit Language"
+msgstr "Dil Tercihini Değiştir"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Profili Düzenle & Şifre"
+
+#: /
+msgid "Email Address:"
+msgstr "E-Mail"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "ESTÉE LAUDER DENEYİMİ"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Öğrenme modüllerini keşfedin."
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Ürün Kataloğunu Keşfedin"
+
+#: /
+msgid "favorited"
+msgstr "Favorilere Eklendi"
+
+#: /
+msgid "You fav prod"
+msgstr "Favori Ürününüz"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Birbiriyle Uyumlu Olmayan Data"
+
+#: /
+msgid "The World"
+msgstr "Dünya"
+
+#: /
+msgid "All Categories"
+msgstr "Tüm Kategoriler"
+
+#: /
+msgid "Bestsellers"
+msgstr "En çok Satanlar"
+
+#: /
+msgid "Completed"
+msgstr "Tamamlandı"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Parfüm"
+
+#: /
+msgid "In Progress"
+msgstr "İşleniyor"
+
+#: /
+msgid "Makeup"
+msgstr "Makyaj"
+
+#: /
+msgid "My Market"
+msgstr "Ülke"
+
+#: /
+msgid "My Region"
+msgstr "Bölge"
+
+#: /
+msgid "My Retailer"
+msgstr "Bayi"
+
+#: /
+msgid "My Store"
+msgstr "Mağaza"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Cilt Bakım"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Şifremi Unuttum"
+
+#: /
+msgid "Search Results"
+msgstr "Arama Sonuçları"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "En Son Tamamlanan Aktiviteler"
+
+#: /
+msgid "Language:"
+msgstr "Dil Tercihi"
+
+#: /
+msgid "Last Login:"
+msgstr "En Son Giriş:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Tamamlanan Modüller"
+
+#: /
+msgid "Location:"
+msgstr "Lokasyon"
+
+#: /
+msgid "Log Out"
+msgstr "Çıkış"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Site Bakım Sürecinde"
+
+#: /
+msgid "Market:"
+msgstr "Ülke"
+
+#: /
+msgid "Member Since:"
+msgstr "Üye: ....'den beri"
+
+#: /
+msgid "My Badges"
+msgstr "Uzmanlıklarım"
+
+#: /
+msgid "My Favorites"
+msgstr "Favorilerim"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Skorlarım"
+
+#: /
+msgid "My Points:"
+msgstr "Puanlarım"
+
+#: /
+msgid "My Progress"
+msgstr "Gelişimim"
+
+#: /
+msgid "My Tools"
+msgstr "Başlıklar"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Bir Sonraki Modül"
+
+#: /
+msgid "Progress:"
+msgstr "Gelişimim"
+
+#: /
+msgid "Sign in"
+msgstr "Giriş"
+
+#: /
+msgid "Store:"
+msgstr "Mağaza"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Sizin için Önerilenler"
+
+#: /
+msgid "Language updated to"
+msgstr "Seçili Dil Tercihi Değiştirildi"
+
+#: /
+msgid "Leaderboard"
+msgstr "Skor"
+
+#: /
+msgid "All"
+msgstr "Tümü"
+
+#: /
+msgid "Levels"
+msgstr "Modüller"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Tamamlanan Modüller"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "İçeriklerin hepsi yaptığınız işte en iyisi olmanız için size özel tasarlandı. Bu eşsiz içerikleri değerlendirerek tüm adımları tercihinize göre tamamlayınız."
+
+#: /
+msgid "Loading Content..."
+msgstr "İçeriği yüklüyor..."
+
+#: /
+msgid "Loading Tools..."
+msgstr "Yükleme Araçları..."
+
+#: /
+msgid "Login Successful"
+msgstr "Giriş başarılı"
+
+#: /
+msgid "Please wait..."
+msgstr "Lütfen bekleyin..."
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Çıkış yaptınız. Tekrar görüşmek üzere!"
+
+#: /
+msgid "Log Out"
+msgstr "Çıkış"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Mevcut giriş"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "ELX şuan bakım sürecinde olduğundan geçici bir süre hizmet verememekteyiz. Lütfen kısa bir süre sonra tekrar deneyin.Anlayışınız için teşekkürler."
+
+#: /
+msgid "My Dashboard"
+msgstr "Puan Panom"
+
+#: /
+msgid "My Points:"
+msgstr "Puanlarım"
+
+#: /
+msgid "My Progress"
+msgstr "Durumum"
+
+#: /
+msgid "Need Help?"
+msgstr "Yardım?"
+
+#: /
+msgid "New Password"
+msgstr "Yeni Şifre"
+
+#: /
+msgid "No Levels found."
+msgstr "Hiçbir seviye bulunamadı."
+
+#: /
+msgid "Password:"
+msgstr "Şifre"
+
+#: /
+msgid "Password request received"
+msgstr "Parola"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "İçeriği yüklemede problem oluştu, lütfen tekrar deneyin."
+
+#: /
+msgid "Product Library"
+msgstr "Ürün Kataloğu"
+
+#: /
+msgid "Product Library"
+msgstr "Ürün Kataloğu"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Gravatar hesabınızı onay e-maili ile aktive ediniz."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Hesabınıza profil fotoğrafı ekleyiniz."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Gravatar ile ücretsiz hesap oluşturun"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Aşağıdaki adımları takip edin:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Gravatar’ın ne olduğunu bilmiyorum ve yardıma ihtiyacım var."
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Profil fotoğrafınızı kişiselleştirmek mi istiyorsunuz?  Sadece bir defaya mahsus Gravatar’a fotoğraf yükleyerek birçok yerde görüntülenmesini sağlayabilirsiniz. Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Gravatar hesabınız ELX ile koordine şekilde ilerleyecek ve profiliniz güncellenecektir."
+
+#: /
+msgid "Recent Badges:"
+msgstr "Son Kazanılan Uzmanlıklar"
+
+#: /
+msgid "Remember Me"
+msgstr "Hatırla"
+
+#: /
+msgid "Request"
+msgstr "Yeni Şifre Talebi"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Görüntüle {{ start }} - {{ end }} of {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "Filtrele"
+
+#: /
+msgid "Refine Search"
+msgstr "Gelişmiş Arama"
+
+#: /
+msgid "Sort By"
+msgstr "Sırala"
+
+#: /
+msgid "Title A-Z"
+msgstr "A'dan Z'ye Sırala"
+
+#: /
+msgid "Most Popular"
+msgstr "En Popüler"
+
+#: /
+msgid "View"
+msgstr "Görüntüle"
+
+#: /
+msgid "See All Badges"
+msgstr "Tüm Rozetler"
+
+#: /
+msgid "See All Tools"
+msgstr "Tüm Araçlar"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Tüm Puan Tablosu"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Sistemsel Hata"
+
+#: /
+msgid "Sign In"
+msgstr "Giriş"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Üzgünüz, hiç favoriniz yok."
+
+#: /
+msgid "Submit"
+msgstr "Gönder"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Sizin için Önerilenler"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Gizlilik Politikası ve Koşullar"
+
+#: /
+msgid "My Badges"
+msgstr "Uzmanlıklarım"
+
+#: /
+msgid "Leaderboard"
+msgstr "Skorlarım"
+
+#: /
+msgid "LOGIN"
+msgstr "GİRİŞ"
+
+#: /
+msgid "Points"
+msgstr "Puanlar"
+
+#: /
+msgid "Rank"
+msgstr "Sıra"
+
+#: /
+msgid "Spotlight"
+msgstr "İlgi Çekenler"
+
+#: /
+msgid "Tools"
+msgstr "Başlıklar"
+
+#: /
+msgid "unfavorited"
+msgstr "favorilere eklenmedi"
+
+#: /
+msgid "Unknown user"
+msgstr "Tanımsız Kullanıcı"
+
+#: /
+msgid "Updating language"
+msgstr "Dili güncelleniyor"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "En  Yeniler & Trendler"
+
+#: /
+msgid "Level:"
+msgstr "Modüller"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Daha Fazla Bilgi"
+
+#: /
+msgid "Search"
+msgstr "Ara"
+
+#: /
+msgid "Advanced Night Repair"
+msgstr "Advanced Night Repair"
+
+#: /
+msgid "Advanced Night Repair 2"
+msgstr "Advanced Night Repair 2"
+
+#: /
+msgid "Beautiful Skin for Life"
+msgstr "Beautiful Skin for Life"
+
+#: /
+msgid "Greet Meet Treat Complete"
+msgstr "KARŞILAMA, TANIŞMA, UYGULAMA, TAMAMLAMA"
+
+#: /
+msgid "New Dimension"
+msgstr "New Dimension"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Account:"
+msgstr "Hesap"
+
+#: /
+msgid "First Name:"
+msgstr "İsim"
+
+#: /
+msgid "Last Name:"
+msgstr "Soyisim"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Giriş"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "Girmiş olduğunuz e-mail adresi kullanımda. Parolanızı hatırlamıyorsanız, parolamı unuttum bölümüne girin ve tekrar oluşturun"
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "Girmiş olduğunuz e-mail adresi uygun formatta değil. Lütfen e-mail adresinizi kontrol edin ve tekrar deneyin."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "Beklenmeyen bir hata oluştu, lütfen tekrar deneyin."
+

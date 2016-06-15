@@ -1,0 +1,532 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Het spijt ons. Het e-mailadres lijkt niet verbonden te zijn met een ELX-account. Probeer een ander e-mailadres."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "De ingevoerde email of paswoord is niet correct. Probeer het opnieuw."
+
+#: /
+msgid "Updating search..."
+msgstr "Producten updaten…"
+
+#: /
+msgid "Badges"
+msgstr "Badges"
+
+#: /
+msgid "Update"
+msgstr "Update"
+
+#: /
+msgid "view the details"
+msgstr "Bekijk de details"
+
+#: /
+msgid "View Tool"
+msgstr "bekijk de hulpmiddelen"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Volgend niveau dat behaald kan worden:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Vergelijk mijn score met"
+
+#: /
+msgid "Password Confirm:"
+msgstr "paswoord bevestigen"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Alle wereldwijde rechten voorbehouden."
+
+#: /
+msgid "Current Language"
+msgstr "actuele taal"
+
+#: /
+msgid "Current Password"
+msgstr "actueel paswoord"
+
+#: /
+msgid "Edit Language"
+msgstr "taal kiezen"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Profiel & wachtwoord bewerken"
+
+#: /
+msgid "Email Address:"
+msgstr "E-mailadres"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "DE ESTÉE LAUDER-ERVARING"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Leerniveaus verkennen"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Productbibliotheek verkennen"
+
+#: /
+msgid "favorited"
+msgstr "favoriet"
+
+#: /
+msgid "You fav prod"
+msgstr "jouw favoriet bericht"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Velden komen niet overeen!"
+
+#: /
+msgid "The World"
+msgstr "De Wereld"
+
+#: /
+msgid "All Categories"
+msgstr "Alle categorieën"
+
+#: /
+msgid "Bestsellers"
+msgstr "Bestsellers"
+
+#: /
+msgid "Completed"
+msgstr "Vervolledigd"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Geuren"
+
+#: /
+msgid "In Progress"
+msgstr "Bezig"
+
+#: /
+msgid "Makeup"
+msgstr "Make-up"
+
+#: /
+msgid "My Market"
+msgstr "Onze market"
+
+#: /
+msgid "My Region"
+msgstr "Mijn regio"
+
+#: /
+msgid "My Retailer"
+msgstr "Mijn retailer"
+
+#: /
+msgid "My Store"
+msgstr "Mijn winkel"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Huidverzorging"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Paswoord vergeten"
+
+#: /
+msgid "Search Results"
+msgstr "Zoekresultaten"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Recent vervolledigde activiteiten:"
+
+#: /
+msgid "Language:"
+msgstr "Voorkeurstaal:"
+
+#: /
+msgid "Last Login:"
+msgstr "Laatste login:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Voltooide niveaus:"
+
+#: /
+msgid "Location:"
+msgstr "Plaats:"
+
+#: /
+msgid "Log Out"
+msgstr "uitloggen"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "website in onderhoud"
+
+#: /
+msgid "Market:"
+msgstr "markt"
+
+#: /
+msgid "Member Since:"
+msgstr "Lid sinds:"
+
+#: /
+msgid "My Badges"
+msgstr "Mijn badges"
+
+#: /
+msgid "My Favorites"
+msgstr "Mijn favorieten"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Mijn scorebord"
+
+#: /
+msgid "My Points:"
+msgstr "Mijn punten:"
+
+#: /
+msgid "My Progress"
+msgstr "Mijn vooruitgang"
+
+#: /
+msgid "My Tools"
+msgstr "Mijn tools"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Volgend niveau:"
+
+#: /
+msgid "Progress:"
+msgstr "Mijn vooruitgang"
+
+#: /
+msgid "Sign in"
+msgstr "Aanmelden"
+
+#: /
+msgid "Store:"
+msgstr "Winkel:"
+
+#: /
+msgid "LABEL_USERNAME"
+msgstr "Gebruikersnaam:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Aanbevolen voor jou:"
+
+#: /
+msgid "Language updated to"
+msgstr "taal wordt bijgewerkt"
+
+#: /
+msgid "Leaderboard"
+msgstr "Scorebord"
+
+#: /
+msgid "All"
+msgstr "Alle"
+
+#: /
+msgid "Levels"
+msgstr "Niveaus"
+
+#: /
+msgid "Levels Completed:"
+msgstr "niveaus afgerond"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Elk van deze niveaus werd voor jou gecreëerd - om je nog beter te maken in wat je doet. Jij bepaalt hoe je de niveaus ervaart en hoe je naar een volgend niveau wil gaan."
+
+#: /
+msgid "Loading Content..."
+msgstr "Inhoud laden…"
+
+#: /
+msgid "Loading Tools..."
+msgstr "hulpmiddelen aan het laden"
+
+#: /
+msgid "Login Successful"
+msgstr "Succesvol aangemeld"
+
+#: /
+msgid "Please wait..."
+msgstr "Gelieve even te wachten…"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Je bent uitgelogd. Tot snel!"
+
+#: /
+msgid "Log Out"
+msgstr "uitloggen"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Bestaande login opzoeken…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "De ELX website is in onderhoud. Kijk snel binnenkort. Onze excuses voor het ongemak."
+
+#: /
+msgid "My Dashboard"
+msgstr "Mijn dashboard"
+
+#: /
+msgid "My Points:"
+msgstr "Mijn punten"
+
+#: /
+msgid "My Progress"
+msgstr "Mijn vooruitgang"
+
+#: /
+msgid "Need Help?"
+msgstr "Hulp nodig?"
+
+#: /
+msgid "New Password"
+msgstr "Nieuw wachtwoord"
+
+#: /
+msgid "No Levels found."
+msgstr "geen levels gevonden"
+
+#: /
+msgid "Password:"
+msgstr "Wachtwoord"
+
+#: /
+msgid "Password request received"
+msgstr "Paswoordaanvraag ontvangen"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Er was een probleem met het laden van deze inhoud. Gelieve het opnieuw te proberen."
+
+#: /
+msgid "Product Library"
+msgstr "Productbibliotheek"
+
+#: /
+msgid "Product Library"
+msgstr "Productbibliotheek"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "activeer jouw Gravatar account via jouw bevestingsmail"
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "voeg je foto toe aan je Gravatar account"
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "maak een gratis account aan op Gravatar"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Volg deze stappen"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "nieuw op Gravatar en hulp nodig?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Zin om jouw profiel foto te personaliseren? Maak een account aan op Gravatar, en voeg je foto toe. Deze linkt automatisch naar je ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Jouw ELX profiel wordt automatisch aangepast."
+
+#: /
+msgid "Recent Badges:"
+msgstr "Recente badges"
+
+#: /
+msgid "Remember Me"
+msgstr "Gegevens onthouden"
+
+#: /
+msgid "Request"
+msgstr "Nieuw wachtwoord aanvragen"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Producten {{ start }} - {{ end }} van {{ total }} worden weergegeven"
+
+#: /
+msgid "Filter By"
+msgstr "Filter op"
+
+#: /
+msgid "Refine Search"
+msgstr "Verfijn zoekopdracht"
+
+#: /
+msgid "Sort By"
+msgstr "Sorteer volgens"
+
+#: /
+msgid "Title A-Z"
+msgstr "Titel A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Meest populaire"
+
+#: /
+msgid "View"
+msgstr "Bekijken"
+
+#: /
+msgid "See All Badges"
+msgstr "Alle badges bekijken"
+
+#: /
+msgid "See All Tools"
+msgstr "Alle tools bekijken"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Zie volledig scorebord"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Er is een fout opgetreden"
+
+#: /
+msgid "Sign In"
+msgstr "Inloggen"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Sorry, geen favorieten."
+
+#: /
+msgid "Submit"
+msgstr "Indienen"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Je zult ook houden van…"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Privacybeleid en Algemene voorwaarden"
+
+#: /
+msgid "My Badges"
+msgstr "Mijn badges"
+
+#: /
+msgid "Leaderboard"
+msgstr "Scorebord"
+
+#: /
+msgid "LOGIN"
+msgstr "Login"
+
+#: /
+msgid "Points"
+msgstr "Punten"
+
+#: /
+msgid "Rank"
+msgstr "Rangschikking"
+
+#: /
+msgid "Spotlight"
+msgstr "Spotlight"
+
+#: /
+msgid "Tools"
+msgstr "Tools"
+
+#: /
+msgid "unfavorited"
+msgstr "geen favoriet meer"
+
+#: /
+msgid "Unknown user"
+msgstr "Onbekende gebruiker"
+
+#: /
+msgid "Updating language"
+msgstr "updating taal"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Ontdek wat nieuw en trendy is"
+
+#: /
+msgid "Level:"
+msgstr "Niveaus"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Meer bekijken"
+
+#: /
+msgid "Search"
+msgstr "zoek"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "Voornaam"
+
+#: /
+msgid "Last Name:"
+msgstr "Achternaame"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Login"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "Dit e-mail adres bestaat al. Als u uw wachtwoord niet meer weet, klik op de link "wachtwoord vergeten" om een nieuw te krijgen."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "Het ingevoerde e-mailadres is niet correct. Controleer uw e-mailadres en probeer het opnieuw."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "Een onverwachte fout is opgetreden, probeer het later opnieuw."
+

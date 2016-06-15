@@ -1,0 +1,528 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Sajnáljuk! A megadott e-mail cím nem szerepel az ELX felhasználói rendszerben. Kérjük próbáld meg egy másik e-mail címmel!"
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Helytelen felhasználónév vagy jelszó. Próbáld újra!"
+
+#: /
+msgid "Updating search..."
+msgstr "Termékek frissítése…"
+
+#: /
+msgid "Badges"
+msgstr "Jelvények"
+
+#: /
+msgid "Update"
+msgstr "Frissítés"
+
+#: /
+msgid "view the details"
+msgstr "tekintsd meg a részleteket!"
+
+#: /
+msgid "View Tool"
+msgstr "Eszköz megtekintése"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "A végzéshez legközelebbi szint:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Hasonlítsd össze az eredményemet az övével:"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Jelszó megerősítése"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Minden jog fenntartva."
+
+#: /
+msgid "Current Language"
+msgstr "Jelenelegi nyelv"
+
+#: /
+msgid "Current Password"
+msgstr "Jelenlegi jelszó"
+
+#: /
+msgid "Edit Language"
+msgstr "Nyelv szerkesztése"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Profil és jelszó szerkesztése"
+
+#: /
+msgid "Email Address:"
+msgstr "E-mail cím"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "AZ ESTÉE LAUDER ÉLMÉNY"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Fedezd fel a Tanulói Szinteket!"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Ismerd meg a Termékkatalógust!"
+
+#: /
+msgid "favorited"
+msgstr "A kedvencekhez adva"
+
+#: /
+msgid "You fav prod"
+msgstr "Kedvenc terméked"
+
+#: /
+msgid "Fields do not match!"
+msgstr "A fájlok nem egyeznek!"
+
+#: /
+msgid "The World"
+msgstr "A Világ"
+
+#: /
+msgid "All Categories"
+msgstr "Minden kategória"
+
+#: /
+msgid "Bestsellers"
+msgstr "Legnépszerűbb termékek"
+
+#: /
+msgid "Completed"
+msgstr "Elvégezve"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Illat"
+
+#: /
+msgid "In Progress"
+msgstr "Folyamatban"
+
+#: /
+msgid "Makeup"
+msgstr "Smink"
+
+#: /
+msgid "My Market"
+msgstr "Országom"
+
+#: /
+msgid "My Region"
+msgstr "Térségem"
+
+#: /
+msgid "My Retailer"
+msgstr "Kiskereskedelmi egységem"
+
+#: /
+msgid "My Store"
+msgstr "Üzletem"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Bőrápolás"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Elfelejtett jelszó"
+
+#: /
+msgid "Search Results"
+msgstr "Találatok"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Utoljára elvégzett tevékenységek:"
+
+#: /
+msgid "Language:"
+msgstr "Nyelv:"
+
+#: /
+msgid "Last Login:"
+msgstr "Utolsó bejelentkezés:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Elvégzett szintek:"
+
+#: /
+msgid "Location:"
+msgstr "Helyszín:"
+
+#: /
+msgid "Log Out"
+msgstr "Kijelentkezés"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Az oldal karbantartás alatt áll."
+
+#: /
+msgid "Market:"
+msgstr "Ország"
+
+#: /
+msgid "Member Since:"
+msgstr "Tagság kezdete:"
+
+#: /
+msgid "My Badges"
+msgstr "Jelvényeim:"
+
+#: /
+msgid "My Favorites"
+msgstr "Kedvenceim:"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Ranglista:"
+
+#: /
+msgid "My Points:"
+msgstr "Pontszámaim:"
+
+#: /
+msgid "My Progress"
+msgstr "Előmenetelem"
+
+#: /
+msgid "My Tools"
+msgstr "Eszközök:"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Soron következő szint:"
+
+#: /
+msgid "Progress:"
+msgstr "Előmenetelem"
+
+#: /
+msgid "Sign in"
+msgstr "Belépés"
+
+#: /
+msgid "Store:"
+msgstr "Üzlet/pult:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Neked ajánljuk:"
+
+#: /
+msgid "Language updated to"
+msgstr "A nyelvi beállítás megváltoztatva"
+
+#: /
+msgid "Leaderboard"
+msgstr "Ranglista"
+
+#: /
+msgid "All"
+msgstr "Mind"
+
+#: /
+msgid "Levels"
+msgstr "Szintek"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Elvégzett szintek:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "A szintek mindegyikét neked dolgoztuk ki, hogy jobbá válhass abban, amit teszel. Te döntöd el, hogyan végzed el azokat és lépsz magasabb szintre."
+
+#: /
+msgid "Loading Content..."
+msgstr "Tartalom betöltése…"
+
+#: /
+msgid "Loading Tools..."
+msgstr "Eszközök betöltése…"
+
+#: /
+msgid "Login Successful"
+msgstr "Sikeres bejelentkezés:"
+
+#: /
+msgid "Please wait..."
+msgstr "Várj…"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Sikeresen kijelentkeztél. Várunk vissza!"
+
+#: /
+msgid "Log Out"
+msgstr "Kijelentkezés"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Létező felhasználónév keresése…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "Az ELX honlap jelenleg  karbantartás alatt áll. Kérjük, látogass vissza később. Elnézést kérünk az esetleges kellemetlenségekért."
+
+#: /
+msgid "My Dashboard"
+msgstr "Irányítópultom"
+
+#: /
+msgid "My Points:"
+msgstr "Pontszámaim"
+
+#: /
+msgid "My Progress"
+msgstr "Előmenetelem"
+
+#: /
+msgid "Need Help?"
+msgstr "Segítségre van szükséged?"
+
+#: /
+msgid "New Password"
+msgstr "Új jelszó"
+
+#: /
+msgid "No Levels found."
+msgstr "Nem találtunk ilyen szintet."
+
+#: /
+msgid "Password:"
+msgstr "Jelszó"
+
+#: /
+msgid "Password request received"
+msgstr "A jelszó kérelmed beérkezett."
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Probléma az oldal betöltésekor. Próbáld újra!"
+
+#: /
+msgid "Product Library"
+msgstr "Termékkatalógus"
+
+#: /
+msgid "Product Library"
+msgstr "Termékkatalógus"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Aktiváld Gravatar fiókodat a megerősítő e-mailben található utasítás szerint."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Profilkép hozzáadása a Gravatar fiókodhoz"
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Ingyenes felhasználói fiók létrehozása a Gravatarral"
+
+#: /
+msgid "Follow these steps:"
+msgstr "Végezd el a következő lépéseket:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Új vagy a Gravatarban és segítségre van szükséged?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Szeretnéd személyessé tenni a profilképedet? Hozz létre egy felhasználói fiókot a Gravatarral és töltsd fel a fényképedet. Automatikusan az ELX-hez kapcsolódik majd."
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Az ELX profilod hamarosan automatikusan frissül."
+
+#: /
+msgid "Recent Badges:"
+msgstr "Mostanában szerzett jelvényeim"
+
+#: /
+msgid "Remember Me"
+msgstr "Emlékezz rám!"
+
+#: /
+msgid "Request"
+msgstr "Új jelszó kérése"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Megjelenített termékek {{ start }} - {{ end }} az {{ total }} közül"
+
+#: /
+msgid "Filter By"
+msgstr "Szűrés szempontja"
+
+#: /
+msgid "Refine Search"
+msgstr "A keresés finomítása"
+
+#: /
+msgid "Sort By"
+msgstr "A rendezés szempontja"
+
+#: /
+msgid "Title A-Z"
+msgstr "Cím A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "Legnépszerűbb"
+
+#: /
+msgid "View"
+msgstr "Megtekintés"
+
+#: /
+msgid "See All Badges"
+msgstr "Minden jelvény megtekintése"
+
+#: /
+msgid "See All Tools"
+msgstr "Minden eszköz megtekintése"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "A teljes ranglista megtekintése"
+
+#: /
+msgid "The server encountered an error"
+msgstr "A szerver hibát észlelt"
+
+#: /
+msgid "Sign In"
+msgstr "Bejelentkezés"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Sajnáljuk, nincsenek kedvenceid."
+
+#: /
+msgid "Submit"
+msgstr "Küldés"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Nekem ajánlott"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Adatvédelem és felhasználói feltételek"
+
+#: /
+msgid "My Badges"
+msgstr "Jelvények"
+
+#: /
+msgid "Leaderboard"
+msgstr "Ranglista"
+
+#: /
+msgid "LOGIN"
+msgstr "BELÉPÉS"
+
+#: /
+msgid "Points"
+msgstr "Pontszám"
+
+#: /
+msgid "Rank"
+msgstr "Helyezés"
+
+#: /
+msgid "Spotlight"
+msgstr "Rivaldafény"
+
+#: /
+msgid "Tools"
+msgstr "Eszközök"
+
+#: /
+msgid "unfavorited"
+msgstr "Törlés a Kedvencek közül"
+
+#: /
+msgid "Unknown user"
+msgstr "Ismeretlen felhasználó"
+
+#: /
+msgid "Updating language"
+msgstr "Nyelv megváltoztatása"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Új és népszerű"
+
+#: /
+msgid "Level:"
+msgstr "Szintek"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Még több megtekintése"
+
+#: /
+msgid "Search"
+msgstr "Keresés"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

@@ -1,0 +1,209 @@
+<?php
+
+/**
+ * Identifies languages.
+ * 
+ * @return
+ *   returns either interface language, 
+ *   user preferred language or 
+ *   HTTP_ACCEPT_LANGUAGE modified to fit ELX site languages
+ *   or FALSE if none of the above languages were found
+ * 
+ */
+function elx_language_detect($input_name = NULL) {
+  global $language;
+  global $user;
+  
+  // Logged-in user's choosen language
+  if ($user->uid) {
+    $user_lang = $user->language;
+	return $user_lang;
+  }
+  
+  // If passed an input_name - get user's choosen language
+  if (!empty($input_name)) {
+  	$get_user = user_load_by_name($input_name);
+	if (!empty($get_user)) {
+      $new_lang_code = $get_user->language;
+	  return $new_lang_code;
+	}
+  }
+
+  // Identify language from the Accept-language HTTP header we got.
+  // http_accept_language
+  $accept_lang = !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : FALSE;
+  $replace_str = strstr($accept_lang, ",");
+  $accept_lang = str_replace($replace_str, '', $accept_lang);
+  //$accept_lang_array = [str_replace('-', '', $accept_lang)];
+  $accept_lang_array = [$accept_lang];
+  
+  $supported = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es-SP', 'es',  
+      'fi', 'fr-CA', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mo',
+      'nb', 'nl', 'nn', 'no', 'pl', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-CN', 'zh-TW', 
+      'zh-Hans', 'zh-Hant', 'zhHans', 'zhHant', 'zh'];
+  
+  $lang_match = elx_language_find_match($supported, $accept_lang_array);
+  
+  // french-canadian
+  if ($lang_match === 'fr-CA') {
+    $lang_match = 'frca';
+  }
+  // spanish
+  if ($lang_match === 'es-SP') {
+    $lang_match = 'essp';
+  }
+  // [mo] for Moldavian has been withdrawn, recommending [ro] also for Moldavian
+  if ($lang_match === 'mo') {
+    $lang_match = 'ro';
+  }
+  // nn and no also Norwegian
+  if ($lang_match === 'nn' || $lang_match === 'no') {
+    $lang_match = 'nb';
+  }
+  // Chinese -> Traditional Chinese (FF only sends 'zh').
+  if ($lang_match === 'zh') {
+    $lang_match = 'zhhant';
+  }
+  // zh-CN is much more common code for Simplified Chinese.
+  if ($lang_match === 'zh-CN') {
+    $lang_match = 'zhhans';
+  }
+  // zh-TW is much more common code for Traditional Chinese.
+  if ($lang_match == 'zh-TW') {
+    $lang_match = 'zhhant';
+  }
+  // Return HTTP_ACCEPT_LANGUAGE 
+  if ($lang_match) {
+	return $lang_match;
+  }
+  
+  // Interface language
+  if (isset($language->language)) {
+    $interface_lang = isset($language->language) ? $language->language : FALSE;
+    $lang['interface_language'] = $interface_lang;
+    return $interface_lang;
+  }
+  else {
+  	return FALSE;
+  }
+}
+
+function elx_language_find_match($supported, $accepted) {
+  for ($i = 0; $i < count($accepted); $i++) {
+    $accepted_2 = $accepted[$i];
+    if (strpos($accepted_2, '-') > 0) {
+      $accepted_2 = substr($accepted_2, 0, strpos($accepted_2, '-'));
+    }
+
+    for ($j = 0; $j < count($supported); $j++) {
+      if ($accepted[$i] === $supported[$j]) {
+        return $accepted[$i];
+      }
+
+      if ($accepted_2 === $supported[$j]) {
+        return $accepted_2;
+      }
+    }
+  }
+  return false;
+}
+
+/*
+ * function for what languages ELX supports
+ * 
+ * @params
+ * $lang - user's choosen language
+ * 
+ * @return
+ * returns true if language is supported or false if not
+ */
+function elx_languages_supported($lang) {
+  $supported = ['ar', 'cs', 'da', 'de', 'el', 'en', 'es-SP', 'es',  
+      'fi', 'fr-CA', 'fr', 'he', 'hu', 'id', 'it', 'ja', 'ko', 'lt', 'lv', 'mo',
+      'nb', 'nl', 'nn', 'no', 'pl', 'ro', 'ru', 'sv', 'th', 'tr', 'zh-CN', 'zh-TW', 
+      'zh-Hans', 'zh-Hant', 'zhHans', 'zhHant', 'zh'];
+	  
+  if (in_array($lang, $supported)) {
+  	return TRUE;
+  }
+  else {
+  	return FALSE;
+  }
+}
+
+/*
+ *  function - parse json language files
+ * 
+ *  @params
+ *  $lang - user's choosen language
+ *  $key_vars - an array of keys we need translated
+ * 
+ *  @return
+ *  returns an array of string translations based on lang param
+ */
+function elx_languages_get_translations($lang, $key_vars) {
+  global $base_url;
+  $file_name = $lang . '.json';
+  $json_path = $base_url . '/sites/all/themes/locales/' . $file_name;
+  $json_locale_file = file_get_contents($json_path);
+  $json_array = json_decode($json_locale_file, true);
+  $val_array = array();
+  foreach ($key_vars as $key) {
+  	if(array_key_exists($key, $json_array)) {
+      //key exists, do stuff
+	  $val = $json_array[$key];
+	  $val_array[$key] = $val;
+    }
+
+  }
+  return $val_array;
+}
+
+/**
+ *  Script for parsing the locale json files into a po file format for Drupal to use
+ */
+function elx_languages_json_to_po() {
+  global $base_url;
+  //TODO** Change static path to relative path of server
+  $json_path = '/Users/tmyers/Documents/SPI/elx-learning-module/sites/all/themes/locales/';
+  $fileSystemIterator = new FilesystemIterator($json_path);
+  
+  $en_file_path = '/Users/tmyers/Documents/SPI/elx-learning-module/sites/all/themes/locales/en.json';
+  $en_json_file = file_get_contents($en_file_path);
+  $en_json_array = json_decode($en_json_file, true);
+  
+  $entries = array();
+  foreach ($fileSystemIterator as $fileInfo){
+    $entries[] = $fileInfo->getFilename();
+	$file_path = $fileInfo->getPathname();
+	$json_locale_file = file_get_contents($file_path);
+	$json_array = json_decode($json_locale_file, true);
+	$json_file_name = $fileInfo->getFilename();
+	$po_file_name = str_replace('.json', '.po', $json_file_name);
+	//TODO** Change the static path to relative path of server
+	$new_file_path = '/Users/tmyers/Documents/SPI/elx-learning-module/sites/all/themes/po_files/' . $po_file_name;
+	//$new_file_path = './po_files/' . $po_file_name;
+
+	$po_file = fopen($new_file_path, 'w') or die('Unable to open file!');
+	foreach($json_array as $key => $value) {
+	  $value = trim(str_replace(array("\n", "\r"), ' ', $value));
+	  //get english string for msgid
+	  if (array_key_exists($key, $en_json_array)) {
+	    $en_value = strip_tags($en_json_array[$key]);
+	    //$en_value = str_replace(' ', '_', $en_value);
+	    $file_text = '#: /' . "\r\n" . 
+                      'msgid "'. $en_value .'"' . "\r\n" . 
+                      'msgstr "' . $value . '"' . "\r\n" ."\r\n";
+	    fwrite($po_file, $file_text);
+	  }
+	  else {
+	    //$po_key = str_replace(' ', '_', $key);
+	    $file_text = '#: /' . "\r\n" . 
+                      'msgid "'. $key .'"' . "\r\n" . 
+                      'msgstr "' . $value . '"' . "\r\n" ."\r\n";
+	    fwrite($po_file, $file_text);
+	  }
+    }
+  }
+  return TRUE;
+}

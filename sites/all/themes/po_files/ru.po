@@ -1,0 +1,552 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Нам жаль, но данный электронный адрес не зарегистрирован в ELX. Попробуйте другой электронный адрес или обратитесь за помощью к вашему системному администратору."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Электронный адрес или пароль не совпадают. Попробуйте ввести еще раз."
+
+#: /
+msgid "Updating search..."
+msgstr "Обновление продуктов"
+
+#: /
+msgid "Badges"
+msgstr "Значки"
+
+#: /
+msgid "Update"
+msgstr "обновить"
+
+#: /
+msgid "view the details"
+msgstr "Просмотреть детали"
+
+#: /
+msgid "View Tool"
+msgstr "Посмотреть инструмент"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Ближайший уровень к завершению"
+
+#: /
+msgid "Compare My score to"
+msgstr "Сравнить набранное мной количество очков с"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Подтвердить пароль"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Все международные права защищены."
+
+#: /
+msgid "Current Language"
+msgstr "Используемый  язык"
+
+#: /
+msgid "Current Password"
+msgstr "Используемый  пароль"
+
+#: /
+msgid "Edit Language"
+msgstr "Редактировать язык"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Добавить профиль и пароль"
+
+#: /
+msgid "Email Address:"
+msgstr "Адрес электронной почты"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "МИР ЗНАНИЙ ЭСТЕ ЛАУДЕР"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Исследуйте уровни обучения"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Исследуйте библиотеку средств"
+
+#: /
+msgid "favorited"
+msgstr "Добавленное в избранное"
+
+#: /
+msgid "You fav prod"
+msgstr "Ваш доб прод"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Поля не совпадают!"
+
+#: /
+msgid "The World"
+msgstr "Мир"
+
+#: /
+msgid "All Categories"
+msgstr "Все категории"
+
+#: /
+msgid "Bestsellers"
+msgstr "Бестселлеры"
+
+#: /
+msgid "Completed"
+msgstr "Завершен"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Аромат"
+
+#: /
+msgid "In Progress"
+msgstr "В процессе"
+
+#: /
+msgid "Makeup"
+msgstr "Макияж"
+
+#: /
+msgid "My Market"
+msgstr "Моя страна"
+
+#: /
+msgid "My Region"
+msgstr "Мой регион"
+
+#: /
+msgid "My Retailer"
+msgstr "Мой розничный продавец ( ретейлер)"
+
+#: /
+msgid "My Store"
+msgstr "Мой магазин"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Уход за кожей"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Забыли пароль"
+
+#: /
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Недавно заверщшенные действия"
+
+#: /
+msgid "Language:"
+msgstr "Язык для ввода данных"
+
+#: /
+msgid "Last Login:"
+msgstr "Последняя авторизация:"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Завершенные уровни"
+
+#: /
+msgid "Location:"
+msgstr "Расположение:"
+
+#: /
+msgid "Log Out"
+msgstr "Выйти"
+
+#: /
+msgid "Market:"
+msgstr "РЫНОК"
+
+#: /
+msgid "Member Since:"
+msgstr "Участник с  периода:"
+
+#: /
+msgid "My Badges"
+msgstr "Мои значки"
+
+#: /
+msgid "My Favorites"
+msgstr "Избраное"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Мой список лидеров"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "На сайте проводятся профилактические работы."
+
+#: /
+msgid "My Points:"
+msgstr "Мои очки:"
+
+#: /
+msgid "My Progress"
+msgstr "Мои достижения"
+
+#: /
+msgid "My Tools"
+msgstr "Мои вспомогательные средства (инструменты)"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Переход на следующий уровень:"
+
+#: /
+msgid "Progress:"
+msgstr "Мои достижения"
+
+#: /
+msgid "Sign in"
+msgstr "Войти"
+
+#: /
+msgid "Store:"
+msgstr "Магазин\Дверь:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Рекомендовано для вас:"
+
+#: /
+msgid "Language updated to"
+msgstr "Язык обновлен  до"
+
+#: /
+msgid "Leaderboard"
+msgstr "Таблица лидеров"
+
+#: /
+msgid "All"
+msgstr "Все"
+
+#: /
+msgid "Levels"
+msgstr "Уровни"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Завершенные уровни:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Каждый из этих уровней был создан для вас - с целью усовершенствования  применяемых вами навыков. Вы сами решаете как вы получаете знания и хотите ли перейти на следующий уровень."
+
+#: /
+msgid "Loading Content..."
+msgstr "Загрузка содержимого…"
+
+#: /
+msgid "Loading Tools..."
+msgstr "Загрузка инструментов"
+
+#: /
+msgid "Login Successful"
+msgstr "Вход выполнен успешно"
+
+#: /
+msgid "Please wait..."
+msgstr "Пожалуйста подождите…"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Вы вышли. До скорой встречи!"
+
+#: /
+msgid "Log Out"
+msgstr "Выйти"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "В ожидании входа…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "В данный момент на сайте проводятся профилактические работы. В ближайшее время работа сайта будет восстановлена."
+
+#: /
+msgid "My Dashboard"
+msgstr "Мой  отчет"
+
+#: /
+msgid "My Points:"
+msgstr "Мои баллы"
+
+#: /
+msgid "My Progress"
+msgstr "Мои достижения"
+
+#: /
+msgid "Need Help?"
+msgstr "Требуется помощь?"
+
+#: /
+msgid "New Password"
+msgstr "Новый пароль"
+
+#: /
+msgid "No Levels found."
+msgstr "Уровни не обнаружены"
+
+#: /
+msgid "Password:"
+msgstr "Пароль"
+
+#: /
+msgid "Password request received"
+msgstr "Получен запрос пароля"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "При загрузке содержимого была обнаружена проблема, пожалуйста,попробуйте еще раз."
+
+#: /
+msgid "Product Library"
+msgstr "Библиотека средств"
+
+#: /
+msgid "Product Library"
+msgstr "Библиотека средств"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Активируйте   Граватар ( аватарку) вашего   аккаунта из подтверждения по электронной почте."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Добавьте свое фото  в свой  Граватар    аккаунт."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Создайте учетную запись с Граватаром."
+
+#: /
+msgid "Follow these steps:"
+msgstr "Используйте следующие шаги:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Новичок в Граватаре и нужна помощь?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Хотите добавить свою фотографию в свой аккаунт? Создайте аккаунт с Граватаром и добавьте свое фото. Ссылка автоматически добавится в ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Ваш  профиль на ELX  автоматически обновится в cамое ближайшее время."
+
+#: /
+msgid "Recent Badges:"
+msgstr "Недавно приобретенные значки"
+
+#: /
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: /
+msgid "Request"
+msgstr "Запросите новый пароль"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Отображение {{ start }} - {{ end }} из {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "Систематизировать по"
+
+#: /
+msgid "Refine Search"
+msgstr "Уточнить поиск"
+
+#: /
+msgid "Sort By"
+msgstr "Сортировать по"
+
+#: /
+msgid "Title A-Z"
+msgstr "Заглавие от А-Я"
+
+#: /
+msgid "Most Popular"
+msgstr "Самое популярное"
+
+#: /
+msgid "View"
+msgstr "Вид"
+
+#: /
+msgid "See All Badges"
+msgstr "Просмотреть все значки"
+
+#: /
+msgid "See All Tools"
+msgstr "Просмотреть все вспомогательные средства, инструменты"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Увидеть полную таблицу лидеров"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Сервер обнаружил ошибку"
+
+#: /
+msgid "Sign In"
+msgstr "Войти"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Извините, в избранном ничего нет."
+
+#: /
+msgid "Submit"
+msgstr "Отправить"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Рекомендовано для меня"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Политика конфидициальности и условия"
+
+#: /
+msgid "My Badges"
+msgstr "Значки"
+
+#: /
+msgid "Leaderboard"
+msgstr "Таблица лидеров"
+
+#: /
+msgid "LOGIN"
+msgstr "ЛОГИН ( ИМЯ)"
+
+#: /
+msgid "Points"
+msgstr "Количество баллов"
+
+#: /
+msgid "Rank"
+msgstr "Рейтинг"
+
+#: /
+msgid "Spotlight"
+msgstr "Основное"
+
+#: /
+msgid "Tools"
+msgstr "Вспомогательные средства, инструменты"
+
+#: /
+msgid "unfavorited"
+msgstr "Редко используемое"
+
+#: /
+msgid "Unknown user"
+msgstr "Неизвестный пользователь"
+
+#: /
+msgid "Updating language"
+msgstr "Обновление языка"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Новое и популярное"
+
+#: /
+msgid "Level:"
+msgstr "Уровни"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "Просмотреть"
+
+#: /
+msgid "Search"
+msgstr "поиск"
+
+#: /
+msgid "Advanced Night Repair"
+msgstr "Advanced Night Repair"
+
+#: /
+msgid "Advanced Night Repair 2"
+msgstr "Advanced Night Repair 2"
+
+#: /
+msgid "Beautiful Skin for Life"
+msgstr "Beautiful Skin for Life"
+
+#: /
+msgid "Greet Meet Treat Complete"
+msgstr "Приветствие потребность сюрприз сервис"
+
+#: /
+msgid "New Dimension"
+msgstr "New Dimension"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

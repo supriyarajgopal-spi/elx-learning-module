@@ -1,0 +1,552 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "Nous sommes désolés. Cette adresse email n'est associée à aucun compte ELX. Essayez une autre adresse."
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "Votre mail et/ou votre mot de passe est incorrect. Veuillez le(s) saisir a nouveau."
+
+#: /
+msgid "Updating search..."
+msgstr "Produits mis à jour"
+
+#: /
+msgid "Badges"
+msgstr "Badges"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "En savoir plus"
+
+#: /
+msgid "Update"
+msgstr "Mise à jour"
+
+#: /
+msgid "view the details"
+msgstr "Voir les détails"
+
+#: /
+msgid "View Tool"
+msgstr "Voir l'outil"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "Prochain niveau complété:"
+
+#: /
+msgid "Compare My score to"
+msgstr "Comparer mon score à"
+
+#: /
+msgid "Password Confirm:"
+msgstr "Confirmer le mot de passe"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. Tous droits mondiaux réservés."
+
+#: /
+msgid "Current Language"
+msgstr "Langue actuelle"
+
+#: /
+msgid "Current Password"
+msgstr "Mot de passe actuel"
+
+#: /
+msgid "Edit Language"
+msgstr "Modifier la langue"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "Modifier Profil & Mot de passe"
+
+#: /
+msgid "Email Address:"
+msgstr "Adresse courriel"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "L'EXPÉRIENCE ESTÉE LAUDER"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "Explorez les niveaux d'apprentissage"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "Explorez la bibliothèque de produits"
+
+#: /
+msgid "favorited"
+msgstr "Favoris"
+
+#: /
+msgid "You fav prod"
+msgstr "Vos produits préférés"
+
+#: /
+msgid "Fields do not match!"
+msgstr "Les champs de correspondent pas!"
+
+#: /
+msgid "The World"
+msgstr "Le Monde"
+
+#: /
+msgid "All Categories"
+msgstr "Toutes les catégories"
+
+#: /
+msgid "Bestsellers"
+msgstr "Meilleurs vendeurs"
+
+#: /
+msgid "Completed"
+msgstr "Terminés"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "Parfum"
+
+#: /
+msgid "In Progress"
+msgstr "En cours"
+
+#: /
+msgid "Makeup"
+msgstr "Maquillage"
+
+#: /
+msgid "My Market"
+msgstr "Mon pays"
+
+#: /
+msgid "My Region"
+msgstr "Ma région"
+
+#: /
+msgid "My Retailer"
+msgstr "Mon groupe de magasins"
+
+#: /
+msgid "My Store"
+msgstr "Mon magasin"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "Soins de la peau"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "Mot de passe oublié"
+
+#: /
+msgid "Search Results"
+msgstr "Résultats de la recherche"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "Activités récemment terminées:"
+
+#: /
+msgid "Language:"
+msgstr "Langue préférée"
+
+#: /
+msgid "Last Login:"
+msgstr "Dernière connection:"
+
+#: /
+msgid "Level:"
+msgstr "Niveaux"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Niveaux terminés"
+
+#: /
+msgid "Location:"
+msgstr "Lieu:"
+
+#: /
+msgid "Log Out"
+msgstr "SE DÉCONNECTER"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "Site in Maintenance Mode"
+
+#: /
+msgid "Market:"
+msgstr "Pays:"
+
+#: /
+msgid "Member Since:"
+msgstr "Membre depuis:"
+
+#: /
+msgid "My Badges"
+msgstr "Mes écussons"
+
+#: /
+msgid "My Favorites"
+msgstr "Mes favoris"
+
+#: /
+msgid "My Leaderboard"
+msgstr "Mon tableau des scores"
+
+#: /
+msgid "My Points:"
+msgstr "Mes points:"
+
+#: /
+msgid "My Progress"
+msgstr "Ma progression"
+
+#: /
+msgid "My Tools"
+msgstr "Mes outils"
+
+#: /
+msgid "Next Level Up:"
+msgstr "Prochain niveau:"
+
+#: /
+msgid "Progress:"
+msgstr "Progrès"
+
+#: /
+msgid "Sign in"
+msgstr "Se connecter"
+
+#: /
+msgid "Store:"
+msgstr "Magasin / porte:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "Suggéré pour vous:"
+
+#: /
+msgid "Language updated to"
+msgstr "La langue selectionnée est maintenent le"
+
+#: /
+msgid "Leaderboard"
+msgstr "Tableau des scores"
+
+#: /
+msgid "All"
+msgstr "Tous"
+
+#: /
+msgid "Levels"
+msgstr "Niveaux"
+
+#: /
+msgid "Levels Completed:"
+msgstr "Niveaux terminés:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "Chacun de ces niveaux a été créé pour vous, pour que vous gagniez en expertise. C'est à vous de décider de quelle manière vous allez les parcourir et accéder aux niveaux supérieurs."
+
+#: /
+msgid "Loading Content..."
+msgstr "Chargement du contenu..."
+
+#: /
+msgid "Loading Tools..."
+msgstr "Téléchargement des outils…"
+
+#: /
+msgid "Login Successful"
+msgstr "Connection réussie"
+
+#: /
+msgid "Please wait..."
+msgstr "Merci de patienter"
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "Vous vous êtes déconnecté(e ). A bientôt!"
+
+#: /
+msgid "Log Out"
+msgstr "Déconnexion"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "Recherche de connection existante…"
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "The ELX website is currently in   maintenance mode. Please check back soon - we apologize for any inconvenience."
+
+#: /
+msgid "My Dashboard"
+msgstr "Mon tableau de bord"
+
+#: /
+msgid "My Points:"
+msgstr "Mon score"
+
+#: /
+msgid "My Progress"
+msgstr "Ma progression"
+
+#: /
+msgid "Need Help?"
+msgstr "Besoin d'aide?"
+
+#: /
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: /
+msgid "No Levels found."
+msgstr "Aucun niveau trouvé."
+
+#: /
+msgid "Password:"
+msgstr "Mot de passe"
+
+#: /
+msgid "Password request received"
+msgstr "Demande de mot de passe bien reçue"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "Nous avons rencontré un problème lors du chargement de ce contenu. Merci de réessayer plus tard."
+
+#: /
+msgid "Product Library"
+msgstr "Catalogue de produits"
+
+#: /
+msgid "Product Library"
+msgstr "Catalogue de produits"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "Activez votre compte Gravatar grâce au courriel de confirmation."
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "Ajoutez une photo de profil à votre compte Gravatar."
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "Créez un compte Gravatar gratuitement."
+
+#: /
+msgid "Follow these steps:"
+msgstr "Suivez ces étapes:"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "Nouveau / Nouvelle sur Gravatar et besoin d'aide?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "Vous voulez personaliser votre photo de profil? Créez un compte Gravatar et ajoutez votre photo.  Il sera automatiquement connecté à votre compte ELX!"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "Votre profil ELX sera automatiquement mis à jour en quelques instants!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "Derniers badges obtenus"
+
+#: /
+msgid "Remember Me"
+msgstr "Se souvenir de moi"
+
+#: /
+msgid "Request"
+msgstr "Demander un nouveau mot de passe"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "Affichage {{ start }} - {{ end }} sur {{ products.total }}"
+
+#: /
+msgid "Search"
+msgstr "Search"
+
+#: /
+msgid "Filter By"
+msgstr "Filtrer par"
+
+#: /
+msgid "Refine Search"
+msgstr "Affiner votre recherche"
+
+#: /
+msgid "Sort By"
+msgstr "Classer par"
+
+#: /
+msgid "Title A-Z"
+msgstr "Titre A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "le plus populaire"
+
+#: /
+msgid "View"
+msgstr "Voir"
+
+#: /
+msgid "See All Badges"
+msgstr "Voir tous les badges"
+
+#: /
+msgid "See All Tools"
+msgstr "Voir tous les outils"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "Voir le tableau des scores complet"
+
+#: /
+msgid "The server encountered an error"
+msgstr "Le serveur a rencontré un problème"
+
+#: /
+msgid "Sign In"
+msgstr "Se connecter"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "Désolé, pas de favoris."
+
+#: /
+msgid "Submit"
+msgstr "Soumettre"
+
+#: /
+msgid "Suggested for me:"
+msgstr "Suggestions"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "Politique de confidentialité et Termes & Conditions"
+
+#: /
+msgid "My Badges"
+msgstr "Écussons"
+
+#: /
+msgid "Leaderboard"
+msgstr "Tableau des scores"
+
+#: /
+msgid "LOGIN"
+msgstr "Connexion"
+
+#: /
+msgid "Points"
+msgstr "Points"
+
+#: /
+msgid "Rank"
+msgstr "Classement"
+
+#: /
+msgid "Spotlight"
+msgstr "Coup de projecteur"
+
+#: /
+msgid "Tools"
+msgstr "Outils"
+
+#: /
+msgid "unfavorited"
+msgstr "Retiré(s) des favoris"
+
+#: /
+msgid "Unknown user"
+msgstr "Utilisateur inconnu"
+
+#: /
+msgid "Updating language"
+msgstr "Mise à jour de la langue"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "Quoi de neuf & Tendances"
+
+#: /
+msgid "Advanced Night Repair"
+msgstr "Advanced Night Repair"
+
+#: /
+msgid "Advanced Night Repair 2"
+msgstr "Advanced Night Repair 2"
+
+#: /
+msgid "Beautiful Skin for Life"
+msgstr "Une Belle Peau Jour Après Jour"
+
+#: /
+msgid "Greet Meet Treat Complete"
+msgstr "Accueillir, Découvrir, Servir, Conclure"
+
+#: /
+msgid "New Dimension"
+msgstr "New Dimension"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

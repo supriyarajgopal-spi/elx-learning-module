@@ -1,0 +1,528 @@
+#: /
+msgid "We're sorry. That email address does not appear to be associated with an ELX account. Please try a different email."
+msgstr "ขออภัยค่ะ ไม่พบอีเมล์นี้ในบัญชีรายชื่อของ ELX โปรดลองด้วยอีเมล์อื่น"
+
+#: /
+msgid "The email or password you entered do not match. Please try again."
+msgstr "ไม่พบอีเมล์หรือพาสเวิร์ดที่คุณใช้เข้าระบบ กรุณาลองใหม่อีกครั้ง"
+
+#: /
+msgid "Updating search..."
+msgstr "อัพเดตสินค้า..."
+
+#: /
+msgid "Badges"
+msgstr "เหรียญรางวัล"
+
+#: /
+msgid "Update"
+msgstr "อัพเดท"
+
+#: /
+msgid "view the details"
+msgstr "ดูรายละเอียด"
+
+#: /
+msgid "View Tool"
+msgstr "ดูตัวช่วย"
+
+#: /
+msgid "Closest Level to Completion:"
+msgstr "ระดับใก้ลที่สุดที่จะสมบรูณ์:"
+
+#: /
+msgid "Compare My score to"
+msgstr "เปรียบเทียบคะแนนของฉันกับ"
+
+#: /
+msgid "Password Confirm:"
+msgstr "ยืนยัน พาสเวิร์ด"
+
+#: /
+msgid "&#xA9; Est&#xE9;e Lauder Inc. All worldwide rights reserved."
+msgstr "© Estée Lauder Inc. สงวนลิขสิทธิ์ทั่วโลก"
+
+#: /
+msgid "Current Language"
+msgstr "ภาษาปัจจุบัน"
+
+#: /
+msgid "Current Password"
+msgstr "พาสเวิร์ดปัจจุบัน"
+
+#: /
+msgid "Edit Language"
+msgstr "แก้ไขภาษา"
+
+#: /
+msgid "edit profile &amp; password"
+msgstr "แก้ไขข้อมูลส่วนตัวและพาสเวิร์ด"
+
+#: /
+msgid "Email Address:"
+msgstr "ที่อยู่อีเมล์"
+
+#: /
+msgid "THE EST&#xC9;E LAUDER EXPERIENCE"
+msgstr "THE ESTÉE LAUDER EXPERIENCE"
+
+#: /
+msgid "Explore Learning Levels"
+msgstr "สำรวจระดับการเรียนรู้"
+
+#: /
+msgid "Browse the Product Library"
+msgstr "สำรวจชุดข้อมูลผลิตภัณฑ์"
+
+#: /
+msgid "favorited"
+msgstr "ชื่นชอบ"
+
+#: /
+msgid "You fav prod"
+msgstr "ผลิตภัณฑ์ที่คุณชื่นชอบ"
+
+#: /
+msgid "Fields do not match!"
+msgstr "ข้อมูลไม่ถูกต้อง"
+
+#: /
+msgid "The World"
+msgstr "โลก"
+
+#: /
+msgid "All Categories"
+msgstr "ทุกหมวดหมู่"
+
+#: /
+msgid "Bestsellers"
+msgstr "สินค้าขายดี"
+
+#: /
+msgid "Completed"
+msgstr "สมบรูณ์"
+
+#: /
+msgid "50"
+msgstr "50"
+
+#: /
+msgid "Fragrance"
+msgstr "น้ำหอม"
+
+#: /
+msgid "In Progress"
+msgstr "อยู่ระหว่างดำเนินการ"
+
+#: /
+msgid "Makeup"
+msgstr "Makeup"
+
+#: /
+msgid "My Market"
+msgstr "ประเทศของฉัน"
+
+#: /
+msgid "My Region"
+msgstr "ภูมิภาคของฉัน"
+
+#: /
+msgid "My Retailer"
+msgstr "ผู้ค้าปลีกของฉัน"
+
+#: /
+msgid "My Store"
+msgstr "ร้านค้าของฉัน"
+
+#: /
+msgid "Re-Nutriv"
+msgstr "Re-Nutriv"
+
+#: /
+msgid "Skincare"
+msgstr "ผลิตภัณฑ์บำรุงผิว"
+
+#: /
+msgid "10"
+msgstr "10"
+
+#: /
+msgid "20"
+msgstr "20"
+
+#: /
+msgid "Forgot Password"
+msgstr "ลืม พาสเวิร์ด"
+
+#: /
+msgid "Search Results"
+msgstr "ค้นหาคำตอบ"
+
+#: /
+msgid "Recently Completed Activities:"
+msgstr "กิจกรรมที่เสร็จสิ้นล่าสุด"
+
+#: /
+msgid "Language:"
+msgstr "เลือกภาษา"
+
+#: /
+msgid "Last Login:"
+msgstr "เข้าสู่ระบบครั้งล่าสุด"
+
+#: /
+msgid "Levels Completed:"
+msgstr "ระดับที่เสร็จสมบรูณ์"
+
+#: /
+msgid "Location:"
+msgstr "ตำแหน่งที่ตั้ง"
+
+#: /
+msgid "Log Out"
+msgstr "ออกจากระบบ"
+
+#: /
+msgid "Site in Maintenance Mode"
+msgstr "ขณะนี้ระบบอยู่ในระหว่างการปรับปรุง"
+
+#: /
+msgid "Market:"
+msgstr "ประเทศ"
+
+#: /
+msgid "Member Since:"
+msgstr "เป็นสมาชิกตั้งแต่"
+
+#: /
+msgid "My Badges"
+msgstr "เหรียญรางวัลของฉัน"
+
+#: /
+msgid "My Favorites"
+msgstr "รายการโปรด"
+
+#: /
+msgid "My Leaderboard"
+msgstr "คะแนนนำของฉัน"
+
+#: /
+msgid "My Points:"
+msgstr "คะแนนของฉัน:"
+
+#: /
+msgid "My Progress"
+msgstr "ความก้าวหน้าของฉัน"
+
+#: /
+msgid "My Tools"
+msgstr "อุปกรณ์ของฉัน"
+
+#: /
+msgid "Next Level Up:"
+msgstr "เลื่อนระดับขั้นต่อไป:"
+
+#: /
+msgid "Progress:"
+msgstr "ความก้าวหน้าของฉัน"
+
+#: /
+msgid "Sign in"
+msgstr "เข้าสู่ระบบ"
+
+#: /
+msgid "Store:"
+msgstr "ร้านค้า/สาขา:"
+
+#: /
+msgid "Suggested for you:"
+msgstr "คำแนะนำสำหรับคุณ:"
+
+#: /
+msgid "Language updated to"
+msgstr "ภาษาแก้ไขเป็น"
+
+#: /
+msgid "Leaderboard"
+msgstr "ผู้ได้คะแนนนำ"
+
+#: /
+msgid "All"
+msgstr "ทั้งหมด"
+
+#: /
+msgid "Levels"
+msgstr "ระดับชั้น"
+
+#: /
+msgid "Levels Completed:"
+msgstr "ระดับที่เสร็จสมบรูณ์:"
+
+#: /
+msgid "Each of these Levels was created for you&#x2014;to make you better at what you do. You decide how to experience them and how you want to Level Up."
+msgstr "ในแต่ละระดับนี้ถูกสร้างสรรค์ขึ้นสำหรับคุณ-เพื่อช่วยให้คุณเก่งขึ้นคุณคือผู้ที่จะตัดสินใจเองว่าอยากจะเรียนรู้อย่างไรใด หรือ คุณต้องการที่จะเลื่อนระดับอย่างไร"
+
+#: /
+msgid "Loading Content..."
+msgstr "กำลังดึงข้อมูล..."
+
+#: /
+msgid "Loading Tools..."
+msgstr "กำลังโหลดตัวช่วย..."
+
+#: /
+msgid "Login Successful"
+msgstr "เข้าสู่ระบบสำเร็จ"
+
+#: /
+msgid "Please wait..."
+msgstr "กรุณารอสักครู่...."
+
+#: /
+msgid "You have logged out. See you again soon!"
+msgstr "คุณได้ออกจากระบบ แล้วพบกันใหม่!"
+
+#: /
+msgid "Log Out"
+msgstr "ออกจากระบบ"
+
+#: /
+msgid "Looking for existing login..."
+msgstr "กำลังรอออกจากระบบ..."
+
+#: /
+msgid "The ELX website is currently in maintenance mode. Please check back soon - we apologize for any inconvenience."
+msgstr "เวปไซด์ ELX กำลังอยู่ในระหว่างการปรับปรุง  กรุณากลับมาเยี่ยมชมเวปใหม่อีกครั้ง- เราขออภัยในความไม่สะดวกที่เกิดขึ้น"
+
+#: /
+msgid "My Dashboard"
+msgstr "ข้อมูลของฉัน"
+
+#: /
+msgid "My Points:"
+msgstr "คะแนนของฉัน"
+
+#: /
+msgid "My Progress"
+msgstr "ความก้าวหน้าของฉัน"
+
+#: /
+msgid "Need Help?"
+msgstr "ต้องการความช่วยเหลือหรือไม่"
+
+#: /
+msgid "New Password"
+msgstr "พาสเวิร์ดใหม่"
+
+#: /
+msgid "No Levels found."
+msgstr "ไม่พบระดับที่ค้นหา"
+
+#: /
+msgid "Password:"
+msgstr "พาสเวิร์ด"
+
+#: /
+msgid "Password request received"
+msgstr "รับพาสเวิร์ดที่ขอ"
+
+#: /
+msgid "There was a problem loading this content, please try again."
+msgstr "มีปัญหาในการดึงข้อมูล กรุณาลองอีกครั้ง"
+
+#: /
+msgid "Product Library"
+msgstr "ข้อมูลผลิตภัณฑ์"
+
+#: /
+msgid "Product Library"
+msgstr "ข้อมูลผลิตภัณฑ์"
+
+#: /
+msgid "Activate your Gravatar account from the confirmation email."
+msgstr "ยืนยันการใช้งานบัญชีGravatar จากอีเมล์การยืนยันเพื่อใช้งาน"
+
+#: /
+msgid "Add your profile photo to your Gravatar account."
+msgstr "เพิ่มรูปภาพประจำตัวของคุณในบัญชี Gravatar"
+
+#: /
+msgid "Create a free account with Gravatar"
+msgstr "สร้างบัญชีกับ Gravatar ได้ฟรี"
+
+#: /
+msgid "Follow these steps:"
+msgstr "ทำตามขั้นตอนต่อไปนี้"
+
+#: /
+msgid "New to Gravatar and need some help?"
+msgstr "หากคุณยังใหม่กับGravatar และต้องการความช่วยเหลือ?"
+
+#: /
+msgid "Want to personalize your profile photo?Create an account with Gravatar, and add your photo. It links automatically to ELX!"
+msgstr "คุณต้องการใช้รูปภาพประจำตัวของคุณหรือไม่? สร้างบัญชีกับ Gravatar และเพิ่มรูปภาพของคุณ ซึ่งจะถูกแสดงบน ELX! โดยอัตโนมัติ"
+
+#: /
+msgid "Your ELX profile updates automatically in just a short time!"
+msgstr "ข้อมูลELX ของคุณจะถูกอัพเดทอย่างรวดเร็ว!"
+
+#: /
+msgid "Recent Badges:"
+msgstr "เหรียญที่ได้รับล่าสุด"
+
+#: /
+msgid "Remember Me"
+msgstr "จดจำฉัน"
+
+#: /
+msgid "Request"
+msgstr "กรุณาใส่พาสเวิร์ดใหม่"
+
+#: /
+msgid "Displaying {{ start }} - {{ end }} of {{ total }}"
+msgstr "แสดงผล {{ start }} - {{ end }} ของ {{ total }}"
+
+#: /
+msgid "Filter By"
+msgstr "กรองโดย"
+
+#: /
+msgid "Refine Search"
+msgstr "ปรับปรุงการค้นหา"
+
+#: /
+msgid "Sort By"
+msgstr "คัดเลือกโดย"
+
+#: /
+msgid "Title A-Z"
+msgstr "หัวเรื่อง A-Z"
+
+#: /
+msgid "Most Popular"
+msgstr "เป็นที่นิยมที่สุด"
+
+#: /
+msgid "View"
+msgstr "ชม"
+
+#: /
+msgid "See All Badges"
+msgstr "ดูเข็มทั้งหมด"
+
+#: /
+msgid "See All Tools"
+msgstr "ดูเครื่องมือทั้งหมด"
+
+#: /
+msgid "See Full Leaderboard"
+msgstr "ดูคะแนนนำทั้งหมด"
+
+#: /
+msgid "The server encountered an error"
+msgstr "เซิร์ฟเวอร์พบข้อผิดพลาด"
+
+#: /
+msgid "Sign In"
+msgstr "ลงทะเบียน"
+
+#: /
+msgid "Sorry, no favorites."
+msgstr "ไม่พบที่ชื่นชอบ"
+
+#: /
+msgid "Submit"
+msgstr "นำเสนอ"
+
+#: /
+msgid "Suggested for me:"
+msgstr "คำแนะนำสำหรับฉัน"
+
+#: /
+msgid "Privacy Policy/Terms &amp; Conditions"
+msgstr "นโยบายความเป็นส่วนตัวและเงื่อนไข I ข้อกำหนด"
+
+#: /
+msgid "My Badges"
+msgstr "เหรียญรางวัล"
+
+#: /
+msgid "Leaderboard"
+msgstr "คะแนนนำ"
+
+#: /
+msgid "LOGIN"
+msgstr "เข้าสู่ระบบ"
+
+#: /
+msgid "Points"
+msgstr "คะแนน"
+
+#: /
+msgid "Rank"
+msgstr "ลำดับที่"
+
+#: /
+msgid "Spotlight"
+msgstr "Spotlight"
+
+#: /
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+#: /
+msgid "unfavorited"
+msgstr "ยกเลิกที่ชื่นชอบ"
+
+#: /
+msgid "Unknown user"
+msgstr "ไม่รู้จักผู้เข้าใช้"
+
+#: /
+msgid "Updating language"
+msgstr "กำลังอัพเดทภาษา"
+
+#: /
+msgid "What&apos;s New &amp; Trending"
+msgstr "อะไรใหม่ กระแสใหม่"
+
+#: /
+msgid "Level:"
+msgstr "ระดับชั้น"
+
+#: /
+msgid "BTN_SEE_MORE"
+msgstr "ดูเพิ่มเติม"
+
+#: /
+msgid "Search"
+msgstr "ค้นหา"
+
+#: /
+msgid "Account:"
+msgstr "Account"
+
+#: /
+msgid "First Name:"
+msgstr "First Name"
+
+#: /
+msgid "Last Name:"
+msgstr "Last Name"
+
+#: /
+msgid "LABEL_SIGNUP"
+msgstr "Sign Up"
+
+#: /
+msgid "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+msgstr "The email address entered already exists. If you cannot remember your password, please use the forgot password link above to retrieve it."
+
+#: /
+msgid "The email address entered doesn&apos;t appear to be formatted correctly. Please check your email address and try again."
+msgstr "The email address entered doesn't appear to be formatted correctly. Please check your email address and try again."
+
+#: /
+msgid "UNEXPECTED_ERROR"
+msgstr "An unexpected error has occurred, please try again later."
+

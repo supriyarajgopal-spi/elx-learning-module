@@ -1,0 +1,4 @@
+name = ELX Dashboard
+description = Dashboard
+core = 7.x
+package = ELX

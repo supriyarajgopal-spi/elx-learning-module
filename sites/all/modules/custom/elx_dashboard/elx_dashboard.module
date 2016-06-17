@@ -1,0 +1,15 @@
+<?php
+
+// Implements hook_menu().
+function elx_dashboard_menu() {
+  $items = array();
+  $items['dashboard'] = array(
+    'page callback' => 'elx_dashboard_content',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+function elx_dashboard_content() {
+  return 'dashboard content';
+}

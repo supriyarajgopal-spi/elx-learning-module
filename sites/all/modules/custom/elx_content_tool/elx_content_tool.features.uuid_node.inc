@@ -11,7 +11,7 @@ function elx_content_tool_uuid_features_default_content() {
   $nodes = array();
 
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'TR Singapore',
   'log' => '',
   'status' => 1,
@@ -25,7 +25,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0519cebe-ccd2-47a8-a664-ee006ad34a57',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -95,13 +95,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -109,7 +105,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:23:16 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Italy',
   'log' => '',
   'status' => 1,
@@ -123,7 +119,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0664d693-ba5f-4eec-b70d-4f670d74c7ef',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -193,13 +189,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -207,7 +199,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:10:10 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Fashion Group',
   'log' => '',
   'status' => 1,
@@ -221,7 +213,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '085cfc0a-c4bb-4d7d-b931-1db19a7d2f87',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -291,13 +283,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -305,7 +293,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:06:55 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Europe - Middle East - Africa',
   'log' => '',
   'status' => 1,
@@ -319,7 +307,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0bc6a71b-e0cb-4c2e-b198-1fd55216c473',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -389,13 +377,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -403,7 +387,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:25:14 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'TR Malaysia',
   'log' => '',
   'status' => 1,
@@ -417,7 +401,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0e02eac0-3071-413b-a8f5-23ae4a2a19d5',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -487,13 +471,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -501,7 +481,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:23:51 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Americas - North America',
   'log' => '',
   'status' => 1,
@@ -515,7 +495,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '101ea022-8394-4f0f-9e29-de1e6b4000ca',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -585,13 +565,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -599,7 +575,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:22:26 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Finland',
   'log' => '',
   'status' => 1,
@@ -613,7 +589,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '18af59f4-510b-4409-8791-63dd2c74d61b',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -683,13 +659,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -697,7 +669,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:16:13 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Thailand',
   'log' => '',
   'status' => 1,
@@ -711,7 +683,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '192a5297-fc32-4fbe-bc90-bf672036e134',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -781,13 +753,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -795,7 +763,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:03:57 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'China',
   'log' => '',
   'status' => 1,
@@ -809,7 +777,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '1a113d88-6b70-4c21-a7df-6e982bf15776',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -879,13 +847,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -893,7 +857,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:55:34 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Puerto Rico',
   'log' => '',
   'status' => 1,
@@ -907,7 +871,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '1d30894e-a8cf-49d6-bd7c-d8235d9b69b2',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -977,13 +941,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -991,7 +951,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:05:11 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Japan',
   'log' => '',
   'status' => 1,
@@ -1005,7 +965,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2026b560-19d8-4e70-93d7-293f6cbedf81',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1075,13 +1035,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1089,7 +1045,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:24:21 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Nordic',
   'log' => '',
   'status' => 1,
@@ -1103,7 +1059,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '20e646eb-9e4b-4459-b0b7-73e5e062143d',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1173,13 +1129,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1187,7 +1139,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:16:00 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'South Africa',
   'log' => '',
   'status' => 1,
@@ -1201,7 +1153,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2136f229-5bcf-4af6-a0e6-0d9c05128f81',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1271,13 +1223,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1285,7 +1233,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:17:28 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Vietnam',
   'log' => '',
   'status' => 1,
@@ -1299,7 +1247,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2bf69868-26f8-4797-80a6-2ad0ae86eeab',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1369,13 +1317,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1383,7 +1327,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:04:18 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Korea',
   'log' => '',
   'status' => 1,
@@ -1397,7 +1341,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '314d5d2c-4b96-4b63-a130-7d3dd8f383c6',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1467,13 +1411,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1481,7 +1421,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:56:29 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Hong Kong',
   'log' => '',
   'status' => 1,
@@ -1495,7 +1435,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '35d80f77-f576-4df6-94a2-a709f4827b4a',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1565,13 +1505,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1579,7 +1515,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:55:54 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Turkey',
   'log' => '',
   'status' => 1,
@@ -1593,7 +1529,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '36267a49-de69-497e-960b-f37c01a7eb14',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1663,13 +1599,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1677,7 +1609,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:18:25 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Korea',
   'log' => '',
   'status' => 1,
@@ -1691,7 +1623,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '3ce5dc72-bd1a-4846-9caf-63e206f7fe69',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1761,13 +1693,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1775,7 +1703,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:24:51 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Japan',
   'log' => '',
   'status' => 1,
@@ -1789,7 +1717,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '40534793-d7af-4d60-9bb4-f1df3f3b8158',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1859,13 +1787,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1873,7 +1797,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:56:11 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Czech Republic',
   'log' => '',
   'status' => 1,
@@ -1887,7 +1811,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '4126b00d-c030-4107-97bf-c1964505277f',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -1957,13 +1881,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -1971,7 +1891,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:07:59 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Greece',
   'log' => '',
   'status' => 1,
@@ -1985,7 +1905,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '496ca999-b795-4b9d-957a-a10a72465ab7',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2055,13 +1975,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2069,7 +1985,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:08:51 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Romania',
   'log' => '',
   'status' => 1,
@@ -2083,7 +1999,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '4e81b55f-eba7-4551-b4e8-fa852b4b117e',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2153,13 +2069,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2167,7 +2079,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:19:04 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Germany',
   'log' => '',
   'status' => 1,
@@ -2181,7 +2093,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '50553e9f-9a5f-4aaa-ada6-1f25d87da5d8',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2251,13 +2163,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2265,7 +2173,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:08:37 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Middle Pacific',
   'log' => '',
   'status' => 1,
@@ -2279,7 +2187,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '54f251e7-1f6a-4770-ac93-f97d9d4f7a89',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2349,13 +2257,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2363,7 +2267,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:24:34 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Austria',
   'log' => '',
   'status' => 1,
@@ -2377,7 +2281,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '555d83bd-e06d-4e25-8744-4852cab7c43d',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2447,13 +2351,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2461,7 +2361,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:07:17 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'U.K.',
   'log' => '',
   'status' => 1,
@@ -2475,7 +2375,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '5a0bca06-8977-4c06-83bb-a0e5fa704882',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2545,13 +2445,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2559,7 +2455,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:18:12 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Bulgaria',
   'log' => '',
   'status' => 1,
@@ -2573,7 +2469,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '60cdcde9-4106-44c4-9fed-9093e40028b4',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2643,13 +2539,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2657,7 +2549,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:18:46 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'TR Thailand',
   'log' => '',
   'status' => 1,
@@ -2671,7 +2563,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '6df4754c-9ece-4b3f-806b-37be280eba40',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2741,13 +2633,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2755,7 +2643,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:23:30 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Venezuela',
   'log' => '',
   'status' => 1,
@@ -2769,7 +2657,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '7032ffc6-0bec-4ff5-aac8-867050910665',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2839,13 +2727,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2853,7 +2737,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:21:03 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Americas - South - Central America - Mexico',
   'log' => '',
   'status' => 1,
@@ -2867,7 +2751,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '71555f0c-624a-4205-9146-d447653ee99c',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -2937,13 +2821,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -2951,7 +2831,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:21:48 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Southern Cone - Chile - Peru - Argentina',
   'log' => '',
   'status' => 1,
@@ -2965,7 +2845,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '72f9c624-0c3a-4691-b8a2-13fca21b0c8b',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3035,13 +2915,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3049,7 +2925,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:20:22 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Colombia - Ecuador - Central America',
   'log' => '',
   'status' => 1,
@@ -3063,7 +2939,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '7514ee08-c255-4c0f-b1db-ae8c55052e60',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3133,13 +3009,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3147,7 +3019,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:21:29 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Malaysia',
   'log' => '',
   'status' => 1,
@@ -3161,7 +3033,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '78081033-3615-44b2-ac9c-7e675ecbcdcb',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3231,13 +3103,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3245,7 +3113,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:59:17 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Taiwan',
   'log' => '',
   'status' => 1,
@@ -3259,7 +3127,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '7c2beeb9-4181-4f42-96c1-e44d15645b4c',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3329,13 +3197,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3343,7 +3207,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:03:26 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Singapore',
   'log' => '',
   'status' => 1,
@@ -3357,7 +3221,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '832fe5a5-c4d9-4e07-8cab-e643adbbcffa',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3427,13 +3291,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3441,7 +3301,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:59:46 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Portugal',
   'log' => '',
   'status' => 1,
@@ -3455,7 +3315,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '8d265b1d-a25e-4113-a5e3-053574e8e4d5',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3525,13 +3385,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3539,7 +3395,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:20:05 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Spain',
   'log' => '',
   'status' => 1,
@@ -3553,7 +3409,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '8e65395f-ca3d-4e15-b8de-65ab8a637b8f',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3623,13 +3479,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3637,7 +3489,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:17:36 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Poland/Lituania/Estonia/Latvia',
   'log' => '',
   'status' => 1,
@@ -3651,7 +3503,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '8f84dadb-8f2a-4346-a81b-ac3f8524d88f',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3721,13 +3573,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3735,7 +3583,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:16:54 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Hungary',
   'log' => '',
   'status' => 1,
@@ -3749,7 +3597,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '9428804b-b135-4040-a01b-37588a4678c3',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3819,13 +3667,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3833,7 +3677,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:09:12 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Belgium',
   'log' => '',
   'status' => 1,
@@ -3847,7 +3691,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '9601403b-2bcb-4737-8796-81a646b83790',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -3917,13 +3761,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -3931,7 +3771,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:07:33 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Russia',
   'log' => '',
   'status' => 1,
@@ -3945,7 +3785,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '98fcb9ea-a065-457d-befc-11bef4ec318f',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4015,13 +3855,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4029,7 +3865,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:17:06 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Mexico',
   'log' => '',
   'status' => 1,
@@ -4043,7 +3879,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '9a20bd29-c9ea-4115-9744-31425f8d3b13',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4113,13 +3949,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4127,7 +3959,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:20:48 +0000',
 );
   $nodes[] = array(
-  'uid' => 223,
+  'uid' => 30639,
   'title' => 'Canada',
   'log' => '',
   'status' => 1,
@@ -4141,7 +3973,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'a151d076-f9ae-4726-b32f-7b976c8e1873',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(),
   'group_group' => array(),
   'rdf_mapping' => array(
@@ -4199,21 +4031,17 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
-  'name' => 'bpearl@estee.com',
+  'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
   'date' => '2016-06-06 16:56:46 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Americas - Caribbean - Cancun',
   'log' => '',
   'status' => 1,
@@ -4227,7 +4055,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'a3e8bd4d-33cd-433b-961d-a04ee9c442ab',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4297,13 +4125,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4311,7 +4135,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:22:05 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'India',
   'log' => '',
   'status' => 1,
@@ -4325,7 +4149,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'a63631ab-fcc0-47ef-9612-1bb6ada049a7',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4395,13 +4219,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4409,7 +4229,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:09:48 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Netherlands',
   'log' => '',
   'status' => 1,
@@ -4423,7 +4243,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'ac5f4f6e-41de-443a-b734-b0225ce83e11',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4493,13 +4313,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4507,7 +4323,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:07:45 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Switzerland',
   'log' => '',
   'status' => 1,
@@ -4521,7 +4337,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'b8cffade-882e-42b8-984a-d8a4e25d99dd',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4591,13 +4407,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4605,7 +4417,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:17:50 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Cyprus',
   'log' => '',
   'status' => 1,
@@ -4619,7 +4431,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'be235ec5-be42-4d6d-866e-8990c8152f9b',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4689,13 +4501,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4703,7 +4511,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:19:26 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Israel',
   'log' => '',
   'status' => 1,
@@ -4717,7 +4525,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c0d86624-f9bb-4f34-a4be-a6970a496dac',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4787,13 +4595,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4801,7 +4605,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:09:30 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'France',
   'log' => '',
   'status' => 1,
@@ -4815,7 +4619,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c67ba915-6796-4564-ad0d-e685f90203af',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4885,13 +4689,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4899,7 +4699,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:08:16 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail China',
   'log' => '',
   'status' => 1,
@@ -4913,7 +4713,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'd2b1292a-8c6a-4dba-a63c-cf6b2437eaf3',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -4983,13 +4783,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -4997,7 +4793,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:22:55 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Oceania',
   'log' => '',
   'status' => 1,
@@ -5011,7 +4807,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'd67898c0-fb3c-4102-9abe-82d585a29dfa',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5081,13 +4877,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5095,7 +4887,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:24:05 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Travel Retail Hong Kong-Macau-Taiwan',
   'log' => '',
   'status' => 1,
@@ -5109,7 +4901,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'daaec0af-88c8-4713-9fe0-013998dc3db2',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5179,13 +4971,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5193,7 +4981,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:22:41 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Philippines',
   'log' => '',
   'status' => 1,
@@ -5207,7 +4995,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'e0ea066a-e55b-4196-b635-f4b987b60628',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5277,13 +5065,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5291,7 +5075,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:04:44 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'New Zealand',
   'log' => '',
   'status' => 1,
@@ -5305,7 +5089,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'e35b9451-c434-409f-873d-f637ca7e864c',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5375,13 +5159,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5389,7 +5169,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:59:30 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Australia',
   'log' => '',
   'status' => 1,
@@ -5403,7 +5183,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'f0c8bca2-3177-4469-8458-c71181c69f8f',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5473,13 +5253,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5487,7 +5263,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 20:55:20 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'United States',
   'log' => '',
   'status' => 1,
@@ -5501,7 +5277,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'f1e3a06c-b34e-42f3-acae-6fe840128cde',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(),
   'group_group' => array(),
   'rdf_mapping' => array(
@@ -5559,13 +5335,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5573,7 +5345,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-06 16:56:22 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Adriatic',
   'log' => '',
   'status' => 1,
@@ -5587,7 +5359,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'f6416394-fee3-4258-9ab6-8849a7fd3f90',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5657,13 +5429,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5671,7 +5439,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:16:27 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Indonesia',
   'log' => '',
   'status' => 1,
@@ -5685,7 +5453,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'f846c8da-e540-4b8a-98c8-4907934988dc',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5755,13 +5523,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
@@ -5769,7 +5533,7 @@ function elx_content_tool_uuid_features_default_content() {
   'date' => '2016-06-13 21:04:30 +0000',
 );
   $nodes[] = array(
-  'uid' => 29031,
+  'uid' => 30639,
   'title' => 'Middle East',
   'log' => '',
   'status' => 1,
@@ -5783,7 +5547,7 @@ function elx_content_tool_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'f8ea819e-e8ef-430a-90f9-7804e9ea441b',
-  'revision_uid' => 29031,
+  'revision_uid' => 30639,
   'group_access' => array(
     'und' => array(
       0 => array(
@@ -5853,13 +5617,9 @@ function elx_content_tool_uuid_features_default_content() {
       'callback' => 'date_iso8601',
     ),
   ),
-  'translations' => array(
-    'original' => NULL,
-    'data' => array(),
-  ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 29031,
+  'last_comment_uid' => 30639,
   'comment_count' => 0,
   'name' => 'darren.oh@spi.com',
   'picture' => 0,

@@ -94,7 +94,6 @@ function elx_content_tool_default_page_manager_pages_alter(&$pages) {
         'children' => array(
           0 => 2,
           1 => 1,
-          2 => 4,
         ),
         'parent' => 'canvas',
         'class' => '',
@@ -168,25 +167,6 @@ function elx_content_tool_default_page_manager_pages_alter(&$pages) {
         'class' => '',
         'hide_empty' => 1,
       ),
-      4 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'bottom',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'bottom' => array(
-        'type' => 'region',
-        'title' => 'Bottom',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '4',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
     ),
   );
   $display->panel_settings = array(
@@ -215,48 +195,17 @@ function elx_content_tool_default_page_manager_pages_alter(&$pages) {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fae5ca22-f4fc-417d-b3ec-10f9c6e78862';
-  $pane->panel = 'bottom';
-  $pane->type = 'views';
-  $pane->subtype = 'admin_views_node';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 1,
-    'nodes_per_page' => '15',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'block_1',
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'fae5ca22-f4fc-417d-b3ec-10f9c6e78862';
-  $display->content['new-fae5ca22-f4fc-417d-b3ec-10f9c6e78862'] = $pane;
-  $display->panels['bottom'][0] = 'new-fae5ca22-f4fc-417d-b3ec-10f9c6e78862';
-  $pane = new stdClass();
   $pane->pid = 'new-883c976f-5d90-4577-a09a-1d88180669ab';
   $pane->panel = 'center_left';
   $pane->type = 'views_panes';
   $pane->subtype = 'elx_untranslated_content-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '0',
+    'items_per_page' => '10',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -275,7 +224,11 @@ function elx_content_tool_default_page_manager_pages_alter(&$pages) {
   $pane->subtype = 'elx_unpublished_content-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '1',
+    'items_per_page' => '10',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -294,7 +247,11 @@ function elx_content_tool_default_page_manager_pages_alter(&$pages) {
   $pane->subtype = 'elx_published_content-panel_pane_1';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '2',
+    'items_per_page' => '10',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,

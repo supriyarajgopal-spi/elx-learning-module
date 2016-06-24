@@ -23,6 +23,7 @@ function elx_content_tool_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Published content';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer nodes';
@@ -154,10 +155,10 @@ function elx_content_tool_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = '';
   $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  /* Sort criterion: Content: Markets (markets) */
+  $handler->display->display_options['sorts']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['sorts']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['sorts']['markets_target_id']['field'] = 'markets_target_id';
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -177,14 +178,23 @@ function elx_content_tool_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not empty';
+  /* Filter criterion: Content: Markets (markets) */
+  $handler->display->display_options['filters']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['markets_target_id']['field'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['operator'] = 'not empty';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['elx_published_content'] = array(
     t('Master'),
     t('Published content'),
@@ -224,6 +234,7 @@ function elx_content_tool_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Unpublished content';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer nodes';
@@ -362,10 +373,10 @@ function elx_content_tool_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = '';
   $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  /* Sort criterion: Content: Markets (markets) */
+  $handler->display->display_options['sorts']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['sorts']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['sorts']['markets_target_id']['field'] = 'markets_target_id';
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -385,14 +396,23 @@ function elx_content_tool_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not empty';
+  /* Filter criterion: Content: Markets (markets) */
+  $handler->display->display_options['filters']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['markets_target_id']['field'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['operator'] = 'not empty';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['elx_unpublished_content'] = array(
     t('Master'),
     t('Unpublished content'),
@@ -433,6 +453,7 @@ function elx_content_tool_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Untranslated content';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'translate content';
@@ -554,10 +575,10 @@ function elx_content_tool_views_default_views() {
   $handler->display->display_options['fields']['translate_node']['label'] = '';
   $handler->display->display_options['fields']['translate_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['translate_node']['hide_alter_empty'] = FALSE;
-  /* Sort criterion: Broken/missing handler */
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['sorts']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  /* Sort criterion: Content: Markets (markets) */
+  $handler->display->display_options['sorts']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['sorts']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['sorts']['markets_target_id']['field'] = 'markets_target_id';
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -579,12 +600,12 @@ function elx_content_tool_views_default_views() {
     'und' => 'und',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
+  /* Filter criterion: Content: Markets (markets) */
+  $handler->display->display_options['filters']['markets_target_id']['id'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['markets_target_id']['field'] = 'markets_target_id';
+  $handler->display->display_options['filters']['markets_target_id']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['markets_target_id']['group'] = 1;
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
@@ -595,6 +616,15 @@ function elx_content_tool_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['elx_untranslated_content'] = array(
     t('Master'),
     t('Untranslated content'),

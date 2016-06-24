@@ -404,9 +404,11 @@ function elx_content_tool_update_7105(&$sandbox) {
       // Save market groups. Use a transaction so we can clean up errors.
       $transaction = db_transaction();
       try {
-        module_invoke($field_og_markets['storage']['type'], 'field_storage_write', $entity_type, $entity, FIELD_STORAGE_UPDATE, array($field_og_markets['id']));
-        // Add new market groups to processed count.
-        $sandbox['progress'] += count($markets);
+        foreach ($markets as $nid) {
+          og_membership_create('node', $nid, $entity_type, $entity->{$info['entity keys']['id']}, 'markets', array('language' => LANGUAGE_NONE));
+          // Add new market group to processed count.
+          ++$sandbox['progress'];
+        }
       }
       catch (Exception $e) {
         $transaction->rollback();

@@ -164,7 +164,7 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 255,
+      'max_length' => 1024,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -304,39 +304,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_badge_image'
-  $field_bases['field_badge_image'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_badge_image',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_badge_unearned_description'
@@ -1570,7 +1537,7 @@ function elx_site_configurations_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'max_length' => 80,
+      'max_length' => 255,
     ),
     'translatable' => 1,
     'type' => 'text',
@@ -1993,39 +1960,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_language'
-  $field_bases['field_language'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_language',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_last_question_in_quiz'
@@ -2460,353 +2394,6 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_manifest_categories'
-  $field_bases['field_manifest_categories'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_categories',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_manifest_counter'
-  $field_bases['field_manifest_counter'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_counter',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_manifest_featured_image'
-  $field_bases['field_manifest_featured_image'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_featured_image',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_manifest_keywords'
-  $field_bases['field_manifest_keywords'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_keywords',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_manifest_language'
-  $field_bases['field_manifest_language'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_language',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_manifest_markets'
-  $field_bases['field_manifest_markets'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_markets',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_manifest_subtitle'
-  $field_bases['field_manifest_subtitle'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_subtitle',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_manifest_weight'
-  $field_bases['field_manifest_weight'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest_weight',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_markets'
-  $field_bases['field_markets'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_markets',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'AU' => 'Australia',
-        'CN' => 'China',
-        'HK' => 'Hong Kong',
-        'JP' => 'Japan',
-        'KR' => 'Korea',
-        'MY' => 'Malaysia',
-        'NZ' => 'New Zealand',
-        'SG' => 'Singapore',
-        'TW' => 'Taiwan',
-        'TH' => 'Thailand',
-        'VN' => 'Vietnam',
-        'ID' => 'Indonesia',
-        'PP' => 'Philippines',
-        'US' => 'United States',
-        'CA' => 'Canada',
-        'PR' => 'Puerto Rico',
-        'FG' => 'Fashion Group',
-        'AT' => 'Austria',
-        'BE' => 'Belgium',
-        'NL' => 'Netherlands',
-        'CS' => 'Czech Republic',
-        'FR' => 'France',
-        'GM' => 'Germany',
-        'GR' => 'Greece',
-        'HU' => 'Hungary',
-        'IL' => 'Israel',
-        'IN' => 'India',
-        'IT' => 'Italy',
-        'DK' => 'Nordic',
-        'FI' => 'Finland',
-        'AD' => 'Adriatic',
-        'PL' => 'Poland/Lituania/Estonia/Latvia',
-        'RU' => 'Russia',
-        'ZA' => 'South Africa',
-        'SP' => 'Spain',
-        'CH' => 'Switzerland',
-        'UK' => 'U.K.',
-        'TR' => 'Turkey',
-        'BG' => 'Bulgaria',
-        'RM' => 'Romania',
-        'CY' => 'Cyprus',
-        'AE' => 'Middle East',
-        'PT' => 'Portugal',
-        'SC' => 'Southern Cone - Chile - Peru - Argentina',
-        'MX' => 'Mexico',
-        'VE' => 'Venezuela',
-        'CECA' => 'Colombia - Ecuador - Central America',
-        'TRAM-SCM' => 'Travel Retail Americas - South - Central America - Mexico',
-        'TRAM-CC' => 'Travel Retail Americas - Caribbean - Cancun',
-        'TRAM-NA' => 'Travel Retail Americas - North America',
-        'TRAPAC-HMT' => 'Travel Retail Hong Kong-Macau-Taiwan',
-        'TRAPAC-CN' => 'Travel Retail China',
-        'TRAPAC-SG' => 'TR Singapore',
-        'TRAPAC-TH' => 'TR Thailand',
-        'TRAPAC-MY' => 'TR Malaysia',
-        'TRAPAC-SEA' => 'Travel Retail Oceania',
-        'TRAPAC-JP' => 'Travel Retail Japan',
-        'TRAPAC-MP' => 'Travel Retail Middle Pacific',
-        'TRAPAC-KR' => 'Travel Retail Korea',
-        'TREMEA' => 'Travel Retail Europe - Middle East - Africa',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_match_collection'
   $field_bases['field_match_collection'] = array(
     'active' => 1,
@@ -2886,38 +2473,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_newplayer_link'
-  $field_bases['field_newplayer_link'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_newplayer_link',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_next_button'
@@ -3365,39 +2920,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_product_name'
-  $field_bases['field_product_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_product_name',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_pulsed_content'
@@ -4278,38 +3800,6 @@ function elx_site_configurations_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_thumbnail_link'
-  $field_bases['field_thumbnail_link'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_thumbnail_link',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_tool_by_role'

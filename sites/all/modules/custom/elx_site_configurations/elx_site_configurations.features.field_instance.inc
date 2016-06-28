@@ -203,88 +203,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-field_manifest'
-  $field_instances['node-badge-field_manifest'] = array(
-    'bundle' => 'badge',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge-field_markets'
-  $field_instances['node-badge-field_markets'] = array(
-    'bundle' => 'badge',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-badge-field_original_engbadge_title'
   $field_instances['node-badge-field_original_engbadge_title'] = array(
     'bundle' => 'badge',
@@ -323,6 +241,118 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-badge-group_content_access'
+  $field_instances['node-badge-group_content_access'] = array(
+    'bundle' => 'badge',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 10,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-badge-markets'
+  $field_instances['node-badge-markets'] = array(
+    'bundle' => 'badge',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 9,
     ),
   );
 
@@ -366,299 +396,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_badge_description'
-  $field_instances['node-badge_manifest-field_badge_description'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_badge_description',
-    'label' => 'Badge earned description',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_badge_image'
-  $field_instances['node-badge_manifest-field_badge_image'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_badge_image',
-    'label' => 'Badge Icon',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_badge_unearned_description'
-  $field_instances['node-badge_manifest-field_badge_unearned_description'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_badge_unearned_description',
-    'label' => 'Badge unearned description',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_badge_weight'
-  $field_instances['node-badge_manifest-field_badge_weight'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_badge_weight',
-    'label' => 'Badge weight',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_language'
-  $field_instances['node-badge_manifest-field_language'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_language',
-    'label' => 'Language',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_manifest_markets'
-  $field_instances['node-badge_manifest-field_manifest_markets'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-badge_manifest-field_original_engbadge_title'
-  $field_instances['node-badge_manifest-field_original_engbadge_title'] = array(
-    'bundle' => 'badge_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_original_engbadge_title',
-    'label' => 'Original English Title',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
     ),
   );
 
@@ -795,7 +532,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'content_object',
     'default_value' => array(
       0 => array(
-        'value' => 'You\'ve been awarded :POINTS:% points!',
+        'value' => 'You’ve been awarded 400 points!',
       ),
     ),
     'deleted' => 0,
@@ -821,7 +558,7 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -886,7 +623,7 @@ function elx_site_configurations_field_default_field_instances() {
     'bundle' => 'content_object',
     'default_value' => array(
       0 => array(
-        'value' => 'You\'ve been awarded :BADGE:% badge and :POINTS:% points!',
+        'value' => 'You’ve been awarded :BADGE: badge and 400 points!',
       ),
     ),
     'deleted' => 0,
@@ -912,7 +649,7 @@ function elx_site_configurations_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1347,91 +1084,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_manifest'
-  $field_instances['node-content_object-field_manifest'] = array(
-    'bundle' => 'content_object',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 150,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 24,
-    ),
-  );
-
-  // Exported field_instance: 'node-content_object-field_markets'
-  $field_instances['node-content_object-field_markets'] = array(
-    'bundle' => 'content_object',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 16,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'checkall' => array(
-        'checkall' => 1,
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 18,
-    ),
-  );
-
   // Exported field_instance: 'node-content_object-field_order_weight'
   $field_instances['node-content_object-field_order_weight'] = array(
     'bundle' => 'content_object',
@@ -1678,6 +1330,118 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-content_object-group_content_access'
+  $field_instances['node-content_object-group_content_access'] = array(
+    'bundle' => 'content_object',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 26,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-content_object-markets'
+  $field_instances['node-content_object-markets'] = array(
+    'bundle' => 'content_object',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-content_object-title_field'
   $field_instances['node-content_object-title_field'] = array(
     'bundle' => 'content_object',
@@ -1813,50 +1577,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-diary-field_manifest'
-  $field_instances['node-diary-field_manifest'] = array(
-    'bundle' => 'diary',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
     ),
   );
 
@@ -2062,10 +1782,14 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-disclaimer-field_markets'
-  $field_instances['node-disclaimer-field_markets'] = array(
+  // Exported field_instance: 'node-disclaimer-group_content_access'
+  $field_instances['node-disclaimer-group_content_access'] = array(
     'bundle' => 'disclaimer',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2074,7 +1798,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2084,19 +1808,89 @@ function elx_site_configurations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_markets',
-    'label' => 'Markets',
-    'required' => 0,
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
     'widget' => array(
-      'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 3,
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-disclaimer-markets'
+  $field_instances['node-disclaimer-markets'] = array(
+    'bundle' => 'disclaimer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 5,
     ),
   );
 
@@ -2371,50 +2165,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-drag_match-field_manifest'
-  $field_instances['node-drag_match-field_manifest'] = array(
-    'bundle' => 'drag_match',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 11,
     ),
   );
 
@@ -2735,50 +2485,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-drag_priorities-field_manifest'
-  $field_instances['node-drag_priorities-field_manifest'] = array(
-    'bundle' => 'drag_priorities',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
     ),
   );
 
@@ -3209,50 +2915,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_manifest'
-  $field_instances['node-drag_select-field_manifest'] = array(
-    'bundle' => 'drag_select',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-drag_select-field_next_button'
   $field_instances['node-drag_select-field_next_button'] = array(
     'bundle' => 'drag_select',
@@ -3490,50 +3152,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-flash_cards-field_manifest'
-  $field_instances['node-flash_cards-field_manifest'] = array(
-    'bundle' => 'flash_cards',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
     ),
   );
 
@@ -4068,50 +3686,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_manifest'
-  $field_instances['node-hot_spots-field_manifest'] = array(
-    'bundle' => 'hot_spots',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-hot_spots-field_next_button'
   $field_instances['node-hot_spots-field_next_button'] = array(
     'bundle' => 'hot_spots',
@@ -4386,50 +3960,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_manifest'
-  $field_instances['node-list-field_manifest'] = array(
-    'bundle' => 'list',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-list-field_next_button'
   $field_instances['node-list-field_next_button'] = array(
     'bundle' => 'list',
@@ -4682,50 +4212,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_manifest'
-  $field_instances['node-matching_game-field_manifest'] = array(
-    'bundle' => 'matching_game',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-matching_game-field_match_collection'
   $field_instances['node-matching_game-field_match_collection'] = array(
     'bundle' => 'matching_game',
@@ -4905,672 +4391,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-body'
-  $field_instances['node-object_manifest-body'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_featured'
-  $field_instances['node-object_manifest-field_featured'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_featured',
-    'label' => 'Featured Content',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 15,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_final_exam'
-  $field_instances['node-object_manifest-field_final_exam'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_final_exam',
-    'label' => 'Final Exam',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_intro_text'
-  $field_instances['node-object_manifest-field_intro_text'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_intro_text',
-    'label' => 'Intro text',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_categories'
-  $field_instances['node-object_manifest-field_manifest_categories'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_categories',
-    'label' => 'Categories',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_counter'
-  $field_instances['node-object_manifest-field_manifest_counter'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_counter',
-    'label' => 'Counter',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_featured_image'
-  $field_instances['node-object_manifest-field_manifest_featured_image'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_featured_image',
-    'label' => 'Featured image',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 16,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_keywords'
-  $field_instances['node-object_manifest-field_manifest_keywords'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_keywords',
-    'label' => 'Keywords',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_language'
-  $field_instances['node-object_manifest-field_manifest_language'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_language',
-    'label' => 'Language',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_markets'
-  $field_instances['node-object_manifest-field_manifest_markets'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_subtitle'
-  $field_instances['node-object_manifest-field_manifest_subtitle'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_subtitle',
-    'label' => 'Subtitle',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_manifest_weight'
-  $field_instances['node-object_manifest-field_manifest_weight'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest_weight',
-    'label' => 'Weight',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 13,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_newplayer_link'
-  $field_instances['node-object_manifest-field_newplayer_link'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_newplayer_link',
-    'label' => 'Newplayer link',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_point_value'
-  $field_instances['node-object_manifest-field_point_value'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_point_value',
-    'label' => 'Point Value',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_product_name'
-  $field_instances['node-object_manifest-field_product_name'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_product_name',
-    'label' => 'Product name',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-object_manifest-field_thumbnail_link'
-  $field_instances['node-object_manifest-field_thumbnail_link'] = array(
-    'bundle' => 'object_manifest',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_thumbnail_link',
-    'label' => 'Thumbnail link',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 10,
     ),
   );
 
@@ -5915,92 +4735,6 @@ function elx_site_configurations_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_detail-field_manifest'
-  $field_instances['node-product_detail-field_manifest'] = array(
-    'bundle' => 'product_detail',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 22,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_detail-field_markets'
-  $field_instances['node-product_detail-field_markets'] = array(
-    'bundle' => 'product_detail',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'checkall' => array(
-        'checkall' => 1,
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 21,
     ),
   );
 
@@ -6525,6 +5259,118 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_detail-group_content_access'
+  $field_instances['node-product_detail-group_content_access'] = array(
+    'bundle' => 'product_detail',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 24,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-product_detail-markets'
+  $field_instances['node-product_detail-markets'] = array(
+    'bundle' => 'product_detail',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 23,
+    ),
+  );
+
   // Exported field_instance: 'node-product_detail-title_field'
   $field_instances['node-product_detail-title_field'] = array(
     'bundle' => 'product_detail',
@@ -6827,50 +5673,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_manifest'
-  $field_instances['node-question_and_answer-field_manifest'] = array(
-    'bundle' => 'question_and_answer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 15,
-    ),
-  );
-
   // Exported field_instance: 'node-question_and_answer-field_next_button'
   $field_instances['node-question_and_answer-field_next_button'] = array(
     'bundle' => 'question_and_answer',
@@ -7139,47 +5941,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_manifest'
-  $field_instances['node-reveal-field_manifest'] = array(
-    'bundle' => 'reveal',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-reveal-field_next_button'
   $field_instances['node-reveal-field_next_button'] = array(
     'bundle' => 'reveal',
@@ -7373,50 +6134,6 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-story-field_manifest'
-  $field_instances['node-story-field_manifest'] = array(
-    'bundle' => 'story',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
     ),
   );
 
@@ -7748,88 +6465,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_manifest'
-  $field_instances['node-tools-field_manifest'] = array(
-    'bundle' => 'tools',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-tools-field_markets'
-  $field_instances['node-tools-field_markets'] = array(
-    'bundle' => 'tools',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_markets',
-    'label' => 'Markets',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-tools-field_tool_by_role'
   $field_instances['node-tools-field_tool_by_role'] = array(
     'bundle' => 'tools',
@@ -8027,6 +6662,118 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-tools-group_content_access'
+  $field_instances['node-tools-group_content_access'] = array(
+    'bundle' => 'tools',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-tools-markets'
+  $field_instances['node-tools-markets'] = array(
+    'bundle' => 'tools',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 10,
     ),
   );
 
@@ -8323,50 +7070,6 @@ function elx_site_configurations_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-trivia-field_manifest'
-  $field_instances['node-trivia-field_manifest'] = array(
-    'bundle' => 'trivia',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_manifest',
-    'label' => 'Manifest',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 120,
-      ),
-      'type' => 'entityreference_autocomplete',
       'weight' => 10,
     ),
   );
@@ -10820,22 +9523,18 @@ function elx_site_configurations_field_default_field_instances() {
   t('Autocomplete tags. Separate tags by commas.');
   t('Back card');
   t('Back card image');
-  t('Badge Icon');
   t('Badge earned description');
   t('Badge icon');
   t('Badge unearned description');
   t('Badge weight');
   t('Benefits');
-  t('Body');
   t('Bottom match image');
   t('Bottom match text');
-  t('Categories');
   t('Category');
   t('Completion text');
   t('Content object type');
   t('Correct answer');
   t('Correct feedback');
-  t('Counter');
   t('Country');
   t('Create Next Button');
   t('Create Submit Button');
@@ -10864,15 +9563,14 @@ function elx_site_configurations_field_default_field_instances() {
   t('Exam pass feedback');
   t('Exam perfect content');
   t('Featured');
-  t('Featured Content');
   t('Featured image');
-  t('Final Exam');
   t('Final exam');
   t('First question in quiz');
   t('Flash card collection');
   t('Front card');
   t('Front card image');
   t('Fun fact sheet');
+  t('Group content visibility');
   t('Guest URL');
   t('Headline');
   t('Hero image');
@@ -10890,8 +9588,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Is this question required to be answered by the user?');
   t('Is this the correct answer to the question?');
   t('Just for you');
-  t('Keywords');
-  t('Language');
   t('Last question in quiz');
   t('Layout');
   t('Learning objects');
@@ -10901,14 +9597,12 @@ function elx_site_configurations_field_default_field_instances() {
   t('List item');
   t('List text');
   t('List video');
-  t('Manifest');
   t('Market name');
   t('Markets');
   t('Match collection');
   t('Middle match image');
   t('Middle match text');
   t('Multiple choice');
-  t('Newplayer link');
   t('Object template');
   t('Order weight');
   t('Original English Title');
@@ -10921,7 +9615,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Priority text');
   t('Product categories');
   t('Product image');
-  t('Product name');
   t('Pulsed content');
   t('Question image');
   t('Question text');
@@ -10951,7 +9644,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('This is the title that will be displayed in the ELX system.');
   t('This is the title used for administrative purposed. It should be unique to allow for easy identification.');
   t('This is the title used for administrative purposed. It should be unique to allow for easy identification. Some special character are prohibited, e.g. "?$#!@&"');
-  t('Thumbnail link');
   t('Title');
   t('Tool Media');
   t('Tool by role');
@@ -10962,7 +9654,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Upload a featured image for the Spotlight area.');
   t('Upload video poster');
   t('Video poster image');
-  t('Weight');
   t('Why there\'s only 1');
 
   return $field_instances;

@@ -1,0 +1,3 @@
+Fixed all VBO views on page using first VBO field settings.
+https://www.drupal.org/node/2551301
+https://www.drupal.org/files/issues/multiple_vbo_views_on-2551301-6.patch

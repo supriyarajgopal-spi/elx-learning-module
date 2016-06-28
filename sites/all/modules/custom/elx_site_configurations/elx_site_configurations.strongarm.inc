@@ -82,13 +82,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_badge_manifest';
-  $strongarm->value = 0;
-  $export['comment_anonymous_badge_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_content_object';
   $strongarm->value = 0;
   $export['comment_anonymous_content_object'] = $strongarm;
@@ -166,13 +159,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_object_manifest';
-  $strongarm->value = 0;
-  $export['comment_anonymous_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_product_detail';
   $strongarm->value = 0;
   $export['comment_anonymous_product_detail'] = $strongarm;
@@ -222,13 +208,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_badge_manifest';
-  $strongarm->value = '1';
-  $export['comment_badge_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_content_object';
   $strongarm->value = '1';
   $export['comment_content_object'] = $strongarm;
@@ -239,13 +218,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_mode_badge';
   $strongarm->value = 1;
   $export['comment_default_mode_badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_badge_manifest';
-  $strongarm->value = 1;
-  $export['comment_default_mode_badge_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -327,13 +299,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_object_manifest';
-  $strongarm->value = 1;
-  $export['comment_default_mode_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_product_detail';
   $strongarm->value = 1;
   $export['comment_default_mode_product_detail'] = $strongarm;
@@ -379,13 +344,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_per_page_badge';
   $strongarm->value = '50';
   $export['comment_default_per_page_badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_badge_manifest';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_badge_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -463,13 +421,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_default_per_page_matching_game';
   $strongarm->value = '50';
   $export['comment_default_per_page_matching_game'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_object_manifest';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_object_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -565,13 +516,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_badge_manifest';
-  $strongarm->value = 1;
-  $export['comment_form_location_badge_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_content_object';
   $strongarm->value = 1;
   $export['comment_form_location_content_object'] = $strongarm;
@@ -649,13 +593,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_object_manifest';
-  $strongarm->value = 1;
-  $export['comment_form_location_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_product_detail';
   $strongarm->value = 1;
   $export['comment_form_location_product_detail'] = $strongarm;
@@ -726,23 +663,9 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_object_manifest';
-  $strongarm->value = '2';
-  $export['comment_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_badge';
   $strongarm->value = '1';
   $export['comment_preview_badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_badge_manifest';
-  $strongarm->value = '1';
-  $export['comment_preview_badge_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -824,13 +747,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_object_manifest';
-  $strongarm->value = '1';
-  $export['comment_preview_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_product_detail';
   $strongarm->value = '1';
   $export['comment_preview_product_detail'] = $strongarm;
@@ -904,13 +820,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'comment_subject_field_badge';
   $strongarm->value = 1;
   $export['comment_subject_field_badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_badge_manifest';
-  $strongarm->value = 1;
-  $export['comment_subject_field_badge_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -992,13 +901,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_object_manifest';
-  $strongarm->value = 1;
-  $export['comment_subject_field_object_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_product_detail';
   $strongarm->value = 1;
   $export['comment_subject_field_product_detail'] = $strongarm;
@@ -1056,190 +958,8 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short';
-  $strongarm->value = 'n/j/y';
+  $strongarm->value = 'Y-m-d H:i';
   $export['date_format_short'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__badge';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__content_object';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__content_object'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__drag_match';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__drag_match'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__drag_priorities';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__drag_priorities'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__drag_select';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__drag_select'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__flash_cards';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__flash_cards'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__hot_spots';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__hot_spots'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__list';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__list'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__matching_game';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__matching_game'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__product_detail';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__product_manifest';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__product_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__question_and_answer';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__question_and_answer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__reveal';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 1,
-    'lock_language' => 1,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__reveal'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_settings_node__tools';
-  $strongarm->value = array(
-    'default_language' => 'xx-et-default',
-    'hide_language_selector' => 0,
-    'exclude_language_none' => 0,
-    'lock_language' => 0,
-    'shared_fields_original_only' => 0,
-  );
-  $export['entity_translation_settings_node__tools'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1279,26 +999,6 @@ function elx_site_configurations_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__badge'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__badge_manifest';
-  $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'language' => array(
-          'weight' => '1',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__badge_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1598,23 +1298,6 @@ function elx_site_configurations_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__matching_game'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__object_manifest';
-  $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__object_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2040,7 +1723,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_badge';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_badge'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2054,49 +1737,49 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_content_object';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_content_object'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_diary';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_diary'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_disclaimer';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_disclaimer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_drag_match';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_drag_match'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_drag_priorities';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_drag_priorities'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_drag_select';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_drag_select'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_flash_cards';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_flash_cards'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2110,21 +1793,21 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_hot_spots';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_hot_spots'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_list';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_list'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_matching_game';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_matching_game'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2138,42 +1821,42 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_product_detail';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_product_detail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_question_and_answer';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_question_and_answer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_reveal';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_reveal'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_story';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_tools';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_tools'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_trivia';
-  $strongarm->value = '4';
+  $strongarm->value = 2;
   $export['language_content_type_trivia'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2206,11 +1889,6 @@ function elx_site_configurations_strongarm() {
       ),
       'file' => 'includes/locale.inc',
     ),
-    'language-default' => array(
-      'callbacks' => array(
-        'language' => 'language_from_default',
-      ),
-    ),
   );
   $export['language_negotiation_language_content'] = $strongarm;
 
@@ -2242,17 +1920,10 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'language_types';
   $strongarm->value = array(
     'language' => TRUE,
-    'language_content' => TRUE,
+    'language_content' => FALSE,
     'language_url' => FALSE,
   );
   $export['language_types'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'locale_field_language_fallback';
-  $strongarm->value = 0;
-  $export['locale_field_language_fallback'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2752,13 +2423,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_badge_manifest';
-  $strongarm->value = '0';
-  $export['node_preview_badge_manifest'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_content_object';
   $strongarm->value = '0';
   $export['node_preview_content_object'] = $strongarm;
@@ -2832,13 +2496,6 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'node_preview_matching_game';
   $strongarm->value = '0';
   $export['node_preview_matching_game'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_object_manifest';
-  $strongarm->value = '1';
-  $export['node_preview_object_manifest'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

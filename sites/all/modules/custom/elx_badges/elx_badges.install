@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * ELX Badges module install/schema/update hooks.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function elx_badges_schema() {
+  $schema = array();
+
+  $schema['badges'] = array(
+    'description' => 'All user badges in the system.',
+    'fields' => array(
+      'bid' => array(
+        'description' => 'The primary identifier for this particular user badge.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'nid' => array(
+        'description' => 'The current node_id of the badge content.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'The human-readable title for this badge.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'uid' => array(
+        'description' => 'The users uid that earned this badge',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'timestamp' => array(
+        'description' => 'The UNIX time stamp representing when the badge was earned.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('bid'),
+    'indexes' => array(
+        'badge_nid_uid' => array('nid', 'uid'),
+    ),
+  );
+  
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function elx_badges_uninstall() {
+  $result = db_select('variable', 'v')
+    ->fields('v', array('name'))
+    ->condition('name', 'elx_badges', 'LIKE')
+    ->execute();
+  foreach ($result as $row) {
+    variable_del($row->name);
+  }
+
+  drupal_set_message(t('ELX Badges has been uninstalled.'));
+}
+

@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_help().
+ *
+ * Displays help and module information.
+ *
+ * @param path 
+ *   Which path of the site we're using to display help
+ * @param arg 
+ *   Array that holds the current path as returned from arg() function
+ */
+function elx_badges_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#elx_badges":
+      return '' . t("Help tips for ELX's User Badges") . '';
+      break;
+  }
+}
+
+/**
+ * Retrieves user badges
+ *
+ * @param uid 
+ *   user's uid
+ * @return
+ *   returns an array of badge nid's associated with the user
+ */
+function elx_badges_get($uid) {
+  $result = db_select('badges', 'b')
+      ->fields('b', array('nid'))
+      ->condition('uid', $uid, '=')
+      ->execute()
+      ->fetchAssoc();
+  return $result;
+}

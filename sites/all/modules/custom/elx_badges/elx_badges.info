@@ -1,0 +1,4 @@
+name = ELX Badges
+description = Creates ELX user badges based off the mongodb badges data.
+core = 7.x
+package = ELX

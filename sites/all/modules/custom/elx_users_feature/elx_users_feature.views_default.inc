@@ -298,7 +298,7 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Market name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
@@ -387,7 +387,7 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: Field: Market name (field_market_name) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
   $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
@@ -458,6 +458,48 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['access']['expose']['operator'] = 'access_op';
   $handler->display->display_options['filters']['access']['expose']['identifier'] = 'access';
   $handler->display->display_options['filters']['access']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Door (field_door) */
+  $handler->display->display_options['filters']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['filters']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_door_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator_id'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['label'] = 'Door';
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['identifier'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Account name (field_account_name) */
+  $handler->display->display_options['filters']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['filters']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_account_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator_id'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['label'] = 'Account name';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['identifier'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -564,7 +606,7 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Market name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
@@ -650,7 +692,7 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: Field: Market name (field_market_name) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
   $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
@@ -722,6 +764,48 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['access']['expose']['operator'] = 'access_op';
   $handler->display->display_options['filters']['access']['expose']['identifier'] = 'access';
   $handler->display->display_options['filters']['access']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Account name (field_account_name) */
+  $handler->display->display_options['filters']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['filters']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_account_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator_id'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['label'] = 'Account name';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['identifier'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Door (field_door) */
+  $handler->display->display_options['filters']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['filters']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_door_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator_id'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['label'] = 'Door';
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['identifier'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -808,7 +892,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['label'] = 'Region Code';
-  /* Field: Field: Market name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
   $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
@@ -903,7 +987,7 @@ function elx_users_feature_views_default_views() {
     t('Counter manager'),
     t('Education manager/executive'),
     t('Hire date'),
-    t('Market name'),
+    t('Broken handler field_data_field_market_name.field_market_name'),
     t('Regional Vice President'),
     t('Active'),
     t('Inactive'),
@@ -912,6 +996,7 @@ function elx_users_feature_views_default_views() {
     t('General Manager/Brand Manager'),
     t('Market Administrator'),
     t('Last access'),
+    t('Market name'),
     t('Page'),
     t('User'),
     t('- Choose an operation -'),

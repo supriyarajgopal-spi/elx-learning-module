@@ -3446,44 +3446,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_market_name'
-  $field_instances['node-guest_accounts-field_market_name'] = array(
-    'bundle' => 'guest_accounts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_market_name',
-    'label' => 'Market name',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-guest_accounts-field_region_list'
   $field_instances['node-guest_accounts-field_region_list'] = array(
     'bundle' => 'guest_accounts',
@@ -9597,7 +9559,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('List item');
   t('List text');
   t('List video');
-  t('Market name');
   t('Markets');
   t('Match collection');
   t('Middle match image');

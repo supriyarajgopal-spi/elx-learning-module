@@ -1422,6 +1422,100 @@ function elx_content_tool_uuid_features_default_content() {
 );
   $nodes[] = array(
   'uid' => 30639,
+  'title' => 'Ireland',
+  'log' => '',
+  'status' => 1,
+  'comment' => 1,
+  'promote' => 0,
+  'sticky' => 0,
+  'vuuid' => '52ac2f4e-89e0-4a63-8903-dd01c68e69c6',
+  'type' => 'market',
+  'language' => 'en',
+  'created' => 1466789546,
+  'tnid' => 0,
+  'translate' => 0,
+  'uuid' => '352d4dc8-b840-4724-be6d-c821bde4956f',
+  'revision_uid' => 30639,
+  'group_access' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'group_group' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'rdf_mapping' => array(
+    'rdftype' => array(
+      0 => 'sioc:Item',
+      1 => 'foaf:Document',
+    ),
+    'title' => array(
+      'predicates' => array(
+        0 => 'dc:title',
+      ),
+    ),
+    'created' => array(
+      'predicates' => array(
+        0 => 'dc:date',
+        1 => 'dc:created',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'changed' => array(
+      'predicates' => array(
+        0 => 'dc:modified',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'body' => array(
+      'predicates' => array(
+        0 => 'content:encoded',
+      ),
+    ),
+    'uid' => array(
+      'predicates' => array(
+        0 => 'sioc:has_creator',
+      ),
+      'type' => 'rel',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'comment_count' => array(
+      'predicates' => array(
+        0 => 'sioc:num_replies',
+      ),
+      'datatype' => 'xsd:integer',
+    ),
+    'last_activity' => array(
+      'predicates' => array(
+        0 => 'sioc:last_activity_date',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+  ),
+  'cid' => 0,
+  'last_comment_name' => NULL,
+  'last_comment_uid' => 30639,
+  'comment_count' => 0,
+  'name' => 'darren.oh@spi.com',
+  'picture' => 0,
+  'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
+  'date' => '2016-06-24 17:32:26 +0000',
+);
+  $nodes[] = array(
+  'uid' => 30639,
   'title' => 'Hong Kong',
   'log' => '',
   'status' => 1,
@@ -5625,6 +5719,100 @@ function elx_content_tool_uuid_features_default_content() {
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
   'date' => '2016-06-13 21:19:45 +0000',
+);
+  $nodes[] = array(
+  'uid' => 30639,
+  'title' => 'Eau Claire',
+  'log' => '',
+  'status' => 1,
+  'comment' => 1,
+  'promote' => 0,
+  'sticky' => 0,
+  'vuuid' => 'b7f9ce39-e371-472d-8359-11f5ad918aec',
+  'type' => 'market',
+  'language' => 'en',
+  'created' => 1466789535,
+  'tnid' => 0,
+  'translate' => 0,
+  'uuid' => 'fd4da53f-4679-4ed2-a0ac-b82537cea297',
+  'revision_uid' => 30639,
+  'group_access' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'group_group' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'rdf_mapping' => array(
+    'rdftype' => array(
+      0 => 'sioc:Item',
+      1 => 'foaf:Document',
+    ),
+    'title' => array(
+      'predicates' => array(
+        0 => 'dc:title',
+      ),
+    ),
+    'created' => array(
+      'predicates' => array(
+        0 => 'dc:date',
+        1 => 'dc:created',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'changed' => array(
+      'predicates' => array(
+        0 => 'dc:modified',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+    'body' => array(
+      'predicates' => array(
+        0 => 'content:encoded',
+      ),
+    ),
+    'uid' => array(
+      'predicates' => array(
+        0 => 'sioc:has_creator',
+      ),
+      'type' => 'rel',
+    ),
+    'name' => array(
+      'predicates' => array(
+        0 => 'foaf:name',
+      ),
+    ),
+    'comment_count' => array(
+      'predicates' => array(
+        0 => 'sioc:num_replies',
+      ),
+      'datatype' => 'xsd:integer',
+    ),
+    'last_activity' => array(
+      'predicates' => array(
+        0 => 'sioc:last_activity_date',
+      ),
+      'datatype' => 'xsd:dateTime',
+      'callback' => 'date_iso8601',
+    ),
+  ),
+  'cid' => 0,
+  'last_comment_name' => NULL,
+  'last_comment_uid' => 30639,
+  'comment_count' => 0,
+  'name' => 'darren.oh@spi.com',
+  'picture' => 0,
+  'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
+  'date' => '2016-06-24 17:32:15 +0000',
 );
   return $nodes;
 }

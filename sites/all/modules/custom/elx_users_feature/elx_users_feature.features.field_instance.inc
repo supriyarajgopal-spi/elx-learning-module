@@ -580,38 +580,6 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_market_name'
-  $field_instances['user-user-field_market_name'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 17,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_market_name',
-    'label' => 'Market name',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_modified_date'
   $field_instances['user-user-field_modified_date'] = array(
     'bundle' => 'user',
@@ -802,7 +770,6 @@ function elx_users_feature_field_default_field_instances() {
   t('Last name');
   t('Level');
   t('Market Administrator');
-  t('Market name');
   t('Modified date');
   t('Rank');
   t('Region');

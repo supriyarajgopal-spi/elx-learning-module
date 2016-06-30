@@ -1,0 +1,13 @@
+name = Dashboard and Menu
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = dashboard_and_menu
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = elx_dashboard
+dependencies[] = elx_menu
+features[context][] = menu
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+mtime = 1467316971

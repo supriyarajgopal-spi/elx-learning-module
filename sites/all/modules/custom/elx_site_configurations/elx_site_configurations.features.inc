@@ -35,14 +35,6 @@ function elx_site_configurations_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'badge_manifest' => array(
-      'name' => t('Badge Manifest'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'content_object' => array(
       'name' => t('Content Object'),
       'base' => 'node_content',
@@ -129,14 +121,6 @@ function elx_site_configurations_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Subtitle'),
-      'help' => '',
-    ),
-    'object_manifest' => array(
-      'name' => t('Object Manifest'),
-      'base' => 'node_content',
-      'description' => t('These nodes hold the manifest for the NewPlayerV2'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
       'help' => '',
     ),
     'product_detail' => array(

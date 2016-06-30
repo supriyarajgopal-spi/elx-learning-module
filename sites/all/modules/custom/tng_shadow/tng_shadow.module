@@ -52,7 +52,7 @@ function tng_date_difference_creator($date)
  *    - date of when product was introduced (a string like '3 months ago')
  *
  */
-function tng_title_image_date_extractor($targetid)
+function tng_title_image_date_extractor($targetid, $language)
 {
   $tng_debug =0;
   try {
@@ -61,7 +61,6 @@ function tng_title_image_date_extractor($targetid)
     $creation_date = 'created';
     $results = array();
     $entity = node_load($targetid);
-    $language = get_language_from_uri($entity);
     $results[$title] = '';
     if (isset($entity->title_field[$language][0]['value'])) {
       $results[$title] .= $entity->title_field[$language][0]['value'] . '/';

@@ -37,6 +37,69 @@ function elx_site_configurations_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
+    'file' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+        'index' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'actions' => array(
+        'create_raw' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'node' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'relationships' => array(
+        'files' => array(
+          'enabled' => '1',
+        ),
+        'comments' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'targeted_actions' => array(
+        'attach_file' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'paragraphs_item' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'system' => array(
       'actions' => array(
         'connect' => array(
@@ -47,12 +110,54 @@ function elx_site_configurations_default_services_endpoint() {
         ),
       ),
     ),
-    'user' => array(
+    'taxonomy_term' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'actions' => array(
+        'selectNodes' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'taxonomy_vocabulary' => array(
       'operations' => array(
         'retrieve' => array(
           'enabled' => '1',
         ),
         'create' => array(
+          'enabled' => '1',
+        ),
+        'update' => array(
+          'enabled' => '1',
+        ),
+        'delete' => array(
+          'enabled' => '1',
+        ),
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+      'actions' => array(
+        'getTree' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'user' => array(
+      'operations' => array(
+        'retrieve' => array(
           'enabled' => '1',
         ),
         'update' => array(
@@ -89,7 +194,7 @@ function elx_site_configurations_default_services_endpoint() {
       ),
     ),
   );
-  $endpoint->debug = 1;
+  $endpoint->debug = 0;
   $export['rest'] = $endpoint;
 
   return $export;

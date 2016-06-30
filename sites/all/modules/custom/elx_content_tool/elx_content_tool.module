@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Content Tool feature.
+ */
+
+include_once 'elx_content_tool.features.inc';
+
+/**
+ * Implements hook_node_validate().
+ */
+function elx_content_tool_node_validate($node, $form, &$form_state) {
+  if ($node->type == 'market') {
+    // Ensure that a market is created only once.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', $node->type)
+      ->propertyCondition('title', $node->title)
+      ->range(0, 1)
+      ->addMetaData('account', user_load(1))
+      ->count();
+    if (!empty($node->nid)) {
+      $query->propertyCondition('nid', $node->nid, '<>');
+    }
+    if ($query->execute()) {
+      form_set_error('title', t('%title already exists.', array('%title' => $node->title)));
+    }
+  }
+}

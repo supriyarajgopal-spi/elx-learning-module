@@ -1,6 +1,6 @@
 <div>
   <div>
-    <img src="<?php print $logo_path; ?>" />
+    [logo]
   </div>
   <div>Product Library</div>
   <div>Levels</div>

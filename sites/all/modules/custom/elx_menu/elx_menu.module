@@ -1,0 +1,36 @@
+<?php
+
+// Implements hook_block_info().
+function elx_menu_block_info() {
+  $blocks = array();
+
+  $blocks['elx_menu'] = array(
+    'info' => t('Hamburger Menu'),
+  );
+
+  return $blocks;
+}
+
+// Implements hook_block_view().
+function elx_menu_block_view($delta = '') {
+  $block = array();
+
+  if ($delta == 'elx_menu') {
+    $block['subject'] = '';
+    $variables = array();
+    $block['content'] = theme('hamburger-menu', $variables);
+  }
+
+  return $block;
+}
+
+// Implements hook_theme().
+function elx_menu_theme($existing, $type, $theme, $path) {
+  return array(
+    'hamburger-menu' => array(
+      'variables' => array(),
+      'path' => drupal_get_path('module', 'elx_menu') .'/templates',
+      'template' => 'hamburger-menu',
+    ),
+  );
+}

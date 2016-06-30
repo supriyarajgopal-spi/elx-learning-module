@@ -1,0 +1,50 @@
+<?php
+
+// Implements hook_menu().
+function elx_dashboard_menu() {
+  $items = array();
+  $items['dashboard'] = array(
+    'page callback' => 'elx_dashboard_content',
+    'access arguments' => array('access content'),
+  );
+  return $items;
+}
+
+function elx_dashboard_content() {
+  return 'dashboard content';
+}
+
+// Implements hook_block_info().
+function elx_dashboard_block_info() {
+  $blocks = array();
+
+  $blocks['elx_dashboard_nav'] = array(
+    'info' => t('Navigation Menu'),
+  );
+
+  return $blocks;
+}
+
+// Implements hook_block_view().
+function elx_dashboard_block_view($delta = '') {
+  $block = array();
+
+  if ($delta == 'elx_dashboard_nav') {
+    $block['subject'] = '';
+    $variables = array();
+    $block['content'] = theme('navigation-menu', $variables);
+  }
+
+  return $block;
+}
+
+// Implements hook_theme().
+function elx_dashboard_theme($existing, $type, $theme, $path) {
+  return array(
+    'navigation-menu' => array(
+      'variables' => array(),
+      'path' => drupal_get_path('module', 'elx_dashboard') .'/templates',
+      'template' => 'navigation-menu',
+    ),
+  );
+}

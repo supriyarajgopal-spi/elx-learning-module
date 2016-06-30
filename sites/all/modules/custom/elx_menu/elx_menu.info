@@ -1,0 +1,4 @@
+name = ELX Menu
+description = Hamburger Menu
+core = 7.x
+package = ELX

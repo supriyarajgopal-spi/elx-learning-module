@@ -142,7 +142,7 @@ function elx_front_preprocess_comment(&$variables, $hook) {
  * Hook theme
  * 
  */
-function elx_theme(&$existing, $type, $theme, $path) {
+function elx_front_theme(&$existing, $type, $theme, $path) {
   $hooks['user_login'] = array(
     'template' => 'user-login',
     'render element' => 'form',
@@ -156,7 +156,7 @@ function elx_theme(&$existing, $type, $theme, $path) {
  * Preprocess User Login
  * Override or insert variables into the user login page template.
  */
-function elx_preprocess_user_login(&$vars) {
+function elx_front_preprocess_user_login(&$vars) {
   $vars['intro_text'] = t('The Estee Lauder Experience');
   $vars['rendered'] = drupal_render_children($vars['form']); 
 }
@@ -165,7 +165,7 @@ function elx_preprocess_user_login(&$vars) {
  *  Hook form_alter
  *  Remove labels and add HTML5 placeholder attribute to login form
  */
-function elx_form_alter(&$form, &$form_state, $form_id) {
+function elx_front_form_alter(&$form, &$form_state, $form_id) {
   // If we have a valid username - set the user's preferred language
   if (!empty($form_state['input']['name'])) {
     $new_lang_code = elx_language_detect($form_state['input']['name']);
@@ -201,7 +201,7 @@ function elx_form_alter(&$form, &$form_state, $form_id) {
  *  Form user login alter
  *  Remove login form descriptions
  */
-function elx_form_user_login_alter(&$form, &$form_state) {
+function elx_front_form_user_login_alter(&$form, &$form_state) {
 	//print_r('Form alter test');
     $form['name']['#description'] = t('');
     $form['pass']['#description'] = t('');
@@ -210,7 +210,7 @@ function elx_form_user_login_alter(&$form, &$form_state) {
 /*
  *  Modify user_login_final_validate() with custom error messages
  */
-function elx_final_validate($form, &$form_state) {
+function elx_front_final_validate($form, &$form_state) {
   if (empty($form_state['uid'])) {
     // Always register an IP-based failed login event.
     flood_register_event('failed_login_attempt_ip', variable_get('user_failed_login_ip_window', 3600));

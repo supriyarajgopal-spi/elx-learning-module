@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Views feature.
+ */
+
+include_once 'elx_views.features.inc';

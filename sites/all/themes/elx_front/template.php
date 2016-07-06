@@ -183,12 +183,12 @@ function elx_front_form_alter(&$form, &$form_state, $form_id) {
     if ($user_login_final_validate_index >= 0) {
       $form['#validate'][$user_login_final_validate_index] = 'elx_front_final_validate';
     }
-	$lang_email = t('Email Address:');
+	  $lang_email = t('Email Address:');
     $lang_pw = t('Password:');
-	$lang_remember_me = t('Remember Me');
-	$lang_signin_label = t('Sign In');
+	  $lang_remember_me = t('Remember Me');
+	  $lang_signin_label = t('Sign In');
 
-	$form['name']['#attributes']['placeholder'] = t($lang_email);
+	  $form['name']['#attributes']['placeholder'] = t($lang_email);
     $form['pass']['#attributes']['placeholder'] = t($lang_pw);
     $form['name']['#title_display'] = "invisible";
     $form['pass']['#title_display'] = "invisible";

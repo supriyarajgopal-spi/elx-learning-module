@@ -31,3 +31,197 @@
 //   font-weight: normal;
 //   font-style: normal;
 // }
+// Fonts are important. Font spacing gives our eyes rhythem and pacing throughout a document.
+//
+// Keep in mind. $font-size-base should be the #1 most important spacing calculation in your styling. 
+// This sizing specification will be the basis of all vertical and horizontal spacing for the rest of
+// the app.
+
+$font-size-sm-base:          16px !default;
+$font-size-lg-base:          18px !default;
+
+// Used for spacing calculations throughout the application.
+//-- Bootstrap compatability variable. Do not use in our 
+//   classes or overrides.
+$font-size-base:             $font-size-sm-base;
+
+/*==== Font Sizes ====*/
+// Based on TNG Style Tiles for Estee Lauder.
+// Last updated 12.18.14
+
+// SMALL FORMAT
+$font-size-sm-extralarge:    30px !default;
+$font-size-sm-large:         18px !default;
+$font-size-sm-medium:        15px !default;
+$font-size-sm-small:         14px !default;
+$font-size-sm-extrasmall:    12px !default;
+
+// LARGE FORMAT
+$font-size-lg-extralarge:    72px !default;
+$font-size-lg-large:         28px !default;
+$font-size-lg-medium:        20px !default;
+$font-size-lg-small:         15px !default;
+$font-size-lg-extrasmall:    12px !default;
+
+
+$font-size-large:           18px !default;
+$font-size-small:           14px !default;
+
+
+$letter-spacing-base:     .07em;
+
+// Small Devices (xs & sm)
+/*Headline*/
+$font-size-sm-h1:              $font-size-sm-extralarge !default;
+/*Secondary Headline*/
+$font-size-sm-h2:              $font-size-sm-large !default;
+/*Subheads*/
+$font-size-sm-h3:            23px !default;
+$font-size-sm-h4:            $font-size-sm-medium !default;        // ~20px
+$font-size-sm-h5:            $font-size-sm-small !default;         // ~14px
+$font-size-sm-h6:            $font-size-sm-extrasmall !default;    // ~12px
+
+// Large Devices (md & lg)
+/*Headline*/
+$font-size-lg-h1:              $font-size-lg-extralarge !default;
+/*Secondary Headline*/
+$font-size-lg-h2:              $font-size-lg-large !default;
+/*Subheads*/
+$font-size-lg-h3:            23px !default;                // ~23px
+$font-size-lg-h4:            $font-size-lg-medium !default;        // ~20px
+$font-size-lg-h5:            $font-size-lg-small !default;         // ~14px
+$font-size-lg-h6:            $font-size-lg-extrasmall !default;    // ~12px
+
+
+//-- Bootstrap compatability variable. Do not use in our 
+//   classes or overrides.
+/*Headline*/
+$font-size-h1:              $font-size-sm-extralarge !default;
+/*Secondary Headline*/
+$font-size-h2:              $font-size-sm-large !default;
+/*Subheads*/
+$font-size-h3:            23px !default;                // ~23px
+$font-size-h4:            $font-size-sm-medium !default;        // ~20px
+$font-size-h5:            $font-size-sm-small !default;         // ~14px
+$font-size-h6:            $font-size-sm-extrasmall !default;    // ~12px
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+/*$font-family-sans-serif:  'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, 'Times New Roman', Times, serif !default;*/
+@font-face {
+    font-family: 'optimadisplaylightlight';
+    src: url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.eot');
+    src: url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.woff2') format('woff2'),
+         url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.woff') format('woff'),
+         url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.ttf') format('truetype'),
+         url('../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.svg#optimadisplaylightlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_bq';
+    src: url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.eot');
+    src: url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.woff2') format('woff2'),
+         url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.woff') format('woff'),
+         url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.ttf') format('truetype'),
+         url('../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.svg#akzidenz-grotesk_bqregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_bq';
+    src: url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot');
+    src: url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff2') format('woff2'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff') format('woff'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.ttf') format('truetype'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.svg#akzidenz-grotesk_bqbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_bold';
+    src: url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot');
+    src: url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff2') format('woff2'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff') format('woff'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.ttf') format('truetype'),
+         url('../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.svg#akzidenz-grotesk_bqbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'elx-icons';
+    src: url('../fonts/ELX/elx-icons.eot');
+    src: url('../fonts/ELX/elx-icons.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ELX/elx-icons.woff2') format('woff2'),
+         url('../fonts/ELX/elx-icons.woff') format('woff'),
+         url('../fonts/ELX/elx-icons.ttf') format('truetype'),
+         url('../fonts/ELX/elx-icons.svg#elx-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//## Font, line-height, and color for body text, headings, and more. 
+
+$font-family-sans-serif-head:  'akzidenz-grotesk_bq';
+$font-family-sans-serif:  'akzidenz-grotesk_bq';
+/*$font-family-sans-serif_head;*/
+
+$font-family-serif:       'optimadisplaylightlight';
+
+//Icon Font
+$font-family-icons: 'elx-icons';
+
+//::::File name for all font files.
+$icon-font-name:          'elx-icons' !default;
+//::::Element ID within SVG icon file.
+$icon-font-svg-id:        'elx-icons' !default;
+
+
+// Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+
+//::::Line heights & spacing.
+// Based off the $calc-unit set in variables/_fonts and the $font-size-base set in the html,body
+// calculations based on a $font-size-base of 16px;
+$spacing-xs:		5px !default;       // ~5px
+$spacing-sm:    10px !default;        // ~10px
+$spacing-md:    15px !default;       // ~15px
+$spacing-lg:    23px !default;         // ~20px
+$spacing-xlg:		30px !default;        // ~30px
+
+//::::Unit-less `line-height` for use in components like buttons.
+$line-height-base: 			1.429 !default; // 20/14
+//::::Computed 'line-height' (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($line-height-base * $font-size-base)) !default;
+
+$line-height-small:         1.33 !default;
+$line-height-large:         1.5 !default;
+
+
+$padding-base-vertical:     $spacing-sm !default;
+$padding-base-horizontal:   $spacing-md !default;
+
+$padding-large-vertical:    $spacing-lg !default;
+$padding-large-horizontal:  $spacing-xlg !default;
+
+$padding-medium-vertical:    $spacing-md !default;
+$padding-medium-horizontal:  $spacing-lg !default;
+
+$padding-small-vertical:     $spacing-sm !default;
+$padding-small-horizontal:   $spacing-md !default;
+
+$padding-xs-vertical:       $spacing-xs !default;
+$padding-xs-horizontal:     $spacing-sm !default;

@@ -1,0 +1,14 @@
+html {
+  font-family: $font-family-sans-serif;
+  //font: {$font-size-base}/{$line-height-base} $font-family-sans-serif;
+  //color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility\9; /* Only IE, can mess with Android */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}

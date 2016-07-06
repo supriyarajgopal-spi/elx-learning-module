@@ -1,3 +1,56 @@
+/*==== Font Sizes ====*/
+/*Headline*/
+/*Secondary Headline*/
+/*Subheads*/
+/*Headline*/
+/*Secondary Headline*/
+/*Subheads*/
+/*Headline*/
+/*Secondary Headline*/
+/*Subheads*/
+/*$font-family-sans-serif:  'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, 'Times New Roman', Times, serif !default;*/
+@font-face {
+  font-family: 'optimadisplaylightlight';
+  src: url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.eot");
+  src: url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.woff2") format("woff2"), url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.woff") format("woff"), url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.ttf") format("truetype"), url("../fonts/OptimaDisplayLight/optimadisplay-light-webfont-webfont.svg#optimadisplaylightlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk_bq';
+  src: url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.eot");
+  src: url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.woff2") format("woff2"), url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.woff") format("woff"), url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.ttf") format("truetype"), url("../fonts/AGrotesk/akzidenzgrotesk-regular-webfont.svg#akzidenz-grotesk_bqregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk_bq';
+  src: url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot");
+  src: url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff2") format("woff2"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff") format("woff"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.ttf") format("truetype"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.svg#akzidenz-grotesk_bqbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'akzidenz-grotesk_bold';
+  src: url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot");
+  src: url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff2") format("woff2"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.woff") format("woff"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.ttf") format("truetype"), url("../fonts/AGroteskBold/akzidenzgrotesk-bold-webfont.svg#akzidenz-grotesk_bqbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'elx-icons';
+  src: url("../fonts/ELX/elx-icons.eot");
+  src: url("../fonts/ELX/elx-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/ELX/elx-icons.woff2") format("woff2"), url("../fonts/ELX/elx-icons.woff") format("woff"), url("../fonts/ELX/elx-icons.ttf") format("truetype"), url("../fonts/ELX/elx-icons.svg#elx-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*$font-family-sans-serif_head;*/
 * {
   box-sizing: border-box;
 }
@@ -58,6 +111,20 @@ progress {
 template,
 [hidden] {
   display: none;
+}
+
+html {
+  font-family: "akzidenz-grotesk_bq";
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility\9;
+  /* Only IE, can mess with Android */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -902,6 +969,49 @@ span.field-label {
 .field-label-inline .field-label,
 .field-label-inline .field-items {
   float: none;
+}
+
+/* LOGIN PAGE*/
+body.front {
+  background: url("../images/login-bg.png") #030409 no-repeat top center;
+}
+
+body.front .header,
+body.front .main-menu,
+body.front .layout-swap__top,
+body.front h1 {
+  display: none;
+}
+
+body.front .layout-3col__full {
+  width: 350px;
+  float: none;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body.front .layout-3col__full .tabs {
+  font-family: "optimadisplaylightlight";
+  background-image: none;
+  background: #e6e9ee;
+  margin: 0;
+  padding: 0;
+}
+
+body.front .layout-3col__full .tabs .tabs__tab {
+  border: 0;
+  border-radius: 0;
+  background: #e6e9ee;
+  margin: 0;
+}
+
+body.front .layout-3col__full .tabs .tabs__tab .tabs__tab-link {
+  background: none;
+}
+
+body.front .layout-3col__full .tabs .tabs__tab.is-active {
+  background-color: #fff;
 }
 
 .messages,
@@ -1821,3 +1931,5 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
+
+/*# sourceMappingURL=styles.css.map */

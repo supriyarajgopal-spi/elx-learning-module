@@ -1,0 +1,42 @@
+/* LOGIN PAGE*/
+body.front {
+  background: url('../images/login-bg.png') #030409 no-repeat top center;
+
+  .header,
+  .main-menu,
+  .layout-swap__top,
+  h1 {
+    display: none;
+  }
+
+  .layout-3col__full {
+    width: 350px;
+    float: none;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0;
+
+    .tabs {
+      font-family: $font-family-serif;
+      background-image: none;
+      background: #e6e9ee;
+      margin: 0;
+      padding: 0;
+
+      .tabs__tab {
+        border: 0;
+        border-radius: 0;
+        background: #e6e9ee;
+        margin: 0;
+
+        .tabs__tab-link {
+          background: none;
+        }
+      }
+
+      .tabs__tab.is-active {
+        background-color: #fff;
+      }
+    }
+  }
+}

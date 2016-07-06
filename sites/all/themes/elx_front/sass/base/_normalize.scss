@@ -12,6 +12,7 @@
 // Normalize-scss is broken into modular pieces to make it easier to edit.
 @import 'root';
 @import 'html5';
+@import 'baseline';
 @import 'links/links';
 @import 'headings/headings';
 @import 'text/text';

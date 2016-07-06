@@ -26,6 +26,7 @@
 // Ensure fonts get loaded first to minimize front-end performance impact.
 @import 'base/fonts';
 @import 'base/normalize';
+@import 'base/baseline';
 
 // Layouts
 //
@@ -56,6 +57,7 @@
 @import 'components/highlight-mark/highlight-mark';
 @import 'components/inline-links/inline-links';
 @import 'components/inline-sibling/inline-sibling';
+@import 'components/login/login';
 @import 'components/messages/messages';
 @import 'components/print-none/print-none';
 @import 'components/responsive-video/responsive-video';

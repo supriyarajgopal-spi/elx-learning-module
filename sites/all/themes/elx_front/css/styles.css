@@ -976,18 +976,43 @@ body.front {
   background: url("../images/login-bg.png") #030409 no-repeat top center;
 }
 
-body.front .header,
 body.front .main-menu,
-body.front .layout-swap__top,
+body.front .header__site-name,
+body.front .layout-swap__top.layout-3col__full,
 body.front h1 {
   display: none;
+}
+
+body.front .logo {
+  width: 350px;
+  text-align: center;
+  padding: 211px 0 0;
+  margin: 0 auto;
+}
+
+body.front .logo img {
+  width: 133px;
+}
+
+body.front .logo-sub {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body.front .logo-sub img {
+  width: 320px;
+}
+
+body.front .layout-3col {
+  padding: 0;
 }
 
 body.front .layout-3col__full {
   width: 350px;
   float: none;
   background-color: #fff;
-  margin: 0 auto;
+  margin: 0 auto 211px;
   padding: 0;
 }
 
@@ -1007,7 +1032,10 @@ body.front .layout-3col__full .tabs .tabs__tab {
 }
 
 body.front .layout-3col__full .tabs .tabs__tab .tabs__tab-link {
+  font-size: 18px;
   background: none;
+  padding: 6px 1.5em;
+  letter-spacing: 0;
 }
 
 body.front .layout-3col__full .tabs .tabs__tab.is-active {

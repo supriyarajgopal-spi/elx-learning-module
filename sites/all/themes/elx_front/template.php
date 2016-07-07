@@ -160,7 +160,15 @@ function elx_front_preprocess_user_login(&$vars) {
   $vars['intro_text'] = t('The Estee Lauder Experience');
   $vars['rendered'] = drupal_render_children($vars['form']); 
 }
-
+/**
+ * Alter User Login Page
+ * Override or insert variables into the user login page template.
+ */
+function elx_front_page_alter(&$page){
+  $page['header'] = array(
+    '#markup' => t('<div class="logo"><img src="/sites/all/themes/elx_front/images/ELX-logo.svg"/></div><div class="logo-sub"><img src="/sites/all/themes/elx_front/images/estee-lauder-experience-logo-white.svg"/></div>"'),
+  );
+}
 /*
  *  Hook form_alter
  *  Remove labels and add HTML5 placeholder attribute to login form

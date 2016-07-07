@@ -2,18 +2,45 @@
 body.front {
   background: url('../images/login-bg.png') #030409 no-repeat top center;
 
-  .header,
   .main-menu,
-  .layout-swap__top,
+  .header__site-name,
+  .layout-swap__top.layout-3col__full,
   h1 {
     display: none;
   }
+
+  .logo {
+    width: 350px;
+    text-align: center;
+    padding: 211px 0 0;
+    margin: 0 auto;
+
+    img {
+      width: 133px;
+    }
+  }
+
+  .logo-sub {
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      width: 320px;
+    }
+  }
+
+  .layout-3col {
+    padding: 0;
+  }
+  
+  
 
   .layout-3col__full {
     width: 350px;
     float: none;
     background-color: #fff;
-    margin: 0 auto;
+    margin: 0 auto 211px;
     padding: 0;
 
     .tabs {
@@ -30,7 +57,10 @@ body.front {
         margin: 0;
 
         .tabs__tab-link {
+          font-size: 18px;
           background: none;
+          padding: 6px 1.5em;
+          letter-spacing: 0;
         }
       }
 

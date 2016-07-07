@@ -4068,8 +4068,20 @@ function elx_content_tool_uuid_features_default_content() {
   'translate' => 0,
   'uuid' => 'a151d076-f9ae-4726-b32f-7b976c8e1873',
   'revision_uid' => 30639,
-  'group_access' => array(),
-  'group_group' => array(),
+  'group_access' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'group_group' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -5372,8 +5384,20 @@ function elx_content_tool_uuid_features_default_content() {
   'translate' => 0,
   'uuid' => 'f1e3a06c-b34e-42f3-acae-6fe840128cde',
   'revision_uid' => 30639,
-  'group_access' => array(),
-  'group_group' => array(),
+  'group_access' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
+  'group_group' => array(
+    'und' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',

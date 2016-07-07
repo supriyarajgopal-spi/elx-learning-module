@@ -2697,7 +2697,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'elx';
+  $strongarm->value = 'elx_front';
   $export['theme_default'] = $strongarm;
 
   return $export;

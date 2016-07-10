@@ -181,7 +181,7 @@ function elx_front_form_alter(&$form, &$form_state, $form_id) {
   if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) ) {
   	$user_login_final_validate_index = array_search('user_login_final_validate', $form['#validate']);
     if ($user_login_final_validate_index >= 0) {
-      $form['#validate'][$user_login_final_validate_index] = 'elx_final_validate';
+      $form['#validate'][$user_login_final_validate_index] = 'elx_front_final_validate';
     }
 	$lang_email = t('Email Address:');
     $lang_pw = t('Password:');

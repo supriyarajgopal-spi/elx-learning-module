@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Badge Flags feature.
+ */
+
+include_once 'elx_badge_flags.features.inc';

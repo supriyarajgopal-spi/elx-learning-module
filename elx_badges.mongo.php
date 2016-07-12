@@ -29,6 +29,7 @@ foreach($collection as $obj) {
 // Insert mongo user badges into new elx badges schema
 foreach($user_badges as $user) {
   $user_uid = $user['uid'];
+  $user['badges'] = array_unique($user['badges']);
   foreach($user['badges'] as $badge) {
   	if ($badge == 'First 1000 Points') {
   	  $badge = 'First 1,000 Points';
@@ -36,6 +37,41 @@ foreach($user_badges as $user) {
 	if ($badge == 'First 5000 Points') {
 	  $badge = 'First 5,000 Points';
 	}
+	$badge_flag_title = $badge . ' Badge';
+    // get flag id fid
+    $result = db_select('flag', 'f')
+      ->fields('f', array('fid'))
+      ->condition('title', $badge_flag_title, '=')
+      ->execute()
+      ->fetchCol();
+	if (!empty($result[0])) {
+	  $fid = $result[0];
+	  // Insert mongo user badges into flagging and flag count
+      $flagging_id = db_insert('flagging') // Table name no longer needs {}
+        ->fields(array(
+          'fid'         => $fid,
+          'entity_type' => 'user',
+          'entity_id'   => $user_uid,
+          'uid'         => 0,
+          'sid'         => 0,
+          'timestamp'   => REQUEST_TIME,
+      ))
+      ->execute();
+	  $fid = db_insert('flag_counts')
+        ->fields(array(
+          'fid'          => $fid,
+          'entity_type'  => 'user',
+          'entity_id'    => $user_uid,
+          'count'        => 1,
+          'last_updated' => REQUEST_TIME,
+      ))
+      ->execute();
+	  if (empty($flagging_id)) {
+	  	$error[$user_uid]['error'] = $fid . ':' . $user_uid;
+	  }
+	}
+	/*
+	// get node id nid
   	$result = db_select('node', 'n')
       ->fields('n', array('nid'))
       ->condition('type', 'badge', 'like')
@@ -57,5 +93,6 @@ foreach($user_badges as $user) {
 	  	$error[$user_uid]['error'] = $nid . ':' . $user_uid;
 	  }
 	}
+	*/
   }
 }

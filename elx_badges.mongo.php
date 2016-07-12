@@ -31,7 +31,6 @@ foreach($user_badges as $user) {
   $user_uid = $user['uid'];
   $user['badges'] = array_unique($user['badges']);
   foreach($user['badges'] as $badge) {
-  	//var_dump($badge);
   	if ($badge == 'First 1000 Points') {
   	  $badge = 'First 1,000 Points';
   	}
@@ -47,8 +46,6 @@ foreach($user_badges as $user) {
       ->fetchCol();
 	if (!empty($result[0])) {
 	  $fid = $result[0];
-	print_r(' fid ');
-	print_r($fid);
 	  // Insert mongo user badges into flagging and flag count
       $flagging_id = db_insert('flagging') // Table name no longer needs {}
         ->fields(array(

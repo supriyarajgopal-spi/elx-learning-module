@@ -1,0 +1,3 @@
+[submodule "sites/all/modules/contrib/apply_for_role_rules"]
+	path = sites/all/modules/contrib/apply_for_role_rules
+	url = https://git.drupal.org/sandbox/oliverhuynh/1612500.git

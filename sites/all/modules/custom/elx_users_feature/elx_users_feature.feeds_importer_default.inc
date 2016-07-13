@@ -77,7 +77,7 @@ function elx_users_feature_feeds_importer_default() {
           ),
           5 => array(
             'source' => 'Learner Group',
-            'target' => 'roles_list',
+            'target' => 'apply_for_role',
             'unique' => FALSE,
           ),
           6 => array(
@@ -112,65 +112,60 @@ function elx_users_feature_feeds_importer_default() {
           ),
           12 => array(
             'source' => 'Market Name',
-            'target' => 'field_market_name',
+            'target' => 'og_user_node:label',
             'unique' => FALSE,
           ),
           13 => array(
-            'source' => 'Learner Group',
-            'target' => 'roles_list',
-            'unique' => FALSE,
-          ),
-          14 => array(
             'source' => 'Hire Date',
             'target' => 'field_hire_date:start',
             'unique' => FALSE,
           ),
-          15 => array(
+          14 => array(
             'source' => 'Counter Manager',
             'target' => 'field_counter_manager',
             'unique' => FALSE,
           ),
-          16 => array(
+          15 => array(
             'source' => 'Education Manager/Executive',
             'target' => 'field_education_manager_executiv',
             'unique' => FALSE,
           ),
-          17 => array(
+          16 => array(
             'source' => 'Account/Field Executive',
             'target' => 'field_account_field_executive',
             'unique' => FALSE,
           ),
-          18 => array(
+          17 => array(
             'source' => 'Field Sales Director/Regional Education Director',
             'target' => 'field_field_sales_director_regio',
             'unique' => FALSE,
           ),
-          19 => array(
+          18 => array(
             'source' => 'Regional Vice President',
             'target' => 'field_regional_vice_president',
             'unique' => FALSE,
           ),
-          20 => array(
+          19 => array(
             'source' => 'General Manager/Brand Manager',
             'target' => 'field_general_manager_brand_mana',
             'unique' => FALSE,
           ),
-          21 => array(
+          20 => array(
             'source' => 'Market Administrator',
             'target' => 'field_market_administrator',
             'unique' => FALSE,
           ),
-          22 => array(
+          21 => array(
             'source' => 'Status',
             'target' => 'Temporary target 1',
             'unique' => FALSE,
           ),
-          23 => array(
+          22 => array(
             'source' => 'Status',
             'target' => 'status',
             'unique' => FALSE,
           ),
-          24 => array(
+          23 => array(
             'source' => 'Language',
             'target' => 'language',
             'unique' => FALSE,

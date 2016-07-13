@@ -983,6 +983,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_learning_category',
+    'is_property' => 1,
     'label' => 'Category',
     'required' => 0,
     'settings' => array(

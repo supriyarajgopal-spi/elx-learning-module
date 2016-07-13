@@ -1,0 +1,9 @@
+<?php
+/**
+ * @file
+ * Code for the Learner Pathways feature.
+ *
+ * @todo: Add role applications on import or registration.
+ */
+
+include_once 'learner_pathways.features.inc';

@@ -1,0 +1,39 @@
+.page-product-library {
+  .view-product-library {
+    .view-filters {
+      padding: 30px 0;
+      background-color: #e6e9ee;
+
+      .views-exposed-form {
+        label {
+          color: #040a2b;
+          text-transform: uppercase;
+        }
+
+        select.form-select {
+          border: 1px solid #040a2b;
+          height: 46px;
+          padding: 0 0 0 10px;
+          background: #fff;
+          border-radius: 0;
+          -moz-border-radius: 0;
+          -webkit-border-radius: 0;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+        }
+
+        input[type='submit'] {
+          height: 46px;
+          font-size: $font-size-lg-extrasmall;
+          color: #fff;
+          background-color: #01051e;
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: $letter-spacing-base;
+          border: 0;
+        }
+      }
+    }
+  }
+}

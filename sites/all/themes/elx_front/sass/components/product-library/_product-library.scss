@@ -33,6 +33,21 @@
           letter-spacing: $letter-spacing-base;
           border: 0;
         }
+
+        #edit-field-product-categories-tid-wrapper,
+        .views-widget-sort-by {
+          width: 33%;
+
+          select {
+            width: 100%;
+          }
+        }
+
+        // hide sort order options, not in original site
+        .views-widget-sort-order {
+          display: none;
+        }
+
       }
     }
   }

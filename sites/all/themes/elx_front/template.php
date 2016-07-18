@@ -165,8 +165,8 @@ function elx_front_preprocess_user_login(&$vars) {
  * Override or insert variables into the user login page template.
  */
 function elx_front_page_alter(&$page){
-  $page['header'] = array(
-    '#markup' => t('<div class="logo"><img src="/sites/all/themes/elx_front/images/ELX-logo.svg"/></div><div class="logo-sub"><img src="/sites/all/themes/elx_front/images/estee-lauder-experience-logo-white.svg"/></div>"'),
+  $page['header']['user_login'] = array(
+    #'#markup' => t('<div class="logo"><img src="/sites/all/themes/elx_front/images/ELX-logo.svg"/></div><div class="logo-sub"><img src="/sites/all/themes/elx_front/images/estee-lauder-experience-logo-white.svg"/></div>'),
   );
 }
 /*

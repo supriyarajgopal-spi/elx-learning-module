@@ -287,6 +287,38 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_employment_status'
+  $field_instances['user-user-field_employment_status'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_employment_status',
+    'label' => 'Employment Status',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 21,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_field_sales_director_regio'
   $field_instances['user-user-field_field_sales_director_regio'] = array(
     'bundle' => 'user',
@@ -762,6 +794,7 @@ function elx_users_feature_field_default_field_instances() {
   t('Door');
   t('Education manager/executive');
   t('Employer number');
+  t('Employment Status');
   t('Field Sales Director/Regional Education Director');
   t('First name');
   t('General Manager/Brand Manager');

@@ -298,10 +298,6 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
   /* Field: User: Regional Vice President */
   $handler->display->display_options['fields']['field_regional_vice_president']['id'] = 'field_regional_vice_president';
   $handler->display->display_options['fields']['field_regional_vice_president']['table'] = 'field_data_field_regional_vice_president';
@@ -377,26 +373,6 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator_id'] = 'field_market_name_value_op';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['label'] = 'Market name';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator'] = 'field_market_name_value_op';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['identifier'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -606,10 +582,6 @@ function elx_users_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
   /* Field: User: Regional Vice President */
   $handler->display->display_options['fields']['field_regional_vice_president']['id'] = 'field_regional_vice_president';
   $handler->display->display_options['fields']['field_regional_vice_president']['table'] = 'field_data_field_regional_vice_president';
@@ -682,26 +654,6 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
   $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_market_name_value']['id'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['filters']['field_market_name_value']['field'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator_id'] = 'field_market_name_value_op';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['label'] = 'Market name';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['operator'] = 'field_market_name_value_op';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['identifier'] = 'field_market_name_value';
-  $handler->display->display_options['filters']['field_market_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -892,11 +844,6 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_region_list']['table'] = 'field_data_field_region_list';
   $handler->display->display_options['fields']['field_region_list']['field'] = 'field_region_list';
   $handler->display->display_options['fields']['field_region_list']['label'] = 'Region Code';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_market_name']['id'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['field'] = 'field_market_name';
-  $handler->display->display_options['fields']['field_market_name']['label'] = 'Market Name';
   /* Field: User: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'users';
@@ -987,7 +934,6 @@ function elx_users_feature_views_default_views() {
     t('Counter manager'),
     t('Education manager/executive'),
     t('Hire date'),
-    t('Broken handler field_data_field_market_name.field_market_name'),
     t('Regional Vice President'),
     t('Active'),
     t('Inactive'),

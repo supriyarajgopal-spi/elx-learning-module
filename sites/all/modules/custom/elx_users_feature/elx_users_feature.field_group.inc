@@ -65,6 +65,7 @@ function elx_users_feature_field_group_info() {
       8 => 'field_general_manager_brand_mana',
       9 => 'field_market_administrator',
       10 => 'field_regional_vice_president',
+      11 => 'field_employment_status',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -95,8 +96,7 @@ function elx_users_feature_field_group_info() {
       0 => 'field_first_name',
       1 => 'field_last_name',
       2 => 'account',
-      3 => 'picture',
-      4 => 'locale',
+      3 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

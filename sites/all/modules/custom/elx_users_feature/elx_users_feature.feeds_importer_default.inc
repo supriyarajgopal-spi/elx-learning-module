@@ -170,6 +170,11 @@ function elx_users_feature_feeds_importer_default() {
             'target' => 'language',
             'unique' => FALSE,
           ),
+          24 => array(
+            'source' => 'Employment Status',
+            'target' => 'field_employment_status',
+            'unique' => FALSE,
+          ),
         ),
         'defuse_mail' => 0,
         'input_format' => 'plain_text',

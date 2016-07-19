@@ -1,5 +1,6 @@
 .page-product-library {
   .view-product-library {
+    //search & filter area
     .view-filters {
       padding: 30px 0;
       background-color: #e6e9ee;
@@ -48,6 +49,20 @@
           display: none;
         }
 
+      }
+    }
+
+    // product library content
+    .view-content {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+        }
       }
     }
   }

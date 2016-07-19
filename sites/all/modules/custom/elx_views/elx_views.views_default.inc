@@ -508,7 +508,115 @@ function elx_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Refine Search';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'sort' => array(
+      'bef_format' => 'default',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sort options',
+        'combine' => 0,
+        'combine_param' => 'sort_bef_combine',
+        'combine_rewrite' => '',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+        'secondary_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'pager' => array(
+      'bef_format' => 'bef',
+      'is_secondary' => 0,
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_product_categories_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -524,6 +632,18 @@ function elx_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  /* Field: Content: Product image */
+  $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
+  $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
+  $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
+  $handler->display->display_options['fields']['field_product_image']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_product_image']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_product_image']['group_column'] = 'entity_id';
   /* Field: Content: Display title */
   $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
   $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
@@ -551,18 +671,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_why_there_s_only_one']['field'] = 'field_why_there_s_only_one';
   $handler->display->display_options['fields']['field_why_there_s_only_one']['label'] = '';
   $handler->display->display_options['fields']['field_why_there_s_only_one']['element_label_colon'] = FALSE;
-  /* Field: Content: Product image */
-  $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['label'] = '';
-  $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_product_image']['group_column'] = 'entity_id';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -638,11 +746,14 @@ function elx_views_views_default_views() {
     t('Master'),
     t('Product Library'),
     t('more'),
-    t('Apply'),
+    t('Refine Search'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Advanced options'),
+    t('Sort options'),
+    t('Select any filter and click on Apply to see results'),
     t('View'),
     t('- All -'),
     t('Offset'),
@@ -920,7 +1031,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Field: Market name (field_market_name) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_market_name_value']['id'] = 'field_market_name_value';
   $handler->display->display_options['arguments']['field_market_name_value']['table'] = 'field_data_field_market_name';
   $handler->display->display_options['arguments']['field_market_name_value']['field'] = 'field_market_name_value';

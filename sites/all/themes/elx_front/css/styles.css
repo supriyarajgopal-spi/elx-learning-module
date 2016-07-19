@@ -1219,6 +1219,17 @@ body.front .layout-3col__full .elx-form-wrapper #edit-submit {
   display: none;
 }
 
+.page-product-library .view-product-library .view-content ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page-product-library .view-product-library .view-content ul li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 .responsive-video,
 .media-youtube-video,
 .media-vimeo-preview-wrapper {
@@ -2034,3 +2045,5 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,45 @@
+/* TOOLS PAGE */
+.page-tools {
+  h1 {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-extralarge;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .view-tools {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        width: 50%;
+        margin: 25px 0;
+        padding: 0 20px 0 0;
+        list-style-type: none;
+        min-height: 125px;
+
+        .views-field-field-tool-thumbnail {
+          width: 198px;
+          height: 198px;
+          float: left;
+          margin: 0 15px 0 0;
+        }
+
+        .views-field-field-display-title {
+          a {
+            font-family: $font-family-serif;
+            font-size: $font-size-sm-large;
+            text-decoration: none;
+            color: #040a2b;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

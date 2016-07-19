@@ -1321,6 +1321,46 @@ body.front .layout-3col__full .elx-form-wrapper #edit-submit {
   padding-bottom: 75%;
 }
 
+/* TOOLS PAGE */
+.page-tools h1 {
+  font-family: "optimadisplaylightlight";
+  font-size: 72px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.page-tools .view-tools ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page-tools .view-tools ul li {
+  float: left;
+  width: 50%;
+  margin: 25px 0;
+  padding: 0 20px 0 0;
+  list-style-type: none;
+  min-height: 125px;
+}
+
+.page-tools .view-tools ul li .views-field-field-tool-thumbnail {
+  width: 198px;
+  height: 198px;
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.page-tools .view-tools ul li .views-field-field-display-title a {
+  font-family: "optimadisplaylightlight";
+  font-size: 18px;
+  text-decoration: none;
+  color: #040a2b;
+}
+
+.page-tools .view-tools ul li .views-field-field-display-title a:hover {
+  text-decoration: underline;
+}
+
 .visually-hidden,
 .element-invisible,
 .element-focusable,

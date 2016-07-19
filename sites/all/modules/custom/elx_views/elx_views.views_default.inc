@@ -993,6 +993,17 @@ function elx_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Tool thumbnail */
+  $handler->display->display_options['fields']['field_tool_thumbnail']['id'] = 'field_tool_thumbnail';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['table'] = 'field_data_field_tool_thumbnail';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['field'] = 'field_tool_thumbnail';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tool_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
   /* Field: Content: Display title */
   $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
   $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
@@ -1015,28 +1026,11 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Tool thumbnail */
-  $handler->display->display_options['fields']['field_tool_thumbnail']['id'] = 'field_tool_thumbnail';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['table'] = 'field_data_field_tool_thumbnail';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['field'] = 'field_tool_thumbnail';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['label'] = '';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_tool_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['field_market_name_value']['id'] = 'field_market_name_value';
-  $handler->display->display_options['arguments']['field_market_name_value']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['arguments']['field_market_name_value']['field'] = 'field_market_name_value';
-  $handler->display->display_options['arguments']['field_market_name_value']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_market_name_value']['summary']['format'] = 'default_summary';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1083,7 +1077,6 @@ function elx_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('All'),
     t('Page'),
     t('Block'),
   );

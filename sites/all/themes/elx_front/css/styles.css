@@ -1239,6 +1239,58 @@ body.front .layout-3col__full .elx-form-wrapper #edit-submit {
   width: 100%;
 }
 
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page,
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page,
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page {
+  display: inline-block;
+  height: 46px;
+  width: 46px;
+}
+
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input,
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input,
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input {
+  margin-left: -5000px;
+}
+
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input[type='radio']:checked + label,
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input[type='radio']:checked + label,
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input[type='radio']:checked + label,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page input[type='radio']:checked + label {
+  background-color: #fff;
+  border: 1px solid #040a2b;
+  z-index: 2;
+}
+
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page label,
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page label,
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page label,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page label {
+  position: absolute;
+  margin-left: 4985px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #cccccc;
+  padding: 10px 15px;
+  background-color: #ececec;
+}
+
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(1),
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(1),
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(1),
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(1) {
+  margin-right: -6px;
+}
+
+.page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(2),
+.page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(2),
+.page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(2),
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page #edit-items-per-page .form-item.form-item-items-per-page:nth-child(2) {
+  margin-right: -6px;
+}
+
 .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-order,
 .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-order,
 .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-order,

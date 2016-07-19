@@ -46,6 +46,49 @@
           }
         }
 
+        .views-widget-per-page {
+          #edit-items-per-page {
+            .form-item.form-item-items-per-page {
+              display: inline-block;
+              height: 46px;
+              width: 46px;
+
+              input {
+                margin-left: -5000px;
+              }
+
+              input[type='radio'] {
+                &:checked+label {
+                  background-color: #fff;
+                  border: 1px solid #040a2b;
+                  z-index: 2;
+                }
+              }
+
+              label {
+                position: absolute;
+                margin-left: 4985px;
+                font-size: $font-size-lg-extrasmall;
+                font-weight: 700;
+                border: 1px solid rgb(204, 204, 204);
+                padding: 10px 15px;
+                background-color: #ececec;
+              }
+
+              // overlapping border fix
+              &:nth-child(1) {
+                margin-right: -6px;
+              }
+
+              // overlapping border fix
+              &:nth-child(2) {
+                margin-right: -6px;
+              }
+            }            
+          }
+
+        }
+
         // hide sort order options, not in original site
         .views-widget-sort-order {
           display: none;

@@ -1225,9 +1225,34 @@ body.front .layout-3col__full .elx-form-wrapper #edit-submit {
 }
 
 .page-product-library .view-product-library .view-content ul li {
+  height: 260px;
   margin: 0;
-  padding: 0;
+  padding: 23px 30px;
   list-style-type: none;
+  clear: both;
+  border-bottom: 1px solid #cccccc;
+}
+
+.page-product-library .view-product-library .view-content ul li .views-field-field-product-image {
+  float: left;
+  max-height: 240px;
+  max-width: 240px;
+  min-height: 240px;
+  min-width: 240px;
+  margin: 0 20px 0 0;
+  text-align: center;
+}
+
+.page-product-library .view-product-library .view-content ul li .views-field-field-display-title a {
+  margin: 22px 0 11px;
+  font-family: "optimadisplaylightlight";
+  font-size: 28px;
+  text-decoration: none;
+  color: #040a2b;
+}
+
+.page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one {
+  font-size: 18px;
 }
 
 .responsive-video,

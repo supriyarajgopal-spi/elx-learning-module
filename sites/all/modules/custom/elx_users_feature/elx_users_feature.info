@@ -189,5 +189,4 @@ features[variable][] = aes_key
 features[variable][] = aes_viewing_method
 features[variable][] = mail_system
 features[views_view][] = user_export
-features_exclude[dependencies][locale] = locale
-mtime = 1459520008
+mtime = 1468978000

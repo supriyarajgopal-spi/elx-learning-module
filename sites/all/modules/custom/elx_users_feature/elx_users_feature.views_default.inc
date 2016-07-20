@@ -256,7 +256,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
   $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
   $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
-  /* Field: User: Account/field executive */
+  /* Field: User: Sales/Sales Education Executive */
   $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
@@ -316,7 +316,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['language']['table'] = 'users';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['exclude'] = TRUE;
-  /* Field: User: Field Sales Director/Regional Education Director */
+  /* Field: User: Regional Sales/Sales Education Manager */
   $handler->display->display_options['fields']['field_field_sales_director_regio']['id'] = 'field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['table'] = 'field_data_field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['field'] = 'field_field_sales_director_regio';
@@ -403,13 +403,13 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: User: Account/field executive (field_account_field_executive) */
+  /* Filter criterion: User: Sales/Sales Education Executive (field_account_field_executive) */
   $handler->display->display_options['filters']['field_account_field_executive_value']['id'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['table'] = 'field_data_field_account_field_executive';
   $handler->display->display_options['filters']['field_account_field_executive_value']['field'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator_id'] = 'field_account_field_executive_value_op';
-  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Account/field executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Sales/Sales Education Executive';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator'] = 'field_account_field_executive_value_op';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['identifier'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['remember_roles'] = array(
@@ -540,7 +540,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_account_name']['table'] = 'field_data_field_account_name';
   $handler->display->display_options['fields']['field_account_name']['field'] = 'field_account_name';
   $handler->display->display_options['fields']['field_account_name']['exclude'] = TRUE;
-  /* Field: User: Account/field executive */
+  /* Field: User: Sales/Sales Education Executive */
   $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
@@ -600,7 +600,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['language']['table'] = 'users';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['exclude'] = TRUE;
-  /* Field: User: Field Sales Director/Regional Education Director */
+  /* Field: User: Regional Sales/Sales Education Manager */
   $handler->display->display_options['fields']['field_field_sales_director_regio']['id'] = 'field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['table'] = 'field_data_field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['field'] = 'field_field_sales_director_regio';
@@ -684,13 +684,13 @@ function elx_users_feature_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filter criterion: User: Account/field executive (field_account_field_executive) */
+  /* Filter criterion: User: Sales/Sales Education Executive (field_account_field_executive) */
   $handler->display->display_options['filters']['field_account_field_executive_value']['id'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['table'] = 'field_data_field_account_field_executive';
   $handler->display->display_options['filters']['field_account_field_executive_value']['field'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator_id'] = 'field_account_field_executive_value_op';
-  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Account/field executive';
+  $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['label'] = 'Sales/Sales Education Executive';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['operator'] = 'field_account_field_executive_value_op';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['identifier'] = 'field_account_field_executive_value';
   $handler->display->display_options['filters']['field_account_field_executive_value']['expose']['remember_roles'] = array(
@@ -870,12 +870,11 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['fields']['field_education_manager_executiv']['table'] = 'field_data_field_education_manager_executiv';
   $handler->display->display_options['fields']['field_education_manager_executiv']['field'] = 'field_education_manager_executiv';
   $handler->display->display_options['fields']['field_education_manager_executiv']['label'] = 'Education Manager/Executive';
-  /* Field: User: Account/field executive */
+  /* Field: User: Sales/Sales Education Executive */
   $handler->display->display_options['fields']['field_account_field_executive']['id'] = 'field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['table'] = 'field_data_field_account_field_executive';
   $handler->display->display_options['fields']['field_account_field_executive']['field'] = 'field_account_field_executive';
-  $handler->display->display_options['fields']['field_account_field_executive']['label'] = 'Account/Field Executive';
-  /* Field: User: Field Sales Director/Regional Education Director */
+  /* Field: User: Regional Sales/Sales Education Manager */
   $handler->display->display_options['fields']['field_field_sales_director_regio']['id'] = 'field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['table'] = 'field_data_field_field_sales_director_regio';
   $handler->display->display_options['fields']['field_field_sales_director_regio']['field'] = 'field_field_sales_director_regio';
@@ -926,7 +925,7 @@ function elx_users_feature_views_default_views() {
     t('Roles'),
     t('Door'),
     t('Account name'),
-    t('Account/field executive'),
+    t('Sales/Sales Education Executive'),
     t('City'),
     t('State'),
     t('Country'),
@@ -938,11 +937,10 @@ function elx_users_feature_views_default_views() {
     t('Active'),
     t('Inactive'),
     t('Language'),
-    t('Field Sales Director/Regional Education Director'),
+    t('Regional Sales/Sales Education Manager'),
     t('General Manager/Brand Manager'),
     t('Market Administrator'),
     t('Last access'),
-    t('Market name'),
     t('Page'),
     t('User'),
     t('- Choose an operation -'),
@@ -956,11 +954,9 @@ function elx_users_feature_views_default_views() {
     t('Learner Group'),
     t('Account Name'),
     t('Region Code'),
-    t('Market Name'),
     t('Hire Date'),
     t('Counter Manager'),
     t('Education Manager/Executive'),
-    t('Account/Field Executive'),
   );
   $export['user_export'] = $view;
 

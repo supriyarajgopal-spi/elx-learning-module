@@ -131,12 +131,12 @@ function elx_users_feature_feeds_importer_default() {
             'unique' => FALSE,
           ),
           16 => array(
-            'source' => 'Account/Field Executive',
+            'source' => 'Sales/Sales Education Executive',
             'target' => 'field_account_field_executive',
             'unique' => FALSE,
           ),
           17 => array(
-            'source' => 'Field Sales Director/Regional Education Director',
+            'source' => 'Regional Sales/Sales Education Manager',
             'target' => 'field_field_sales_director_regio',
             'unique' => FALSE,
           ),

@@ -27,7 +27,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_account_field_executive',
-    'label' => 'Account/field executive',
+    'label' => 'Sales/Sales Education Executive',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -336,7 +336,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_field_sales_director_regio',
-    'label' => 'Field Sales Director/Regional Education Director',
+    'label' => 'Regional Sales/Sales Education Manager',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -787,7 +787,6 @@ function elx_users_feature_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Account name');
-  t('Account/field executive');
   t('City');
   t('Counter manager');
   t('Country');
@@ -795,7 +794,6 @@ function elx_users_feature_field_default_field_instances() {
   t('Education manager/executive');
   t('Employer number');
   t('Employment Status');
-  t('Field Sales Director/Regional Education Director');
   t('First name');
   t('General Manager/Brand Manager');
   t('Hire date');
@@ -806,7 +804,9 @@ function elx_users_feature_field_default_field_instances() {
   t('Modified date');
   t('Rank');
   t('Region');
+  t('Regional Sales/Sales Education Manager');
   t('Regional Vice President');
+  t('Sales/Sales Education Executive');
   t('State');
 
   return $field_instances;

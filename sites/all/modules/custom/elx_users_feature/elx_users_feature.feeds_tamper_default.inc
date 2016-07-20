@@ -15,7 +15,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-account_field_executive-strip_tags';
   $feeds_tamper->importer = 'elx_users';
-  $feeds_tamper->source = 'Account/Field Executive';
+  $feeds_tamper->source = 'Sales/Sales Education Executive';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
@@ -29,7 +29,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-account_field_executive-trim';
   $feeds_tamper->importer = 'elx_users';
-  $feeds_tamper->source = 'Account/Field Executive';
+  $feeds_tamper->source = 'Sales/Sales Education Executive';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
@@ -359,7 +359,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-field_sales_director_regional_education_director-strip_tags';
   $feeds_tamper->importer = 'elx_users';
-  $feeds_tamper->source = 'Field Sales Director/Regional Education Director';
+  $feeds_tamper->source = 'Regional Sales/Sales Education Manager';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
@@ -373,7 +373,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-field_sales_director_regional_education_director-trim';
   $feeds_tamper->importer = 'elx_users';
-  $feeds_tamper->source = 'Field Sales Director/Regional Education Director';
+  $feeds_tamper->source = 'Regional Sales/Sales Education Manager';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',

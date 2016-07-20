@@ -1,0 +1,5 @@
+name = elx_header
+description = Provides ELX header with logo, links, search, and dropdown user menu
+core = 7.x
+package = ELX
+features[features_api][] = api:2

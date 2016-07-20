@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Interactive Content Feature feature.
+ */
+
+include_once 'elx_interactive_content_feature.features.inc';

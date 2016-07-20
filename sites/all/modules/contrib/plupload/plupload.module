@@ -21,7 +21,7 @@ function plupload_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('plupload_test'),
     // @todo: change this to something appropriate, not sure what.
-    'access arguments' => array('access content'),
+    'access arguments' => array('Administer site configuration'),
     'type' => MENU_CALLBACK,
   );
   return $items;

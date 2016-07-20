@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Performs setup tasks.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function elx_interactive_content_feature_enable() {
+  $temporary_file_path = 'public://' . variable_get('h5p_default_path', 'h5p') . '/temp/' . uniqid('h5p-');
+  file_prepare_directory($temporary_file_path, FILE_CREATE_DIRECTORY);
+  if ($file = system_retrieve_file('https://h5p.org/sites/default/files/official-h5p-release-20160623.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+    $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
+    $_SESSION['h5p_upload_folder'] = drupal_realpath($temporary_file_path);
+    $validator = _h5p_get_instance('validator');
+    if ($validator->isValidPackage(TRUE) !== FALSE) {
+      $h5p_core = _h5p_get_instance('storage');
+      $h5p_core->savePackage(NULL, NULL, TRUE);
+    }
+    unset($_SESSION['h5p_upload'], $_SESSION['h5p_upload_folder']);
+  }
+}

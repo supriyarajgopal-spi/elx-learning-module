@@ -105,3 +105,67 @@ function elx_utility_feeds_after_parse(FeedsSource $source, FeedsParserResult $r
     }
   }
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ * Created by SUPRIYA RAJGOPAL on 21Jul16 to create a view mode for nodes so that they can be displayed in a modal using Ctools modal
+ * Borrowed from http://www.wunderkraut.com/blog/drupal-7-custom-node-view-modes/2010-12-20
+ */
+function elx_utility_entity_info_alter(&$entity_info)
+{
+  $entity_info['node']['view modes']['modal'] = array(
+    'label' => t('Modal'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_menu().
+ * Created by SUPRIYA RAJGOPAL on 21Jul16 to define a path which renders product details in a modal
+ * !Note: The click to this path should be AJAX enabled by adding 'use-ajax' class
+ * Borrowed from https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7
+ */
+function elx_utility_menu()
+{
+  $items['modal/%ctools_js/%'] = array(
+      'title' => 'Product Details Modal',
+      'page arguments' => array(1,2), //Pass whether to use AJAX or JS and the nid
+      'page callback' => '_elx_product_details_modal', //User defined function called when the link is clicked
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
+  );
+  return $items;
+}
+
+/**
+ * User defined page callback created by SUPRIYA RAJGOPAL on 21Jul16 to show product details in a modal
+ * Borrowed from https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7
+ *
+ * @param $js
+ *   boolean CTools determination whether the user's browser is javascript enabled. 
+ * @param $nid
+ *   string The node ID of passed as an argument from the hook_menu() path
+ * @return
+ *   string The contents of the node in a modal window
+ */
+function _elx_product_details_modal($js = NULL, $nid = NULL)
+{
+  if($nid == NULL)
+   return 'No content to display.';
+   
+  //Include ctools iff path contains 'nojs' to work, else render page normally
+  if($js)
+  {
+    ctools_include('modal');
+    ctools_include('ajax');
+	ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
+  }
+  
+  //Load the node object
+  $node = node_load($nid);
+  
+  //Render content in 'Modal' view mode
+  $nodeContent = node_view($node, 'modal', NULL); //To prevent strict warning that only variables can be passed by reference
+  $contents = render($nodeContent);
+  return ctools_modal_render($node->title, $contents) ;
+}

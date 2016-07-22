@@ -43,14 +43,6 @@ function elx_site_configurations_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
-    'diary' => array(
-      'name' => t('Diary'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'disclaimer' => array(
       'name' => t('Disclaimer'),
       'base' => 'node_content',
@@ -61,14 +53,6 @@ function elx_site_configurations_node_info() {
     ),
     'drag_match' => array(
       'name' => t('Drag Match'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'drag_priorities' => array(
-      'name' => t('Drag Priorities'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
@@ -161,14 +145,6 @@ function elx_site_configurations_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'trivia' => array(
-      'name' => t('Trivia'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Subtitle'),
       'help' => '',
     ),
   );

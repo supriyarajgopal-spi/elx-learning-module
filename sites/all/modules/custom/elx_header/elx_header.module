@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the ELX header feature.
  */
+
+include_once 'elx_header.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX User Points Feature feature.
+ */
+
+include_once 'elx_user_points_feature.features.inc';

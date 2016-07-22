@@ -215,168 +215,240 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged']['label'] = 'High Five Badge';
+  $handler->display->display_options['fields']['flagged']['label'] = '';
+  $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged']['element_wrapper_class'] = 'high-five';
+  $handler->display->display_options['fields']['flagged']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_1']['id'] = 'flagged_1';
   $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_1';
-  $handler->display->display_options['fields']['flagged_1']['label'] = 'Perfect 10 Badge Flag';
+  $handler->display->display_options['fields']['flagged_1']['label'] = '';
+  $handler->display->display_options['fields']['flagged_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_1']['element_wrapper_class'] = 'perfect-ten';
+  $handler->display->display_options['fields']['flagged_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_1']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_2']['id'] = 'flagged_2';
   $handler->display->display_options['fields']['flagged_2']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_2']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_2']['relationship'] = 'flag_content_rel_2';
-  $handler->display->display_options['fields']['flagged_2']['label'] = 'On Your Way Badge';
+  $handler->display->display_options['fields']['flagged_2']['label'] = '';
+  $handler->display->display_options['fields']['flagged_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_2']['element_wrapper_class'] = 'on-your-way';
+  $handler->display->display_options['fields']['flagged_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_2']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_3']['id'] = 'flagged_3';
   $handler->display->display_options['fields']['flagged_3']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_3']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_3']['relationship'] = 'flag_content_rel_3';
-  $handler->display->display_options['fields']['flagged_3']['label'] = '100% Club Badge';
+  $handler->display->display_options['fields']['flagged_3']['label'] = '';
+  $handler->display->display_options['fields']['flagged_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_3']['element_wrapper_class'] = 'one-hundred-percent-club';
+  $handler->display->display_options['fields']['flagged_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_3']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_4']['id'] = 'flagged_4';
   $handler->display->display_options['fields']['flagged_4']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_4']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_4']['relationship'] = 'flag_content_rel_4';
-  $handler->display->display_options['fields']['flagged_4']['label'] = 'Service Star Badge';
+  $handler->display->display_options['fields']['flagged_4']['label'] = '';
+  $handler->display->display_options['fields']['flagged_4']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_4']['element_wrapper_class'] = 'service-star';
+  $handler->display->display_options['fields']['flagged_4']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_4']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_5']['id'] = 'flagged_5';
   $handler->display->display_options['fields']['flagged_5']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_5']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_5']['relationship'] = 'flag_content_rel_5';
-  $handler->display->display_options['fields']['flagged_5']['label'] = 'First 5,000 Points Badge';
+  $handler->display->display_options['fields']['flagged_5']['label'] = '';
+  $handler->display->display_options['fields']['flagged_5']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_5']['element_wrapper_class'] = 'first-5000-points';
+  $handler->display->display_options['fields']['flagged_5']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_5']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_6']['id'] = 'flagged_6';
   $handler->display->display_options['fields']['flagged_6']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_6']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_6']['relationship'] = 'flag_content_rel_6';
-  $handler->display->display_options['fields']['flagged_6']['label'] = 'First 1,000 Points Badge';
+  $handler->display->display_options['fields']['flagged_6']['label'] = '';
+  $handler->display->display_options['fields']['flagged_6']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_6']['element_wrapper_class'] = 'first-1000-points';
+  $handler->display->display_options['fields']['flagged_6']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_6']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_7']['id'] = 'flagged_7';
   $handler->display->display_options['fields']['flagged_7']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_7']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_7']['relationship'] = 'flag_content_rel_7';
-  $handler->display->display_options['fields']['flagged_7']['label'] = 'We Heart You Badge';
+  $handler->display->display_options['fields']['flagged_7']['label'] = '';
+  $handler->display->display_options['fields']['flagged_7']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_7']['element_wrapper_class'] = 'we-heart-you';
+  $handler->display->display_options['fields']['flagged_7']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_7']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_8']['id'] = 'flagged_8';
   $handler->display->display_options['fields']['flagged_8']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_8']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_8']['relationship'] = 'flag_content_rel_8';
-  $handler->display->display_options['fields']['flagged_8']['label'] = 'Product Pro Badge';
+  $handler->display->display_options['fields']['flagged_8']['label'] = '';
+  $handler->display->display_options['fields']['flagged_8']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_8']['element_wrapper_class'] = 'product-pro';
+  $handler->display->display_options['fields']['flagged_8']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_8']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_9']['id'] = 'flagged_9';
   $handler->display->display_options['fields']['flagged_9']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_9']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_9']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged_9']['label'] = 'First 10000 Points Badge';
+  $handler->display->display_options['fields']['flagged_9']['label'] = '';
+  $handler->display->display_options['fields']['flagged_9']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_9']['element_wrapper_class'] = 'first-10000-points';
+  $handler->display->display_options['fields']['flagged_9']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_9']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_10']['id'] = 'flagged_10';
   $handler->display->display_options['fields']['flagged_10']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_10']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_10']['relationship'] = 'flag_content_rel_10';
-  $handler->display->display_options['fields']['flagged_10']['label'] = 'Welcome Badge';
+  $handler->display->display_options['fields']['flagged_10']['label'] = '';
+  $handler->display->display_options['fields']['flagged_10']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_10']['element_wrapper_class'] = 'welcome';
+  $handler->display->display_options['fields']['flagged_10']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_10']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_11']['id'] = 'flagged_11';
   $handler->display->display_options['fields']['flagged_11']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_11']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_11']['relationship'] = 'flag_content_rel_11';
-  $handler->display->display_options['fields']['flagged_11']['label'] = 'Little Brown Bottle Badge';
+  $handler->display->display_options['fields']['flagged_11']['label'] = '';
+  $handler->display->display_options['fields']['flagged_11']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_11']['element_wrapper_class'] = 'little-brown-bottle';
+  $handler->display->display_options['fields']['flagged_11']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_11']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_12']['id'] = 'flagged_12';
   $handler->display->display_options['fields']['flagged_12']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_12']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_12']['relationship'] = 'flag_content_rel_12';
-  $handler->display->display_options['fields']['flagged_12']['label'] = 'Beauty Queen Badge';
+  $handler->display->display_options['fields']['flagged_12']['label'] = '';
+  $handler->display->display_options['fields']['flagged_12']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_12']['element_wrapper_class'] = 'beauty-queen';
+  $handler->display->display_options['fields']['flagged_12']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_12']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_13']['id'] = 'flagged_13';
   $handler->display->display_options['fields']['flagged_13']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_13']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_13']['relationship'] = 'flag_content_rel_13';
-  $handler->display->display_options['fields']['flagged_13']['label'] = 'Rare Beauty Badge';
+  $handler->display->display_options['fields']['flagged_13']['label'] = '';
+  $handler->display->display_options['fields']['flagged_13']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_13']['element_wrapper_class'] = 'rare-beauty';
+  $handler->display->display_options['fields']['flagged_13']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_13']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_14']['id'] = 'flagged_14';
   $handler->display->display_options['fields']['flagged_14']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_14']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_14']['relationship'] = 'flag_content_rel_14';
-  $handler->display->display_options['fields']['flagged_14']['label'] = 'New Dimension Badge';
+  $handler->display->display_options['fields']['flagged_14']['label'] = '';
+  $handler->display->display_options['fields']['flagged_14']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_14']['element_wrapper_class'] = 'new-dimension';
+  $handler->display->display_options['fields']['flagged_14']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_14']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_15']['id'] = 'flagged_15';
   $handler->display->display_options['fields']['flagged_15']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_15']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_15']['relationship'] = 'flag_content_rel_15';
-  $handler->display->display_options['fields']['flagged_15']['label'] = 'Sleeping Beauty Badge';
+  $handler->display->display_options['fields']['flagged_15']['label'] = '';
+  $handler->display->display_options['fields']['flagged_15']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_15']['element_wrapper_class'] = 'sleeping-beauty';
+  $handler->display->display_options['fields']['flagged_15']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_15']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_16']['id'] = 'flagged_16';
   $handler->display->display_options['fields']['flagged_16']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_16']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_16']['relationship'] = 'flag_content_rel_16';
-  $handler->display->display_options['fields']['flagged_16']['label'] = 'We Heard You Badge';
+  $handler->display->display_options['fields']['flagged_16']['label'] = '';
+  $handler->display->display_options['fields']['flagged_16']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_16']['element_wrapper_class'] = 'we-heard-you';
+  $handler->display->display_options['fields']['flagged_16']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_16']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_17']['id'] = 'flagged_17';
   $handler->display->display_options['fields']['flagged_17']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_17']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_17']['relationship'] = 'flag_content_rel_17';
-  $handler->display->display_options['fields']['flagged_17']['label'] = 'Well Read 50 Badge';
+  $handler->display->display_options['fields']['flagged_17']['label'] = '';
+  $handler->display->display_options['fields']['flagged_17']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_17']['element_wrapper_class'] = 'well-read-50';
+  $handler->display->display_options['fields']['flagged_17']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_17']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_18']['id'] = 'flagged_18';
   $handler->display->display_options['fields']['flagged_18']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_18']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_18']['relationship'] = 'flag_content_rel_18';
-  $handler->display->display_options['fields']['flagged_18']['label'] = 'Well Read 25 Badge';
+  $handler->display->display_options['fields']['flagged_18']['label'] = '';
+  $handler->display->display_options['fields']['flagged_18']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_18']['element_wrapper_class'] = 'well-read-25';
+  $handler->display->display_options['fields']['flagged_18']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_18']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_19']['id'] = 'flagged_19';
   $handler->display->display_options['fields']['flagged_19']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_19']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_19']['relationship'] = 'flag_content_rel_19';
-  $handler->display->display_options['fields']['flagged_19']['label'] = 'Well Read 75 Badge';
+  $handler->display->display_options['fields']['flagged_19']['label'] = '';
+  $handler->display->display_options['fields']['flagged_19']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_19']['element_wrapper_class'] = 'well-read-75';
+  $handler->display->display_options['fields']['flagged_19']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_19']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_20']['id'] = 'flagged_20';
   $handler->display->display_options['fields']['flagged_20']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_20']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_20']['relationship'] = 'flag_content_rel_20';
-  $handler->display->display_options['fields']['flagged_20']['label'] = '3 Minute Beauty Badge';
+  $handler->display->display_options['fields']['flagged_20']['label'] = '';
+  $handler->display->display_options['fields']['flagged_20']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_20']['element_wrapper_class'] = 'three-minute-beauty';
+  $handler->display->display_options['fields']['flagged_20']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_20']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_21']['id'] = 'flagged_21';
   $handler->display->display_options['fields']['flagged_21']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_21']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_21']['relationship'] = 'flag_content_rel_21';
-  $handler->display->display_options['fields']['flagged_21']['label'] = 'Fast Learner Badge';
+  $handler->display->display_options['fields']['flagged_21']['label'] = '';
+  $handler->display->display_options['fields']['flagged_21']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_21']['element_wrapper_class'] = 'fast-learner';
+  $handler->display->display_options['fields']['flagged_21']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_21']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_22']['id'] = 'flagged_22';
   $handler->display->display_options['fields']['flagged_22']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_22']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_22']['relationship'] = 'flag_content_rel_22';
-  $handler->display->display_options['fields']['flagged_22']['label'] = 'Well Read 100 Badge';
+  $handler->display->display_options['fields']['flagged_22']['label'] = '';
+  $handler->display->display_options['fields']['flagged_22']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_22']['element_wrapper_class'] = 'well-read-100';
+  $handler->display->display_options['fields']['flagged_22']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_22']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_23']['id'] = 'flagged_23';
   $handler->display->display_options['fields']['flagged_23']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_23']['field'] = 'flagged';
   $handler->display->display_options['fields']['flagged_23']['relationship'] = 'flag_content_rel_23';
-  $handler->display->display_options['fields']['flagged_23']['label'] = 'Early Bird Badge';
+  $handler->display->display_options['fields']['flagged_23']['label'] = '';
+  $handler->display->display_options['fields']['flagged_23']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_23']['element_wrapper_class'] = 'early-bird';
+  $handler->display->display_options['fields']['flagged_23']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['flagged_23']['not'] = 0;
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -460,29 +532,6 @@ function elx_views_views_default_views() {
     t('Fast Learner Badge Flag'),
     t('Well Read 100 Badge Flag'),
     t('Early Bird Badge Flag'),
-    t('High Five Badge'),
-    t('On Your Way Badge'),
-    t('100% Club Badge'),
-    t('Service Star Badge'),
-    t('First 5,000 Points Badge'),
-    t('First 1,000 Points Badge'),
-    t('We Heart You Badge'),
-    t('Product Pro Badge'),
-    t('First 10000 Points Badge'),
-    t('Welcome Badge'),
-    t('Little Brown Bottle Badge'),
-    t('Beauty Queen Badge'),
-    t('Rare Beauty Badge'),
-    t('New Dimension Badge'),
-    t('Sleeping Beauty Badge'),
-    t('We Heard You Badge'),
-    t('Well Read 50 Badge'),
-    t('Well Read 25 Badge'),
-    t('Well Read 75 Badge'),
-    t('3 Minute Beauty Badge'),
-    t('Fast Learner Badge'),
-    t('Well Read 100 Badge'),
-    t('Early Bird Badge'),
     t('All'),
     t('Page'),
     t('Block'),
@@ -502,7 +551,6 @@ function elx_views_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Product Library';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -658,16 +706,22 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
   $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
-  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_display_title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['type'] = 'title_linked';
   $handler->display->display_options['fields']['field_display_title']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['hide_empty'] = TRUE;
   /* Field: Content: Why there's only 1 */
   $handler->display->display_options['fields']['field_why_there_s_only_one']['id'] = 'field_why_there_s_only_one';
   $handler->display->display_options['fields']['field_why_there_s_only_one']['table'] = 'field_data_field_why_there_s_only_one';

@@ -5,3 +5,39 @@
  */
 
 include_once 'elx_interactive_content_feature.features.inc';
+
+/**
+ * Alter a library's semantics
+ *
+ * Included by SUPRIYA RAJGOPAL on 27Jul16 to make Click to Reveal H5P library usable in Course Presentation H5P content type
+ * Borrowed from https://www.drupal.org/node/2772799 and http://cgit.drupalcode.org/h5p/tree/h5p.api.php
+ *
+ * May be used to add more fields to a library, change a widget, add more allowed tags for
+ * a textfield etc
+ *
+ * @param array $semantics
+ * A libraries definition of the data the library uses
+ * @param string $machine_name
+ * The libraries machine name
+ * @param int $major_version
+ * Major version for the library
+ * @param int $minor_version
+ * Minor version fot the library
+ */
+function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machine_name, $major_version, $minor_version)
+{
+  //Make Click to Reveal library usable in Course Presentation
+  if($machine_name == 'H5P.CoursePresentation')
+  {
+    //$semantics[0]->fields[0]->field->fields[0]->field->fields[4]->options[] = "H5P.ClickToReveal 1.0";
+	
+	/* $slide = $semantics[0]->fields[0]->field;
+	$element = $slide->fields[0]->field;
+	$action = $element->fields[4]; */
+	
+	$slides = $semantics[0]->fields[0];
+	$elements = $slides->field->fields[0];
+	$action = $elements->field->fields[4];
+	$action->options[] = "H5P.ClickToReveal 1.0";
+  }
+}

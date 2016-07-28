@@ -1130,7 +1130,14 @@ function elx_site_configurations_strongarm() {
           'weight' => '3',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'modal' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__product_detail'] = $strongarm;

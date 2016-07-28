@@ -2258,57 +2258,6 @@ function elx_site_configurations_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_manifest'
-  $field_bases['field_manifest'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manifest',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'translated_entityreference',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'filter' => array(
-          'language' => 1,
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'badge_manifest' => 'badge_manifest',
-          'object_manifest' => 'object_manifest',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 1,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_match_collection'
   $field_bases['field_match_collection'] = array(
     'active' => 1,

@@ -24,6 +24,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -66,6 +72,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -129,6 +141,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -175,6 +193,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -216,6 +240,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -261,6 +291,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 10,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -309,6 +345,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 9,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -369,6 +411,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -413,6 +461,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 12,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -454,6 +508,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -500,6 +560,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 19,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -544,6 +610,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 20,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -591,6 +663,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 18,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -635,6 +713,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 21,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -681,6 +765,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 3,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -722,6 +812,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -789,6 +885,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 15,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -828,6 +930,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -870,6 +978,12 @@ function elx_site_configurations_field_default_field_instances() {
           'image_style' => 'tile_thumbnail',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -933,6 +1047,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -974,6 +1094,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1014,6 +1140,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1061,6 +1193,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 10,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1098,6 +1236,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 22,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1145,6 +1289,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 17,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1187,6 +1337,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1228,6 +1384,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 14,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1266,6 +1428,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 13,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1303,6 +1471,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1348,6 +1522,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 25,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1396,6 +1576,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 24,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1456,6 +1642,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1498,6 +1690,12 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1544,6 +1742,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1592,6 +1796,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1652,6 +1862,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1700,6 +1916,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 10,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1739,6 +1961,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1780,6 +2008,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1823,6 +2057,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1886,6 +2126,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1931,6 +2177,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 8,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1971,6 +2223,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2010,6 +2268,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2056,6 +2320,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2101,6 +2371,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 11,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2142,6 +2418,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 12,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2206,6 +2488,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 8,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2275,6 +2563,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2316,6 +2610,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2356,6 +2656,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2402,6 +2708,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 9,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2442,6 +2754,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2481,6 +2799,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2528,6 +2852,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2597,6 +2927,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2642,6 +2978,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2682,6 +3024,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2721,6 +3069,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2771,6 +3125,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 4,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2809,6 +3169,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2845,6 +3211,12 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -2888,6 +3260,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2929,6 +3307,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2968,6 +3352,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3031,6 +3421,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'image',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3090,6 +3486,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3135,6 +3537,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3174,6 +3582,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3218,6 +3632,12 @@ function elx_site_configurations_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -3269,6 +3689,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3314,6 +3740,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3353,6 +3785,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3409,6 +3847,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3449,6 +3893,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3488,6 +3938,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3534,6 +3990,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3575,6 +4037,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3614,6 +4082,12 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -3658,6 +4132,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 1,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3714,6 +4194,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3754,6 +4240,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3793,6 +4285,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3839,6 +4337,13 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3879,6 +4384,13 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 13,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3921,6 +4433,13 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3962,6 +4481,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4001,6 +4526,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 14,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4060,6 +4591,13 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 9,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4103,6 +4641,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 17,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4145,6 +4689,13 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 18,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4182,6 +4733,15 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'entityreference_entity_id',
         'weight' => 11,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4230,6 +4790,13 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 10,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4271,6 +4838,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 22,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4310,6 +4883,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 21,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4352,6 +4931,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 20,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4391,6 +4976,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4456,6 +5047,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 16,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4498,6 +5095,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4535,6 +5138,13 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 12,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4581,6 +5191,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4622,6 +5238,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4662,6 +5284,13 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4707,6 +5336,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 24,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4755,6 +5390,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 23,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4820,6 +5461,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'title_linked',
         'weight' => 0,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4864,6 +5511,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 11,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4910,6 +5563,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 14,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4951,6 +5610,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 0,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4988,6 +5653,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 10,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5034,6 +5705,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_key',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5077,6 +5754,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 9,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5122,6 +5805,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 12,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5163,6 +5852,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5222,6 +5917,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5259,6 +5960,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5299,6 +6006,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5345,6 +6058,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5390,6 +6109,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5431,6 +6156,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'paragraphs_view',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5492,6 +6223,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5535,6 +6272,12 @@ function elx_site_configurations_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -5582,6 +6325,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5622,6 +6371,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5665,6 +6420,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5728,6 +6489,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5767,6 +6534,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5825,6 +6598,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5869,6 +6648,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5910,6 +6695,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 5,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5947,6 +6738,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5987,6 +6784,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6047,6 +6850,12 @@ function elx_site_configurations_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 7,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6114,6 +6923,12 @@ function elx_site_configurations_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 10,
       ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6161,6 +6976,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 9,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6220,6 +7041,12 @@ function elx_site_configurations_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

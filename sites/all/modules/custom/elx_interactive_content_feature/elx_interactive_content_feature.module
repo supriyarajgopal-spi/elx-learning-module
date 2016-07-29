@@ -38,5 +38,10 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	$elements = $slides->field->fields[0];
 	$action = $elements->field->fields[4];
 	$action->options[] = "H5P.QuestionSet 1.8";
+	
+	$slides = $semantics[0]->fields[0];
+	$elements = $slides->field->fields[0];
+	$action = $elements->field->fields[4];
+	$action->options[] = "H5P.ImageHotspots 1.3";
   }
 }

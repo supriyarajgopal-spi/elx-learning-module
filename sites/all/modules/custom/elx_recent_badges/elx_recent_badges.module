@@ -28,11 +28,14 @@ function elx_recent_badges_block_view($delta = '') {
 
   switch ($delta) {
     case 'recent_badges':
-      $block['subject'] = t('Recent Badges:');
       $recent_badges = _elx_recent_badges_user($user);
+
+      $block['subject'] = t('Recent Badges:');
       $block['content'] = theme('elx_recent_badges', array(
         'badges' => $recent_badges,
       ));
+
+      break;
   }
 
   return $block;
@@ -49,13 +52,16 @@ function elx_recent_badges_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Theme function which outputs HTML for the recent badges block.
+ */
 function theme_elx_recent_badges($variables) {
   $output = '';
 
   foreach ($variables['badges'] as $badge) {
     $output .= '<span class"badge-' . drupal_html_class($badge['name']) . '">';
+    // $output .= '<img src="path/to/badge/image/earlybird.png" title="' . check_plain($badge['title']) . '" />';
     $output .= check_plain($badge['title']);
-    // $output .= <img src="adfafd/earlybird.svg" title="$badge['title']" />;
     $output .= '</span>';
   }
 
@@ -66,7 +72,7 @@ function theme_elx_recent_badges($variables) {
  * Returns list of recent badges for a user.
  *
  * @param $user
- *    The user object.
+ *    The Drupal user object.
  * @returns array
  *   Array of badges ordered by timestamp.
  */

@@ -30,10 +30,36 @@ function elx_recent_badges_block_view($delta = '') {
     case 'recent_badges':
       $block['subject'] = t('Recent Badges:');
       $recent_badges = _elx_recent_badges_user($user);
-      $block['content'] = print_r($recent_badges, true);
+      $block['content'] = theme('elx_recent_badges', array(
+        'badges' => $recent_badges,
+      ));
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function elx_recent_badges_theme($existing, $type, $theme, $path) {
+  return array(
+    'elx_recent_badges' => array(
+      'variables' => array('badges'),
+    ),
+  );
+}
+
+function theme_elx_recent_badges($variables) {
+  $output = '';
+
+  foreach ($variables['badges'] as $badge) {
+    $output .= '<span class"badge-' . drupal_html_class($badge['name']) . '">';
+    $output .= check_plain($badge['title']);
+    // $output .= <img src="adfafd/earlybird.svg" title="$badge['title']" />;
+    $output .= '</span>';
+  }
+
+  return $output;
 }
 
 /**

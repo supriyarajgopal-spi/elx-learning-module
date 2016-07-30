@@ -23,13 +23,47 @@ function elx_recent_badges_block_info() {
  * Implements hook_block_view().
  */
 function elx_recent_badges_block_view($delta = '') {
+  global $user;
   $block = array();
 
   switch ($delta) {
     case 'recent_badges':
       $block['subject'] = t('Recent Badges:');
-      $block['content'] = t('test');
+      $recent_badges = _elx_recent_badges_user($user);
+      $block['content'] = print_r($recent_badges, true);
   }
 
   return $block;
+}
+
+/**
+ * Returns list of recent badges for a user.
+ *
+ * @param $user
+ *    The user object.
+ * @returns array
+ *   Array of badges ordered by timestamp.
+ */
+function _elx_recent_badges_user($user) {
+  $query = <<<EOQ
+SELECT fl.fid, f.name, f.title
+FROM {flagging} fl
+LEFT JOIN {flag} f on fl.fid = f.fid
+WHERE fl.entity_id = :uid
+ORDER BY fl.timestamp DESC
+EOQ;
+
+  $result = db_query($query, array(
+    ':uid' => $user->uid,
+  ));
+
+  $data = array();
+
+  if ($result) {
+    while ($row = $result->fetchAssoc()) {
+      $data[] = $row;
+    }
+  }
+
+  return $data;
 }

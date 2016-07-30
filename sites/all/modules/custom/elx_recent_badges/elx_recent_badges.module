@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains code for ELX recent badges module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function elx_recent_badges_block_info() {
+  $blocks = array();
+
+  $blocks['recent_badges'] = array(
+    'info' => t('Users Recent Badges'),
+    'cache' => DRUPAL_CACHE_PER_USER,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function elx_recent_badges_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'recent_badges':
+      $block['subject'] = t('Recent Badges:');
+      $block['content'] = t('test');
+  }
+
+  return $block;
+}

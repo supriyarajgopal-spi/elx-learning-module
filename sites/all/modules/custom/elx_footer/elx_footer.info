@@ -1,14 +1,14 @@
 name = ELX footer
-description =  a minipanel provides menu links and a block to page bottom.  
+description = a minipanel provides menu links and a block to page bottom.
 core = 7.x
 package = ELX
 features[ctools][] = panels_mini:panels_default:1
 features[features_api][] = api:2
 features[menu_custom][] = menu-footer-menu-
 features[menu_custom][] = menu-page-bottom-privacy
-features[panels_mini][] = header_user_menu
 features[panels_mini][] = page_bottom
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][menu] = menu
 features_exclude[dependencies][panels_mini] = panels_mini
+mtime = 1469829315

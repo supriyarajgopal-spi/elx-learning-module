@@ -22,7 +22,7 @@ function elx_header_menu_default_menu_custom() {
   $menus['menu-header-user-menu'] = array(
     'menu_name' => 'menu-header-user-menu',
     'title' => 'Header user menu',
-    'description' => 'Header user menu',
+    'description' => 'Header user menu used with menu minipanels module',
     'language' => 'und',
     'i18n_mode' => 5,
   );
@@ -49,6 +49,7 @@ function elx_header_menu_default_menu_custom() {
   t('Header user menu');
   t('Header user menu 1');
   t('Header user menu 2');
+  t('Header user menu used with menu minipanels module');
   t('This menu block contains Logout link.');
   t('This menu block contains My Dashboard, Leaderboard, Tools, and Badges links.');
 

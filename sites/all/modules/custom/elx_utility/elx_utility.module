@@ -134,6 +134,14 @@ function elx_utility_menu()
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
+  
+  $items['modal/%ctools_js/flags/%'] = array(
+      'title' => 'Product Details Modal',
+      'page arguments' => array(1,3), //Pass whether to use AJAX or JS and the machine name of the flag
+      'page callback' => '_elx_badges_modal', //User defined function called when the link is clicked
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
+  );
   return $items;
 }
 
@@ -144,7 +152,7 @@ function elx_utility_menu()
  * @param $js
  *   boolean CTools determination whether the user's browser is javascript enabled. 
  * @param $nid
- *   string The node ID of passed as an argument from the hook_menu() path
+ *   string The node ID passed as an argument from the hook_menu() path
  * @return
  *   string The contents of the node in a modal window
  */
@@ -168,4 +176,35 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
   $nodeContent = node_view($node, 'modal', NULL); //To prevent strict warning that only variables can be passed by reference
   $contents = render($nodeContent);
   return ctools_modal_render($node->title, $contents) ;
+}
+
+/**
+ * User defined page callback created by SUPRIYA RAJGOPAL on 2Aug16 to show badge title in a modal
+ * Borrowed from https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7
+ *
+ * @param $js
+ *   boolean CTools determination whether the user's browser is javascript enabled. 
+ * @param $flag_name
+ *   string The machine name of flag passed as an argument from the hook_menu() path
+ * @return
+ *   string The flag title in a modal window
+ */
+function _elx_badges_modal($js = NULL, $flag_name = NULL)
+{
+  if($flag_name == NULL)
+   return 'No content to display.';
+   
+  //Include ctools iff path contains 'nojs' to work, else render page normally
+  if($js)
+  {
+    ctools_include('modal');
+    ctools_include('ajax');
+	ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
+  }
+  
+  //Load the flag object
+  $flag = flag_load($flag_name);
+  
+  //Render content in 'Modal' view mode
+  return ctools_modal_render($flag->title,$flag->title);
 }

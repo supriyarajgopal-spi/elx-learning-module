@@ -1,0 +1,83 @@
+<?php
+
+function elx_organic_groups_and_permissions_update_1() {
+	$test_user_array = array (
+		"SYSTEM ADMIN" => array(
+			  'name' => 'MC System Admin',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+sysadmin@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+sysadmin@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				6 => 'EL NYO Global Education System Admin',
+			  ),
+			),
+		"MARKET ADMIN" => array(
+			  'name' => 'MC Market Admin',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+marketadmin@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+marketadmin@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				7 => 'EL Regional Market Admin',
+			  ),
+			),
+		"BRAND MANAGEMENT" => array(
+			  'name' => 'MC Brand Mgmt',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+brandmgmt@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+brandmgmt@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				5 => 'Brand Management and Field',
+			  ),
+			),
+		"BRAND SALES ASSOCIATE" => array(
+			  'name' => 'MC Sales Assoc',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+salesassoc@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+salesassoc@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				8 => 'Multi-Brand Sales Associate',
+			  ),
+			),
+		"STORE MANAGEMENT" => array(
+			  'name' => 'MC Store Mgmt',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+storemgmt@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+storemgmt@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				9 => 'Store Management',
+			  ),
+			),
+		"BEAUTY ADVISOR" => array(
+			  'name' => 'MC Beauty Advisor',
+			  'pass' => 'cha53k3y1', // note: do not md5 the password
+			  'mail' => 'michael+beautyadvisor@fasterone.com',
+			  'status' => 1,
+			  'init' => 'michael+beautyadvisor@fasterone.com',
+			  'roles' => array(
+				DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+				4 => 'Beauty Advisor',
+			  ),
+			),
+	);
+	foreach ($test_user_array as $test_user) {          
+		user_save(null, $test_user);
+	}
+	return t('Test Users Created');
+}
+
+MC Market Admin
+-able to add any content, regardless of group
+-able to administer any user, regardless of group
+-remove all global permissions from this role
+
+http://myelx:8888/group/node/34506/admin/people?state=1&uid=MC+Market+Admin

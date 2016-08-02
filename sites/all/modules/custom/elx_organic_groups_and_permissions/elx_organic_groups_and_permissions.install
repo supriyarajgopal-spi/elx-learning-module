@@ -74,10 +74,3 @@ function elx_organic_groups_and_permissions_update_1() {
 	}
 	return t('Test Users Created');
 }
-
-MC Market Admin
--able to add any content, regardless of group
--able to administer any user, regardless of group
--remove all global permissions from this role
-
-http://myelx:8888/group/node/34506/admin/people?state=1&uid=MC+Market+Admin

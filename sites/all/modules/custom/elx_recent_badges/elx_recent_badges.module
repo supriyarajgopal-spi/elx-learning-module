@@ -1,0 +1,115 @@
+<?php
+
+/**
+ * @file
+ * Contains code for ELX recent badges module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function elx_recent_badges_block_info() {
+  $blocks = array();
+
+  $blocks['recent_badges'] = array(
+    'info' => t('Users Recent Badges'),
+    'cache' => DRUPAL_CACHE_PER_USER,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function elx_recent_badges_block_view($delta = '') {
+  global $user;
+  $block = array();
+
+  switch ($delta) {
+    case 'recent_badges':
+      $recent_badges = _elx_recent_badges_user($user);
+
+      $block['subject'] = t('Recent Badges:');
+      $block['content'] = theme('elx_recent_badges', array(
+        'badges' => $recent_badges,
+      ));
+
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function elx_recent_badges_theme($existing, $type, $theme, $path) {
+  return array(
+    'elx_recent_badges' => array(
+      'variables' => array('badges'),
+    ),
+  );
+}
+
+/**
+ * Theme function which outputs HTML for the recent badges block.
+ */
+function theme_elx_recent_badges($variables) {
+    $output = '';
+
+/*   foreach ($variables['badges'] as $badge) {
+    $output .= '<span class"badge-' . drupal_html_class($badge['name']) . '">';
+    // $output .= '<img src="path/to/badge/image/earlybird.png" title="' . check_plain($badge['title']) . '" />';
+    $output .= check_plain($badge['title']);
+    $output .= '</span>';
+  }*/
+
+    //Katie
+    $output .= '<span class"badge-' . drupal_html_class('Fast Learner Badge') . '">';
+    $output .= '<img src="/sites/default/files/Fast Learner Badge.png"></span> ';
+
+    $output .= '<span class"badge-' . drupal_html_class('We Heart You Badge') . '">';
+    $output .= '<img src="/sites/default/files/We Heart You Badge.png"></span> ';
+
+    $output .= '<span class"badge-' . drupal_html_class('Product Pro Badge') . '">';
+    $output .= '<img src="/sites/default/files/Product Pro Badge.png"></span> ';
+
+    $output .= '<span class"badge-' . drupal_html_class('Well Read 25 Badge') . '">';
+    $output .= '<img src="/sites/default/files/Well Read 25 Badge.png"></span> ';
+    //Katie
+
+  return $output;
+}
+
+/**
+ * Returns list of recent badges for a user.
+ *
+ * @param $user
+ *    The Drupal user object.
+ * @returns array
+ *   Array of badges ordered by timestamp.
+ */
+function _elx_recent_badges_user($user) {
+  $query = <<<EOQ
+SELECT fl.fid, f.name, f.title
+FROM {flagging} fl
+LEFT JOIN {flag} f on fl.fid = f.fid
+WHERE fl.entity_id = :uid
+ORDER BY fl.timestamp DESC
+EOQ;
+
+  $result = db_query($query, array(
+    ':uid' => $user->uid,
+  ));
+
+  $data = array();
+
+  if ($result) {
+    while ($row = $result->fetchAssoc()) {
+      $data[] = $row;
+    }
+  }
+
+  return $data;
+}

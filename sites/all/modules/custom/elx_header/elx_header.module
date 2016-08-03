@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX header feature.
+ */
+
+include_once 'elx_header.features.inc';

@@ -205,6 +205,72 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
   //Load the flag object
   $flag = flag_load($flag_name);
   
+  $output = 'Title: ' .$flag->title. '<br />Description: ' .$flag->badge_description;
+  
   //Render content in 'Modal' view mode
-  return ctools_modal_render($flag->title,$flag->title);
+  return ctools_modal_render($flag->title,$output);
+}
+
+/**
+ * Implements hook_form_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add Badge Details to Flag module.
+ * This adds 'Badge Details' fieldset to all flags regardless of Badge flags. It is the admin's responsibility to not fill values for these unnecessarily.
+ */
+function elx_utility_form_alter(&$form, &$form_state, $form_id)
+{
+	if($form_id == 'flag_form') //'flag_add_form' is the one where the Flag Type (Node, User, Taxonomy, etc) is chosen whereas 'flag_form' is the actual form
+	{
+		$flag = isset($form['#flag']->name)?flag_load($form['#flag']->name):new stdClass();
+		
+		$form['badge_details'] = array(
+		  '#type' => 'fieldset',
+		  '#title' => t('Badge Details'),
+		  '#collapsible' => TRUE, 
+		  '#collapsed' => TRUE,
+		);
+		
+		$form['badge_details']['badge_description'] = array(
+			'#type' => 'text_format',
+			'#title' => t('Badge Description'),
+			'#default_value' => (!empty($flag->badge_description))?$flag->badge_description:'',
+			'#format' => 'full_html',
+			'#rows' => 2,
+		);
+		
+		$form['#submit'][] = '_elx_utility_form_submit'; //Additional submit handler to save Badge Details to $flag object
+	}
+}
+
+/**
+ * Implements hook_flag_options_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add additional Band Details to Flag settings options
+ * If this is not included, then the values are not stored in 'options' column in 'flag' table
+ */
+function elx_utility_flag_options_alter(&$options, $flag)
+{
+	$options['badge_description'] = '';
+	return $options;
+}
+
+/**
+ * User defined submit handler function to save Badge Details to $flag object.
+ * Included by SUPRIYA RAJGOPAL on 3Aug16
+ */
+function _elx_utility_form_submit($form, &$form_state)
+{
+	$values = $form_state['values'];
+	$flag = $form['#flag'];
+	$flag->badge_description = (isset($values['badge_description']['value']) && $values['badge_description']['value']!='')?$values['badge_description']['value']:'';
+	$flag->save();
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function elx_utility_views_api()
+{
+  return array(
+    'api' => 3.0,
+    'path' => drupal_get_path('module', 'elx_utility') . '/views',
+  );
 }

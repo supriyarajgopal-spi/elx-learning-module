@@ -96,7 +96,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'node',
   );
@@ -116,7 +115,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'dashboard',
   );
@@ -664,7 +662,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'node',
   );
@@ -676,15 +673,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'oauth_common',
-  );
-
-  // Exported permission: 'administer og features'.
-  $permissions['administer og features'] = array(
-    'name' => 'administer og features',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'og_features',
   );
 
   // Exported permission: 'administer page manager'.
@@ -914,7 +902,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'node',
   );
@@ -1852,15 +1839,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'edit all group features'.
-  $permissions['edit all group features'] = array(
-    'name' => 'edit all group features',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'og_features',
-  );
-
   // Exported permission: 'edit any audio files'.
   $permissions['edit any audio files'] = array(
     'name' => 'edit any audio files',
@@ -2285,15 +2263,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own group features'.
-  $permissions['edit own group features'] = array(
-    'name' => 'edit own group features',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'og_features',
   );
 
   // Exported permission: 'edit own guest_accounts content'.

@@ -151,11 +151,13 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Product image */
-  $handler->display->display_options['fields']['field_product_image']['id'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
-  $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_product_image']['settings'] = array(
+  $handler->display->display_options['fields']['field_product_image_1']['id'] = 'field_product_image_1';
+  $handler->display->display_options['fields']['field_product_image_1']['table'] = 'field_data_field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['field'] = 'field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_product_image_1']['settings'] = array(
     'image_style' => 'medium',
     'image_link' => 'content',
   );
@@ -171,7 +173,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'homepage_browseproductlibrarysort:block';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'homepage_browseproductlibrarysort:page';
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -216,7 +218,6 @@ function elx_home_page_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('SEE MORE'),
-    t('Product image'),
     t('Page'),
     t('Block'),
   );

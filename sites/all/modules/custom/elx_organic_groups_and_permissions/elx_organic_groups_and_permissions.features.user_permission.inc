@@ -486,16 +486,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'deploy',
   );
 
-  // Exported permission: 'administer entity translation'.
-  $permissions['administer entity translation'] = array(
-    'name' => 'administer entity translation',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
@@ -630,33 +620,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'mandrill',
-  );
-
-  // Exported permission: 'administer mean'.
-  $permissions['administer mean'] = array(
-    'name' => 'administer mean',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'mean',
-  );
-
-  // Exported permission: 'administer mean packets'.
-  $permissions['administer mean packets'] = array(
-    'name' => 'administer mean packets',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'mean',
-  );
-
-  // Exported permission: 'administer mean shadow'.
-  $permissions['administer mean shadow'] = array(
-    'name' => 'administer mean shadow',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'mean_shadow',
   );
 
   // Exported permission: 'administer media browser'.
@@ -1031,13 +994,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create badge_manifest content'.
-  $permissions['create badge_manifest content'] = array(
-    'name' => 'create badge_manifest content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create content_object content'.
   $permissions['create content_object content'] = array(
     'name' => 'create content_object content',
@@ -1202,13 +1158,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create object_manifest content'.
-  $permissions['create object_manifest content'] = array(
-    'name' => 'create object_manifest content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create panel content'.
   $permissions['create panel content'] = array(
     'name' => 'create panel content',
@@ -1309,13 +1258,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete any badge content'.
   $permissions['delete any badge content'] = array(
     'name' => 'delete any badge content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any badge_manifest content'.
-  $permissions['delete any badge_manifest content'] = array(
-    'name' => 'delete any badge_manifest content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -1440,15 +1382,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any object_manifest content'.
-  $permissions['delete any object_manifest content'] = array(
-    'name' => 'delete any object_manifest content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any panel content'.
   $permissions['delete any panel content'] = array(
     'name' => 'delete any panel content',
@@ -1549,13 +1482,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own badge content'.
   $permissions['delete own badge content'] = array(
     'name' => 'delete own badge content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own badge_manifest content'.
-  $permissions['delete own badge_manifest content'] = array(
-    'name' => 'delete own badge_manifest content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -1677,13 +1603,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own object_manifest content'.
-  $permissions['delete own object_manifest content'] = array(
-    'name' => 'delete own object_manifest content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1958,13 +1877,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any badge_manifest content'.
-  $permissions['edit any badge_manifest content'] = array(
-    'name' => 'edit any badge_manifest content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any content_object content'.
   $permissions['edit any content_object content'] = array(
     'name' => 'edit any content_object content',
@@ -2082,13 +1994,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any object_manifest content'.
-  $permissions['edit any object_manifest content'] = array(
-    'name' => 'edit any object_manifest content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -2246,13 +2151,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own badge content'.
   $permissions['edit own badge content'] = array(
     'name' => 'edit own badge content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own badge_manifest content'.
-  $permissions['edit own badge_manifest content'] = array(
-    'name' => 'edit own badge_manifest content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -2445,13 +2343,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own object_manifest content'.
-  $permissions['edit own object_manifest content'] = array(
-    'name' => 'edit own object_manifest content',
-    'roles' => array(),
     'module' => 'node',
   );
 
@@ -2873,16 +2764,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'feeds_tamper',
   );
 
-  // Exported permission: 'toggle field translatability'.
-  $permissions['toggle field translatability'] = array(
-    'name' => 'toggle field translatability',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: 'translate admin strings'.
   $permissions['translate admin strings'] = array(
     'name' => 'translate admin strings',
@@ -2890,16 +2771,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'i18n_string',
-  );
-
-  // Exported permission: 'translate any entity'.
-  $permissions['translate any entity'] = array(
-    'name' => 'translate any entity',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-    ),
-    'module' => 'entity_translation',
   );
 
   // Exported permission: 'translate content'.
@@ -2920,16 +2791,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'locale',
-  );
-
-  // Exported permission: 'translate node entities'.
-  $permissions['translate node entities'] = array(
-    'name' => 'translate node entities',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-    ),
-    'module' => 'entity_translation',
   );
 
   // Exported permission: 'translate user-defined strings'.

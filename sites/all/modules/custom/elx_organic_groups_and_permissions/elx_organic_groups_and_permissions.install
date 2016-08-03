@@ -1,6 +1,6 @@
 <?php
 
-function elx_organic_groups_and_permissions_update_1() {
+function elx_organic_groups_and_permissions_update_7000() {
 	$test_user_array = array (
 		"SYSTEM ADMIN" => array(
 			  'name' => 'MC System Admin',

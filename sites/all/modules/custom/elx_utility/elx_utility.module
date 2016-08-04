@@ -202,13 +202,17 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
 	ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
   }
   
-  //Load the flag object
-  $flag = flag_load($flag_name);
+  $flag = flag_load($flag_name); //Load the flag object
   
-  $output = 'Title: ' .$flag->title. '<br />Description: ' .$flag->badge_description;
+  //Form the modal content
+  $rendered_title = (isset($flag->title) && $flag->title != '')?'Title: ' .$flag->title. '<br />':'';
+  $rendered_description = (isset($flag->badge_description) && $flag->badge_description != '')?'Description: ' .$flag->badge_description. '<br />':'';
+  $image = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
+  $rendered_img = ($image)?'Image: '.render(theme_image_style(array('style_name' => 'thumbnail','path' => $image->uri))):'';
+
+  $output = $rendered_title.$rendered_description.$rendered_img;
   
-  //Render content in 'Modal' view mode
-  return ctools_modal_render($flag->title,$output);
+  return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
 }
 
 /**
@@ -237,6 +241,14 @@ function elx_utility_form_alter(&$form, &$form_state, $form_id)
 			'#rows' => 2,
 		);
 		
+		//Borrowed from https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7.x#managed_file
+		$form['badge_details']['badge_image'] = array(
+		  '#title' => t('Badge Image'),
+		  '#type' => 'managed_file',
+		  '#default_value' => (!empty($flag->badge_image))?$flag->badge_image:0,
+		  '#upload_location' => 'public://badge_flag_images/', //Created if not already exists
+		);
+		
 		$form['#submit'][] = '_elx_utility_form_submit'; //Additional submit handler to save Badge Details to $flag object
 	}
 }
@@ -249,6 +261,7 @@ function elx_utility_form_alter(&$form, &$form_state, $form_id)
 function elx_utility_flag_options_alter(&$options, $flag)
 {
 	$options['badge_description'] = '';
+	$options['badge_image'] = '';
 	return $options;
 }
 
@@ -260,7 +273,39 @@ function _elx_utility_form_submit($form, &$form_state)
 {
 	$values = $form_state['values'];
 	$flag = $form['#flag'];
+	
 	$flag->badge_description = (isset($values['badge_description']['value']) && $values['badge_description']['value']!='')?$values['badge_description']['value']:'';
+	
+	/** Save the badge image when Upload is clicked & remove when Remove button is clicked.
+	 * Borrowed from http://drupal.stackexchange.com/questions/58317/how-to-hook-into-file-upload-and-remove-button
+	 */
+	if($values['badge_image'] != 0) //If a file is uploaded, $form_state['values']['badge_image'] will hold a temporary file ID
+	{
+		//The file's status is set to 0(temporary).To ensure its not removed after 6 hours via cron,change its status to 1(permanent) & save image fid
+		$file = file_load($values['badge_image']);
+		$file->status = FILE_STATUS_PERMANENT;
+		file_save($file);
+
+		file_usage_add($file,'elx_utility','flag',$flag->fid); //Record that this module is using this file
+		variable_set('badge_flag_image_fid',$file->fid); //If variable_get/set() is not used, then it won't be possible to actually remove the file from server
+		$flag->badge_image = $file->fid;
+	}
+	elseif($values['badge_image'] == 0) //else if the Remove button is clicked,remove the module's reference to the uploaded file & remove the file
+	{
+		//drupal_set_message('<pre>'.print_r($flag->badge_image,TRUE).'</pre>');
+		//$file = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
+		$fid = variable_get('badge_flag_image_fid', FALSE);
+		$file = $fid?file_load($fid):FALSE;
+		if($file)
+		{
+		  file_usage_delete($file,'elx_utility','flag',$flag->fid); //Record that this module no longer uses this file 
+		  file_delete($file); //If no other module uses this file, delete it; else cancel the delete operation (handled by this function itself)
+		}
+		//Unset relevant variables
+		variable_set('badge_flag_image_fid', FALSE);
+		unset($flag->badge_image);
+	}
+	
 	$flag->save();
 }
 

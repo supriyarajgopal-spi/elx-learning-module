@@ -23,9 +23,18 @@ function elx_utility_views_data() {
     'title' => t('Flag Options'),
     'help' => t('Displays Flag settings.'),
     'field' => array(
-      'handler' => 'views_handler_field_serialized', //Custom field handler to display Badge Description
+      'handler' => 'views_handler_field_serialized',
     ),
   );
+  
+  /* //Expose Badge Image field to Views by exposing the entire 'options' serialized column in 'flag' table
+  $data['flag']['options'] = array(
+    'title' => t('Flag Badge Image'),
+    'help' => t('Displays Badge Image associated with a flag.'),
+    'field' => array(
+      'handler' => 'elx_utility_handler_field_badge_image', //Custom field handler to display Badge Image
+    ),
+  ); */
   
   /*Inform Views that the 'fid' column of 'flagging' table is the foreign key of 'fid' in 'flag' table so that Flag Options field can be inserted in Badge Views*/
   $data['flag']['table']['join'] = array(
@@ -37,3 +46,19 @@ function elx_utility_views_data() {
 
   return $data;
 }
+
+/**
+ * Implements hook_views_handlers().
+ */
+/* function elx_utility_views_handlers() {
+  return array(
+    'info' => array(
+      'path' => drupal_get_path('module', 'elx_utility').'/views',
+    ),
+    'handlers' => array(
+      'elx_utility_handler_field_badge_image' => array(
+        'parent' => 'views_handler_field',
+      ),
+    ),
+  );
+} */

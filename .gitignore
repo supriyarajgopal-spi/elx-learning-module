@@ -4,8 +4,6 @@
 sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
+sites/*/backups
 sites/*/files
 sites/*/private
-
-meanio
-/nbproject/private/

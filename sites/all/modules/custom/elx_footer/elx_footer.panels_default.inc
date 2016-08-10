@@ -36,7 +36,7 @@ function elx_footer_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-baa54401-53fc-4052-b03f-911a2687c686';
+    $pane->pid = 'new-dc34eed6-66aa-4b43-b644-84afcb83766f';
     $pane->panel = 'left';
     $pane->type = 'block';
     $pane->subtype = 'block-3';
@@ -44,7 +44,7 @@ function elx_footer_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '<none>',
+      'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -55,9 +55,9 @@ function elx_footer_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'baa54401-53fc-4052-b03f-911a2687c686';
-    $display->content['new-baa54401-53fc-4052-b03f-911a2687c686'] = $pane;
-    $display->panels['left'][0] = 'new-baa54401-53fc-4052-b03f-911a2687c686';
+    $pane->uuid = 'dc34eed6-66aa-4b43-b644-84afcb83766f';
+    $display->content['new-dc34eed6-66aa-4b43-b644-84afcb83766f'] = $pane;
+    $display->panels['left'][0] = 'new-dc34eed6-66aa-4b43-b644-84afcb83766f';
     $pane = new stdClass();
     $pane->pid = 'new-15c12673-4fda-447c-8aa9-8493d1ea351a';
     $pane->panel = 'right';
@@ -82,7 +82,7 @@ function elx_footer_default_panels_mini() {
     $display->content['new-15c12673-4fda-447c-8aa9-8493d1ea351a'] = $pane;
     $display->panels['right'][0] = 'new-15c12673-4fda-447c-8aa9-8493d1ea351a';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-baa54401-53fc-4052-b03f-911a2687c686';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['page_bottom'] = $mini;
 

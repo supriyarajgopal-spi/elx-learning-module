@@ -9,7 +9,8 @@ drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 require '/usr/local/Cellar/composer/1.1.2/libexec/vendor/autoload.php';
 
-$mongo = new MongoDB\Client();
+$mongodb = 'mongodb://myelx.cloudapp.net:27017/mean-prod';
+$mongo = new MongoDB\Client($mongodb);
 $collection = $mongo->selectCollection('mean-prod', 'user');
 $collection = $collection->find();
 foreach($collection as $obj) {

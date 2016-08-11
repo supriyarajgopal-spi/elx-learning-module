@@ -33,23 +33,17 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:create content_object content'
   $permissions['node:market:create content_object content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:delete any content_object content'
   $permissions['node:market:delete any content_object content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:delete own content_object content'
   $permissions['node:market:delete own content_object content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:manage members'
@@ -75,9 +69,7 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:subscribe'
   $permissions['node:market:subscribe'] = array(
-    'roles' => array(
-      'non-member' => 'non-member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:subscribe without approval'
@@ -87,16 +79,12 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:unsubscribe'
   $permissions['node:market:unsubscribe'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:update any content_object content'
   $permissions['node:market:update any content_object content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   // Exported og permission: 'node:market:update group'
@@ -108,9 +96,7 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:update own content_object content'
   $permissions['node:market:update own content_object content'] = array(
-    'roles' => array(
-      'member' => 'member',
-    ),
+    'roles' => array(),
   );
 
   return $permissions;

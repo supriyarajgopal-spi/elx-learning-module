@@ -41,15 +41,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: 'access apc statistics'.
-  $permissions['access apc statistics'] = array(
-    'name' => 'access apc statistics',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'apc',
-  );
-
   // Exported permission: 'access backup and migrate'.
   $permissions['access backup and migrate'] = array(
     'name' => 'access backup and migrate',
@@ -126,15 +117,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'devel',
-  );
-
-  // Exported permission: 'access managed aggregator ui'.
-  $permissions['access managed aggregator ui'] = array(
-    'name' => 'access managed aggregator ui',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'deploy_managed_ui',
   );
 
   // Exported permission: 'access media browser'.
@@ -473,15 +455,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'conditional_fields',
-  );
-
-  // Exported permission: 'administer deployments'.
-  $permissions['administer deployments'] = array(
-    'name' => 'administer deployments',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'deploy',
   );
 
   // Exported permission: 'administer features'.

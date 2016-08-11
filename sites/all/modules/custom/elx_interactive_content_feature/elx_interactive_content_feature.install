@@ -11,12 +11,7 @@
 function elx_interactive_content_feature_enable() {
   $temporary_file_path = 'public://' . variable_get('h5p_default_path', 'h5p') . '/temp/' . uniqid('h5p-');
   file_prepare_directory($temporary_file_path, FILE_CREATE_DIRECTORY);
-  //Changed the file URL by SUPRIYA RAJGOPAL on 28Jul16 to download the latest H5P release
-  //!Note: This file path is tentative and will keep changing after every H5P release
-  /*------------------------------------------------------------------------------------*/
-  //if ($file = system_retrieve_file('https://h5p.org/sites/default/files/official-h5p-release-20160623.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
-  if ($file = system_retrieve_file('https://h5p.org/sites/default/files/official-h5p-release-20160719.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
-  /*------------------------------------------------------------------------------------*/
+  if ($file = system_retrieve_file('http://h5p.org/sites/default/files/official-h5p-release-20160719.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
     $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
     $_SESSION['h5p_upload_folder'] = drupal_realpath($temporary_file_path);
     $validator = _h5p_get_instance('validator');
@@ -26,11 +21,7 @@ function elx_interactive_content_feature_enable() {
     }
     unset($_SESSION['h5p_upload'], $_SESSION['h5p_upload_folder']);
   }
-  
-  //Included by SUPRIYA RAJGOPAL on 28Jul16 to automatically install 'Click to Reveal' library whenever this feature module is installed
-  //!Note: This file path is tentative and will most likely change after review from H5P team. Borrowed from https://h5p.org/node/19911
-  if ($file = system_retrieve_file('https://h5p.org/sites/default/files/H5P.ClickToReveal-1.0_0.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
-  /*------------------------------------------------------------------------------------*/
+  if ($file = system_retrieve_file('http://github.com/MasterDoublePrime/H5P.ClickToReveal/archive/v1.2.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
     $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
     $_SESSION['h5p_upload_folder'] = drupal_realpath($temporary_file_path);
     $validator = _h5p_get_instance('validator');

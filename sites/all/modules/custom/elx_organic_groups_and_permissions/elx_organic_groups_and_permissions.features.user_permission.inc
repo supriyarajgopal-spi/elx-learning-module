@@ -963,13 +963,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create diary content'.
-  $permissions['create diary content'] = array(
-    'name' => 'create diary content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create disclaimer content'.
   $permissions['create disclaimer content'] = array(
     'name' => 'create disclaimer content',
@@ -982,15 +975,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'create drag_match content'.
   $permissions['create drag_match content'] = array(
     'name' => 'create drag_match content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create drag_priorities content'.
-  $permissions['create drag_priorities content'] = array(
-    'name' => 'create drag_priorities content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -1179,15 +1163,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create trivia content'.
-  $permissions['create trivia content'] = array(
-    'name' => 'create trivia content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -1231,13 +1206,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any diary content'.
-  $permissions['delete any diary content'] = array(
-    'name' => 'delete any diary content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any disclaimer content'.
   $permissions['delete any disclaimer content'] = array(
     'name' => 'delete any disclaimer content',
@@ -1259,15 +1227,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete any drag_match content'.
   $permissions['delete any drag_match content'] = array(
     'name' => 'delete any drag_match content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any drag_priorities content'.
-  $permissions['delete any drag_priorities content'] = array(
-    'name' => 'delete any drag_priorities content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -1403,15 +1362,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any trivia content'.
-  $permissions['delete any trivia content'] = array(
-    'name' => 'delete any trivia content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any video files'.
   $permissions['delete any video files'] = array(
     'name' => 'delete any video files',
@@ -1455,13 +1405,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own diary content'.
-  $permissions['delete own diary content'] = array(
-    'name' => 'delete own diary content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete own disclaimer content'.
   $permissions['delete own disclaimer content'] = array(
     'name' => 'delete own disclaimer content',
@@ -1483,15 +1426,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own drag_match content'.
   $permissions['delete own drag_match content'] = array(
     'name' => 'delete own drag_match content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own drag_priorities content'.
-  $permissions['delete own drag_priorities content'] = array(
-    'name' => 'delete own drag_priorities content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -1621,15 +1555,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own tools content'.
   $permissions['delete own tools content'] = array(
     'name' => 'delete own tools content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own trivia content'.
-  $permissions['delete own trivia content'] = array(
-    'name' => 'delete own trivia content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -1837,13 +1762,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any diary content'.
-  $permissions['edit any diary content'] = array(
-    'name' => 'edit any diary content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any disclaimer content'.
   $permissions['edit any disclaimer content'] = array(
     'name' => 'edit any disclaimer content',
@@ -1865,15 +1783,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit any drag_match content'.
   $permissions['edit any drag_match content'] = array(
     'name' => 'edit any drag_match content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any drag_priorities content'.
-  $permissions['edit any drag_priorities content'] = array(
-    'name' => 'edit any drag_priorities content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -2009,15 +1918,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any trivia content'.
-  $permissions['edit any trivia content'] = array(
-    'name' => 'edit any trivia content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any video files'.
   $permissions['edit any video files'] = array(
     'name' => 'edit any video files',
@@ -2124,13 +2024,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own diary content'.
-  $permissions['edit own diary content'] = array(
-    'name' => 'edit own diary content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit own disclaimer content'.
   $permissions['edit own disclaimer content'] = array(
     'name' => 'edit own disclaimer content',
@@ -2152,15 +2045,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own drag_match content'.
   $permissions['edit own drag_match content'] = array(
     'name' => 'edit own drag_match content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own drag_priorities content'.
-  $permissions['edit own drag_priorities content'] = array(
-    'name' => 'edit own drag_priorities content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
@@ -2343,15 +2227,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own tools content'.
   $permissions['edit own tools content'] = array(
     'name' => 'edit own tools content',
-    'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own trivia content'.
-  $permissions['edit own trivia content'] = array(
-    'name' => 'edit own trivia content',
     'roles' => array(
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),

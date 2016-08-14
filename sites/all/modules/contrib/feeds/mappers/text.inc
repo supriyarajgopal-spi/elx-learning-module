@@ -6,13 +6,12 @@
  */
 
 /**
- * Implements hook_feeds_processor_targets_alter().
- *
- * @see FeedsProcessor::getMappingTargets()
+ * Implements hook_feeds_processor_targets().
  */
-function text_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+function text_feeds_processor_targets($entity_type, $bundle_name) {
+  $targets = array();
+
   $text_types = array(
-    'list_text',
     'text',
     'text_long',
     'text_with_summary',
@@ -38,16 +37,20 @@ function text_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_nam
     }
 
     if (!empty($instance['settings']['text_processing'])) {
-      $targets[$name]['summary_callback'] = 'text_feeds_summary_callback';
-      $targets[$name]['form_callback'] = 'text_feeds_form_callback';
+      $targets[$name]['summary_callbacks'] = array('text_feeds_summary_callback');
+      $targets[$name]['form_callbacks'] = array('text_feeds_form_callback');
     }
   }
+
+  return $targets;
 }
 
 /**
  * Callback for mapping text fields.
  */
-function text_feeds_set_target(FeedsSource $source, $entity, $target, array $values, array $mapping = array()) {
+function text_feeds_set_target(FeedsSource $source, $entity, $target, array $values, array $mapping) {
+  $language = $mapping['language'];
+
   list($field_name, $column) = explode(':', $target . ':value');
 
   if ($column === 'value' && isset($source->importer->processor->config['input_format'])) {
@@ -58,7 +61,7 @@ function text_feeds_set_target(FeedsSource $source, $entity, $target, array $val
     );
   }
 
-  $field = isset($entity->$field_name) ? $entity->$field_name : array('und' => array());
+  $field = isset($entity->$field_name) ? $entity->$field_name : array($language => array());
 
   // Iterate over all values.
   $delta = 0;
@@ -70,10 +73,10 @@ function text_feeds_set_target(FeedsSource $source, $entity, $target, array $val
 
     if (is_scalar($value) && strlen($value)) {
 
-      $field['und'][$delta][$column] = (string) $value;
+      $field[$language][$delta][$column] = (string) $value;
 
       if (isset($mapping['format'])) {
-        $field['und'][$delta]['format'] = $mapping['format'];
+        $field[$language][$delta]['format'] = $mapping['format'];
       }
     }
 
@@ -88,7 +91,7 @@ function text_feeds_set_target(FeedsSource $source, $entity, $target, array $val
  *
  * Displays which text format will be used for the text field target.
  *
- * @see text_feeds_processor_targets_alter()
+ * @see text_feeds_processor_targets()
  * @see text_feeds_form_callback()
  */
 function text_feeds_summary_callback(array $mapping, $target, array $form, array $form_state) {
@@ -110,7 +113,7 @@ function text_feeds_summary_callback(array $mapping, $target, array $form, array
  *
  * Allows to select a text format for the text field target.
  *
- * @see text_feeds_processor_targets_alter()
+ * @see text_feeds_processor_targets()
  * @see text_feeds_summary_callback()
  */
 function text_feeds_form_callback(array $mapping, $target, array $form, array $form_state) {

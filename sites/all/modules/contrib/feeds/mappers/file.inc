@@ -7,11 +7,11 @@
  */
 
 /**
- * Implements hook_feeds_processor_targets_alter().
- *
- * @see FeedsNodeProcessor::getMappingTargets()
+ * Implements hook_feeds_processor_targets().
  */
-function file_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+function file_feeds_processor_targets($entity_type, $bundle_name) {
+  $targets = array();
+
   foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
     $info = field_info_field($name);
 
@@ -22,6 +22,11 @@ function file_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_nam
         'description' => t('The URI of the @label field.', array('@label' => $instance['label'])),
         'real_target' => $name,
       );
+
+      // Keep the old target name for backwards compatibility, but hide it from
+      // the UI.
+      $targets[$name] = $targets[$name . ':uri'];
+      $targets[$name]['deprecated'] = TRUE;
 
       if ($info['type'] == 'image') {
         $targets[$name . ':alt'] = array(
@@ -47,16 +52,16 @@ function file_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_nam
       }
     }
   }
+
+  return $targets;
 }
 
 /**
- * Callback for mapping. Here is where the actual mapping happens.
- *
- * When the callback is invoked, $target contains the name of the field the
- * user has decided to map to and $value contains the value of the feed item
- * element the user has picked as a source.
+ * Callback for mapping file fields.
  */
-function file_feeds_set_target($source, $entity, $target, array $values) {
+function file_feeds_set_target(FeedsSource $source, $entity, $target, array $values, array $mapping) {
+  $language = $mapping['language'];
+
   // Add default of uri for backwards compatibility.
   list($field_name, $sub_field) = explode(':', $target . ':uri');
   $info = field_info_field($field_name);
@@ -76,9 +81,14 @@ function file_feeds_set_target($source, $entity, $target, array $values) {
       }
     }
 
-    $entity_type = $source->importer->processor->entityType();
-    $bundle = $source->importer->processor->bundle();
-
+    if ($entity instanceof Entity) {
+      $entity_type = $entity->entityType();
+      $bundle = $entity->bundle();
+    }
+    else {
+      $entity_type = $source->importer->processor->entityType();
+      $bundle = $source->importer->processor->bundle();
+    }
     $instance_info = field_info_instance($entity_type, $field_name, $bundle);
 
     // Determine file destination.
@@ -92,34 +102,34 @@ function file_feeds_set_target($source, $entity, $target, array $values) {
   }
 
   // Populate entity.
-  $field = isset($entity->$field_name) ? $entity->$field_name : array(LANGUAGE_NONE => array());
+  $field = isset($entity->$field_name) ? $entity->$field_name : array($language => array());
   $delta = 0;
   foreach ($values as $v) {
     if ($info['cardinality'] == $delta) {
       break;
     }
 
-    if (!isset($field[LANGUAGE_NONE][$delta])) {
-      $field[LANGUAGE_NONE][$delta] = array();
+    if (!isset($field[$language][$delta])) {
+      $field[$language][$delta] = array();
     }
 
     switch ($sub_field) {
       case 'alt':
       case 'title':
       case 'description':
-        $field[LANGUAGE_NONE][$delta][$sub_field] = $v;
+        $field[$language][$delta][$sub_field] = $v;
         break;
 
       case 'uri':
         if ($v) {
           try {
-            $file = $v->getFile($destination);
-            $field[LANGUAGE_NONE][$delta] += (array) $file;
+            $v->setAllowedExtensions($instance_info['settings']['file_extensions']);
+            $field[$language][$delta] += (array) $v->getFile($destination);
             // @todo: Figure out how to properly populate this field.
-            $field[LANGUAGE_NONE][$delta]['display'] = 1;
+            $field[$language][$delta]['display'] = 1;
           }
           catch (Exception $e) {
-            watchdog_exception('Feeds', $e, nl2br(check_plain($e)));
+            watchdog('feeds', check_plain($e->getMessage()));
           }
         }
         break;

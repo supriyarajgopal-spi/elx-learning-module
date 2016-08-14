@@ -81,7 +81,7 @@ function services_views_services_resources() {
       'filters' => array(
         'name' => 'filters',
         'type' => 'array',
-        'description' => 'A list of filters to pass to the view.  These are defined by the exposed filters on your view.  Example call: <code>/views/your_view?filters[nid]=12345</code>',
+        'description' => 'A list of filters to pass to the view.  These are defined by the exposed filters on your view.  Example call: <code>/views/your_view?nid=12345</code>',
         'source' => array('param' => 'filters'),
         'optional' => TRUE,
         'default value' => array(),
@@ -182,6 +182,10 @@ function services_views_views_plugins() {
 function services_views_services_request_preprocess_alter($controller, &$args, $options) {
   if (isset($controller['view info'])) {
     array_unshift($args, $controller['view info']);
+    $args[0]['args'] = array();
+    if (!empty($_GET['args'])) {
+      $args[0]['args'] = $_GET['args'];
+    }
   }
 }
 

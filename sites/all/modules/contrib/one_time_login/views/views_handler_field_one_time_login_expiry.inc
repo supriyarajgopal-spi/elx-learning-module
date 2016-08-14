@@ -21,7 +21,7 @@ class views_handler_field_one_time_login_expiry extends views_handler_field_date
       return parent::get_value($values, $field);
     }
     if ($this->get_value($values, 'login')) {
-      return REQUEST_TIME + 86400;
+      return REQUEST_TIME + variable_get('user_password_reset_timeout', 86400);
     }
   }
 }

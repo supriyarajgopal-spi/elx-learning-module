@@ -7,8 +7,8 @@ files[] = drupal_apc_cache.inc
 files[] = tests/apc.test
 
 ; Information added by Drupal.org packaging script on 2014-11-18
-version = "7.x-1.0-beta6+0-dev"
+version = "7.x-1.0-beta6"
 core = "7.x"
 project = "apc"
-datestamp = "1416309183"
+datestamp = "1416309481"
 

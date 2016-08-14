@@ -119,6 +119,18 @@ function _user_resource_definition() {
               'default value' => variable_get('services_user_index_page_size', 20),
               'source' => array('param' => 'pagesize'),
             ),
+            array(
+              'name' => 'options',
+              'optional' => TRUE,
+              'type' => 'array',
+              'description' => 'Additional query options.',
+              'default value' => array(
+                'orderby' => array(
+                  'created' => 'DESC'
+                )
+              ),
+              'source' => array('param' => 'options'),
+            ),
           ),
           'access arguments' => array('access user profiles'),
           'access arguments append' => FALSE,
@@ -154,11 +166,7 @@ function _user_resource_definition() {
           'access callback' => 'services_access_menu',
         ),
         'token' => array(
-          'file' => array(
-            'type' => 'inc',
-            'module' => 'services',
-            'name' => 'user_resource',
-          ),
+          'file' => array('type' => 'inc', 'module' => 'services', 'name' => 'resources/user_resource'),
           'callback' => '_user_resource_get_token',
           'access callback' => 'services_access_menu',
           'help' => t('Returns the CSRF token.'),
@@ -173,6 +181,35 @@ function _user_resource_definition() {
               'description' => 'A valid user name or e-mail address',
               'source' => array('data' => 'name'),
               'optional' => FALSE,
+            ),
+          ),
+          'access callback' => 'services_access_menu',
+          'file' => array('type' => 'inc', 'module' => 'services', 'name' => 'resources/user_resource'),
+        ),
+        'user_pass_reset' => array(
+          'help' => 'Process one time login link and return the pass_reset_{uid} token to be used on user update operation',
+          'callback' => '_user_resource_user_pass_reset_login',
+          'args' => array(
+            array(
+              'name' => 'uid',
+              'optional' => FALSE,
+              'type' => 'int',
+              'description' => 'The uid of the user in the operation.',
+              'source' => array('data' => 'uid'),
+            ),
+            array(
+              'name' => 'timestamp',
+              'optional' => FALSE,
+              'type' => 'int',
+              'description' => 'The timestamp value from the reset password link.',
+              'source' => array('data' => 'timestamp'),
+            ),
+            array(
+              'name' => 'hashed_pass',
+              'optional' => FALSE,
+              'type' => 'string',
+              'description' => 'The hashed pass value from the reset password link.',
+              'source' => array('data' => 'hashed_pass'),
             ),
           ),
           'access callback' => 'services_access_menu',
@@ -257,6 +294,9 @@ function _user_resource_retrieve($uid) {
 
   services_remove_user_data($account);
 
+  //Lets check field_permissions
+  $account = services_field_permissions_clean('view', 'user', $account);
+
   // Everything went right.
   return $account;
 }
@@ -321,8 +361,9 @@ function _user_resource_create($account) {
   // Set the form state op.
   $form_state['values']['op'] = variable_get('services_user_create_button_resource_create', t('Create new account'));
 
-  // execute the register form
+  // Execute the register form.
   $form_state['programmed_bypass_access_check'] = FALSE;
+
   drupal_form_submit('user_register_form', $form_state);
   // find and store the new user into the form_state
   if(isset($form_state['values']['uid'])) {
@@ -375,6 +416,28 @@ function _user_resource_update($uid, $account) {
   if (isset($account['category'])) {
     $category = $account['category'];
     unset($account['category']);
+  }
+
+  // Prepare values for the user profile image.
+  if (array_key_exists('picture_upload', $account)) {
+    if (is_array($account['picture_upload'])) {
+      // Check if it's an array and convert to object.
+      $account['picture_upload'] = (object) $account['picture_upload'];
+    }
+    elseif (is_int($account['picture_upload'])) {
+      // Check if it's an integer and get the file object.
+      $file_validate = file_validate_is_image($file = file_load($account['picture_upload']));
+      if (empty($file_validate)) {
+        $account['picture_upload'] = $file;
+      }
+    }
+    elseif (is_string($account['picture_upload'])) {
+      // Check if it's an string and get the file object.
+      $file_validate = file_validate_is_image($file = file_load((int) $account['picture_upload']));
+      if (empty($file_validate)) {
+        $account['picture_upload'] = $file;
+      }
+    }
   }
 
   // Drop any passed in values into the $account var. Anything
@@ -501,24 +564,10 @@ function _user_resource_cancel($uid) {
   // This defult setting is defined under "admin/config/people/accounts".
   $default_method = variable_get('user_cancel_method', 'user_cancel_block');
 
-  switch ($default_method) {
-    case 'user_cancel_block_unpublish':
-      // Unpublish nodes (current revisions).
-      module_load_include('inc', 'node', 'node.admin');
-      $nodes = db_select('node', 'n')->fields('n', array('nid'))->condition('uid', $account->uid)->execute()->fetchCol();
-      node_mass_update($nodes, array('status' => 0));
-      break;
-
-    case 'user_cancel_reassign':
-      // Anonymize nodes (current revisions).
-      module_load_include('inc', 'node', 'node.admin');
-      $nodes = db_select('node', 'n')->fields('n', array('nid'))->condition('uid', $account->uid)->execute()->fetchCol();
-      node_mass_update($nodes, array('uid' => 0));
-      // Anonymize old revisions.
-      db_update('node_revision')->fields(array('uid' => 0))->condition('uid', $account->uid)->execute();
-      // Clean history.
-      db_delete('history')->condition('uid', $account->uid)->execute();
-      break;
+  // Modules use hook_user_delete() to respond to deletion.
+  if ($default_method != 'user_cancel_delete') {
+    // Allow modules to add further sets to this batch.
+    module_invoke_all('user_cancel', $edit, $account, $default_method);
   }
 
   _user_cancel($edit, $account, $default_method);
@@ -687,6 +736,64 @@ function _user_resource_request_new_password($name) {
   }
 }
 
+function _user_resource_user_pass_reset_login($uid, $timestamp, $hashed_pass) {
+  global $user;
+
+  // When processing the one-time login link, we have to make sure that a user
+  // isn't already logged in.
+  if ($user->uid) {
+    // The existing user is already logged in.
+    if ($user->uid == $uid) {
+      return services_error(t('You are logged in as %user. Please edit your profile to update your password.', array('%user' => $user->name)), 403);
+    }
+    // A different user is already logged in on the computer.
+    else {
+      $reset_link_account = user_load($uid);
+      if (!empty($reset_link_account)) {
+        return services_error(t('Another user (%other_user) is already logged into the site on this computer, but you tried to use a one-time link for user %resetting_user. Please logout and try using the link again.', array('%other_user' => $user->name, '%resetting_user' => $reset_link_account->name)), 405);
+      }
+      else {
+        // Invalid one-time link specifies an unknown user.
+       return services_error(t('The one-time login link you clicked is invalid.'), 406);
+      }
+    }
+  }
+  else {
+    // Time out, in seconds, until login URL expires. Defaults to 24 hours =
+    // 86400 seconds.
+    $timeout = variable_get('user_password_reset_timeout', 86400);
+    $current = REQUEST_TIME;
+    // Some redundant checks for extra security ?
+    $users = user_load_multiple(array($uid), array('status' => '1'));
+    if ($timestamp <= $current && $account = reset($users)) {
+      // No time out for first time login.
+      if ($account->login && $current - $timestamp > $timeout) {
+        return services_error(t('You have tried to use a one-time login link that has expired. Please request a new one.'), 406);
+      }
+      elseif ($account->uid && $timestamp >= $account->login && $timestamp <= $current && $hashed_pass == user_pass_rehash($account->pass, $timestamp, $account->login, $account->uid)) {
+        // Set the new user.
+        $user = $account;
+        // user_login_finalize() also updates the login timestamp of the
+        // user, which invalidates further use of the one-time login link.
+        user_login_finalize();
+        watchdog('user', 'User %name used one-time login link at time %timestamp.', array('%name' => $account->name, '%timestamp' => $timestamp));
+        // Let the user's password be changed without the current password check.
+        $token = drupal_random_key();
+        $_SESSION ['pass_reset_' . $user->uid] = $token;
+        return array('pass_reset_token' => $token, 'message' => t('You have just used your one-time login link. It is no longer necessary to use this link to log in. <strong>Please change your password</strong>.'));
+      }
+      else {
+        return services_error(t('You have tried to use a one-time login link that has either been used or is no longer valid. Please request a new one.'), 406);
+      }
+    }
+    else {
+      // Deny access, no more clues.
+      // Everything will be in the watchdog's URL for the administrator to check.
+      return services_error(t('Access denied.'), 403);
+    }
+  }
+}
+
 /**
  * Send a password reset email for the specified user.
  */
@@ -769,11 +876,10 @@ function _user_resource_resend_welcome_email($uid) {
  *
  * @see _node_resource_index() for more notes
  */
-function _user_resource_index($page, $fields, $parameters, $page_size) {
-  $user_select = db_select('users', 't')
-    ->orderBy('created', 'DESC');
+function _user_resource_index($page, $fields, $parameters, $page_size, $options = array()) {
+  $user_select = db_select('users', 't');
 
-  services_resource_build_index_query($user_select, $page, $fields, $parameters, $page_size, 'user');
+  services_resource_build_index_query($user_select, $page, $fields, $parameters, $page_size, 'user', $options);
 
   $results = services_resource_execute_index_query($user_select);
 

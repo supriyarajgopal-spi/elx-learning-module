@@ -110,11 +110,11 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
   if (!empty($view_info)) {
     $view_name = $view_info['view_name'];
     $display_id = $view_info['display_id'];
-
-    $args = array();
+    $args = $view_info['args'];
 
     $view = views_get_view($view_name);
     $view->set_arguments($args);
+    $view->execute_display($display_id, $args);
   }
 
   // Avoid translation of the field labels.
@@ -127,10 +127,13 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
   foreach ($view->result as $index => $row) {
     foreach ($view->field as $field_key => $field) {
       $f_key = 'field_' . $field_key;
+      $entity_property = FALSE;
+      if (!isset($row->$f_key)) {
+        $f_key = $field->field_alias;
+        $entity_property = TRUE;
+      }
       if (isset($row->$f_key)) {
-
         $target_key = $field_key;
-        $format = ($field->options['type'] == 'services') ? 'raw' : 'rendered';
 
         // Skip this field?
         if (isset($field->options['exclude']) && $field->options['exclude'] == TRUE) {
@@ -141,8 +144,17 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
           $target_key = $field->options['label'];
         }
 
+        // Move key if we have an entity property and the target_key was changed via label
+        if ($entity_property) {
+          unset($output[$index]->$f_key);
+          $output[$index]->$target_key = $field->theme($row); // @todo: Do not render twice; use view->execute_display and consolidate functions
+          continue;
+        }
+
+        // Create helper variables
         $output[$index]->$target_key = array();
         $obj = &$output[$index]->$target_key;
+        $format = ($field->options['type'] == 'services') ? 'raw' : 'rendered';
 
         foreach ($row->$f_key as $idx => $res) {
 
@@ -151,12 +163,14 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
 
             // If this is raw formatter.
             if ($format == 'raw') {
-              foreach ($data as $key => $val) {
-                if ($field->options['settings']['skip_safe'] && strpos($key, 'safe_') === 0) {
-                  unset($data[$key]);
-                }
-                if ($field->options['settings']['skip_empty_values'] && empty($val)) {
-                  unset($data[$key]);
+              if (is_array($data)) {
+                foreach ($data as $key => $val) {
+                  if ($field->options['settings']['skip_safe'] && strpos($key, 'safe_') === 0) {
+                    unset($data[$key]);
+                  }
+                  if ($field->options['settings']['skip_empty_values'] && empty($val)) {
+                    unset($data[$key]);
+                  }
                 }
               }
               $obj[$idx] = $data;

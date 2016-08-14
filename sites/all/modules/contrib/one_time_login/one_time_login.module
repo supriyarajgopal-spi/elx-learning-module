@@ -55,7 +55,7 @@ function one_time_login_csv($accounts) {
   drupal_add_http_header('Content-Type', 'text/csv; charset=utf-8');
   drupal_add_http_header('Content-Disposition', 'inline; filename="one_time_login.csv"');
   echo t('UID'), ',', t('Name'), ',', t('Mail'), ',', t('URL'), ',', t('Expiry'), ',', t('Status'), "\r\n";
-  $date = format_date(REQUEST_TIME + 86400, 'custom', DateTime::RFC2822);
+  $date = format_date(REQUEST_TIME + variable_get('user_password_reset_timeout', 86400), 'custom', DateTime::RFC2822);
   $accounts = user_load_multiple($accounts);
   foreach ($accounts as $account) {
     echo $account->uid, ',"', $account->name, '","', $account->mail, '","', user_pass_reset_url($account), '","', ($account->login ? $date : ''), '",', $account->status, "\r\n";

@@ -23,4 +23,4 @@ features[views_view][] = homepage_spotlight
 features[views_view][] = homepage_spotlightsort
 features[views_view][] = homepage_whatsnewtrending
 features[views_view][] = homepage_whatsnewtrendingsort
-mtime = 1470882988
+mtime = 1471012251

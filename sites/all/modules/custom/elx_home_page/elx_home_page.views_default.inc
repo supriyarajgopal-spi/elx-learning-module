@@ -25,7 +25,11 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Explore Learning Levels';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
@@ -50,6 +54,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'medium',
@@ -133,7 +138,11 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Browse the Product Library';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'infinite_scroll';
@@ -156,6 +165,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_product_image_1']['field'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image_1']['label'] = '';
   $handler->display->display_options['fields']['field_product_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_product_image_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_image_1']['settings'] = array(
     'image_style' => 'medium',
@@ -284,6 +294,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['label'] = '';
   $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_image']['settings'] = array(
     'image_style' => 'thumbnail',
@@ -414,6 +425,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'medium',
@@ -509,7 +521,11 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Spotlight';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -530,6 +546,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
     'image_style' => 'medium',
@@ -676,6 +693,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['label'] = '';
   $handler->display->display_options['fields']['field_featured_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
     'image_style' => 'thumbnail',
@@ -777,7 +795,11 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'What\'s New & Trending';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
@@ -802,6 +824,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'medium',
@@ -930,6 +953,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'thumbnail',

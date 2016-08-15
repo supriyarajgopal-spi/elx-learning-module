@@ -1,5 +1,7 @@
 /* LOGIN PAGE*/
-body.front {
+body.not-logged-in.page-user,
+body.page-user-login,
+body.page-user-password {
   background: url('../images/login-bg.png') #030409 no-repeat top center;
 
   .main-menu,
@@ -33,8 +35,8 @@ body.front {
   .layout-3col {
     padding: 0;
   }
-  
-  
+
+
 
   .layout-3col__full {
     width: 350px;

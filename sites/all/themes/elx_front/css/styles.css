@@ -972,43 +972,65 @@ span.field-label {
 }
 
 /* LOGIN PAGE*/
-body.front {
+body.not-logged-in.page-user,
+body.page-user-login,
+body.page-user-password {
   background: url("../images/login-bg.png") #030409 no-repeat top center;
 }
 
-body.front .main-menu,
-body.front .header__site-name,
-body.front .layout-swap__top.layout-3col__full,
-body.front h1 {
+body.not-logged-in.page-user .main-menu,
+body.not-logged-in.page-user .header__site-name,
+body.not-logged-in.page-user .layout-swap__top.layout-3col__full,
+body.not-logged-in.page-user h1,
+body.page-user-login .main-menu,
+body.page-user-login .header__site-name,
+body.page-user-login .layout-swap__top.layout-3col__full,
+body.page-user-login h1,
+body.page-user-password .main-menu,
+body.page-user-password .header__site-name,
+body.page-user-password .layout-swap__top.layout-3col__full,
+body.page-user-password h1 {
   display: none;
 }
 
-body.front .logo {
+body.not-logged-in.page-user .logo,
+body.page-user-login .logo,
+body.page-user-password .logo {
   width: 350px;
   text-align: center;
   padding: 211px 0 0;
   margin: 0 auto;
 }
 
-body.front .logo img {
+body.not-logged-in.page-user .logo img,
+body.page-user-login .logo img,
+body.page-user-password .logo img {
   width: 133px;
 }
 
-body.front .logo-sub {
+body.not-logged-in.page-user .logo-sub,
+body.page-user-login .logo-sub,
+body.page-user-password .logo-sub {
   width: 350px;
   margin: 0 auto;
   text-align: center;
 }
 
-body.front .logo-sub img {
+body.not-logged-in.page-user .logo-sub img,
+body.page-user-login .logo-sub img,
+body.page-user-password .logo-sub img {
   width: 320px;
 }
 
-body.front .layout-3col {
+body.not-logged-in.page-user .layout-3col,
+body.page-user-login .layout-3col,
+body.page-user-password .layout-3col {
   padding: 0;
 }
 
-body.front .layout-3col__full {
+body.not-logged-in.page-user .layout-3col__full,
+body.page-user-login .layout-3col__full,
+body.page-user-password .layout-3col__full {
   width: 350px;
   float: none;
   background-color: #fff;
@@ -1016,7 +1038,9 @@ body.front .layout-3col__full {
   padding: 0;
 }
 
-body.front .layout-3col__full .tabs {
+body.not-logged-in.page-user .layout-3col__full .tabs,
+body.page-user-login .layout-3col__full .tabs,
+body.page-user-password .layout-3col__full .tabs {
   font-family: "optimadisplaylightlight";
   background-image: none;
   background: #e6e9ee;
@@ -1024,31 +1048,43 @@ body.front .layout-3col__full .tabs {
   padding: 0;
 }
 
-body.front .layout-3col__full .tabs .tabs__tab {
+body.not-logged-in.page-user .layout-3col__full .tabs .tabs__tab,
+body.page-user-login .layout-3col__full .tabs .tabs__tab,
+body.page-user-password .layout-3col__full .tabs .tabs__tab {
   border: 0;
   border-radius: 0;
   background: #e6e9ee;
   margin: 0;
 }
 
-body.front .layout-3col__full .tabs .tabs__tab .tabs__tab-link {
+body.not-logged-in.page-user .layout-3col__full .tabs .tabs__tab .tabs__tab-link,
+body.page-user-login .layout-3col__full .tabs .tabs__tab .tabs__tab-link,
+body.page-user-password .layout-3col__full .tabs .tabs__tab .tabs__tab-link {
   font-size: 18px;
   background: none;
   padding: 6px 1.5em;
   letter-spacing: 0;
 }
 
-body.front .layout-3col__full .tabs .tabs__tab.is-active {
+body.not-logged-in.page-user .layout-3col__full .tabs .tabs__tab.is-active,
+body.page-user-login .layout-3col__full .tabs .tabs__tab.is-active,
+body.page-user-password .layout-3col__full .tabs .tabs__tab.is-active {
   background-color: #fff;
 }
 
-body.front .layout-3col__full .elx-form-wrapper {
+body.not-logged-in.page-user .layout-3col__full .elx-form-wrapper,
+body.page-user-login .layout-3col__full .elx-form-wrapper,
+body.page-user-password .layout-3col__full .elx-form-wrapper {
   width: 300px;
   margin: 0 auto;
 }
 
-body.front .layout-3col__full .elx-form-wrapper input#edit-name,
-body.front .layout-3col__full .elx-form-wrapper input#edit-pass {
+body.not-logged-in.page-user .layout-3col__full .elx-form-wrapper input#edit-name,
+body.not-logged-in.page-user .layout-3col__full .elx-form-wrapper input#edit-pass,
+body.page-user-login .layout-3col__full .elx-form-wrapper input#edit-name,
+body.page-user-login .layout-3col__full .elx-form-wrapper input#edit-pass,
+body.page-user-password .layout-3col__full .elx-form-wrapper input#edit-name,
+body.page-user-password .layout-3col__full .elx-form-wrapper input#edit-pass {
   color: #040a2b;
   font-size: 18px;
   border: 1px solid #ccc;
@@ -1056,7 +1092,9 @@ body.front .layout-3col__full .elx-form-wrapper input#edit-pass {
   box-shadow: inset 0 0 16px 0 rgba(204, 204, 204, 0.6);
 }
 
-body.front .layout-3col__full .elx-form-wrapper #edit-submit {
+body.not-logged-in.page-user .layout-3col__full .elx-form-wrapper #edit-submit,
+body.page-user-login .layout-3col__full .elx-form-wrapper #edit-submit,
+body.page-user-password .layout-3col__full .elx-form-wrapper #edit-submit {
   width: 100%;
   font-size: 12px;
   font-weight: 700;
@@ -2204,5 +2242,3 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
-
-/*# sourceMappingURL=styles.css.map */

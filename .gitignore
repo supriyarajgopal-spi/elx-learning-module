@@ -5,3 +5,6 @@ sites/*/settings*.php
 sites/*/backups
 sites/*/files
 sites/*/private
+
+# ignore npm install result
+/sites/all/themes/elx_front/node_modules

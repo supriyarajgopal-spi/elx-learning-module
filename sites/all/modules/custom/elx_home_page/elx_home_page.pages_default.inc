@@ -16,7 +16,21 @@ function elx_home_page_default_page_manager_pages() {
   $page->admin_title = 'Home page';
   $page->admin_description = 'Home page';
   $page->path = 'home_page';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => TRUE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -30,7 +44,7 @@ function elx_home_page_default_page_manager_pages() {
   $handler->task = 'page';
   $handler->subtask = 'home_page';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Panel home page',
     'no_blocks' => 0,

@@ -10,7 +10,7 @@
 function elx_site_configurations_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-badge-field_badge_description'
+  // Exported field_instance: 'node-badge-field_badge_description'.
   $field_instances['node-badge-field_badge_description'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -57,7 +57,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-field_badge_icon'
+  // Exported field_instance: 'node-badge-field_badge_icon'.
   $field_instances['node-badge-field_badge_icon'] = array(
     'bundle' => 'badge',
     'deleted' => 0,
@@ -127,7 +127,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-field_badge_unearned_description'
+  // Exported field_instance: 'node-badge-field_badge_unearned_description'.
   $field_instances['node-badge-field_badge_unearned_description'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -174,7 +174,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-field_badge_weight'
+  // Exported field_instance: 'node-badge-field_badge_weight'.
   $field_instances['node-badge-field_badge_weight'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -227,7 +227,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-field_original_engbadge_title'
+  // Exported field_instance: 'node-badge-field_original_engbadge_title'.
   $field_instances['node-badge-field_original_engbadge_title'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -274,7 +274,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-group_content_access'
+  // Exported field_instance: 'node-badge-group_content_access'.
   $field_instances['node-badge-group_content_access'] = array(
     'bundle' => 'badge',
     'default_value' => array(
@@ -332,7 +332,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-badge-markets'
+  // Exported field_instance: 'node-badge-markets'.
   $field_instances['node-badge-markets'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -398,7 +398,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-badge-title_field'
+  // Exported field_instance: 'node-badge-title_field'.
   $field_instances['node-badge-title_field'] = array(
     'bundle' => 'badge',
     'default_value' => NULL,
@@ -447,7 +447,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_content_object_type'
+  // Exported field_instance: 'node-content_object-field_content_object_type'.
   $field_instances['node-content_object-field_content_object_type'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -491,7 +491,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_custom_cta'
+  // Exported field_instance: 'node-content_object-field_custom_cta'.
   $field_instances['node-content_object-field_custom_cta'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -542,7 +542,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_exam_fail_feedback'
+  // Exported field_instance: 'node-content_object-field_exam_fail_feedback'.
   $field_instances['node-content_object-field_exam_fail_feedback'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -593,7 +593,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_exam_pass_content'
+  // Exported field_instance: 'node-content_object-field_exam_pass_content'.
   $field_instances['node-content_object-field_exam_pass_content'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -644,7 +644,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_exam_pass_feedback'
+  // Exported field_instance: 'node-content_object-field_exam_pass_feedback'.
   $field_instances['node-content_object-field_exam_pass_feedback'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -696,7 +696,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_exam_perfect_content'
+  // Exported field_instance: 'node-content_object-field_exam_perfect_content'.
   $field_instances['node-content_object-field_exam_perfect_content'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -747,7 +747,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_featured'
+  // Exported field_instance: 'node-content_object-field_featured'.
   $field_instances['node-content_object-field_featured'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -797,7 +797,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_featured_image'
+  // Exported field_instance: 'node-content_object-field_featured_image'.
   $field_instances['node-content_object-field_featured_image'] = array(
     'bundle' => 'content_object',
     'deleted' => 0,
@@ -867,7 +867,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_final_exam'
+  // Exported field_instance: 'node-content_object-field_final_exam'.
   $field_instances['node-content_object-field_final_exam'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -917,7 +917,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_headline'
+  // Exported field_instance: 'node-content_object-field_headline'.
   $field_instances['node-content_object-field_headline'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -964,7 +964,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_hero_image'
+  // Exported field_instance: 'node-content_object-field_hero_image'.
   $field_instances['node-content_object-field_hero_image'] = array(
     'bundle' => 'content_object',
     'deleted' => 0,
@@ -1033,7 +1033,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_intro'
+  // Exported field_instance: 'node-content_object-field_intro'.
   $field_instances['node-content_object-field_intro'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1080,7 +1080,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_learning_category'
+  // Exported field_instance: 'node-content_object-field_learning_category'.
   $field_instances['node-content_object-field_learning_category'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1125,7 +1125,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_learning_objects'
+  // Exported field_instance: 'node-content_object-field_learning_objects'.
   $field_instances['node-content_object-field_learning_objects'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1175,7 +1175,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_learning_template'
+  // Exported field_instance: 'node-content_object-field_learning_template'.
   $field_instances['node-content_object-field_learning_template'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -1223,7 +1223,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_order_weight'
+  // Exported field_instance: 'node-content_object-field_order_weight'.
   $field_instances['node-content_object-field_order_weight'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1270,7 +1270,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_percentage_requirement'
+  // Exported field_instance:
+  // 'node-content_object-field_percentage_requirement'.
   $field_instances['node-content_object-field_percentage_requirement'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1323,7 +1324,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_point_value'
+  // Exported field_instance: 'node-content_object-field_point_value'.
   $field_instances['node-content_object-field_point_value'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1370,7 +1371,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_pulsed_content'
+  // Exported field_instance: 'node-content_object-field_pulsed_content'.
   $field_instances['node-content_object-field_pulsed_content'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1414,7 +1415,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_story_type'
+  // Exported field_instance: 'node-content_object-field_story_type'.
   $field_instances['node-content_object-field_story_type'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1458,7 +1459,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-field_tags_keywords'
+  // Exported field_instance: 'node-content_object-field_tags_keywords'.
   $field_instances['node-content_object-field_tags_keywords'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1505,7 +1506,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-group_content_access'
+  // Exported field_instance: 'node-content_object-group_content_access'.
   $field_instances['node-content_object-group_content_access'] = array(
     'bundle' => 'content_object',
     'default_value' => array(
@@ -1563,7 +1564,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-content_object-markets'
+  // Exported field_instance: 'node-content_object-markets'.
   $field_instances['node-content_object-markets'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1629,7 +1630,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-content_object-title_field'
+  // Exported field_instance: 'node-content_object-title_field'.
   $field_instances['node-content_object-title_field'] = array(
     'bundle' => 'content_object',
     'default_value' => NULL,
@@ -1678,7 +1679,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-disclaimer-field_disclaimer_text'
+  // Exported field_instance: 'node-disclaimer-field_disclaimer_text'.
   $field_instances['node-disclaimer-field_disclaimer_text'] = array(
     'bundle' => 'disclaimer',
     'default_value' => NULL,
@@ -1725,7 +1726,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-disclaimer-group_content_access'
+  // Exported field_instance: 'node-disclaimer-group_content_access'.
   $field_instances['node-disclaimer-group_content_access'] = array(
     'bundle' => 'disclaimer',
     'default_value' => array(
@@ -1783,7 +1784,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-disclaimer-markets'
+  // Exported field_instance: 'node-disclaimer-markets'.
   $field_instances['node-disclaimer-markets'] = array(
     'bundle' => 'disclaimer',
     'default_value' => NULL,
@@ -1849,7 +1850,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-disclaimer-title_field'
+  // Exported field_instance: 'node-disclaimer-title_field'.
   $field_instances['node-disclaimer-title_field'] = array(
     'bundle' => 'disclaimer',
     'default_value' => NULL,
@@ -1898,7 +1899,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_create_submit_button'
+  // Exported field_instance: 'node-drag_match-field_create_submit_button'.
   $field_instances['node-drag_match-field_create_submit_button'] = array(
     'bundle' => 'drag_match',
     'default_value' => array(
@@ -1948,7 +1949,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_custom_correct_feedback'
+  // Exported field_instance: 'node-drag_match-field_custom_correct_feedback'.
   $field_instances['node-drag_match-field_custom_correct_feedback'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -1995,7 +1996,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_custom_incorrect_feedback'
+  // Exported field_instance: 'node-drag_match-field_custom_incorrect_feedback'.
   $field_instances['node-drag_match-field_custom_incorrect_feedback'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -2042,7 +2043,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_drag_match_collection'
+  // Exported field_instance: 'node-drag_match-field_drag_match_collection'.
   $field_instances['node-drag_match-field_drag_match_collection'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -2112,7 +2113,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_intro'
+  // Exported field_instance: 'node-drag_match-field_intro'.
   $field_instances['node-drag_match-field_intro'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -2159,7 +2160,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_next_button'
+  // Exported field_instance: 'node-drag_match-field_next_button'.
   $field_instances['node-drag_match-field_next_button'] = array(
     'bundle' => 'drag_match',
     'default_value' => array(
@@ -2209,7 +2210,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-field_subtitle'
+  // Exported field_instance: 'node-drag_match-field_subtitle'.
   $field_instances['node-drag_match-field_subtitle'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -2256,7 +2257,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_match-title_field'
+  // Exported field_instance: 'node-drag_match-title_field'.
   $field_instances['node-drag_match-title_field'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -2306,7 +2307,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_correct_feedback'
+  // Exported field_instance: 'node-drag_select-field_correct_feedback'.
   $field_instances['node-drag_select-field_correct_feedback'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2353,7 +2354,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_create_submit_button'
+  // Exported field_instance: 'node-drag_select-field_create_submit_button'.
   $field_instances['node-drag_select-field_create_submit_button'] = array(
     'bundle' => 'drag_select',
     'default_value' => array(
@@ -2403,7 +2404,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_drag_select_background'
+  // Exported field_instance: 'node-drag_select-field_drag_select_background'.
   $field_instances['node-drag_select-field_drag_select_background'] = array(
     'bundle' => 'drag_select',
     'deleted' => 0,
@@ -2473,7 +2474,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_drag_select_collection'
+  // Exported field_instance: 'node-drag_select-field_drag_select_collection'.
   $field_instances['node-drag_select-field_drag_select_collection'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2549,7 +2550,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_drag_select_question'
+  // Exported field_instance: 'node-drag_select-field_drag_select_question'.
   $field_instances['node-drag_select-field_drag_select_question'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2596,7 +2597,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_incorrect_feeback'
+  // Exported field_instance: 'node-drag_select-field_incorrect_feeback'.
   $field_instances['node-drag_select-field_incorrect_feeback'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2643,7 +2644,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_intro_text'
+  // Exported field_instance: 'node-drag_select-field_intro_text'.
   $field_instances['node-drag_select-field_intro_text'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2690,7 +2691,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_next_button'
+  // Exported field_instance: 'node-drag_select-field_next_button'.
   $field_instances['node-drag_select-field_next_button'] = array(
     'bundle' => 'drag_select',
     'default_value' => array(
@@ -2740,7 +2741,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-field_subtitle'
+  // Exported field_instance: 'node-drag_select-field_subtitle'.
   $field_instances['node-drag_select-field_subtitle'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2787,7 +2788,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drag_select-title_field'
+  // Exported field_instance: 'node-drag_select-title_field'.
   $field_instances['node-drag_select-title_field'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -2837,7 +2838,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flash_cards-field_flash_card_collection'
+  // Exported field_instance: 'node-flash_cards-field_flash_card_collection'.
   $field_instances['node-flash_cards-field_flash_card_collection'] = array(
     'bundle' => 'flash_cards',
     'default_value' => NULL,
@@ -2913,7 +2914,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flash_cards-field_intro'
+  // Exported field_instance: 'node-flash_cards-field_intro'.
   $field_instances['node-flash_cards-field_intro'] = array(
     'bundle' => 'flash_cards',
     'default_value' => NULL,
@@ -2960,7 +2961,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flash_cards-field_next_button'
+  // Exported field_instance: 'node-flash_cards-field_next_button'.
   $field_instances['node-flash_cards-field_next_button'] = array(
     'bundle' => 'flash_cards',
     'default_value' => array(
@@ -3010,7 +3011,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flash_cards-field_subtitle'
+  // Exported field_instance: 'node-flash_cards-field_subtitle'.
   $field_instances['node-flash_cards-field_subtitle'] = array(
     'bundle' => 'flash_cards',
     'default_value' => NULL,
@@ -3057,7 +3058,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-flash_cards-title_field'
+  // Exported field_instance: 'node-flash_cards-title_field'.
   $field_instances['node-flash_cards-title_field'] = array(
     'bundle' => 'flash_cards',
     'default_value' => NULL,
@@ -3107,7 +3108,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_account_status'
+  // Exported field_instance: 'node-guest_accounts-field_account_status'.
   $field_instances['node-guest_accounts-field_account_status'] = array(
     'bundle' => 'guest_accounts',
     'default_value' => array(
@@ -3155,7 +3156,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_country'
+  // Exported field_instance: 'node-guest_accounts-field_country'.
   $field_instances['node-guest_accounts-field_country'] = array(
     'bundle' => 'guest_accounts',
     'default_value' => NULL,
@@ -3199,7 +3200,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_door'
+  // Exported field_instance: 'node-guest_accounts-field_door'.
   $field_instances['node-guest_accounts-field_door'] = array(
     'bundle' => 'guest_accounts',
     'default_value' => NULL,
@@ -3246,7 +3247,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_guest_url'
+  // Exported field_instance: 'node-guest_accounts-field_guest_url'.
   $field_instances['node-guest_accounts-field_guest_url'] = array(
     'bundle' => 'guest_accounts',
     'default_value' => NULL,
@@ -3293,7 +3294,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-guest_accounts-field_region_list'
+  // Exported field_instance: 'node-guest_accounts-field_region_list'.
   $field_instances['node-guest_accounts-field_region_list'] = array(
     'bundle' => 'guest_accounts',
     'default_value' => NULL,
@@ -3337,7 +3338,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_hot_spot_collection'
+  // Exported field_instance: 'node-hot_spots-field_hot_spot_collection'.
   $field_instances['node-hot_spots-field_hot_spot_collection'] = array(
     'bundle' => 'hot_spots',
     'default_value' => NULL,
@@ -3405,7 +3406,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_hot_spot_image'
+  // Exported field_instance: 'node-hot_spots-field_hot_spot_image'.
   $field_instances['node-hot_spots-field_hot_spot_image'] = array(
     'bundle' => 'hot_spots',
     'deleted' => 0,
@@ -3472,7 +3473,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_intro'
+  // Exported field_instance: 'node-hot_spots-field_intro'.
   $field_instances['node-hot_spots-field_intro'] = array(
     'bundle' => 'hot_spots',
     'default_value' => NULL,
@@ -3519,7 +3520,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_next_button'
+  // Exported field_instance: 'node-hot_spots-field_next_button'.
   $field_instances['node-hot_spots-field_next_button'] = array(
     'bundle' => 'hot_spots',
     'default_value' => array(
@@ -3569,7 +3570,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-field_subtitle'
+  // Exported field_instance: 'node-hot_spots-field_subtitle'.
   $field_instances['node-hot_spots-field_subtitle'] = array(
     'bundle' => 'hot_spots',
     'default_value' => NULL,
@@ -3616,7 +3617,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-hot_spots-title_field'
+  // Exported field_instance: 'node-hot_spots-title_field'.
   $field_instances['node-hot_spots-title_field'] = array(
     'bundle' => 'hot_spots',
     'default_value' => NULL,
@@ -3670,7 +3671,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_intro'
+  // Exported field_instance: 'node-list-field_intro'.
   $field_instances['node-list-field_intro'] = array(
     'bundle' => 'list',
     'default_value' => array(
@@ -3722,7 +3723,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_layout'
+  // Exported field_instance: 'node-list-field_layout'.
   $field_instances['node-list-field_layout'] = array(
     'bundle' => 'list',
     'default_value' => array(
@@ -3770,7 +3771,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_list_item'
+  // Exported field_instance: 'node-list-field_list_item'.
   $field_instances['node-list-field_list_item'] = array(
     'bundle' => 'list',
     'default_value' => NULL,
@@ -3829,7 +3830,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_next_button'
+  // Exported field_instance: 'node-list-field_next_button'.
   $field_instances['node-list-field_next_button'] = array(
     'bundle' => 'list',
     'default_value' => array(
@@ -3879,7 +3880,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-field_subtitle'
+  // Exported field_instance: 'node-list-field_subtitle'.
   $field_instances['node-list-field_subtitle'] = array(
     'bundle' => 'list',
     'default_value' => NULL,
@@ -3926,7 +3927,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-list-title_field'
+  // Exported field_instance: 'node-list-title_field'.
   $field_instances['node-list-title_field'] = array(
     'bundle' => 'list',
     'default_value' => NULL,
@@ -3976,7 +3977,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_correct_feedback'
+  // Exported field_instance: 'node-matching_game-field_correct_feedback'.
   $field_instances['node-matching_game-field_correct_feedback'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4023,7 +4024,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_incorrect_feeback'
+  // Exported field_instance: 'node-matching_game-field_incorrect_feeback'.
   $field_instances['node-matching_game-field_incorrect_feeback'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4070,7 +4071,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_intro'
+  // Exported field_instance: 'node-matching_game-field_intro'.
   $field_instances['node-matching_game-field_intro'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4117,7 +4118,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_match_collection'
+  // Exported field_instance: 'node-matching_game-field_match_collection'.
   $field_instances['node-matching_game-field_match_collection'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4176,7 +4177,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_next_button'
+  // Exported field_instance: 'node-matching_game-field_next_button'.
   $field_instances['node-matching_game-field_next_button'] = array(
     'bundle' => 'matching_game',
     'default_value' => array(
@@ -4226,7 +4227,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-field_subtitle'
+  // Exported field_instance: 'node-matching_game-field_subtitle'.
   $field_instances['node-matching_game-field_subtitle'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4273,7 +4274,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-matching_game-title_field'
+  // Exported field_instance: 'node-matching_game-title_field'.
   $field_instances['node-matching_game-title_field'] = array(
     'bundle' => 'matching_game',
     'default_value' => NULL,
@@ -4323,7 +4324,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_benefits'
+  // Exported field_instance: 'node-product_detail-field_benefits'.
   $field_instances['node-product_detail-field_benefits'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4371,7 +4372,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_customer_questions'
+  // Exported field_instance: 'node-product_detail-field_customer_questions'.
   $field_instances['node-product_detail-field_customer_questions'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4419,7 +4420,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_demonstration'
+  // Exported field_instance: 'node-product_detail-field_demonstration'.
   $field_instances['node-product_detail-field_demonstration'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4467,7 +4468,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_display_title'
+  // Exported field_instance: 'node-product_detail-field_display_title'.
   $field_instances['node-product_detail-field_display_title'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4514,7 +4515,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_fun_fact_sheet'
+  // Exported field_instance: 'node-product_detail-field_fun_fact_sheet'.
   $field_instances['node-product_detail-field_fun_fact_sheet'] = array(
     'bundle' => 'product_detail',
     'deleted' => 0,
@@ -4577,7 +4578,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_if_she_asks_share'
+  // Exported field_instance: 'node-product_detail-field_if_she_asks_share'.
   $field_instances['node-product_detail-field_if_she_asks_share'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4625,7 +4626,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_just_for_you'
+  // Exported field_instance: 'node-product_detail-field_just_for_you'.
   $field_instances['node-product_detail-field_just_for_you'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4675,7 +4676,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_learning_category'
+  // Exported field_instance: 'node-product_detail-field_learning_category'.
   $field_instances['node-product_detail-field_learning_category'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4720,7 +4721,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_perfect_partners'
+  // Exported field_instance: 'node-product_detail-field_perfect_partners'.
   $field_instances['node-product_detail-field_perfect_partners'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4771,7 +4772,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_perfect_partners_text'
+  // Exported field_instance: 'node-product_detail-field_perfect_partners_text'.
   $field_instances['node-product_detail-field_perfect_partners_text'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -4824,7 +4825,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_point_value'
+  // Exported field_instance: 'node-product_detail-field_point_value'.
   $field_instances['node-product_detail-field_point_value'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4870,7 +4871,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_price'
+  // Exported field_instance: 'node-product_detail-field_price'.
   $field_instances['node-product_detail-field_price'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4917,7 +4918,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_product_categories'
+  // Exported field_instance: 'node-product_detail-field_product_categories'.
   $field_instances['node-product_detail-field_product_categories'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -4961,7 +4962,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_product_image'
+  // Exported field_instance: 'node-product_detail-field_product_image'.
   $field_instances['node-product_detail-field_product_image'] = array(
     'bundle' => 'product_detail',
     'deleted' => 0,
@@ -5031,7 +5032,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_related_products'
+  // Exported field_instance: 'node-product_detail-field_related_products'.
   $field_instances['node-product_detail-field_related_products'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5081,7 +5082,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_season'
+  // Exported field_instance: 'node-product_detail-field_season'.
   $field_instances['node-product_detail-field_season'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5125,7 +5126,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_story'
+  // Exported field_instance: 'node-product_detail-field_story'.
   $field_instances['node-product_detail-field_story'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5173,7 +5174,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_subtitle'
+  // Exported field_instance: 'node-product_detail-field_subtitle'.
   $field_instances['node-product_detail-field_subtitle'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -5224,7 +5225,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_tags_keywords'
+  // Exported field_instance: 'node-product_detail-field_tags_keywords'.
   $field_instances['node-product_detail-field_tags_keywords'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5271,7 +5272,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_why_there_s_only_one'
+  // Exported field_instance: 'node-product_detail-field_why_there_s_only_one'.
   $field_instances['node-product_detail-field_why_there_s_only_one'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5319,7 +5320,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-group_content_access'
+  // Exported field_instance: 'node-product_detail-group_content_access'.
   $field_instances['node-product_detail-group_content_access'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -5377,7 +5378,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-product_detail-markets'
+  // Exported field_instance: 'node-product_detail-markets'.
   $field_instances['node-product_detail-markets'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5443,7 +5444,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-title_field'
+  // Exported field_instance: 'node-product_detail-title_field'.
   $field_instances['node-product_detail-title_field'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -5498,7 +5499,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_completion_text'
+  // Exported field_instance: 'node-question_and_answer-field_completion_text'.
   $field_instances['node-question_and_answer-field_completion_text'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5545,7 +5546,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_create_submit_button'
+  // Exported field_instance:
+  // 'node-question_and_answer-field_create_submit_button'.
   $field_instances['node-question_and_answer-field_create_submit_button'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => array(
@@ -5595,7 +5597,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_difficulty'
+  // Exported field_instance: 'node-question_and_answer-field_difficulty'.
   $field_instances['node-question_and_answer-field_difficulty'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5640,7 +5642,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_intro'
+  // Exported field_instance: 'node-question_and_answer-field_intro'.
   $field_instances['node-question_and_answer-field_intro'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5687,7 +5689,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_is_required'
+  // Exported field_instance: 'node-question_and_answer-field_is_required'.
   $field_instances['node-question_and_answer-field_is_required'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => array(
@@ -5737,7 +5739,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_last_question_in_quiz'
+  // Exported field_instance:
+  // 'node-question_and_answer-field_last_question_in_quiz'.
   $field_instances['node-question_and_answer-field_last_question_in_quiz'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => array(
@@ -5787,7 +5790,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_next_button'
+  // Exported field_instance: 'node-question_and_answer-field_next_button'.
   $field_instances['node-question_and_answer-field_next_button'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => array(
@@ -5837,7 +5840,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_paragraph_multiple_choice'
+  // Exported field_instance:
+  // 'node-question_and_answer-field_paragraph_multiple_choice'.
   $field_instances['node-question_and_answer-field_paragraph_multiple_choice'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5903,7 +5907,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_question_type'
+  // Exported field_instance: 'node-question_and_answer-field_question_type'.
   $field_instances['node-question_and_answer-field_question_type'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5947,7 +5951,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-field_subtitle'
+  // Exported field_instance: 'node-question_and_answer-field_subtitle'.
   $field_instances['node-question_and_answer-field_subtitle'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -5994,7 +5998,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question_and_answer-title_field'
+  // Exported field_instance: 'node-question_and_answer-title_field'.
   $field_instances['node-question_and_answer-title_field'] = array(
     'bundle' => 'question_and_answer',
     'default_value' => NULL,
@@ -6044,7 +6048,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_intro'
+  // Exported field_instance: 'node-reveal-field_intro'.
   $field_instances['node-reveal-field_intro'] = array(
     'bundle' => 'reveal',
     'default_value' => NULL,
@@ -6091,7 +6095,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_next_button'
+  // Exported field_instance: 'node-reveal-field_next_button'.
   $field_instances['node-reveal-field_next_button'] = array(
     'bundle' => 'reveal',
     'default_value' => array(
@@ -6141,7 +6145,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_reveal_collection'
+  // Exported field_instance: 'node-reveal-field_reveal_collection'.
   $field_instances['node-reveal-field_reveal_collection'] = array(
     'bundle' => 'reveal',
     'default_value' => NULL,
@@ -6209,7 +6213,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-field_subtitle'
+  // Exported field_instance: 'node-reveal-field_subtitle'.
   $field_instances['node-reveal-field_subtitle'] = array(
     'bundle' => 'reveal',
     'default_value' => NULL,
@@ -6256,7 +6260,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reveal-title_field'
+  // Exported field_instance: 'node-reveal-title_field'.
   $field_instances['node-reveal-title_field'] = array(
     'bundle' => 'reveal',
     'default_value' => NULL,
@@ -6311,7 +6315,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-field_story_copy'
+  // Exported field_instance: 'node-story-field_story_copy'.
   $field_instances['node-story-field_story_copy'] = array(
     'bundle' => 'story',
     'default_value' => NULL,
@@ -6358,7 +6362,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-field_story_headline'
+  // Exported field_instance: 'node-story-field_story_headline'.
   $field_instances['node-story-field_story_headline'] = array(
     'bundle' => 'story',
     'default_value' => NULL,
@@ -6405,7 +6409,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-field_story_image'
+  // Exported field_instance: 'node-story-field_story_image'.
   $field_instances['node-story-field_story_image'] = array(
     'bundle' => 'story',
     'deleted' => 0,
@@ -6475,7 +6479,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-field_story_label'
+  // Exported field_instance: 'node-story-field_story_label'.
   $field_instances['node-story-field_story_label'] = array(
     'bundle' => 'story',
     'default_value' => NULL,
@@ -6522,7 +6526,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-field_story_video'
+  // Exported field_instance: 'node-story-field_story_video'.
   $field_instances['node-story-field_story_video'] = array(
     'bundle' => 'story',
     'deleted' => 0,
@@ -6585,7 +6589,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-story-title_field'
+  // Exported field_instance: 'node-story-title_field'.
   $field_instances['node-story-title_field'] = array(
     'bundle' => 'story',
     'default_value' => NULL,
@@ -6634,7 +6638,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_display_title'
+  // Exported field_instance: 'node-tools-field_display_title'.
   $field_instances['node-tools-field_display_title'] = array(
     'bundle' => 'tools',
     'default_value' => NULL,
@@ -6681,7 +6685,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_tool_by_role'
+  // Exported field_instance: 'node-tools-field_tool_by_role'.
   $field_instances['node-tools-field_tool_by_role'] = array(
     'bundle' => 'tools',
     'default_value' => NULL,
@@ -6725,7 +6729,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_tool_description'
+  // Exported field_instance: 'node-tools-field_tool_description'.
   $field_instances['node-tools-field_tool_description'] = array(
     'bundle' => 'tools',
     'default_value' => NULL,
@@ -6772,7 +6776,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_tool_pdf'
+  // Exported field_instance: 'node-tools-field_tool_pdf'.
   $field_instances['node-tools-field_tool_pdf'] = array(
     'bundle' => 'tools',
     'deleted' => 0,
@@ -6835,7 +6839,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-field_tool_thumbnail'
+  // Exported field_instance: 'node-tools-field_tool_thumbnail'.
   $field_instances['node-tools-field_tool_thumbnail'] = array(
     'bundle' => 'tools',
     'deleted' => 0,
@@ -6905,7 +6909,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-group_content_access'
+  // Exported field_instance: 'node-tools-group_content_access'.
   $field_instances['node-tools-group_content_access'] = array(
     'bundle' => 'tools',
     'default_value' => array(
@@ -6963,7 +6967,7 @@ function elx_site_configurations_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-tools-markets'
+  // Exported field_instance: 'node-tools-markets'.
   $field_instances['node-tools-markets'] = array(
     'bundle' => 'tools',
     'default_value' => NULL,
@@ -7029,7 +7033,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-tools-title_field'
+  // Exported field_instance: 'node-tools-title_field'.
   $field_instances['node-tools-title_field'] = array(
     'bundle' => 'tools',
     'default_value' => NULL,
@@ -7079,7 +7083,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-answers-field_answer_feedback'
+  // Exported field_instance: 'paragraphs_item-answers-field_answer_feedback'.
   $field_instances['paragraphs_item-answers-field_answer_feedback'] = array(
     'bundle' => 'answers',
     'default_value' => NULL,
@@ -7120,7 +7124,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-answers-field_answer_image'
+  // Exported field_instance: 'paragraphs_item-answers-field_answer_image'.
   $field_instances['paragraphs_item-answers-field_answer_image'] = array(
     'bundle' => 'answers',
     'deleted' => 0,
@@ -7183,7 +7187,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-answers-field_answer_text'
+  // Exported field_instance: 'paragraphs_item-answers-field_answer_text'.
   $field_instances['paragraphs_item-answers-field_answer_text'] = array(
     'bundle' => 'answers',
     'default_value' => NULL,
@@ -7224,7 +7228,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-answers-field_correct_answer'
+  // Exported field_instance: 'paragraphs_item-answers-field_correct_answer'.
   $field_instances['paragraphs_item-answers-field_correct_answer'] = array(
     'bundle' => 'answers',
     'default_value' => array(
@@ -7268,7 +7272,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_match-field_left_drag_image'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_match-field_left_drag_image'.
   $field_instances['paragraphs_item-drag_match-field_left_drag_image'] = array(
     'bundle' => 'drag_match',
     'deleted' => 0,
@@ -7332,7 +7337,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_match-field_left_drag_text'
+  // Exported field_instance: 'paragraphs_item-drag_match-field_left_drag_text'.
   $field_instances['paragraphs_item-drag_match-field_left_drag_text'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -7373,7 +7378,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_match-field_right_drag_image'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_match-field_right_drag_image'.
   $field_instances['paragraphs_item-drag_match-field_right_drag_image'] = array(
     'bundle' => 'drag_match',
     'deleted' => 0,
@@ -7437,7 +7443,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_match-field_right_drag_text'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_match-field_right_drag_text'.
   $field_instances['paragraphs_item-drag_match-field_right_drag_text'] = array(
     'bundle' => 'drag_match',
     'default_value' => NULL,
@@ -7478,7 +7485,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_priority-field_priority_image'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_priority-field_priority_image'.
   $field_instances['paragraphs_item-drag_priority-field_priority_image'] = array(
     'bundle' => 'drag_priority',
     'deleted' => 0,
@@ -7542,7 +7550,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_priority-field_priority_text'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_priority-field_priority_text'.
   $field_instances['paragraphs_item-drag_priority-field_priority_text'] = array(
     'bundle' => 'drag_priority',
     'default_value' => NULL,
@@ -7583,7 +7592,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_select-field_correct_answer'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_select-field_correct_answer'.
   $field_instances['paragraphs_item-drag_select-field_correct_answer'] = array(
     'bundle' => 'drag_select',
     'default_value' => array(
@@ -7627,7 +7637,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_select-field_drag_select_image'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_select-field_drag_select_image'.
   $field_instances['paragraphs_item-drag_select-field_drag_select_image'] = array(
     'bundle' => 'drag_select',
     'deleted' => 0,
@@ -7691,7 +7702,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-drag_select-field_drag_select_text'
+  // Exported field_instance:
+  // 'paragraphs_item-drag_select-field_drag_select_text'.
   $field_instances['paragraphs_item-drag_select-field_drag_select_text'] = array(
     'bundle' => 'drag_select',
     'default_value' => NULL,
@@ -7732,7 +7744,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_back_card'
+  // Exported field_instance:
+  // 'paragraphs_item-flash_card_collection-field_back_card'.
   $field_instances['paragraphs_item-flash_card_collection-field_back_card'] = array(
     'bundle' => 'flash_card_collection',
     'default_value' => NULL,
@@ -7773,7 +7786,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_back_card_image'
+  // Exported field_instance:
+  // 'paragraphs_item-flash_card_collection-field_back_card_image'.
   $field_instances['paragraphs_item-flash_card_collection-field_back_card_image'] = array(
     'bundle' => 'flash_card_collection',
     'deleted' => 0,
@@ -7849,7 +7863,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_front_card'
+  // Exported field_instance:
+  // 'paragraphs_item-flash_card_collection-field_front_card'.
   $field_instances['paragraphs_item-flash_card_collection-field_front_card'] = array(
     'bundle' => 'flash_card_collection',
     'default_value' => array(
@@ -7895,7 +7910,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-flash_card_collection-field_front_card_image'
+  // Exported field_instance:
+  // 'paragraphs_item-flash_card_collection-field_front_card_image'.
   $field_instances['paragraphs_item-flash_card_collection-field_front_card_image'] = array(
     'bundle' => 'flash_card_collection',
     'deleted' => 0,
@@ -7971,7 +7987,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_text'
+  // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_text'.
   $field_instances['paragraphs_item-hot_spot-field_hot_spot_text'] = array(
     'bundle' => 'hot_spot',
     'default_value' => NULL,
@@ -8012,7 +8028,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_x_cordinate'
+  // Exported field_instance:
+  // 'paragraphs_item-hot_spot-field_hot_spot_x_cordinate'.
   $field_instances['paragraphs_item-hot_spot-field_hot_spot_x_cordinate'] = array(
     'bundle' => 'hot_spot',
     'default_value' => NULL,
@@ -8050,7 +8067,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-hot_spot-field_hot_spot_y_cordinate'
+  // Exported field_instance:
+  // 'paragraphs_item-hot_spot-field_hot_spot_y_cordinate'.
   $field_instances['paragraphs_item-hot_spot-field_hot_spot_y_cordinate'] = array(
     'bundle' => 'hot_spot',
     'default_value' => NULL,
@@ -8088,7 +8106,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-list_item-field_list_image'
+  // Exported field_instance: 'paragraphs_item-list_item-field_list_image'.
   $field_instances['paragraphs_item-list_item-field_list_image'] = array(
     'bundle' => 'list_item',
     'deleted' => 0,
@@ -8152,7 +8170,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-list_item-field_list_text'
+  // Exported field_instance: 'paragraphs_item-list_item-field_list_text'.
   $field_instances['paragraphs_item-list_item-field_list_text'] = array(
     'bundle' => 'list_item',
     'default_value' => array(
@@ -8198,7 +8216,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-list_item-field_list_video'
+  // Exported field_instance: 'paragraphs_item-list_item-field_list_video'.
   $field_instances['paragraphs_item-list_item-field_list_video'] = array(
     'bundle' => 'list_item',
     'deleted' => 0,
@@ -8251,7 +8269,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_bottom_match_image'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_bottom_match_image'.
   $field_instances['paragraphs_item-match_game_collection-field_bottom_match_image'] = array(
     'bundle' => 'match_game_collection',
     'deleted' => 0,
@@ -8314,7 +8333,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_bottom_match_text'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_bottom_match_text'.
   $field_instances['paragraphs_item-match_game_collection-field_bottom_match_text'] = array(
     'bundle' => 'match_game_collection',
     'default_value' => NULL,
@@ -8355,7 +8375,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_middle_match_image'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_middle_match_image'.
   $field_instances['paragraphs_item-match_game_collection-field_middle_match_image'] = array(
     'bundle' => 'match_game_collection',
     'deleted' => 0,
@@ -8418,7 +8439,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_middle_match_text'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_middle_match_text'.
   $field_instances['paragraphs_item-match_game_collection-field_middle_match_text'] = array(
     'bundle' => 'match_game_collection',
     'default_value' => NULL,
@@ -8459,7 +8481,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_top_match_image'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_top_match_image'.
   $field_instances['paragraphs_item-match_game_collection-field_top_match_image'] = array(
     'bundle' => 'match_game_collection',
     'deleted' => 0,
@@ -8522,7 +8545,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-match_game_collection-field_top_match_text'
+  // Exported field_instance:
+  // 'paragraphs_item-match_game_collection-field_top_match_text'.
   $field_instances['paragraphs_item-match_game_collection-field_top_match_text'] = array(
     'bundle' => 'match_game_collection',
     'default_value' => NULL,
@@ -8563,7 +8587,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_paragraph_answer'
+  // Exported field_instance:
+  // 'paragraphs_item-multiple_choice_collection-field_paragraph_answer'.
   $field_instances['paragraphs_item-multiple_choice_collection-field_paragraph_answer'] = array(
     'bundle' => 'multiple_choice_collection',
     'default_value' => NULL,
@@ -8623,7 +8648,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_image'
+  // Exported field_instance:
+  // 'paragraphs_item-multiple_choice_collection-field_question_image'.
   $field_instances['paragraphs_item-multiple_choice_collection-field_question_image'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
@@ -8686,7 +8712,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_text'
+  // Exported field_instance:
+  // 'paragraphs_item-multiple_choice_collection-field_question_text'.
   $field_instances['paragraphs_item-multiple_choice_collection-field_question_text'] = array(
     'bundle' => 'multiple_choice_collection',
     'default_value' => NULL,
@@ -8727,7 +8754,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_question_video_file'
+  // Exported field_instance:
+  // 'paragraphs_item-multiple_choice_collection-field_question_video_file'.
   $field_instances['paragraphs_item-multiple_choice_collection-field_question_video_file'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
@@ -8784,7 +8812,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-multiple_choice_collection-field_video_poster_img'
+  // Exported field_instance:
+  // 'paragraphs_item-multiple_choice_collection-field_video_poster_img'.
   $field_instances['paragraphs_item-multiple_choice_collection-field_video_poster_img'] = array(
     'bundle' => 'multiple_choice_collection',
     'deleted' => 0,
@@ -8847,7 +8876,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-questions-field_question_media'
+  // Exported field_instance: 'paragraphs_item-questions-field_question_media'.
   $field_instances['paragraphs_item-questions-field_question_media'] = array(
     'bundle' => 'questions',
     'deleted' => 0,
@@ -8902,7 +8931,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-questions-field_question_text'
+  // Exported field_instance: 'paragraphs_item-questions-field_question_text'.
   $field_instances['paragraphs_item-questions-field_question_text'] = array(
     'bundle' => 'questions',
     'default_value' => NULL,
@@ -8943,7 +8972,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-questions-field_question_video'
+  // Exported field_instance: 'paragraphs_item-questions-field_question_video'.
   $field_instances['paragraphs_item-questions-field_question_video'] = array(
     'bundle' => 'questions',
     'deleted' => 0,
@@ -8998,7 +9027,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-questions-field_video_poster_image'
+  // Exported field_instance:
+  // 'paragraphs_item-questions-field_video_poster_image'.
   $field_instances['paragraphs_item-questions-field_video_poster_image'] = array(
     'bundle' => 'questions',
     'deleted' => 0,
@@ -9053,7 +9083,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_hero'
+  // Exported field_instance:
+  // 'paragraphs_item-reveal_collection-field_reveal_hero'.
   $field_instances['paragraphs_item-reveal_collection-field_reveal_hero'] = array(
     'bundle' => 'reveal_collection',
     'deleted' => 0,
@@ -9117,7 +9148,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_hero_video'
+  // Exported field_instance:
+  // 'paragraphs_item-reveal_collection-field_reveal_hero_video'.
   $field_instances['paragraphs_item-reveal_collection-field_reveal_hero_video'] = array(
     'bundle' => 'reveal_collection',
     'deleted' => 0,
@@ -9170,7 +9202,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_text'
+  // Exported field_instance:
+  // 'paragraphs_item-reveal_collection-field_reveal_text'.
   $field_instances['paragraphs_item-reveal_collection-field_reveal_text'] = array(
     'bundle' => 'reveal_collection',
     'default_value' => NULL,
@@ -9211,7 +9244,8 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'paragraphs_item-reveal_collection-field_reveal_thumbnail'
+  // Exported field_instance:
+  // 'paragraphs_item-reveal_collection-field_reveal_thumbnail'.
   $field_instances['paragraphs_item-reveal_collection-field_reveal_thumbnail'] = array(
     'bundle' => 'reveal_collection',
     'deleted' => 0,

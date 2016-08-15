@@ -10,7 +10,7 @@
 function elx_users_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_account_field_executive'
+  // Exported field_base: 'field_account_field_executive'.
   $field_bases['field_account_field_executive'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -20,14 +20,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -43,7 +35,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_account_name'
+  // Exported field_base: 'field_account_name'.
   $field_bases['field_account_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -53,14 +45,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -76,7 +60,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_city'
+  // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -86,14 +70,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -109,7 +85,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_counter_manager'
+  // Exported field_base: 'field_counter_manager'.
   $field_bases['field_counter_manager'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,14 +95,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -142,7 +110,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_country'
+  // Exported field_base: 'field_country'.
   $field_bases['field_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -152,7 +120,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -428,7 +395,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_door'
+  // Exported field_base: 'field_door'.
   $field_bases['field_door'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -438,14 +405,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -461,7 +420,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_education_manager_executiv'
+  // Exported field_base: 'field_education_manager_executiv'.
   $field_bases['field_education_manager_executiv'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -471,14 +430,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -494,7 +445,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_employer_number'
+  // Exported field_base: 'field_employer_number'.
   $field_bases['field_employer_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -504,14 +455,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -527,7 +470,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_employment_status'
+  // Exported field_base: 'field_employment_status'.
   $field_bases['field_employment_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -537,7 +480,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -557,7 +499,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_field_sales_director_regio'
+  // Exported field_base: 'field_field_sales_director_regio'.
   $field_bases['field_field_sales_director_regio'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -567,14 +509,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -590,7 +524,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_first_name'
+  // Exported field_base: 'field_first_name'.
   $field_bases['field_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -600,14 +534,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -623,7 +549,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_general_manager_brand_mana'
+  // Exported field_base: 'field_general_manager_brand_mana'.
   $field_bases['field_general_manager_brand_mana'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -633,14 +559,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -656,7 +574,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_hire_date'
+  // Exported field_base: 'field_hire_date'.
   $field_bases['field_hire_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -666,7 +584,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -690,7 +607,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_last_access_date'
+  // Exported field_base: 'field_last_access_date'.
   $field_bases['field_last_access_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -700,14 +617,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -723,21 +632,13 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_last_name'
+  // Exported field_base: 'field_last_name'.
   $field_bases['field_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -753,7 +654,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_level'
+  // Exported field_base: 'field_level'.
   $field_bases['field_level'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -763,14 +664,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -786,7 +679,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_market_administrator'
+  // Exported field_base: 'field_market_administrator'.
   $field_bases['field_market_administrator'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -796,14 +689,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -819,7 +704,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_modified_date'
+  // Exported field_base: 'field_modified_date'.
   $field_bases['field_modified_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -829,14 +714,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -852,7 +729,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rank'
+  // Exported field_base: 'field_rank'.
   $field_bases['field_rank'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -862,14 +739,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -885,7 +754,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_region_list'
+  // Exported field_base: 'field_region_list'.
   $field_bases['field_region_list'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -895,7 +764,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -920,7 +788,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_regional_vice_president'
+  // Exported field_base: 'field_regional_vice_president'.
   $field_bases['field_regional_vice_president'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -929,14 +797,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_name' => 'field_regional_vice_president',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -953,7 +813,7 @@ function elx_users_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_state'
+  // Exported field_base: 'field_state'.
   $field_bases['field_state'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -962,14 +822,6 @@ function elx_users_feature_field_default_field_bases() {
     'field_name' => 'field_state',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(

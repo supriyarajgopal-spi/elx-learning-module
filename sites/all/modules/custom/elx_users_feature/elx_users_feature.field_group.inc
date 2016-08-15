@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function elx_users_feature_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -39,7 +39,7 @@ function elx_users_feature_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_elx_user|user|user|form'] = $field_group;
+  $field_groups['group_elx_user|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -78,7 +78,7 @@ function elx_users_feature_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_employee|user|user|form'] = $field_group;
+  $field_groups['group_employee|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -109,7 +109,7 @@ function elx_users_feature_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_personal|user|user|form'] = $field_group;
+  $field_groups['group_personal|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -142,7 +142,14 @@ function elx_users_feature_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_regional|user|user|form'] = $field_group;
+  $field_groups['group_regional|user|user|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('ELX Data');
+  t('Employee info');
+  t('Personal information');
+  t('Regional information');
+
+  return $field_groups;
 }

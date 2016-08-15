@@ -716,5 +716,3 @@ features[variable][] = node_submitted_tools
 features[variable][] = node_submitted_trivia
 features[variable][] = site_name
 features[variable][] = theme_default
-features[wysiwyg][] = full_html
-mtime = 1470882551

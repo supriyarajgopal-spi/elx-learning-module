@@ -1547,7 +1547,7 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Status';
   $feeds_tamper->plugin_id = 'cast_to_int';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 8;
   $feeds_tamper->description = 'Cast to integer';
   $export['elx_users-status-cast_to_int'] = $feeds_tamper;

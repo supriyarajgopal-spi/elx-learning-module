@@ -10,7 +10,7 @@
 function elx_content_tool_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'group_access'
+  // Exported field_base: 'group_access'.
   $field_bases['group_access'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -20,7 +20,6 @@ function elx_content_tool_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 1,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -41,14 +40,13 @@ function elx_content_tool_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'group_content_access'
+  // Exported field_base: 'group_content_access'.
   $field_bases['group_content_access'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'group_content_access',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -70,7 +68,7 @@ function elx_content_tool_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'group_group'
+  // Exported field_base: 'group_group'.
   $field_bases['group_group'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -80,7 +78,6 @@ function elx_content_tool_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -100,21 +97,13 @@ function elx_content_tool_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'markets'
+  // Exported field_base: 'markets'.
   $field_bases['markets'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'markets',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -144,7 +133,7 @@ function elx_content_tool_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'og_user_node'
+  // Exported field_base: 'og_user_node'.
   $field_bases['og_user_node'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -153,14 +142,6 @@ function elx_content_tool_field_default_field_bases() {
     'field_name' => 'og_user_node',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
     ),
     'indexes' => array(
       'target_id' => array(

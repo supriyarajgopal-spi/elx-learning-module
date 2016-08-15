@@ -10,7 +10,7 @@
 function elx_users_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_account_field_executive'
+  // Exported field_instance: 'user-user-field_account_field_executive'.
   $field_instances['user-user-field_account_field_executive'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -45,7 +45,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_account_name'
+  // Exported field_instance: 'user-user-field_account_name'.
   $field_instances['user-user-field_account_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -80,7 +80,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_city'
+  // Exported field_instance: 'user-user-field_city'.
   $field_instances['user-user-field_city'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -115,7 +115,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_counter_manager'
+  // Exported field_instance: 'user-user-field_counter_manager'.
   $field_instances['user-user-field_counter_manager'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -150,7 +150,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_country'
+  // Exported field_instance: 'user-user-field_country'.
   $field_instances['user-user-field_country'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -182,7 +182,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_door'
+  // Exported field_instance: 'user-user-field_door'.
   $field_instances['user-user-field_door'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -217,7 +217,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_education_manager_executiv'
+  // Exported field_instance: 'user-user-field_education_manager_executiv'.
   $field_instances['user-user-field_education_manager_executiv'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -252,7 +252,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_employer_number'
+  // Exported field_instance: 'user-user-field_employer_number'.
   $field_instances['user-user-field_employer_number'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -287,7 +287,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_employment_status'
+  // Exported field_instance: 'user-user-field_employment_status'.
   $field_instances['user-user-field_employment_status'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -319,7 +319,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_field_sales_director_regio'
+  // Exported field_instance: 'user-user-field_field_sales_director_regio'.
   $field_instances['user-user-field_field_sales_director_regio'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -354,7 +354,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -389,7 +389,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_general_manager_brand_mana'
+  // Exported field_instance: 'user-user-field_general_manager_brand_mana'.
   $field_instances['user-user-field_general_manager_brand_mana'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -424,7 +424,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_hire_date'
+  // Exported field_instance: 'user-user-field_hire_date'.
   $field_instances['user-user-field_hire_date'] = array(
     'bundle' => 'user',
     'deleted' => 0,
@@ -439,6 +439,7 @@ function elx_users_feature_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 9,
@@ -472,7 +473,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_access_date'
+  // Exported field_instance: 'user-user-field_last_access_date'.
   $field_instances['user-user-field_last_access_date'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -507,7 +508,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -542,7 +543,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_level'
+  // Exported field_instance: 'user-user-field_level'.
   $field_instances['user-user-field_level'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -577,7 +578,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_market_administrator'
+  // Exported field_instance: 'user-user-field_market_administrator'.
   $field_instances['user-user-field_market_administrator'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -612,7 +613,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_modified_date'
+  // Exported field_instance: 'user-user-field_modified_date'.
   $field_instances['user-user-field_modified_date'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -647,7 +648,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_rank'
+  // Exported field_instance: 'user-user-field_rank'.
   $field_instances['user-user-field_rank'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -682,7 +683,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_region_list'
+  // Exported field_instance: 'user-user-field_region_list'.
   $field_instances['user-user-field_region_list'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -714,7 +715,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_regional_vice_president'
+  // Exported field_instance: 'user-user-field_regional_vice_president'.
   $field_instances['user-user-field_regional_vice_president'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -749,7 +750,7 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_state'
+  // Exported field_instance: 'user-user-field_state'.
   $field_instances['user-user-field_state'] = array(
     'bundle' => 'user',
     'default_value' => NULL,

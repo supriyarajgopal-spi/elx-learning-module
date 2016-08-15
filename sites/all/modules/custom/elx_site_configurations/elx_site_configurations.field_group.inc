@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function elx_site_configurations_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_answer|paragraphs_item|answers|form'] = $field_group;
+  $field_groups['group_answer|paragraphs_item|answers|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -66,7 +66,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_bottom|paragraphs_item|match_game_collection|form'] = $field_group;
+  $field_groups['group_bottom|paragraphs_item|match_game_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -94,7 +94,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_drag_match_left|paragraphs_item|drag_match|form'] = $field_group;
+  $field_groups['group_drag_match_left|paragraphs_item|drag_match|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -122,7 +122,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_drag_match_right|paragraphs_item|drag_match|form'] = $field_group;
+  $field_groups['group_drag_match_right|paragraphs_item|drag_match|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -152,7 +152,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_drag_select|paragraphs_item|drag_select|form'] = $field_group;
+  $field_groups['group_drag_select|paragraphs_item|drag_select|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -184,7 +184,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_first_last_questions|node|trivia|form'] = $field_group;
+  $field_groups['group_first_last_questions|node|trivia|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -215,7 +215,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_flash|paragraphs_item|flash_card_collection|form'] = $field_group;
+  $field_groups['group_flash|paragraphs_item|flash_card_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -245,7 +245,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_hotspot|paragraphs_item|hot_spot|form'] = $field_group;
+  $field_groups['group_hotspot|paragraphs_item|hot_spot|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -270,7 +270,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_hotspot|paragraphs_item|new_spot|form'] = $field_group;
+  $field_groups['group_hotspot|paragraphs_item|new_spot|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -300,7 +300,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_list_items|paragraphs_item|list_item|form'] = $field_group;
+  $field_groups['group_list_items|paragraphs_item|list_item|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -328,7 +328,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_markets|node|badge|form'] = $field_group;
+  $field_groups['group_markets|node|badge|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -357,7 +357,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_markets|node|diary|form'] = $field_group;
+  $field_groups['group_markets|node|diary|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -385,7 +385,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_markets|node|disclaimer|form'] = $field_group;
+  $field_groups['group_markets|node|disclaimer|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -414,7 +414,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_market|node|content_object|form'] = $field_group;
+  $field_groups['group_market|node|content_object|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -443,7 +443,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_middle|paragraphs_item|match_game_collection|form'] = $field_group;
+  $field_groups['group_middle|paragraphs_item|match_game_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -471,7 +471,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_partners|node|product_detail|form'] = $field_group;
+  $field_groups['group_partners|node|product_detail|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -499,7 +499,7 @@ function elx_site_configurations_field_group_info() {
       ),
     ),
   );
-  $export['group_priority|paragraphs_item|drag_priority|form'] = $field_group;
+  $field_groups['group_priority|paragraphs_item|drag_priority|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -527,7 +527,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_product_markets|node|product_detail|form'] = $field_group;
+  $field_groups['group_product_markets|node|product_detail|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -556,7 +556,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_question_video|paragraphs_item|multiple_choice_collection|form'] = $field_group;
+  $field_groups['group_question_video|paragraphs_item|multiple_choice_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -585,7 +585,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_question_video|paragraphs_item|questions|form'] = $field_group;
+  $field_groups['group_question_video|paragraphs_item|questions|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -615,7 +615,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_questions|node|question_and_answer|form'] = $field_group;
+  $field_groups['group_questions|node|question_and_answer|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -646,7 +646,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_question|paragraphs_item|multiple_choice_collection|form'] = $field_group;
+  $field_groups['group_question|paragraphs_item|multiple_choice_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -676,7 +676,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_question|paragraphs_item|questions|form'] = $field_group;
+  $field_groups['group_question|paragraphs_item|questions|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -707,7 +707,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_reveal|paragraphs_item|reveal_collection|form'] = $field_group;
+  $field_groups['group_reveal|paragraphs_item|reveal_collection|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -735,7 +735,7 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_tools_markets|node|tools|form'] = $field_group;
+  $field_groups['group_tools_markets|node|tools|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -764,7 +764,29 @@ function elx_site_configurations_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_top|paragraphs_item|match_game_collection|form'] = $field_group;
+  $field_groups['group_top|paragraphs_item|match_game_collection|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Answer');
+  t('Bottom');
+  t('Drag match left');
+  t('Drag match right');
+  t('Drag select');
+  t('First/last questions');
+  t('Flash card');
+  t('Hot Spot');
+  t('Hot spot group');
+  t('Last question');
+  t('List group');
+  t('Markets');
+  t('Middle');
+  t('Perfect partners');
+  t('Priority group');
+  t('Question');
+  t('Question video');
+  t('Reveal group');
+  t('Top');
+
+  return $field_groups;
 }

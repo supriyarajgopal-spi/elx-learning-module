@@ -10,7 +10,7 @@
 function elx_content_tool_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-market-group_access'
+  // Exported field_instance: 'node-market-group_access'.
   $field_instances['node-market-group_access'] = array(
     'bundle' => 'market',
     'default_value' => array(
@@ -69,7 +69,7 @@ function elx_content_tool_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-market-group_group'
+  // Exported field_instance: 'node-market-group_group'.
   $field_instances['node-market-group_group'] = array(
     'bundle' => 'market',
     'default_value' => array(
@@ -134,7 +134,7 @@ function elx_content_tool_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-og_user_node'
+  // Exported field_instance: 'user-user-og_user_node'.
   $field_instances['user-user-og_user_node'] = array(
     'bundle' => 'user',
     'default_value' => NULL,

@@ -44,4 +44,14 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	$action = $elements->field->fields[4];
 	$action->options[] = "H5P.ImageHotspots 1.3";
   }
+  
+  //Allow HTML in Dialog Cards text fields
+  if($machine_name == 'H5P.Dialogcards')
+  {
+	$dialog_front = $semantics[2]->field->fields[0];
+	$dialog_back = $semantics[2]->field->fields[1];
+	$dialog_front->widget = $dialog_back->widget = 'html'; //Allow HTML
+	$dialog_front->tags = $dialog_back->tags = array('p','br','strong','em','ul','li','ol','dl','dt','sup','u'); //Allowed tags
+	$dialog_back->optional = true; //Make text at the back of Dialog card optional
+  }
 }

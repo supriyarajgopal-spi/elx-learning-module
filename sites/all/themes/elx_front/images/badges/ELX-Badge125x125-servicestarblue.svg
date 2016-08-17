@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="125px"
+	 height="125px" viewBox="0 0 125 125" style="enable-background:new 0 0 125 125;" xml:space="preserve">
+<g id="gray_background" style="display:none;">
+	<rect x="-129.5" y="-594.666626" style="display:inline;fill:#6D6E70;" width="906.666687" height="764"/>
+</g>
+<g id="Layer_4" style="display:none;">
+	<rect style="display:inline;fill:#FF0D6B;" width="125" height="125"/>
+</g>
+<g id="outline">
+	<circle style="fill:#FFFFFF;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;" cx="62.5" cy="62.5" r="57.5"/>
+</g>
+<g id="Layer_1">
+	<circle style="fill:#1E2341;" cx="62.5" cy="62.5" r="57.5"/>
+	<circle style="fill:#404C7F;" cx="62.5" cy="62.5" r="50"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="12.5" y1="62.5" x2="112.5" y2="62.5">
+		<stop  offset="0.102858" style="stop-color:#1E2341"/>
+		<stop  offset="0.151202" style="stop-color:#252A47"/>
+		<stop  offset="0.220307" style="stop-color:#383C57"/>
+		<stop  offset="0.301891" style="stop-color:#565A71"/>
+		<stop  offset="0.392976" style="stop-color:#818495"/>
+		<stop  offset="0.490811" style="stop-color:#B8B9C3"/>
+		<stop  offset="0.52545" style="stop-color:#CDCED5"/>
+		<stop  offset="0.59761" style="stop-color:#A4A6B2"/>
+		<stop  offset="0.693235" style="stop-color:#74788A"/>
+		<stop  offset="0.784294" style="stop-color:#4F536A"/>
+		<stop  offset="0.868346" style="stop-color:#343954"/>
+		<stop  offset="0.942812" style="stop-color:#242946"/>
+		<stop  offset="1" style="stop-color:#1E2341"/>
+	</linearGradient>
+	<circle style="opacity:0.42;fill:url(#SVGID_2_);" cx="62.5" cy="62.5" r="50"/>
+	<polygon style="fill:#FFFFFF;" points="62.654011,22.000004 73.742691,50.337749 101.464394,50.337749 81.135147,67.586815 
+		88.219582,96.848618 62.654011,82.987762 37.08844,97.156639 44.480892,67.894829 23.535606,50.645767 51.873348,50.337749 	"/>
+</g>
+</svg>

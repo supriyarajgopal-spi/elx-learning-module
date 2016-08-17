@@ -795,6 +795,112 @@ th {
   }
 }
 
+/* BADGES */
+.page-badges .views-row > div {
+  width: 142px;
+  height: 142px;
+  float: left;
+  text-indent: -5000px;
+  margin: 0 13px 26px;
+  background-size: 142px 142px;
+}
+
+.page-badges .three-minute-beauty {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-3minbeauty.svg") no-repeat 0 0;
+}
+
+.page-badges .one-hundred-percent-club {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-100club.svg") no-repeat 0 0;
+}
+
+.page-badges .beauty-queen {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautyqueen.png") no-repeat 0 0;
+}
+
+.page-badges .early-bird {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-earlybird.svg") no-repeat 0 0;
+}
+
+.page-badges .fast-learner {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-fastlearner.svg") no-repeat 0 0;
+}
+
+.page-badges .first-1000-points {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first1000.svg") no-repeat 0 0;
+}
+
+.page-badges .first-5000-points {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first5000.svg") no-repeat 0 0;
+}
+
+.page-badges .first-10000-points {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg") no-repeat 0 0;
+}
+
+.page-badges .high-five {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg") no-repeat 0 0;
+}
+
+.page-badges .little-brown-bottle {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png") no-repeat 0 0;
+}
+
+.page-badges .new-dimension {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png") no-repeat 0 0;
+}
+
+.page-badges .on-your-way {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg") no-repeat 0 0;
+}
+
+.page-badges .perfect-ten {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg") no-repeat 0 0;
+}
+
+.page-badges .product-pro {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg") no-repeat 0 0;
+}
+
+.page-badges .rare-beauty {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png") no-repeat 0 0;
+}
+
+.page-badges .service-star {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg") no-repeat 0 0;
+}
+
+.page-badges .sleeping-beauty {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png") no-repeat 0 0;
+}
+
+.page-badges .we-heard-you {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg") no-repeat 0 0;
+}
+
+.page-badges .we-heart-you {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg") no-repeat 0 0;
+}
+
+.page-badges .welcome {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg") no-repeat 0 0;
+}
+
+.page-badges .well-read-25 {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg") no-repeat 0 0;
+}
+
+.page-badges .well-read-50 {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg") no-repeat 0 0;
+}
+
+.page-badges .well-read-75 {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg") no-repeat 0 0;
+}
+
+.page-badges .well-read-100 {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg") no-repeat 0 0;
+}
+
 .box {
   margin-bottom: 1.5rem;
   border: 5px solid #cccccc;

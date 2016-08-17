@@ -34,6 +34,68 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.js');
     drupal_add_js(drupal_get_path('module', 'elx_utility')
     . '/jquery.alphanum.js');
+	
+	/**
+	 * Included by SUPRIYA RAJGOPAL on 17Aug16 to add additional modal window related JS & CSS
+	 * Uncomment to adjust modal window settings as per class specified
+	 * Specify the corresponding class of modal window in views/elx_utility.views.inc
+	 */
+	/*--------------------------------------------------------------------------------------*/
+	/* drupal_add_css(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.css');
+    drupal_add_js(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.js');
+    drupal_add_js(array(
+      'quickview' => array(
+        'modalClass' => 'quickview',
+        'modalSize' => array ( 
+        'type' => 'fixed', 
+        'width' => 760,
+        'height' => 590),
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-email-direct-thank-you' => array(
+        'modalClass' => 'lysse-email-direct-thank-you',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-email-direct-second-run' => array(
+        'modalClass' => 'lysse-email-direct-second-run',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'wish-list' => array(
+        'modalClass' => 'wish-list',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-popup-link' => array(
+        'modalClass' => 'lysse-popup-link',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'login-registration-modal' => array(
+        'modalClass' => 'login-registration-modal',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'cart-promo-modal' => array(
+        'modalClass' => 'cart-promo-modal',
+        'modalSize' => array ( 
+          'type' => 'fixed', 
+          'width' => 500,
+          'height' => 500,
+          'contentRight' => 0,
+          'contentBottom' => 0,
+        ),
+      ),
+    ), 'setting'); */
+	/*--------------------------------------------------------------------------------------*/
   }
 }
 

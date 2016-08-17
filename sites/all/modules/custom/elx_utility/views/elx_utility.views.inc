@@ -62,3 +62,26 @@ function elx_utility_views_data() {
     ),
   );
 } */
+
+/**
+ * Implements hook_views_pre_render().
+ * Created by SUPRIYA RAJGOPAL on 17Aug16 to add classes here instead of in 'Link class' in 'Rewrite Results' to rewritten output field
+ */
+function elx_utility_views_pre_render(&$view)
+{
+  switch($view->name)
+  {
+    case 'badges':
+		//Add classes to each Views field separately..
+		//$view->field['flagged']->options['alter']['link_class'] = t('use-ajax hello');
+		
+		//..or add the same classes to all Views fields at oncce
+		foreach($view->field as $field)
+			$field->options['alter']['link_class'] = t('use-ajax'); //Separate each class name with a space. 'use-ajax' is mandatory
+		break;
+	 
+	case 'product_library':
+		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax'); //'use-ajax' is mandatory
+		break;
+  }
+}

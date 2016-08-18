@@ -1,0 +1,44 @@
+/* MODALS */
+body.ctools-modal-open {
+  overflow: hidden;
+}
+
+.modal-default {
+
+  .modal-title {
+    display: none;
+  }
+
+  .modal-content {
+    font-family: $font-family-sans-serif;
+
+    h2 {
+      font-family: $font-family-serif;
+      font-size: $font-size-lg-large;
+    }
+
+  }
+
+  /* product library */
+  .page-product-library & {
+
+    .field-name-field-why-there-s-only-one {
+      float: right;
+      width: 50%;
+      background-color: #e6e9ee;
+      padding: 0 37px 2px;
+
+      .field-label {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: $font-size-lg-medium;
+        padding: 20px 0 3px;
+        border-bottom: 1px solid #fff;
+      }
+
+    }
+
+  }
+
+}
+

@@ -1,0 +1,51 @@
+diff --git ../../sites/all/modules/contrib/ctools/css/modal.css ../../sites/all/modules/contrib/ctools/css/modal.css
+index def374b..13d1728 100644
+--- ../../sites/all/modules/contrib/ctools/css/modal.css
++++ ../../sites/all/modules/contrib/ctools/css/modal.css
+@@ -128,3 +128,7 @@ div.ctools-modal-content .option-text-aligner label.hidden-options {
+ div.ctools-modal-content .dependent-options {
+   padding-left: 30px;
+ }
++
++body.ctools-modal-open {
++  overflow: hidden; /*hide the background body scroll when the modal is open for better UX */
++}
+diff --git ../../sites/all/modules/contrib/ctools/js/modal.js ../../sites/all/modules/contrib/ctools/js/modal.js
+index 37908cf..19a452c 100644
+--- ../../sites/all/modules/contrib/ctools/js/modal.js
++++ ../../sites/all/modules/contrib/ctools/js/modal.js
+@@ -94,6 +94,8 @@
+       }
+     }
+ 
++    //add body class so we can target it and hide scroll when modal is open
++    $('body').addClass('ctools-modal-open');
+     resize();
+ 
+     $('span.modal-title', Drupal.CTools.Modal.modal).html(Drupal.CTools.Modal.currentSettings.loadingText);
+@@ -113,6 +115,7 @@
+     if (Drupal.CTools.Modal.modal) {
+       Drupal.CTools.Modal.unmodalContent(Drupal.CTools.Modal.modal);
+     }
++    $('body').removeClass('ctools-modal-open');
+   };
+ 
+   /**
+@@ -475,6 +478,9 @@
+       // Close the content
+       modalContent.hide()[animation](speed);
+ 
++      //remove body class to release scrolling in main body.
++      $('body').removeClass('ctools-modal-open');
++
+       // Remove the content
+       $('#modalContent').remove();
+       $('#modalBackdrop').remove();
+@@ -556,6 +562,7 @@
+         } else {
+           $('#modalContent').remove();
+           $('#modalBackdrop').remove();
++          $('body').removeClass('ctools-modal-open');
+         }
+       }
+     });

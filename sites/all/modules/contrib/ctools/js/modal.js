@@ -95,6 +95,8 @@
       }
     }
 
+    //add body class so we can target it and hide scroll when modal is open
+    $('body').addClass('ctools-modal-open');
     resize();
 
     $('span.modal-title', Drupal.CTools.Modal.modal).html(Drupal.CTools.Modal.currentSettings.loadingText);
@@ -114,6 +116,7 @@
     if (Drupal.CTools.Modal.modal) {
       Drupal.CTools.Modal.unmodalContent(Drupal.CTools.Modal.modal);
     }
+    $('body').removeClass('ctools-modal-open');
   };
 
   /**
@@ -595,6 +598,9 @@
       // Close the content
       modalContent.hide()[animation](speed);
 
+      //remove body class to release scrolling in main body.
+      $('body').removeClass('ctools-modal-open');
+
       // Remove the content
       $('#modalContent').remove();
       $('#modalBackdrop').remove();
@@ -683,6 +689,7 @@
         } else {
           $('#modalContent').remove();
           $('#modalBackdrop').remove();
+          $('body').removeClass('ctools-modal-open');
         }
       }
     });

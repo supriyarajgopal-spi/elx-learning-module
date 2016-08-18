@@ -1303,6 +1303,43 @@ body.page-user-password .layout-3col__full .elx-form-wrapper #edit-submit {
   fill: #c00;
 }
 
+/* MODALS */
+body.ctools-modal-open {
+  overflow: hidden;
+}
+
+.modal-default {
+  /* product library */
+}
+
+.modal-default .modal-title {
+  display: none;
+}
+
+.modal-default .modal-content {
+  font-family: "akzidenz-grotesk_bq";
+}
+
+.modal-default .modal-content h2 {
+  font-family: "optimadisplaylightlight";
+  font-size: 28px;
+}
+
+.page-product-library .modal-default .field-name-field-why-there-s-only-one {
+  float: right;
+  width: 50%;
+  background-color: #e6e9ee;
+  padding: 0 37px 2px;
+}
+
+.page-product-library .modal-default .field-name-field-why-there-s-only-one .field-label {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 20px 0 3px;
+  border-bottom: 1px solid #fff;
+}
+
 @media print {
   .print-none,
   .toolbar,
@@ -2348,3 +2385,5 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
+
+/*# sourceMappingURL=styles.css.map */

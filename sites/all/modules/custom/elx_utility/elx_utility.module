@@ -228,7 +228,19 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
   {
     ctools_include('modal');
     ctools_include('ajax');
-	ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
+	  ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
+    drupal_add_js(array(
+        'product-library' => array(
+          'modalSize' => array(
+            'type' => 'scale',
+            'width' => 1,
+            'height' => 1,
+          ),
+          'animation' => 'slideDown',
+          'closeText' => t(''),
+          //'closeImage' => base_path() . path_to_theme() . '',
+        ),
+      ), 'setting');
   }
   
   //Load the node object

@@ -81,7 +81,7 @@ function elx_utility_views_pre_render(&$view)
 		break;
 	 
 	case 'product_library':
-		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax'); //'use-ajax' is mandatory
+		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-product-library'); //'use-ajax' is mandatory
 		break;
   }
 }

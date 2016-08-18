@@ -129,6 +129,13 @@ $rem-fallback:      false;
 @include add-breakpoint(xxl,  (1111px));
 @include add-breakpoint(xxxl, (1222px));
 
+// Breakpoints for ELX 
+@include add-breakpoint(mobile, (480px, 'no-query' true));
+@include add-breakpoint(tablet, (768px, 'no-query' true));
+@include add-breakpoint(desktop, (990px, 'no-query' true));
+@include add-breakpoint(wide, (1200px, 'no-query' true));
+@include add-breakpoint(xwide, (1500px, 'no-query' true));
+
 // Output media queries where the above px are converted to ems.
 // @include breakpoint-set('to ems', true);
 

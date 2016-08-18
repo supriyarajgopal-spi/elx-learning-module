@@ -1,5 +1,7 @@
 // Dependencies.
+
 @import 'base/headings/headings';
+
 @import 'components/clearfix/clearfix';
 
 // Branding header
@@ -11,37 +13,241 @@
 .header,
 %header {
   @extend %clearfix;
+  background-color: #040a2b;
+  height: 64px;
+  background-image: none;
+  @include respond-to('tablet') {
+    height: 64px;
+    background-image: none;
+  }
+  @include respond-to('desktop') {
+    height: 94px;
+  }
+  @include respond-to('wide') {
+    height: 94px;
+  }
+  @include respond-to('xwide') {
+    height: 94px;
+  }
 
   // Wrapping link for logo.
+
   &__logo {
     float: left;
     margin: 0 10px 0 0;
     padding: 0;
-
     @include rtl() {
       float: right;
       margin: 0 0 0 10px;
     }
   }
 
+  div#block-blockify-blockify-logo {
+    float: left;
+    width: 64px;
+    position: relative;
+    @include respond-to('mobile') {
+      width: 64px;
+      margin: -6px 0 0 20px;
+    }
+    @include respond-to('tablet') {
+      width: 64px;
+      margin: 20px 0 0;
+    }
+    @include respond-to('desktop') {
+      width: 95px;
+      margin: 20px 0 0;
+    }
+    @include respond-to('wide') {
+      width: 95px;
+      margin: 20px 0 0;
+    }
+    @include respond-to('xwide') {
+      width: 95px;
+      margin: 20px 0 0;
+    }
+
+    img {
+      position: absolute;
+      z-index: 1;
+    }
+
+    &::after {
+      background-image: none;
+      @include respond-to('tablet') {
+        background-image: none;
+      }
+      @include respond-to('desktop') {
+        width: 220px;
+        background-image: url('../images/menu-steel.png');
+        background-repeat: no-repeat;
+        height: 94px;
+        content: '';
+        display: block;
+        left: -50px;
+        top: -20px;
+        position: absolute;
+      }
+      @include respond-to('wide') {
+        width: 220px;
+        background-image: url('../images/menu-steel.png');
+        background-repeat: no-repeat;
+        height: 94px;
+        content: '';
+        display: block;
+        left: -50px;
+        top: -20px;
+        position: absolute;
+      }
+      @include respond-to('xwide') {
+        width: 220px;
+        background-image: url('../images/menu-steel.png');
+        background-repeat: no-repeat;
+        height: 94px;
+        content: '';
+        display: block;
+        left: -50px;
+        top: -20px;
+        position: absolute;
+      }
+    }
+  }
+
+  div#block-blockify-blockify-site-name {
+    @include respond-to('mobile') {
+      background-image: url('../images/estee-lauder-experience-logo-navy.svg');
+      background-repeat: no-repeat;
+      background-size: 284px 27px;
+      width: 279px;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+    }
+    @include respond-to('tablet') {
+      background-image: url('../images/estee-lauder-experience.png');
+      width: 290px;
+      float: left;
+      height: 86px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      top: 25px;
+      display: inline;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+    }
+    @include respond-to('desktop') {
+      background-image: url('../images/estee-lauder-experience-stacked.png');
+      width: 135px;
+      float: left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      top: 20px;
+      left: 20px;
+      display: inline;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+    }
+    @include respond-to('wide') {
+      background-image: url('../images/estee-lauder-experience-stacked.png');
+      width: 135px;
+      float: left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      top: 20px;
+      left: 20px;
+      display: inline;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+    }
+    @include respond-to('xwide') {
+      background-image: url('../images/estee-lauder-experience.png');
+      width: 290px;
+      float: left;
+      height: 86px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      top: 35px;
+      display: inline;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+    }
+  }
+
+  h1#site-name a {
+    color: transparent;
+    text-decoration: none;
+
+    &:visited {
+      color: transparent;
+    }
+  }
+
+  span#site-name a {
+    color: transparent;
+    text-decoration: none;
+
+    &:visited {
+      color: transparent;
+    }
+  }
   // Logo image.
+
   &__logo-image {
     vertical-align: bottom;
   }
-
   // Wrapper for website name and slogan.
+
   &__name-and-slogan {
     float: left;
   }
-
   // The name of the website.
+
   &__site-name {
     @extend %h1;
     margin: 0;
   }
-
   // The link around the name of the website.
+
   &__site-link {
+
     &:link,
     &:visited {
       color: color(text);
@@ -53,24 +259,483 @@
       text-decoration: underline;
     }
   }
-
   // The slogan (or tagline) of a website.
+
   &__site-slogan {
     margin: 0;
   }
-
   // The secondary menu (login, etc.)
+
   &__secondary-menu {
     float: right;
-
     @include rtl() {
       float: left;
     }
   }
 
   // Wrapper for any blocks placed in the header region.
+
   &__region {
     // Clear the logo.
     clear: both;
   }
+}
+
+div#block-search-form {
+  display: none;
+  @include respond-to('tablet') {
+    display: none;
+  }
+  @include respond-to('desktop') {
+    float: right;
+    display: inline;
+  }
+  @include respond-to('wide') {
+    float: right;
+    display: inline;
+  }
+  @include respond-to('xwide') {
+    float: right;
+    display: inline;
+  }
+
+  form {
+    position: relative;
+
+    .form-item-search-block-form::before {
+      content: '\e60f';
+      position: absolute;
+      color: #fff;
+      right: 0;
+      font-family: $font-family-icons;
+      line-height: 44px;
+      right: 15px;
+    }
+
+    input[type='text'] {
+      border-bottom: 1px solid transparent;
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      box-shadow: 0 0 0;
+      width: 125px;
+      padding: 10px 35px 10px 10px;
+      background: 0 0;
+      margin: 0;
+      font-size: 1em;
+      color: #fff;
+      height: 44px;
+      display: block;
+      transition: .8s ease-in-out;
+      line-height: 1.429;
+      font-size: 18px;
+
+      &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        opacity: 1 !important;
+      }
+
+      &::-moz-placeholder {
+        /* Firefox 18- */
+        opacity: 1;
+      }
+
+      &:focus {
+        width: 200px;
+        outline-color: 0 transparent;
+        outline: -webkit-focus-ring-color auto 0;
+        outline-color: transparent;
+        outline-style: auto;
+        outline-width: 0;
+        border-bottom: 1px solid #fff;
+      }
+    }
+
+    input[type='submit'] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+  }
+}
+
+div#block-menu-menu-header-menu {
+  display: none;
+
+  @include respond-to('tablet') {
+    display: none;
+  }
+
+  @include respond-to('desktop') {
+    display: inline;
+    float: right;
+    position: relative;
+    top: 10px;
+
+    ul.menu li {
+      float: left;
+      padding: 0 40px 0 0;
+
+      a {
+        color: #9eafff;
+        text-decoration: none;
+        font-family: $font-family-sans-serif-head;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+div#block-menu-menu-header-user-menu {
+  position: relative;
+  float: right;
+  background: #1e2341;
+  width: 200px;
+  height: 64px;
+  z-index: 150;
+  top: -150px;
+  right: -30px;
+
+  @include respond-to('mobile') {
+    top: -150px;
+    right: -30px;
+  }
+
+  @include respond-to('tablet') {
+    top: -150px;
+    right: -30px;
+  }
+  @include respond-to('desktop') {
+    height: 94px;
+    top: 0;
+    right: 0;
+  }
+  @include respond-to('wide') {
+    height: 94px;
+    top: 0;
+    right: 0;
+  }
+  @include respond-to('xwide') {
+    height: 94px;
+    top: 0;
+    right: 0;
+  }
+
+  ul.menu {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    li {
+
+      a.menu-minipanel {
+        color: transparent;
+        height: 25px;
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        margin-right: .3em;
+        border-top: .2em solid #fff;
+        border-bottom: .2em solid #fff;
+        bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 100%;
+          border-top: .2em solid #fff;
+        }
+
+        @include respond-to('desktop') {
+          display: block;
+          width: 100%;
+          background-image: url('../images/elx-menu_button.png');
+          background-repeat: no-repeat;
+          border: transparent;
+          font-size: 0;
+          line-height: 0;
+          height: 14px;
+          position: absolute;
+          top: 80px;
+          left: 0;
+        }
+
+        @include respond-to('wide') {
+          display: block;
+          width: 100%;
+          background-image: url('../images/elx-menu_button.png');
+          background-repeat: no-repeat;
+          border: transparent;
+          font-size: 0;
+          line-height: 0;
+          height: 14px;
+          position: absolute;
+          top: 80px;
+          left: 0;
+        }
+
+        @include respond-to('xwide') {
+          display: block;
+          width: 100%;
+          background-image: url('../images/elx-menu_button.png');
+          background-repeat: no-repeat;
+          border: transparent;
+          font-size: 0;
+          line-height: 0;
+          height: 14px;
+          position: absolute;
+          top: 80px;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  ul.menu li a {
+    color: #fff;
+    position: relative;
+    top: 20px;
+    left: 85px;
+    font-family: $font-family-serif;
+    font-size: 1em;
+    text-decoration: none;
+    float: left;
+    padding-right: 30px;
+
+    @include respond-to('desktop') {
+      padding-right: 0;
+    }
+
+    @include respond-to('wide') {
+      padding-right: 0;
+    }
+
+    @include respond-to('xwide') {
+      padding-right: 0;
+    }
+  }
+}
+
+.qtip.qtip-light {
+  // width: 300px !important;
+  // position: absolute !important;
+  // right: 0 !important;
+  // left: -50px !important;
+}
+
+.qtip-contentWrapper {
+  border: 0 !important;
+}
+
+.qtip-content.qtip-content {
+  background-color: #1e2341 !important;
+  color: #fff !important;
+  font-family: $font-family-serif !important;
+  padding: 0 !important;
+  border-bottom: 1px solid #040a2b !important;
+
+  li {
+
+    &::after {
+      position: relative;
+      color: #9eafff;
+      content: '\e614';
+      font-size: 18px;
+      font-weight: 700;
+      float: right;
+      font-family: $font-family-icons;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #9eafff;
+    font-size: 16px;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #1e2441;
+  }
+}
+
+.pane-menu-menu-header-user-menu-1 {
+  background: #040a2b;
+}
+
+.pane-menu-menu-header-user-menu-1 ul.menu {
+  padding-left: 0;
+
+  li {
+    padding: 20px;
+    border-bottom: 1px solid #1e2441;
+
+    &:hover {
+      background-color: #1e2341;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*Menu in dropdown during mobile and tablet*/
+
+div#mini-panel-header_user_menu {
+  background: #040a2b;
+
+  .pane-menu-menu-header-menu ul.menu {
+    padding-left: 0;
+
+    li {
+      padding: 20px;
+      border-bottom: 1px solid #1e2441;
+
+      &:hover {
+        background-color: #1e2341;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    @include respond-to('desktop') {
+      display: none;
+    }
+
+    @include respond-to('wide') {
+      display: none;
+    }
+    @include respond-to('xwide') {
+      display: none;
+    }
+  }
+}
+
+
+/*Search form in dropdown during mobile and tablet*/
+
+form#search-block-form--2 {
+
+  .form-item-search-block-form::before {
+    content: '\e60f';
+    position: absolute;
+    color: #fff;
+    right: 0;
+    font-family: $font-family-icons;
+    line-height: 44px;
+    right: 15px;
+  }
+
+  input[type='text'] {
+    border-bottom: 1px solid transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    box-shadow: 0 0 0;
+    width: 300px;
+    padding: 10px 35px 10px 10px;
+    background: 0 0;
+    margin: 0;
+    font-size: 1em;
+    color: #fff;
+    height: 44px;
+    display: block;
+    transition: .8s ease-in-out;
+    line-height: 1.429;
+    font-size: 18px;
+
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      opacity: 1 !important;
+    }
+
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      opacity: 1;
+    }
+
+    &:focus {
+      width: 300px;
+      outline-color: 0 transparent;
+      outline: -webkit-focus-ring-color auto 0;
+      outline-color: transparent;
+      outline-style: auto;
+      outline-width: 0;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  input[type='submit'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+  @include respond-to('desktop') {
+    display: none;
+  }
+  @include respond-to('wide') {
+    display: none;
+  }
+  @include respond-to('xwide') {
+    display: none;
+  }
+}
+
+
+/*Recent Badges*/
+
+.pane-elx-recent-badges-recent-badges {
+  padding: 0 20px;
+  margin-top: 10px;
+  margin-bottom: 45px;
+
+  h2 {
+    font-size: .95em;
+    color: #999;
+    float: left;
+  }
+
+  img {
+    width: 32px;
+    position: relative;
+    top: 25px;
+    margin-left: 5px;
+  }
+}
+
+//Logout button
+.pane-menu-menu-header-user-menu-2 {
+  background-color: #040a2b;
+
+  ul.menu {
+    padding: 0;
+
+    li {
+      padding: 20px;
+
+      &:hover {
+        background-color: #1e2341;
+      }
+    }
+  }
+}
+
+//My progress
+.pane-my-progress {
+  padding: 0 20px;
 }

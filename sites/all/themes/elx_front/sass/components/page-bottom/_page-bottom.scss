@@ -1,0 +1,23 @@
+.region.region-bottom {
+    background-color: #040a2b;
+
+    div#block-panels-mini-page-bottom {
+        width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+
+        p {
+            color: white;
+            font-size: .778em;
+        }
+
+        a {
+            color: #9eafff;
+            text-decoration: none;
+        }
+
+        .pane-menu-menu-page-bottom-privacy {
+            float: right;
+        }
+    }
+}

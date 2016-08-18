@@ -34,6 +34,68 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.js');
     drupal_add_js(drupal_get_path('module', 'elx_utility')
     . '/jquery.alphanum.js');
+	
+	/**
+	 * Included by SUPRIYA RAJGOPAL on 17Aug16 to add additional modal window related JS & CSS
+	 * Uncomment to adjust modal window settings as per class specified
+	 * Specify the corresponding class of modal window in views/elx_utility.views.inc
+	 */
+	/*--------------------------------------------------------------------------------------*/
+	/* drupal_add_css(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.css');
+    drupal_add_js(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.js');
+    drupal_add_js(array(
+      'quickview' => array(
+        'modalClass' => 'quickview',
+        'modalSize' => array ( 
+        'type' => 'fixed', 
+        'width' => 760,
+        'height' => 590),
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-email-direct-thank-you' => array(
+        'modalClass' => 'lysse-email-direct-thank-you',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-email-direct-second-run' => array(
+        'modalClass' => 'lysse-email-direct-second-run',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'wish-list' => array(
+        'modalClass' => 'wish-list',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'lysse-popup-link' => array(
+        'modalClass' => 'lysse-popup-link',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'login-registration-modal' => array(
+        'modalClass' => 'login-registration-modal',
+      ),
+    ), 'setting');
+    
+    drupal_add_js(array(
+      'cart-promo-modal' => array(
+        'modalClass' => 'cart-promo-modal',
+        'modalSize' => array ( 
+          'type' => 'fixed', 
+          'width' => 500,
+          'height' => 500,
+          'contentRight' => 0,
+          'contentBottom' => 0,
+        ),
+      ),
+    ), 'setting'); */
+	/*--------------------------------------------------------------------------------------*/
   }
 }
 
@@ -134,6 +196,14 @@ function elx_utility_menu()
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
+  
+  $items['modal/%ctools_js/flags/%'] = array(
+      'title' => 'Product Details Modal',
+      'page arguments' => array(1,3), //Pass whether to use AJAX or JS and the machine name of the flag
+      'page callback' => '_elx_badges_modal', //User defined function called when the link is clicked
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
+  );
   return $items;
 }
 
@@ -144,7 +214,7 @@ function elx_utility_menu()
  * @param $js
  *   boolean CTools determination whether the user's browser is javascript enabled. 
  * @param $nid
- *   string The node ID of passed as an argument from the hook_menu() path
+ *   string The node ID passed as an argument from the hook_menu() path
  * @return
  *   string The contents of the node in a modal window
  */
@@ -168,4 +238,146 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
   $nodeContent = node_view($node, 'modal', NULL); //To prevent strict warning that only variables can be passed by reference
   $contents = render($nodeContent);
   return ctools_modal_render($node->title, $contents) ;
+}
+
+/**
+ * User defined page callback created by SUPRIYA RAJGOPAL on 2Aug16 to show badge title in a modal
+ * Borrowed from https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7
+ *
+ * @param $js
+ *   boolean CTools determination whether the user's browser is javascript enabled. 
+ * @param $flag_name
+ *   string The machine name of flag passed as an argument from the hook_menu() path
+ * @return
+ *   string The flag title in a modal window
+ */
+function _elx_badges_modal($js = NULL, $flag_name = NULL)
+{
+  if($flag_name == NULL)
+   return 'No content to display.';
+   
+  //Include ctools iff path contains 'nojs' to work, else render page normally
+  if($js)
+  {
+    ctools_include('modal');
+    ctools_include('ajax');
+	ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
+  }
+  
+  $flag = flag_load($flag_name); //Load the flag object
+  
+  //Form the modal content
+  $rendered_title = (isset($flag->title) && $flag->title != '')?'Title: ' .$flag->title. '<br />':'';
+  $rendered_description = (isset($flag->badge_description) && $flag->badge_description != '')?'Description: ' .$flag->badge_description. '<br />':'';
+  $image = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
+  $rendered_img = ($image)?'Image: '.render(theme_image_style(array('style_name' => 'thumbnail','path' => $image->uri))):'';
+
+  $output = $rendered_title.$rendered_description.$rendered_img;
+  
+  return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
+}
+
+/**
+ * Implements hook_form_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add Badge Details to Flag module.
+ * This adds 'Badge Details' fieldset to all flags regardless of Badge flags. It is the admin's responsibility to not fill values for these unnecessarily.
+ */
+function elx_utility_form_alter(&$form, &$form_state, $form_id)
+{
+	if($form_id == 'flag_form') //'flag_add_form' is the one where the Flag Type (Node, User, Taxonomy, etc) is chosen whereas 'flag_form' is the actual form
+	{
+		$flag = isset($form['#flag']->name)?flag_load($form['#flag']->name):new stdClass();
+		
+		$form['badge_details'] = array(
+		  '#type' => 'fieldset',
+		  '#title' => t('Badge Details'),
+		  '#collapsible' => TRUE, 
+		  '#collapsed' => TRUE,
+		);
+		
+		$form['badge_details']['badge_description'] = array(
+			'#type' => 'text_format',
+			'#title' => t('Badge Description'),
+			'#default_value' => (!empty($flag->badge_description))?$flag->badge_description:'',
+			'#format' => 'full_html',
+			'#rows' => 2,
+		);
+		
+		//Borrowed from https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7.x#managed_file
+		$form['badge_details']['badge_image'] = array(
+		  '#title' => t('Badge Image'),
+		  '#type' => 'managed_file',
+		  '#default_value' => (!empty($flag->badge_image))?$flag->badge_image:0,
+		  '#upload_location' => 'public://badge_flag_images/', //Created if not already exists
+		);
+		
+		$form['#submit'][] = '_elx_utility_form_submit'; //Additional submit handler to save Badge Details to $flag object
+	}
+}
+
+/**
+ * Implements hook_flag_options_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add additional Band Details to Flag settings options
+ * If this is not included, then the values are not stored in 'options' column in 'flag' table
+ */
+function elx_utility_flag_options_alter(&$options, $flag)
+{
+	$options['badge_description'] = '';
+	$options['badge_image'] = '';
+	return $options;
+}
+
+/**
+ * User defined submit handler function to save Badge Details to $flag object.
+ * Included by SUPRIYA RAJGOPAL on 3Aug16
+ */
+function _elx_utility_form_submit($form, &$form_state)
+{
+	$values = $form_state['values'];
+	$flag = $form['#flag'];
+	
+	$flag->badge_description = (isset($values['badge_description']['value']) && $values['badge_description']['value']!='')?$values['badge_description']['value']:'';
+	
+	/** Save the badge image when Upload is clicked & remove when Remove button is clicked.
+	 * Borrowed from http://drupal.stackexchange.com/questions/58317/how-to-hook-into-file-upload-and-remove-button
+	 */
+	if($values['badge_image'] != 0) //If a file is uploaded, $form_state['values']['badge_image'] will hold a temporary file ID
+	{
+		//The file's status is set to 0(temporary).To ensure its not removed after 6 hours via cron,change its status to 1(permanent) & save image fid
+		$file = file_load($values['badge_image']);
+		$file->status = FILE_STATUS_PERMANENT;
+		file_save($file);
+
+		file_usage_add($file,'elx_utility','flag',$flag->fid); //Record that this module is using this file
+		variable_set('badge_flag_image_fid',$file->fid); //If variable_get/set() is not used, then it won't be possible to actually remove the file from server
+		$flag->badge_image = $file->fid;
+	}
+	elseif($values['badge_image'] == 0) //else if the Remove button is clicked,remove the module's reference to the uploaded file & remove the file
+	{
+		//drupal_set_message('<pre>'.print_r($flag->badge_image,TRUE).'</pre>');
+		//$file = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
+		$fid = variable_get('badge_flag_image_fid', FALSE);
+		$file = $fid?file_load($fid):FALSE;
+		if($file)
+		{
+		  file_usage_delete($file,'elx_utility','flag',$flag->fid); //Record that this module no longer uses this file 
+		  file_delete($file); //If no other module uses this file, delete it; else cancel the delete operation (handled by this function itself)
+		}
+		//Unset relevant variables
+		variable_set('badge_flag_image_fid', FALSE);
+		unset($flag->badge_image);
+	}
+	
+	$flag->save();
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function elx_utility_views_api()
+{
+  return array(
+    'api' => 3.0,
+    'path' => drupal_get_path('module', 'elx_utility') . '/views',
+  );
 }

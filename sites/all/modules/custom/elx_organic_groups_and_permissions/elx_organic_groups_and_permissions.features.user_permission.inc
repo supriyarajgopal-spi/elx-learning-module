@@ -666,15 +666,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'panels',
   );
 
-  // Exported permission: 'administer panel-nodes'.
-  $permissions['administer panel-nodes'] = array(
-    'name' => 'administer panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: 'administer panels layouts'.
   $permissions['administer panels layouts'] = array(
     'name' => 'administer panels layouts',
@@ -1102,22 +1093,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create panel content'.
-  $permissions['create panel content'] = array(
-    'name' => 'create panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create panel-nodes'.
-  $permissions['create panel-nodes'] = array(
-    'name' => 'create panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: 'create product_detail content'.
   $permissions['create product_detail content'] = array(
     'name' => 'create product_detail content',
@@ -1301,22 +1276,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any panel content'.
-  $permissions['delete any panel content'] = array(
-    'name' => 'delete any panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any panel-nodes'.
-  $permissions['delete any panel-nodes'] = array(
-    'name' => 'delete any panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: 'delete any product_detail content'.
   $permissions['delete any product_detail content'] = array(
     'name' => 'delete any product_detail content',
@@ -1498,22 +1457,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete own panel content'.
-  $permissions['delete own panel content'] = array(
-    'name' => 'delete own panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own panel-nodes'.
-  $permissions['delete own panel-nodes'] = array(
-    'name' => 'delete own panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
   );
 
   // Exported permission: 'delete own product_detail content'.
@@ -1857,22 +1800,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any panel content'.
-  $permissions['edit any panel content'] = array(
-    'name' => 'edit any panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any panel-nodes'.
-  $permissions['edit any panel-nodes'] = array(
-    'name' => 'edit any panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
-  );
-
   // Exported permission: 'edit any product_detail content'.
   $permissions['edit any product_detail content'] = array(
     'name' => 'edit any product_detail content',
@@ -2170,22 +2097,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own panel content'.
-  $permissions['edit own panel content'] = array(
-    'name' => 'edit own panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own panel-nodes'.
-  $permissions['edit own panel-nodes'] = array(
-    'name' => 'edit own panel-nodes',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'panels_node',
   );
 
   // Exported permission: 'edit own product_detail content'.

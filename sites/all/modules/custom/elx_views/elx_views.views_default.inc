@@ -996,12 +996,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: User: Market name (field_market_name) */
-  $handler->display->display_options['arguments']['field_market_name_value']['id'] = 'field_market_name_value';
-  $handler->display->display_options['arguments']['field_market_name_value']['table'] = 'field_data_field_market_name';
-  $handler->display->display_options['arguments']['field_market_name_value']['field'] = 'field_market_name_value';
-  $handler->display->display_options['arguments']['field_market_name_value']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_market_name_value']['summary']['format'] = 'default_summary';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1048,7 +1042,6 @@ function elx_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('All'),
     t('Page'),
     t('Block'),
   );

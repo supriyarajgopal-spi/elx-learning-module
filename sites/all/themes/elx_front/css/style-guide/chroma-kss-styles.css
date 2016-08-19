@@ -1,7 +1,9 @@
+/* line 196, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss {
   line-height: 50px;
 }
 
+/* line 200, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__swatch {
   display: inline-block;
   width: 40px;
@@ -12,10 +14,12 @@
   vertical-align: middle;
 }
 
+/* line 210, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__variable {
   margin-right: 10px;
 }
 
+/* line 214, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__alt-text {
   position: absolute !important;
   height: 1px;
@@ -25,19 +29,23 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+/* line 224, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__value {
   color: #bbb;
 }
 
+/* line 227, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__value code {
   color: #bbb;
 }
 
+/* line 231, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__value:before {
   content: '\2192\ ';
   font-family: sans-serif;
 }
 
+/* line 239, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/chroma-sass/sass/chroma/_kss.scss */
 .kss-style .chroma-kss__reference {
   display: block;
   position: relative;
@@ -46,5 +54,3 @@
   padding-left: 50px;
   color: #999;
 }
-
-/*# sourceMappingURL=chroma-kss-styles.css.map */

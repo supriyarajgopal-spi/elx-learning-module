@@ -1,21 +1,23 @@
+/* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/style-guide/kss-only.scss */
 [id^='kssref-layouts-'] [class^='layout-'][class*='__'] {
   outline: 1px dotted #999999;
 }
 
+/* line 16, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/style-guide/kss-only.scss */
 #kssref-layouts-layout-3column .kss-modifier__example {
   padding-left: 20px;
   padding-right: 20px;
 }
 
 @media (min-width: 777px) {
+  /* line 16, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/style-guide/kss-only.scss */
   #kssref-layouts-layout-3column .kss-modifier__example {
     padding-left: 12px;
     padding-right: 13px;
   }
+  /* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] #kssref-layouts-layout-3column .kss-modifier__example {
     padding-left: 13px;
     padding-right: 12px;
   }
 }
-
-/*# sourceMappingURL=kss-only.css.map */

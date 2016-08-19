@@ -1,0 +1,40 @@
+footer.footer.region.region-footer {
+    background-color: #1e2341;
+    height: 55px;
+
+    div#block-menu-menu-footer-menu- {
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul.menu {
+        text-align: center;
+        padding: 15px 0;
+
+        li {
+            float: left;
+
+            a {
+                color: #9eafff;
+                text-decoration: none;
+                font-family: $font-family-sans-serif;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 16px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        li.first.leaf {
+
+            &::after {
+                content: '|';
+                color: #fff;
+            }
+        }
+    }
+}

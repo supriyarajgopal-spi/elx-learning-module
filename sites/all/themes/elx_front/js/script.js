@@ -18,7 +18,17 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-      // Place your code here.
+    /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
+      $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
+
+
+
+
+
+
+
+
+
 
     }
   };

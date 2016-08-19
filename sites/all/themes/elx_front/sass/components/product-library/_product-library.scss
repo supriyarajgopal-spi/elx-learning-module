@@ -1,5 +1,13 @@
 .page-product-library,
 .page-search-product-library {
+
+  h1 {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-extralarge;
+    font-weight: 100;
+    text-align: center;
+  }
+
   .view-product-library,
   .view-search-product-library {
     //search & filter area
@@ -8,6 +16,9 @@
       background-color: #e6e9ee;
 
       .views-exposed-form {
+        max-width: 1024px;
+        margin: 0 auto;
+
         label {
           color: #040a2b;
           text-transform: uppercase;
@@ -99,6 +110,9 @@
 
     // product library content
     .view-content {
+      max-width: 1024px;
+      margin: 0 auto;
+
       ul {
         margin: 0;
         padding: 0;

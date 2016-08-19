@@ -32,6 +32,37 @@ function elx_user_points_feature_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_award_points_when_user_passes_quiz_first_time'] = entity_import('rules_config', '{ "rules_award_points_when_user_passes_quiz_first_time" : {
+      "LABEL" : "Award points when user passes quiz first time",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "elx_quiz_rule_trigger", "userpoints_rules" ],
+      "ON" : { "user_passed_h5p_quiz" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "quiz" ],
+            "type" : "node",
+            "bundle" : { "value" : { "h5p_content" : "h5p_content" } }
+          }
+        },
+        { "NOT user_has_taken_quiz_before" : { "user" : [ "user" ], "quiz" : [ "quiz" ] } }
+      ],
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "user" ],
+            "points" : "400",
+            "tid" : "14096",
+            "entity" : [ "quiz" ],
+            "description" : "For passing the quiz for the first time",
+            "operation" : "Insert",
+            "reference" : [ "quiz:nid" ],
+            "display" : "1",
+            "moderate" : "default"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_content_object_story'] = entity_import('rules_config', '{ "rules_content_object_story" : {
       "LABEL" : "Content Object tagged as Story",
       "PLUGIN" : "and",

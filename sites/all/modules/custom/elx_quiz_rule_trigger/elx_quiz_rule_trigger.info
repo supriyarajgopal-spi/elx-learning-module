@@ -1,0 +1,10 @@
+name = ELX H5P Quiz Rule Trigger
+description = Triggers a rule to award points to user on passing H5P Quiz
+core = 7.x
+package = ELX
+dependencies[] = flag
+dependencies[] = userpoints
+dependencies[] = h5p
+dependencies[] = rules
+
+scripts[] = js/h5p-quiz.js

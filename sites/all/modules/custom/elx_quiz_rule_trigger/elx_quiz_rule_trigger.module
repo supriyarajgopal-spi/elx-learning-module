@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function elx_quiz_rule_trigger_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#elx_quiz_rule_trigger":
+      return '' . t("Triggers a rule to award points to user on passing H5P Quiz") . '';
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+/* function elx_quiz_rule_trigger_node_view($node, $view_mode, $langcode) {
+	global $user;
+	rules_invoke_event('user_passed_h5p_quiz', $user,$node);
+} */
+
+/**
+ * Implements hook_rules_event_info().
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ * Allow this event to appear under Event tab in Rules UI & mention allowed parameters
+ */
+function elx_quiz_rule_trigger_rules_event_info() {
+  return array(
+    'user_passed_h5p_quiz' => array(
+      'label' => t('User passed H5P Quiz(Question Set)'),
+	  'group' => t('ELX'),
+      'module' => 'elx_quiz_rule_trigger',
+      'variables' => array(
+        'user' => array('type' => 'user', 'label' => t('User who passed H5P quiz')),
+		'quiz' => array('type' => 'node', 'label' => t('H5P quiz taken by user'),'bundle' => 'h5p_content', 'skip save' => TRUE),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_rules_condition_info().
+ * Allow this condition to appear under Conditions tab in Rules UI & mention parameters that will be passed to callback function to validate this condition
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ */
+function elx_quiz_rule_trigger_rules_condition_info() {
+  return array(
+    'user_has_taken_quiz_before' => array(
+      'group' => t('ELX'),
+      'label' => t('User has taken H5P quiz before'),
+      'parameter' => array(
+        'user' => array(
+          'type' => 'user',
+          'label' => t('User'),
+        ),
+		'quiz' => array(
+          'type' => 'node',
+          'label' => t('H5P Quiz'),
+        )
+      ),
+	  'module' => 'elx_quiz_rule_trigger',
+    ),
+  );
+}
+
+/**
+ * User defined function callback to return boolean depending on whether user has taken this quiz before or not
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ * Parameters: $user - the user object who has passed quiz; $quiz: Interactive Content node object
+ * Returns boolean - true if user has taken this quiz before or false, if this is the first time the user passed this quiz
+ */
+function user_has_taken_quiz_before($user,$quiz) {
+	$query_hasUserTakenQuizBefore = db_select('h5p_points','p');
+	$query_hasUserTakenQuizBefore->join('h5p_nodes','n','n.content_id = p.content_id');
+	$query_hasUserTakenQuizBefore->fields('p',array('content_id'));
+	$query_hasUserTakenQuizBefore->condition('n.nid',$quiz->nid,'=')->condition('p.uid',$user->uid,'=')->condition('p.finished',0,'>'); /*If 'finished' > 0, then user has clicked on 'Finish'*/
+	$result = $query_hasUserTakenQuizBefore->execute();
+	
+	$noOfTimesQuizTaken = $result->rowCount();
+	
+	return ($noOfTimesQuizTaken > 0);
+}

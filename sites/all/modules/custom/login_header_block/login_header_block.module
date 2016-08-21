@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Login Header Block feature.
  */
+
+include_once 'login_header_block.features.inc';

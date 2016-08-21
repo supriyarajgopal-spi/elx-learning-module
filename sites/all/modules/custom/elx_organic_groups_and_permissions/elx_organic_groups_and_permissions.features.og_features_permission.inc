@@ -72,7 +72,9 @@ function elx_organic_groups_and_permissions_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:update any badge content'
   $permissions['node:market:update any badge content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'translator' => 'translator',
+    ),
   );
 
   // Exported og permission: 'node:market:update any disclaimer content'

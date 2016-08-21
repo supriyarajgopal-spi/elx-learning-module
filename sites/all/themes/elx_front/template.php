@@ -310,7 +310,10 @@ function elx_front_pager($variables) {
   $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters)); 
 
   if ($pager_total[$element] > 1) {
-
+    // ***
+    // TODO : change the quantity displayed to 5 when it's in the middle of the page record set.
+    // TODO : add a disabled class and still display if it's the first record
+    // ***
     if ($li_previous) {
       $items[] = array(
         'class' => array('pager-previous'),
@@ -374,6 +377,9 @@ function elx_front_pager($variables) {
         'data' => $li_last,
       );
     }
+    // ***
+    // TODO: add disabled class and still display if this is the last page
+    // ***
     if ($li_next) {
       $items[] = array(
         'class' => array('pager-next'),

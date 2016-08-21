@@ -6,30 +6,103 @@
  */
 
 /**
- * Implements hook_enable().
+ * Implements hook_modules_enabled().
+ *
+ * Installs H5P libraries. This cannot be done in hook_enable() because the
+ * permission to configure H5P libraries may not be set.
  */
-function elx_interactive_content_feature_enable() {
-  $temporary_file_path = 'public://' . variable_get('h5p_default_path', 'h5p') . '/temp/' . uniqid('h5p-');
-  file_prepare_directory($temporary_file_path, FILE_CREATE_DIRECTORY);
-  if ($file = system_retrieve_file('https://h5p.org/sites/default/files/official-h5p-release-20160719.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
-    $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
+function elx_interactive_content_feature_modules_enabled($modules) {
+  if (in_array('elx_interactive_content_feature', $modules)) {
+    $temporary_file_path = 'public://' . variable_get('h5p_default_path', 'h5p') . '/temp/' . uniqid('h5p-');
+    file_prepare_directory($temporary_file_path, FILE_CREATE_DIRECTORY);
     $_SESSION['h5p_upload_folder'] = drupal_realpath($temporary_file_path);
-    $validator = _h5p_get_instance('validator');
-    if ($validator->isValidPackage(TRUE) !== FALSE) {
-      $h5p_core = _h5p_get_instance('storage');
-      $h5p_core->savePackage(NULL, NULL, TRUE);
+    if ($file = system_retrieve_file('https://h5p.org/sites/default/files/official-h5p-release-20160802.h5p', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+      $zip = new ElxInteractiveContentZipArchive;
+      $zip_content_folder = "$temporary_file_path/temp";
+      file_prepare_directory($zip_content_folder, FILE_CREATE_DIRECTORY);
+      $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
+      if ($zip->open($_SESSION['h5p_upload']) === TRUE) {
+        $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
+        $zip->close();
+      }
+      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/h5p-course-presentation/archive/v1.11.3.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+        if ($zip->open(drupal_realpath($file->uri)) === TRUE) {
+          $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
+          $extract_dir = "$zip_content_folder/" . drupal_dirname($zip->getNameIndex(0) . 'temp');
+          $zip->close();
+          file_unmanaged_delete($file->uri);
+          file_unmanaged_delete_recursive("$zip_content_folder/H5P.CoursePresentation-1.11");
+          rename($extract_dir, "$zip_content_folder/H5P.CoursePresentation-1.11");
+        }
+      }
+      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/h5p-editor-course-presentation/archive/v1.11.2.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+        if ($zip->open(drupal_realpath($file->uri)) === TRUE) {
+          $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
+          $extract_dir = "$zip_content_folder/" . drupal_dirname($zip->getNameIndex(0) . 'temp');
+          $zip->close();
+          file_unmanaged_delete($file->uri);
+          file_unmanaged_delete_recursive("$zip_content_folder/H5PEditor.CoursePresentation-1.11");
+          rename($extract_dir, "$zip_content_folder/H5PEditor.CoursePresentation-1.11");
+        }
+      }
+      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/h5p-question-set/archive/v1.8.5.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+        if ($zip->open(drupal_realpath($file->uri)) === TRUE) {
+          $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
+          $extract_dir = "$zip_content_folder/" . drupal_dirname($zip->getNameIndex(0) . 'temp');
+          $zip->close();
+          file_unmanaged_delete($file->uri);
+          file_unmanaged_delete_recursive("$zip_content_folder/H5P.QuestionSet-1.8");
+          rename($extract_dir, "$zip_content_folder/H5P.QuestionSet-1.8");
+        }
+      }
+      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/H5P.ClickToReveal/archive/v1.0.0.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+        if ($zip->open(drupal_realpath($file->uri)) === TRUE) {
+          $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
+          $extract_dir = "$zip_content_folder/" . drupal_dirname($zip->getNameIndex(0) . 'temp');
+          $zip->close();
+          file_unmanaged_delete($file->uri);
+          file_unmanaged_delete_recursive("$zip_content_folder/H5P.ClickToReveal-1.0");
+          rename($extract_dir, "$zip_content_folder/H5P.ClickToReveal-1.0");
+        }
+      }
+      if ($zip->open($_SESSION['h5p_upload'], ZipArchive::OVERWRITE) === TRUE) {
+        $zip->addDir("$_SESSION[h5p_upload_folder]/temp");
+        $zip->close();
+        file_unmanaged_delete_recursive($zip_content_folder);
+      }
+      $validator = _h5p_get_instance('validator');
+      if ($validator->isValidPackage(TRUE) !== FALSE) {
+        $h5p_core = _h5p_get_instance('storage');
+        $h5p_core->savePackage(NULL, NULL, TRUE);
+      }
+      unset($_SESSION['h5p_upload_folder'], $_SESSION['h5p_upload']);
     }
-    unset($_SESSION['h5p_upload'], $_SESSION['h5p_upload_folder']);
   }
-  if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/H5P.ClickToReveal/archive/v1.0.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
-    $file->uri = file_unmanaged_move($file->uri, "$temporary_file_path/H5P.ClickToReveal-1.0.h5p");
-    $_SESSION['h5p_upload'] = drupal_realpath($file->uri);
-    $_SESSION['h5p_upload_folder'] = drupal_realpath($temporary_file_path);
-    $validator = _h5p_get_instance('validator');
-    if ($validator->isValidPackage(TRUE) !== FALSE) {
-      $h5p_core = _h5p_get_instance('storage');
-      $h5p_core->savePackage(NULL, NULL, TRUE);
+}
+
+/**
+ * PHP inexplicably has no method to zip a directory, so we had to extend it.
+ */
+class ElxInteractiveContentZipArchive extends ZipArchive {
+
+  public function addDir($path, $parent_dir = '') {
+    if ($parent_dir != '' and $parent_dir != '.' and $parent_dir != './') {
+      $this->addEmptyDir($parent_dir);
+      $parent_dir .= '/';
     }
-    unset($_SESSION['h5p_upload'], $_SESSION['h5p_upload_folder']);
+    $dir = opendir($path);
+    while (($node = readdir($dir)) !== FALSE) {
+      if ($node == '.' || $node == '..') {
+        continue;
+      }
+      $nodepath = "$path/" . basename($node);
+      if (is_dir($nodepath)) {
+        $this->addDir($nodepath, $parent_dir . basename($node));
+      }
+      elseif (is_file($nodepath)) {
+        $this->addFile($nodepath, $parent_dir . basename($node));
+      }
+    }
   }
+
 }

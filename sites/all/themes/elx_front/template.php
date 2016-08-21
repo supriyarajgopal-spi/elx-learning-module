@@ -257,6 +257,8 @@ function elx_front_final_validate($form, &$form_state) {
 /*
  *  Custom pager. 
  *  custom logic and display to match current site 
+ *  The math in here is a mess. There may be a better way to do this. This might not work well on < 9 pages. 
+ *  Probably need a 'minimum number of pages' check around most of these math statements adjusting quantity.
  *  allan.hill - 082016
  */
 function elx_front_pager($variables) {
@@ -267,17 +269,29 @@ function elx_front_pager($variables) {
   $quantity = 7;
   global $pager_page_array, $pager_total;
 
+  
+
   // Calculate various markers within this pager piece:
-  // Middle is used to "center" pages around the current page.
-  $pager_middle = ceil($quantity / 2);
   // current is the page we are currently paged to
   $pager_current = $pager_page_array[$element] + 1;
+  // max is the maximum page number
+  $pager_max = $pager_total[$element];
+  // have to display 7 pages until they hit page 6
+  if ( $pager_current > 5 && $pager_current < ( $pager_max - 4 )  ) {
+    $quantity = 5;
+  }
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+  // we have to tweak the active middle to adjust for changes in the quantity
+  if ( $pager_current == 5 ) {
+    $pager_middle = ceil($quantity / 2) + 1;
+  } elseif ($pager_current == ( $pager_max - 4 )) {
+    $pager_middle = ceil($quantity / 2) - 1;
+  }
   // first is the first page listed by this pager piece (re quantity)
   $pager_first = $pager_current - $pager_middle + 1;
   // last is the last page listed by this pager piece (re quantity)
   $pager_last = $pager_current + $quantity - $pager_middle;
-  // max is the maximum page number
-  $pager_max = $pager_total[$element];
   // End of marker calculations.
 
   // Prepare for generation loop.
@@ -294,14 +308,6 @@ function elx_front_pager($variables) {
   }
   // End of generation loop preparation.
 
-  /*
-  Default Code. We aren't allowing admin overrides - ahill
-  $li_first = theme('pager_first', array('text' => (isset($tags[0]) ? $tags[0] : t('« first')), 'element' => $element, 'parameters' => $parameters));
-  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-  $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : t('last »')), 'element' => $element, 'parameters' => $parameters));
-  */
-
   // 1 should always show if we are on page 2+
   $li_first = theme('pager_first', array('text' => (t('1')), 'element' => $element, 'parameters' => $parameters));
   $li_previous = theme('pager_previous', array('text' => (t('‹')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
@@ -312,23 +318,20 @@ function elx_front_pager($variables) {
   if ($pager_total[$element] > 1) {
     // ***
     // TODO : change the quantity displayed to 5 when it's in the middle of the page record set.
-    // TODO : add a disabled class and still display if it's the first record
     // ***
+    
     if ($li_previous) {
       $items[] = array(
         'class' => array('pager-previous'),
         'data' => $li_previous,
       );
-    }
-    /*
-    if ($li_first) {
+    } else {
       $items[] = array(
-        'class' => array('pager-first'),
-        'data' => $li_first,
+        'class' => array('pager-previous diabled'),
+        'data' => '<',
       );
     }
-    */
-    if ( $li_first && ($pager_current > 4) ) {
+    if ( $li_first && ($pager_current > 5) ) {
       $items[] = array(
         'class' => array('pager-first'),
         'data' => $li_first,
@@ -336,12 +339,12 @@ function elx_front_pager($variables) {
     }
     // When there is more than one page, create the pager list.
     if ($i != $pager_max) {
-      if ($i > 1) {
+      if ($i > 2) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => '…',
         );
-      }
+      } 
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
@@ -371,21 +374,25 @@ function elx_front_pager($variables) {
       }
     }
     // End generation.
-    if ( $li_last && ($pager_current < ( $pager_max - 3 ) ) ) {
+    if ( $li_last && ($pager_current < ( $pager_max - 4 ) ) ) {
       $items[] = array(
         'class' => array('pager-last'),
         'data' => $li_last,
       );
     }
-    // ***
-    // TODO: add disabled class and still display if this is the last page
-    // ***
     if ($li_next) {
       $items[] = array(
         'class' => array('pager-next'),
         'data' => $li_next,
       );
+    } else {
+      $items[] = array(
+        'class' => array('pager-next disabled'),
+        'data' => '>',
+      );
     }
+    
+    
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
       'items' => $items,
       'attributes' => array('class' => array('pager')),

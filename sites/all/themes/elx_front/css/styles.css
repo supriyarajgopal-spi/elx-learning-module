@@ -3646,9 +3646,12 @@ body.ctools-modal-open {
 
 /* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
 .pager {
+  font-size: 18px;
   clear: both;
   padding: 0;
   text-align: center;
+  margin: 0 auto 100px;
+  max-width: 510px;
 }
 
 @media print {
@@ -3658,26 +3661,78 @@ body.ctools-modal-open {
   }
 }
 
-/* line 21, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+/* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
 .pager__item,
 .pager__current-item,
 .pager-current,
-.pager-item,
 .pager-first,
-.pager-previous,
-.pager-next,
 .pager-last,
+.pager-item,
 .pager-ellipsis {
+  float: left;
   display: inline;
-  padding: 0 .5em;
+  text-align: center;
+  padding: 10px 0 0;
   list-style-type: none;
   background-image: none;
+  border: 1px solid #e6e6e6;
+  border-right: 0;
+  width: 46px;
+  height: 46px;
 }
 
-/* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+.pager__item a, .pager__current-item a, .pager-current a, .pager-first a,
+.pager-last a,
+.pager-item a,
+.pager-ellipsis a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+/* line 44, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
 .pager__current-item,
 .pager-current {
-  font-weight: bold;
+  border: 1px solid #01051e;
+}
+
+/* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+.pager__current-item a, .pager-current a {
+  color: #01051e;
+}
+
+/* line 54, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+.pager__disabled,
+.pager-previous.disabled,
+.pager-next.disabled {
+  float: left;
+  display: inline;
+  text-align: center;
+  padding: 10px 0 0;
+  list-style-type: none;
+  border: 1px solid #e6e6e6;
+  border-right: 0;
+  width: 46px;
+  height: 46px;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+/* line 68, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/pager/_pager.scss */
+.pager__next-previous,
+.pager-previous,
+.pager-next {
+  float: left;
+  display: inline;
+  text-align: center;
+  padding: 10px 0 0;
+  list-style-type: none;
+  border: 1px solid #01051e;
+  border-right: 0;
+  width: 46px;
+  height: 46px;
+  cursor: not-allowed;
+  background-color: #01051e;
 }
 
 /* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/navigation/skip-link/_skip-link.scss */
@@ -4378,3 +4433,5 @@ tr.drag-previous {
 .tree-child-horizontal {
   background-position: -11px center;
 }
+
+/*# sourceMappingURL=styles.css.map */

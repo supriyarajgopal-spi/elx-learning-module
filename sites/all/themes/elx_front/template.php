@@ -327,7 +327,7 @@ function elx_front_pager($variables) {
       );
     } else {
       $items[] = array(
-        'class' => array('pager-previous diabled'),
+        'class' => array('pager-previous disabled'),
         'data' => '<',
       );
     }

@@ -15,8 +15,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access administration menu',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'admin_menu',
   );
@@ -26,8 +26,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'system',
   );
@@ -73,8 +73,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access content',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
@@ -86,7 +86,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -105,7 +106,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access dashboard',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'dashboard',
   );
@@ -124,7 +126,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access media browser',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'media',
   );
@@ -289,6 +292,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access selected languages',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'i18n_access',
   );
@@ -316,8 +322,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access user profiles',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'user',
   );
@@ -516,7 +522,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'administer files',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'file_entity',
   );
@@ -634,7 +641,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -698,8 +705,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'administer permissions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'user',
   );
@@ -799,8 +806,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'user',
   );
@@ -855,7 +861,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'bypass file access',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'file_entity',
   );
@@ -865,7 +872,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -949,7 +956,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create content_object content'] = array(
     'name' => 'create content_object content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -958,7 +965,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create disclaimer content'] = array(
     'name' => 'create disclaimer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -967,7 +974,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create drag_match content'] = array(
     'name' => 'create drag_match content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -976,7 +983,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create drag_select content'] = array(
     'name' => 'create drag_select content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1047,7 +1054,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create flash_cards content'] = array(
     'name' => 'create flash_cards content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1063,7 +1070,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create hot_spots content'] = array(
     'name' => 'create hot_spots content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1072,7 +1079,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create list content'] = array(
     'name' => 'create list content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1088,7 +1095,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create matching_game content'] = array(
     'name' => 'create matching_game content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1097,7 +1104,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create product_detail content'] = array(
     'name' => 'create product_detail content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1106,7 +1113,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create question_and_answer content'] = array(
     'name' => 'create question_and_answer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1115,7 +1122,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create reveal content'] = array(
     'name' => 'create reveal content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1124,7 +1131,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create story content'] = array(
     'name' => 'create story content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1133,7 +1140,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['create tools content'] = array(
     'name' => 'create tools content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1176,7 +1183,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any content_object content'] = array(
     'name' => 'delete any content_object content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1185,7 +1192,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any disclaimer content'] = array(
     'name' => 'delete any disclaimer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1203,7 +1210,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any drag_match content'] = array(
     'name' => 'delete any drag_match content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1212,7 +1219,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any drag_select content'] = array(
     'name' => 'delete any drag_select content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1221,7 +1228,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any flash_cards content'] = array(
     'name' => 'delete any flash_cards content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1237,7 +1244,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any hot_spots content'] = array(
     'name' => 'delete any hot_spots content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1255,7 +1262,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any list content'] = array(
     'name' => 'delete any list content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1271,7 +1278,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any matching_game content'] = array(
     'name' => 'delete any matching_game content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1280,7 +1287,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any product_detail content'] = array(
     'name' => 'delete any product_detail content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1289,7 +1296,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any question_and_answer content'] = array(
     'name' => 'delete any question_and_answer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1298,7 +1305,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any reveal content'] = array(
     'name' => 'delete any reveal content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1307,7 +1314,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any story content'] = array(
     'name' => 'delete any story content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1316,7 +1323,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete any tools content'] = array(
     'name' => 'delete any tools content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1359,7 +1366,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own content_object content'] = array(
     'name' => 'delete own content_object content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1368,7 +1375,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own disclaimer content'] = array(
     'name' => 'delete own disclaimer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1386,7 +1393,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own drag_match content'] = array(
     'name' => 'delete own drag_match content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1395,7 +1402,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own drag_select content'] = array(
     'name' => 'delete own drag_select content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1404,7 +1411,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own flash_cards content'] = array(
     'name' => 'delete own flash_cards content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1420,7 +1427,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own hot_spots content'] = array(
     'name' => 'delete own hot_spots content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1438,7 +1445,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own list content'] = array(
     'name' => 'delete own list content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1454,7 +1461,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own matching_game content'] = array(
     'name' => 'delete own matching_game content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1463,7 +1470,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own product_detail content'] = array(
     'name' => 'delete own product_detail content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1472,7 +1479,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own question_and_answer content'] = array(
     'name' => 'delete own question_and_answer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1481,7 +1488,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own reveal content'] = array(
     'name' => 'delete own reveal content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1490,7 +1497,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own story content'] = array(
     'name' => 'delete own story content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1499,7 +1506,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['delete own tools content'] = array(
     'name' => 'delete own tools content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1518,7 +1525,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1700,7 +1707,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any content_object content'] = array(
     'name' => 'edit any content_object content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1709,7 +1716,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any disclaimer content'] = array(
     'name' => 'edit any disclaimer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1727,7 +1734,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any drag_match content'] = array(
     'name' => 'edit any drag_match content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1736,7 +1743,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any drag_select content'] = array(
     'name' => 'edit any drag_select content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1745,7 +1752,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any flash_cards content'] = array(
     'name' => 'edit any flash_cards content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1761,7 +1768,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any hot_spots content'] = array(
     'name' => 'edit any hot_spots content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1779,7 +1786,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any list content'] = array(
     'name' => 'edit any list content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1795,7 +1802,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any matching_game content'] = array(
     'name' => 'edit any matching_game content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1804,7 +1811,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any product_detail content'] = array(
     'name' => 'edit any product_detail content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1813,7 +1820,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any question_and_answer content'] = array(
     'name' => 'edit any question_and_answer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1822,7 +1829,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any reveal content'] = array(
     'name' => 'edit any reveal content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1831,7 +1838,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any story content'] = array(
     'name' => 'edit any story content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1840,7 +1847,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit any tools content'] = array(
     'name' => 'edit any tools content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1946,7 +1953,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own content_object content'] = array(
     'name' => 'edit own content_object content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1955,7 +1962,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own disclaimer content'] = array(
     'name' => 'edit own disclaimer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1973,7 +1980,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own drag_match content'] = array(
     'name' => 'edit own drag_match content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -1982,7 +1989,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own drag_select content'] = array(
     'name' => 'edit own drag_select content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2044,7 +2051,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own flash_cards content'] = array(
     'name' => 'edit own flash_cards content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2060,7 +2067,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own hot_spots content'] = array(
     'name' => 'edit own hot_spots content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2078,7 +2085,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own list content'] = array(
     'name' => 'edit own list content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2094,7 +2101,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own matching_game content'] = array(
     'name' => 'edit own matching_game content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2103,7 +2110,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own product_detail content'] = array(
     'name' => 'edit own product_detail content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2112,7 +2119,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own question_and_answer content'] = array(
     'name' => 'edit own question_and_answer content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2121,7 +2128,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own reveal content'] = array(
     'name' => 'edit own reveal content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2130,7 +2137,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own story content'] = array(
     'name' => 'edit own story content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2139,7 +2146,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   $permissions['edit own tools content'] = array(
     'name' => 'edit own tools content',
     'roles' => array(
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2287,7 +2294,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'have total control',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'total_control',
   );
@@ -2297,7 +2305,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'import elx_users feeds',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'feeds',
   );
@@ -2406,7 +2414,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'revert revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2506,7 +2514,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'translate content',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'translation',
   );
@@ -2516,7 +2525,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'translate interface',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'locale',
   );
@@ -2637,7 +2646,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'use text format full_html',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'filter',
   );
@@ -2786,7 +2795,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2805,7 +2814,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'view passwords',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'aes',
   );
@@ -2824,7 +2833,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'node',
   );
@@ -2843,8 +2852,8 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'Power Users' => 'Power Users',
     ),
     'module' => 'system',
   );

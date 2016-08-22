@@ -64,10 +64,10 @@ function elx_header_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['menu-menu-header-user-menu'] = array(
+  $export['menu-menu-header-user-menu-1'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'menu-header-user-menu',
+    'delta' => 'menu-header-user-menu-1',
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -80,13 +80,65 @@ function elx_header_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'elx_front',
-        'weight' => -26,
+        'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-header-user-menu-2'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'menu-header-user-menu-2',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx_front',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['panels_mini-header_user_menu'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'header_user_menu',
+    'module' => 'panels_mini',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx_front',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 

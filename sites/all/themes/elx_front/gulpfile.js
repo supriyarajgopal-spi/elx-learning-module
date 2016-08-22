@@ -43,7 +43,10 @@ options.sass = {
     options.rootPath.project + 'node_modules/typey/stylesheets',
     options.rootPath.project + 'node_modules/zen-grids/sass'
   ],
-  outputStyle: 'expanded'
+  outputStyle: 'expanded',
+  sourceComments: 'normal',
+  debug_info: true,
+  lineNumbers: true
 };
 
 // Define which browsers to add vendor prefixes for.

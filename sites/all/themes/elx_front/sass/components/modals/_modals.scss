@@ -12,28 +12,13 @@ body.ctools-modal-open {
   .modal-content {
     font-family: $font-family-sans-serif;
 
-    h2 {
-      font-family: $font-family-serif;
-      font-size: $font-size-lg-large;
-    }
+    article {
+      max-width: 1170px;
+      margin: 0 auto;
 
-  }
-
-  /* product library */
-  .page-product-library & {
-
-    .field-name-field-why-there-s-only-one {
-      float: right;
-      width: 50%;
-      background-color: #e6e9ee;
-      padding: 0 37px 2px;
-
-      .field-label {
-        display: inline-block;
-        text-transform: uppercase;
-        font-size: $font-size-lg-medium;
-        padding: 20px 0 3px;
-        border-bottom: 1px solid #fff;
+      h2 {
+        font-family: $font-family-serif;
+        font-size: $font-size-lg-large;
       }
 
     }
@@ -42,3 +27,63 @@ body.ctools-modal-open {
 
 }
 
+/* product library */
+.page-product-library {
+
+  .modal-content {
+    background-color: #e6e9ee;
+
+    article {
+      background-color: #fff;
+      padding: 0 90px;
+      font-size: 18px;
+
+      .field {
+
+        .field-label {
+          display: inline-block;
+          font-size: $font-size-lg-medium;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          padding: 40px 0 0;
+          border-bottom: 1px solid #ccc;
+        }
+
+        .field-items {
+          margin: 10px 0;
+
+          .field-item {
+
+            > div {
+              margin: 0 0 24px;
+            }
+
+          }
+
+        }
+
+      }
+
+      .field-name-field-why-there-s-only-one {
+        float: right;
+        width: 50%;
+        background-color: #e6e9ee;
+        padding: 0 37px 2px;
+        font-size: $font-size-lg-medium;
+        letter-spacing: 2px;
+
+        .field-label {
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: $font-size-lg-medium;
+          padding: 20px 0 3px;
+          border-bottom: 1px solid #fff;
+        }
+
+      }
+
+    }
+
+  }
+
+}

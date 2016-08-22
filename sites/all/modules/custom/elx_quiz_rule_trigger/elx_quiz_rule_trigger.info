@@ -6,5 +6,3 @@ dependencies[] = flag
 dependencies[] = userpoints
 dependencies[] = h5p
 dependencies[] = rules
-
-scripts[] = js/h5p-quiz.js

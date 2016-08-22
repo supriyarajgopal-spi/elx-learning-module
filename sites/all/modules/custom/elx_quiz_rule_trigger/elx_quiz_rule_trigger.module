@@ -13,12 +13,44 @@ function elx_quiz_rule_trigger_help($path, $arg) {
 
 /**
  * Implements hook_node_view().
+ * Add JS only when H5P quiz is taken up (viewed in full mode)
  */
-/* function elx_quiz_rule_trigger_node_view($node, $view_mode, $langcode) {
-	global $user;
-	rules_invoke_event('user_passed_h5p_quiz', $user,$node);
-} */
+function elx_quiz_rule_trigger_node_view($node, $view_mode, $langcode) {
+	if($node->type == 'h5p_content' && $view_mode == 'full')
+		drupal_add_js(drupal_get_path('module', 'elx_quiz_rule_trigger') . '/js/h5p-quiz.js',array('weight'=>6));
+}
 
+/**
+ * Implements hook_menu().
+ * Called from JS when H5P quiz is passed by logged in user
+ */
+function elx_quiz_rule_trigger_menu() {
+    $items['rule/award-points-quiz-pass/%'] = array(
+      'page callback' => '_invoke_rule_award_points_quiz_pass',
+	  'page arguments' => array(2), //Pass content id as a parameter
+	  'access callback' => TRUE,
+	  'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+/**
+ * User defined callback function to invoke the rule which awards points to user on passing quiz for the 1st time itself
+ * Parameters: $id - the content id of H5P quiz taken
+ */
+function _invoke_rule_award_points_quiz_pass($id)
+{
+	global $user;
+	global $base_url;
+	
+	//Get the nid using the content id of H5P quiz
+	$nid = db_select('h5p_nodes','p')->fields('p',array('nid'))->condition('p.content_id',$id,'=')->execute()->fetchField();
+	$node = node_load($nid);
+	
+	rules_invoke_event('user_passed_h5p_quiz', $user,$node); //Trigger this rule
+	drupal_goto($base_url.'/node/'.$nid); //'Page redirect' action in above rule not working, hence redirect from here
+}
+  
 /**
  * Implements hook_rules_event_info().
  * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule

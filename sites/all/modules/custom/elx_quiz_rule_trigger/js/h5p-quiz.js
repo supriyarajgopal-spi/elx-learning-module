@@ -8,7 +8,7 @@
 			if(myObject.verb.display['en-US'] == 'completed' && myObject.result.success == true) //If Finish button is clicked & quiz is passed
 			{
 				var content_id = myObject.object.definition.extensions['http://h5p.org/x-api/h5p-local-content-id']; //No other property in 'event' object gives content id
-				$(location).attr('href','/elx-learning-module/rule/award-points-quiz-pass/'+content_id);
+				$(location).attr('href','/rule/award-points-quiz-pass/'+content_id);
 			}
 		});
 	  }

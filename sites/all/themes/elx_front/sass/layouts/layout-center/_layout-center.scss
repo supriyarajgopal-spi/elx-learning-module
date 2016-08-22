@@ -33,15 +33,13 @@
   // of $zen-gutters when it is at the larger "xl"-sized media query.
   @include zen-layout(xl) {
     // The max content width is 1140px (the container width minus the gutters.)
-    //max-width: 1500px + $zen-gutters;
-    max-width: 100%;
+    max-width: 1500px + $zen-gutters;
   }
 
   @include zen-respond-to(m) {
     // Since we are using zen-respond-to(), the values in $zen-layouts will
     // override the global value for $zen-gutters.
-    //@include zen-apply-gutter-padding();
-    padding: 0;
+    @include zen-apply-gutter-padding();
   }
 
   // Since .layout-center has overridden the negative margin on another
@@ -60,7 +58,6 @@
 .layout-center {
   // Ensure the .layout-center--shared-grid variant is automatically used by
   // adding all other .layout-* classes here.
-
   &.layout-3col {
     @extend %layout-center--shared-grid;
   }

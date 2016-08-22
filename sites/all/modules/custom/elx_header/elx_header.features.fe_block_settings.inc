@@ -12,10 +12,36 @@ function elx_header_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['menu-menu-page-bottom-privacy'] = array(
+  $export['blockify-blockify-logo'] = array(
+    'cache' => 8,
+    'custom' => 0,
+    'delta' => 'blockify-logo',
+    'module' => 'blockify',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'elx_front',
+        'weight' => -29,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-header-menu'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'menu-page-bottom-privacy',
+    'delta' => 'menu-header-menu',
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -28,21 +54,21 @@ function elx_header_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header',
+        'status' => 1,
         'theme' => 'elx_front',
-        'weight' => -23,
+        'weight' => -28,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
-  $export['panels_mini-page_bottom'] = array(
+  $export['menu-menu-header-user-menu'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'page_bottom',
-    'module' => 'panels_mini',
+    'delta' => 'menu-header-user-menu',
+    'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -54,10 +80,36 @@ function elx_header_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => 'bottom',
+        'region' => 'header',
         'status' => 1,
         'theme' => 'elx_front',
+        'weight' => -26,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['search-form'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'form',
+    'module' => 'search',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => 'dashboard_inactive',
+        'status' => 1,
+        'theme' => 'elx',
         'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'elx_front',
+        'weight' => -27,
       ),
     ),
     'title' => '',

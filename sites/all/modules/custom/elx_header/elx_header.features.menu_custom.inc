@@ -53,6 +53,5 @@ function elx_header_menu_default_menu_custom() {
   t('This menu block contains Logout link.');
   t('This menu block contains My Dashboard, Leaderboard, Tools, and Badges links.');
 
-
   return $menus;
 }

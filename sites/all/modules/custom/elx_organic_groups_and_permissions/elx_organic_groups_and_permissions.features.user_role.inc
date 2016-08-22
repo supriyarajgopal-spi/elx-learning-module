@@ -10,9 +10,9 @@
 function elx_organic_groups_and_permissions_user_default_roles() {
   $roles = array();
 
-  // Exported role: Power Users.
-  $roles['Power Users'] = array(
-    'name' => 'Power Users',
+  // Exported role: EL NYO GLOBAL EDUCATION SYSTEM ADMIN.
+  $roles['EL NYO GLOBAL EDUCATION SYSTEM ADMIN'] = array(
+    'name' => 'EL NYO GLOBAL EDUCATION SYSTEM ADMIN',
     'weight' => 8,
   );
 

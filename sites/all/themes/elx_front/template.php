@@ -395,7 +395,7 @@ function elx_front_pager($variables) {
     
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
       'items' => $items,
-      'attributes' => array('class' => array('pager')),
+      'attributes' => array('class' => array('pager clearfix')),
     ));
 
     

@@ -450,6 +450,12 @@ body.page-home-page {
     //BROWSE PRODUCT LIBRARY
 
     .pane-homepage-browseproductlibrary {
+        display: none;
+
+        @include respond-to('tablet') {
+            display: inline-block;
+        }
+
         h2.pane-title {
             margin-top: 184px;
             font-family: $font-family-serif;
@@ -468,34 +474,35 @@ body.page-home-page {
 
             .views-row {
 
-                @include respond-to('mobile') {
-                float: none;
-                max-width: 98%;
-                margin-right: 2px;
-                }
-
                 @include respond-to('tablet') {
                 float: left;
                 max-width: 48%;
                 margin-right: 2px;
+                display: inline;
                 }
 
                 @include respond-to('desktop') {
                 float: left;
                 max-width: 24%;
                 margin-right: 2px;
+                display: inline;
+
                 }
 
                 @include respond-to('wide') {
                 float: left;
                 max-width: 24%;
                 margin-right: 2px;
+                display: inline;
+
                 }
 
                 @include respond-to('xwide') {
                 float: left;
                 max-width: 24%;
                 margin-right: 2px;
+                display: inline;
+
                 }
             }
 
@@ -550,5 +557,33 @@ body.page-home-page {
 .layout-swap {
   padding-top: 0;
 }
+
+
+// Mobile Slideshows
+
+
+.browse-products-mobile {
+
+    @include respond-to('mobile') {
+        display: inline-block;
+    }
+
+    @include respond-to('tablet') {
+        display: none;
+    }
+
+    @include respond-to('desktop') {
+        display: none;
+    }
+
+    @include respond-to('wide') {
+        display: none;
+    }
+
+    @include respond-to('xwide') {
+        display: none;
+    }
+}
+
 
 }

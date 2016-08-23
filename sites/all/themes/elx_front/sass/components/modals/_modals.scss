@@ -64,6 +64,16 @@ body.ctools-modal-open {
 
       }
 
+      .field-name-field-product-image {
+        width: 50%;
+        float: left;
+
+        .field-label {
+          display: none;
+        }
+
+      }
+
       .field-name-field-why-there-s-only-one {
         float: right;
         width: 50%;
@@ -80,6 +90,10 @@ body.ctools-modal-open {
           border-bottom: 1px solid #fff;
         }
 
+      }
+
+      .field-name-field-demonstration {
+        clear: both;
       }
 
     }

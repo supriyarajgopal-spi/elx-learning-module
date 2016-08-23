@@ -9,9 +9,12 @@
 
 .pager,
 %pager {
+  font-size: $font-size-large;
   clear: both;
   padding: 0;
   text-align: center;
+  margin: 30px auto;
+  max-width: 510px;
 
   @media print {
     display: none;
@@ -19,17 +22,63 @@
 
   // A page item in the pager list.
   &__item {
+    float: left;
     display: inline;
-    padding: 0 .5em;
+    text-align: center;
+    padding: 10px 0 0;
     list-style-type: none;
     background-image: none;
+    border: 1px solid #e6e6e6;
+    border-right: 0;
+    width: 46px;
+    height: 46px;
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
   }
 
   // The current page's list item.
   &__current-item {
     @extend %pager__item;
-    font-weight: bold;
+    border: 1px solid #01051e;
+
+    a {
+      color: #01051e;
+    }
+
   }
+
+  &__disabled {
+    float: left;
+    display: inline;
+    text-align: center;
+    padding: 10px 0 0;
+    list-style-type: none;
+    border: 1px solid #e6e6e6;
+    border-right: 0;
+    width: 46px;
+    height: 46px;
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+
+  &__next-previous {
+    float: left;
+    display: inline;
+    text-align: center;
+    padding: 10px 0 0;
+    list-style-type: none;
+    border: 1px solid #01051e;
+    border-right: 0;
+    width: 46px;
+    height: 46px;
+    cursor: not-allowed;
+    background-color: #01051e;
+  }
+
 }
 
 //
@@ -43,15 +92,35 @@
 // .pager-last     - The last page's list item.
 // .pager-ellipsis - A concatenation of several list items using an ellipsis.
 
-.pager-item,
+//.pager-previous,
+//.pager-next,
 .pager-first,
-.pager-previous,
-.pager-next,
 .pager-last,
+.pager-item,
 .pager-ellipsis {
   @extend %pager__item;
 }
 
 .pager-current {
   @extend %pager__current-item;
+}
+
+.pager-previous.disabled {
+  @extend %pager__disabled;
+  // need to add custom button
+}
+
+.pager-next.disabled {
+  @extend %pager__disabled;
+  // need to add custom button
+}
+
+.pager-previous {
+  @extend %pager__next-previous;
+  // need to add custom button
+}
+
+.pager-next {
+  @extend %pager__next-previous;
+  // need to add custom button
 }

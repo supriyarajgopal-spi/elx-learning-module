@@ -81,8 +81,11 @@
 
     <main class="<?php print $content_class; ?>" role="main">
       <?php print render($page['highlighted']); ?>
+      <!--
+      removed breadcrumbs and top link because they aren't used - ahill
       <?php print $breadcrumb; ?>
       <a href="#skip-link" class="visually-hidden visually-hidden--focusable" id="main-content">Back to top</a>
+      -->
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1><?php print $title; ?></h1>

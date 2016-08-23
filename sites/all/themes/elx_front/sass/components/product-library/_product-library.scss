@@ -8,105 +8,15 @@
     text-align: center;
   }
 
+  .view-header {
+    max-width: 1024px;
+    margin: 0 auto;
+    font-style: italic;
+    font-size: $font-size-large;
+  }
+
   .view-product-library,
   .view-search-product-library {
-    //search & filter area
-    .view-filters {
-      padding: 30px 0;
-      background-color: #e6e9ee;
-
-      .views-exposed-form {
-        max-width: 1024px;
-        margin: 0 auto;
-
-        label {
-          color: #040a2b;
-          text-transform: uppercase;
-        }
-
-        select.form-select {
-          border: 1px solid #040a2b;
-          height: 46px;
-          padding: 0 0 0 10px;
-          background: #fff;
-          border-radius: 0;
-          -moz-border-radius: 0;
-          -webkit-border-radius: 0;
-          appearance: none;
-          -moz-appearance: none;
-          -webkit-appearance: none;
-        }
-
-        input[type='submit'] {
-          height: 46px;
-          font-size: $font-size-lg-extrasmall;
-          color: #fff;
-          background-color: #01051e;
-          text-transform: uppercase;
-          font-weight: bold;
-          letter-spacing: $letter-spacing-base;
-          border: 0;
-        }
-
-        #edit-field-product-categories-tid-wrapper,
-        .views-widget-sort-by {
-          width: 33%;
-
-          select {
-            width: 100%;
-          }
-        }
-
-        .views-widget-per-page {
-          #edit-items-per-page {
-            .form-item.form-item-items-per-page {
-              display: inline-block;
-              height: 46px;
-              width: 46px;
-
-              input {
-                margin-left: -5000px;
-              }
-
-              input[type='radio'] {
-                &:checked+label {
-                  background-color: #fff;
-                  border: 1px solid #040a2b;
-                  z-index: 2;
-                }
-              }
-
-              label {
-                position: absolute;
-                margin-left: 4985px;
-                font-size: $font-size-lg-extrasmall;
-                font-weight: 700;
-                border: 1px solid rgb(204, 204, 204);
-                padding: 10px 15px;
-                background-color: #ececec;
-              }
-
-              // overlapping border fix
-              &:nth-child(1) {
-                margin-right: -6px;
-              }
-
-              // overlapping border fix
-              &:nth-child(2) {
-                margin-right: -6px;
-              }
-            }
-          }
-
-        }
-
-        // hide sort order options, not in original site
-        .views-widget-sort-order {
-          display: none;
-        }
-
-      }
-    }
 
     // product library content
     .view-content {

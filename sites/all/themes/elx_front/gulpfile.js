@@ -45,7 +45,8 @@ options.sass = {
   ],
   outputStyle: 'expanded',
   sourceComments: 'normal',
-  debug_info: true
+  debug_info: true,
+  lineNumbers: true
 };
 
 // Define which browsers to add vendor prefixes for.

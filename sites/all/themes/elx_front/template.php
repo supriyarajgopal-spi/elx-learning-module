@@ -320,8 +320,8 @@ function elx_front_pager($variables) {
 
   // 1 should always show if we are on page 2+
   $li_first = theme('pager_first', array('text' => (t('1')), 'element' => $element, 'parameters' => $parameters));
-  $li_previous = theme('pager_previous', array('text' => (t('‹')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-  $li_next = theme('pager_next', array('text' => (t('›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_previous = theme('pager_previous', array('text' => (t('')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_next = theme('pager_next', array('text' => (t('')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
   // the last page # should always show if we aren't on the last page.
   $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
@@ -337,8 +337,8 @@ function elx_front_pager($variables) {
       );
     } else {
       $items[] = array(
-        'class' => array('pager-previous diabled'),
-        'data' => '<',
+        'class' => array('pager-previous disabled'),
+        'data' => '',
       );
     }
     if ( $li_first && ($pager_current > 5) ) {
@@ -398,14 +398,14 @@ function elx_front_pager($variables) {
     } else {
       $items[] = array(
         'class' => array('pager-next disabled'),
-        'data' => '>',
+        'data' => '',
       );
     }
 
 
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
       'items' => $items,
-      'attributes' => array('class' => array('pager')),
+      'attributes' => array('class' => array('pager clearfix')),
     ));
 
 

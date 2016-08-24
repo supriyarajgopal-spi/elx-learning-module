@@ -314,6 +314,11 @@
       // button by the show() function called above.)
       $('#modal-content :focusable:first').focus();
     }
+    
+    // Trigger a window resize after 100 milliseconds to ensure that the modal is centered properly.
+    // See https://www.drupal.org/node/1803104
+    setTimeout(function() { $(window).trigger('resize'); }, 200);
+    
   }
 
   /**

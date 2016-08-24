@@ -1,0 +1,15 @@
+diff --git a/js/modal.js b/js/modal.js
+index c757ef2..d1b8ff3 100644
+--- a/js/modal.js
++++ b/js/modal.js
+@@ -311,6 +311,10 @@
+       // button by the show() function called above.)
+       $('#modal-content :focusable:first').focus();
+     }
++
++    // Trigger a window resize after 200 milliseconds to ensure that the modal is centered properly.
++    // See https://www.drupal.org/node/1803104
++    setTimeout(function() { $(window).trigger('resize'); }, 200);
+   }
+ 
+   /**

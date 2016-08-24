@@ -3118,42 +3118,63 @@ body.ctools-modal-open {
   overflow: hidden;
 }
 
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
-.modal-default .modal-title {
+/* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+.modal-default .modal-header .modal-title {
   display: none;
 }
 
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 14, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+.modal-default .modal-header a.close {
+  width: 32px;
+  height: 32px;
+  background-image: url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png");
+}
+
+/* line 22, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 15, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content article {
   max-width: 1170px;
   margin: 0 auto;
 }
 
-/* line 19, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content article h2 {
   font-family: "optimadisplaylightlight";
   font-size: 28px;
 }
 
 /* product library */
-/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 43, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+.page-product-library div.ctools-modal-content {
+  background-color: #e6e9ee;
+}
+
+/* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+.page-product-library div.ctools-modal-content .modal-header {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  z-index: 10;
+  background-color: #e6e9ee;
+}
+
+/* line 56, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content {
   background-color: #e6e9ee;
 }
 
-/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 59, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article {
   background-color: #fff;
   padding: 0 90px;
   font-size: 18px;
 }
 
-/* line 43, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-label {
   display: inline-block;
   font-size: 20px;
@@ -3163,28 +3184,28 @@ body.ctools-modal-open {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 52, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 75, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-items {
   margin: 10px 0;
 }
 
-/* line 57, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 80, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-items .field-item > div {
   margin: 0 0 24px;
 }
 
-/* line 67, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-product-image {
   width: 50%;
   float: left;
 }
 
-/* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 94, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-product-image .field-label {
   display: none;
 }
 
-/* line 77, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 100, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one {
   float: right;
   width: 50%;
@@ -3194,7 +3215,7 @@ body.ctools-modal-open {
   letter-spacing: 2px;
 }
 
-/* line 85, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 108, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one .field-label {
   display: inline-block;
   text-transform: uppercase;
@@ -3203,7 +3224,7 @@ body.ctools-modal-open {
   border-bottom: 1px solid #fff;
 }
 
-/* line 95, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 118, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-demonstration {
   clear: both;
 }

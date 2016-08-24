@@ -527,10 +527,10 @@ div#block-menu-menu-header-user-menu {
 }
 
 .qtip.qtip-light {
-  // width: 300px !important;
-  // position: absolute !important;
-  // right: 0 !important;
-  // left: -50px !important;
+   width: 300px !important;
+  position: absolute !important;
+  right: 0 !important;
+  //left: -50px !important;
 }
 
 .qtip-contentWrapper {
@@ -543,6 +543,9 @@ div#block-menu-menu-header-user-menu {
   font-family: $font-family-serif !important;
   padding: 0 !important;
   border-bottom: 1px solid #040a2b !important;
+
+ul.menu{
+
 
   li {
 
@@ -567,6 +570,7 @@ div#block-menu-menu-header-user-menu {
     letter-spacing: 1px;
     border-bottom: 1px solid #1e2441;
   }
+}
 }
 
 .pane-menu-menu-header-user-menu-1 {

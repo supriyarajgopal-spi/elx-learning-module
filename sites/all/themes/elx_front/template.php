@@ -140,7 +140,7 @@ function elx_front_preprocess_comment(&$variables, $hook) {
 
 /**
  * Hook theme
- * 
+ *
  */
 function elx_front_theme(&$existing, $type, $theme, $path) {
   $hooks['user_login'] = array(
@@ -158,7 +158,7 @@ function elx_front_theme(&$existing, $type, $theme, $path) {
  */
 function elx_front_preprocess_user_login(&$vars) {
   $vars['intro_text'] = t('The Estee Lauder Experience');
-  $vars['rendered'] = drupal_render_children($vars['form']); 
+  $vars['rendered'] = drupal_render_children($vars['form']);
 }
 /**
  * Alter User Login Page
@@ -203,7 +203,17 @@ function elx_front_form_alter(&$form, &$form_state, $form_id) {
     $form['remember_me']['#title'] = t($lang_remember_me);
     $form['actions']['submit']['#value'] = t($lang_signin_label);
   }
+
+  /* add HTML5 Placeholder attribute to search form */
+  if ($form_id == 'search_block_form') {
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search');
+  }
+
+
 }
+
+
+
 
 /*
  *  Form user login alter
@@ -255,9 +265,9 @@ function elx_front_final_validate($form, &$form_state) {
 }
 
 /*
- *  Custom pager. 
- *  custom logic and display to match current site 
- *  The math in here is a mess. There may be a better way to do this. This might not work well on < 9 pages. 
+ *  Custom pager.
+ *  custom logic and display to match current site
+ *  The math in here is a mess. There may be a better way to do this. This might not work well on < 9 pages.
  *  Probably need a 'minimum number of pages' check around most of these math statements adjusting quantity.
  *  allan.hill - 082016
  */
@@ -269,7 +279,7 @@ function elx_front_pager($variables) {
   $quantity = 7;
   global $pager_page_array, $pager_total;
 
-  
+
 
   // Calculate various markers within this pager piece:
   // current is the page we are currently paged to
@@ -313,13 +323,13 @@ function elx_front_pager($variables) {
   $li_previous = theme('pager_previous', array('text' => (t('‹')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
   $li_next = theme('pager_next', array('text' => (t('›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
   // the last page # should always show if we aren't on the last page.
-  $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters)); 
+  $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
   if ($pager_total[$element] > 1) {
     // ***
     // TODO : change the quantity displayed to 5 when it's in the middle of the page record set.
     // ***
-    
+
     if ($li_previous) {
       $items[] = array(
         'class' => array('pager-previous'),
@@ -344,7 +354,7 @@ function elx_front_pager($variables) {
           'class' => array('pager-ellipsis'),
           'data' => '…',
         );
-      } 
+      }
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
@@ -391,15 +401,15 @@ function elx_front_pager($variables) {
         'data' => '>',
       );
     }
-    
-    
+
+
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
       'items' => $items,
       'attributes' => array('class' => array('pager')),
     ));
 
-    
-    
-    
+
+
+
   }
 }

@@ -39,7 +39,6 @@ function content_conversion_h5p_submit($form, &$form_state) {
  *   A Content Object node.
  */
 function content_conversion_content_object_h5p($node) {
-  $json_content = new stdClass();
   if (!empty($node->field_h5p_node[LANGUAGE_NONE][0]['target_id'])) {
     $h5p_node = node_load($node->field_h5p_node[LANGUAGE_NONE][0]['target_id']);
   }
@@ -58,7 +57,7 @@ function content_conversion_content_object_h5p($node) {
     'comment' => $node->comment,
     'h5p_type' => 'create',
     'main_library_id' => h5peditor_get_library_property('H5P.CoursePresentation 1.11', 'libraryId'),
-    'json_content' => json_encode($json_content),
+    'json_content' => content_conversion_h5p_json($node),
     'embed_type' => 'div',
     'disable' => 0,
     'h5p_library' => 'H5P.CoursePresentation 1.11',
@@ -67,4 +66,15 @@ function content_conversion_content_object_h5p($node) {
   node_save($h5p_node);
   $node->field_h5p_node[LANGUAGE_NONE][0]['target_id'] = $h5p_node->nid;
   node_save($node);
+}
+
+/**
+ * Generates H5P JSON code from a Content Object node.
+ *
+ * @param type $node
+ *   A Content Object node.
+ */
+function content_conversion_h5p_json($node) {
+  $h5p = new stdClass();
+  return json_encode($h5p);
 }

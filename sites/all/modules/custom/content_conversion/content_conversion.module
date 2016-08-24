@@ -1,5 +1,70 @@
 <?php
+
 /**
  * @file
  * Drupal needs this blank file.
  */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function content_conversion_form_content_object_node_form_alter(&$form, &$form_state) {
+  $node = $form_state['node'];
+  if (!empty($node->nid)) {
+    $form['actions']['h5p'] = array(
+      '#type' => 'submit',
+      '#value' => t('Generate H5P content'),
+      '#weight' => 15,
+      '#submit' => array('content_conversion_h5p_submit'),
+    );
+  }
+}
+
+/**
+ * Form submission handler for node_form().
+ *
+ * Generates interactive content node for content object node.
+ *
+ * @see content_conversion_form_content_object_node_form_alter()
+ * @see node_form_validate()
+ */
+function content_conversion_h5p_submit($form, &$form_state) {
+  content_conversion_content_object_h5p($form_state['node']);
+}
+
+/**
+ * Generates an interactive content node for a Content Object node.
+ *
+ * @param object $node
+ *   A Content Object node.
+ */
+function content_conversion_content_object_h5p($node) {
+  $json_content = new stdClass();
+  if (!empty($node->field_h5p_node[LANGUAGE_NONE][0]['target_id'])) {
+    $h5p_node = node_load($node->field_h5p_node[LANGUAGE_NONE][0]['target_id']);
+  }
+  $h5p_node = empty($h5p_node) ? array() : array('nid' => $h5p_node->nid);
+  $h5p_node += array(
+    'uid' => $node->uid,
+    'name' => $node->name,
+    'type' => 'h5p_content',
+    'language' => $node->language,
+    'title' => $node->title,
+    'status' => $node->status,
+    'promote' => $node->promote,
+    'sticky' => $node->sticky,
+    'created' => $node->created,
+    'revision' => FALSE,
+    'comment' => $node->comment,
+    'h5p_type' => 'create',
+    'main_library_id' => h5peditor_get_library_property('H5P.CoursePresentation 1.11', 'libraryId'),
+    'json_content' => json_encode($json_content),
+    'embed_type' => 'div',
+    'disable' => 0,
+    'h5p_library' => 'H5P.CoursePresentation 1.11',
+  );
+  $h5p_node = (object) $h5p_node;
+  node_save($h5p_node);
+  $node->field_h5p_node[LANGUAGE_NONE][0]['target_id'] = $h5p_node->nid;
+  node_save($node);
+}

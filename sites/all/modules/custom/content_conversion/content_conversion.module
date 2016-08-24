@@ -42,7 +42,15 @@ function content_conversion_content_object_h5p($node) {
   if (!empty($node->field_h5p_node[LANGUAGE_NONE][0]['target_id'])) {
     $h5p_node = node_load($node->field_h5p_node[LANGUAGE_NONE][0]['target_id']);
   }
-  $h5p_node = empty($h5p_node) ? array() : array('nid' => $h5p_node->nid);
+  if (empty($h5p_node)) {
+    $h5p_node = array();
+  }
+  else {
+    $h5p_node = array(
+      'nid' => $h5p_node->nid,
+      'vid' => $h5p_node->vid,
+    );
+  }
   $h5p_node += array(
     'uid' => $node->uid,
     'name' => $node->name,

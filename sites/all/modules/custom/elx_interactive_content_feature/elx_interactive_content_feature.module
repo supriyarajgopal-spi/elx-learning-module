@@ -54,4 +54,8 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	$dialog_front->tags = $dialog_back->tags = array('p','br','strong','em','ul','li','ol','dl','dt','sup','u'); //Allowed tags
 	$dialog_back->optional = true; //Make text at the back of Dialog card optional
   }
+
+  //Allow table in Advanced Text
+  if($machine_name == 'H5P.AdvancedText')
+	array_push($semantics[0]->tags,'table','tr','td','thead','tbody','tfoot');
 }

@@ -79,10 +79,23 @@ function content_conversion_content_object_h5p($node) {
 /**
  * Generates H5P JSON code from a Content Object node.
  *
- * @param type $node
+ * @param object $content_object
  *   A Content Object node.
  */
-function content_conversion_h5p_json($node) {
+function content_conversion_h5p_json($content_object) {
   $h5p = new stdClass();
+  // Convert the Content Object node into a Course Presentation.
+  $h5p->presentation = new stdClass();
+  $h5p->presentation->slides = array();
+  // Convert learning object nodes into Course Presentation slides.
+  foreach ($content_object->field_learning_objects[$content_object->language] as $nid) {
+    $slide = new stdClass();
+    $h5p->presentation->slides[] = $slide;
+    $learning_object = node_load($nid);
+    $function = '_content_conversion_node_' . $learning_object->type;
+    if (function_exists($function)) {
+      $function($learning_object, $slide);
+    }
+  }
   return json_encode($h5p);
 }

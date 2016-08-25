@@ -25,11 +25,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Explore Learning Levels';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
@@ -108,6 +104,26 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Block admin */
+  $handler = $view->new_display('block', 'Block admin', 'block_1');
+  $handler->display->display_options['display_description'] = 'shows unpublished and published content';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'content_object' => 'content_object',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['tid']['value'] = '';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'learning_category';
   $translatables['explore_learning_levels'] = array(
     t('Master'),
     t('Explore Learning Levels'),
@@ -120,6 +136,8 @@ function elx_home_page_views_default_views() {
     t('SEE MORE'),
     t('Page'),
     t('Block'),
+    t('Block admin'),
+    t('shows unpublished and published content'),
   );
   $export['explore_learning_levels'] = $view;
 
@@ -138,11 +156,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Browse the Product Library';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'infinite_scroll';
@@ -218,6 +232,19 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Block admin */
+  $handler = $view->new_display('block', 'Block admin', 'block_1');
+  $handler->display->display_options['display_description'] = 'show unpublished and published content';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
   $translatables['homepage_browseproductlibrary'] = array(
     t('Master'),
     t('Browse the Product Library'),
@@ -230,6 +257,8 @@ function elx_home_page_views_default_views() {
     t('SEE MORE'),
     t('Page'),
     t('Block'),
+    t('Block admin'),
+    t('show unpublished and published content'),
   );
   $export['homepage_browseproductlibrary'] = $view;
 
@@ -521,11 +550,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'Spotlight';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -605,6 +630,31 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Block admin */
+  $handler = $view->new_display('block', 'Block admin', 'block_1');
+  $handler->display->display_options['display_description'] = 'shows unpublished and published content';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'content_object' => 'content_object',
+  );
+  /* Filter criterion: Content: Headline (field_headline) */
+  $handler->display->display_options['filters']['field_headline_value']['id'] = 'field_headline_value';
+  $handler->display->display_options['filters']['field_headline_value']['table'] = 'field_data_field_headline';
+  $handler->display->display_options['filters']['field_headline_value']['field'] = 'field_headline_value';
+  $handler->display->display_options['filters']['field_headline_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Featured (field_featured) */
+  $handler->display->display_options['filters']['field_featured_value']['id'] = 'field_featured_value';
+  $handler->display->display_options['filters']['field_featured_value']['table'] = 'field_data_field_featured';
+  $handler->display->display_options['filters']['field_featured_value']['field'] = 'field_featured_value';
+  $handler->display->display_options['filters']['field_featured_value']['value'] = array(
+    1 => '1',
+  );
   $translatables['homepage_spotlight'] = array(
     t('Master'),
     t('Spotlight'),
@@ -616,6 +666,8 @@ function elx_home_page_views_default_views() {
     t('Desc'),
     t('Page'),
     t('Block'),
+    t('Block admin'),
+    t('shows unpublished and published content'),
   );
   $export['homepage_spotlight'] = $view;
 
@@ -795,11 +847,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['title'] = 'What\'s New & Trending';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
@@ -877,6 +925,25 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Block admin */
+  $handler = $view->new_display('block', 'Block admin', 'block_1');
+  $handler->display->display_options['display_description'] = 'shows unpublished and published content';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'content_object' => 'content_object',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = '';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'story_type';
   $translatables['homepage_whatsnewtrending'] = array(
     t('Master'),
     t('What\'s New & Trending'),
@@ -889,6 +956,8 @@ function elx_home_page_views_default_views() {
     t('SEE MORE'),
     t('Page'),
     t('Block'),
+    t('Block admin'),
+    t('shows unpublished and published content'),
   );
   $export['homepage_whatsnewtrending'] = $view;
 

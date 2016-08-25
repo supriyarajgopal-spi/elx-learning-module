@@ -2,110 +2,169 @@
 .page-badges {
 
   .views-row {
-    > div {
+    .views-field {
       width: 142px;
       height: 142px;
       float: left;
-      text-indent: -5000px;
       margin: 0 13px 26px;
       background-size: 142px 142px;
+
+      a {
+        display: inline-block;
+        width: 142px;
+        height: 142px;
+        text-indent: -5000px;
+      }
+
     }
   }
 
-  .three-minute-beauty {
+  .three-minute-beauty-no,
+  .three-minute-beauty-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-3minbeauty.svg') no-repeat 0 0;
   }
 
-  .one-hundred-percent-club {
+  .one-hundred-percent-club-no,
+  .one-hundred-percent-club-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-100club.svg') no-repeat 0 0;
   }
 
-  .beauty-queen {
+  .beauty-queen-no,
+  .beauty-queen-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautyqueen.png') no-repeat 0 0;
   }
 
-  .early-bird {
+  .early-bird-no,
+  .early-bird-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-earlybird.svg') no-repeat 0 0;
   }
 
-  .fast-learner {
+  .fast-learner-no,
+  .fast-learner-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-fastlearner.svg') no-repeat 0 0;
   }
 
-  .first-1000-points {
+  .first-1000-points-no,
+  .first-1000-points-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first1000.svg') no-repeat 0 0;
   }
 
-  .first-5000-points {
+  .first-5000-points-no,
+  .first-5000-points-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first5000.svg') no-repeat 0 0;
   }
 
-  .first-10000-points {
+  .first-10000-points-no,
+  .first-10000-points-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg') no-repeat 0 0;
   }
 
-  .high-five {
+  .high-five-no,
+  .high-five-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg') no-repeat 0 0;
   }
 
-  .little-brown-bottle {
+  .little-brown-bottle-no,
+  .little-brown-bottle-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png') no-repeat 0 0;
   }
 
-  .new-dimension {
+  .new-dimension-no,
+  .new-dimension-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png') no-repeat 0 0;
   }
 
-  .on-your-way {
+  .on-your-way-no,
+  .on-your-way-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg') no-repeat 0 0;
   }
 
-  .perfect-ten {
+  .perfect-ten-no,
+  .perfect-ten-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg') no-repeat 0 0;
   }
 
-  .product-pro {
+  .product-pro-no,
+  .product-pro-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg') no-repeat 0 0;
   }
 
-  .rare-beauty {
+  .rare-beauty-no,
+  .rare-beauty-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png') no-repeat 0 0;
   }
 
-  .service-star {
+  .service-star-no,
+  .service-star-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg') no-repeat 0 0;
   }
 
-  .sleeping-beauty {
+  .sleeping-beauty-no,
+  .sleeping-beauty-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png') no-repeat 0 0;
   }
 
-  .we-heard-you {
+  .we-heard-you-no,
+  .we-heard-you-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg') no-repeat 0 0;
   }
 
-  .we-heart-you {
+  .we-heart-you-no,
+  .we-heart-you-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg') no-repeat 0 0;
   }
 
-  .welcome {
+  .welcome-no,
+  .welcome-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg') no-repeat 0 0;
   }
 
-  .well-read-25 {
+  .well-read-25-no,
+  .well-read-25-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg') no-repeat 0 0;
   }
 
-  .well-read-50 {
+  .well-read-50-no,
+  .well-read-50-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg') no-repeat 0 0;
   }
 
-  .well-read-75 {
+  .well-read-75-no,
+  .well-read-75-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg') no-repeat 0 0;
   }
 
-  .well-read-100 {
+  .well-read-100-no,
+  .well-read-100-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg') no-repeat 0 0;
+  }
+
+  .three-minute-beauty-no,
+  .one-hundred-percent-club-no,
+  .beauty-queen-no,
+  .early-bird-no,
+  .fast-learner-no,
+  .first-1000-points-no,
+  .first-5000-points-no,
+  .first-10000-points-no,
+  .high-five-no,
+  .little-brown-bottle-no,
+  .new-dimension-no,
+  .on-your-way-no,
+  .perfect-ten-no,
+  .product-pro-no,
+  .rare-beauty-no,
+  .service-star-no,
+  .sleeping-beauty-no,
+  .we-heard-you-no,
+  .we-heart-you-no,
+  .welcome-no,
+  .well-read-25-no,
+  .well-read-50-no,
+  .well-read-75-no,
+  .well-read-100-no {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
   }
 
 }

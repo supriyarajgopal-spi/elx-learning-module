@@ -235,9 +235,12 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
             'type' => 'scale',
             'width' => 1,
             'height' => 1,
+            'contentRight' => 5,
+            'contentBottom' => 20,
           ),
           'animation' => 'slideDown',
           'closeText' => t(''),
+          'closeImage' => t(''),
           //'closeImage' => base_path() . path_to_theme() . '',
         ),
       ), 'setting');

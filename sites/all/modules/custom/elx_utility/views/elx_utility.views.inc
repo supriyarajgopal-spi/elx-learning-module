@@ -11,13 +11,13 @@
  */
 function elx_utility_views_data() {
   $data = array();
-  
+
   $data['flag']['table']['group'] = t('Flag');
   $data['flag']['table']['base'] = array(
     'title' => t('Flag'),
     'help' => t('Contains records of Flag module to be exposed to Views.'),
   );
-  
+
   //Expose Badge Description field to Views by exposing the entire 'options' serialized column in 'flag' table
   $data['flag']['options'] = array(
     'title' => t('Flag Options'),
@@ -26,7 +26,7 @@ function elx_utility_views_data() {
       'handler' => 'views_handler_field_serialized',
     ),
   );
-  
+
   /* //Expose Badge Image field to Views by exposing the entire 'options' serialized column in 'flag' table
   $data['flag']['options'] = array(
     'title' => t('Flag Badge Image'),
@@ -35,7 +35,7 @@ function elx_utility_views_data() {
       'handler' => 'elx_utility_handler_field_badge_image', //Custom field handler to display Badge Image
     ),
   ); */
-  
+
   /*Inform Views that the 'fid' column of 'flagging' table is the foreign key of 'fid' in 'flag' table so that Flag Options field can be inserted in Badge Views*/
   $data['flag']['table']['join'] = array(
 	'flagging' => array(
@@ -74,14 +74,19 @@ function elx_utility_views_pre_render(&$view)
     case 'badges':
 		//Add classes to each Views field separately..
 		//$view->field['flagged']->options['alter']['link_class'] = t('use-ajax hello');
-		
+
 		//..or add the same classes to all Views fields at oncce
 		foreach($view->field as $field)
 			$field->options['alter']['link_class'] = t('use-ajax'); //Separate each class name with a space. 'use-ajax' is mandatory
 		break;
-	 
+
 	case 'product_library':
 		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-product-library'); //'use-ajax' is mandatory
 		break;
+
+  case 'quizzes_per_level':
+    $view->field['title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-product-library'); //'use-ajax' is mandatory
+    $view->field['field_hero_image']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-product-library'); //'use-ajax' is mandatory
+    break;
   }
 }

@@ -33,6 +33,5 @@ function elx_footer_menu_default_menu_custom() {
   t('Page bottom privacy');
   t('menu links for the footer block: need help email, and log out');
 
-
   return $menus;
 }

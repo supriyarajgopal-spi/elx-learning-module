@@ -51,7 +51,9 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
     'group_type' => 'node',
     'group_bundle' => 'market',
     'name' => 'translator',
-    'permissions' => array(),
+    'permissions' => array(
+      'update any badge content' => TRUE,
+    ),
   );
 
   return $roles;

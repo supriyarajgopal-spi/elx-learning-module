@@ -33,6 +33,8 @@ function elx_user_points_feature_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => 0,
+    'badge_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'teaser' => 0,
@@ -47,11 +49,11 @@ function elx_user_points_feature_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'elx_user_points_feature',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 

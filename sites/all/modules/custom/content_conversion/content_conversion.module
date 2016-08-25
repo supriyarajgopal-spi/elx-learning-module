@@ -88,14 +88,92 @@ function content_conversion_h5p_json($content_object) {
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
   // Convert learning object nodes into Course Presentation slides.
-  foreach ($content_object->field_learning_objects[$content_object->language] as $nid) {
+  foreach ($content_object->field_learning_objects[$content_object->language] as $learning_object) {
     $slide = new stdClass();
     $h5p->presentation->slides[] = $slide;
-    $learning_object = node_load($nid);
-    $function = '_content_conversion_node_' . $learning_object->type;
+    $node = node_load($learning_object['target_id']);
+    $function = '_content_conversion_node_' . $node->type;
     if (function_exists($function)) {
-      $function($learning_object, $slide);
+      $function($node, $slide);
     }
   }
   return json_encode($h5p);
+}
+
+/**
+ * Converts a List node to H5P slide data.
+ *
+ * @param object $node
+ *   A List node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_list($node, $slide) {
+  foreach ($node->field_list_item[$node->language] as $item) {
+    $paragraph = paragraphs_item_load($item['value']);
+    $slide->elements = array();
+    $element = new stdClass();
+    $element->x = 1.0615711252654;
+    $element->y = 6.2893081761006;
+    $element->width = 68.789808917197;
+    $element->height = 56.184486373166;
+    $action = new stdClass();
+    $action->library = 'H5P.Video 1.2';
+    $params = new stdClass();
+    $visuals = new stdClass();
+    $visuals->fit = TRUE;
+    $visuals->controls = TRUE;
+    $params->visuals = $visuals;
+    $playback = new stdClass();
+    $playback->autoplay = FALSE;
+    $playback->loop = FALSE;
+    $params->playback = $playback;
+    $l10n = new stdClass();
+    $l10n->name = 'Video';
+    $l10n->loading = 'Video player loading...';
+    $l10n->noPlayers = 'Found no video players that support the given video format.';
+    $l10n->noSources = 'Video is missing sources.';
+    $l10n->aborted = 'Media playback has been aborted.';
+    $l10n->networkFailure = 'Network failure.';
+    $l10n->cannotDecode = 'Unable to decode media.';
+    $l10n->formatNotSupported = 'Video format not supported.';
+    $l10n->mediaEncrypted = 'Media encrypted';
+    $l10n->unknownError = 'Unknown error.';
+    $l10n->invalidYtId = 'Invalid YouTube ID.';
+    $l10n->unknownYtId = 'Unable to find video with the given YouTube ID.';
+    $l10n->restrictedYt = 'The owner of this video does not allow it to be embedded.';
+    $params->l10n = $l10n;
+    $params->sources = array();
+    foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $file) {
+      $source = new stdClass();
+      $source->path = $file['uri'];
+      $source->mime = $file['filemime'];
+      $params->sources[] = $source;
+    }
+    $action->params = $params;
+    $element->action = $action;
+    $element->alwaysDisplayComments = FALSE;
+    $element->backgroundOpacity = 0;
+    $element->displayAsButton = FALSE;
+    $element->invisible = FALSE;
+    $element->solution = '';
+    $slide->elements[] = $element;
+    $element = new stdClass();
+    $element->x = 1.0615711252654;
+    $element->y = 67.027044025157;
+    $element->width = 96.390658174098;
+    $element->height = 28.930817610063;
+    $action = new stdClass();
+    $action->library = 'H5P.AdvancedText 1.1';
+    $params = new stdClass();
+    $params->text = $paragraph->field_list_text[LANGUAGE_NONE][0]['value'];
+    $action->params = $params;
+    $element->action = $action;
+    $element->alwaysDisplayComments = FALSE;
+    $element->backgroundOpacity = 0;
+    $element->displayAsButton = FALSE;
+    $element->invisible = FALSE;
+    $element->solution = '';
+    $slide->elements[] = $element;
+  }
 }

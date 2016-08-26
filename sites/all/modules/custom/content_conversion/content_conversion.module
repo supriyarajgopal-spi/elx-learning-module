@@ -177,3 +177,81 @@ function _content_conversion_node_list($node, $slide) {
     $slide->elements[] = $element;
   }
 }
+
+/**
+ * Converts a Story node to H5P slide data.
+ *
+ * @param object $node
+ *   A Story node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_story($node, $slide) {
+
+  $slide->elements = array();
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+
+  $element = new stdClass();
+  $element->x = 1.0615711252654;
+  $element->y = 2.0898846960168;
+  $element->width = 98.513800424628;
+  $element->height = 58.280922431866;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $action = new stdClass();
+  $action->library = "H5P.AdvancedText 1.1";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->text = $node->field_story_copy[$node->language][0]['safe_value'];
+  if (!empty($node->field_story_label[$node->language][0]['value'])) {
+    $params->contentName = $node->field_story_label[$node->language][0]['value'];
+  }
+  $params->alt = '';
+
+  $action->params = $params;
+  $element->action = $action;
+  $action->subContentId = 0;
+  $slide->elements[] = $element;
+
+  if (!empty($node->field_story_image[$node->language][0]['uri'])) {
+    $element = new stdClass();
+    $element->x = 1.0615711252654;
+    $element->y = 59.538784067086;
+    $element->width = 30.430461002119;
+    $element->height = 40;
+    $element->alwaysDisplayComments = false;
+    $element->backgroundOpacity = 0;
+    $element->displayAsButton = false;
+    $element->invisible = false;
+    $element->solution = '';
+
+    $file = new stdClass();
+    $file->path = file_create_url($node->field_story_image[$node->language][0]['uri']);
+    $file->mime = $node->field_story_image[$node->language][0]['filemime'];
+    $file->width = $node->field_story_image[$node->language][0]['height'];
+    $file->height = $node->field_story_image[$node->language][0]['width'];
+
+    $copyright = new stdClass();
+    $copyright->license = "U";
+
+    $file->copyright = $copyright;
+
+    $params = new stdClass();
+    $params->contentName = "Image";
+    $params->alt = "Image for the slide";
+    $params->file = $file;
+
+    $action = new stdClass();
+    $action->subContentId = 0;
+    $action->params = $params;
+    $element->action = $action;
+    $slide->elements[] = $element;
+  }
+
+}

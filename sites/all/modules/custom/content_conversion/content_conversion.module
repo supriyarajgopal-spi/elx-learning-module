@@ -144,11 +144,16 @@ function _content_conversion_node_list($node, $slide) {
     $l10n->restrictedYt = 'The owner of this video does not allow it to be embedded.';
     $params->l10n = $l10n;
     $params->sources = array();
-    foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $file) {
-      $source = new stdClass();
-      $source->path = $file['uri'];
-      $source->mime = $file['filemime'];
-      $params->sources[] = $source;
+    if (!empty($paragraph->field_list_video)) {
+      foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $file) {
+        $source = new stdClass();
+        $source->path = file_create_url($file['uri']);
+        $source->mime = $file['filemime'];
+        $copyright = new stdClass();
+        $copyright->license = 'U';
+        $source->copyright = $copyright;
+        $params->sources[] = $source;
+      }
     }
     $action->params = $params;
     $element->action = $action;
@@ -158,23 +163,28 @@ function _content_conversion_node_list($node, $slide) {
     $element->invisible = FALSE;
     $element->solution = '';
     $slide->elements[] = $element;
-    $element = new stdClass();
-    $element->x = 1.0615711252654;
-    $element->y = 67.027044025157;
-    $element->width = 96.390658174098;
-    $element->height = 28.930817610063;
-    $action = new stdClass();
-    $action->library = 'H5P.AdvancedText 1.1';
-    $params = new stdClass();
-    $params->text = $paragraph->field_list_text[LANGUAGE_NONE][0]['value'];
-    $action->params = $params;
-    $element->action = $action;
-    $element->alwaysDisplayComments = FALSE;
-    $element->backgroundOpacity = 0;
-    $element->displayAsButton = FALSE;
-    $element->invisible = FALSE;
-    $element->solution = '';
-    $slide->elements[] = $element;
+    // Avoid creating empty text box by stripping tags from safe value and
+    // trimming white space and non-breaking space.
+    $safe = trim(strip_tags($paragraph->field_list_text[LANGUAGE_NONE][0]['safe_value']), " \t\n\r\0\x0B\xC2\xA0");
+    if ($safe != '') {
+      $element = new stdClass();
+      $element->x = 1.0615711252654;
+      $element->y = 67.027044025157;
+      $element->width = 96.390658174098;
+      $element->height = 28.930817610063;
+      $action = new stdClass();
+      $action->library = 'H5P.AdvancedText 1.1';
+      $params = new stdClass();
+      $params->text = $paragraph->field_list_text[LANGUAGE_NONE][0]['value'];
+      $action->params = $params;
+      $element->action = $action;
+      $element->alwaysDisplayComments = FALSE;
+      $element->backgroundOpacity = 0;
+      $element->displayAsButton = FALSE;
+      $element->invisible = FALSE;
+      $element->solution = '';
+      $slide->elements[] = $element;
+    }
   }
 }
 

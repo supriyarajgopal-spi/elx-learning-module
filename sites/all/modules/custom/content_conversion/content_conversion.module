@@ -29,7 +29,8 @@ function content_conversion_form_content_object_node_form_alter(&$form, &$form_s
  * @see node_form_validate()
  */
 function content_conversion_h5p_submit($form, &$form_state) {
-  content_conversion_content_object_h5p($form_state['node']);
+  $h5p_node = content_conversion_content_object_h5p($form_state['node']);
+  $form_state['redirect'] = entity_uri('node', $h5p_node);
 }
 
 /**
@@ -74,6 +75,7 @@ function content_conversion_content_object_h5p($node) {
   node_save($h5p_node);
   $node->field_h5p_node[LANGUAGE_NONE][0]['target_id'] = $h5p_node->nid;
   node_save($node);
+  return $h5p_node;
 }
 
 /**

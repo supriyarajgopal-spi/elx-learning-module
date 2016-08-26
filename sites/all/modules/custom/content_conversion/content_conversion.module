@@ -256,3 +256,118 @@ function _content_conversion_node_story($node, $slide) {
   }
 
 }
+
+/**
+ * Created by SUPRIYA RAJGOPAL on 25Aug16
+ *
+ * Generates H5P JSON of Reveal learning object type.
+ *
+ * @param object $content_object
+ *   A Content Object node.
+ * @param object $slide
+ *   A slide object.
+ * Returns array matching the JSON structure
+ */
+function _content_conversion_node_reveal($learning_object, $slide)
+{	
+	$element = new stdClass(); //Elements of the slide. In this case, the Click To Reveal option within a Course Presentation.
+	
+	//Set position & dimension of element within the slide 
+	$element->x = 1;
+	$element->y = 0;
+	$element->width = 97;
+	$element->height = 96;
+	
+	$element->action = new stdClass();
+	$element->action->library = 'H5P.ClickToReveal 1.0';
+	
+	$element->action->params = new stdClass(); //TODO: Look up tng_shadow  module & build this dynamically
+	
+	//Intro text of learning object to H5P description
+	if(isset($learning_object->field_intro) && !empty($learning_object->field_intro))
+		$element->action->params->description = $learning_object->field_intro[$learning_object->language][0]['value'];
+	else
+		$element->action->params->description = t('');
+	
+	$element->action->params->cards = array();
+	
+	//Create card objects array iff Reveal collection paragraph bundle is not empty
+	if(isset($learning_object->field_reveal_collection) && !empty($learning_object->field_reveal_collection))
+	{
+		$cards = $learning_object->field_reveal_collection[$learning_object->language]; //Array of cards
+		
+		/**
+		 * foreach Click To Reveal card..
+		 *  load the Paragraph entity i.e Reveal collection field in Reveal content type,
+		 *  access each of thumbnail, large image & text of the paragraph and
+		 *  form the card object and push to the cards array
+		 */
+		foreach($cards as $card) 
+		{
+			$cardParagraphEntity = entity_load('paragraphs_item', array($card['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
+			
+			$cardObject = new stdClass();
+			
+			$cardParagraph = $cardParagraphEntity[$card['value']];
+			
+			//Thumbnail image object
+			if(isset($cardParagraph->field_reveal_thumbnail) && !empty($cardParagraph->field_reveal_thumbnail))
+			{
+				$thumbnailImage = $cardParagraph->field_reveal_thumbnail[LANGUAGE_NONE][0];
+				
+				$cardObject->thumbnail_image = new stdClass();
+				$cardObject->thumbnail_image->path = file_create_url($thumbnailImage['uri']);
+				$cardObject->thumbnail_image->mime = $thumbnailImage['filemime'];
+				$cardObject->thumbnail_image->copyright = new stdClass();
+				$cardObject->thumbnail_image->copyright->license = 'U';
+				//To maintain fixed 1:1 aspect ratio, change width x height to 70 x 70 (noted while checking sample H5P JSON content)
+				$cardObject->thumbnail_image->width = $thumbnailImage['width'];
+				$cardObject->thumbnail_image->height = $thumbnailImage['height'];
+			}
+			
+			//Large image object
+			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero))
+			{
+				$largeImage = $cardParagraph->field_reveal_hero[LANGUAGE_NONE][0];
+				$cardObject->large_image = new stdClass();
+				$cardObject->large_image->path = file_create_url($largeImage['uri']);
+				$cardObject->large_image->mime = $largeImage['filemime'];
+				$cardObject->large_image->copyright = new stdClass();
+				$cardObject->large_image->copyright->license = 'U';
+				//Maintains 16:9 aspect ratio, change width x height to 765 x 430 (noted while checking sample H5P JSON content)
+				$cardObject->large_image->width = $largeImage['width'];
+				$cardObject->large_image->height = $largeImage['height'];
+			}
+			//Text
+			if(isset($cardParagraph->field_reveal_text) && !empty($cardParagraph->field_reveal_text))
+			{
+				$text = $cardParagraph->field_reveal_text[LANGUAGE_NONE][0]['safe_value'];
+				$cardObject->text = $text;
+			}
+			
+			$element->action->params->cards[] = $cardObject;
+		}
+	}
+	else
+		$element->action->params->cards[] = new stdClass();
+	
+	//Title of Click to Reveal element
+	if(isset($learning_object->field_subtitle) && !empty($learning_object->field_subtitle))
+		$element->action->params->title = $learning_object->field_subtitle[$learning_object->language][0]['value'];
+	else
+		$element->action->params->title = t('');
+	
+	//Default, constant settings
+	$element->action->params->retry = t('Retry');
+	$element->action->subContentId = 0;
+	$element->alwaysDisplayComments = false;
+	$element->backgroundOpacity = 0;
+	$element->displayAsButton = false;
+	$element->invisible = false;
+	$element->solution = "";
+	
+	$slide->elements[] = $element; //Array of elements
+	
+	$slide->slideBackgroundSelector = new stdClass(); //Empty since no background image will be selected
+	$slide->keywords = array(); //Empty since no keywords will be specified
+}

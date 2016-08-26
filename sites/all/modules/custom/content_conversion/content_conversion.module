@@ -248,6 +248,7 @@ function _content_conversion_node_story($node, $slide) {
     $params->file = $file;
 
     $action = new stdClass();
+    $action->library = "H5P.Image 1.0";
     $action->subContentId = 0;
     $action->params = $params;
     $element->action = $action;

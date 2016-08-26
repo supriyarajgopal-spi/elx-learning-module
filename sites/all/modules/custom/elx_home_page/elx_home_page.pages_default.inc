@@ -89,7 +89,7 @@ function elx_home_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-fc532907-c197-45d8-abe6-94cf25d3eacf';
+  $pane->pid = 'new-981150e0-b315-485c-a7b9-f1111a19b334';
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'homepage_spotlight';
@@ -107,18 +107,12 @@ function elx_home_page_default_page_manager_pages() {
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'block',
+    'display' => 'block_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array(
-    'method' => 'simple',
-    'settings' => array(
-      'lifetime' => '3600',
-      'granularity' => 'none',
-    ),
-  );
+  $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
@@ -126,11 +120,11 @@ function elx_home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'fc532907-c197-45d8-abe6-94cf25d3eacf';
-  $display->content['new-fc532907-c197-45d8-abe6-94cf25d3eacf'] = $pane;
-  $display->panels['middle'][0] = 'new-fc532907-c197-45d8-abe6-94cf25d3eacf';
+  $pane->uuid = '981150e0-b315-485c-a7b9-f1111a19b334';
+  $display->content['new-981150e0-b315-485c-a7b9-f1111a19b334'] = $pane;
+  $display->panels['middle'][0] = 'new-981150e0-b315-485c-a7b9-f1111a19b334';
   $pane = new stdClass();
-  $pane->pid = 'new-342efcb1-34ea-4077-90f4-0c5a606e1e32';
+  $pane->pid = 'new-b244bfc1-c044-4594-aac9-05c03bc88159';
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'explore_learning_levels';
@@ -148,18 +142,12 @@ function elx_home_page_default_page_manager_pages() {
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'block',
+    'display' => 'block_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array(
-    'method' => 'simple',
-    'settings' => array(
-      'lifetime' => '3600',
-      'granularity' => 'none',
-    ),
-  );
+  $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
@@ -167,11 +155,11 @@ function elx_home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '342efcb1-34ea-4077-90f4-0c5a606e1e32';
-  $display->content['new-342efcb1-34ea-4077-90f4-0c5a606e1e32'] = $pane;
-  $display->panels['middle'][1] = 'new-342efcb1-34ea-4077-90f4-0c5a606e1e32';
+  $pane->uuid = 'b244bfc1-c044-4594-aac9-05c03bc88159';
+  $display->content['new-b244bfc1-c044-4594-aac9-05c03bc88159'] = $pane;
+  $display->panels['middle'][1] = 'new-b244bfc1-c044-4594-aac9-05c03bc88159';
   $pane = new stdClass();
-  $pane->pid = 'new-c8982932-f3e4-4caf-bc2d-8f79af74201b';
+  $pane->pid = 'new-5767dc3a-46fb-496f-90dd-23f84d8240fd';
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'homepage_whatsnewtrending';
@@ -189,18 +177,12 @@ function elx_home_page_default_page_manager_pages() {
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'block',
+    'display' => 'block_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array(
-    'method' => 'simple',
-    'settings' => array(
-      'lifetime' => '3600',
-      'granularity' => 'none',
-    ),
-  );
+  $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
@@ -208,11 +190,11 @@ function elx_home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'c8982932-f3e4-4caf-bc2d-8f79af74201b';
-  $display->content['new-c8982932-f3e4-4caf-bc2d-8f79af74201b'] = $pane;
-  $display->panels['middle'][2] = 'new-c8982932-f3e4-4caf-bc2d-8f79af74201b';
+  $pane->uuid = '5767dc3a-46fb-496f-90dd-23f84d8240fd';
+  $display->content['new-5767dc3a-46fb-496f-90dd-23f84d8240fd'] = $pane;
+  $display->panels['middle'][2] = 'new-5767dc3a-46fb-496f-90dd-23f84d8240fd';
   $pane = new stdClass();
-  $pane->pid = 'new-a5149159-58ab-4089-8e05-05b80d27f47b';
+  $pane->pid = 'new-f2d8bd6c-47f3-4d63-83f8-4671e9d86324';
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'homepage_browseproductlibrary';
@@ -230,18 +212,12 @@ function elx_home_page_default_page_manager_pages() {
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'block',
+    'display' => 'block_1',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
-  $pane->cache = array(
-    'method' => 'simple',
-    'settings' => array(
-      'lifetime' => '3600',
-      'granularity' => 'none',
-    ),
-  );
+  $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
@@ -249,9 +225,9 @@ function elx_home_page_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = 'a5149159-58ab-4089-8e05-05b80d27f47b';
-  $display->content['new-a5149159-58ab-4089-8e05-05b80d27f47b'] = $pane;
-  $display->panels['middle'][3] = 'new-a5149159-58ab-4089-8e05-05b80d27f47b';
+  $pane->uuid = 'f2d8bd6c-47f3-4d63-83f8-4671e9d86324';
+  $display->content['new-f2d8bd6c-47f3-4d63-83f8-4671e9d86324'] = $pane;
+  $display->panels['middle'][3] = 'new-f2d8bd6c-47f3-4d63-83f8-4671e9d86324';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

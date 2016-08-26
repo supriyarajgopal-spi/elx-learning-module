@@ -34,68 +34,7 @@ function elx_utility_preprocess_html(&$variables) {
     . '/admin.js');
     drupal_add_js(drupal_get_path('module', 'elx_utility')
     . '/jquery.alphanum.js');
-	
-	/**
-	 * Included by SUPRIYA RAJGOPAL on 17Aug16 to add additional modal window related JS & CSS
-	 * Uncomment to adjust modal window settings as per class specified
-	 * Specify the corresponding class of modal window in views/elx_utility.views.inc
-	 */
-	/*--------------------------------------------------------------------------------------*/
-	/* drupal_add_css(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.css');
-    drupal_add_js(drupal_get_path('module', 'lysse_quickview') . '/lysse_quickview.js');
-    drupal_add_js(array(
-      'quickview' => array(
-        'modalClass' => 'quickview',
-        'modalSize' => array ( 
-        'type' => 'fixed', 
-        'width' => 760,
-        'height' => 590),
-      ),
-    ), 'setting');
     
-    drupal_add_js(array(
-      'lysse-email-direct-thank-you' => array(
-        'modalClass' => 'lysse-email-direct-thank-you',
-      ),
-    ), 'setting');
-    
-    drupal_add_js(array(
-      'lysse-email-direct-second-run' => array(
-        'modalClass' => 'lysse-email-direct-second-run',
-      ),
-    ), 'setting');
-    
-    drupal_add_js(array(
-      'wish-list' => array(
-        'modalClass' => 'wish-list',
-      ),
-    ), 'setting');
-    
-    drupal_add_js(array(
-      'lysse-popup-link' => array(
-        'modalClass' => 'lysse-popup-link',
-      ),
-    ), 'setting');
-    
-    drupal_add_js(array(
-      'login-registration-modal' => array(
-        'modalClass' => 'login-registration-modal',
-      ),
-    ), 'setting');
-    
-    drupal_add_js(array(
-      'cart-promo-modal' => array(
-        'modalClass' => 'cart-promo-modal',
-        'modalSize' => array ( 
-          'type' => 'fixed', 
-          'width' => 500,
-          'height' => 500,
-          'contentRight' => 0,
-          'contentBottom' => 0,
-        ),
-      ),
-    ), 'setting'); */
-	/*--------------------------------------------------------------------------------------*/
   }
 }
 
@@ -190,9 +129,9 @@ function elx_utility_entity_info_alter(&$entity_info)
 function elx_utility_menu()
 {
   $items['modal/%ctools_js/%'] = array(
-      'title' => 'Product Details Modal',
+      'title' => 'Tools Modal',
       'page arguments' => array(1,2), //Pass whether to use AJAX or JS and the nid
-      'page callback' => '_elx_product_details_modal', //User defined function called when the link is clicked
+      'page callback' => '_elx_tools_modal', //User defined function called when the link is clicked
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
@@ -207,30 +146,19 @@ function elx_utility_menu()
   return $items;
 }
 
-/**
- * User defined page callback created by SUPRIYA RAJGOPAL on 21Jul16 to show product details in a modal
- * Borrowed from https://www.drupion.com/blog/10-steps-creating-ctools-modal-window-drupal-7
- *
- * @param $js
- *   boolean CTools determination whether the user's browser is javascript enabled. 
- * @param $nid
- *   string The node ID passed as an argument from the hook_menu() path
- * @return
- *   string The contents of the node in a modal window
- */
-function _elx_product_details_modal($js = NULL, $nid = NULL)
+function _elx_tools_modal($js = NULL, $nid = NULL)
 {
   if($nid == NULL)
    return 'No content to display.';
-   
-  //Include ctools iff path contains 'nojs' to work, else render page normally
+ 
+  //Include ctools if path contains 'nojs' to work, else render page normally
   if($js)
   {
     ctools_include('modal');
     ctools_include('ajax');
 	  ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
     drupal_add_js(array(
-        'search-product-library' => array(
+        'elx-tools' => array(
           'modalSize' => array(
             'type' => 'scale',
             'width' => 1,

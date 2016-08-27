@@ -20,8 +20,6 @@
 				}
 				else
 					this.updateFeedbackContent(this.options.incorrect_feedback,false); //'incorrect_feedback' is the 'name' property defined in semantics.json or hook_h5p_semantics_alter()
-
-				console.log(this.options);
 			}
 		}
 	});

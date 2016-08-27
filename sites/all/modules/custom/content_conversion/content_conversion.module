@@ -204,32 +204,15 @@ function _content_conversion_node_story($node, $slide) {
   $slide->slideBackgroundSelector = new stdClass();
   $slide->keywords = array();
 
-  $element = new stdClass();
-  $element->x = 1.0615711252654;
-  $element->y = 2.0898846960168;
-  $element->width = 98.513800424628;
-  $element->height = 58.280922431866;
-  $element->alwaysDisplayComments = false;
-  $element->backgroundOpacity = 0;
-  $element->displayAsButton = false;
-  $element->invisible = false;
-  $element->solution = '';
-
-  $action = new stdClass();
-  $action->library = "H5P.AdvancedText 1.1";
-  $action->subContentId = '0';
-
-  $params = new stdClass();
-  $params->text = $node->field_story_copy[$node->language][0]['safe_value'];
-  if (!empty($node->field_story_label[$node->language][0]['value'])) {
-    $params->contentName = $node->field_story_label[$node->language][0]['value'];
-  }
-  $params->alt = '';
-
-  $action->params = $params;
-  $element->action = $action;
-  $action->subContentId = 0;
-  $slide->elements[] = $element;
+  $get_text_array = array(
+    "text" => $node->field_story_copy[$node->language][0]['safe_value'],
+    "label" => $node->field_story_label[$node->language][0]['value'],
+    "x" => '1.0615711252654',
+    "y" => '2.0898846960168',
+    "width" => '98.513800424628',
+    "height" => '58.280922431866',
+  );
+  $slide->elements[] = _create_text_object($get_text_array);
 
   if (!empty($node->field_story_image[$node->language][0]['uri'])) {
     $element = new stdClass();
@@ -243,21 +226,10 @@ function _content_conversion_node_story($node, $slide) {
     $element->invisible = false;
     $element->solution = '';
 
-    $file = new stdClass();
-    $file->path = file_create_url($node->field_story_image[$node->language][0]['uri']);
-    $file->mime = $node->field_story_image[$node->language][0]['filemime'];
-    $file->width = $node->field_story_image[$node->language][0]['height'];
-    $file->height = $node->field_story_image[$node->language][0]['width'];
-
-    $copyright = new stdClass();
-    $copyright->license = "U";
-
-    $file->copyright = $copyright;
-
     $params = new stdClass();
     $params->contentName = "Image";
     $params->alt = "Image for the slide";
-    $params->file = $file;
+    $params->file = _create_image_object($node->field_story_image[$node->language][0]);
 
     $action = new stdClass();
     $action->library = "H5P.Image 1.0";
@@ -266,7 +238,6 @@ function _content_conversion_node_story($node, $slide) {
     $element->action = $action;
     $slide->elements[] = $element;
   }
-
 }
 
 /**
@@ -382,4 +353,178 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	
 	$slide->slideBackgroundSelector = new stdClass(); //Empty since no background image will be selected
 	$slide->keywords = array(); //Empty since no keywords will be specified
+}
+
+/**
+ * Converts a Story node to H5P slide data.
+ *
+ * @param object $node
+ *   A Story node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_hot_spots($node, $slide) {
+
+  $slide->elements = array();
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+
+  if (!empty($node->field_intro[$node->language][0]['safe_value'])) {
+    $get_text_array = array(
+      "text" => $node->field_intro[$node->language][0]['safe_value'],
+      "x" => '0',
+      "y" => '0',
+      "width" => '95.329087048832',
+      "height" => '66.666666666667',
+    );
+    $slide->elements[] = _create_text_object($get_text_array);
+  }
+
+  //process hotspots
+  $slide->elements[] = _create_hotspot_object($node);
+
+  if (!empty($node->field_hot_spot_image[$node->language][0]['uri'])) {
+    $element = new stdClass();
+    $element->x = 1.0615711252654;
+    $element->y = 59.538784067086;
+    $element->width = 30.430461002119;
+    $element->height = 40;
+    $element->alwaysDisplayComments = false;
+    $element->backgroundOpacity = 0;
+    $element->displayAsButton = false;
+    $element->invisible = false;
+    $element->solution = '';
+
+    $params = new stdClass();
+    $params->contentName = "Image";
+    $params->alt = "Hot Spot Image";
+    $params->file = _create_image_object($node->field_hot_spot_image[$node->language][0]);
+
+    $action = new stdClass();
+    $action->library = "H5P.Image 1.0";
+    $action->subContentId = 0;
+    $action->params = $params;
+    $element->action = $action;
+    $slide->elements[] = $element;
+  }
+}
+
+/*
+ * Utility Function
+ * _create_hotspot_object - takes a node and returns the necessary element for inserting into a slide
+ */
+function _create_hotspot_object($node) {
+
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 99.787685774947;
+  $element->height = 99.58071278826;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $action = new stdClass();
+  $action->library = "H5P.ImageHotspots 1.3";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->color = "ecb328";
+  $params->image = _create_image_object($node->field_hot_spot_image[$node->language][0]);
+
+  $hotspots = array();
+  foreach($node->field_hot_spot_collection[$node->language] as $key => $value) {
+    //load paragraph bundle
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $hotspot = $entity[$value['value']];
+
+    $hotspot_object = new stdClass();
+    $hotspot_object->alwaysFullscreen = 'false';
+
+    $position_array = array();
+    $x_pos = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
+    $position_array['x'] = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_pos))) - 96)/16);
+    $y_pos = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
+    $position_array['y'] = $params->image->height * (str_replace("pos","",$y_pos)/19);
+
+    $hotspot_object->position = $position_array;
+
+    $content = new stdClass();
+    $content->params = array(
+      "text" => $hotspot->field_hot_spot_text['und'][0]['safe_value'],
+    );
+    $content->library = "H5P.Text 1.1";
+    $content->subContentId = '0';
+
+    $hotspot_object->content = $content;
+    $hotspots[] = $hotspot_object;
+  }
+
+  $params->hotspots = $hotspots;
+  $action->params = $params;
+  $element->action = $action;
+
+  return $element;
+}
+
+/*
+ * Utility Function
+ * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
+ * receives one drupal image array
+ * uri, filemime, height, width
+ * returns an image object ready for json conversion
+ */
+function _create_image_object($image_array) {
+
+  $file = new stdClass();
+  $file->path = file_create_url($image_array['uri']);
+  $file->mime = $image_array['filemime'];
+  $file->width = $image_array['height'];
+  $file->height = $image_array['width'];
+  $copyright = new stdClass();
+  $copyright->license = "U";
+  $file->copyright = $copyright;
+  return $file;
+
+}
+
+/*
+ * Utility Function
+ * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
+ * receives one drupal image array
+ * uri, filemime, height, width
+ * returns an image object ready for json conversion
+ */
+function _create_text_object($text_array = null) {
+
+  $element = new stdClass();
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $element->x = $text_array['x'];
+  $element->y = $text_array['y'];
+  $element->width = $text_array['width'];
+  $element->height = $text_array['height'];
+
+  $action = new stdClass();
+  $action->library = "H5P.AdvancedText 1.1";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->text = $text_array['text'];
+  if (!empty($text_array['label'])) {
+    $params->contentName = $text_array['label'];
+  }
+  $params->alt = '';
+  $action->params = $params;
+
+  $element->action = $action;
+  $action->subContentId = 0;
+
+  return $element;
 }

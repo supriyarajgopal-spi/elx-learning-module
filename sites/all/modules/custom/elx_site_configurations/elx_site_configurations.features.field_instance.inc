@@ -26,9 +26,10 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -75,9 +76,12 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -143,9 +147,10 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -195,9 +200,15 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -243,9 +254,14 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -294,9 +310,10 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
+        'module' => 'i18n_field',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'i18n_list_default',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -348,9 +365,12 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -413,9 +433,14 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4343,7 +4368,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4391,7 +4416,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4439,7 +4464,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4486,7 +4511,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4532,7 +4557,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4597,7 +4622,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4646,7 +4671,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4742,7 +4767,7 @@ function elx_site_configurations_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4796,7 +4821,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4843,7 +4868,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4889,7 +4914,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4936,7 +4961,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4980,9 +5005,12 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5052,7 +5080,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5100,7 +5128,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5145,7 +5173,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5196,7 +5224,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5243,7 +5271,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5291,7 +5319,7 @@ function elx_site_configurations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5342,7 +5370,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5396,7 +5424,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5466,7 +5494,7 @@ function elx_site_configurations_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',

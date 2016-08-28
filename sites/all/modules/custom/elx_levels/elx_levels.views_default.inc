@@ -53,23 +53,18 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: Global: View */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
   $handler->display->display_options['fields']['view_1']['table'] = 'views';
   $handler->display->display_options['fields']['view_1']['field'] = 'view';
   $handler->display->display_options['fields']['view_1']['label'] = '';
   $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'levels_user_progress';
-  $handler->display->display_options['fields']['view_1']['display'] = 'block';
-  /* Field: Global: View */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'quizzes_per_level';
-  $handler->display->display_options['fields']['view']['display'] = 'block';
-  $handler->display->display_options['fields']['view']['arguments'] = '[!tid]';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';

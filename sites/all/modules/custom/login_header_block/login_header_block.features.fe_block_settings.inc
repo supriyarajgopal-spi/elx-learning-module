@@ -28,14 +28,14 @@ function login_header_block_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'elx_front',
-        'weight' => 0,
+        'weight' => -14,
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
   return $export;

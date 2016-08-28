@@ -76,5 +76,9 @@ var ns = H5PEditor;
     return url;
   };
 
-  $(document).ready(ns.init);
+  Drupal.behaviors.H5PEditor = {
+    attach: function (context, settings) {
+      ns.init();
+    }
+  }
 })(H5P.jQuery);

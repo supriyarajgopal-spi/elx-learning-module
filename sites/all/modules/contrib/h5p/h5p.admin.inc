@@ -375,7 +375,7 @@ function _h5p_admin_add_generic_css_and_js($module_path, $settings = NULL) {
     'upgradeLibrary' => t('Upgrade library content')
   );
 
-  drupal_add_js('H5PAdminIntegration = ' . json_encode($settings) . ';', 'inline');
+  drupal_add_js(array('H5PAdminIntegration' => $settings), 'setting');
   drupal_add_css($module_path . '/library/styles/h5p.css');
   drupal_add_css($module_path . '/library/styles/h5p-admin.css');
 

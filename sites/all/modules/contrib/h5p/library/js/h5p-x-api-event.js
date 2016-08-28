@@ -133,9 +133,9 @@ H5P.XAPIEvent.prototype.setObject = function (instance) {
       }
     }
     else {
-      if (H5PIntegration && H5PIntegration.contents && H5PIntegration.contents['cid-' + instance.contentId].title) {
+      if (Drupal.settings.H5PIntegration && Drupal.settings.H5PIntegration.contents && Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].title) {
         this.data.statement.object.definition.name = {
-          "en-US": H5P.createTitle(H5PIntegration.contents['cid-' + instance.contentId].title)
+          "en-US": H5P.createTitle(Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].title)
         };
       }
     }
@@ -179,10 +179,10 @@ H5P.XAPIEvent.prototype.setContext = function (instance) {
  * Set the actor. Email and name will be added automatically.
  */
 H5P.XAPIEvent.prototype.setActor = function () {
-  if (H5PIntegration.user !== undefined) {
+  if (Drupal.settings.H5PIntegration.user !== undefined) {
     this.data.statement.actor = {
-      'name': H5PIntegration.user.name,
-      'mbox': 'mailto:' + H5PIntegration.user.mail,
+      'name': Drupal.settings.H5PIntegration.user.name,
+      'mbox': 'mailto:' + Drupal.settings.H5PIntegration.user.mail,
       'objectType': 'Agent'
     };
   }
@@ -204,7 +204,7 @@ H5P.XAPIEvent.prototype.setActor = function () {
     this.data.statement.actor = {
       'account': {
         'name': uuid,
-        'homePage': H5PIntegration.siteUrl
+        'homePage': Drupal.settings.H5PIntegration.siteUrl
       },
       'objectType': 'Agent'
     };
@@ -239,8 +239,8 @@ H5P.XAPIEvent.prototype.getScore = function() {
  */
 H5P.XAPIEvent.prototype.getContentXAPIId = function (instance) {
   var xAPIId;
-  if (instance.contentId && H5PIntegration && H5PIntegration.contents) {
-    xAPIId =  H5PIntegration.contents['cid-' + instance.contentId].url;
+  if (instance.contentId && Drupal.settings.H5PIntegration && Drupal.settings.H5PIntegration.contents) {
+    xAPIId =  Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].url;
     if (instance.subContentId) {
       xAPIId += '?subContentId=' +  instance.subContentId;
     }

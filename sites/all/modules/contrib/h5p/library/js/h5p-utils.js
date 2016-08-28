@@ -7,7 +7,7 @@ var H5PUtils = H5PUtils || {};
    * @param {array} headers List of headers
    */
   H5PUtils.createTable = function (headers) {
-    var $table = $('<table class="h5p-admin-table' + (H5PAdminIntegration.extraTableClasses !== undefined ? ' ' + H5PAdminIntegration.extraTableClasses : '') + '"></table>');
+    var $table = $('<table class="h5p-admin-table' + (Drupal.settings.H5PAdminIntegration.extraTableClasses !== undefined ? ' ' + Drupal.settings.H5PAdminIntegration.extraTableClasses : '') + '"></table>');
 
     if(headers) {
       var $thead = $('<thead></thead>');

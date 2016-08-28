@@ -7,15 +7,15 @@ var H5PLibraryList = H5PLibraryList || {};
    * Initializing
    */
   H5PLibraryList.init = function () {
-    var $adminContainer = H5P.jQuery(H5PAdminIntegration.containerSelector).html('');
+    var $adminContainer = H5P.jQuery(Drupal.settings.H5PAdminIntegration.containerSelector).html('');
 
-    var libraryList = H5PAdminIntegration.libraryList;
+    var libraryList = Drupal.settings.H5PAdminIntegration.libraryList;
     if (libraryList.notCached) {
       $adminContainer.append(H5PUtils.getRebuildCache(libraryList.notCached));
     }
 
     // Create library list
-    $adminContainer.append(H5PLibraryList.createLibraryList(H5PAdminIntegration.libraryList));
+    $adminContainer.append(H5PLibraryList.createLibraryList(Drupal.settings.H5PAdminIntegration.libraryList));
   };
 
   /**
@@ -24,7 +24,7 @@ var H5PLibraryList = H5PLibraryList || {};
    * @param {object} libraries List of libraries and headers
    */
   H5PLibraryList.createLibraryList = function (libraries) {
-    var t = H5PAdminIntegration.l10n;
+    var t = Drupal.settings.H5PAdminIntegration.l10n;
     if(libraries.listData === undefined || libraries.listData.length === 0) {
       return $('<div>' + t.NA + '</div>');
     }
@@ -130,11 +130,13 @@ var H5PLibraryList = H5PLibraryList || {};
   };
 
   // Initialize me:
-  $(document).ready(function () {
-    if (!H5PLibraryList.initialized) {
-      H5PLibraryList.initialized = true;
-      H5PLibraryList.init();
+  Drupal.behaviors.H5PLibraryList = {
+    attach: function (context, settings) {
+      if (!H5PLibraryList.initialized) {
+        H5PLibraryList.initialized = true;
+        H5PLibraryList.init();
+      }
     }
-  });
+  }
 
 })(H5P.jQuery);

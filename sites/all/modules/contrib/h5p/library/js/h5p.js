@@ -102,7 +102,7 @@ H5P.init = function (target) {
     var $element = H5P.jQuery(this).addClass('h5p-initialized');
     var $container = H5P.jQuery('<div class="h5p-container"></div>').appendTo($element);
     var contentId = $element.data('content-id');
-    var contentData = H5PIntegration.contents['cid-' + contentId];
+    var contentData = Drupal.settings.H5PIntegration.contents['cid-' + contentId];
     if (contentData === undefined) {
       return H5P.error('No data for content id ' + contentId + '. Perhaps the library is gone?');
     }
@@ -117,7 +117,7 @@ H5P.init = function (target) {
           state: previousState
         };
       }
-      else if (previousState === null && H5PIntegration.saveFreq) {
+      else if (previousState === null && Drupal.settings.H5PIntegration.saveFreq) {
         // Content has been reset. Display dialog.
         delete contentData.contentUserData;
         var dialog = new H5P.Dialog('content-user-data-reset', 'Data Reset', '<p>' + H5P.t('contentChanged') + '</p><p>' + H5P.t('startingOver') + '</p><div class="h5p-dialog-ok-button" tabIndex="0" role="button">OK</div>', $container);
@@ -237,7 +237,7 @@ H5P.init = function (target) {
     H5P.on(instance, 'xAPI', H5P.xAPICompletedListener);
 
     // Auto save current state if supported
-    if (H5PIntegration.saveFreq !== false && (
+    if (Drupal.settings.H5PIntegration.saveFreq !== false && (
         instance.getCurrentState instanceof Function ||
         typeof instance.getCurrentState === 'function')) {
 
@@ -246,15 +246,15 @@ H5P.init = function (target) {
         if (state !== undefined) {
           H5P.setUserData(contentId, 'state', state, {deleteOnChange: true});
         }
-        if (H5PIntegration.saveFreq) {
+        if (Drupal.settings.H5PIntegration.saveFreq) {
           // Continue autosave
-          saveTimer = setTimeout(save, H5PIntegration.saveFreq * 1000);
+          saveTimer = setTimeout(save, Drupal.settings.H5PIntegration.saveFreq * 1000);
         }
       };
 
-      if (H5PIntegration.saveFreq) {
+      if (Drupal.settings.H5PIntegration.saveFreq) {
         // Start autosave
-        saveTimer = setTimeout(save, H5PIntegration.saveFreq * 1000);
+        saveTimer = setTimeout(save, Drupal.settings.H5PIntegration.saveFreq * 1000);
       }
 
       // xAPI events will schedule a save in three seconds.
@@ -411,11 +411,11 @@ H5P.getHeadTags = function (contentId) {
   };
 
   return '<base target="_parent">' +
-         createStyleTags(H5PIntegration.core.styles) +
-         createStyleTags(H5PIntegration.contents['cid-' + contentId].styles) +
-         createScriptTags(H5PIntegration.core.scripts) +
-         createScriptTags(H5PIntegration.contents['cid-' + contentId].scripts) +
-         '<script>H5PIntegration = window.parent.H5PIntegration; var H5P = H5P || {}; H5P.externalEmbed = false;</script>';
+         createStyleTags(Drupal.settings.H5PIntegration.core.styles) +
+         createStyleTags(Drupal.settings.H5PIntegration.contents['cid-' + contentId].styles) +
+         createScriptTags(Drupal.settings.H5PIntegration.core.scripts) +
+         createScriptTags(Drupal.settings.H5PIntegration.contents['cid-' + contentId].scripts) +
+         '<script>Drupal.settings.H5PIntegration = window.parent.Drupal.settings.H5PIntegration; var H5P = H5P || {}; H5P.externalEmbed = false;</script>';
 };
 
 /**
@@ -691,7 +691,7 @@ H5P.getPath = function (path, contentId) {
 
   var prefix;
   if (contentId !== undefined) {
-    prefix = H5PIntegration.url + '/content/' + contentId;
+    prefix = Drupal.settings.H5PIntegration.url + '/content/' + contentId;
   }
   else if (window.H5PEditor !== undefined) {
     prefix = H5PEditor.filesPath;
@@ -722,7 +722,7 @@ H5P.getPath = function (path, contentId) {
  *   URL
  */
 H5P.getContentPath = function (contentId) {
-  return H5PIntegration.url + '/content/' + contentId;
+  return Drupal.settings.H5PIntegration.url + '/content/' + contentId;
 };
 
 /**
@@ -795,7 +795,7 @@ H5P.newRunnable = function (library, contentId, $attachTo, skipResize, extras) {
     extras.subContentId = library.subContentId;
   }
 
-  if (library.userDatas && library.userDatas.state && H5PIntegration.saveFreq) {
+  if (library.userDatas && library.userDatas.state && Drupal.settings.H5PIntegration.saveFreq) {
     extras.previousState = library.userDatas.state;
   }
 
@@ -883,15 +883,15 @@ H5P.t = function (key, vars, ns) {
     ns = 'H5P';
   }
 
-  if (H5PIntegration.l10n[ns] === undefined) {
+  if (Drupal.settings.H5PIntegration.l10n[ns] === undefined) {
     return '[Missing translation namespace "' + ns + '"]';
   }
 
-  if (H5PIntegration.l10n[ns][key] === undefined) {
+  if (Drupal.settings.H5PIntegration.l10n[ns][key] === undefined) {
     return '[Missing translation "' + key + '" in "' + ns + '"]';
   }
 
-  var translation = H5PIntegration.l10n[ns][key];
+  var translation = Drupal.settings.H5PIntegration.l10n[ns][key];
 
   if (vars !== undefined) {
     // Replace placeholder with variables.
@@ -1529,7 +1529,7 @@ H5P.libraryFromString = function (library) {
  *   The full path to the library.
  */
 H5P.getLibraryPath = function (library) {
-  return (H5PIntegration.libraryUrl !== undefined ? H5PIntegration.libraryUrl + '/' : H5PIntegration.url + '/libraries/') + library;
+  return (Drupal.settings.H5PIntegration.libraryUrl !== undefined ? Drupal.settings.H5PIntegration.libraryUrl + '/' : Drupal.settings.H5PIntegration.url + '/libraries/') + library;
 };
 
 /**
@@ -1580,8 +1580,8 @@ H5P.trim = function (value) {
  * @returns {boolean}
  */
 H5P.jsLoaded = function (path) {
-  H5PIntegration.loadedJs = H5PIntegration.loadedJs || [];
-  return H5P.jQuery.inArray(path, H5PIntegration.loadedJs) !== -1;
+  Drupal.settings.H5PIntegration.loadedJs = Drupal.settings.H5PIntegration.loadedJs || [];
+  return H5P.jQuery.inArray(path, Drupal.settings.H5PIntegration.loadedJs) !== -1;
 };
 
 /**
@@ -1591,8 +1591,8 @@ H5P.jsLoaded = function (path) {
  * @returns {boolean}
  */
 H5P.cssLoaded = function (path) {
-  H5PIntegration.loadedCss = H5PIntegration.loadedCss || [];
-  return H5P.jQuery.inArray(path, H5PIntegration.loadedCss) !== -1;
+  Drupal.settings.H5PIntegration.loadedCss = Drupal.settings.H5PIntegration.loadedCss || [];
+  return H5P.jQuery.inArray(path, Drupal.settings.H5PIntegration.loadedCss) !== -1;
 };
 
 /**
@@ -1637,7 +1637,7 @@ H5P.shuffleArray = function (array) {
  *   Reported time consumption/usage
  */
 H5P.setFinished = function (contentId, score, maxScore, time) {
-  if (H5PIntegration.postUserStatistics === true) {
+  if (Drupal.settings.H5PIntegration.postUserStatistics === true) {
     /**
      * Return unix timestamp for the given JS Date.
      *
@@ -1650,14 +1650,14 @@ H5P.setFinished = function (contentId, score, maxScore, time) {
     };
 
     // Post the results
-    H5P.jQuery.post(H5PIntegration.ajax.setFinished, {
+    H5P.jQuery.post(Drupal.settings.H5PIntegration.ajax.setFinished, {
       contentId: contentId,
       score: score,
       maxScore: maxScore,
       opened: toUnix(H5P.opened[contentId]),
       finished: toUnix(new Date()),
       time: time,
-      token: H5PIntegration.tokens.result
+      token: Drupal.settings.H5PIntegration.tokens.result
     });
   }
 };
@@ -1785,14 +1785,14 @@ H5P.createTitle = function (rawTitle, maxLength) {
    * @param {boolean} [async=true]
    */
   function contentUserDataAjax(contentId, dataType, subContentId, done, data, preload, invalidate, async) {
-    if (H5PIntegration.user === undefined) {
+    if (Drupal.settings.H5PIntegration.user === undefined) {
       // Not logged in, no use in saving.
       done('Not signed in.');
       return;
     }
 
     var options = {
-      url: H5PIntegration.ajax.contentUserData.replace(':contentId', contentId).replace(':dataType', dataType).replace(':subContentId', subContentId ? subContentId : 0),
+      url: Drupal.settings.H5PIntegration.ajax.contentUserData.replace(':contentId', contentId).replace(':dataType', dataType).replace(':subContentId', subContentId ? subContentId : 0),
       dataType: 'json',
       async: async === undefined ? true : async
     };
@@ -1802,7 +1802,7 @@ H5P.createTitle = function (rawTitle, maxLength) {
         data: (data === null ? 0 : data),
         preload: (preload ? 1 : 0),
         invalidate: (invalidate ? 1 : 0),
-        token: H5PIntegration.tokens.contentUserData
+        token: Drupal.settings.H5PIntegration.tokens.contentUserData
       };
     }
     else {
@@ -1847,8 +1847,8 @@ H5P.createTitle = function (rawTitle, maxLength) {
       subContentId = 0; // Default
     }
 
-    H5PIntegration.contents = H5PIntegration.contents || {};
-    var content = H5PIntegration.contents['cid-' + contentId] || {};
+    Drupal.settings.H5PIntegration.contents = Drupal.settings.H5PIntegration.contents || {};
+    var content = Drupal.settings.H5PIntegration.contents['cid-' + contentId] || {};
     var preloadedData = content.contentUserData;
     if (preloadedData && preloadedData[subContentId] && preloadedData[subContentId][dataId] !== undefined) {
       if (preloadedData[subContentId][dataId] === 'RESET') {
@@ -1935,9 +1935,9 @@ H5P.createTitle = function (rawTitle, maxLength) {
       return; // Failed to serialize.
     }
 
-    var content = H5PIntegration.contents['cid-' + contentId];
+    var content = Drupal.settings.H5PIntegration.contents['cid-' + contentId];
     if (content === undefined) {
-      content = H5PIntegration.contents['cid-' + contentId] = {};
+      content = Drupal.settings.H5PIntegration.contents['cid-' + contentId] = {};
     }
     if (!content.contentUserData) {
       content.contentUserData = {};
@@ -1974,7 +1974,7 @@ H5P.createTitle = function (rawTitle, maxLength) {
     }
 
     // Remove from preloaded/cache
-    var preloadedData = H5PIntegration.contents['cid-' + contentId].contentUserData;
+    var preloadedData = Drupal.settings.H5PIntegration.contents['cid-' + contentId].contentUserData;
     if (preloadedData && preloadedData[subContentId] && preloadedData[subContentId][dataId]) {
       delete preloadedData[subContentId][dataId];
     }
@@ -1983,60 +1983,62 @@ H5P.createTitle = function (rawTitle, maxLength) {
   };
 
   // Init H5P when page is fully loadded
-  $(document).ready(function () {
-    /**
-     * Prevent H5P Core from initializing. Must be overriden before document ready.
-     * @member {boolean} H5P.preventInit
-     */
-    if (!H5P.preventInit) {
-      // Note that this start script has to be an external resource for it to
-      // load in correct order in IE9.
-      H5P.init(document.body);
-    }
+  Drupal.behaviors.H5PIntegration = {
+    attach: function (context, settings) {
+      /**
+       * Prevent H5P Core from initializing. Must be overriden before document ready.
+       * @member {boolean} H5P.preventInit
+       */
+      if (!H5P.preventInit) {
+        // Note that this start script has to be an external resource for it to
+        // load in correct order in IE9.
+        H5P.init(document.body);
+      }
 
-    if (H5PIntegration.saveFreq !== false) {
-      // When was the last state stored
-      var lastStoredOn = 0;
-      // Store the current state of the H5P when leaving the page.
-      var storeCurrentState = function () {
-        // Make sure at least 250 ms has passed since last save
-        var currentTime = new Date().getTime();
-        if (currentTime - lastStoredOn > 250) {
-          lastStoredOn = currentTime;
-          for (var i = 0; i < H5P.instances.length; i++) {
-            var instance = H5P.instances[i];
-            if (instance.getCurrentState instanceof Function ||
-                typeof instance.getCurrentState === 'function') {
-              var state = instance.getCurrentState();
-              if (state !== undefined) {
-                // Async is not used to prevent the request from being cancelled.
-                H5P.setUserData(instance.contentId, 'state', state, {deleteOnChange: true, async: false});
+      if (Drupal.settings.H5PIntegration.saveFreq !== false) {
+        // When was the last state stored
+        var lastStoredOn = 0;
+        // Store the current state of the H5P when leaving the page.
+        var storeCurrentState = function () {
+          // Make sure at least 250 ms has passed since last save
+          var currentTime = new Date().getTime();
+          if (currentTime - lastStoredOn > 250) {
+            lastStoredOn = currentTime;
+            for (var i = 0; i < H5P.instances.length; i++) {
+              var instance = H5P.instances[i];
+              if (instance.getCurrentState instanceof Function ||
+                  typeof instance.getCurrentState === 'function') {
+                var state = instance.getCurrentState();
+                if (state !== undefined) {
+                  // Async is not used to prevent the request from being cancelled.
+                  H5P.setUserData(instance.contentId, 'state', state, {deleteOnChange: true, async: false});
+                }
               }
             }
           }
-        }
-      };
-      // iPad does not support beforeunload, therefore using unload
-      H5P.$window.one('beforeunload unload', function () {
-        // Only want to do this once
-        H5P.$window.off('pagehide beforeunload unload');
-        storeCurrentState();
-      });
-      // pagehide is used on iPad when tabs are switched
-      H5P.$window.on('pagehide', storeCurrentState);
-    }
+        };
+        // iPad does not support beforeunload, therefore using unload
+        H5P.$window.one('beforeunload unload', function () {
+          // Only want to do this once
+          H5P.$window.off('pagehide beforeunload unload');
+          storeCurrentState();
+        });
+        // pagehide is used on iPad when tabs are switched
+        H5P.$window.on('pagehide', storeCurrentState);
+      }
 
-    /**
-     * Indicates if H5P is embedded on an external page using iframe.
-     * @member {boolean} H5P.externalEmbed
-     */
+      /**
+       * Indicates if H5P is embedded on an external page using iframe.
+       * @member {boolean} H5P.externalEmbed
+       */
 
-    // Relay events to top window.
-    if (H5P.isFramed && H5P.externalEmbed === false) {
-      H5P.externalDispatcher.on('*', function (event) {
-        window.parent.H5P.externalDispatcher.trigger.call(this, event);
-      });
+      // Relay events to top window.
+      if (H5P.isFramed && H5P.externalEmbed === false) {
+        H5P.externalDispatcher.on('*', function (event) {
+          window.parent.H5P.externalDispatcher.trigger.call(this, event);
+        });
+      }
     }
-  });
+  }
 
 })(H5P.jQuery);

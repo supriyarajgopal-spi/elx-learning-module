@@ -13,7 +13,7 @@
 <body>
   <div class="h5p-content" data-content-id="<?php print $content['id']; ?>"></div>
   <script>
-    H5PIntegration = <?php print json_encode($integration); ?>;
+    Drupal.settngs.H5PIntegration = <?php print json_encode($integration); ?>;
   </script>
 </body>
 </html>

@@ -7,8 +7,8 @@ var H5PLibraryDetails= H5PLibraryDetails || {};
    * Initializing
    */
   H5PLibraryDetails.init = function () {
-    H5PLibraryDetails.$adminContainer = H5P.jQuery(H5PAdminIntegration.containerSelector);
-    H5PLibraryDetails.library = H5PAdminIntegration.libraryInfo;
+    H5PLibraryDetails.$adminContainer = H5P.jQuery(Drupal.settings.H5PAdminIntegration.containerSelector);
+    H5PLibraryDetails.library = Drupal.settings.H5PAdminIntegration.libraryInfo;
 
     // currentContent holds the current list if data (relevant for filtering)
     H5PLibraryDetails.currentContent = H5PLibraryDetails.library.content;
@@ -291,11 +291,13 @@ var H5PLibraryDetails= H5PLibraryDetails || {};
   };
 
   // Initialize me:
-  $(document).ready(function () {
-    if (!H5PLibraryDetails.initialized) {
-      H5PLibraryDetails.initialized = true;
-      H5PLibraryDetails.init();
+  Drupal.behaviors.H5PLibraryDetails = {
+    attach: function (context, settings) {
+      if (!H5PLibraryDetails.initialized) {
+        H5PLibraryDetails.initialized = true;
+        H5PLibraryDetails.init();
+      }
     }
-  });
+  }
 
 })(H5P.jQuery);

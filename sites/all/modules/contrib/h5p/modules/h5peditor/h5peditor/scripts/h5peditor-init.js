@@ -2,22 +2,22 @@
 (function ($, ns) {
   H5PEditor.init = function ($form, $type, $upload, $create, $editor, $library, $params) {
     H5PEditor.$ = H5P.jQuery;
-    H5PEditor.basePath = H5PIntegration.editor.libraryUrl;
-    H5PEditor.fileIcon = H5PIntegration.editor.fileIcon;
-    H5PEditor.ajaxPath = H5PIntegration.editor.ajaxPath;
-    H5PEditor.filesPath = H5PIntegration.editor.filesPath;
+    H5PEditor.basePath = Drupal.settings.H5PIntegration.editor.libraryUrl;
+    H5PEditor.fileIcon = Drupal.settings.H5PIntegration.editor.fileIcon;
+    H5PEditor.ajaxPath = Drupal.settings.H5PIntegration.editor.ajaxPath;
+    H5PEditor.filesPath = Drupal.settings.H5PIntegration.editor.filesPath;
 
     // Semantics describing what copyright information can be stored for media.
-    H5PEditor.copyrightSemantics = H5PIntegration.editor.copyrightSemantics;
+    H5PEditor.copyrightSemantics = Drupal.settings.H5PIntegration.editor.copyrightSemantics;
 
     // Required styles and scripts for the editor
-    H5PEditor.assets = H5PIntegration.editor.assets;
+    H5PEditor.assets = Drupal.settings.H5PIntegration.editor.assets;
 
     // Required for assets
     H5PEditor.baseUrl = '';
 
-    if (H5PIntegration.editor.nodeVersionId !== undefined) {
-      H5PEditor.contentId = H5PIntegration.editor.nodeVersionId;
+    if (Drupal.settings.H5PIntegration.editor.nodeVersionId !== undefined) {
+      H5PEditor.contentId = Drupal.settings.H5PIntegration.editor.nodeVersionId;
     }
 
     var h5peditor;
@@ -57,7 +57,7 @@
   };
 
   H5PEditor.getAjaxUrl = function (action, parameters) {
-    var url = H5PIntegration.editor.ajaxPath + action;
+    var url = Drupal.settings.H5PIntegration.editor.ajaxPath + action;
 
     if (parameters !== undefined) {
       for (var property in parameters) {

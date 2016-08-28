@@ -1,0 +1,771 @@
+From 592a96d3707988b48db9157e570680da31691908 Mon Sep 17 00:00:00 2001
+From: Darren Oh <darren@oh.name>
+Date: Sun, 28 Aug 2016 12:03:22 -0400
+Subject: [PATCH] Issue #2489018 by Darren Oh: Fixed error loading H5P via
+ AJAX.
+
+---
+ h5p.admin.inc                                      |   2 +-
+ h5p.module                                         |  13 +-
+ library/embed.php                                  |   2 +-
+ library/js/disable.js                              |  32 ++--
+ library/js/h5p-content-upgrade.js                  |  42 +++---
+ library/js/h5p-library-details.js                  |  16 +-
+ library/js/h5p-library-list.js                     |  20 +--
+ library/js/h5p-utils.js                            |   2 +-
+ library/js/h5p-x-api-event.js                      |  16 +-
+ library/js/h5p-x-api.js                            |   4 +-
+ library/js/h5p.js                                  | 168 +++++++++++----------
+ .../h5peditor/h5peditor/scripts/h5peditor-init.js  |  18 +--
+ modules/h5peditor/h5peditor/scripts/h5peditor.js   |   6 +-
+ modules/h5peditor/scripts/application.js           |   6 +-
+ 14 files changed, 185 insertions(+), 162 deletions(-)
+
+diff --git a/h5p.admin.inc b/h5p.admin.inc
+index 6338062..1aebf63 100644
+--- a/h5p.admin.inc
++++ b/h5p.admin.inc
+@@ -375,7 +375,7 @@ function _h5p_admin_add_generic_css_and_js($module_path, $settings = NULL) {
+     'upgradeLibrary' => t('Upgrade library content')
+   );
+ 
+-  drupal_add_js('H5PAdminIntegration = ' . json_encode($settings) . ';', 'inline');
++  drupal_add_js(array('H5PAdminIntegration' => $settings), 'setting');
+   drupal_add_css($module_path . '/library/styles/h5p.css');
+   drupal_add_css($module_path . '/library/styles/h5p-admin.css');
+ 
+diff --git a/h5p.module b/h5p.module
+index 27bc9b6..0f18522 100644
+--- a/h5p.module
++++ b/h5p.module
+@@ -986,7 +986,16 @@ function h5p_add_iframe_assets(&$integration, $content_id, $files) {
+     $core_added = TRUE;
+     $core_assets = h5p_add_core_assets();
+ 
+-    $integration['core']['scripts'] = $core_assets['js'];
++    $integration['core']['scripts'] = array();
++    $cache_buster = '?' . variable_get('css_js_query_string', '');
++    $items = drupal_add_js();
++    uasort($items, 'drupal_sort_css_js');
++    foreach ($items as $js => $options) {
++      if (!is_numeric($js) && $js != 'settings' && $options['scope'] == 'header') {
++        $integration['core']['scripts'][] = base_path() . $js . $cache_buster;
++      }
++    }
++    $integration['core']['scripts'] += $core_assets['js'];
+     $integration['core']['styles'] = $core_assets['css'];
+   }
+ 
+@@ -1455,7 +1464,7 @@ function h5p_embed($node) {
+ function h5p_preprocess_html(&$variables) {
+   $integration = h5p_add_files_and_settings(NULL, NULL);
+   if ($integration) {
+-    drupal_add_js('H5PIntegration = ' . json_encode($integration) . ';' , 'inline');
++    drupal_add_js(array('H5PIntegration' => $integration), 'setting');
+   }
+ }
+ 
+diff --git a/library/embed.php b/library/embed.php
+index 430b5a0..a74c779 100644
+--- a/library/embed.php
++++ b/library/embed.php
+@@ -13,7 +13,7 @@
+ <body>
+   <div class="h5p-content" data-content-id="<?php print $content['id']; ?>"></div>
+   <script>
+-    H5PIntegration = <?php print json_encode($integration); ?>;
++    Drupal.settngs.H5PIntegration = <?php print json_encode($integration); ?>;
+   </script>
+ </body>
+ </html>
+diff --git a/library/js/disable.js b/library/js/disable.js
+index 0bfbb07..6f14601 100644
+--- a/library/js/disable.js
++++ b/library/js/disable.js
+@@ -1,19 +1,21 @@
+ (function ($) {
+-  $(document).ready(function () {
+-    var $inputs = $('.h5p-action-bar-settings input');
+-    var $frame = $inputs.filter('input[name="frame"], input[name="h5p_frame"]');
+-    var $others = $inputs.filter(':not(input[name="frame"], input[name="h5p_frame"])');
++  Drupal.behaviors.H5PDisable = {
++    attach: function (context, settings) {
++      var $inputs = $('.h5p-action-bar-settings input');
++      var $frame = $inputs.filter('input[name="frame"], input[name="h5p_frame"]');
++      var $others = $inputs.filter(':not(input[name="frame"], input[name="h5p_frame"])');
+ 
+-    var toggle = function () {
+-      if ($frame.is(':checked')) {
+-        $others.attr('disabled', false);
+-      }
+-      else {
+-        $others.attr('disabled', true);
+-      }
+-    };
++      var toggle = function () {
++        if ($frame.is(':checked')) {
++          $others.attr('disabled', false);
++        }
++        else {
++          $others.attr('disabled', true);
++        }
++      };
+ 
+-    $frame.change(toggle);
+-    toggle();
+-  });
++      $frame.change(toggle);
++      toggle();
++    }
++  }
+ })(H5P.jQuery);
+diff --git a/library/js/h5p-content-upgrade.js b/library/js/h5p-content-upgrade.js
+index 9c1e4ce..c86d4dd 100644
+--- a/library/js/h5p-content-upgrade.js
++++ b/library/js/h5p-content-upgrade.js
+@@ -4,26 +4,28 @@
+   var info, $container, librariesCache = {}, scriptsCache = {};
+ 
+   // Initialize
+-  $(document).ready(function () {
+-    // Get library info
+-    info = H5PAdminIntegration.libraryInfo;
+-
+-    // Get and reset container
+-    $container = $('#h5p-admin-container').html('<p>' + info.message + '</p>');
+-
+-    // Make it possible to select version
+-    var $version = $(getVersionSelect(info.versions)).appendTo($container);
+-
+-    // Add "go" button
+-    $('<button/>', {
+-      class: 'h5p-admin-upgrade-button',
+-      text: info.buttonLabel,
+-      click: function () {
+-        // Start new content upgrade
+-        new ContentUpgrade($version.val());
+-      }
+-    }).appendTo($container);
+-  });
++  Drupal.behaviors.H5PAdminIntegration = {
++    attach: function (context, settings) {
++      // Get library info
++      info = settings.H5PAdminIntegration.libraryInfo;
++
++      // Get and reset container
++      $container = $('#h5p-admin-container').html('<p>' + info.message + '</p>');
++
++      // Make it possible to select version
++      var $version = $(getVersionSelect(info.versions)).appendTo($container);
++
++      // Add "go" button
++      $('<button/>', {
++        class: 'h5p-admin-upgrade-button',
++        text: info.buttonLabel,
++        click: function () {
++          // Start new content upgrade
++          new ContentUpgrade($version.val());
++        }
++      }).appendTo($container);
++    }
++  }
+ 
+   /**
+    * Generate html for version select.
+diff --git a/library/js/h5p-library-details.js b/library/js/h5p-library-details.js
+index 9d22167..63adfb8 100644
+--- a/library/js/h5p-library-details.js
++++ b/library/js/h5p-library-details.js
+@@ -7,8 +7,8 @@ var H5PLibraryDetails= H5PLibraryDetails || {};
+    * Initializing
+    */
+   H5PLibraryDetails.init = function () {
+-    H5PLibraryDetails.$adminContainer = H5P.jQuery(H5PAdminIntegration.containerSelector);
+-    H5PLibraryDetails.library = H5PAdminIntegration.libraryInfo;
++    H5PLibraryDetails.$adminContainer = H5P.jQuery(Drupal.settings.H5PAdminIntegration.containerSelector);
++    H5PLibraryDetails.library = Drupal.settings.H5PAdminIntegration.libraryInfo;
+ 
+     // currentContent holds the current list if data (relevant for filtering)
+     H5PLibraryDetails.currentContent = H5PLibraryDetails.library.content;
+@@ -291,11 +291,13 @@ var H5PLibraryDetails= H5PLibraryDetails || {};
+   };
+ 
+   // Initialize me:
+-  $(document).ready(function () {
+-    if (!H5PLibraryDetails.initialized) {
+-      H5PLibraryDetails.initialized = true;
+-      H5PLibraryDetails.init();
++  Drupal.behaviors.H5PLibraryDetails = {
++    attach: function (context, settings) {
++      if (!H5PLibraryDetails.initialized) {
++        H5PLibraryDetails.initialized = true;
++        H5PLibraryDetails.init();
++      }
+     }
+-  });
++  }
+ 
+ })(H5P.jQuery);
+diff --git a/library/js/h5p-library-list.js b/library/js/h5p-library-list.js
+index 1ee1bc8..82b90ec 100644
+--- a/library/js/h5p-library-list.js
++++ b/library/js/h5p-library-list.js
+@@ -7,15 +7,15 @@ var H5PLibraryList = H5PLibraryList || {};
+    * Initializing
+    */
+   H5PLibraryList.init = function () {
+-    var $adminContainer = H5P.jQuery(H5PAdminIntegration.containerSelector).html('');
++    var $adminContainer = H5P.jQuery(Drupal.settings.H5PAdminIntegration.containerSelector).html('');
+ 
+-    var libraryList = H5PAdminIntegration.libraryList;
++    var libraryList = Drupal.settings.H5PAdminIntegration.libraryList;
+     if (libraryList.notCached) {
+       $adminContainer.append(H5PUtils.getRebuildCache(libraryList.notCached));
+     }
+ 
+     // Create library list
+-    $adminContainer.append(H5PLibraryList.createLibraryList(H5PAdminIntegration.libraryList));
++    $adminContainer.append(H5PLibraryList.createLibraryList(Drupal.settings.H5PAdminIntegration.libraryList));
+   };
+ 
+   /**
+@@ -24,7 +24,7 @@ var H5PLibraryList = H5PLibraryList || {};
+    * @param {object} libraries List of libraries and headers
+    */
+   H5PLibraryList.createLibraryList = function (libraries) {
+-    var t = H5PAdminIntegration.l10n;
++    var t = Drupal.settings.H5PAdminIntegration.l10n;
+     if(libraries.listData === undefined || libraries.listData.length === 0) {
+       return $('<div>' + t.NA + '</div>');
+     }
+@@ -130,11 +130,13 @@ var H5PLibraryList = H5PLibraryList || {};
+   };
+ 
+   // Initialize me:
+-  $(document).ready(function () {
+-    if (!H5PLibraryList.initialized) {
+-      H5PLibraryList.initialized = true;
+-      H5PLibraryList.init();
++  Drupal.behaviors.H5PLibraryList = {
++    attach: function (context, settings) {
++      if (!H5PLibraryList.initialized) {
++        H5PLibraryList.initialized = true;
++        H5PLibraryList.init();
++      }
+     }
+-  });
++  }
+ 
+ })(H5P.jQuery);
+diff --git a/library/js/h5p-utils.js b/library/js/h5p-utils.js
+index f47d1b6..54c281f 100644
+--- a/library/js/h5p-utils.js
++++ b/library/js/h5p-utils.js
+@@ -7,7 +7,7 @@ var H5PUtils = H5PUtils || {};
+    * @param {array} headers List of headers
+    */
+   H5PUtils.createTable = function (headers) {
+-    var $table = $('<table class="h5p-admin-table' + (H5PAdminIntegration.extraTableClasses !== undefined ? ' ' + H5PAdminIntegration.extraTableClasses : '') + '"></table>');
++    var $table = $('<table class="h5p-admin-table' + (Drupal.settings.H5PAdminIntegration.extraTableClasses !== undefined ? ' ' + Drupal.settings.H5PAdminIntegration.extraTableClasses : '') + '"></table>');
+ 
+     if(headers) {
+       var $thead = $('<thead></thead>');
+diff --git a/library/js/h5p-x-api-event.js b/library/js/h5p-x-api-event.js
+index 212fe0b..f3ea520 100644
+--- a/library/js/h5p-x-api-event.js
++++ b/library/js/h5p-x-api-event.js
+@@ -133,9 +133,9 @@ H5P.XAPIEvent.prototype.setObject = function (instance) {
+       }
+     }
+     else {
+-      if (H5PIntegration && H5PIntegration.contents && H5PIntegration.contents['cid-' + instance.contentId].title) {
++      if (Drupal.settings.H5PIntegration && Drupal.settings.H5PIntegration.contents && Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].title) {
+         this.data.statement.object.definition.name = {
+-          "en-US": H5P.createTitle(H5PIntegration.contents['cid-' + instance.contentId].title)
++          "en-US": H5P.createTitle(Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].title)
+         };
+       }
+     }
+@@ -179,10 +179,10 @@ H5P.XAPIEvent.prototype.setContext = function (instance) {
+  * Set the actor. Email and name will be added automatically.
+  */
+ H5P.XAPIEvent.prototype.setActor = function () {
+-  if (H5PIntegration.user !== undefined) {
++  if (Drupal.settings.H5PIntegration.user !== undefined) {
+     this.data.statement.actor = {
+-      'name': H5PIntegration.user.name,
+-      'mbox': 'mailto:' + H5PIntegration.user.mail,
++      'name': Drupal.settings.H5PIntegration.user.name,
++      'mbox': 'mailto:' + Drupal.settings.H5PIntegration.user.mail,
+       'objectType': 'Agent'
+     };
+   }
+@@ -204,7 +204,7 @@ H5P.XAPIEvent.prototype.setActor = function () {
+     this.data.statement.actor = {
+       'account': {
+         'name': uuid,
+-        'homePage': H5PIntegration.siteUrl
++        'homePage': Drupal.settings.H5PIntegration.siteUrl
+       },
+       'objectType': 'Agent'
+     };
+@@ -239,8 +239,8 @@ H5P.XAPIEvent.prototype.getScore = function() {
+  */
+ H5P.XAPIEvent.prototype.getContentXAPIId = function (instance) {
+   var xAPIId;
+-  if (instance.contentId && H5PIntegration && H5PIntegration.contents) {
+-    xAPIId =  H5PIntegration.contents['cid-' + instance.contentId].url;
++  if (instance.contentId && Drupal.settings.H5PIntegration && Drupal.settings.H5PIntegration.contents) {
++    xAPIId =  Drupal.settings.H5PIntegration.contents['cid-' + instance.contentId].url;
+     if (instance.subContentId) {
+       xAPIId += '?subContentId=' +  instance.subContentId;
+     }
+diff --git a/library/js/h5p-x-api.js b/library/js/h5p-x-api.js
+index 1cf8b74..395f42f 100644
+--- a/library/js/h5p-x-api.js
++++ b/library/js/h5p-x-api.js
+@@ -96,8 +96,8 @@ H5P.EventDispatcher.prototype.setActivityStarted = function() {
+   if (this.activityStartTime === undefined) {
+     // Don't trigger xAPI events in the editor
+     if (this.contentId !== undefined &&
+-        H5PIntegration.contents !== undefined &&
+-        H5PIntegration.contents['cid-' + this.contentId] !== undefined) {
++        Drupal.settings.H5PIntegration.contents !== undefined &&
++        Drupal.settings.H5PIntegration.contents['cid-' + this.contentId] !== undefined) {
+       this.triggerXAPI('attempted');
+     }
+     this.activityStartTime = Date.now();
+diff --git a/library/js/h5p.js b/library/js/h5p.js
+index 60cfdd4..51f31d1 100644
+--- a/library/js/h5p.js
++++ b/library/js/h5p.js
+@@ -102,7 +102,7 @@ H5P.init = function (target) {
+     var $element = H5P.jQuery(this).addClass('h5p-initialized');
+     var $container = H5P.jQuery('<div class="h5p-container"></div>').appendTo($element);
+     var contentId = $element.data('content-id');
+-    var contentData = H5PIntegration.contents['cid-' + contentId];
++    var contentData = Drupal.settings.H5PIntegration.contents['cid-' + contentId];
+     if (contentData === undefined) {
+       return H5P.error('No data for content id ' + contentId + '. Perhaps the library is gone?');
+     }
+@@ -117,7 +117,7 @@ H5P.init = function (target) {
+           state: previousState
+         };
+       }
+-      else if (previousState === null && H5PIntegration.saveFreq) {
++      else if (previousState === null && Drupal.settings.H5PIntegration.saveFreq) {
+         // Content has been reset. Display dialog.
+         delete contentData.contentUserData;
+         var dialog = new H5P.Dialog('content-user-data-reset', 'Data Reset', '<p>' + H5P.t('contentChanged') + '</p><p>' + H5P.t('startingOver') + '</p><div class="h5p-dialog-ok-button" tabIndex="0" role="button">OK</div>', $container);
+@@ -237,7 +237,7 @@ H5P.init = function (target) {
+     H5P.on(instance, 'xAPI', H5P.xAPICompletedListener);
+ 
+     // Auto save current state if supported
+-    if (H5PIntegration.saveFreq !== false && (
++    if (Drupal.settings.H5PIntegration.saveFreq !== false && (
+         instance.getCurrentState instanceof Function ||
+         typeof instance.getCurrentState === 'function')) {
+ 
+@@ -246,15 +246,15 @@ H5P.init = function (target) {
+         if (state !== undefined) {
+           H5P.setUserData(contentId, 'state', state, {deleteOnChange: true});
+         }
+-        if (H5PIntegration.saveFreq) {
++        if (Drupal.settings.H5PIntegration.saveFreq) {
+           // Continue autosave
+-          saveTimer = setTimeout(save, H5PIntegration.saveFreq * 1000);
++          saveTimer = setTimeout(save, Drupal.settings.H5PIntegration.saveFreq * 1000);
+         }
+       };
+ 
+-      if (H5PIntegration.saveFreq) {
++      if (Drupal.settings.H5PIntegration.saveFreq) {
+         // Start autosave
+-        saveTimer = setTimeout(save, H5PIntegration.saveFreq * 1000);
++        saveTimer = setTimeout(save, Drupal.settings.H5PIntegration.saveFreq * 1000);
+       }
+ 
+       // xAPI events will schedule a save in three seconds.
+@@ -411,11 +411,11 @@ H5P.getHeadTags = function (contentId) {
+   };
+ 
+   return '<base target="_parent">' +
+-         createStyleTags(H5PIntegration.core.styles) +
+-         createStyleTags(H5PIntegration.contents['cid-' + contentId].styles) +
+-         createScriptTags(H5PIntegration.core.scripts) +
+-         createScriptTags(H5PIntegration.contents['cid-' + contentId].scripts) +
+-         '<script>H5PIntegration = window.parent.H5PIntegration; var H5P = H5P || {}; H5P.externalEmbed = false;</script>';
++         createStyleTags(Drupal.settings.H5PIntegration.core.styles) +
++         createStyleTags(Drupal.settings.H5PIntegration.contents['cid-' + contentId].styles) +
++         createScriptTags(Drupal.settings.H5PIntegration.core.scripts) +
++         createScriptTags(Drupal.settings.H5PIntegration.contents['cid-' + contentId].scripts) +
++         '<script>Drupal.settings.H5PIntegration = window.parent.Drupal.settings.H5PIntegration; var H5P = H5P || {}; H5P.externalEmbed = false;</script>';
+ };
+ 
+ /**
+@@ -691,7 +691,7 @@ H5P.getPath = function (path, contentId) {
+ 
+   var prefix;
+   if (contentId !== undefined) {
+-    prefix = H5PIntegration.url + '/content/' + contentId;
++    prefix = Drupal.settings.H5PIntegration.url + '/content/' + contentId;
+   }
+   else if (window.H5PEditor !== undefined) {
+     prefix = H5PEditor.filesPath;
+@@ -722,7 +722,7 @@ H5P.getPath = function (path, contentId) {
+  *   URL
+  */
+ H5P.getContentPath = function (contentId) {
+-  return H5PIntegration.url + '/content/' + contentId;
++  return Drupal.settings.H5PIntegration.url + '/content/' + contentId;
+ };
+ 
+ /**
+@@ -795,7 +795,7 @@ H5P.newRunnable = function (library, contentId, $attachTo, skipResize, extras) {
+     extras.subContentId = library.subContentId;
+   }
+ 
+-  if (library.userDatas && library.userDatas.state && H5PIntegration.saveFreq) {
++  if (library.userDatas && library.userDatas.state && Drupal.settings.H5PIntegration.saveFreq) {
+     extras.previousState = library.userDatas.state;
+   }
+ 
+@@ -883,15 +883,15 @@ H5P.t = function (key, vars, ns) {
+     ns = 'H5P';
+   }
+ 
+-  if (H5PIntegration.l10n[ns] === undefined) {
++  if (Drupal.settings.H5PIntegration.l10n[ns] === undefined) {
+     return '[Missing translation namespace "' + ns + '"]';
+   }
+ 
+-  if (H5PIntegration.l10n[ns][key] === undefined) {
++  if (Drupal.settings.H5PIntegration.l10n[ns][key] === undefined) {
+     return '[Missing translation "' + key + '" in "' + ns + '"]';
+   }
+ 
+-  var translation = H5PIntegration.l10n[ns][key];
++  var translation = Drupal.settings.H5PIntegration.l10n[ns][key];
+ 
+   if (vars !== undefined) {
+     // Replace placeholder with variables.
+@@ -1529,7 +1529,7 @@ H5P.libraryFromString = function (library) {
+  *   The full path to the library.
+  */
+ H5P.getLibraryPath = function (library) {
+-  return (H5PIntegration.libraryUrl !== undefined ? H5PIntegration.libraryUrl + '/' : H5PIntegration.url + '/libraries/') + library;
++  return (Drupal.settings.H5PIntegration.libraryUrl !== undefined ? Drupal.settings.H5PIntegration.libraryUrl + '/' : Drupal.settings.H5PIntegration.url + '/libraries/') + library;
+ };
+ 
+ /**
+@@ -1580,8 +1580,8 @@ H5P.trim = function (value) {
+  * @returns {boolean}
+  */
+ H5P.jsLoaded = function (path) {
+-  H5PIntegration.loadedJs = H5PIntegration.loadedJs || [];
+-  return H5P.jQuery.inArray(path, H5PIntegration.loadedJs) !== -1;
++  Drupal.settings.H5PIntegration.loadedJs = Drupal.settings.H5PIntegration.loadedJs || [];
++  return H5P.jQuery.inArray(path, Drupal.settings.H5PIntegration.loadedJs) !== -1;
+ };
+ 
+ /**
+@@ -1591,8 +1591,8 @@ H5P.jsLoaded = function (path) {
+  * @returns {boolean}
+  */
+ H5P.cssLoaded = function (path) {
+-  H5PIntegration.loadedCss = H5PIntegration.loadedCss || [];
+-  return H5P.jQuery.inArray(path, H5PIntegration.loadedCss) !== -1;
++  Drupal.settings.H5PIntegration.loadedCss = Drupal.settings.H5PIntegration.loadedCss || [];
++  return H5P.jQuery.inArray(path, Drupal.settings.H5PIntegration.loadedCss) !== -1;
+ };
+ 
+ /**
+@@ -1637,7 +1637,7 @@ H5P.shuffleArray = function (array) {
+  *   Reported time consumption/usage
+  */
+ H5P.setFinished = function (contentId, score, maxScore, time) {
+-  if (H5PIntegration.postUserStatistics === true) {
++  if (Drupal.settings.H5PIntegration.postUserStatistics === true) {
+     /**
+      * Return unix timestamp for the given JS Date.
+      *
+@@ -1650,14 +1650,14 @@ H5P.setFinished = function (contentId, score, maxScore, time) {
+     };
+ 
+     // Post the results
+-    H5P.jQuery.post(H5PIntegration.ajax.setFinished, {
++    H5P.jQuery.post(Drupal.settings.H5PIntegration.ajax.setFinished, {
+       contentId: contentId,
+       score: score,
+       maxScore: maxScore,
+       opened: toUnix(H5P.opened[contentId]),
+       finished: toUnix(new Date()),
+       time: time,
+-      token: H5PIntegration.tokens.result
++      token: Drupal.settings.H5PIntegration.tokens.result
+     });
+   }
+ };
+@@ -1785,14 +1785,14 @@ H5P.createTitle = function (rawTitle, maxLength) {
+    * @param {boolean} [async=true]
+    */
+   function contentUserDataAjax(contentId, dataType, subContentId, done, data, preload, invalidate, async) {
+-    if (H5PIntegration.user === undefined) {
++    if (Drupal.settings.H5PIntegration.user === undefined) {
+       // Not logged in, no use in saving.
+       done('Not signed in.');
+       return;
+     }
+ 
+     var options = {
+-      url: H5PIntegration.ajax.contentUserData.replace(':contentId', contentId).replace(':dataType', dataType).replace(':subContentId', subContentId ? subContentId : 0),
++      url: Drupal.settings.H5PIntegration.ajax.contentUserData.replace(':contentId', contentId).replace(':dataType', dataType).replace(':subContentId', subContentId ? subContentId : 0),
+       dataType: 'json',
+       async: async === undefined ? true : async
+     };
+@@ -1802,7 +1802,7 @@ H5P.createTitle = function (rawTitle, maxLength) {
+         data: (data === null ? 0 : data),
+         preload: (preload ? 1 : 0),
+         invalidate: (invalidate ? 1 : 0),
+-        token: H5PIntegration.tokens.contentUserData
++        token: Drupal.settings.H5PIntegration.tokens.contentUserData
+       };
+     }
+     else {
+@@ -1847,8 +1847,8 @@ H5P.createTitle = function (rawTitle, maxLength) {
+       subContentId = 0; // Default
+     }
+ 
+-    H5PIntegration.contents = H5PIntegration.contents || {};
+-    var content = H5PIntegration.contents['cid-' + contentId] || {};
++    Drupal.settings.H5PIntegration.contents = Drupal.settings.H5PIntegration.contents || {};
++    var content = Drupal.settings.H5PIntegration.contents['cid-' + contentId] || {};
+     var preloadedData = content.contentUserData;
+     if (preloadedData && preloadedData[subContentId] && preloadedData[subContentId][dataId] !== undefined) {
+       if (preloadedData[subContentId][dataId] === 'RESET') {
+@@ -1935,9 +1935,9 @@ H5P.createTitle = function (rawTitle, maxLength) {
+       return; // Failed to serialize.
+     }
+ 
+-    var content = H5PIntegration.contents['cid-' + contentId];
++    var content = Drupal.settings.H5PIntegration.contents['cid-' + contentId];
+     if (content === undefined) {
+-      content = H5PIntegration.contents['cid-' + contentId] = {};
++      content = Drupal.settings.H5PIntegration.contents['cid-' + contentId] = {};
+     }
+     if (!content.contentUserData) {
+       content.contentUserData = {};
+@@ -1974,7 +1974,7 @@ H5P.createTitle = function (rawTitle, maxLength) {
+     }
+ 
+     // Remove from preloaded/cache
+-    var preloadedData = H5PIntegration.contents['cid-' + contentId].contentUserData;
++    var preloadedData = Drupal.settings.H5PIntegration.contents['cid-' + contentId].contentUserData;
+     if (preloadedData && preloadedData[subContentId] && preloadedData[subContentId][dataId]) {
+       delete preloadedData[subContentId][dataId];
+     }
+@@ -1983,60 +1983,62 @@ H5P.createTitle = function (rawTitle, maxLength) {
+   };
+ 
+   // Init H5P when page is fully loadded
+-  $(document).ready(function () {
+-    /**
+-     * Prevent H5P Core from initializing. Must be overriden before document ready.
+-     * @member {boolean} H5P.preventInit
+-     */
+-    if (!H5P.preventInit) {
+-      // Note that this start script has to be an external resource for it to
+-      // load in correct order in IE9.
+-      H5P.init(document.body);
+-    }
+-
+-    if (H5PIntegration.saveFreq !== false) {
+-      // When was the last state stored
+-      var lastStoredOn = 0;
+-      // Store the current state of the H5P when leaving the page.
+-      var storeCurrentState = function () {
+-        // Make sure at least 250 ms has passed since last save
+-        var currentTime = new Date().getTime();
+-        if (currentTime - lastStoredOn > 250) {
+-          lastStoredOn = currentTime;
+-          for (var i = 0; i < H5P.instances.length; i++) {
+-            var instance = H5P.instances[i];
+-            if (instance.getCurrentState instanceof Function ||
+-                typeof instance.getCurrentState === 'function') {
+-              var state = instance.getCurrentState();
+-              if (state !== undefined) {
+-                // Async is not used to prevent the request from being cancelled.
+-                H5P.setUserData(instance.contentId, 'state', state, {deleteOnChange: true, async: false});
++  Drupal.behaviors.H5PIntegration = {
++    attach: function (context, settings) {
++      /**
++       * Prevent H5P Core from initializing. Must be overriden before document ready.
++       * @member {boolean} H5P.preventInit
++       */
++      if (!H5P.preventInit) {
++        // Note that this start script has to be an external resource for it to
++        // load in correct order in IE9.
++        H5P.init(document.body);
++      }
++
++      if (Drupal.settings.H5PIntegration.saveFreq !== false) {
++        // When was the last state stored
++        var lastStoredOn = 0;
++        // Store the current state of the H5P when leaving the page.
++        var storeCurrentState = function () {
++          // Make sure at least 250 ms has passed since last save
++          var currentTime = new Date().getTime();
++          if (currentTime - lastStoredOn > 250) {
++            lastStoredOn = currentTime;
++            for (var i = 0; i < H5P.instances.length; i++) {
++              var instance = H5P.instances[i];
++              if (instance.getCurrentState instanceof Function ||
++                  typeof instance.getCurrentState === 'function') {
++                var state = instance.getCurrentState();
++                if (state !== undefined) {
++                  // Async is not used to prevent the request from being cancelled.
++                  H5P.setUserData(instance.contentId, 'state', state, {deleteOnChange: true, async: false});
++                }
+               }
+             }
+           }
+-        }
+-      };
+-      // iPad does not support beforeunload, therefore using unload
+-      H5P.$window.one('beforeunload unload', function () {
+-        // Only want to do this once
+-        H5P.$window.off('pagehide beforeunload unload');
+-        storeCurrentState();
+-      });
+-      // pagehide is used on iPad when tabs are switched
+-      H5P.$window.on('pagehide', storeCurrentState);
+-    }
++        };
++        // iPad does not support beforeunload, therefore using unload
++        H5P.$window.one('beforeunload unload', function () {
++          // Only want to do this once
++          H5P.$window.off('pagehide beforeunload unload');
++          storeCurrentState();
++        });
++        // pagehide is used on iPad when tabs are switched
++        H5P.$window.on('pagehide', storeCurrentState);
++      }
+ 
+-    /**
+-     * Indicates if H5P is embedded on an external page using iframe.
+-     * @member {boolean} H5P.externalEmbed
+-     */
++      /**
++       * Indicates if H5P is embedded on an external page using iframe.
++       * @member {boolean} H5P.externalEmbed
++       */
+ 
+-    // Relay events to top window.
+-    if (H5P.isFramed && H5P.externalEmbed === false) {
+-      H5P.externalDispatcher.on('*', function (event) {
+-        window.parent.H5P.externalDispatcher.trigger.call(this, event);
+-      });
++      // Relay events to top window.
++      if (H5P.isFramed && H5P.externalEmbed === false) {
++        H5P.externalDispatcher.on('*', function (event) {
++          window.parent.H5P.externalDispatcher.trigger.call(this, event);
++        });
++      }
+     }
+-  });
++  }
+ 
+ })(H5P.jQuery);
+diff --git a/modules/h5peditor/h5peditor/scripts/h5peditor-init.js b/modules/h5peditor/h5peditor/scripts/h5peditor-init.js
+index 009bf60..3bb74e7 100644
+--- a/modules/h5peditor/h5peditor/scripts/h5peditor-init.js
++++ b/modules/h5peditor/h5peditor/scripts/h5peditor-init.js
+@@ -2,22 +2,22 @@
+ (function ($, ns) {
+   H5PEditor.init = function ($form, $type, $upload, $create, $editor, $library, $params) {
+     H5PEditor.$ = H5P.jQuery;
+-    H5PEditor.basePath = H5PIntegration.editor.libraryUrl;
+-    H5PEditor.fileIcon = H5PIntegration.editor.fileIcon;
+-    H5PEditor.ajaxPath = H5PIntegration.editor.ajaxPath;
+-    H5PEditor.filesPath = H5PIntegration.editor.filesPath;
++    H5PEditor.basePath = Drupal.settings.H5PIntegration.editor.libraryUrl;
++    H5PEditor.fileIcon = Drupal.settings.H5PIntegration.editor.fileIcon;
++    H5PEditor.ajaxPath = Drupal.settings.H5PIntegration.editor.ajaxPath;
++    H5PEditor.filesPath = Drupal.settings.H5PIntegration.editor.filesPath;
+ 
+     // Semantics describing what copyright information can be stored for media.
+-    H5PEditor.copyrightSemantics = H5PIntegration.editor.copyrightSemantics;
++    H5PEditor.copyrightSemantics = Drupal.settings.H5PIntegration.editor.copyrightSemantics;
+ 
+     // Required styles and scripts for the editor
+-    H5PEditor.assets = H5PIntegration.editor.assets;
++    H5PEditor.assets = Drupal.settings.H5PIntegration.editor.assets;
+ 
+     // Required for assets
+     H5PEditor.baseUrl = '';
+ 
+-    if (H5PIntegration.editor.nodeVersionId !== undefined) {
+-      H5PEditor.contentId = H5PIntegration.editor.nodeVersionId;
++    if (Drupal.settings.H5PIntegration.editor.nodeVersionId !== undefined) {
++      H5PEditor.contentId = Drupal.settings.H5PIntegration.editor.nodeVersionId;
+     }
+ 
+     var h5peditor;
+@@ -57,7 +57,7 @@
+   };
+ 
+   H5PEditor.getAjaxUrl = function (action, parameters) {
+-    var url = H5PIntegration.editor.ajaxPath + action;
++    var url = Drupal.settings.H5PIntegration.editor.ajaxPath + action;
+ 
+     if (parameters !== undefined) {
+       for (var property in parameters) {
+diff --git a/modules/h5peditor/h5peditor/scripts/h5peditor.js b/modules/h5peditor/h5peditor/scripts/h5peditor.js
+index c0414d6..7b22b8e 100644
+--- a/modules/h5peditor/h5peditor/scripts/h5peditor.js
++++ b/modules/h5peditor/h5peditor/scripts/h5peditor.js
+@@ -7,7 +7,7 @@ var ns = H5PEditor = window.parent.H5PEditor;
+ ns.$ = H5P.jQuery;
+ 
+ // Load needed resources from parent.
+-H5PIntegration = window.parent.H5PIntegration;
++Drupal.settings.H5PIntegration = window.parent.Drupal.settings.H5PIntegration;
+ 
+ /**
+  * Keep track of our widgets.
+@@ -81,7 +81,7 @@ ns.loadLibrary = function (libraryName, callback) {
+             for (var path in libraryData.css) {
+               if (!H5P.cssLoaded(path)) {
+                 css += libraryData.css[path];
+-                H5PIntegration.loadedCss.push(path);
++                Drupal.settings.H5PIntegration.loadedCss.push(path);
+               }
+             }
+             if (css) {
+@@ -95,7 +95,7 @@ ns.loadLibrary = function (libraryName, callback) {
+             for (var path in libraryData.javascript) {
+               if (!H5P.jsLoaded(path)) {
+                 js += libraryData.javascript[path];
+-                H5PIntegration.loadedJs.push(path);
++                Drupal.settings.H5PIntegration.loadedJs.push(path);
+               }
+             }
+             if (js) {
+diff --git a/modules/h5peditor/scripts/application.js b/modules/h5peditor/scripts/application.js
+index 38ea548..ec3f9f9 100644
+--- a/modules/h5peditor/scripts/application.js
++++ b/modules/h5peditor/scripts/application.js
+@@ -76,5 +76,9 @@ var ns = H5PEditor;
+     return url;
+   };
+ 
+-  $(document).ready(ns.init);
++  Drupal.behaviors.H5PEditor = {
++    attach: function (context, settings) {
++      ns.init();
++    }
++  }
+ })(H5P.jQuery);
+-- 
+2.7.4 (Apple Git-66)
+

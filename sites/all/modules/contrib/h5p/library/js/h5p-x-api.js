@@ -96,8 +96,8 @@ H5P.EventDispatcher.prototype.setActivityStarted = function() {
   if (this.activityStartTime === undefined) {
     // Don't trigger xAPI events in the editor
     if (this.contentId !== undefined &&
-        H5PIntegration.contents !== undefined &&
-        H5PIntegration.contents['cid-' + this.contentId] !== undefined) {
+        Drupal.settings.H5PIntegration.contents !== undefined &&
+        Drupal.settings.H5PIntegration.contents['cid-' + this.contentId] !== undefined) {
       this.triggerXAPI('attempted');
     }
     this.activityStartTime = Date.now();

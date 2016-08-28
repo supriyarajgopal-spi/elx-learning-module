@@ -260,6 +260,10 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
   //Render content in 'Modal' view mode
   $nodeContent = node_view($node, 'modal', NULL); //To prevent strict warning that only variables can be passed by reference
   $contents = render($nodeContent);
+  $integration = h5p_add_files_and_settings(NULL, NULL);
+  if ($integration) {
+    drupal_add_js(array('H5PIntegration' => $integration), 'setting');
+  }
   return ctools_modal_render($node->title, $contents) ;
 }
 

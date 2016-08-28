@@ -4,26 +4,28 @@
   var info, $container, librariesCache = {}, scriptsCache = {};
 
   // Initialize
-  $(document).ready(function () {
-    // Get library info
-    info = H5PAdminIntegration.libraryInfo;
+  Drupal.behaviors.H5PAdminIntegration = {
+    attach: function (context, settings) {
+      // Get library info
+      info = settings.H5PAdminIntegration.libraryInfo;
 
-    // Get and reset container
-    $container = $('#h5p-admin-container').html('<p>' + info.message + '</p>');
+      // Get and reset container
+      $container = $('#h5p-admin-container').html('<p>' + info.message + '</p>');
 
-    // Make it possible to select version
-    var $version = $(getVersionSelect(info.versions)).appendTo($container);
+      // Make it possible to select version
+      var $version = $(getVersionSelect(info.versions)).appendTo($container);
 
-    // Add "go" button
-    $('<button/>', {
-      class: 'h5p-admin-upgrade-button',
-      text: info.buttonLabel,
-      click: function () {
-        // Start new content upgrade
-        new ContentUpgrade($version.val());
-      }
-    }).appendTo($container);
-  });
+      // Add "go" button
+      $('<button/>', {
+        class: 'h5p-admin-upgrade-button',
+        text: info.buttonLabel,
+        click: function () {
+          // Start new content upgrade
+          new ContentUpgrade($version.val());
+        }
+      }).appendTo($container);
+    }
+  }
 
   /**
    * Generate html for version select.

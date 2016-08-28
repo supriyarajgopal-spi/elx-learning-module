@@ -7,7 +7,7 @@ var ns = H5PEditor = window.parent.H5PEditor;
 ns.$ = H5P.jQuery;
 
 // Load needed resources from parent.
-H5PIntegration = window.parent.H5PIntegration;
+Drupal.settings.H5PIntegration = window.parent.Drupal.settings.H5PIntegration;
 
 /**
  * Keep track of our widgets.
@@ -81,7 +81,7 @@ ns.loadLibrary = function (libraryName, callback) {
             for (var path in libraryData.css) {
               if (!H5P.cssLoaded(path)) {
                 css += libraryData.css[path];
-                H5PIntegration.loadedCss.push(path);
+                Drupal.settings.H5PIntegration.loadedCss.push(path);
               }
             }
             if (css) {
@@ -95,7 +95,7 @@ ns.loadLibrary = function (libraryName, callback) {
             for (var path in libraryData.javascript) {
               if (!H5P.jsLoaded(path)) {
                 js += libraryData.javascript[path];
-                H5PIntegration.loadedJs.push(path);
+                Drupal.settings.H5PIntegration.loadedJs.push(path);
               }
             }
             if (js) {

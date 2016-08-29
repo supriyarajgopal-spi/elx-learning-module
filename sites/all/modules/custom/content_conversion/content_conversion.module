@@ -649,8 +649,6 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 			$draggableElement->backgroundOpacity = 100;
 			$draggableElement->multiple = false;
 			
-			drupal_set_message('<pre>'.print_r($dragSelectParagraph,TRUE).'</pre>');
-			
 			$element->action->params->question->task->elements[] = $draggableElement;
 			
 			$i++; //Increment index counter
@@ -673,7 +671,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 	
 	//Question Title
 	if(isset($learning_object->field_drag_select_question) && !empty($learning_object->field_drag_select_question))
-		$element->action->params->question->settings->questionTitle = $learning_object->field_drag_select_question[$learning_object->language][0]['value'];
+		$element->action->params->question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($learning_object->field_drag_select_question[$learning_object->language][0]['value'])));
 	else
 		$element->action->params->question->settings->questionTitle = t('');
 	

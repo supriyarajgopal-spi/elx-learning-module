@@ -382,33 +382,7 @@ function _content_conversion_node_hot_spots($node, $slide) {
     $slide->elements[] = _create_text_object($get_text_array);
   }
 
-  //process hotspots
   $slide->elements[] = _create_hotspot_object($node);
-
-  if (!empty($node->field_hot_spot_image[$node->language][0]['uri'])) {
-    $element = new stdClass();
-    $element->x = 1.0615711252654;
-    $element->y = 59.538784067086;
-    $element->width = 30.430461002119;
-    $element->height = 40;
-    $element->alwaysDisplayComments = false;
-    $element->backgroundOpacity = 0;
-    $element->displayAsButton = false;
-    $element->invisible = false;
-    $element->solution = '';
-
-    $params = new stdClass();
-    $params->contentName = "Image";
-    $params->alt = "Hot Spot Image";
-    $params->file = _create_image_object($node->field_hot_spot_image[$node->language][0]);
-
-    $action = new stdClass();
-    $action->library = "H5P.Image 1.0";
-    $action->subContentId = 0;
-    $action->params = $params;
-    $element->action = $action;
-    $slide->elements[] = $element;
-  }
 }
 
 /*
@@ -438,18 +412,21 @@ function _create_hotspot_object($node) {
 
   $hotspots = array();
   foreach($node->field_hot_spot_collection[$node->language] as $key => $value) {
-    //load paragraph bundle
     $entity = entity_load('paragraphs_item', array($value['value']));
     $hotspot = $entity[$value['value']];
 
     $hotspot_object = new stdClass();
     $hotspot_object->alwaysFullscreen = 'false';
+    $hotspot_object->header = "";
 
     $position_array = array();
-    $x_pos = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
-    $position_array['x'] = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_pos))) - 96)/16);
-    $y_pos = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
-    $position_array['y'] = $params->image->height * (str_replace("pos","",$y_pos)/19);
+    $x_temp = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
+    $pos_x = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_temp))) - 96)/16);
+    $y_temp = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
+    $pos_y = $params->image->height * (str_replace("pos","",$y_temp)/19);
+
+    $position_array['x'] = ($pos_x/$params->image->width) * 100;
+    $position_array['y'] = ($pos_y/$params->image->height) * 100;
 
     $hotspot_object->position = $position_array;
 
@@ -460,7 +437,7 @@ function _create_hotspot_object($node) {
     $content->library = "H5P.Text 1.1";
     $content->subContentId = '0';
 
-    $hotspot_object->content = $content;
+    $hotspot_object->content = array($content);
     $hotspots[] = $hotspot_object;
   }
 
@@ -483,8 +460,8 @@ function _create_image_object($image_array) {
   $file = new stdClass();
   $file->path = file_create_url($image_array['uri']);
   $file->mime = $image_array['filemime'];
-  $file->width = $image_array['height'];
-  $file->height = $image_array['width'];
+  $file->width = $image_array['width'];
+  $file->height = $image_array['height'];
   $copyright = new stdClass();
   $copyright->license = "U";
   $file->copyright = $copyright;

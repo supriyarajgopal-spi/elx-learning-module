@@ -295,32 +295,12 @@ function _content_conversion_node_reveal($learning_object, $slide)
 			
 			//Thumbnail image object
 			if(isset($cardParagraph->field_reveal_thumbnail) && !empty($cardParagraph->field_reveal_thumbnail))
-			{
-				$thumbnailImage = $cardParagraph->field_reveal_thumbnail[LANGUAGE_NONE][0];
-				
-				$cardObject->thumbnail_image = new stdClass();
-				$cardObject->thumbnail_image->path = file_create_url($thumbnailImage['uri']);
-				$cardObject->thumbnail_image->mime = $thumbnailImage['filemime'];
-				$cardObject->thumbnail_image->copyright = new stdClass();
-				$cardObject->thumbnail_image->copyright->license = 'U';
-				//To maintain fixed 1:1 aspect ratio, change width x height to 70 x 70 (noted while checking sample H5P JSON content)
-				$cardObject->thumbnail_image->width = $thumbnailImage['width'];
-				$cardObject->thumbnail_image->height = $thumbnailImage['height'];
-			}
+			  $cardObject->thumbnail_image = _create_image_object($cardParagraph->field_reveal_thumbnail[LANGUAGE_NONE][0]);
 			
 			//Large image object
 			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero))
-			{
-				$largeImage = $cardParagraph->field_reveal_hero[LANGUAGE_NONE][0];
-				$cardObject->large_image = new stdClass();
-				$cardObject->large_image->path = file_create_url($largeImage['uri']);
-				$cardObject->large_image->mime = $largeImage['filemime'];
-				$cardObject->large_image->copyright = new stdClass();
-				$cardObject->large_image->copyright->license = 'U';
-				//To maintain 16:9 aspect ratio, change width x height to 765 x 430 (noted while checking sample H5P JSON content)
-				$cardObject->large_image->width = $largeImage['width'];
-				$cardObject->large_image->height = $largeImage['height'];
-			}
+			  $cardObject->large_image = _create_image_object($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]);
+		
 			//Text
 			if(isset($cardParagraph->field_reveal_text) && !empty($cardParagraph->field_reveal_text))
 			{
@@ -618,13 +598,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 				$draggableElement->type->library = 'H5P.Image 1.0';
 				$draggableElement->type->params->contentName = 'Image';
 				$draggableElement->type->params->alt = t('@text',array('@text' => $draggableImage['alt']));
-				$draggableElement->type->params->file = new stdClass();
-				$draggableElement->type->params->file->path = file_create_url($draggableImage['uri']);
-				$draggableElement->type->params->file->mime = $draggableImage['filemime'];
-				$draggableElement->type->params->file->copyright = new stdClass();
-				$draggableElement->type->params->file->copyright->license = 'U';
-				$draggableElement->type->params->file->width = 70;
-				$draggableElement->type->params->file->height = 70;
+				$draggableElement->type->params->file = _create_image_object($draggableImage);
 			}
 			
 			//If draggable element is text

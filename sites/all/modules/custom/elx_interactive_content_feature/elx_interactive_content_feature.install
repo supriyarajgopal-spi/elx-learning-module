@@ -55,7 +55,7 @@ function elx_interactive_content_feature_modules_enabled($modules) {
           rename($extract_dir, "$zip_content_folder/H5P.QuestionSet-1.8");
         }
       }
-      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/H5P.ClickToReveal/archive/v1.0.0.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
+      if ($file = system_retrieve_file('https://github.com/MasterDoublePrime/H5P.ClickToReveal/archive/v1.0.1.zip', $temporary_file_path, TRUE, FILE_EXISTS_REPLACE)) {
         if ($zip->open(drupal_realpath($file->uri)) === TRUE) {
           $zip->extractTo("$_SESSION[h5p_upload_folder]/temp");
           $extract_dir = "$zip_content_folder/" . drupal_dirname($zip->getNameIndex(0) . 'temp');

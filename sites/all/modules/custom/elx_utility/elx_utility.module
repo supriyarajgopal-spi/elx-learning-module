@@ -197,14 +197,6 @@ function elx_utility_menu()
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
  
-  $items['modal/%ctools_js/%'] = array(
-      'title' => 'Product Details Modal',
-      'page arguments' => array(1,2), //Pass whether to use AJAX or JS and the nid
-      'page callback' => '_elx_search_product_details_modal', //User defined function called when the link is clicked
-      'access callback' => TRUE,
-      'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
-  );
- 
   $items['modal/%ctools_js/flags/%'] = array(
       'title' => 'Product Details Modal',
       'page arguments' => array(1,3), //Pass whether to use AJAX or JS and the machine name of the flag
@@ -238,7 +230,7 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
     ctools_include('ajax');
 	  ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
     drupal_add_js(array(
-        'product-library' => array(
+        'search-product-library' => array(
           'modalSize' => array(
             'type' => 'scale',
             'width' => 1,
@@ -264,43 +256,6 @@ function _elx_product_details_modal($js = NULL, $nid = NULL)
   if ($integration) {
     drupal_add_js(array('H5PIntegration' => $integration), 'setting');
   }
-  return ctools_modal_render($node->title, $contents) ;
-}
-
-function _elx_search_product_details_modal($js = NULL, $nid = NULL)
-{
-  if($nid == NULL)
-   return 'No content to display.';
- 
-  //Include ctools iff path contains 'nojs' to work, else render page normally
-  if($js)
-  {
-    ctools_include('modal');
-    ctools_include('ajax');
-          ctools_modal_add_js(); //Default CTools JS. This is a must if custom javascript is not available.
-    drupal_add_js(array(
-        'search-product-library' => array(
-          'modalSize' => array(
-            'type' => 'scale',
-            'width' => 1,
-            'height' => 1,
-            'contentRight' => 5,
-            'contentBottom' => 20,
-          ),
-          'animation' => 'slideDown',
-          'closeText' => t(''),
-          'closeImage' => t(''),
-          //'closeImage' => base_path() . path_to_theme() . '',
-        ),
-      ), 'setting');
-  }
-
-  //Load the node object
-  $node = node_load($nid);
-
-  //Render content in 'Modal' view mode
-  $nodeContent = node_view($node, 'modal', NULL); //To prevent strict warning that only variables can be passed by reference
-  $contents = render($nodeContent);
   return ctools_modal_render($node->title, $contents) ;
 }
 

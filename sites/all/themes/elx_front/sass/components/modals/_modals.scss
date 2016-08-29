@@ -16,7 +16,7 @@ body.ctools-modal-open {
       height: 32px;
       background-image: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png');
     }
-    
+
   }
 
   .modal-content {
@@ -38,7 +38,8 @@ body.ctools-modal-open {
 }
 
 /* product library */
-.page-product-library, .page-search-product-library {
+.page-product-library,
+.page-search-product-library {
 
   div.ctools-modal-content {
     background-color: #e6e9ee;
@@ -123,4 +124,18 @@ body.ctools-modal-open {
 
   }
 
+}
+
+/* tools */
+body.page-tools.section-tools {
+
+  #modalContent
+
+    .ctools-modal-content {
+      opacity: 0;
+    }
+
+    .item-title-inmodal {
+      opacity: 0;
+    }
 }

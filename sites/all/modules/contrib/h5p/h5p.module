@@ -742,6 +742,13 @@ function h5p_add_core_assets() {
       $assets['css'][] = base_path() . $css . $cache_buster;
     }
 
+    $items = drupal_add_js();
+    uasort($items, 'drupal_sort_css_js');
+    foreach ($items as $js => $options) {
+      if (!is_numeric($js) && $js != 'settings' && $options['scope'] == 'header') {
+        $assets['js'][] = base_path() . $js . $cache_buster;
+      }
+    }
     foreach (H5PCore::$scripts as $script) {
       $js = $module_path . '/library/' . $script;
       drupal_add_js($js);
@@ -986,16 +993,7 @@ function h5p_add_iframe_assets(&$integration, $content_id, $files) {
     $core_added = TRUE;
     $core_assets = h5p_add_core_assets();
 
-    $integration['core']['scripts'] = array();
-    $cache_buster = '?' . variable_get('css_js_query_string', '');
-    $items = drupal_add_js();
-    uasort($items, 'drupal_sort_css_js');
-    foreach ($items as $js => $options) {
-      if (!is_numeric($js) && $js != 'settings' && $options['scope'] == 'header') {
-        $integration['core']['scripts'][] = base_path() . $js . $cache_buster;
-      }
-    }
-    $integration['core']['scripts'] += $core_assets['js'];
+    $integration['core']['scripts'] = $core_assets['js'];
     $integration['core']['styles'] = $core_assets['css'];
   }
 

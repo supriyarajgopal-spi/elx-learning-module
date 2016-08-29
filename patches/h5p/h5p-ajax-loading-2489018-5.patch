@@ -1,4 +1,4 @@
-From 592a96d3707988b48db9157e570680da31691908 Mon Sep 17 00:00:00 2001
+From bfb8de16a321208dffe10bad3fe70fc36af5420e Mon Sep 17 00:00:00 2001
 From: Darren Oh <darren@oh.name>
 Date: Sun, 28 Aug 2016 12:03:22 -0400
 Subject: [PATCH] Issue #2489018 by Darren Oh: Fixed error loading H5P via
@@ -6,7 +6,7 @@ Subject: [PATCH] Issue #2489018 by Darren Oh: Fixed error loading H5P via
 
 ---
  h5p.admin.inc                                      |   2 +-
- h5p.module                                         |  13 +-
+ h5p.module                                         |   9 +-
  library/embed.php                                  |   2 +-
  library/js/disable.js                              |  32 ++--
  library/js/h5p-content-upgrade.js                  |  42 +++---
@@ -19,7 +19,7 @@ Subject: [PATCH] Issue #2489018 by Darren Oh: Fixed error loading H5P via
  .../h5peditor/h5peditor/scripts/h5peditor-init.js  |  18 +--
  modules/h5peditor/h5peditor/scripts/h5peditor.js   |   6 +-
  modules/h5peditor/scripts/application.js           |   6 +-
- 14 files changed, 185 insertions(+), 162 deletions(-)
+ 14 files changed, 182 insertions(+), 161 deletions(-)
 
 diff --git a/h5p.admin.inc b/h5p.admin.inc
 index 6338062..1aebf63 100644
@@ -35,28 +35,24 @@ index 6338062..1aebf63 100644
    drupal_add_css($module_path . '/library/styles/h5p-admin.css');
  
 diff --git a/h5p.module b/h5p.module
-index 27bc9b6..0f18522 100644
+index 27bc9b6..426ca53 100644
 --- a/h5p.module
 +++ b/h5p.module
-@@ -986,7 +986,16 @@ function h5p_add_iframe_assets(&$integration, $content_id, $files) {
-     $core_added = TRUE;
-     $core_assets = h5p_add_core_assets();
+@@ -742,6 +742,13 @@ function h5p_add_core_assets() {
+       $assets['css'][] = base_path() . $css . $cache_buster;
+     }
  
--    $integration['core']['scripts'] = $core_assets['js'];
-+    $integration['core']['scripts'] = array();
-+    $cache_buster = '?' . variable_get('css_js_query_string', '');
 +    $items = drupal_add_js();
 +    uasort($items, 'drupal_sort_css_js');
 +    foreach ($items as $js => $options) {
 +      if (!is_numeric($js) && $js != 'settings' && $options['scope'] == 'header') {
-+        $integration['core']['scripts'][] = base_path() . $js . $cache_buster;
++        $assets['js'][] = base_path() . $js . $cache_buster;
 +      }
 +    }
-+    $integration['core']['scripts'] += $core_assets['js'];
-     $integration['core']['styles'] = $core_assets['css'];
-   }
- 
-@@ -1455,7 +1464,7 @@ function h5p_embed($node) {
+     foreach (H5PCore::$scripts as $script) {
+       $js = $module_path . '/library/' . $script;
+       drupal_add_js($js);
+@@ -1455,7 +1462,7 @@ function h5p_embed($node) {
  function h5p_preprocess_html(&$variables) {
    $integration = h5p_add_files_and_settings(NULL, NULL);
    if ($integration) {

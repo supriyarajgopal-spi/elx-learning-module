@@ -33,7 +33,9 @@ body.page-home-page {
         display: none;
     }
 
-    .pane-homepage-spotlight h2 {
+    .pane-homepage-spotlight-panel-pane-admin,
+    .pane-homepage-spotlight-panel-pane-user,
+    .pane-title {
         color: #9eafff;
         font-family: $font-family-serif;
         font-weight: 100;

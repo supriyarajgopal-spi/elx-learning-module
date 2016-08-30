@@ -89,14 +89,23 @@ function content_conversion_h5p_json($content_object) {
   // Convert the Content Object node into a Course Presentation.
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
-  // Convert learning object nodes into Course Presentation slides.
+
+  // Loop over each learning object node associated to the content object and create one Course Presentation slide for each.
+  // Exception : there is an instance where the converter needs all the learning object at one time
+  $exception_array = array("question_and_answer");
   foreach ($content_object->field_learning_objects[$content_object->language] as $learning_object) {
     $slide = new stdClass();
     $h5p->presentation->slides[] = $slide;
     $node = node_load($learning_object['target_id']);
     $function = '_content_conversion_node_' . $node->type;
-    if (function_exists($function)) {
-      $function($node, $slide);
+    $function_exception = '_content_conversion_nodes_' . $node->type;
+    if (function_exists($function_exception) && in_array($node->type, $exception_array)) {
+      $function_exception($content_object->field_learning_objects[$content_object->language], $slide);
+      break;
+    } else {
+      if (function_exists($function)) {
+        $function($node, $slide);
+      }
     }
   }
   return json_encode($h5p);
@@ -534,23 +543,18 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 }
 
 /**
- * Converts a Q/A node to H5P slide data.
- *
- * @param object $node
- *   A Question Answer node.
- * @param object $slide
- *   H5P data for a single slide.
+   * Converts a Q/A nodes to H5P slide data.
+   *
+   * @param object $nodes
+   *   All the Learning objects with Question Answer paragraphs.
+   * @param object $slide
+   *   H5P data for a single slide.
  */
-function _content_conversion_node_question_and_answer($node, $slide) {
+function _content_conversion_nodes_question_and_answer($nodes, $slide) {
 
   $slide->elements = array();
   $slide->slideBackgroundSelector = new stdClass();
   $slide->keywords = array();
-
-  $slide->elements[] = _create_qa_object($node);
-}
-
-function _create_qa_object($node) {
 
   $element = new stdClass();
   $element->x = 0;
@@ -581,88 +585,6 @@ function _create_qa_object($node) {
   $params->progressType = 'dots';
   $params->passPercentage = 80;
 
-  $questions = array();
-
-  foreach($node->field_paragraph_multiple_choice[$node->language] as $key => $value) {
-    $entity = entity_load('paragraphs_item', array($value['value']));
-    $item = $entity[$value['value']];
-
-    $question_object = new stdClass();
-    //field_question_image no sample
-    //field_question_video_file no sample
-    //field_video_poster_img no sample
-    $question_object->question = $item->field_question_text['und'][0]['safe_value'];
-
-    $answers = array();
-    foreach($item->field_paragraph_answer['und'] as $key2 => $value2) {
-      $entity2 = entity_load('paragraphs_item', array($value2['value']));
-      $item2 = $entity2[$value2['value']];
-
-      $answer_object = new stdClass();
-      //field_answer_image no sample
-      $answer_object->correct = ($item2->field_correct_answer['und'][0]['value']) ? true : false;
-      $answer_object->tipsAndFeedback = array(
-        "chosenFeedback" => $item2->field_answer_feedback['und'][0]['safe_value'],
-        "tip" => "",
-        "notChosenFeedback" => ""
-      );
-      $answer_object->text = $item2->field_answer_text['und'][0]['safe_value'];
-
-      $answers[] = $answer_object;
-    }
-    $question_object->answers = $answers;
-
-    $question_object->UI = array(
-      "checkAnswerButton" => "Submit",
-      "showSolutionButton" => "Show solution",
-      "tryAgainButton" => "Retry",
-      "tipsLabel" => "Show tip",
-      "correctText" => "Correct!",
-      "almostText" => "Almost!",
-      "wrongText" => "Wrong",
-      "scoreBarLabel" => "Score",
-      "tipAvailable" => "Tip available",
-      "feedbackAvailable" => "Feedback available",
-      "readFeedback" => "Read feedback",
-      "wrongAnswer" => "Wrong answer",
-      "correctAnswer" => "Correct answer",
-      "shouldCheck" => "Should have been checked",
-      "shouldNotCheck" => "Should not have been checked",
-      "noInput" => "Please answer before viewing the solution"
-    );
-    $question_object->behaviour = array(
-      "enableRetry" => true,
-      "enableSolutionsButton" => false,
-      "type" => "single",
-      "singlePoint" => false,
-      "randomAnswers" => false,
-      "showSolutionsRequiresInput" => true,
-      "disableImageZooming" => false,
-      "confirmCheckDialog" => false,
-      "confirmRetryDialog" => false
-    );
-    $question_object->confirmCheck = array(
-      "header" => "Finish ?",
-      "body" => "Are you sure you wish to finish ?",
-      "cancelLabel" => "Cancel",
-      "confirmLabel" => "Finish"
-    );
-    $question_object->confirmRetry = array(
-      "header" => "Retry ?",
-      "body" => "Are you sure you wish to retry ?",
-      "cancelLabel" => "Cancel",
-      "confirmLabel" => "Confirm"
-    );
-    $question_object->media = array('params'=>'');
-
-    $question_params = new stdClass();
-    $question_params->params = $question_object;
-    $question_params->library = "H5P.MultiChoice 1.7";
-    $question_params->subContentId = '0';
-
-    $questions[] = $question_params;
-  }
-
   $params->texts = array(
     "prevButton" => "Previous question",
     "nextButton" => "Next question",
@@ -688,14 +610,103 @@ function _create_qa_object($node) {
     "skipButtonText" => "Skip video"
   );
   $params->override = array();
-
+  $questions = array();
+  foreach($nodes as $key => $node_target) {
+    $node = node_load($node_target['target_id']);
+    $questions[] = _create_question_object($node->field_paragraph_multiple_choice[$node->language][0]['value']);
+  }
   $params->questions = $questions;
   $action->params = $params;
   $element->action = $action;
 
-  return $element;
+  $slide->elements[] = $element;
 }
 
+/*
+ * Utility Function
+ * _create_qa_object - takes a paragraph id and returns the necessary question and answer element for inserting into a question set
+ */
+function _create_question_object($target_id) {
+
+  $question_entity = entity_load('paragraphs_item', array($target_id));
+  $question_item = $question_entity[$target_id];
+
+  $question = new stdClass();
+  $question->library = "H5P.MultiChoice 1.7";
+  $question->subContentId = '0';
+
+  $params = new stdClass();
+  //field_question_image no sample
+  //field_question_video_file no sample
+  //field_video_poster_img no sample
+  $params->question = $question_item->field_question_text['und'][0]['safe_value'];
+
+  $answers = array();
+  foreach($question_item->field_paragraph_answer['und'] as $key => $value) {
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $item = $entity[$value['value']];
+
+    $answer = new stdClass();
+    //field_answer_image no sample
+    $answer->correct = ($item->field_correct_answer['und'][0]['value']) ? true : false;
+    $answer->tipsAndFeedback = array(
+      "chosenFeedback" => $item2->field_answer_feedback['und'][0]['safe_value'],
+      "tip" => "",
+      "notChosenFeedback" => ""
+    );
+    $answer->text = $item->field_answer_text['und'][0]['safe_value'];
+
+    $answers[] = $answer;
+  }
+  $params->answers = $answers;
+
+  $params->UI = array(
+    "checkAnswerButton" => "Submit",
+    "showSolutionButton" => "Show solution",
+    "tryAgainButton" => "Retry",
+    "tipsLabel" => "Show tip",
+    "correctText" => "Correct!",
+    "almostText" => "Almost!",
+    "wrongText" => "Wrong",
+    "scoreBarLabel" => "Score",
+    "tipAvailable" => "Tip available",
+    "feedbackAvailable" => "Feedback available",
+    "readFeedback" => "Read feedback",
+    "wrongAnswer" => "Wrong answer",
+    "correctAnswer" => "Correct answer",
+    "shouldCheck" => "Should have been checked",
+    "shouldNotCheck" => "Should not have been checked",
+    "noInput" => "Please answer before viewing the solution"
+  );
+  $params->behaviour = array(
+    "enableRetry" => true,
+    "enableSolutionsButton" => false,
+    "type" => "single",
+    "singlePoint" => false,
+    "randomAnswers" => false,
+    "showSolutionsRequiresInput" => true,
+    "disableImageZooming" => false,
+    "confirmCheckDialog" => false,
+    "confirmRetryDialog" => false
+  );
+  $params->confirmCheck = array(
+    "header" => "Finish ?",
+    "body" => "Are you sure you wish to finish ?",
+    "cancelLabel" => "Cancel",
+    "confirmLabel" => "Finish"
+  );
+  $params->confirmRetry = array(
+    "header" => "Retry ?",
+    "body" => "Are you sure you wish to retry ?",
+    "cancelLabel" => "Cancel",
+    "confirmLabel" => "Confirm"
+  );
+  $params->media = array('params'=>'');
+
+  $question->params = $params;
+
+  return $question;
+}
 
 /*
  * Utility Function

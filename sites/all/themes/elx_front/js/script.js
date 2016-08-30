@@ -27,7 +27,7 @@
         // click should trigger function with overlay
         var linkhref = $(this).attr('href'); /* /modal/nojs/9309 */
         var linktitle = $(this).text();
-        var itemtitle = $('<div class="item-title-inmodal" style="display:none;margin:25px;color:#040a2b;font-family:optimadisplaylightlight;font-size:18px;text-decoration:none;">' + linktitle + '</div>');
+        var itemtitle = $('<div class="item-title-inmodal">' + linktitle + '</div>');
 
         // future perfect tense-ification //
         setTimeout(function () {
@@ -46,26 +46,15 @@
           // works fine but without body tag //
           var asset = $('body.page-tools.section-tools #modalContent').find('.node-tools .field-name-field-tool-pdf').find('.field-items .field-item').html();
           var innerpart = $('body.page-tools.section-tools #modalContent .node-tools');
-          var modalheader = $('<div class="modal-header" style="float:right;margin-right:-50px;"><a class="close" style="display:block;"></a></div>').click(action);
-
-          /*
-          var modalheader = $('<div class="modal-header" style="float:right;margin-right:-50px;"><a class="close" style="display:block;"></a></div>').click(function(){
-
-            $('body.page-tools.section-tools #modalContent').hide();
-            $('body.page-tools.section-tools #modalContent .node-tools').empty();
-            $('body.page-tools.section-tools #modalBackdrop').hide().empty();
-            $('body.page-tools.section-tools #modalContent .node-tools').remove();
-
-            $('body.page-tools.section-tools').removeClass('ctools-modal-open').addClass('ctools-modal-close');
-
-          });
-          */
+          var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(action);
 
 
           $('body.page-tools.section-tools #modalBackdrop').css({'background-color': '#040A2B', 'opacity': '0.8'});
           $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '70%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
-          var btnlink = $('<a href="' + asset + '" data-node-id="' + linkhref + '" style="text-decoration:none;color:#040a2b;" target="_blank">VIEW TOOL</a>');
-          var viewbtn = $('<div id="detail-content-btn" style="margin:10px 20px;padding:5px;border:1px solid gray;width:120px;text-align:center;color:gray;background-color:white"></div>');
+
+
+          var btnlink = $('<a href="' + asset + '" data-node-id="' + linkhref + '" target="_blank">VIEW TOOL</a>');
+          var viewbtn = $('<div id="detail-content-btn"></div>');
           $(viewbtn).append(btnlink);
 
           // removal logarithm area // rm dupes
@@ -73,10 +62,51 @@
           $('body.page-tools.section-tools #modalContent .node-tools').remove();
           $('body.page-tools.section-tools #modalContent .item-title-inmodal').remove();
           $('body.page-tools.section-tools #modalContent').find('.modal-header').remove();
+          $('body.page-tools.section-tools #modalContent').find('img.animated-gif').remove();
 
           $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart);
-          $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
+
+          if (asset.match(/pdf/)) {
+
+            // alert('pdf');
+            /* $('.ctools-modal-content #modal-content').css({
+              'display':'none',
+            });
+            $('.ctools-modal-content').css({
+              'display':'none',
+              //'height':'250px !important'
+            });*/
+
+            $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
+
+          }
+          else if (asset.match(/mp4/)) {
+            // alert('mp4');
+            $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
+
+          }
+          else if (asset.match(/gif/)) {
+
+            $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
+
+            // var size = $('img.animated-gif').size();
+
+            var animgif = $('<img src="' + asset + '" style="padding: 30px;" class="animated-gif" />');
+
+            /*
+
+            $('#modalContent').css({
+              'background-color':'green',
+              'height':'250px'
+            });*/
+
+            $('body.page-tools.section-tools #modalContent').append(itemtitle);
+            $('body.page-tools.section-tools #modalContent').append(animgif);
+
+          }
           $('body.page-tools.section-tools #modalContent').find('.item-title-inmodal').css('display', 'block');
+          // setTimeout(function(){  $('body.page-tools.section-tools #modalContent .item-title-inmodal').css('opacity','1'); },300);
+
           // 2nd rm logarith after appendages //
           $('body.page-tools.section-tools #modalContent .node-tools').css('display', 'none');
 
@@ -91,33 +121,8 @@
             // 'height':'250px !important'
           });
 
-          if (asset.match(/pdf/)) {
 
-            // alert('pdf');
-            /* $('.ctools-modal-content #modal-content').css({
-              'display':'none',
-            });
-            $('.ctools-modal-content').css({
-              'display':'none',
-              //'height':'250px !important'
-            });*/
-
-          }
-          else if (asset.match(/mp4/)) {
-            // alert('mp4');
-          }
-          else if (asset.match(/gif/)) {
-            // alert('gif');
-
-            /* $('#modalContent').css({
-              'background-color':'green',
-                'height':'250px'
-              });*/
-
-          }
-          // setTimeout(function(){  $('body.page-tools.section-tools #modalContent .item-title-inmodal').css('opacity','1'); },300);
-
-        }, 400);
+        }, 500);
 
       });
 

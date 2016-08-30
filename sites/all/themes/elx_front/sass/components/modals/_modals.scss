@@ -129,6 +129,16 @@ body.ctools-modal-open {
 /* tools */
 body.page-tools.section-tools {
 
+  .modal-header {
+    float: right;
+    margin-right: -50px;
+
+    a.close {
+      float: right;
+      display: block;
+    }
+  }
+
   #modalContent
 
     .ctools-modal-content {
@@ -137,5 +147,26 @@ body.page-tools.section-tools {
 
     .item-title-inmodal {
       opacity: 0;
+      display: none;
+      margin: 25px;
+      color: #040a2b;
+      font-family: "optimadisplaylightlight";
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    #detail-content-btn { 
+      margin: 10px 20px;
+      padding: 5px;
+      border: 1px solid gray;
+      width: 120px;
+      text-align: center;
+      color: gray;
+      background-color: white;
+
+      a {
+        text-decoration: none;
+        color: #040a2b;
+      }
     }
 }

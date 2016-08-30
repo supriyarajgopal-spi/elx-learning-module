@@ -15,6 +15,7 @@ body.ctools-modal-open {
       width: 32px;
       height: 32px;
       background-image: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png');
+      background-position: -105px center;
     }
 
   }
@@ -142,8 +143,19 @@ body.page-tools.section-tools {
   #modalContent
 
     .ctools-modal-content {
-      opacity: 0;
+      opacity: 1;
     }
+
+    .paragraph-animgif-container {
+      padding: 0 25px;
+      font-family: "optimadisplaylightlight";
+    }
+
+    video {
+      padding:0 33px 25px 33px;
+      width: 100%;
+    }
+
 
     .item-title-inmodal {
       opacity: 0;
@@ -151,7 +163,7 @@ body.page-tools.section-tools {
       margin: 25px;
       color: #040a2b;
       font-family: "optimadisplaylightlight";
-      font-size: 18px;
+      font-size: 23px;
       text-decoration: none;
     }
 

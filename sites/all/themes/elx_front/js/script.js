@@ -43,24 +43,58 @@
 
           };
 
+          /*
+
+          var log2 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-application-pdf').size();
+          var log3 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-video-mp4').size();
+          var log4 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-image-gif').size();
+
+          */
+
+          var out;
+          var isVideo = function () {
+
+            var vout = $('body.page-tools.section-tools #modalContent .node-tools .content');
+            out = vout.html();
+
+            return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content video source').attr('src'));
+          };
+          var isPDF = function () {
+            return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content a').attr('href'));
+          };
+          var isAnimGif = function () {
+
+            var pout = $('body.page-tools.section-tools #modalContent .node-tools .field-name-field-tool-description .field-item.even p').addClass('animgif-paragraph');
+            out = $('body.page-tools.section-tools #modalContent .node-tools .field-name-field-tool-description .field-item.even p').html();
+            out = pout.html();
+
+            return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content img').attr('src'));
+          };
+
+          var isPDForAnimGif = function () { return (isPDF() ? isPDF() : isAnimGif()); };
+          var asset = isVideo() ? isVideo() : isPDForAnimGif();
+          // (isPDF()?isPDF():isAnimGif());
+
           // works fine but without body tag //
-          var asset = $('body.page-tools.section-tools #modalContent').find('.node-tools .field-name-field-tool-pdf').find('.field-items .field-item').html();
+          // var asset = $('body.page-tools.section-tools #modalContent').find('.node-tools .field-name-field-tool-pdf').find('.field-items .field-item').html();
           var innerpart = $('body.page-tools.section-tools #modalContent .node-tools');
           var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(action);
-
+          // console.log(innerpart); // var outim = innerpart.html(); alert(outim);
 
           $('body.page-tools.section-tools #modalBackdrop').css({'background-color': '#040A2B', 'opacity': '0.8'});
-          $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '70%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
-
+          $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '60%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
 
           var btnlink = $('<a href="' + asset + '" data-node-id="' + linkhref + '" target="_blank">VIEW TOOL</a>');
           var viewbtn = $('<div id="detail-content-btn"></div>');
           $(viewbtn).append(btnlink);
 
-          // removal logarithm area // rm dupes
+          // rm dupes
           $('body.page-tools.section-tools #modalContent').find('#detail-content-btn').remove();
           $('body.page-tools.section-tools #modalContent .node-tools').remove();
           $('body.page-tools.section-tools #modalContent .item-title-inmodal').remove();
+          $('body.page-tools.section-tools #modalContent .paragraph-animgif-container').remove(); // img
+          $('body.page-tools.section-tools #modalContent video').remove(); // vid
+
           $('body.page-tools.section-tools #modalContent').find('.modal-header').remove();
           $('body.page-tools.section-tools #modalContent').find('img.animated-gif').remove();
 
@@ -81,15 +115,13 @@
 
           }
           else if (asset.match(/mp4/)) {
-            // alert('mp4');
-            $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
+
+            $('body.page-tools.section-tools #modalContent').append(itemtitle).append(out);
 
           }
           else if (asset.match(/gif/)) {
 
             $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
-
-            // var size = $('img.animated-gif').size();
 
             var animgif = $('<img src="' + asset + '" style="padding: 30px;" class="animated-gif" />');
 
@@ -100,8 +132,10 @@
               'height':'250px'
             });*/
 
+            var panim = $('<div class="paragraph-animgif-container"></div>');
             $('body.page-tools.section-tools #modalContent').append(itemtitle);
-            $('body.page-tools.section-tools #modalContent').append(animgif);
+            $(panim).append(out).append(animgif);
+            $('body.page-tools.section-tools #modalContent').append(panim);
 
           }
           $('body.page-tools.section-tools #modalContent').find('.item-title-inmodal').css('display', 'block');

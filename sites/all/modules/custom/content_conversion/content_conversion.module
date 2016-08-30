@@ -664,12 +664,12 @@ function _create_qa_object($node) {
     );
     $question_object->media = array('params'=>'');
 
-    $questions_params = new stdClass();
-    $questions_params->params = $question_object;
-    $questions_params->library = "H5P.MultiChoice 1.7";
-    $questions_params->subContentId = '0';
+    $question_params = new stdClass();
+    $question_params->params = $question_object;
+    $question_params->library = "H5P.MultiChoice 1.7";
+    $question_params->subContentId = '0';
 
-    $questions[] = $questions_params;
+    $questions[] = $question_params;
   }
 
   $params->texts = array(

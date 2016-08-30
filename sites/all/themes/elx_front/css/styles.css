@@ -3230,33 +3230,34 @@ body.ctools-modal-open {
   width: 32px;
   height: 32px;
   background-image: url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png");
+  background-position: -105px center;
 }
 
-/* line 22, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 25, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 26, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content article {
   max-width: 1170px;
   margin: 0 auto;
 }
 
-/* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 30, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .modal-default .modal-content article h2 {
   font-family: "optimadisplaylightlight";
   font-size: 28px;
 }
 
 /* product library */
-/* line 44, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 45, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library div.ctools-modal-content,
 .page-search-product-library div.ctools-modal-content {
   background-color: #e6e9ee;
 }
 
-/* line 47, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 48, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library div.ctools-modal-content .modal-header,
 .page-search-product-library div.ctools-modal-content .modal-header {
   position: absolute;
@@ -3266,13 +3267,13 @@ body.ctools-modal-open {
   background-color: #e6e9ee;
 }
 
-/* line 57, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 58, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content,
 .page-search-product-library .modal-content {
   background-color: #e6e9ee;
 }
 
-/* line 60, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 61, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article,
 .page-search-product-library .modal-content article {
   background-color: #fff;
@@ -3280,7 +3281,7 @@ body.ctools-modal-open {
   font-size: 18px;
 }
 
-/* line 67, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 68, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-label,
 .page-search-product-library .modal-content article .field .field-label {
   display: inline-block;
@@ -3291,32 +3292,32 @@ body.ctools-modal-open {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 76, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 77, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-items,
 .page-search-product-library .modal-content article .field .field-items {
   margin: 10px 0;
 }
 
-/* line 81, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 82, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field .field-items .field-item > div,
 .page-search-product-library .modal-content article .field .field-items .field-item > div {
   margin: 0 0 24px;
 }
 
-/* line 91, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 92, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-product-image,
 .page-search-product-library .modal-content article .field-name-field-product-image {
   width: 50%;
   float: left;
 }
 
-/* line 95, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 96, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-product-image .field-label,
 .page-search-product-library .modal-content article .field-name-field-product-image .field-label {
   display: none;
 }
 
-/* line 101, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 102, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one,
 .page-search-product-library .modal-content article .field-name-field-why-there-s-only-one {
   float: right;
@@ -3327,7 +3328,7 @@ body.ctools-modal-open {
   letter-spacing: 2px;
 }
 
-/* line 109, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 110, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one .field-label,
 .page-search-product-library .modal-content article .field-name-field-why-there-s-only-one .field-label {
   display: inline-block;
@@ -3337,42 +3338,54 @@ body.ctools-modal-open {
   border-bottom: 1px solid #fff;
 }
 
-/* line 119, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 120, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 .page-product-library .modal-content article .field-name-field-demonstration,
 .page-search-product-library .modal-content article .field-name-field-demonstration {
   clear: both;
 }
 
 /* tools */
-/* line 132, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 133, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools .modal-header {
   float: right;
   margin-right: -50px;
 }
 
-/* line 136, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 137, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools .modal-header a.close {
   float: right;
   display: block;
 }
 
-/* line 142, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 143, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools #modalContent .ctools-modal-content {
-  opacity: 0;
+  opacity: 1;
 }
 
-/* line 148, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 149, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+body.page-tools.section-tools .paragraph-animgif-container {
+  padding: 0 25px;
+  font-family: "optimadisplaylightlight";
+}
+
+/* line 154, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+body.page-tools.section-tools video {
+  padding: 0 33px 25px 33px;
+  width: 100%;
+}
+
+/* line 160, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools .item-title-inmodal {
   opacity: 0;
   display: none;
   margin: 25px;
   color: #040a2b;
   font-family: "optimadisplaylightlight";
-  font-size: 18px;
+  font-size: 23px;
   text-decoration: none;
 }
 
-/* line 158, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 170, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools #detail-content-btn {
   margin: 10px 20px;
   padding: 5px;
@@ -3383,7 +3396,7 @@ body.page-tools.section-tools #detail-content-btn {
   background-color: white;
 }
 
-/* line 167, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 179, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools #detail-content-btn a {
   text-decoration: none;
   color: #040a2b;

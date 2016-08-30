@@ -6819,8 +6819,9 @@ function elx_site_configurations_field_default_field_instances() {
       ),
       'modal' => array(
         'label' => 'above',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'file_url_plain',
         'weight' => 0,
       ),
       'teaser' => array(

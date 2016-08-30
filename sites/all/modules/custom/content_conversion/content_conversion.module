@@ -358,10 +358,10 @@ function _content_conversion_node_reveal($learning_object, $slide)
 }
 
 /**
- * Converts a Story node to H5P slide data.
+ * Converts a Hot Spot node to H5P slide data.
  *
  * @param object $node
- *   A Story node.
+ *   A Hot Spot node.
  * @param object $slide
  *   H5P data for a single slide.
  */
@@ -384,6 +384,327 @@ function _content_conversion_node_hot_spots($node, $slide) {
 
   $slide->elements[] = _create_hotspot_object($node);
 }
+
+/**
+ * Created by SUPRIYA RAJGOPAL on 27Aug16
+ *
+ * Generates H5P JSON of Drag Select learning object type.
+ *
+ * @param object $content_object
+ *   A Content Object node.
+ * @param object $slide
+ *   A slide object.
+ * Returns array matching the JSON structure
+ */
+function _content_conversion_node_drag_select($learning_object, $slide)
+{
+  $element = new stdClass(); //Elements of the slide. In this case, the Drag&Drop option within a Course Presentation
+
+  //Set position & dimension of element within the slide
+  $element->x = 1;
+  $element->y = 0;
+  $element->width = 97;
+  $element->height = 96;
+
+  $element->action = new stdClass();
+  $element->action->library = 'H5P.DragQuestion 1.6';
+
+  $element->action->params = new stdClass();
+
+  //Default, constant settings
+  $element->action->params->scoreShow = t('Submit');
+  $element->action->params->tryAgain = t('Retry');
+  $element->action->params->correct = t('Show solution');
+
+  //Correct feedback text
+  if(isset($learning_object->field_correct_feedback) && !empty($learning_object->field_correct_feedback))
+    $element->action->params->feedback = $learning_object->field_correct_feedback[$learning_object->language][0]['value'];
+  else
+    $element->action->params->feedback = t('');
+
+  //Incorrect feedback text
+  if(isset($learning_object->field_incorrect_feeback) && !empty($learning_object->field_incorrect_feeback))
+    $element->action->params->incorrect_feedback = $learning_object->field_incorrect_feeback[$learning_object->language][0]['value'];
+  else
+    $element->action->params->incorrect_feedback = t('');
+
+  $element->action->params->question = new stdClass();
+  $element->action->params->question->settings = new stdClass();
+  $element->action->params->question->settings->size = new stdClass();
+  $element->action->params->question->settings->size->width = 800;
+  $element->action->params->question->settings->size->width = 500;
+  $element->action->params->question->task = new stdClass();
+
+  //DRAGGABLE ELEMENT CREATION SECTION
+  //Create draggable elements array iff Drag Select collection paragraph bundle is not empty
+  if(isset($learning_object->field_drag_select_collection) && !empty($learning_object->field_drag_select_collection))
+  {
+    $draggables = $learning_object->field_drag_select_collection[$learning_object->language]; //Array of draggable elements
+
+    /**
+     * foreach Draggable Element...
+     *  load the Paragraph entity i.e Drag Select collection field in Drag Select content type,
+     *  access each property and
+     *  form the draggable element object and push to the draggableElements array
+     */
+    $i = 0; //Index of draggable element. Used to dynamically set 'y' co-ordinate of draggable element arranged vertically
+    $correctElements = array(); //The indices of correct answers to be set in dropzone object
+
+    foreach($draggables as $draggable)
+    {
+      $dragSelectParagraphEntity = entity_load('paragraphs_item', array($draggable['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
+
+      $draggableElement = new stdClass();
+
+      $draggableElement->x = 7;
+      $draggableElement->y = 6 * ($i + 1); //Starts from '6', gap of '6' between each element
+      $draggableElement->width = 18;
+      $draggableElement->height = 2;
+
+      $dragSelectParagraph = $dragSelectParagraphEntity[$draggable['value']];
+
+      $draggableElement->type = new stdClass();
+      $draggableElement->type->params = new stdClass();
+
+      //If draggable element is an image
+      if(isset($dragSelectParagraph->field_drag_select_image) && !empty($dragSelectParagraph->field_drag_select_image))
+      {
+        $draggableImage = $dragSelectParagraph->field_drag_select_image[LANGUAGE_NONE][0];
+
+        $draggableElement->type->library = 'H5P.Image 1.0';
+        $draggableElement->type->params->contentName = 'Image';
+        $draggableElement->type->params->alt = t('@text',array('@text' => $draggableImage['alt']));
+        $draggableElement->type->params->file = _create_image_object($draggableImage);
+      }
+
+      //If draggable element is text
+      if(isset($dragSelectParagraph->field_drag_select_text) && !empty($dragSelectParagraph->field_drag_select_text))
+      {
+        $draggableElement->type->library = 'H5P.AdvancedText 1.1';
+        $draggableElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragSelectParagraph->field_drag_select_text[LANGUAGE_NONE][0]['value'])));
+      }
+
+      //If this is a correct answer
+      if(isset($dragSelectParagraph->field_correct_answer) && !empty($dragSelectParagraph->field_correct_answer))
+        $isCorrect = $dragSelectParagraph->field_correct_answer[LANGUAGE_NONE][0]['value'];
+      else
+        $isCorrect = 0;
+
+      if($isCorrect)
+        array_push($correctElements,strval($i)); //Convert index to string since dropzone section expects string indices as an array
+
+      $draggableElement->type->subContentId = 0; //Common to both draggable image &/or text
+
+      $draggableElement->dropZones = array("0"); //Which dropzone does this draggable element correctly belong to.In our case, always 1st(0th index) because only 1 dropzone will exist
+      $draggableElement->backgroundOpacity = 100;
+      $draggableElement->multiple = false;
+
+      $element->action->params->question->task->elements[] = $draggableElement;
+
+      $i++; //Increment index counter
+    }
+  }
+
+  //DROPZONE CREATION SECTION
+  $dropZone = new stdClass();
+  $dropZone->x = 50; //Co-ordinates of Dropzone, set to appear on right hand side
+  $dropZone->y = 5;
+  $dropZone->width = 25;
+  $dropZone->height = 30;
+  $dropZone->correctElements = $correctElements;
+  $dropZone->showLabel = false;
+  $dropZone->backgroundOpacity = 100;
+  $dropZone->single = false; //Multiple correct elements in dropzone allowed if false, only 1 allowed if true
+  $dropZone->label = '<div>Drop Zone</div>\n';
+  $dropZone->tip = '';
+  $element->action->params->question->task->dropZones[] = $dropZone;
+
+  //Question Title
+  if(isset($learning_object->field_drag_select_question) && !empty($learning_object->field_drag_select_question))
+    $element->action->params->question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($learning_object->field_drag_select_question[$learning_object->language][0]['value'])));
+  else
+    $element->action->params->question->settings->questionTitle = t('');
+
+  //Default, constant settings
+  $element->action->params->behaviour = new stdClass();
+  $element->action->params->behaviour->enableRetry = true;
+  $element->action->params->behaviour->singlePoint = false;
+  $element->action->params->behaviour->showSolutionsRequiresInput = true;
+  $element->action->subContentId = 0;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = "";
+
+  $slide->elements[] = $element; //Array of elements
+  $slide->slideBackgroundSelector = new stdClass(); //Empty since no background image will be selected
+  $slide->keywords = array(); //Empty since no keywords will be specified
+}
+
+/**
+ * Converts a Q/A node to H5P slide data.
+ *
+ * @param object $node
+ *   A Question Answer node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_question_and_answer($node, $slide) {
+
+  $slide->elements = array();
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+
+  $slide->elements[] = _create_qa_object($node);
+}
+
+function _create_qa_object($node) {
+
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 99.787685774947;
+  $element->height = 99.58071278826;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $action = new stdClass();
+  $action->library = "H5P.QuestionSet 1.8";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  /* no sample yet
+  if (!empty($node->field_intro[$node->language][0]['safe_value'])) {
+    $get_text_array = array(
+      "showIntroPage" => '',
+      "startButtonText" => '',
+      "title" => '',
+      "introduction" => '',
+    );
+    $params->introPage = $get_text_array;
+  }*/
+  $params->progressType = 'dots';
+  $params->passPercentage = 80;
+
+  $questions = array();
+
+  foreach($node->field_paragraph_multiple_choice[$node->language] as $key => $value) {
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $item = $entity[$value['value']];
+
+    $question_object = new stdClass();
+    //field_question_image no sample
+    //field_question_video_file no sample
+    //field_video_poster_img no sample
+    $question_object->question = $item->field_question_text['und'][0]['safe_value'];
+
+    $answers = array();
+    foreach($item->field_paragraph_answer['und'] as $key2 => $value2) {
+      $entity2 = entity_load('paragraphs_item', array($value2['value']));
+      $item2 = $entity2[$value2['value']];
+
+      $answer_object = new stdClass();
+      //field_answer_image no sample
+      $answer_object->correct = ($item2->field_correct_answer['und'][0]['value']) ? true : false;
+      $answer_object->tipsAndFeedback = array(
+        "chosenFeedback" => $item2->field_answer_feedback['und'][0]['safe_value'],
+        "tip" => "",
+        "notChosenFeedback" => ""
+      );
+      $answer_object->text = $item2->field_answer_text['und'][0]['safe_value'];
+
+      $answers[] = $answer_object;
+    }
+    $question_object->answers = $answers;
+
+    $question_object->UI = array(
+      "checkAnswerButton" => "Submit",
+      "showSolutionButton" => "Show solution",
+      "tryAgainButton" => "Retry",
+      "tipsLabel" => "Show tip",
+      "correctText" => "Correct!",
+      "almostText" => "Almost!",
+      "wrongText" => "Wrong",
+      "scoreBarLabel" => "Score",
+      "tipAvailable" => "Tip available",
+      "feedbackAvailable" => "Feedback available",
+      "readFeedback" => "Read feedback",
+      "wrongAnswer" => "Wrong answer",
+      "correctAnswer" => "Correct answer",
+      "shouldCheck" => "Should have been checked",
+      "shouldNotCheck" => "Should not have been checked",
+      "noInput" => "Please answer before viewing the solution"
+    );
+    $question_object->behaviour = array(
+      "enableRetry" => true,
+      "enableSolutionsButton" => false,
+      "type" => "single",
+      "singlePoint" => false,
+      "randomAnswers" => false,
+      "showSolutionsRequiresInput" => true,
+      "disableImageZooming" => false,
+      "confirmCheckDialog" => false,
+      "confirmRetryDialog" => false
+    );
+    $question_object->confirmCheck = array(
+      "header" => "Finish ?",
+      "body" => "Are you sure you wish to finish ?",
+      "cancelLabel" => "Cancel",
+      "confirmLabel" => "Finish"
+    );
+    $question_object->confirmRetry = array(
+      "header" => "Retry ?",
+      "body" => "Are you sure you wish to retry ?",
+      "cancelLabel" => "Cancel",
+      "confirmLabel" => "Confirm"
+    );
+    $question_object->media = array('params'=>'');
+
+    $questions_params = new stdClass();
+    $questions_params->params = $question_object;
+    $questions_params->library = "H5P.MultiChoice 1.7";
+    $questions_params->subContentId = '0';
+
+    $questions[] = $questions_params;
+  }
+
+  $params->texts = array(
+    "prevButton" => "Previous question",
+    "nextButton" => "Next question",
+    "finishButton" => "Finish",
+    "textualProgress" => "Question: @current of @total questions",
+    "jumpToQuestion" => "Jump to question %d",
+    "questionLabel" => "Question"
+  );
+  $params->endGame = array(
+    "showResultPage" => false,
+    "noResultMessage" => "Finished",
+    "message" => "Your result:",
+    "scoreString" => "You got @score of @total points",
+    "successGreeting" => "Congratulations!",
+    "successComment" => "You did very well!",
+    "failGreeting" => "You did not pass this time.",
+    "failComment" => "Have another try!",
+    "solutionButtonText" => "Show solution",
+    "retryButtonText" => "Retry",
+    "finishButtonText" => "Finish",
+    "showAnimations" => false,
+    "skippable" => false,
+    "skipButtonText" => "Skip video"
+  );
+  $params->override = array();
+
+  $params->questions = $questions;
+  $action->params = $params;
+  $element->action = $action;
+
+  return $element;
+}
+
 
 /*
  * Utility Function
@@ -506,161 +827,4 @@ function _create_text_object($text_array = null) {
   $action->subContentId = 0;
 
   return $element;
-}
-
-/**
- * Created by SUPRIYA RAJGOPAL on 27Aug16
- *
- * Generates H5P JSON of Drag Select learning object type.
- *
- * @param object $content_object
- *   A Content Object node.
- * @param object $slide
- *   A slide object.
- * Returns array matching the JSON structure
- */
-function _content_conversion_node_drag_select($learning_object, $slide)
-{
-	$element = new stdClass(); //Elements of the slide. In this case, the Drag&Drop option within a Course Presentation
-	
-	//Set position & dimension of element within the slide 
-	$element->x = 1;
-	$element->y = 0;
-	$element->width = 97;
-	$element->height = 96;
-	
-	$element->action = new stdClass();
-	$element->action->library = 'H5P.DragQuestion 1.6';
-	
-	$element->action->params = new stdClass();
-	
-	//Default, constant settings
-	$element->action->params->scoreShow = t('Submit');
-	$element->action->params->tryAgain = t('Retry');
-	$element->action->params->correct = t('Show solution');
-	
-	//Correct feedback text
-	if(isset($learning_object->field_correct_feedback) && !empty($learning_object->field_correct_feedback))
-		$element->action->params->feedback = $learning_object->field_correct_feedback[$learning_object->language][0]['value'];
-	else
-		$element->action->params->feedback = t('');
-	
-	//Incorrect feedback text
-	if(isset($learning_object->field_incorrect_feeback) && !empty($learning_object->field_incorrect_feeback))
-		$element->action->params->incorrect_feedback = $learning_object->field_incorrect_feeback[$learning_object->language][0]['value'];
-	else
-		$element->action->params->incorrect_feedback = t('');
-	
-	$element->action->params->question = new stdClass();
-	$element->action->params->question->settings = new stdClass();
-	$element->action->params->question->settings->size = new stdClass();
-	$element->action->params->question->settings->size->width = 800;
-	$element->action->params->question->settings->size->width = 500;
-	$element->action->params->question->task = new stdClass();
-	
-	//DRAGGABLE ELEMENT CREATION SECTION
-	//Create draggable elements array iff Drag Select collection paragraph bundle is not empty
-	if(isset($learning_object->field_drag_select_collection) && !empty($learning_object->field_drag_select_collection))
-	{
-		$draggables = $learning_object->field_drag_select_collection[$learning_object->language]; //Array of draggable elements
-		
-		/**
-		 * foreach Draggable Element...
-		 *  load the Paragraph entity i.e Drag Select collection field in Drag Select content type,
-		 *  access each property and
-		 *  form the draggable element object and push to the draggableElements array
-		 */
-		$i = 0; //Index of draggable element. Used to dynamically set 'y' co-ordinate of draggable element arranged vertically
-		$correctElements = array(); //The indices of correct answers to be set in dropzone object
-		
-		foreach($draggables as $draggable)
-		{
-			$dragSelectParagraphEntity = entity_load('paragraphs_item', array($draggable['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
-			
-			$draggableElement = new stdClass();
-			
-			$draggableElement->x = 7;
-			$draggableElement->y = 6 * ($i + 1); //Starts from '6', gap of '6' between each element
-			$draggableElement->width = 18;
-			$draggableElement->height = 2;
-			
-			$dragSelectParagraph = $dragSelectParagraphEntity[$draggable['value']];
-			
-			$draggableElement->type = new stdClass();
-			$draggableElement->type->params = new stdClass();
-			
-			//If draggable element is an image
-			if(isset($dragSelectParagraph->field_drag_select_image) && !empty($dragSelectParagraph->field_drag_select_image))
-			{
-				$draggableImage = $dragSelectParagraph->field_drag_select_image[LANGUAGE_NONE][0];
-				
-				$draggableElement->type->library = 'H5P.Image 1.0';
-				$draggableElement->type->params->contentName = 'Image';
-				$draggableElement->type->params->alt = t('@text',array('@text' => $draggableImage['alt']));
-				$draggableElement->type->params->file = _create_image_object($draggableImage);
-			}
-			
-			//If draggable element is text
-			if(isset($dragSelectParagraph->field_drag_select_text) && !empty($dragSelectParagraph->field_drag_select_text))
-			{
-				$draggableElement->type->library = 'H5P.AdvancedText 1.1';
-				$draggableElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragSelectParagraph->field_drag_select_text[LANGUAGE_NONE][0]['value'])));
-			}
-			
-			//If this is a correct answer
-			if(isset($dragSelectParagraph->field_correct_answer) && !empty($dragSelectParagraph->field_correct_answer))
-				$isCorrect = $dragSelectParagraph->field_correct_answer[LANGUAGE_NONE][0]['value'];
-			else
-				$isCorrect = 0;
-			
-			if($isCorrect)
-				array_push($correctElements,strval($i)); //Convert index to string since dropzone section expects string indices as an array
-			
-			$draggableElement->type->subContentId = 0; //Common to both draggable image &/or text
-			
-			$draggableElement->dropZones = array("0"); //Which dropzone does this draggable element correctly belong to.In our case, always 1st(0th index) because only 1 dropzone will exist
-			$draggableElement->backgroundOpacity = 100;
-			$draggableElement->multiple = false;
-			
-			$element->action->params->question->task->elements[] = $draggableElement;
-			
-			$i++; //Increment index counter
-		}
-	}
-	
-	//DROPZONE CREATION SECTION
-	$dropZone = new stdClass();
-	$dropZone->x = 50; //Co-ordinates of Dropzone, set to appear on right hand side
-	$dropZone->y = 5;
-	$dropZone->width = 25;
-	$dropZone->height = 30;
-	$dropZone->correctElements = $correctElements;
-	$dropZone->showLabel = false;
-	$dropZone->backgroundOpacity = 100;
-	$dropZone->single = false; //Multiple correct elements in dropzone allowed if false, only 1 allowed if true
-	$dropZone->label = '<div>Drop Zone</div>\n';
-	$dropZone->tip = '';
-	$element->action->params->question->task->dropZones[] = $dropZone;
-	
-	//Question Title
-	if(isset($learning_object->field_drag_select_question) && !empty($learning_object->field_drag_select_question))
-		$element->action->params->question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($learning_object->field_drag_select_question[$learning_object->language][0]['value'])));
-	else
-		$element->action->params->question->settings->questionTitle = t('');
-	
-	//Default, constant settings
-	$element->action->params->behaviour = new stdClass();
-	$element->action->params->behaviour->enableRetry = true;
-	$element->action->params->behaviour->singlePoint = false;
-	$element->action->params->behaviour->showSolutionsRequiresInput = true;
-	$element->action->subContentId = 0;
-	$element->alwaysDisplayComments = false;
-	$element->backgroundOpacity = 0;
-	$element->displayAsButton = false;
-	$element->invisible = false;
-	$element->solution = "";
-	
-	$slide->elements[] = $element; //Array of elements
-	$slide->slideBackgroundSelector = new stdClass(); //Empty since no background image will be selected
-	$slide->keywords = array(); //Empty since no keywords will be specified
 }

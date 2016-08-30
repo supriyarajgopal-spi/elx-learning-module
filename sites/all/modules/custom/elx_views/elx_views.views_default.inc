@@ -1374,11 +1374,14 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_tool_thumbnail']['table'] = 'field_data_field_tool_thumbnail';
   $handler->display->display_options['fields']['field_tool_thumbnail']['field'] = 'field_tool_thumbnail';
   $handler->display->display_options['fields']['field_tool_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['field_tool_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tool_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tool_thumbnail']['settings'] = array(
     'image_style' => 'medium',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';

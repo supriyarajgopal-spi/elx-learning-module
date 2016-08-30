@@ -121,11 +121,11 @@ function content_conversion_h5p_json($content_object) {
  */
 function _content_conversion_node_list($node, $slide) {
   $slide->elements = array();
-  foreach ($node->field_list_item[$node->language] as $item) {
+  foreach ($node->field_list_item[$node->language] as $position => $item) {
     $paragraph = paragraphs_item_load($item['value']);
     $function = '_content_conversion_paragraph_' . $paragraph->bundle();
     if (function_exists($function)) {
-      $function($paragraph, $slide);
+      $function($paragraph, $slide, $position, $node);
     }
   }
 }
@@ -137,13 +137,36 @@ function _content_conversion_node_list($node, $slide) {
  *   A List item collection paragraph.
  * @param object $slide
  *   H5P data for a single slide.
+ * @param int $position
+ *   (optional) The position of this paragraph, starting with 0.
+ * @param object $node
+ *   (optional) The node this paragraph is attached to.
  */
-function _content_conversion_paragraph_list_item($paragraph, $slide) {
+function _content_conversion_paragraph_list_item($paragraph, $slide, $position = 0, $node = NULL) {
+  $columns = (int) $node->field_layout[$node->language][0]['value'];
   if (!empty($paragraph->field_list_image)) {
     foreach ($paragraph->field_list_image[LANGUAGE_NONE] as $image) {
+      $element = new stdClass();
+      $element->x = 24.416135881104033;
+      $element->y = 2.0898846960167714;
+      $element->width = 46.496815286624205;
+      $element->height = 51.99161425576521;
+      $action = new stdClass();
+      $action->library = 'H5P.Image 1.0';
+      $params = new stdClass();
+      $file = new stdClass();
+      $file->path = file_create_url($image['uri']);
+      $file->mime = $image['filemime'];
+      $file->width = $image['width'];
+      $file->height = $image['height'];
+      $params->file = $file;
+      $params->alt = $image['field_file_image_alt_text'];
+      $action->params = $params;
+      $element->action = $action;
+      $slide->elements[] = $element;
     }
   }
-  if (!empty($paragraph->field_list_video)) {
+  elseif (!empty($paragraph->field_list_video)) {
     foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $video) {
       $element = new stdClass();
       $element->x = 1.0615711252654;
@@ -157,47 +180,20 @@ function _content_conversion_paragraph_list_item($paragraph, $slide) {
       $visuals->fit = TRUE;
       $visuals->controls = TRUE;
       $params->visuals = $visuals;
-      $playback = new stdClass();
-      $playback->autoplay = FALSE;
-      $playback->loop = FALSE;
-      $params->playback = $playback;
-      $l10n = new stdClass();
-      $l10n->name = 'Video';
-      $l10n->loading = 'Video player loading...';
-      $l10n->noPlayers = 'Found no video players that support the given video format.';
-      $l10n->noSources = 'Video is missing sources.';
-      $l10n->aborted = 'Media playback has been aborted.';
-      $l10n->networkFailure = 'Network failure.';
-      $l10n->cannotDecode = 'Unable to decode media.';
-      $l10n->formatNotSupported = 'Video format not supported.';
-      $l10n->mediaEncrypted = 'Media encrypted';
-      $l10n->unknownError = 'Unknown error.';
-      $l10n->invalidYtId = 'Invalid YouTube ID.';
-      $l10n->unknownYtId = 'Unable to find video with the given YouTube ID.';
-      $l10n->restrictedYt = 'The owner of this video does not allow it to be embedded.';
-      $params->l10n = $l10n;
       $params->sources = array();
       $source = new stdClass();
       $source->path = file_create_url($video['uri']);
       $source->mime = $video['filemime'];
-      $copyright = new stdClass();
-      $copyright->license = 'U';
-      $source->copyright = $copyright;
       $params->sources[] = $source;
       $action->params = $params;
       $element->action = $action;
-      $element->alwaysDisplayComments = FALSE;
-      $element->backgroundOpacity = 0;
-      $element->displayAsButton = FALSE;
-      $element->invisible = FALSE;
-      $element->solution = '';
       $slide->elements[] = $element;
     }
   }
   if (!empty($paragraph->field_list_text)) {
     foreach ($paragraph->field_list_text[LANGUAGE_NONE] as $text) {
       // Avoid creating empty text box by stripping tags from safe value and
-      // trimming white space and non-breaking space.
+      // trimming white space and non-breaking spaces.
       if (trim(strip_tags($text['safe_value']), " \t\n\r\0\x0B\xC2\xA0") != '') {
         $element = new stdClass();
         $element->x = 1.0615711252654;
@@ -210,11 +206,6 @@ function _content_conversion_paragraph_list_item($paragraph, $slide) {
         $params->text = $text['value'];
         $action->params = $params;
         $element->action = $action;
-        $element->alwaysDisplayComments = FALSE;
-        $element->backgroundOpacity = 0;
-        $element->displayAsButton = FALSE;
-        $element->invisible = FALSE;
-        $element->solution = '';
         $slide->elements[] = $element;
       }
     }

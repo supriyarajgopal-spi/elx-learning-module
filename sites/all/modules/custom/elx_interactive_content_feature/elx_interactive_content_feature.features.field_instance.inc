@@ -10,7 +10,7 @@
 function elx_interactive_content_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-h5p_content-field_hero_image'
+  // Exported field_instance: 'node-h5p_content-field_hero_image'.
   $field_instances['node-h5p_content-field_hero_image'] = array(
     'bundle' => 'h5p_content',
     'deleted' => 0,
@@ -80,7 +80,7 @@ function elx_interactive_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-h5p_content-field_intro'
+  // Exported field_instance: 'node-h5p_content-field_intro'.
   $field_instances['node-h5p_content-field_intro'] = array(
     'bundle' => 'h5p_content',
     'default_value' => NULL,
@@ -125,7 +125,7 @@ function elx_interactive_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-h5p_content-field_learning_category'
+  // Exported field_instance: 'node-h5p_content-field_learning_category'.
   $field_instances['node-h5p_content-field_learning_category'] = array(
     'bundle' => 'h5p_content',
     'default_value' => NULL,

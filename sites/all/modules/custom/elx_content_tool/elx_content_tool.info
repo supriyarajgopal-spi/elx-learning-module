@@ -143,7 +143,6 @@ features[uuid_node][] = f6416394-fee3-4258-9ab6-8849a7fd3f90
 features[uuid_node][] = f846c8da-e540-4b8a-98c8-4907934988dc
 features[uuid_node][] = f8ea819e-e8ef-430a-90f9-7804e9ea441b
 features[uuid_node][] = fd4da53f-4679-4ed2-a0ac-b82537cea297
-features[variable][] = comment_market
 features[variable][] = language_content_type_market
 features[variable][] = menu_options_market
 features[variable][] = menu_parent_market

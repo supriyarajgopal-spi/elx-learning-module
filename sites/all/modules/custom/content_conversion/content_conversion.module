@@ -278,8 +278,8 @@ function _content_conversion_node_story($node, $slide) {
   $slide->keywords = array();
 
   $get_text_array = array(
-    "text" => $node->field_story_copy[$node->language][0]['safe_value'],
-    "label" => $node->field_story_label[$node->language][0]['value'],
+    "text" => isset($node->field_story_copy[$node->language]) ? $node->field_story_copy[$node->language][0]['safe_value'] : '',
+    "label" => isset($node->field_story_label[$node->language]) ? $node->field_story_label[$node->language][0]['value'] : '',
     "x" => '1.0615711252654',
     "y" => '2.0898846960168',
     "width" => '98.513800424628',

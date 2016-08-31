@@ -343,7 +343,7 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	
 	//Intro text of learning object to H5P description
 	if(isset($learning_object->field_intro) && !empty($learning_object->field_intro))
-		$element->action->params->description = $learning_object->field_intro[$learning_object->language][0]['value'];
+		$element->action->params->description = $learning_object->field_intro[$language][0]['safe_value'];
 	else
 		$element->action->params->description = t('');
 	

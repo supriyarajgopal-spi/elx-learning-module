@@ -325,7 +325,9 @@ function _content_conversion_node_story($node, $slide) {
  * Returns array matching the JSON structure
  */
 function _content_conversion_node_reveal($learning_object, $slide)
-{	
+{
+	$language = $learning_object->language;
+	
 	$element = new stdClass(); //Elements of the slide. In this case, the Click To Reveal option within a Course Presentation.
 	
 	//Set position & dimension of element within the slide 
@@ -341,7 +343,7 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	
 	//Intro text of learning object to H5P description
 	if(isset($learning_object->field_intro) && !empty($learning_object->field_intro))
-		$element->action->params->description = $learning_object->field_intro[$learning_object->language][0]['value'];
+		$element->action->params->description = $learning_object->field_intro[$language][0]['safe_value'];
 	else
 		$element->action->params->description = t('');
 	
@@ -350,7 +352,7 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	//Create card objects array iff Reveal collection paragraph bundle is not empty
 	if(isset($learning_object->field_reveal_collection) && !empty($learning_object->field_reveal_collection))
 	{
-		$cards = $learning_object->field_reveal_collection[$learning_object->language]; //Array of cards
+		$cards = $learning_object->field_reveal_collection[$language]; //Array of cards
 		
 		/**
 		 * foreach Click To Reveal card..
@@ -369,17 +371,23 @@ function _content_conversion_node_reveal($learning_object, $slide)
 			//Thumbnail image object
 			if(isset($cardParagraph->field_reveal_thumbnail) && !empty($cardParagraph->field_reveal_thumbnail))
 			  $cardObject->thumbnail_image = _create_image_object($cardParagraph->field_reveal_thumbnail[LANGUAGE_NONE][0]);
+			else
+				$cardObject->thumbnail_image = new stdClass();
 			
 			//Large image object
 			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero))
 			  $cardObject->large_image = _create_image_object($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]);
-		
+			else
+				$cardObject->large_image = new stdClass();
+			
 			//Text
 			if(isset($cardParagraph->field_reveal_text) && !empty($cardParagraph->field_reveal_text))
 			{
 				$text = $cardParagraph->field_reveal_text[LANGUAGE_NONE][0]['safe_value'];
-				$cardObject->text = $text;
+				$cardObject->text = t('@text',array('@text' => drupal_html_to_text($text)));
 			}
+			else
+				$cardObject->text = t('');
 			
 			$element->action->params->cards[] = $cardObject;
 		}
@@ -389,7 +397,7 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	
 	//Title of Click to Reveal element
 	if(isset($learning_object->field_subtitle) && !empty($learning_object->field_subtitle))
-		$element->action->params->title = $learning_object->field_subtitle[$learning_object->language][0]['value'];
+		$element->action->params->title = $learning_object->field_subtitle[$language][0]['safe_value'];
 	else
 		$element->action->params->title = t('');
 	
@@ -449,6 +457,8 @@ function _content_conversion_node_hot_spots($node, $slide) {
  */
 function _content_conversion_node_drag_select($learning_object, $slide)
 {
+  $language = $learning_object->language;
+  
   $element = new stdClass(); //Elements of the slide. In this case, the Drag&Drop option within a Course Presentation
 
   //Set position & dimension of element within the slide
@@ -469,13 +479,13 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 
   //Correct feedback text
   if(isset($learning_object->field_correct_feedback) && !empty($learning_object->field_correct_feedback))
-    $element->action->params->feedback = $learning_object->field_correct_feedback[$learning_object->language][0]['value'];
+    $element->action->params->feedback = t('@text',array('@text' => drupal_html_to_text($learning_object->field_correct_feedback[$language][0]['safe_value'])));
   else
     $element->action->params->feedback = t('');
 
   //Incorrect feedback text
   if(isset($learning_object->field_incorrect_feeback) && !empty($learning_object->field_incorrect_feeback))
-    $element->action->params->incorrect_feedback = $learning_object->field_incorrect_feeback[$learning_object->language][0]['value'];
+	$element->action->params->incorrect_feedback = t('@text',array('@text' => drupal_html_to_text($learning_object->field_incorrect_feeback[$language][0]['safe_value'])));
   else
     $element->action->params->incorrect_feedback = t('');
 
@@ -490,7 +500,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
   //Create draggable elements array iff Drag Select collection paragraph bundle is not empty
   if(isset($learning_object->field_drag_select_collection) && !empty($learning_object->field_drag_select_collection))
   {
-    $draggables = $learning_object->field_drag_select_collection[$learning_object->language]; //Array of draggable elements
+    $draggables = $learning_object->field_drag_select_collection[$language]; //Array of draggable elements
 
     /**
      * foreach Draggable Element...
@@ -500,7 +510,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
      */
     $i = 0; //Index of draggable element. Used to dynamically set 'y' co-ordinate of draggable element arranged vertically
     $correctElements = array(); //The indices of correct answers to be set in dropzone object
-
+	$draggableElementY = 0;
     foreach($draggables as $draggable)
     {
       $dragSelectParagraphEntity = entity_load('paragraphs_item', array($draggable['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
@@ -508,7 +518,8 @@ function _content_conversion_node_drag_select($learning_object, $slide)
       $draggableElement = new stdClass();
 
       $draggableElement->x = 7;
-      $draggableElement->y = 6 * ($i + 1); //Starts from '6', gap of '6' between each element
+	  $draggableElement->y = $draggableElementY + 20; //Starts at 0, increments by 20. '+=' not working.Hence using this method of incrementing
+	  $draggableElementY = $draggableElement->y;
       $draggableElement->width = 18;
       $draggableElement->height = 2;
 
@@ -532,7 +543,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
       if(isset($dragSelectParagraph->field_drag_select_text) && !empty($dragSelectParagraph->field_drag_select_text))
       {
         $draggableElement->type->library = 'H5P.AdvancedText 1.1';
-        $draggableElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragSelectParagraph->field_drag_select_text[LANGUAGE_NONE][0]['value'])));
+        $draggableElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragSelectParagraph->field_drag_select_text[LANGUAGE_NONE][0]['safe_value'])));
       }
 
       //If this is a correct answer
@@ -572,7 +583,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
 
   //Question Title
   if(isset($learning_object->field_drag_select_question) && !empty($learning_object->field_drag_select_question))
-    $element->action->params->question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($learning_object->field_drag_select_question[$learning_object->language][0]['value'])));
+    $element->action->params->question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($learning_object->field_drag_select_question[$language][0]['safe_value'])));
   else
     $element->action->params->question->settings->questionTitle = t('');
 
@@ -822,6 +833,183 @@ function _create_hotspot_object($node) {
   return $element;
 }
 
+/**
+ * Generates H5P JSON code from a Drag Match node.
+ *
+ * @param object $content_object
+ * @param object $slide
+ * Returns array matching the JSON structure
+ */
+function _content_conversion_node_drag_match($learning_object, $slide)
+{
+  //Initialization
+  $element = new stdClass();
+  $action = new stdClass();
+  $params = new stdClass();
+  $question = new stdClass();
+  $behaviour = new stdClass();
+  $language = $learning_object->language;
+  
+  //Variable definition
+  /*-----------------*/
+  //Correct Feedback text. Mandatory field.
+  if(isset($learning_object->field_custom_correct_feedback) && isset($learning_object->field_custom_correct_feedback[$language]) && !empty($learning_object->field_custom_correct_feedback[$language]))
+	$correctFeedback = $learning_object->field_custom_correct_feedback[$language][0]['safe_value'];
+  else
+	$correctFeedback = 'That\'s right!';
+
+  //Incorrect Feedback text. Mandatory field.
+  if(isset($learning_object->field_custom_incorrect_feedback) && isset($learning_object->field_custom_incorrect_feedback[$language]) && !empty($learning_object->field_custom_incorrect_feedback[$language]))
+	$incorrectFeedback = $learning_object->field_custom_incorrect_feedback[$language][0]['safe_value'];
+  else
+	$incorrectFeedback = 'That\'s not it!';
+	
+  //Question Title (Intro text)
+  if(isset($learning_object->field_intro) && isset($learning_object->field_intro[$language]) && !empty($learning_object->field_intro[$language]))
+	$questionTitle = $learning_object->field_intro[$language][0]['safe_value'];
+  else
+	$questionTitle = '';
+  /*-----------------*/
+  
+  //Form slide object
+  $slide->elements[] = $element;
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+  
+  //Form complete element object within the slide
+  //Set position & dimension of element within the slide 
+  $element->x = 1;
+  $element->y = 8;
+  $element->width = 96;
+  $element->height = 88;
+  $element->action = $action;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = t('');
+  
+  //Form action object
+  $action->library = 'H5P.DragQuestion 1.6';
+  $action->params = $params;
+  $action->subContentId = 0;
+  
+  //Form params object
+  $params->scoreShow = t('Submit');
+  $params->tryAgain = t('Retry');
+  $params->correct = t('Show solution');
+  $params->feedback = t('@text',array('@text' => drupal_html_to_text($correctFeedback)));
+  $params->incorrect_feedback = t('@text',array('@text' => drupal_html_to_text($incorrectFeedback)));
+  $params->question = $question;
+  $params->behaviour = $behaviour;
+  
+  //Form question object
+  $question->settings = new stdClass();
+  $question->settings->size = new stdClass();
+  $question->settings->size->width = 700;
+  $question->settings->size->height = 400;
+  $question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($questionTitle)));
+  
+  $question->task = new stdClass();
+  
+  //DRAGGABLE & DROPZONE ELEMENT CREATION SECTION
+  if(isset($learning_object->field_drag_match_collection) && !empty($learning_object->field_drag_match_collection))
+  {
+	$draggables = $learning_object->field_drag_match_collection[$learning_object->language]; //Array of draggable elements
+	
+	/**
+     * foreach Draggable Element...
+     *  load the Paragraph entity i.e Drag Match collection field in Drag Match content type, access each property and
+     *  form the draggable element as well as dropzone objects and push to the draggableElements & dropZones arrays respectively
+	 * Both draggables & dropzones are created in 1 foreach() because of the 1-to-1 relationship between them
+     */
+	$taskElements = $dropZones = array();
+	$i = 0; //Counter for no. of draggable elements
+	$dropZoneY = $taskElementY = 0; //Starting Y position of dropzone elements on RHS
+	foreach($draggables as $draggable)
+	{
+		$dragMatchParagraphEntity = entity_load('paragraphs_item', array($draggable['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
+		$dragMatchParagraph = $dragMatchParagraphEntity[$draggable['value']];
+		
+		//Form task element object (LHS of slide i.e draggable elements)
+		/*-----------------------------------------------------------*/
+		$taskElement = new stdClass();
+		$taskElement->width = 12;
+		$taskElement->height = 3;
+		$taskElement->x = 3;
+		$taskElement->y = $taskElementY + 20; //Starts from '0', increments by 20. Ternary operator to handle 1st element
+		$taskElementY = $taskElement->y;
+		
+		$taskElement->dropZones[] = strval($i); //Convert index to string since dropzone section expects string indices as an array
+		
+		$taskElement->type = new stdClass();
+		
+		//If draggable element is an image. Default is text
+		if(isset($learning_object->field_left_drag_image) && !empty($learning_object->field_left_drag_image))
+		{
+			$imageElement = $learning_object->field_left_drag_image[LANGUAGE_NONE][0];
+			$taskElement->type->library = 'H5P.Image 1.0';
+			$taskElement->type->params = new stdClass();
+			$taskElement->type->params->contentName = 'Image';
+			$taskElement->type->params->file = _create_image_object($imageElement);
+			$draggableElement->type->params->alt = t('@text',array('@text' => drupal_html_to_text($imageElement['alt'])));
+			$taskElement->type->subContentId = 0;
+		}
+		else
+		{
+			$taskElement->type->library = 'H5P.AdvancedText 1.1';
+			$taskElement->type->params = new stdClass();
+			
+			if(isset($dragMatchParagraph->field_left_drag_text) && !empty($dragMatchParagraph->field_left_drag_text))
+				$taskElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragMatchParagraph->field_left_drag_text[LANGUAGE_NONE][0]['safe_value'])));
+			else
+				$taskElement->type->params->text = t('');
+		}
+		
+		$taskElement->type->subContentId = 0;
+		
+		$taskElement->backgroundOpacity = 100;
+		$taskElement->multiple = false; //Only difference between Drag Match (1-to-1) & Drag Select (many-to-1)
+		/*-----------------------------------------------------------*/
+		
+		//Form dropzone element object (RHS of slide i.e drop zones)
+		/*-----------------------------------------------------------*/
+		$dropZone = new stdClass();
+		$dropZone->width = 22.5;
+		$dropZone->height = 3;
+		$dropZone->x = 44;
+		$dropZone->y = $dropZoneY + 20; //Starts from '0', increments by 20. Ternary operator to handle 1st element
+		$dropZoneY = $dropZone->y;
+		
+		$dropZone->correctElements[] = strval($i); //Convert index to string since dropzone section expects string indices as an array
+		$dropZone->showLabel = true;
+		$dropZone->backgroundOpacity = 100;
+		$dropZone->single = true; //Only difference between Drag Match (1-to-1) & Drag Select (many-to-1)
+		
+		if(isset($dragMatchParagraph->field_right_drag_text) && !empty($dragMatchParagraph->field_right_drag_text))
+			$dropZone->label = t('@text',array('@text' => drupal_html_to_text($dragMatchParagraph->field_right_drag_text[LANGUAGE_NONE][0]['safe_value'])));
+		else
+			$dropZone->label = t('');
+		
+		$dropZone->tip = t('');
+		/*-----------------------------------------------------------*/
+
+		array_push($taskElements,$taskElement);
+		array_push($dropZones,$dropZone);
+		
+		$i++;
+	}
+  }
+  shuffle($taskElements); //Randomize the order of array elements
+  $question->task->elements = $taskElements;
+  $question->task->dropZones = $dropZones;
+  
+  //Form behaviour object
+  $behaviour->enableRetry = true;
+  $behaviour->singlePoint = false;
+  $behaviour->showSolutionsRequiresInput = true;
+}
+
 /*
  * Utility Function
  * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
@@ -845,10 +1033,10 @@ function _create_image_object($image_array) {
 
 /*
  * Utility Function
- * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
- * receives one drupal image array
- * uri, filemime, height, width
- * returns an image object ready for json conversion
+ * _create_text_object - takes a text array and returns a properly formatted text object for h5p conversion
+ * receives one drupal text array
+ * x, y, height, width, text, label
+ * returns a text object ready for json conversion
  */
 function _create_text_object($text_array = null) {
 

@@ -1420,6 +1420,13 @@ function h5p_embed($node) {
 
   // Get core scripts
   $scripts = array();
+  $items = drupal_add_js();
+  uasort($items, 'drupal_sort_css_js');
+  foreach ($items as $script => $options) {
+    if (!is_numeric($script) && $script != 'settings' && $options['scope'] == 'header') {
+      $scripts[] = base_path() . $script . $cache_buster;
+    }
+  }
   foreach (H5PCore::$scripts as $script) {
     $scripts[] = $module_path . '/library/' . $script . $cache_buster;
   }

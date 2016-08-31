@@ -258,7 +258,7 @@ function calculate_position_size($size, $text, $count) {
   $window_height = 22;
   $text_item = array();
   $text_item['string'] = $text['safe_value'];
-  $text_item_paragraphs = explode($text_item['string'], "</p>");
+  $text_item_paragraphs = explode("</p>", $text_item['string']);
   $number_of_breaks = count($text_item_paragraphs);
   $text_height_ratio = ($number_of_breaks / $window_height) * 100;
   /*$text_size_string = trim(strip_tags($text_item['string']), " \t\n\r\0\x0B\xC2\xA0");
@@ -269,7 +269,9 @@ function calculate_position_size($size, $text, $count) {
     //$height = 99;
   //} else {
     //$height = $text_height_ratio;
+  if ($count != 1) {
     $size['y_pos'] = $text_height_ratio + $size['y_pos'];
+  }
   //}
 
   return $size;

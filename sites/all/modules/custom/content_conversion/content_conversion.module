@@ -172,95 +172,107 @@ function content_conversion_h5p_json($content_object) {
  */
 function _content_conversion_node_list($node, $slide) {
   $slide->elements = array();
+  $size = array(
+    "x_pos" => 1.0615711252654,
+    "y_pos" => 1,//67.027044025157,
+    "width" => 96.390658174098,
+    "height" => 28.930817610063,
+  );
   foreach ($node->field_list_item[$node->language] as $position => $item) {
     $paragraph = paragraphs_item_load($item['value']);
-    $function = '_content_conversion_paragraph_' . $paragraph->bundle();
-    if (function_exists($function)) {
-      $function($paragraph, $slide, $position, $node);
-    }
-  }
-}
-
-/**
- * Converts a List item collection paragraph to H5P slide elements data.
- *
- * @param object $paragraph
- *   A List item collection paragraph.
- * @param object $slide
- *   H5P data for a single slide.
- * @param int $position
- *   (optional) The position of this paragraph, starting with 0.
- * @param object $node
- *   (optional) The node this paragraph is attached to.
- */
-function _content_conversion_paragraph_list_item($paragraph, $slide, $position = 0, $node = NULL) {
-  $columns = (int) $node->field_layout[$node->language][0]['value'];
-  if (!empty($paragraph->field_list_image)) {
-    foreach ($paragraph->field_list_image[LANGUAGE_NONE] as $image) {
-      $element = new stdClass();
-      $element->x = 24.416135881104033;
-      $element->y = 2.0898846960167714;
-      $element->width = 46.496815286624205;
-      $element->height = 51.99161425576521;
-      $action = new stdClass();
-      $action->library = 'H5P.Image 1.0';
-      $params = new stdClass();
-      $file = new stdClass();
-      $file->path = file_create_url($image['uri']);
-      $file->mime = $image['filemime'];
-      $file->width = $image['width'];
-      $file->height = $image['height'];
-      $params->file = $file;
-      $params->alt = $image['field_file_image_alt_text'];
-      $action->params = $params;
-      $element->action = $action;
-      $slide->elements[] = $element;
-    }
-  }
-  elseif (!empty($paragraph->field_list_video)) {
-    foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $video) {
-      $element = new stdClass();
-      $element->x = 1.0615711252654;
-      $element->y = 6.2893081761006;
-      $element->width = 68.789808917197;
-      $element->height = 56.184486373166;
-      $action = new stdClass();
-      $action->library = 'H5P.Video 1.2';
-      $params = new stdClass();
-      $visuals = new stdClass();
-      $visuals->fit = TRUE;
-      $visuals->controls = TRUE;
-      $params->visuals = $visuals;
-      $params->sources = array();
-      $source = new stdClass();
-      $source->path = file_create_url($video['uri']);
-      $source->mime = $video['filemime'];
-      $params->sources[] = $source;
-      $action->params = $params;
-      $element->action = $action;
-      $slide->elements[] = $element;
-    }
-  }
-  if (!empty($paragraph->field_list_text)) {
-    foreach ($paragraph->field_list_text[LANGUAGE_NONE] as $text) {
-      // Avoid creating empty text box by stripping tags from safe value and
-      // trimming white space and non-breaking spaces.
-      if (trim(strip_tags($text['safe_value']), " \t\n\r\0\x0B\xC2\xA0") != '') {
+    $columns = (int) $node->field_layout[$node->language][0]['value'];
+    if (!empty($paragraph->field_list_image)) {
+      foreach ($paragraph->field_list_image[LANGUAGE_NONE] as $image) {
         $element = new stdClass();
-        $element->x = 1.0615711252654;
-        $element->y = 67.027044025157;
-        $element->width = 96.390658174098;
-        $element->height = 28.930817610063;
+        $element->x = 24.416135881104033;
+        $element->y = 2.0898846960167714;
+        $element->width = 46.496815286624205;
+        $element->height = 51.99161425576521;
         $action = new stdClass();
-        $action->library = 'H5P.AdvancedText 1.1';
+        $action->library = 'H5P.Image 1.0';
         $params = new stdClass();
-        $params->text = $text['value'];
+        $file = new stdClass();
+        $file->path = file_create_url($image['uri']);
+        $file->mime = $image['filemime'];
+        $file->width = $image['width'];
+        $file->height = $image['height'];
+        $params->file = $file;
+        $params->alt = $image['field_file_image_alt_text'];
         $action->params = $params;
         $element->action = $action;
         $slide->elements[] = $element;
       }
     }
+    elseif (!empty($paragraph->field_list_video)) {
+      foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $video) {
+        $element = new stdClass();
+        $element->x = 1.0615711252654;
+        $element->y = 6.2893081761006;
+        $element->width = 68.789808917197;
+        $element->height = 56.184486373166;
+        $action = new stdClass();
+        $action->library = 'H5P.Video 1.2';
+        $params = new stdClass();
+        $visuals = new stdClass();
+        $visuals->fit = TRUE;
+        $visuals->controls = TRUE;
+        $params->visuals = $visuals;
+        $params->sources = array();
+        $source = new stdClass();
+        $source->path = file_create_url($video['uri']);
+        $source->mime = $video['filemime'];
+        $params->sources[] = $source;
+        $action->params = $params;
+        $element->action = $action;
+        $slide->elements[] = $element;
+      }
+    }
+    if (!empty($paragraph->field_list_text)) {
+      $count = 1;
+      foreach ($paragraph->field_list_text[LANGUAGE_NONE] as $text) {
+        // Avoid creating empty text box by stripping tags from safe value and
+        // trimming white space and non-breaking spaces.
+        if (trim(strip_tags($text['safe_value']), " \t\n\r\0\x0B\xC2\xA0") != '') {
+          $size = calculate_position_size($size, $text, $count);
+          $element = new stdClass();
+          $element->x = $size['x_pos'];
+          $element->y = $size['y_pos'];
+          $element->width = $size['width'];
+          $element->height = $size['height'];
+          $action = new stdClass();
+          $action->library = 'H5P.AdvancedText 1.1';
+          $params = new stdClass();
+          $params->text = $text['value'];
+          $action->params = $params;
+          $element->action = $action;
+          $slide->elements[] = $element;
+          $count++;
+        }
+      }
+    }
   }
+}
+
+function calculate_position_size($size, $text, $count) {
+  $window_width = 145;
+  $window_height = 22;
+  $text_item = array();
+  $text_item['string'] = $text['safe_value'];
+  $text_item_paragraphs = explode($text_item['string'], "</p>");
+  $number_of_breaks = count($text_item_paragraphs);
+  $text_height_ratio = ($number_of_breaks / $window_height) * 100;
+  /*$text_size_string = trim(strip_tags($text_item['string']), " \t\n\r\0\x0B\xC2\xA0");
+  $text_width = strlen($text_size_string);
+  $text_width_ratio = $text_width/$window_width;
+  $text_height_ratio = (ceil($text_width_ratio) * $count) / $window_height;*/
+  //if ($text_height_ratio >= 1) {
+    //$height = 99;
+  //} else {
+    //$height = $text_height_ratio;
+    $size['y_pos'] = $text_height_ratio + $size['y_pos'];
+  //}
+
+  return $size;
 }
 
 /**

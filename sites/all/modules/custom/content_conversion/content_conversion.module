@@ -85,28 +85,79 @@ function content_conversion_content_object_h5p($node) {
  *   A Content Object node.
  */
 function content_conversion_h5p_json($content_object) {
+  //we don't need to create a slide every time
   $h5p = new stdClass();
   // Convert the Content Object node into a Course Presentation.
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
-
-  // Loop over each learning object node associated to the content object and create one Course Presentation slide for each.
+  // Loop over the learning objects referenced in the content object.
+  // Create one Course Presentation slide for each Learning Object.
   // Exception : there is an instance where the converter needs all the learning object at one time
   $exception_array = array("question_and_answer");
+  //not only is this an exception, but it also has to process all the non exceptions
+  $previous_learning_object_type = "";
+  $exception_content = array();
+  $count = 0;
   foreach ($content_object->field_learning_objects[$content_object->language] as $learning_object) {
-    $slide = new stdClass();
-    $h5p->presentation->slides[] = $slide;
     $node = node_load($learning_object['target_id']);
     $function = '_content_conversion_node_' . $node->type;
     $function_exception = '_content_conversion_nodes_' . $node->type;
+
     if (function_exists($function_exception) && in_array($node->type, $exception_array)) {
-      $function_exception($content_object->field_learning_objects[$content_object->language], $slide);
-      break;
+      //this is an exception
+      if (!in_array($previous_learning_object_type, $exception_array)) {
+        //is this the first time through?
+        //we assume that no List will start with a questions, and if it does, it only has questions
+        //run all of them
+        if (!$count) {
+          $slide = new stdClass();
+          $h5p->presentation->slides[] = $slide;
+          $function_exception($content_object->field_learning_objects[$content_object->language], $slide);
+          break;
+        } else {
+          //otherwise, this is the first of a bunch of them, queue them up to be run later
+          $exception_content[] = $learning_object;
+        }
+      } else {
+        //otherwise, this is the first of a bunch of them, queue them up to be run later
+        $exception_content[] = $learning_object;
+      }
+      if ($node->type != $previous_learning_object_type && in_array($previous_learning_object_type, $exception_array)) {
+        if (count($exception_content)) {
+          //run the script again
+          $slide = new stdClass();
+          $h5p->presentation->slides[] = $slide;
+          $function_exception($exception_content, $slide);
+          $exception_content = array();
+        }
+      }
     } else {
+      //this is not an exception
+      //Exception: we just finished processing an exception and have content to process before the next slide
+      if (count($exception_content)) {
+        //process the previous exception slide so it is before the next included slide
+        $function_exception = '_content_conversion_nodes_' . $previous_learning_object_type;
+        $slide = new stdClass();
+        $h5p->presentation->slides[] = $slide;
+        $function_exception($exception_content, $slide);
+        //reset the exception content incased there is another exception in this interactive content
+        $exception_content = array();
+      }
+      $slide = new stdClass();
+      $h5p->presentation->slides[] = $slide;
       if (function_exists($function)) {
+        //process the normal slide
         $function($node, $slide);
       }
     }
+    $previous_learning_object_type = $node->type;
+    $count++;
+  }
+  if (count($exception_content)) {
+    //process exception content if it is the last learning object used
+    $slide = new stdClass();
+    $h5p->presentation->slides[] = $slide;
+    $function_exception($exception_content, $slide);
   }
   return json_encode($h5p);
 }
@@ -650,7 +701,7 @@ function _create_question_object($target_id) {
     //field_answer_image no sample
     $answer->correct = ($item->field_correct_answer['und'][0]['value']) ? true : false;
     $answer->tipsAndFeedback = array(
-      "chosenFeedback" => $item2->field_answer_feedback['und'][0]['safe_value'],
+      "chosenFeedback" => $item->field_answer_feedback['und'][0]['safe_value'],
       "tip" => "",
       "notChosenFeedback" => ""
     );

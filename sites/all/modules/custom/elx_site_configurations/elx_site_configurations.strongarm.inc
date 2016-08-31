@@ -1211,8 +1211,8 @@ function elx_site_configurations_strongarm() {
       'display' => array(
         'language' => array(
           'modal' => array(
-            'weight' => '0',
-            'visible' => TRUE,
+            'weight' => '3',
+            'visible' => FALSE,
           ),
         ),
       ),

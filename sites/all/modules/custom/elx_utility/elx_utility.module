@@ -129,9 +129,9 @@ function elx_utility_entity_info_alter(&$entity_info)
 function elx_utility_menu()
 {
   $items['modal/%ctools_js/%'] = array(
-      'title' => 'Tools Modal',
+      'title' => 'ELX Custom Modal',
       'page arguments' => array(1,2), //Pass whether to use AJAX or JS and the nid
-      'page callback' => '_elx_tools_modal', //User defined function called when the link is clicked
+      'page callback' => '_elx_custom_modal', //User defined function called when the link is clicked
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
@@ -146,7 +146,7 @@ function elx_utility_menu()
   return $items;
 }
 
-function _elx_tools_modal($js = NULL, $nid = NULL)
+function _elx_custom_modal($js = NULL, $nid = NULL)
 {
   if($nid == NULL)
    return 'No content to display.';
@@ -172,6 +172,39 @@ function _elx_tools_modal($js = NULL, $nid = NULL)
           //'closeImage' => base_path() . path_to_theme() . '',
         ),
       ), 'setting');
+      
+    drupal_add_js(array(
+        'product-library' => array(
+          'modalSize' => array(
+            'type' => 'scale',
+            'width' => 1,
+            'height' => 1,
+            'contentRight' => 5,
+            'contentBottom' => 20,
+          ),
+          'animation' => 'slideDown',
+          'closeText' => t(''),
+          'closeImage' => t(''),
+          //'closeImage' => base_path() . path_to_theme() . '',
+        ),
+      ), 'setting');
+      
+    drupal_add_js(array(
+        'search-product-library' => array(
+          'modalSize' => array(
+            'type' => 'scale',
+            'width' => 1,
+            'height' => 1,
+            'contentRight' => 5,
+            'contentBottom' => 20,
+          ),
+          'animation' => 'slideDown',
+          'closeText' => t(''),
+          'closeImage' => t(''),
+          //'closeImage' => base_path() . path_to_theme() . '',
+        ),
+      ), 'setting');
+    
   }
   
   //Load the node object

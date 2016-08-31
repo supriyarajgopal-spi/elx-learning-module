@@ -178,6 +178,7 @@ function _content_conversion_node_list($node, $slide) {
     "width" => 96.390658174098,
     "height" => 28.930817610063,
   );
+  $count = 1;
   foreach ($node->field_list_item[$node->language] as $position => $item) {
     $paragraph = paragraphs_item_load($item['value']);
     $columns = (int) $node->field_layout[$node->language][0]['value'];
@@ -228,7 +229,6 @@ function _content_conversion_node_list($node, $slide) {
       }
     }
     if (!empty($paragraph->field_list_text)) {
-      $count = 1;
       foreach ($paragraph->field_list_text[LANGUAGE_NONE] as $text) {
         // Avoid creating empty text box by stripping tags from safe value and
         // trimming white space and non-breaking spaces.

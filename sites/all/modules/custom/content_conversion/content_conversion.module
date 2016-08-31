@@ -1069,3 +1069,51 @@ function _create_text_object($text_array = null) {
 
   return $element;
 }
+
+
+function _content_conversion_node_flash_cards($node, $slide) {
+  
+  $lang = $node->language;
+  
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 2.0898846960168;
+  $element->width = 98.513800424628;
+  $element->height = 96.01677148847;
+
+  $action = new stdClass();
+  $action->library = "H5P.Dialogcards 1.2";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->description = $node->field_intro[$lang][0]['safe_value'];
+
+  foreach ($node->field_flash_card_collection[$lang] as $flashid) {
+    $flash_card =  paragraphs_item_load($flashid['value']);
+    $dialogs = new stdClass();
+    $dialogs->tips = "";
+    $dialogs->answer = $flash_card->field_back_card['und'][0]['safe_value'];
+    $dialogs->text = $flash_card->field_front_card['und'][0]['safe_value'];
+    $dialogs->image->path = "images/" . $flash_card->field_front_card_image['und'][0]['filename'];
+    $dialogs->image->mime = $flash_card->field_front_card_image['und'][0]['filemime'];
+    $dialogs->image->copyright->license = "U";
+    $dialogs->image->width = $flash_card->field_front_card_image['und'][0]['width'];
+    $dialogs->image->height = $flash_card->field_front_card_image['und'][0]['height'];
+
+    $params->dialogs[] = $dialogs;
+  }
+
+  $params->answer = "Turn";
+  $params->next = "Next";
+  $params->prev = "Previous";
+  $params->retry = "Retry";
+  $params->progressText = "Card @card of @total";
+  $params->title = $node->title_field[$node->language][0]['safe_value'];
+
+  $action->params = $params;
+
+  $element->action = $action;
+
+  $slide->elements[] = $element;
+
+}

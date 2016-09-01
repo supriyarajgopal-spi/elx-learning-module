@@ -21,12 +21,12 @@
       /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
       $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
 
-      // per title link //
+      /* TOOLS section // per title link // */
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 
         // click should trigger function with overlay
         var linkhref = $(this).attr('href'); /* /modal/nojs/9309 */
-        var linktitle = $(this).text();
+        // var linktitle = $(this).text();
         // var itemtitle = $('<div class="item-title-inmodal">' + linktitle + '</div>');
 
         // future perfect tense-ification //
@@ -77,9 +77,9 @@
           var asset;
 
           // establish main asset variable for 3 version variation for modal views at FE //
-          if( isVideo() ) { asset = isVideo(); getVideoContent(); }
-          else if( isAnimGif() ) { asset = isAnimGif(); getAnimGifContent(); }
-          else { asset = isPDF(); }
+          if (isVideo()) { asset = isVideo(); getVideoContent(); }
+          else if (isPDF()) { asset = isPDF(); }
+          else if (isAnimGif()) { asset = isAnimGif(); getAnimGifContent(); }
 
 
           // works fine but without body tag //
@@ -154,6 +154,32 @@
 
       });
 
+      /* SEARCH #edit-combine search field alteration */
+      // if ($('body.page-search-product-library.section-search-product-library').size()) {
+      if ($('body.page-search-product-library.section-search-product-library').size()) {
+
+        //var search_field = $('#edit-combine-wrapper').detach();
+        /* 
+        <div id="search-line-rearranged">
+          <label for="edit-combine"> Search </label> 
+          <input type="text" class="form-text" maxlength="128" size="30" value="" name="combine" id="edit-combine">
+        </div>
+        */
+        var search_container = $('<div id="search-line-rearranged" />');
+        // var search_label = $('<label />').text('Search');
+        var search_field = $('<input type="text" id="search-line-pipe" />').attr('maxlength',128).attr('size',30).attr('name','search-line');
+        // $(search_container).append(search_label).append(search_field);
+        $(search_container).append(search_field);
+
+        $(search_container).attr('style','margin: 25px auto;');
+        $(search_field).attr('style','border-color: transparent transparent #040A2B transparent;width:780px;height:55px;margin:0 auto;display: block;');
+
+        // $('main .view.view-search-product-library').insertBefore(search_field);
+        // $(search_field).insertBefore('main .view.view-search-product-library');
+        $(search_container).insertBefore('main .view.view-search-product-library');
+
+      };
+    
     }
   };
 

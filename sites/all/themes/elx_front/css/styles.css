@@ -3669,7 +3669,24 @@ body.page-tools.section-tools #detail-content-btn a {
   font-size: 18px;
 }
 
-/* line 22, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
+.page-product-library .view-search-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
+.page-search-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper {
+  display: none;
+}
+
+/* line 27, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
+.page-product-library .view-search-product-library .view-filters .views-exposed-widget.views-submit-button,
+.page-search-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
+.page-search-product-library .view-search-product-library .view-filters .views-exposed-widget.views-submit-button {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/* line 39, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content,
 .page-product-library .view-search-product-library .view-content,
 .page-search-product-library .view-product-library .view-content,
@@ -3678,7 +3695,7 @@ body.page-tools.section-tools #detail-content-btn a {
   margin: 0 auto;
 }
 
-/* line 26, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 43, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul,
 .page-product-library .view-search-product-library .view-content ul,
 .page-search-product-library .view-product-library .view-content ul,
@@ -3687,7 +3704,7 @@ body.page-tools.section-tools #detail-content-btn a {
   padding: 0;
 }
 
-/* line 30, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 47, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li,
 .page-product-library .view-search-product-library .view-content ul li,
 .page-search-product-library .view-product-library .view-content ul li,
@@ -3700,7 +3717,7 @@ body.page-tools.section-tools #detail-content-btn a {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 38, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
@@ -3714,7 +3731,7 @@ body.page-tools.section-tools #detail-content-btn a {
   text-align: center;
 }
 
-/* line 50, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 67, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
@@ -3726,7 +3743,7 @@ body.page-tools.section-tools #detail-content-btn a {
   color: #040a2b;
 }
 
-/* line 59, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 76, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,

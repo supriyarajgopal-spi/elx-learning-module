@@ -245,6 +245,146 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'homepage-exploringlearninglevels';
+
+  /* Display: User pane mobile */
+  $handler = $view->new_display('panel_pane', 'User pane mobile', 'panel_pane_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_swiper';
+  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+  $handler->display->display_options['style_options']['skin_info'] = array(
+    'class' => 'default',
+    'name' => 'Default',
+    'module' => 'views_slideshow',
+    'path' => '',
+    'stylesheets' => array(),
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_hero_image' => 0,
+    'field_headline' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_hero_image' => 0,
+    'field_headline' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'content_object' => 'content_object',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Category (field_learning_category) */
+  $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
+  $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_learning_category_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_learning_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_learning_category_tid']['vocabulary'] = 'learning_category';
+
+  /* Display: Admin pane mobile */
+  $handler = $view->new_display('panel_pane', 'Admin pane mobile', 'panel_pane_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_swiper';
+  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+  $handler->display->display_options['style_options']['skin_info'] = array(
+    'class' => 'default',
+    'name' => 'Default',
+    'module' => 'views_slideshow',
+    'path' => '',
+    'stylesheets' => array(),
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_hero_image' => 0,
+    'field_headline' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_hero_image' => 0,
+    'field_headline' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'explore_learning_levels:page_2';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $translatables['explore_learning_levels'] = array(
     t('Master'),
     t('Explore Learning Levels'),
@@ -543,6 +683,200 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
   $handler->display->display_options['path'] = 'homepage-browseproductlibrary';
+
+  /* Display: User pane mobile */
+  $handler = $view->new_display('panel_pane', 'User pane mobile', 'panel_pane_1');
+  $handler->display->display_options['display_description'] = 'Browse the Product Library on Homepage';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_swiper';
+  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+  $handler->display->display_options['style_options']['skin_info'] = array(
+    'class' => 'default',
+    'name' => 'Default',
+    'module' => 'views_slideshow',
+    'path' => '',
+    'stylesheets' => array(),
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_product_image_1' => 0,
+    'field_display_title' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_product_image_1' => 0,
+    'field_display_title' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Product image */
+  $handler->display->display_options['fields']['field_product_image_1']['id'] = 'field_product_image_1';
+  $handler->display->display_options['fields']['field_product_image_1']['table'] = 'field_data_field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['field'] = 'field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_product_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_product_image_1']['settings'] = array(
+    'image_style' => 'archive_thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Display title */
+  $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['label'] = '';
+  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Category (field_learning_category) */
+  $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
+  $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_learning_category_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_learning_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_learning_category_tid']['vocabulary'] = 'learning_category';
+
+  /* Display: Admin pane mobile */
+  $handler = $view->new_display('panel_pane', 'Admin pane mobile', 'panel_pane_2');
+  $handler->display->display_options['display_description'] = 'Browse the Product Library on Homepage';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_swiper';
+  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
+  $handler->display->display_options['style_options']['skin_info'] = array(
+    'class' => 'default',
+    'name' => 'Default',
+    'module' => 'views_slideshow',
+    'path' => '',
+    'stylesheets' => array(),
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_product_image_1' => 0,
+    'field_display_title' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
+    'nid' => 0,
+    'field_product_image_1' => 0,
+    'field_display_title' => 0,
+  );
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
+  $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Product image */
+  $handler->display->display_options['fields']['field_product_image_1']['id'] = 'field_product_image_1';
+  $handler->display->display_options['fields']['field_product_image_1']['table'] = 'field_data_field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['field'] = 'field_product_image';
+  $handler->display->display_options['fields']['field_product_image_1']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_product_image_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_product_image_1']['settings'] = array(
+    'image_style' => 'archive_thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Display title */
+  $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['label'] = '';
+  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  /* Filter criterion: Content: Category (field_learning_category) */
+  $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
+  $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
+  $handler->display->display_options['filters']['field_learning_category_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_learning_category_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_learning_category_tid']['vocabulary'] = 'learning_category';
   $translatables['homepage_browseproductlibrary'] = array(
     t('Master'),
     t('Browse the Product Library'),
@@ -559,7 +893,7 @@ function elx_home_page_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Load more'),
+    t('See more'),
     t('Content'),
     t('User pane'),
     t('Browse the Product Library on Homepage'),

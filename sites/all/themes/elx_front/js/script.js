@@ -18,22 +18,27 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
 
-    /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
+      /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
       $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
 
-      // per title link //
+      /* TOOLS section // per title link // */
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 
         // click should trigger function with overlay
         var linkhref = $(this).attr('href'); /* /modal/nojs/9309 */
-        var linktitle = $(this).text();
-        var itemtitle = $('<div class="item-title-inmodal">' + linktitle + '</div>');
+        // var linktitle = $(this).text();
+        // var itemtitle = $('<div class="item-title-inmodal">' + linktitle + '</div>');
 
         // future perfect tense-ification //
         setTimeout(function () {
 
-          var action = function () {
+          // grab title field in all content variations //
+          var display_title = $('#modalContent .field-name-field-display-title').find('.field-item.even').html();
+          var itemtitle = $('<div class="item-title-inmodal">' + display_title + '</div>');
 
+          var close_action = function () {
+
+            // flush out prior content // required because modal content is 3 variations per 1 agnostic payload that can be any of 3 types //
             $('body.page-tools.section-tools #modalContent').hide();
             $('body.page-tools.section-tools #modalContent .node-tools').empty();
             $('body.page-tools.section-tools #modalBackdrop').hide().empty();
@@ -43,73 +48,67 @@
 
           };
 
-          /*
-
-          var log2 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-application-pdf').size();
-          var log3 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-video-mp4').size();
-          var log4 = $('body.page-tools.section-tools #modalContent .node-tools').find('.file-image-gif').size();
-
-          */
-
-          var out;
           var isVideo = function () {
-
-            var vout = $('body.page-tools.section-tools #modalContent .node-tools .content');
-            out = vout.html();
-
             return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content video source').attr('src'));
           };
           var isPDF = function () {
             return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content a').attr('href'));
           };
           var isAnimGif = function () {
+            return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content img').attr('src'));
+          };
+
+          var out;
+          var getVideoContent = function () {
+
+            var vout = $('body.page-tools.section-tools #modalContent .node-tools .content');
+            out = vout.html();
+
+          };
+          var getAnimGifContent = function () {
 
             var pout = $('body.page-tools.section-tools #modalContent .node-tools .field-name-field-tool-description .field-item.even p').addClass('animgif-paragraph');
             out = $('body.page-tools.section-tools #modalContent .node-tools .field-name-field-tool-description .field-item.even p').html();
             out = pout.html();
 
-            return ($('body.page-tools.section-tools #modalContent .node-tools').find('.content img').attr('src'));
           };
 
-          var isPDForAnimGif = function () { return (isPDF() ? isPDF() : isAnimGif()); };
-          var asset = isVideo() ? isVideo() : isPDForAnimGif();
-          // (isPDF()?isPDF():isAnimGif());
+
+          var asset;
+
+          // establish main asset variable for 3 version variation for modal views at FE //
+          if (isVideo()) { asset = isVideo(); getVideoContent(); }
+          else if (isPDF()) { asset = isPDF(); }
+          else if (isAnimGif()) { asset = isAnimGif(); getAnimGifContent(); }
+
 
           // works fine but without body tag //
           // var asset = $('body.page-tools.section-tools #modalContent').find('.node-tools .field-name-field-tool-pdf').find('.field-items .field-item').html();
-          var innerpart = $('body.page-tools.section-tools #modalContent .node-tools');
-          var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(action);
+          var innerpart_newcontainer = $('body.page-tools.section-tools #modalContent .node-tools');
+          var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(close_action);
           // console.log(innerpart); // var outim = innerpart.html(); alert(outim);
 
           $('body.page-tools.section-tools #modalBackdrop').css({'background-color': '#040A2B', 'opacity': '0.8'});
-          $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '60%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
+          $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '50%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
 
           var btnlink = $('<a href="' + asset + '" data-node-id="' + linkhref + '" target="_blank">VIEW TOOL</a>');
           var viewbtn = $('<div id="detail-content-btn"></div>');
           $(viewbtn).append(btnlink);
 
-          // rm dupes
-          $('body.page-tools.section-tools #modalContent').find('#detail-content-btn').remove();
+          // rm dupes and prior loaded content // because it can be any of 3 types //
           $('body.page-tools.section-tools #modalContent .node-tools').remove();
-          $('body.page-tools.section-tools #modalContent .item-title-inmodal').remove();
-          $('body.page-tools.section-tools #modalContent .paragraph-animgif-container').remove(); // img
-          $('body.page-tools.section-tools #modalContent video').remove(); // vid
 
           $('body.page-tools.section-tools #modalContent').find('.modal-header').remove();
-          $('body.page-tools.section-tools #modalContent').find('img.animated-gif').remove();
+          $('body.page-tools.section-tools #modalContent').find('#detail-content-btn').remove();
+          $('body.page-tools.section-tools #modalContent video').remove();
+          $('body.page-tools.section-tools #modalContent img.animated-gif').remove();
+          $('body.page-tools.section-tools #modalContent .paragraph-animgif-container').remove();
+          $('body.page-tools.section-tools #modalContent .item-title-inmodal').remove();
 
-          $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart);
+          // add new container after removing prior content in modal accumilated //
+          $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart_newcontainer);
 
           if (asset.match(/pdf/)) {
-
-            // alert('pdf');
-            /* $('.ctools-modal-content #modal-content').css({
-              'display':'none',
-            });
-            $('.ctools-modal-content').css({
-              'display':'none',
-              //'height':'250px !important'
-            });*/
 
             $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
 
@@ -123,43 +122,64 @@
 
             $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
 
-            var animgif = $('<img src="' + asset + '" style="padding: 30px;" class="animated-gif" />');
-
-            /*
-
-            $('#modalContent').css({
-              'background-color':'green',
-              'height':'250px'
-            });*/
-
+            var animgif = $('<img src="' + asset + '" class="animated-gif" />');
             var panim = $('<div class="paragraph-animgif-container"></div>');
             $('body.page-tools.section-tools #modalContent').append(itemtitle);
             $(panim).append(out).append(animgif);
             $('body.page-tools.section-tools #modalContent').append(panim);
 
           }
-          $('body.page-tools.section-tools #modalContent').find('.item-title-inmodal').css('display', 'block');
-          // setTimeout(function(){  $('body.page-tools.section-tools #modalContent .item-title-inmodal').css('opacity','1'); },300);
 
-          // 2nd rm logarith after appendages //
+
+          $('body.page-tools.section-tools #modalContent').find('.item-title-inmodal').css('display', 'block');
+
+          // rm after consuming data points //
           $('body.page-tools.section-tools #modalContent .node-tools').css('display', 'none');
 
           // opacity 1 only after new add - item-title-inmodal
           $('body.page-tools.section-tools #modalContent .item-title-inmodal').css('opacity', '1');
 
+          // tail end clean up of consumed DOM node breakout to 3 variants //
           $('.ctools-modal-content #modal-content').css({
             display: 'none'
           });
           $('.ctools-modal-content').css({
             display: 'none'
-            // 'height':'250px !important'
           });
 
+          // center using existing facility // resize not just initial parts that render unresize at first
+          $(window).trigger('resize');
 
         }, 500);
 
       });
 
+      /* SEARCH #edit-combine search field alteration */
+      // if ($('body.page-search-product-library.section-search-product-library').size()) {
+      if ($('body.page-search-product-library.section-search-product-library').size()) {
+
+        //var search_field = $('#edit-combine-wrapper').detach();
+        /* 
+        <div id="search-line-rearranged">
+          <label for="edit-combine"> Search </label> 
+          <input type="text" class="form-text" maxlength="128" size="30" value="" name="combine" id="edit-combine">
+        </div>
+        */
+        var search_container = $('<div id="search-line-rearranged" />');
+        // var search_label = $('<label />').text('Search');
+        var search_field = $('<input type="text" id="search-line-pipe" />').attr('maxlength',128).attr('size',30).attr('name','search-line');
+        // $(search_container).append(search_label).append(search_field);
+        $(search_container).append(search_field);
+
+        $(search_container).attr('style','margin: 25px auto;');
+        $(search_field).attr('style','border-color: transparent transparent #040A2B transparent;width:780px;height:55px;margin:0 auto;display: block;');
+
+        // $('main .view.view-search-product-library').insertBefore(search_field);
+        // $(search_field).insertBefore('main .view.view-search-product-library');
+        $(search_container).insertBefore('main .view.view-search-product-library');
+
+      };
+    
     }
   };
 

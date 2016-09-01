@@ -1041,7 +1041,7 @@ function elx_home_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'What\'s New & Trending';
+  $handler->display->display_options['title'] = 'What’s New & Trending';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1078,7 +1078,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'tile_thumbnail',
     'image_link' => '',
   );
   /* Field: Content: Headline */
@@ -1374,7 +1374,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
   $translatables['homepage_whatsnewtrending'] = array(
     t('Master'),
-    t('What\'s New & Trending'),
+    t('What’s New & Trending'),
     t('more'),
     t('Apply'),
     t('Reset'),

@@ -12,14 +12,16 @@
 			//If Check/Submit button is clicked 
 			if(dragDropQuestion.verb.display['en-US'] == 'answered')
 			{
+				var scoreText; //Used to convert tokens
 				//Show the feedback (across the star animation that appears) as set in 'Correct/Incorrect feedback text' H5P setting
 				if(dragDropQuestion.result.success == true)
 				{
 					//console.log(this) prints the entire set of options available. This function is defined in H5P Question library's question.js
-					this.updateFeedbackContent(this.options.feedback,false); //'false' in 2nd parameter replaces the feedback to what is set in Settings form instead of appending
+					scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
 				}
 				else
-					this.updateFeedbackContent(this.options.incorrect_feedback,false); //'incorrect_feedback' is the 'name' property defined in semantics.json or hook_h5p_semantics_alter()
+					scoreText = this.options.incorrect_feedback.replace('@score', this.points).replace('@total', maxScore); //'incorrect_feedback' is the 'name' property defined in semantics.json or hook_h5p_semantics_alter()
+				this.updateFeedbackContent(scoreText,false);
 			}
 		}
 	});

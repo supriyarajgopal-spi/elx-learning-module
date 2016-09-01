@@ -143,11 +143,12 @@ body.page-tools.section-tools {
   #modalContent
 
     .ctools-modal-content {
-      opacity: 1;
+      opacity: 0;
+      visibility: hidden;
     }
 
     .paragraph-animgif-container {
-      padding: 0 25px;
+      padding: 0 25px 25px 25px;
       font-family: "optimadisplaylightlight";
     }
 
@@ -156,6 +157,10 @@ body.page-tools.section-tools {
       width: 100%;
     }
 
+    .animated-gif {
+      display: block;
+      margin-top: 25px;
+    }
 
     .item-title-inmodal {
       opacity: 0;

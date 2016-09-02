@@ -87,6 +87,8 @@ function content_conversion_content_object_h5p($node) {
 function content_conversion_h5p_json($content_object) {
   //we don't need to create a slide every time
   $h5p = new stdClass();
+  // Select the Language for the h5p object
+  $h5p->l10n = _create_l10n_object($content_object->language);
   // Convert the Content Object node into a Course Presentation.
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
@@ -1178,4 +1180,46 @@ function _content_conversion_node_flash_cards($node, $slide) {
 
   $slide->elements[] = $element;
 
+}
+
+function _create_l10n_object($language) {
+  //We only have an english object
+  $l10n = array(
+    "slide" => "Slide",
+    "yourScore" => "Your Score",
+    "maxScore" => "Max Score",
+    "goodScore" => "Congratulations! You got @percent correct!",
+    "okScore" => "Nice effort! You got @percent correct!",
+    "badScore" => "You got @percent correct.",
+    "Total" => "Total",
+    "showSolutions" => "Show solutions",
+    "retry" => "Retry",
+    "title" => "Title",
+    "author" => "Author",
+    "lisence" => "License",
+    "license" => "License",
+    "exportAnswers" => "Export text",
+    "copyright" => "Rights of use",
+    "hideKeywords" => "Hide keywords list",
+    "showKeywords" => "Show keywords list",
+    "fullscreen" => "Fullscreen",
+    "exitFullscreen" => "Exit fullscreen",
+    "prevSlide" => "Previous slide",
+    "nextSlide" => "Next slide",
+    "currentSlide" => "Current slide",
+    "lastSlide" => "Last slide",
+    "solutionModeTitle" => "Exit solution mode",
+    "solutionModeText" => "Solution Mode",
+    "summaryMultipleTaskText" => "Multiple tasks",
+    "scoreMessage" => "You achieved:",
+    "shareFacebook" => "Share on Facebook",
+    "shareTwitter" => "Share on Twitter",
+    "summary" => "Summary",
+    "solutionsButtonTitle" => "Show comments",
+    "printTitle" => "Print",
+    "printIngress" => "How would you like to print this presentation?",
+    "printAllSlides" => "Print all slides",
+    "printCurrentSlide" => "Print current slide"
+  );
+  return $l10n;
 }

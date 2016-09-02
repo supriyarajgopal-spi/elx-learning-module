@@ -155,31 +155,38 @@
       });
 
       /* SEARCH #edit-combine search field alteration */
-      // if ($('body.page-search-product-library.section-search-product-library').size()) {
       if ($('body.page-search-product-library.section-search-product-library').size()) {
 
-        //var search_field = $('#edit-combine-wrapper').detach();
-        /* 
-        <div id="search-line-rearranged">
-          <label for="edit-combine"> Search </label> 
-          <input type="text" class="form-text" maxlength="128" size="30" value="" name="combine" id="edit-combine">
-        </div>
-        */
+        // build markup for
         var search_container = $('<div id="search-line-rearranged" />');
-        // var search_label = $('<label />').text('Search');
-        var search_field = $('<input type="text" id="search-line-pipe" />').attr('maxlength',128).attr('size',30).attr('name','search-line');
-        // $(search_container).append(search_label).append(search_field);
-        $(search_container).append(search_field);
+        var search_icon_component = $('<div class="icon-component"><div class="icon-holder-placement"><div class="icon-holder" /></div></div>');
+        var search_field = $('<input type="text" id="search-line-pipe" />').attr('maxlength', 128).attr('size', 30).attr('name', 'search-line');
 
-        $(search_container).attr('style','margin: 25px auto;');
-        $(search_field).attr('style','border-color: transparent transparent #040A2B transparent;width:780px;height:55px;margin:0 auto;display: block;');
+        $(search_container).append(search_field).append(search_icon_component);
 
-        // $('main .view.view-search-product-library').insertBefore(search_field);
-        // $(search_field).insertBefore('main .view.view-search-product-library');
-        $(search_container).insertBefore('main .view.view-search-product-library');
+        // component form action //
+        var submitSearchForm = function () {
 
-      };
-    
+          var search_line_value = $('main #search-line-pipe').val();
+          $('form#views-exposed-form-search-product-library-page').find('input#edit-combine').attr('value', search_line_value);
+
+          return $('form#views-exposed-form-search-product-library-page').find('input#edit-submit-search-product-library').trigger('click');
+
+        };
+
+        // pass enter events through to form action //
+        $(search_field).on('keypress', function (keyevent) {
+          if (keyevent.keyCode === 13) {
+            submitSearchForm();
+          }
+        });
+        $(search_container).find('.icon-holder').click(submitSearchForm);
+
+        // set only 1 component //
+        if (!$('#search-line-rearranged').size()) { $(search_container).insertBefore('main .view.view-search-product-library'); }
+
+      }
+
     }
   };
 

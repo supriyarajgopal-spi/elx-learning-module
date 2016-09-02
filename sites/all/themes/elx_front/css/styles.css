@@ -3567,32 +3567,34 @@ body.page-tools.section-tools #modalContent .ctools-modal-content {
 body.page-tools.section-tools .paragraph-animgif-container {
   padding: 0 25px 25px 25px;
   font-family: "optimadisplaylightlight";
+  font-weight: bold;
 }
 
-/* line 155, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 156, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools video {
   padding: 0 33px 25px 33px;
   width: 100%;
 }
 
-/* line 160, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 161, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools .animated-gif {
   display: block;
   margin-top: 25px;
 }
 
-/* line 165, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 166, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools .item-title-inmodal {
   opacity: 0;
   display: none;
   margin: 25px;
   color: #040a2b;
+  font-weight: bold;
   font-family: "optimadisplaylightlight";
   font-size: 23px;
   text-decoration: none;
 }
 
-/* line 175, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 177, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools #detail-content-btn {
   margin: 10px 20px;
   padding: 5px;
@@ -3603,7 +3605,7 @@ body.page-tools.section-tools #detail-content-btn {
   background-color: white;
 }
 
-/* line 184, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
+/* line 186, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/_modals.scss */
 body.page-tools.section-tools #detail-content-btn a {
   text-decoration: none;
   color: #040a2b;
@@ -3669,7 +3671,67 @@ body.page-tools.section-tools #detail-content-btn a {
   font-size: 18px;
 }
 
-/* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged,
+.page-search-product-library div#search-line-rearranged {
+  margin: 25px auto;
+}
+
+/* line 22, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged #search-line-pipe,
+.page-search-product-library div#search-line-rearranged #search-line-pipe {
+  outline: none;
+  font-size: 1.2em;
+  border-bottom: 2px solid #040a2b;
+  border-color: transparent transparent #040a2b;
+  width: 780px;
+  height: 55px;
+  margin: 0px auto;
+  display: block;
+  position: relative;
+}
+
+/* line 34, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged .icon-component,
+.page-search-product-library div#search-line-rearranged .icon-component {
+  margin: 0 auto;
+  position: relative;
+  z-index: 300;
+  width: 780px;
+}
+
+/* line 40, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged .icon-component .icon-holder-placement,
+.page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement {
+  bottom: 0px;
+  right: 50px;
+  width: 0px;
+  margin: 0 auto;
+  position: absolute;
+}
+
+/* line 47, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder,
+.page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder {
+  float: right;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+/* line 53, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder::before,
+.page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder::before {
+  color: black;
+  content: "\e60f";
+  font-family: "elx-icons";
+  line-height: 44px;
+  position: absolute;
+  right: -40px;
+  font-size: 2.5em;
+}
+
+/* line 71, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
 .page-product-library .view-search-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
 .page-search-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
@@ -3677,7 +3739,7 @@ body.page-tools.section-tools #detail-content-btn a {
   display: none;
 }
 
-/* line 27, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 75, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
 .page-product-library .view-search-product-library .view-filters .views-exposed-widget.views-submit-button,
 .page-search-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
@@ -3686,7 +3748,7 @@ body.page-tools.section-tools #detail-content-btn a {
   margin-left: 10px;
 }
 
-/* line 39, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 87, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content,
 .page-product-library .view-search-product-library .view-content,
 .page-search-product-library .view-product-library .view-content,
@@ -3695,7 +3757,7 @@ body.page-tools.section-tools #detail-content-btn a {
   margin: 0 auto;
 }
 
-/* line 43, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 91, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul,
 .page-product-library .view-search-product-library .view-content ul,
 .page-search-product-library .view-product-library .view-content ul,
@@ -3704,7 +3766,7 @@ body.page-tools.section-tools #detail-content-btn a {
   padding: 0;
 }
 
-/* line 47, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 95, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li,
 .page-product-library .view-search-product-library .view-content ul li,
 .page-search-product-library .view-product-library .view-content ul li,
@@ -3717,7 +3779,7 @@ body.page-tools.section-tools #detail-content-btn a {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 103, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
@@ -3731,7 +3793,7 @@ body.page-tools.section-tools #detail-content-btn a {
   text-align: center;
 }
 
-/* line 67, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 115, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
@@ -3743,7 +3805,7 @@ body.page-tools.section-tools #detail-content-btn a {
   color: #040a2b;
 }
 
-/* line 76, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 124, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,

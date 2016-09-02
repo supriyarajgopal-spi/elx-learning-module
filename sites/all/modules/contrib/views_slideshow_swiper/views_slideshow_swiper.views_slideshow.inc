@@ -102,7 +102,8 @@ function views_slideshow_swiper_views_slideshow_option_definition() {
       'pagination' => array('default' => null),
       'paginationHide' => array('default' => true),
       'paginationClickable' => array('default' => false),
-      'paginationBulletRender' => array('default' => null),
+      'paginationElement' => array('default' => 'span'),
+      'paginationBulletRender' => array('default' => ''),
       // Navigation Buttons.
       'nextButton' => array('default' => 'views-slideshow-controls-text-next a'),
       'prevButton' => array('default' => 'views-slideshow-controls-text-previous a'),
@@ -132,7 +133,7 @@ function views_slideshow_swiper_views_slideshow_option_definition() {
       'loopAdditionalSlides' => array('default' => 0),
       'loopedSlides' => array('default' => null),
       // Control
-      'control' => array('default' => ''), // Named reference to Swiper instances 
+      'control' => array('default' => ''), // Named reference to Swiper instances
       'controlInverse' => array('default' => false),
       // Observer.
       'observer' => array('default' => false),
@@ -419,12 +420,16 @@ function views_slideshow_swiper_views_slideshow_slideshow_type_form(&$form, &$fo
     '#description' => t("Toggle (hide/true) pagination container visibility when click on Slider's container."),
   );
   $form['views_slideshow_swiper']['paginationClickable'] = array(
-    '#type' => 'checkbox',
+    '#type' => 'textfield',
     '#description' => t('If true then clicking on pagination button will cause transition to appropriate slide.'),
   );
-  $form['views_slideshow_swiper']['paginationBulletRender'] = array(
+  $form['views_slideshow_swiper']['paginationElement'] = array(
     '#type' => 'textfield',
-    '#description' => t('This parameter allows totally customize pagination bullets, you need to pass here the name of a function that accepts index number of pagination bullet and required element class name (className).'),
+    '#description' => t('Defines which HTML tag will be use to represent single pagination bullet.'),
+  );
+  $form['views_slideshow_swiper']['paginationBulletRender'] = array(
+    '#type' => 'textarea',
+    '#description' => t("Callback function with arguments, index, class, will be executed for each pagination bullet to return each bullet's respective markup. Receives the current bullet's index and required bullet class name."),
   );
   // Navigation Buttons
   $form['views_slideshow_swiper']['nextButton'] = array(

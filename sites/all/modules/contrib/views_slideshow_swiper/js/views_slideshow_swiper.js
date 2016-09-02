@@ -3,6 +3,7 @@
   Drupal.settings.viewsSlideshowSwiperValues = {
     'prefixId': 'views_slideshow_swiper_main_',
     'callbacks': {
+      'paginationBulletRender': ['index', 'class'],
       'onInit': ['swiper'],
       'onSlideChangeStart': ['swiper'],
       'onSlideChangeEnd': ['swiper'],
@@ -64,7 +65,7 @@
       },
     }
   };
-    
+
 
   // This is called when the page first loads to bootstrap Swiper.
   Drupal.behaviors.viewsSlideshowSwiper = {
@@ -76,7 +77,7 @@
         // Create settings container
         var settings = Drupal.settings.viewsSlideshowSwiper[fullId];
         if ('autoplay' in settings.options && (settings.options['autoplay'] === 0 || settings.options['autoplay'] === '')) {
-          settings.options.splice('autoplay', 1);
+          delete settings.options.autoplay;
         }
 
         // Define function to create callback function objects from user-inputted function body strings.

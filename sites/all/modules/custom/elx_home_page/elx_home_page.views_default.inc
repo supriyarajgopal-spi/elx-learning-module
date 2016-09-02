@@ -294,7 +294,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -345,7 +344,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -666,7 +664,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -718,7 +715,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1294,7 +1290,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1346,7 +1341,6 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_swiper']['autoplay'] = '0';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['swipeHandler'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['pagination'] = '';
-  $handler->display->display_options['style_options']['views_slideshow_swiper']['paginationBulletRender'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['scrollbar'] = '';
   $handler->display->display_options['style_options']['views_slideshow_swiper']['loopedSlides'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;

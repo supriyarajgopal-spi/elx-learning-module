@@ -23,7 +23,7 @@ function views_slideshow_swiper_requirements($phase) {
 
   $library = libraries_detect('Swiper');
   if ($library !== FALSE) {
-    $requirements['views_slideshow_swiper']['value'] = $t('Installed') . ' - ' . $libraries['Swiper']['version'];
+    $requirements['views_slideshow_swiper']['value'] = $t('Installed') . ' - ' . $library['version'];
     $requirements['views_slideshow_swiper']['severity'] = REQUIREMENT_OK;
   }
   else {

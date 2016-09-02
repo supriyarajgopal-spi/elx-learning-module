@@ -92,8 +92,9 @@ function _views_slideshow_swiper_preprocess_views_slideshow_swiper_main_frame(&$
   // see lines 162 through 169 in views_slideshow.theme.inc
   drupal_add_js(array('viewsSlideshowSwiper' => array('#views_slideshow_swiper_main_' . $vss_id => $settings)), 'setting');
 
-  // Load the initilization javascript
+  // Load accompanying script and stylesheet.
   drupal_add_js(drupal_get_path('module', 'views_slideshow_swiper') . '/js/views_slideshow_swiper.js');
+  drupal_add_css(drupal_get_path('module', 'views_slideshow_swiper') . '/css/views_slideshow_swiper.css');
 
   // Required container class for Swiper
   $vars['classes_array'][] = 'swiper-wrapper';

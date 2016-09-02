@@ -68,7 +68,7 @@ function content_conversion_content_object_h5p($node) {
     'main_library_id' => h5peditor_get_library_property('H5P.CoursePresentation 1.11', 'libraryId'),
     'json_content' => content_conversion_h5p_json($node),
     'embed_type' => 'div',
-    'disable' => 0,
+    'disable' => H5PCore::DISABLE_FRAME,
     'h5p_library' => 'H5P.CoursePresentation 1.11',
   );
   $h5p_node = (object) $h5p_node;
@@ -1136,50 +1136,34 @@ function _create_text_object($text_array = null) {
 
 
 function _content_conversion_node_flash_cards($node, $slide) {
-  
-  $lang = $node->language;
-  
   $element = new stdClass();
   $element->x = 0;
-  $element->y = 2.0898846960168;
-  $element->width = 98.513800424628;
-  $element->height = 96.01677148847;
-
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
   $action = new stdClass();
   $action->library = "H5P.Dialogcards 1.2";
-  $action->subContentId = '0';
-
   $params = new stdClass();
-  $params->description = $node->field_intro[$lang][0]['safe_value'];
-
-  foreach ($node->field_flash_card_collection[$lang] as $flashid) {
+  foreach ($node->field_flash_card_collection[$node->language] as $flashid) {
     $flash_card =  paragraphs_item_load($flashid['value']);
-    $dialogs = new stdClass();
-    $dialogs->tips = "";
-    $dialogs->answer = $flash_card->field_back_card['und'][0]['safe_value'];
-    $dialogs->text = $flash_card->field_front_card['und'][0]['safe_value'];
-    $dialogs->image->path = "images/" . $flash_card->field_front_card_image['und'][0]['filename'];
-    $dialogs->image->mime = $flash_card->field_front_card_image['und'][0]['filemime'];
-    $dialogs->image->copyright->license = "U";
-    $dialogs->image->width = $flash_card->field_front_card_image['und'][0]['width'];
-    $dialogs->image->height = $flash_card->field_front_card_image['und'][0]['height'];
-
-    $params->dialogs[] = $dialogs;
+    $dialog = new stdClass();
+    $dialog->answer = $flash_card->field_back_card[LANGUAGE_NONE][0]['value'];
+    $dialog->text = $flash_card->field_front_card[LANGUAGE_NONE][0]['value'];
+    if (!empty($flash_card->field_front_card_image[LANGUAGE_NONE])) {
+      $image = new stdClass();
+      $image->path = file_create_url($flash_card->field_front_card_image[LANGUAGE_NONE][0]['uri']);
+      $image->mime = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['filemime'];
+      $image->width = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['width'];
+      $image->height = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['height'];
+      $dialog->image = $image;
+    }
+    $params->dialogs[] = $dialog;
   }
-
-  $params->answer = "Turn";
-  $params->next = "Next";
-  $params->prev = "Previous";
-  $params->retry = "Retry";
-  $params->progressText = "Card @card of @total";
-  $params->title = $node->title_field[$node->language][0]['safe_value'];
-
+  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
+  $params->title = empty($node->field_subtitle[$node->language]) ? '' : $node->field_subtitle[$node->language][0]['value'];
   $action->params = $params;
-
   $element->action = $action;
-
   $slide->elements[] = $element;
-
 }
 
 function _create_l10n_object($language) {

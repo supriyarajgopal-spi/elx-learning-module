@@ -254,8 +254,8 @@ function _content_conversion_node_list($node, $slide) {
     elseif (!empty($paragraph->field_list_video)) {
       foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $video) {
         $element = new stdClass();
-        $element->x = 1.0615711252654;
-        $element->y = 6.2893081761006;
+        $element->x = 0;
+        $element->y = 0;
         $element->width = 68.789808917197;
         $element->height = 56.184486373166;
         $action = new stdClass();
@@ -353,7 +353,7 @@ function _content_conversion_node_story($node, $slide) {
 
   if (!empty($node->field_story_image[$node->language][0]['uri'])) {
     $element = new stdClass();
-    $element->x = 1.0615711252654;
+    $element->x = 0;
     $element->y = 59.538784067086;
     $element->width = 30.430461002119;
     $element->height = 40;
@@ -395,10 +395,10 @@ function _content_conversion_node_reveal($learning_object, $slide)
 	$element = new stdClass(); //Elements of the slide. In this case, the Click To Reveal option within a Course Presentation.
 	
 	//Set position & dimension of element within the slide 
-	$element->x = 1;
+	$element->x = 0;
 	$element->y = 0;
-	$element->width = 97;
-	$element->height = 96;
+	$element->width = 100;
+	$element->height = 100;
 	
 	$element->action = new stdClass();
 	$element->action->library = 'H5P.ClickToReveal 1.0';
@@ -526,10 +526,10 @@ function _content_conversion_node_drag_select($learning_object, $slide)
   $element = new stdClass(); //Elements of the slide. In this case, the Drag&Drop option within a Course Presentation
 
   //Set position & dimension of element within the slide
-  $element->x = 1;
+  $element->x = 0;
   $element->y = 0;
-  $element->width = 97;
-  $element->height = 96;
+  $element->width = 100;
+  $element->height = 100;
 
   $element->action = new stdClass();
   $element->action->library = 'H5P.DragQuestion 1.6';
@@ -685,8 +685,8 @@ function _content_conversion_nodes_question_and_answer($nodes, $slide) {
   $element = new stdClass();
   $element->x = 0;
   $element->y = 0;
-  $element->width = 99.787685774947;
-  $element->height = 99.58071278826;
+  $element->width = 100;
+  $element->height = 100;
   $element->alwaysDisplayComments = false;
   $element->backgroundOpacity = 0;
   $element->displayAsButton = false;
@@ -843,8 +843,8 @@ function _create_hotspot_object($node) {
   $element = new stdClass();
   $element->x = 0;
   $element->y = 0;
-  $element->width = 99.787685774947;
-  $element->height = 99.58071278826;
+  $element->width = 100;
+  $element->height = 100;
   $element->alwaysDisplayComments = false;
   $element->backgroundOpacity = 0;
   $element->displayAsButton = false;
@@ -942,10 +942,10 @@ function _content_conversion_node_drag_match($learning_object, $slide)
   
   //Form complete element object within the slide
   //Set position & dimension of element within the slide 
-  $element->x = 1;
-  $element->y = 8;
-  $element->width = 96;
-  $element->height = 88;
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
   $element->action = $action;
   $element->alwaysDisplayComments = false;
   $element->backgroundOpacity = 0;

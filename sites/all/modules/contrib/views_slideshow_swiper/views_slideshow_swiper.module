@@ -57,21 +57,21 @@ function views_slideshow_swiper_libraries_info() {
       'pattern' => '#version"[^"]*"([^"]*)#',
     ),
     'files' => array(
-      'js' => array('js/swiper.jquery.js'),
+      'js' => array('js/swiper.min.js'),
       'css' => array('css/swiper.css'),
     ),
     'variants' => array(
       'source' => array(
         'path' => 'dist',
         'files' => array(
-          'js' => array('js/swiper.jquery.js'),
+          'js' => array('js/swiper.js'),
           'css' => array('css/swiper.css'),
         ),
       ),
       'minified' => array(
         'path' => 'dist',
         'files' => array(
-          'js' => array('js/swiper.jquery.min.js'),
+          'js' => array('js/swiper.min.js'),
           'css' => array('css/swiper.min.css'),
         ),
       ),

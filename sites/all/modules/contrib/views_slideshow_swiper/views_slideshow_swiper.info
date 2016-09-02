@@ -11,9 +11,9 @@ files[] = views_slideshow_swiper.views_slideshow.inc
 files[] = theme/views_slideshow_swiper.theme.inc
 files[] = js/views_slideshow_swiper.js
 
-; Information added by Drupal.org packaging script on 2015-05-17
-version = "7.x-2.0"
+; Information added by Drupal.org packaging script on 2015-08-26
+version = "7.x-2.0+5-dev"
 core = "7.x"
 project = "views_slideshow_swiper"
-datestamp = "1431876184"
+datestamp = "1440551040"
 

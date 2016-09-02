@@ -1,6 +1,7 @@
 name = ELX Organic Groups and Permissions
 description = This feature will configure OG and configure all the site and OG permissions
 core = 7.x
+version = 7.x-1.5
 package = ELX
 dependencies[] = acb
 dependencies[] = admin_menu

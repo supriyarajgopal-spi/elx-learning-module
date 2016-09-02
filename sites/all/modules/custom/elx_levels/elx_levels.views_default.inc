@@ -263,6 +263,89 @@ function elx_levels_views_default_views() {
   $export['level_nodes_viewed'] = $view;
 
   $view = new view();
+  $view->name = 'levels_outer_view_content';
+  $view->description = 'Outer view for quizzes per level';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Levels outer view content';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '1';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE LEVELS';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'quizzes_per_level';
+  $handler->display->display_options['fields']['view']['display'] = 'block';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'learning_category' => 'learning_category',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['levels_outer_view_content'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('SEE MORE LEVELS'),
+    t('.'),
+    t('Block'),
+  );
+  $export['levels_outer_view_content'] = $view;
+
+  $view = new view();
   $view->name = 'levels_quizz_progress';
   $view->description = 'Outer view for quizzes per level';
   $view->tag = 'default';
@@ -296,7 +379,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -309,16 +392,18 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = 'view_completion';
+  $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'levels_user_completion';
+  $handler->display->display_options['fields']['view']['view'] = 'level_nodes_viewed';
+  $handler->display->display_options['fields']['view']['display'] = 'block_1';
   /* Field: Global: View */
   $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
   $handler->display->display_options['fields']['view_1']['table'] = 'views';
   $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['label'] = 'View quizzes per level';
+  $handler->display->display_options['fields']['view_1']['label'] = '';
   $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'quizzes_per_level';
+  $handler->display->display_options['fields']['view_1']['view'] = 'level_nodes_count';
+  $handler->display->display_options['fields']['view_1']['display'] = 'block_1';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
@@ -326,10 +411,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'learning_category' => 'learning_category',
   );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'levels-outer-view';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -351,9 +432,6 @@ function elx_levels_views_default_views() {
     t('last »'),
     t('SEE MORE LEVELS'),
     t('.'),
-    t('view_completion'),
-    t('View quizzes per level'),
-    t('Page'),
     t('Block'),
   );
   $export['levels_quizz_progress'] = $view;
@@ -382,7 +460,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE QUIZZES';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -441,10 +519,13 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'levels-quizzes-per-level';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'content_object' => 'content_object',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -470,9 +551,8 @@ function elx_levels_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('SEE MORE QUIZZES'),
+    t('SEE MORE'),
     t('All'),
-    t('Page'),
     t('Block'),
   );
   $export['quizzes_per_level'] = $view;

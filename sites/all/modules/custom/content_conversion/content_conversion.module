@@ -438,11 +438,65 @@ function _content_conversion_node_reveal($learning_object, $slide)
 			else
 				$cardObject->thumbnail_image = new stdClass();
 			
-			//Large image object
-			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero))
-			  $cardObject->large_image = _create_image_object($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]);
-			else
-				$cardObject->large_image = new stdClass();
+			//Large media object
+			$media = new stdClass();
+			$params = new stdClass();
+			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero)) //If uploaded media is an image
+			{
+			  $params->contentName = 'Image';
+			  $params->file = _create_image_object($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]);
+			  $params->alt = t('@text',array('@text' => drupal_html_to_text($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]['alt'])));
+			  $media->library = 'H5P.Image 1.0';
+			}
+			else if(isset($cardParagraph->field_reveal_hero_video) && !empty($cardParagraph->field_reveal_hero_video)) //If uploaded media is a video
+			{
+				//Visuals
+				$params->visuals = new stdClass();
+				$params->visuals->fit = true;
+				$params->visuals->controls = true;
+				//Need default poster image because File field doesn't have this option
+				$defaultPosterImage = array(
+					'uri' => '', //Predefined URL of default poster image
+					'filemime' => 'image/jpeg',
+					'width' => 765,
+					'height' => 515
+				);
+				$params->visuals->poster = _create_image_object($defaultPosterImage);
+				
+				//Playback
+				$params->playback = new stdClass();
+				$params->playback->autoplay = false;
+				$params->playback->loop = false;
+				
+				//Error messages
+				$params->l10n = new stdClass();
+				$params->l10n->name = 'Video';
+				$params->l10n->loading = t('Video player loading...');
+				$params->l10n->noPlayers = t('Found no video players that supports the given video format.');
+				$params->l10n->noSources = t('Video is missing sources.');
+				$params->l10n->aborted = t('Media playback has been aborted.');
+				$params->l10n->networkFailure = t('Network failure.');
+				$params->l10n->cannotDecode = t('Unable to decode media.');
+				$params->l10n->formatNotSupported = t('Video format not supported.');
+				$params->l10n->mediaEncrypted = t('Media encrypted.');
+				$params->l10n->unknownError = t('Unknown error.');
+				$params->l10n->invalidYtId = t('Invalid YouTube ID.');
+				$params->l10n->unknownYtId = t('Unable to find video with the given YouTube ID.');
+				$params->l10n->restrictedYt = t('The owner of this video does not allow it to be embedded.');
+				
+				//Video source
+				$source = new stdClass();
+				$source->path = file_create_url($cardParagraph->field_reveal_hero_video[LANGUAGE_NONE][0]['uri']);
+				$source->mime = $cardParagraph->field_reveal_hero_video[LANGUAGE_NONE][0]['filemime'];
+				$source->copyright = new stdClass();
+				$source->copyright->license = 'U';
+				$params->sources[] = $source; //No for() needed because cardinality is 1 for this field in Paragraph bundle.
+				
+				$media->library = 'H5P.Video 1.2';
+			}
+			$media->subContentId = 0;
+			$media->params = $params;
+			$cardObject->media = $media;
 			
 			//Text
 			if(isset($cardParagraph->field_reveal_text) && !empty($cardParagraph->field_reveal_text))
@@ -1092,7 +1146,6 @@ function _create_image_object($image_array) {
   $copyright->license = "U";
   $file->copyright = $copyright;
   return $file;
-
 }
 
 /*

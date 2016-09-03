@@ -1,0 +1,39 @@
+/* MODALS DEFAULT STYLES */
+body.ctools-modal-open {
+  overflow: hidden;
+}
+
+.modal-default {
+
+  .modal-header {
+
+    .modal-title {
+      display: none;
+    }
+
+    a.close {
+      width: 32px;
+      height: 32px;
+      background-image: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png');
+      background-position: -105px center;
+    }
+
+  }
+
+  .modal-content {
+    font-family: $font-family-sans-serif;
+
+    article {
+      max-width: 1170px;
+      margin: 0 auto;
+
+      h2 {
+        font-family: $font-family-serif;
+        font-size: $font-size-lg-large;
+      }
+
+    }
+
+  }
+
+}

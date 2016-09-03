@@ -52,6 +52,7 @@ function content_conversion_content_object_h5p($node) {
       'vid' => $h5p_node->vid,
     );
   }
+  $h5p_node += _get_content_object_arguments($node);
   $h5p_node += array(
     'uid' => $node->uid,
     'name' => $node->name,
@@ -96,6 +97,7 @@ function content_conversion_h5p_json($content_object) {
   // Create one Course Presentation slide for each Learning Object.
   // Exception : there is an instance where the converter needs all the learning object at one time
   $exception_array = array("question_and_answer");
+  $exception_arguments = _get_content_object_arguments($content_object, true);
   //not only is this an exception, but it also has to process all the non exceptions
   $previous_learning_object_type = "";
   $exception_content = array();
@@ -114,7 +116,7 @@ function content_conversion_h5p_json($content_object) {
         if (!$count) {
           $slide = new stdClass();
           $h5p->presentation->slides[] = $slide;
-          $function_exception($content_object->field_learning_objects[$content_object->language], $slide);
+          $function_exception($content_object->field_learning_objects[$content_object->language], $slide, $exception_arguments);
           break;
         } else {
           //otherwise, this is the first of a bunch of them, queue them up to be run later
@@ -129,7 +131,7 @@ function content_conversion_h5p_json($content_object) {
           //run the script again
           $slide = new stdClass();
           $h5p->presentation->slides[] = $slide;
-          $function_exception($exception_content, $slide);
+          $function_exception($exception_content, $slide, $exception_arguments);
           $exception_content = array();
         }
       }
@@ -141,7 +143,7 @@ function content_conversion_h5p_json($content_object) {
         $function_exception = '_content_conversion_nodes_' . $previous_learning_object_type;
         $slide = new stdClass();
         $h5p->presentation->slides[] = $slide;
-        $function_exception($exception_content, $slide);
+        $function_exception($exception_content, $slide, $exception_arguments);
         //reset the exception content incased there is another exception in this interactive content
         $exception_content = array();
       }
@@ -159,7 +161,7 @@ function content_conversion_h5p_json($content_object) {
     //process exception content if it is the last learning object used
     $slide = new stdClass();
     $h5p->presentation->slides[] = $slide;
-    $function_exception($exception_content, $slide);
+    $function_exception($exception_content, $slide, $exception_arguments);
   }
   return json_encode($h5p);
 }
@@ -300,31 +302,35 @@ function _content_conversion_node_list($node, $slide) {
   }
 }
 
-function _calculate_text_position_size($size, $text, $count, $window) {
-  if ($count != 1) {
-    $size['y_pos'] = $size['height'] + $size['y_pos'];
+function _content_conversion_node_flash_cards($node, $slide) {
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
+  $action = new stdClass();
+  $action->library = "H5P.Dialogcards 1.2";
+  $params = new stdClass();
+  foreach ($node->field_flash_card_collection[$node->language] as $flashid) {
+    $flash_card =  paragraphs_item_load($flashid['value']);
+    $dialog = new stdClass();
+    $dialog->answer = $flash_card->field_back_card[LANGUAGE_NONE][0]['value'];
+    $dialog->text = $flash_card->field_front_card[LANGUAGE_NONE][0]['value'];
+    if (!empty($flash_card->field_front_card_image[LANGUAGE_NONE])) {
+      $image = new stdClass();
+      $image->path = file_create_url($flash_card->field_front_card_image[LANGUAGE_NONE][0]['uri']);
+      $image->mime = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['filemime'];
+      $image->width = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['width'];
+      $image->height = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['height'];
+      $dialog->image = $image;
+    }
+    $params->dialogs[] = $dialog;
   }
-  return $size;
-}
-
-function _calculate_image_position_size($size, $image, $count, $window) {
-  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
-  $ratio = $image_height_pixels / $image['height'];
-  $image_width_pixels = $image['width'] * $ratio;
-  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
-  $size = _convert_height_percentage_to_width_percentage($window, $size, $image);
-  if ($count != 1) {
-    $size['y_pos'] = $size['height'] + $size['y_pos'];
-  }
-  return $size;
-}
-
-function _convert_height_percentage_to_width_percentage($window, $size, $image) {
-  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
-  $ratio = $image_height_pixels / $image['height'];
-  $image_width_pixels = $image['width'] * $ratio;
-  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
-  return $size;
+  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
+  $params->title = empty($node->field_subtitle[$node->language]) ? '' : $node->field_subtitle[$node->language][0]['value'];
+  $action->params = $params;
+  $element->action = $action;
+  $slide->elements[] = $element;
 }
 
 /**
@@ -676,7 +682,7 @@ function _content_conversion_node_drag_select($learning_object, $slide)
    * @param object $slide
    *   H5P data for a single slide.
  */
-function _content_conversion_nodes_question_and_answer($nodes, $slide) {
+function _content_conversion_nodes_question_and_answer($nodes, $slide, $arguments) {
 
   $slide->elements = array();
   $slide->slideBackgroundSelector = new stdClass();
@@ -709,7 +715,7 @@ function _content_conversion_nodes_question_and_answer($nodes, $slide) {
     $params->introPage = $get_text_array;
   }*/
   $params->progressType = 'dots';
-  $params->passPercentage = 80;
+  $params->passPercentage = $arguments['passPercentage'];
 
   $params->texts = array(
     "prevButton" => "Previous question",
@@ -746,155 +752,6 @@ function _content_conversion_nodes_question_and_answer($nodes, $slide) {
   $element->action = $action;
 
   $slide->elements[] = $element;
-}
-
-/*
- * Utility Function
- * _create_qa_object - takes a paragraph id and returns the necessary question and answer element for inserting into a question set
- */
-function _create_question_object($target_id) {
-
-  $question_entity = entity_load('paragraphs_item', array($target_id));
-  $question_item = $question_entity[$target_id];
-
-  $question = new stdClass();
-  $question->library = "H5P.MultiChoice 1.7";
-  $question->subContentId = '0';
-
-  $params = new stdClass();
-  //field_question_image no sample
-  //field_question_video_file no sample
-  //field_video_poster_img no sample
-  $params->question = $question_item->field_question_text['und'][0]['safe_value'];
-
-  $answers = array();
-  foreach($question_item->field_paragraph_answer['und'] as $key => $value) {
-    $entity = entity_load('paragraphs_item', array($value['value']));
-    $item = $entity[$value['value']];
-
-    $answer = new stdClass();
-    //field_answer_image no sample
-    $answer->correct = ($item->field_correct_answer['und'][0]['value']) ? true : false;
-    $answer->tipsAndFeedback = array(
-      "chosenFeedback" => $item->field_answer_feedback['und'][0]['safe_value'],
-      "tip" => "",
-      "notChosenFeedback" => ""
-    );
-    $answer->text = $item->field_answer_text['und'][0]['safe_value'];
-
-    $answers[] = $answer;
-  }
-  $params->answers = $answers;
-
-  $params->UI = array(
-    "checkAnswerButton" => "Submit",
-    "showSolutionButton" => "Show solution",
-    "tryAgainButton" => "Retry",
-    "tipsLabel" => "Show tip",
-    "correctText" => "Correct!",
-    "almostText" => "Almost!",
-    "wrongText" => "Wrong",
-    "scoreBarLabel" => "Score",
-    "tipAvailable" => "Tip available",
-    "feedbackAvailable" => "Feedback available",
-    "readFeedback" => "Read feedback",
-    "wrongAnswer" => "Wrong answer",
-    "correctAnswer" => "Correct answer",
-    "shouldCheck" => "Should have been checked",
-    "shouldNotCheck" => "Should not have been checked",
-    "noInput" => "Please answer before viewing the solution"
-  );
-  $params->behaviour = array(
-    "enableRetry" => true,
-    "enableSolutionsButton" => false,
-    "type" => "single",
-    "singlePoint" => false,
-    "randomAnswers" => false,
-    "showSolutionsRequiresInput" => true,
-    "disableImageZooming" => false,
-    "confirmCheckDialog" => false,
-    "confirmRetryDialog" => false
-  );
-  $params->confirmCheck = array(
-    "header" => "Finish ?",
-    "body" => "Are you sure you wish to finish ?",
-    "cancelLabel" => "Cancel",
-    "confirmLabel" => "Finish"
-  );
-  $params->confirmRetry = array(
-    "header" => "Retry ?",
-    "body" => "Are you sure you wish to retry ?",
-    "cancelLabel" => "Cancel",
-    "confirmLabel" => "Confirm"
-  );
-  $params->media = array('params'=>'');
-
-  $question->params = $params;
-
-  return $question;
-}
-
-/*
- * Utility Function
- * _create_hotspot_object - takes a node and returns the necessary element for inserting into a slide
- */
-function _create_hotspot_object($node) {
-
-  $element = new stdClass();
-  $element->x = 0;
-  $element->y = 0;
-  $element->width = 100;
-  $element->height = 100;
-  $element->alwaysDisplayComments = false;
-  $element->backgroundOpacity = 0;
-  $element->displayAsButton = false;
-  $element->invisible = false;
-  $element->solution = '';
-
-  $action = new stdClass();
-  $action->library = "H5P.ImageHotspots 1.3";
-  $action->subContentId = '0';
-
-  $params = new stdClass();
-  $params->color = "ecb328";
-  $params->image = _create_image_object($node->field_hot_spot_image[$node->language][0]);
-
-  $hotspots = array();
-  foreach($node->field_hot_spot_collection[$node->language] as $key => $value) {
-    $entity = entity_load('paragraphs_item', array($value['value']));
-    $hotspot = $entity[$value['value']];
-
-    $hotspot_object = new stdClass();
-    $hotspot_object->alwaysFullscreen = 'false';
-    $hotspot_object->header = "";
-
-    $position_array = array();
-    $x_temp = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
-    $pos_x = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_temp))) - 96)/16);
-    $y_temp = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
-    $pos_y = $params->image->height * (str_replace("pos","",$y_temp)/19);
-
-    $position_array['x'] = ($pos_x/$params->image->width) * 100;
-    $position_array['y'] = ($pos_y/$params->image->height) * 100;
-
-    $hotspot_object->position = $position_array;
-
-    $content = new stdClass();
-    $content->params = array(
-      "text" => $hotspot->field_hot_spot_text['und'][0]['safe_value'],
-    );
-    $content->library = "H5P.Text 1.1";
-    $content->subContentId = '0';
-
-    $hotspot_object->content = array($content);
-    $hotspots[] = $hotspot_object;
-  }
-
-  $params->hotspots = $hotspots;
-  $action->params = $params;
-  $element->action = $action;
-
-  return $element;
 }
 
 /**
@@ -1076,6 +933,155 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 
 /*
  * Utility Function
+ * _create_qa_object - takes a paragraph id and returns the necessary question and answer element for inserting into a question set
+ */
+function _create_question_object($target_id) {
+
+  $question_entity = entity_load('paragraphs_item', array($target_id));
+  $question_item = $question_entity[$target_id];
+
+  $question = new stdClass();
+  $question->library = "H5P.MultiChoice 1.7";
+  $question->subContentId = '0';
+
+  $params = new stdClass();
+  //field_question_image no sample
+  //field_question_video_file no sample
+  //field_video_poster_img no sample
+  $params->question = $question_item->field_question_text['und'][0]['safe_value'];
+
+  $answers = array();
+  foreach($question_item->field_paragraph_answer['und'] as $key => $value) {
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $item = $entity[$value['value']];
+
+    $answer = new stdClass();
+    //field_answer_image no sample
+    $answer->correct = ($item->field_correct_answer['und'][0]['value']) ? true : false;
+    $answer->tipsAndFeedback = array(
+      "chosenFeedback" => $item->field_answer_feedback['und'][0]['safe_value'],
+      "tip" => "",
+      "notChosenFeedback" => ""
+    );
+    $answer->text = $item->field_answer_text['und'][0]['safe_value'];
+
+    $answers[] = $answer;
+  }
+  $params->answers = $answers;
+
+  $params->UI = array(
+    "checkAnswerButton" => "Submit",
+    "showSolutionButton" => "Show solution",
+    "tryAgainButton" => "Retry",
+    "tipsLabel" => "Show tip",
+    "correctText" => "Correct!",
+    "almostText" => "Almost!",
+    "wrongText" => "Wrong",
+    "scoreBarLabel" => "Score",
+    "tipAvailable" => "Tip available",
+    "feedbackAvailable" => "Feedback available",
+    "readFeedback" => "Read feedback",
+    "wrongAnswer" => "Wrong answer",
+    "correctAnswer" => "Correct answer",
+    "shouldCheck" => "Should have been checked",
+    "shouldNotCheck" => "Should not have been checked",
+    "noInput" => "Please answer before viewing the solution"
+  );
+  $params->behaviour = array(
+    "enableRetry" => true,
+    "enableSolutionsButton" => false,
+    "type" => "single",
+    "singlePoint" => false,
+    "randomAnswers" => false,
+    "showSolutionsRequiresInput" => true,
+    "disableImageZooming" => false,
+    "confirmCheckDialog" => false,
+    "confirmRetryDialog" => false
+  );
+  $params->confirmCheck = array(
+    "header" => "Finish ?",
+    "body" => "Are you sure you wish to finish ?",
+    "cancelLabel" => "Cancel",
+    "confirmLabel" => "Finish"
+  );
+  $params->confirmRetry = array(
+    "header" => "Retry ?",
+    "body" => "Are you sure you wish to retry ?",
+    "cancelLabel" => "Cancel",
+    "confirmLabel" => "Confirm"
+  );
+  $params->media = array('params'=>'');
+
+  $question->params = $params;
+
+  return $question;
+}
+
+/*
+ * Utility Function
+ * _create_hotspot_object - takes a node and returns the necessary element for inserting into a slide
+ */
+function _create_hotspot_object($node) {
+
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $action = new stdClass();
+  $action->library = "H5P.ImageHotspots 1.3";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->color = "ecb328";
+  $params->image = _create_image_object($node->field_hot_spot_image[$node->language][0]);
+
+  $hotspots = array();
+  foreach($node->field_hot_spot_collection[$node->language] as $key => $value) {
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $hotspot = $entity[$value['value']];
+
+    $hotspot_object = new stdClass();
+    $hotspot_object->alwaysFullscreen = 'false';
+    $hotspot_object->header = "";
+
+    $position_array = array();
+    $x_temp = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
+    $pos_x = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_temp))) - 96)/16);
+    $y_temp = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
+    $pos_y = $params->image->height * (str_replace("pos","",$y_temp)/19);
+
+    $position_array['x'] = ($pos_x/$params->image->width) * 100;
+    $position_array['y'] = ($pos_y/$params->image->height) * 100;
+
+    $hotspot_object->position = $position_array;
+
+    $content = new stdClass();
+    $content->params = array(
+      "text" => $hotspot->field_hot_spot_text['und'][0]['safe_value'],
+    );
+    $content->library = "H5P.Text 1.1";
+    $content->subContentId = '0';
+
+    $hotspot_object->content = array($content);
+    $hotspots[] = $hotspot_object;
+  }
+
+  $params->hotspots = $hotspots;
+  $action->params = $params;
+  $element->action = $action;
+
+  return $element;
+}
+
+/*
+ * Utility Function
  * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
  * receives one drupal image array
  * uri, filemime, height, width
@@ -1134,36 +1140,49 @@ function _create_text_object($text_array = null) {
   return $element;
 }
 
-
-function _content_conversion_node_flash_cards($node, $slide) {
-  $element = new stdClass();
-  $element->x = 0;
-  $element->y = 0;
-  $element->width = 100;
-  $element->height = 100;
-  $action = new stdClass();
-  $action->library = "H5P.Dialogcards 1.2";
-  $params = new stdClass();
-  foreach ($node->field_flash_card_collection[$node->language] as $flashid) {
-    $flash_card =  paragraphs_item_load($flashid['value']);
-    $dialog = new stdClass();
-    $dialog->answer = $flash_card->field_back_card[LANGUAGE_NONE][0]['value'];
-    $dialog->text = $flash_card->field_front_card[LANGUAGE_NONE][0]['value'];
-    if (!empty($flash_card->field_front_card_image[LANGUAGE_NONE])) {
-      $image = new stdClass();
-      $image->path = file_create_url($flash_card->field_front_card_image[LANGUAGE_NONE][0]['uri']);
-      $image->mime = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['filemime'];
-      $image->width = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['width'];
-      $image->height = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['height'];
-      $dialog->image = $image;
+function _get_content_object_arguments($content_object, $h5p = false) {
+  $return_array = array();
+  $template = $content_object->field_learning_template[$content_object->language][0]['value'];
+  $final_exam = $content_object->field_final_exam[$content_object->language][0]['value'];
+  $percentage = $content_object->field_percentage_requirement[$content_object->language][0]['value'];
+  if (in_array($template, array("trivia", "drag_select"))) {
+    if ($final_exam) {
+      $return_array = array("field_spin_the_wheel" => array(LANGUAGE_NONE=>array(array('value'=>1))));
+      if (in_array($template, array("trivia")) && $h5p) {
+        //this quiz counts and sets an h5p pass percentage in the question set
+        $return_array = array("passPercentage" => $percentage);
+        return $return_array;
+      }
     }
-    $params->dialogs[] = $dialog;
   }
-  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
-  $params->title = empty($node->field_subtitle[$node->language]) ? '' : $node->field_subtitle[$node->language][0]['value'];
-  $action->params = $params;
-  $element->action = $action;
-  $slide->elements[] = $element;
+  return $return_array;
+}
+
+function _calculate_text_position_size($size, $text, $count, $window) {
+  if ($count != 1) {
+    $size['y_pos'] = $size['height'] + $size['y_pos'];
+  }
+  return $size;
+}
+
+function _calculate_image_position_size($size, $image, $count, $window) {
+  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
+  $ratio = $image_height_pixels / $image['height'];
+  $image_width_pixels = $image['width'] * $ratio;
+  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
+  $size = _convert_height_percentage_to_width_percentage($window, $size, $image);
+  if ($count != 1) {
+    $size['y_pos'] = $size['height'] + $size['y_pos'];
+  }
+  return $size;
+}
+
+function _convert_height_percentage_to_width_percentage($window, $size, $image) {
+  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
+  $ratio = $image_height_pixels / $image['height'];
+  $image_width_pixels = $image['width'] * $ratio;
+  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
+  return $size;
 }
 
 function _create_l10n_object($language) {

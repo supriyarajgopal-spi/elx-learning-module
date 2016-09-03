@@ -61,7 +61,7 @@ options.autoprefixer = {
 options.styleGuide = {
   source: [
     options.theme.sass,
-    options.theme.css + 'style-guide/'
+    //options.theme.css + 'style-guide/'
   ],
   destination: options.rootPath.styleGuide,
 
@@ -71,8 +71,8 @@ options.styleGuide = {
   // The following paths are relative to the generated style guide.
   css: [
     path.relative(options.rootPath.styleGuide, options.theme.css + 'styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
+    //path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/chroma-kss-styles.css'),
+    //path.relative(options.rootPath.styleGuide, options.theme.css + 'style-guide/kss-only.css')
   ],
   js: [
   ],
@@ -112,7 +112,8 @@ gulp.task('default', ['build']);
 // #################
 // Build everything.
 // #################
-gulp.task('build', ['styles:production', 'styleguide', 'lint']);
+//gulp.task('build', ['styles:production', 'styleguide', 'lint']);
+gulp.task('build', ['styles:production', 'lint']);
 
 // ##########
 // Build CSS.
@@ -147,6 +148,7 @@ gulp.task('styles:production', ['clean:css'], function() {
 // ##################
 // Build style guide.
 // ##################
+/*
 gulp.task('styleguide', ['clean:styleguide', 'styleguide:kss-example-chroma'], function() {
   return kss(options.styleGuide);
 });
@@ -165,6 +167,7 @@ gulp.task('styleguide:debug', ['clean:styleguide', 'styleguide:kss-example-chrom
   options.styleGuide.verbose = true;
   return kss(options.styleGuide);
 });
+*/
 
 // #########################
 // Lint Sass and JavaScript.
@@ -204,9 +207,11 @@ gulp.task('lint:sass-with-fail', function() {
 // ##############################
 // Watch for changes and rebuild.
 // ##############################
-gulp.task('watch', ['browser-sync', 'watch:lint-and-styleguide', 'watch:js']);
+//gulp.task('watch', ['browser-sync', 'watch:lint-and-styleguide', 'watch:js']);
+gulp.task('watch', ['browser-sync', 'watch:scss', 'watch:js']);
 
 gulp.task('browser-sync', ['watch:css'], function() {
+/*
   if (!options.drupalURL) {
     return Promise.resolve();
   }
@@ -214,17 +219,26 @@ gulp.task('browser-sync', ['watch:css'], function() {
     proxy: options.drupalURL,
     noOpen: false
   });
+*/
 });
 
 gulp.task('watch:css', ['styles'], function() {
   return gulp.watch(options.theme.sass + '**/*.scss', options.gulpWatchOptions, ['styles']);
 });
 
-gulp.task('watch:lint-and-styleguide', ['styleguide', 'lint:sass'], function() {
+// DEFAULT...
+//gulp.task('watch:lint-and-styleguide', ['styleguide', 'lint:sass'], function() {
+//  return gulp.watch([
+//     options.theme.sass + '**/*.scss',
+//     options.theme.sass + '**/*.twig'
+//    ], options.gulpWatchOptions, ['styleguide', 'lint:sass']);
+//});
+
+gulp.task('watch:scss', ['lint:sass'], function() {
   return gulp.watch([
-      options.theme.sass + '**/*.scss',
-      options.theme.sass + '**/*.twig'
-    ], options.gulpWatchOptions, ['styleguide', 'lint:sass']);
+     options.theme.sass + '**/*.scss',
+     options.theme.sass + '**/*.twig'
+    ], options.gulpWatchOptions, ['lint:sass']);
 });
 
 gulp.task('watch:js', ['lint:js'], function() {
@@ -234,7 +248,8 @@ gulp.task('watch:js', ['lint:js'], function() {
 // ######################
 // Clean all directories.
 // ######################
-gulp.task('clean', ['clean:css', 'clean:styleguide']);
+//gulp.task('clean', ['clean:css', 'clean:styleguide']);
+gulp.task('clean', ['clean:css']);
 
 // Clean style guide files.
 gulp.task('clean:styleguide', function() {

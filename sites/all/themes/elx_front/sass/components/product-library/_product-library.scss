@@ -27,33 +27,35 @@
       border-color: transparent transparent rgb(4, 10, 43);
       width: 780px;
       height: 55px;
-      margin: 0px auto;
+      margin: 0 auto;
       display: block;
-      position: relative; 
+      position: relative;
     }
+
     .icon-component {
       margin: 0 auto;
       position: relative;
-      z-index:300;
+      z-index: 300;
       width: 780px;
 
       .icon-holder-placement {
-        bottom: 0px;
+        bottom: 0;
         right: 50px;
-        width: 0px;
+        width: 0;
         margin: 0 auto;
         position: absolute;
-  
+
         .icon-holder {
           float: right;
           height: 50px;
           width: 50px;
           cursor: pointer;
         }
+
         .icon-holder::before {
           color: black;
-          content: "\e60f";
-          font-family: "elx-icons";
+          content: '\e60f';
+          font-family: 'elx-icons';
           line-height: 44px;
           position: absolute;
           right: -40px;
@@ -68,17 +70,16 @@
 
     // search line (w/ magnify glass icon) manipulated out of form
     .view-filters {
+
       .views-exposed-widgets
+
         #edit-combine-wrapper {
           display: none;
         }
+
         .views-exposed-widget.views-submit-button {
           margin-top: 5px;
-          margin-left:10px; 
-
-          #edit-submit-search-product-library {
-
-          }
+          margin-left: 10px;
         }
     }
 

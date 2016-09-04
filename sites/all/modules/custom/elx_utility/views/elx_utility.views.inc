@@ -91,6 +91,10 @@ function elx_utility_views_pre_render(&$view)
   	case 'tools':
   		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-elx-tools'); //'use-ajax' is mandatory
   		break;
+      
+    case 'level_content':
+		  $view->field['title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-levels'); //'use-ajax' is mandatory
+		  break;
 
     case 'quizzes_per_level':
       $view->field['title']->options['alter']['link_class'] = t('use-ajax ctools-use-modal ctools-modal-product-library'); //'use-ajax' is mandatory

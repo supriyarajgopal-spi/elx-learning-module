@@ -1119,7 +1119,6 @@ function _get_content_object_fields($content_object) {
     "field_order_weight" => array($content_object->language=>$content_object->field_order_weight[$content_object->language]),
     "field_learning_category" => array($content_object->language=>$content_object->field_learning_category[$content_object->language]),
   );
-
 }
 
 function _get_content_object_arguments($content_object, $h5p = false) {
@@ -1172,11 +1171,12 @@ function _convert_height_percentage_to_width_percentage($window, $size, $image) 
 
 function _create_l10n_object($node) {
   //We only have an english object
-  //field_exam_pass_feedback
-  //field_exam_fail_feedback
-  //field_exam_pass_content
-  //field_exam_perfect_content
-  //field_percentage_requirement
+  //these are the only fields we have in the content object
+  //$content_object->field_percentage_requirement[$content_object->language][0]['value']
+  //$content_object->field_exam_perfect_content[$content_object->language][0]['value']
+  //$content_object->field_exam_pass_content[$content_object->language][0]['value']
+  //$content_object->field_exam_fail_feedback[$content_object->language][0]['value']
+  //$content_object->field_exam_pass_feedback[$content_object->language][0]['value']
   $l10n = array(
     "slide" => "Slide",
     "yourScore" => "Your Score",

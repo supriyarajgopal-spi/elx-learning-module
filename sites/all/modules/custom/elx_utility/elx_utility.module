@@ -204,6 +204,22 @@ function _elx_custom_modal($js = NULL, $nid = NULL)
           //'closeImage' => base_path() . path_to_theme() . '',
         ),
       ), 'setting');
+
+      drupal_add_js(array(
+          'levels' => array(
+            'modalSize' => array(
+              'type' => 'scale',
+              'width' => 1,
+              'height' => 1,
+              'contentRight' => 5,
+              'contentBottom' => 20,
+            ),
+            'animation' => 'slideDown',
+            'closeText' => t(''),
+            'closeImage' => t(''),
+            //'closeImage' => base_path() . path_to_theme() . '',
+          ),
+        ), 'setting');
     
   }
   

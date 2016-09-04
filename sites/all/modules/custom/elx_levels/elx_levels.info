@@ -20,7 +20,6 @@ features[features_api][] = api:2
 features[menu_custom][] = menu-levels-menu
 features[page_manager_pages][] = levels_all
 features[page_manager_pages][] = levels_completed
-features[page_manager_pages][] = levels_content
 features[page_manager_pages][] = levels_in_progress
 features[variable][] = menu_minipanels_levels-menu_enabled
 features[views_view][] = level_content

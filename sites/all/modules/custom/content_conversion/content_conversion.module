@@ -52,6 +52,7 @@ function content_conversion_content_object_h5p($node) {
       'vid' => $h5p_node->vid,
     );
   }
+  $h5p_node += _get_content_object_fields($node);
   $h5p_node += _get_content_object_arguments($node);
   $h5p_node += array(
     'uid' => $node->uid,
@@ -89,7 +90,7 @@ function content_conversion_h5p_json($content_object) {
   //we don't need to create a slide every time
   $h5p = new stdClass();
   // Select the Language for the h5p object
-  $h5p->l10n = _create_l10n_object($content_object->language);
+  $h5p->l10n = _create_l10n_object($content_object);
   // Convert the Content Object node into a Course Presentation.
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
@@ -1105,6 +1106,22 @@ function _create_text_object($text_array = null) {
   return $element;
 }
 
+function _get_content_object_fields($content_object) {
+  return array(
+    "og_group_ref" => $content_object->markets,
+    "group_content_access" => $content_object->group_content_access ? $content_object->group_content_access : array("und"=>array(array("value"=>0))),
+    "field_hero_image" => array($content_object->language=>$content_object->field_hero_image[$content_object->language]),
+    "field_headline" => array($content_object->language=>$content_object->field_headline[$content_object->language]),
+    "field_intro" => array($content_object->language=>$content_object->field_intro[$content_object->language]),
+    "field_custom_cta" => array($content_object->language=>$content_object->field_custom_cta[$content_object->language]),
+    "field_point_value" => array($content_object->language=>$content_object->field_point_value[$content_object->language]),
+    "field_tags_keywords" => array($content_object->language=>$content_object->field_tags_keywords[$content_object->language]),
+    "field_order_weight" => array($content_object->language=>$content_object->field_order_weight[$content_object->language]),
+    "field_learning_category" => array($content_object->language=>$content_object->field_learning_category[$content_object->language]),
+  );
+
+}
+
 function _get_content_object_arguments($content_object, $h5p = false) {
   $return_array = array();
   $template = $content_object->field_learning_template[$content_object->language][0]['value'];
@@ -1153,8 +1170,13 @@ function _convert_height_percentage_to_width_percentage($window, $size, $image) 
   return $size;
 }
 
-function _create_l10n_object($language) {
+function _create_l10n_object($node) {
   //We only have an english object
+  //field_exam_pass_feedback
+  //field_exam_fail_feedback
+  //field_exam_pass_content
+  //field_exam_perfect_content
+  //field_percentage_requirement
   $l10n = array(
     "slide" => "Slide",
     "yourScore" => "Your Score",

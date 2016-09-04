@@ -186,13 +186,13 @@ function _content_conversion_node_list($node, $slide) {
     'height_pixels' => 22 * 29.5,
   );
   $number_of_list_items = count($node->field_list_item[$node->language]);
-  $x_pos = 1.0615711252654;
-  $y_pos = 55.027044025157;
-  $width = 96.390658174098;
-  $height = 45.930817610063;
-  $x_image = 24.416135881104033;
-  $width_image = 46.496815286624205;
-  $height_image = 51.99161425576521;
+  $x_pos = 0;
+  $y_pos = 50;
+  $width = 100;
+  $height = 50;
+  $x_image = 25;
+  $width_image = 50;
+  $height_image = 50;
   $gutter_width = 2;
 
   //Identify proper height of rows and guess at a width, impossible to identify an exact width until you run through all the rows.
@@ -253,13 +253,13 @@ function _content_conversion_node_list($node, $slide) {
         $image_count++;
       }
     }
-    elseif (!empty($paragraph->field_list_video)) {
+    elseif (!empty($paragraph->field_list_video[LANGUAGE_NONE])) {
       foreach ($paragraph->field_list_video[LANGUAGE_NONE] as $video) {
         $element = new stdClass();
-        $element->x = 0;
+        $element->x = 25;
         $element->y = 0;
-        $element->width = 68.789808917197;
-        $element->height = 56.184486373166;
+        $element->width = 50;
+        $element->height = 55.7;
         $action = new stdClass();
         $action->library = 'H5P.Video 1.2';
         $params = new stdClass();
@@ -350,18 +350,18 @@ function _content_conversion_node_story($node, $slide) {
   $get_text_array = array(
     "text" => isset($node->field_story_copy[$node->language]) ? $node->field_story_copy[$node->language][0]['safe_value'] : '',
     "label" => isset($node->field_story_label[$node->language]) ? $node->field_story_label[$node->language][0]['value'] : '',
-    "x" => '1.0615711252654',
-    "y" => '2.0898846960168',
-    "width" => '98.513800424628',
-    "height" => '58.280922431866',
+    "x" => 0,
+    "y" => 0,
+    "width" => 100,
+    "height" => 60,
   );
   $slide->elements[] = _create_text_object($get_text_array);
 
   if (!empty($node->field_story_image[$node->language][0]['uri'])) {
     $element = new stdClass();
     $element->x = 0;
-    $element->y = 59.538784067086;
-    $element->width = 30.430461002119;
+    $element->y = 60;
+    $element->width = 30;
     $element->height = 40;
     $element->alwaysDisplayComments = false;
     $element->backgroundOpacity = 0;
@@ -384,160 +384,74 @@ function _content_conversion_node_story($node, $slide) {
 }
 
 /**
- * Created by SUPRIYA RAJGOPAL on 25Aug16
- *
  * Generates H5P JSON of Reveal learning object type.
  *
- * @param object $content_object
+ * @param object $node
  *   A Content Object node.
  * @param object $slide
  *   A slide object.
- * Returns array matching the JSON structure
  */
-function _content_conversion_node_reveal($learning_object, $slide)
-{
-	$language = $learning_object->language;
-	
-	$element = new stdClass(); //Elements of the slide. In this case, the Click To Reveal option within a Course Presentation.
-	
-	//Set position & dimension of element within the slide 
+function _content_conversion_node_reveal($node, $slide) {
+	$element = new stdClass();
 	$element->x = 0;
 	$element->y = 0;
 	$element->width = 100;
 	$element->height = 100;
-	
-	$element->action = new stdClass();
-	$element->action->library = 'H5P.ClickToReveal 1.0';
-	
-	$element->action->params = new stdClass();
-	
-	//Intro text of learning object to H5P description
-	if(isset($learning_object->field_intro) && !empty($learning_object->field_intro))
-		$element->action->params->description = $learning_object->field_intro[$language][0]['safe_value'];
-	else
-		$element->action->params->description = t('');
-	
-	$element->action->params->cards = array();
-	
-	//Create card objects array iff Reveal collection paragraph bundle is not empty
-	if(isset($learning_object->field_reveal_collection) && !empty($learning_object->field_reveal_collection))
-	{
-		$cards = $learning_object->field_reveal_collection[$language]; //Array of cards
-		
-		/**
-		 * foreach Click To Reveal card..
-		 *  load the Paragraph entity i.e Reveal collection field in Reveal content type,
-		 *  access each of thumbnail, large image & text of the paragraph and
-		 *  form the card object and push to the cards array
-		 */
-		foreach($cards as $card) 
-		{
-			$cardParagraphEntity = entity_load('paragraphs_item', array($card['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
-			
-			$cardObject = new stdClass();
-			
-			$cardParagraph = $cardParagraphEntity[$card['value']];
-			
-			//Thumbnail image object
-			if(isset($cardParagraph->field_reveal_thumbnail) && !empty($cardParagraph->field_reveal_thumbnail))
-			  $cardObject->thumbnail_image = _create_image_object($cardParagraph->field_reveal_thumbnail[LANGUAGE_NONE][0]);
-			else
-				$cardObject->thumbnail_image = new stdClass();
-			
-			//Large media object
+  $action = new stdClass();
+	$action->library = 'H5P.ClickToReveal 1.0';
+	$params = new stdClass();
+	// Intro text of learning object to H5P description.
+  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
+	if (!empty($node->field_reveal_collection[$node->language])) {
+    $params->cards = array();
+		foreach ($node->field_reveal_collection[$node->language] as $item) {
+      $paragraph = paragraphs_item_load($item['value']);
+			$card = new stdClass();
+			if (!empty($paragraph->field_reveal_thumbnail[LANGUAGE_NONE])) {
+        $reveal_thumbnail = image_load(image_style_path('reveal_thumbnail', $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['uri']));
+        $thumbnail_image = new stdClass();
+        $thumbnail_image->path = file_create_url($reveal_thumbnail->source);
+        $thumbnail_image->mime = $reveal_thumbnail->info['mime_type'];
+        $thumbnail_image->width = $reveal_thumbnail->info['width'];
+        $thumbnail_image->height = $reveal_thumbnail->info['height'];
+        $card->thumbnail_image = $thumbnail_image;
+      }
+			// Large media object.
 			$media = new stdClass();
-			$params = new stdClass();
-			if(isset($cardParagraph->field_reveal_hero) && !empty($cardParagraph->field_reveal_hero)) //If uploaded media is an image
-			{
-			  $params->contentName = 'Image';
-			  $params->file = _create_image_object($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]);
-			  $params->alt = t('@text',array('@text' => drupal_html_to_text($cardParagraph->field_reveal_hero[LANGUAGE_NONE][0]['alt'])));
+			if (!empty($paragraph->field_reveal_hero[LANGUAGE_NONE])) {
+        // If uploaded media is an image.
 			  $media->library = 'H5P.Image 1.0';
+  			$media_params = new stdClass();
+			  $media_params->contentName = 'Image';
+			  $media_params->file = _create_image_object($paragraph->field_reveal_hero[LANGUAGE_NONE][0]);
+			  $media_params->alt = $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['alt'];
+  			$media->params = $media_params;
+        $card->media = $media;
 			}
-			else if(isset($cardParagraph->field_reveal_hero_video) && !empty($cardParagraph->field_reveal_hero_video)) //If uploaded media is a video
-			{
-				//Visuals
-				$params->visuals = new stdClass();
-				$params->visuals->fit = true;
-				$params->visuals->controls = true;
-				//Need default poster image because File field doesn't have this option
-				$defaultPosterImage = array(
-					'uri' => '', //Predefined URL of default poster image
-					'filemime' => 'image/jpeg',
-					'width' => 765,
-					'height' => 515
-				);
-				$params->visuals->poster = _create_image_object($defaultPosterImage);
-				
-				//Playback
-				$params->playback = new stdClass();
-				$params->playback->autoplay = false;
-				$params->playback->loop = false;
-				
-				//Error messages
-				$params->l10n = new stdClass();
-				$params->l10n->name = 'Video';
-				$params->l10n->loading = t('Video player loading...');
-				$params->l10n->noPlayers = t('Found no video players that supports the given video format.');
-				$params->l10n->noSources = t('Video is missing sources.');
-				$params->l10n->aborted = t('Media playback has been aborted.');
-				$params->l10n->networkFailure = t('Network failure.');
-				$params->l10n->cannotDecode = t('Unable to decode media.');
-				$params->l10n->formatNotSupported = t('Video format not supported.');
-				$params->l10n->mediaEncrypted = t('Media encrypted.');
-				$params->l10n->unknownError = t('Unknown error.');
-				$params->l10n->invalidYtId = t('Invalid YouTube ID.');
-				$params->l10n->unknownYtId = t('Unable to find video with the given YouTube ID.');
-				$params->l10n->restrictedYt = t('The owner of this video does not allow it to be embedded.');
-				
-				//Video source
-				$source = new stdClass();
-				$source->path = file_create_url($cardParagraph->field_reveal_hero_video[LANGUAGE_NONE][0]['uri']);
-				$source->mime = $cardParagraph->field_reveal_hero_video[LANGUAGE_NONE][0]['filemime'];
-				$source->copyright = new stdClass();
-				$source->copyright->license = 'U';
-				$params->sources[] = $source; //No for() needed because cardinality is 1 for this field in Paragraph bundle.
-				
+			elseif (!empty($paragraph->field_reveal_hero_video[LANGUAGE_NONE])) {
+        // If uploaded media is a video.
 				$media->library = 'H5P.Video 1.2';
+				$visuals = new stdClass();
+				$visuals->fit = TRUE;
+				$visuals->controls = TRUE;
+  			$media_params = new stdClass();
+				$media_params->visuals = $visuals;
+				$source = new stdClass();
+				$source->path = file_create_url($paragraph->field_reveal_hero_video[LANGUAGE_NONE][0]['uri']);
+				$source->mime = $paragraph->field_reveal_hero_video[LANGUAGE_NONE][0]['filemime'];
+				$media_params->sources[] = $source;
+  			$media->params = $media_params;
+        $card->media = $media;
 			}
-			$media->subContentId = 0;
-			$media->params = $params;
-			$cardObject->media = $media;
-			
-			//Text
-			if(isset($cardParagraph->field_reveal_text) && !empty($cardParagraph->field_reveal_text))
-			{
-				$text = $cardParagraph->field_reveal_text[LANGUAGE_NONE][0]['safe_value'];
-				$cardObject->text = t('@text',array('@text' => drupal_html_to_text($text)));
-			}
-			else
-				$cardObject->text = t('');
-			
-			$element->action->params->cards[] = $cardObject;
+      $card->text = empty($paragraph->field_reveal_text[LANGUAGE_NONE]) ? '' : $paragraph->field_reveal_text[LANGUAGE_NONE][0]['value'];
+			$params->cards[] = $card;
 		}
 	}
-	else
-		$element->action->params->cards[] = new stdClass();
-	
-	//Title of Click to Reveal element
-	if(isset($learning_object->field_subtitle) && !empty($learning_object->field_subtitle))
-		$element->action->params->title = $learning_object->field_subtitle[$language][0]['safe_value'];
-	else
-		$element->action->params->title = t('');
-	
-	//Default, constant settings
-	$element->action->params->retry = t('Retry');
-	$element->action->subContentId = 0;
-	$element->alwaysDisplayComments = false;
-	$element->backgroundOpacity = 0;
-	$element->displayAsButton = false;
-	$element->invisible = false;
-	$element->solution = "";
-	
-	$slide->elements[] = $element; //Array of elements
-	
-	$slide->slideBackgroundSelector = new stdClass(); //Empty since no background image will be selected
-	$slide->keywords = array(); //Empty since no keywords will be specified
+	// Title of Click to Reveal element.
+  $params->title = empty($node->field_subtitle[$node->language]) ? '' : $node->field_subtitle[$node->language][0]['value'];
+  $action->params = $params;
+  $element->action = $action;
+	$slide->elements[] = $element;
 }
 
 /**
@@ -557,10 +471,10 @@ function _content_conversion_node_hot_spots($node, $slide) {
   if (!empty($node->field_intro[$node->language][0]['safe_value'])) {
     $get_text_array = array(
       "text" => $node->field_intro[$node->language][0]['safe_value'],
-      "x" => '0',
-      "y" => '0',
-      "width" => '95.329087048832',
-      "height" => '66.666666666667',
+      "x" => 0,
+      "y" => 0,
+      "width" => 100,
+      "height" => 100,
     );
     $slide->elements[] = _create_text_object($get_text_array);
   }
@@ -582,7 +496,7 @@ function _content_conversion_node_hot_spots($node, $slide) {
 function _content_conversion_node_drag_select($learning_object, $slide)
 {
   $language = $learning_object->language;
-  
+
   $element = new stdClass(); //Elements of the slide. In this case, the Drag&Drop option within a Course Presentation
 
   //Set position & dimension of element within the slide
@@ -769,7 +683,9 @@ function _content_conversion_nodes_question_and_answer($nodes, $slide, $argument
     $params->introPage = $get_text_array;
   }*/
   $params->progressType = 'dots';
-  $params->passPercentage = $arguments['passPercentage'];
+  if (isset($arguments['passPercentage'])) {
+    $params->passPercentage = $arguments['passPercentage'];
+  }
 
   $params->texts = array(
     "prevButton" => "Previous question",
@@ -824,7 +740,7 @@ function _content_conversion_node_drag_match($learning_object, $slide)
   $question = new stdClass();
   $behaviour = new stdClass();
   $language = $learning_object->language;
-  
+
   //Variable definition
   /*-----------------*/
   //Correct Feedback text. Mandatory field.
@@ -838,21 +754,21 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 	$incorrectFeedback = $learning_object->field_custom_incorrect_feedback[$language][0]['safe_value'];
   else
 	$incorrectFeedback = 'That\'s not it!';
-	
+
   //Question Title (Intro text)
   if(isset($learning_object->field_intro) && isset($learning_object->field_intro[$language]) && !empty($learning_object->field_intro[$language]))
 	$questionTitle = $learning_object->field_intro[$language][0]['safe_value'];
   else
 	$questionTitle = '';
   /*-----------------*/
-  
+
   //Form slide object
   $slide->elements[] = $element;
   $slide->slideBackgroundSelector = new stdClass();
   $slide->keywords = array();
-  
+
   //Form complete element object within the slide
-  //Set position & dimension of element within the slide 
+  //Set position & dimension of element within the slide
   $element->x = 0;
   $element->y = 0;
   $element->width = 100;
@@ -863,12 +779,12 @@ function _content_conversion_node_drag_match($learning_object, $slide)
   $element->displayAsButton = false;
   $element->invisible = false;
   $element->solution = t('');
-  
+
   //Form action object
   $action->library = 'H5P.DragQuestion 1.6';
   $action->params = $params;
   $action->subContentId = 0;
-  
+
   //Form params object
   $params->scoreShow = t('Submit');
   $params->tryAgain = t('Retry');
@@ -877,21 +793,21 @@ function _content_conversion_node_drag_match($learning_object, $slide)
   $params->incorrect_feedback = t('@text',array('@text' => drupal_html_to_text($incorrectFeedback)));
   $params->question = $question;
   $params->behaviour = $behaviour;
-  
+
   //Form question object
   $question->settings = new stdClass();
   $question->settings->size = new stdClass();
   $question->settings->size->width = 700;
   $question->settings->size->height = 400;
   $question->settings->questionTitle = t('@text',array('@text' => drupal_html_to_text($questionTitle)));
-  
+
   $question->task = new stdClass();
-  
+
   //DRAGGABLE & DROPZONE ELEMENT CREATION SECTION
   if(isset($learning_object->field_drag_match_collection) && !empty($learning_object->field_drag_match_collection))
   {
 	$draggables = $learning_object->field_drag_match_collection[$learning_object->language]; //Array of draggable elements
-	
+
 	/**
      * foreach Draggable Element...
      *  load the Paragraph entity i.e Drag Match collection field in Drag Match content type, access each property and
@@ -905,7 +821,7 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 	{
 		$dragMatchParagraphEntity = entity_load('paragraphs_item', array($draggable['value'])); //Borrowed from https://www.drupal.org/node/2510602#comment-10049490
 		$dragMatchParagraph = $dragMatchParagraphEntity[$draggable['value']];
-		
+
 		//Form task element object (LHS of slide i.e draggable elements)
 		/*-----------------------------------------------------------*/
 		$taskElement = new stdClass();
@@ -914,11 +830,11 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 		$taskElement->x = 3;
 		$taskElement->y = $taskElementY + 20; //Starts from '0', increments by 20. Ternary operator to handle 1st element
 		$taskElementY = $taskElement->y;
-		
+
 		$taskElement->dropZones[] = strval($i); //Convert index to string since dropzone section expects string indices as an array
-		
+
 		$taskElement->type = new stdClass();
-		
+
 		//If draggable element is an image. Default is text
 		if(isset($learning_object->field_left_drag_image) && !empty($learning_object->field_left_drag_image))
 		{
@@ -934,19 +850,19 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 		{
 			$taskElement->type->library = 'H5P.AdvancedText 1.1';
 			$taskElement->type->params = new stdClass();
-			
+
 			if(isset($dragMatchParagraph->field_left_drag_text) && !empty($dragMatchParagraph->field_left_drag_text))
 				$taskElement->type->params->text = t('@text',array('@text' => drupal_html_to_text($dragMatchParagraph->field_left_drag_text[LANGUAGE_NONE][0]['safe_value'])));
 			else
 				$taskElement->type->params->text = t('');
 		}
-		
+
 		$taskElement->type->subContentId = 0;
-		
+
 		$taskElement->backgroundOpacity = 100;
 		$taskElement->multiple = false; //Only difference between Drag Match (1-to-1) & Drag Select (many-to-1)
 		/*-----------------------------------------------------------*/
-		
+
 		//Form dropzone element object (RHS of slide i.e drop zones)
 		/*-----------------------------------------------------------*/
 		$dropZone = new stdClass();
@@ -955,30 +871,30 @@ function _content_conversion_node_drag_match($learning_object, $slide)
 		$dropZone->x = 44;
 		$dropZone->y = $dropZoneY + 20; //Starts from '0', increments by 20. Ternary operator to handle 1st element
 		$dropZoneY = $dropZone->y;
-		
+
 		$dropZone->correctElements[] = strval($i); //Convert index to string since dropzone section expects string indices as an array
 		$dropZone->showLabel = true;
 		$dropZone->backgroundOpacity = 100;
 		$dropZone->single = true; //Only difference between Drag Match (1-to-1) & Drag Select (many-to-1)
-		
+
 		if(isset($dragMatchParagraph->field_right_drag_text) && !empty($dragMatchParagraph->field_right_drag_text))
 			$dropZone->label = t('@text',array('@text' => drupal_html_to_text($dragMatchParagraph->field_right_drag_text[LANGUAGE_NONE][0]['safe_value'])));
 		else
 			$dropZone->label = t('');
-		
+
 		$dropZone->tip = t('');
 		/*-----------------------------------------------------------*/
 
 		array_push($taskElements,$taskElement);
 		array_push($dropZones,$dropZone);
-		
+
 		$i++;
 	}
   }
   shuffle($taskElements); //Randomize the order of array elements
   $question->task->elements = $taskElements;
   $question->task->dropZones = $dropZones;
-  
+
   //Form behaviour object
   $behaviour->enableRetry = true;
   $behaviour->singlePoint = false;
@@ -1134,7 +1050,7 @@ function _create_hotspot_object($node) {
   return $element;
 }
 
-/*
+/**
  * Utility Function
  * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
  * receives one drupal image array
@@ -1142,15 +1058,11 @@ function _create_hotspot_object($node) {
  * returns an image object ready for json conversion
  */
 function _create_image_object($image_array) {
-
   $file = new stdClass();
   $file->path = file_create_url($image_array['uri']);
   $file->mime = $image_array['filemime'];
   $file->width = $image_array['width'];
   $file->height = $image_array['height'];
-  $copyright = new stdClass();
-  $copyright->license = "U";
-  $file->copyright = $copyright;
   return $file;
 }
 
@@ -1197,13 +1109,16 @@ function _get_content_object_arguments($content_object, $h5p = false) {
   $return_array = array();
   $template = $content_object->field_learning_template[$content_object->language][0]['value'];
   $final_exam = $content_object->field_final_exam[$content_object->language][0]['value'];
-  $percentage = $content_object->field_percentage_requirement[$content_object->language][0]['value'];
   if (in_array($template, array("trivia", "drag_select"))) {
     if ($final_exam) {
       $return_array = array("field_spin_the_wheel" => array(LANGUAGE_NONE=>array(array('value'=>1))));
       if (in_array($template, array("trivia")) && $h5p) {
         //this quiz counts and sets an h5p pass percentage in the question set
-        $return_array = array("passPercentage" => $percentage);
+        if (!empty($content_object->field_percentage_requirement[$content_object->language])) {
+          $return_array = array(
+            'passPercentage' => $content_object->field_percentage_requirement[$content_object->language][0]['value'],
+          );
+        }
         return $return_array;
       }
     }

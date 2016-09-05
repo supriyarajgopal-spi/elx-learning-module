@@ -9,6 +9,24 @@
 		//Check if Question Type is Drag&Drop and only then, add the logic so that this applies to Quizzes having Drag&Drop questions only
 		if (/DragQuestion/i.test(dragDropQuestion.context.contextActivities.category[0].id))
 		{
+			//INSTANT FEEDBACK AS SOON AS ELEMENT IS DROPPED. USED IN "DRAG-MATCH"
+			//Whenever a draggable is dropped to a dropzone
+			if(dragDropQuestion.verb.display['en-US'] == 'interacted')
+			{	
+				this.showAllSolutions(false); //Set skipVisuals = false by passing parameter which will make instant feedback to be added automatically. Defined in H5P.DragQuestion\dragquestion.js
+				this.showButton('check-answer'); //Show 'Check/Submit' button. By default, this is hidden if skipVisuals = false (as set above)
+				
+				//Enable each draggable which is disabled by default if skipVisuals = false (as set above)
+				for (var i = 0; i < this.draggables.length; i++)
+				  this.draggables[i].enable();
+
+				//Change text of draggable element depending on whether it is dropped in correct dropzone or not
+				var lastElementChild = this.$container[0].lastElementChild; //Last child of container holds the draggable element text & other properties
+				if(lastElementChild.classList.contains("h5p-correct") && this.options.instant_feedback.length != 0) //Borrowed from https://developer.mozilla.org/en/docs/Web/API/Element/classList
+					this.$container[0].lastElementChild.innerHTML = this.options.instant_feedback;
+			}
+			
+			//FEEDBACK WHEN SUBMIT IS CLICKED. USED IN "DRAG-SELECT"
 			//If Check/Submit button is clicked 
 			if(dragDropQuestion.verb.display['en-US'] == 'answered')
 			{

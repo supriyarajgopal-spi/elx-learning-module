@@ -724,6 +724,9 @@ function _content_conversion_node_drag_match($node, $question) {
     'langcode' => $node->language,
   ));
   $params->feedback = empty($node->field_custom_correct_feedback[$node->language]) ? '' : drupal_html_to_text($node->field_custom_correct_feedback[$node->language][0]['value']);
+  $params->instant_feedback = t('That’s right!', array(), array(
+    'langcode' => $node->language,
+  ));
   $params->incorrect_feedback = empty($node->field_custom_incorrect_feedback[$node->language]) ? '' : drupal_html_to_text($node->field_custom_incorrect_feedback[$node->language][0]['value']);
   $params_question = new stdClass();
   $settings = new stdClass();

@@ -76,6 +76,24 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	$incorrectFeedbackSetting->common = false;
 	/*Insert this new setting next to 'Correct feedback text' setting. Borrowed from http://stackoverflow.com/questions/3797239/insert-new-item-in-array-on-any-position-in-php*/
 	array_splice($semantics,4,0,array($incorrectFeedbackSetting));
+	
+	/* Create common 'Instant Feedback' field which replaces the text of draggable element whenever it is dropped to its correct dropzone.
+	 * Incorrect instant feedback field is not needed because H5P does not allow an element to be dropped in a wrong dropzone at all.
+	 */
+	/*----------------------------------------------------------------------------------------------------------*/
+	//Create new 'Incorrect feedback text' setting
+	$instantFeedbackSetting = new stdClass();
+	$instantFeedbackSetting->label = t('Instant feedback');
+	$instantFeedbackSetting->name = 'instant_feedback';
+	$instantFeedbackSetting->type = 'text';
+	$instantFeedbackSetting->widget = 'html';
+	$instantFeedbackSetting->tags = array('p','br','strong','em','ul','li','ol','dl','dt','sup','u'); //Allowed tags
+	$instantFeedbackSetting->default = t('');
+	$instantFeedbackSetting->description = t('Instant feedback which replaces the text of draggable element whenever it is dropped to its correct dropzone. This will be wrapped in <p></p> by default.');
+	$instantFeedbackSetting->common = true; //Same text is shown on all draggable elements. Appears under 'Settings & Text'.
+	$instantFeedbackSetting->optional = true;
+	array_splice($semantics,5,0,array($instantFeedbackSetting));
+	/*----------------------------------------------------------------------------------------------------------*/
   }
 }
 

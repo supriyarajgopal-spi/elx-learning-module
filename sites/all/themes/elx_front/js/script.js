@@ -187,6 +187,23 @@
 
       }
 
+      /* LEVELS */
+      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {
+
+        /* eslint-disable no-alert, no-console */
+        $('#modalContent').ready(function () {
+          var mClass = '';
+          mClass = $('#modalContent .field-name-field-learning-category .field-item').text();
+          mClass = mClass.replace(/\s+/g, '-').toLowerCase();
+          console.log('class = ' + mClass);
+          $('#modalContent').addClass(mClass);
+        });
+
+        /* eslint-enable no-alert, no-console */
+
+
+      }
+
     }
   };
 

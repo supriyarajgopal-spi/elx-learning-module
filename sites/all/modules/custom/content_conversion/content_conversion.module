@@ -52,8 +52,6 @@ function content_conversion_content_object_h5p($node) {
       'vid' => $h5p_node->vid,
     );
   }
-  $h5p_node += _get_content_object_fields($node);
-  $h5p_node += _get_content_object_arguments($node);
   $h5p_node += array(
     'uid' => $node->uid,
     'name' => $node->name,
@@ -72,8 +70,55 @@ function content_conversion_content_object_h5p($node) {
     'embed_type' => 'div',
     'disable' => H5PCore::DISABLE_FRAME,
     'h5p_library' => 'H5P.CoursePresentation 1.11',
+    'markets' => $node->markets,
+    'group_content_access' => $node->group_content_access ? $node->group_content_access : array(
+      LANGUAGE_NONE => array(
+        array('value' => 0),
+      ),
+    ),
   );
   $h5p_node = (object) $h5p_node;
+  if (!empty($node->field_featured[$node->language])) {
+    $h5p_node->field_featured[$node->language] = $node->field_featured[$node->language];
+  }
+  if (!empty($node->field_featured_image[$node->language])) {
+    $h5p_node->field_featured_image[$node->language] = $node->field_featured_image[$node->language];
+  }
+  if (!empty($node->field_content_object_type[$node->language])) {
+    $h5p_node->field_content_object_type[$node->language] = $node->field_content_object_type[$node->language];
+  }
+  if (!empty($node->field_learning_template[$node->language]) && !empty($node->field_final_exam[$node->language])) {
+    if ($node->field_learning_template[$node->language][0]['value'] == 'trivia' && $node->field_final_exam[$node->language][0]['value']) {
+      $h5p_node->field_spin_the_wheel[LANGUAGE_NONE]['value'] = 1;
+    }
+  }
+  if (!empty($node->field_learning_category[$node->language])) {
+    $h5p_node->field_learning_category[$node->language] = $node->field_learning_category[$node->language];
+  }
+  if (!empty($node->field_order_weight[$node->language])) {
+    $h5p_node->field_order_weight[$node->language] = $node->field_order_weight[$node->language];
+  }
+  if (!empty($node->field_story_type[$node->language])) {
+    $h5p_node->field_story_type[$node->language] = $node->field_story_type[$node->language];
+  }
+  if (!empty($node->field_pulsed_content[$node->language])) {
+    $h5p_node->field_pulsed_content[$node->language] = $node->field_pulsed_content[$node->language];
+  }
+  if (!empty($node->field_tags_keywords[$node->language])) {
+    $h5p_node->field_tags_keywords[$node->language] = $node->field_tags_keywords[$node->language];
+  }
+  if (!empty($node->field_headline[$node->language])) {
+    $h5p_node->field_headline[$node->language] = $node->field_headline[$node->language];
+  }
+  if (!empty($node->field_intro[$node->language])) {
+    $h5p_node->field_intro[$node->language] = $node->field_intro[$node->language];
+  }
+  if (!empty($node->field_hero_image[$node->language])) {
+    $h5p_node->field_hero_image[$node->language] = $node->field_hero_image[$node->language];
+  }
+  if (!empty($node->field_point_value[$node->language])) {
+    $h5p_node->field_point_value[$node->language] = $node->field_point_value[$node->language];
+  }
   node_save($h5p_node);
   $node->field_h5p_node[LANGUAGE_NONE][0]['target_id'] = $h5p_node->nid;
   node_save($node);
@@ -88,8 +133,6 @@ function content_conversion_content_object_h5p($node) {
  */
 function content_conversion_h5p_json($content_object) {
   $h5p = new stdClass();
-  // Select the Language for the h5p object
-  $h5p->l10n = _create_l10n_object($content_object);
   // Convert the Content Object node into a Course Presentation.
   $h5p->presentation = new stdClass();
   $h5p->presentation->slides = array();
@@ -128,8 +171,33 @@ function content_conversion_h5p_json($content_object) {
     $h5p->presentation->slides[] = $slide;
     $question_set = array();
   }
+  // We have no place for the following string values:
+  // $node->field_exam_perfect_content[$node->language][0]['value']
+  // $node->field_exam_pass_content[$node->language][0]['value']
+  $l10n = new stdClass();
+  $search = array(
+    ':USERSCORE:%',
+    ':MINSCORE:',
+  );
+  $replace = array(
+    '@percent',
+    '80',
+  );
+  if (trim($content_object->field_exam_pass_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+    $pass = str_replace($search, $replace, $content_object->field_exam_pass_feedback[$content_object->language][0]['value']);
+  }
+  if (trim($content_object->field_exam_fail_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+    $fail = str_replace($search, $replace, $content_object->field_exam_fail_feedback[$content_object->language][0]['value']);
+  }
+  $l10n->goodScore = $pass;
+  $l10n->okScore = $pass;
+  $l10n->badScore = $fail;
+  $h5p->l10n = $l10n;
   $override = new stdClass();
-  $override->hideSummarySlide = TRUE;
+  // Hide summary slide if this is not a final exam.
+  if (empty($content_object->field_final_exam[$content_object->language]) || !$content_object->field_final_exam[$content_object->language][0]['value']) {
+    $override->hideSummarySlide = TRUE;
+  }
   $override->showSolutionButton = 'off';
   $override->retryButton = 'off';
   $h5p->override = $override;
@@ -200,25 +268,27 @@ function _content_conversion_node_list($node, $slide) {
     $paragraph = paragraphs_item_load($item['value']);
     if (!empty($paragraph->field_list_image[LANGUAGE_NONE])) {
       $list_image = image_load(image_style_path('list_image', $paragraph->field_list_image[LANGUAGE_NONE][0]['uri']));
-      $file = new stdClass();
-      $file->path = file_create_url($list_image->source);
-      $file->mime = $list_image->info['mime_type'];
-      $file->width = $list_image->info['width'];
-      $file->height = $list_image->info['height'];
-      $size_image = _calculate_image_position_size($size_image, $file, $image_count, $window);
-      $element = new stdClass();
-      $element->x = $size_image['x_pos'];
-      $element->y = $size_image['y_pos'];
-      $element->width = $size_image['width'];
-      $element->height = $size_image['height'];
-      $action = new stdClass();
-      $action->library = 'H5P.Image 1.0';
-      $params = new stdClass();
-      $params->file = $file;
-      $params->alt = $paragraph->field_list_image[LANGUAGE_NONE][0]['field_file_image_alt_text'];
-      $action->params = $params;
-      $element->action = $action;
-      $slide->elements[] = $element;
+      if (!empty($list_image)) {
+        $file = new stdClass();
+        $file->path = file_create_url($list_image->source);
+        $file->mime = $list_image->info['mime_type'];
+        $file->width = $list_image->info['width'];
+        $file->height = $list_image->info['height'];
+        $size_image = _calculate_image_position_size($size_image, $file, $image_count, $window);
+        $element = new stdClass();
+        $element->x = $size_image['x_pos'];
+        $element->y = $size_image['y_pos'];
+        $element->width = $size_image['width'];
+        $element->height = $size_image['height'];
+        $action = new stdClass();
+        $action->library = 'H5P.Image 1.0';
+        $params = new stdClass();
+        $params->file = $file;
+        $params->alt = $paragraph->field_list_image[LANGUAGE_NONE][0]['field_file_image_alt_text'];
+        $action->params = $params;
+        $element->action = $action;
+        $slide->elements[] = $element;
+      }
       $image_count++;
     }
     elseif (!empty($paragraph->field_list_video[LANGUAGE_NONE])) {
@@ -381,12 +451,14 @@ function _content_conversion_node_reveal($node, $slide) {
 			$card = new stdClass();
 			if (!empty($paragraph->field_reveal_thumbnail[LANGUAGE_NONE])) {
         $reveal_thumbnail = image_load(image_style_path('reveal_thumbnail', $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['uri']));
-        $thumbnail_image = new stdClass();
-        $thumbnail_image->path = file_create_url($reveal_thumbnail->source);
-        $thumbnail_image->mime = $reveal_thumbnail->info['mime_type'];
-        $thumbnail_image->width = $reveal_thumbnail->info['width'];
-        $thumbnail_image->height = $reveal_thumbnail->info['height'];
-        $card->thumbnail_image = $thumbnail_image;
+        if (!empty($reveal_thumbnail)) {
+          $thumbnail_image = new stdClass();
+          $thumbnail_image->path = file_create_url($reveal_thumbnail->source);
+          $thumbnail_image->mime = $reveal_thumbnail->info['mime_type'];
+          $thumbnail_image->width = $reveal_thumbnail->info['width'];
+          $thumbnail_image->height = $reveal_thumbnail->info['height'];
+          $card->thumbnail_image = $thumbnail_image;
+        }
       }
 			// Large media object.
 			$media = new stdClass();
@@ -477,12 +549,14 @@ function _content_conversion_node_drag_select($node, $question) {
   $settings->size = $size;
   if (!empty($node->field_drag_select_background[$node->language])) {
     $drag_select_background = image_load(image_style_path('drag_select_background_image', $node->field_drag_select_background[$node->language][0]['uri']));
-    $background = new stdClass();
-    $background->path = file_create_url($drag_select_background->source);
-    $background->mime = $drag_select_background->info['mime_type'];
-    $background->width = $drag_select_background->info['width'];
-    $background->height = $drag_select_background->info['height'];
-    $settings->background = $background;
+    if (!empty($drag_select_background)) {
+      $background = new stdClass();
+      $background->path = file_create_url($drag_select_background->source);
+      $background->mime = $drag_select_background->info['mime_type'];
+      $background->width = $drag_select_background->info['width'];
+      $background->height = $drag_select_background->info['height'];
+      $settings->background = $background;
+    }
   }
   $params_question->settings = $settings;
   $task = new stdClass();
@@ -512,12 +586,14 @@ function _content_conversion_node_drag_select($node, $question) {
         $type_params->contentName = 'Image';
         $type_params->alt = drupal_html_to_text($paragraph->field_drag_select_text[LANGUAGE_NONE][0]['value']);
         $drag_select_image = image_load(image_style_path('drag_select_image', $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['uri']));
-        $file = new stdClass();
-        $file->path = file_create_url($drag_select_image->source);
-        $file->mime = $drag_select_image->info['mime_type'];
-        $file->width = $drag_select_image->info['width'];
-        $file->height = $drag_select_image->info['height'];
-        $type_params->file = $file;
+        if (!empty($drag_select_image)) {
+          $file = new stdClass();
+          $file->path = file_create_url($drag_select_image->source);
+          $file->mime = $drag_select_image->info['mime_type'];
+          $file->width = $drag_select_image->info['width'];
+          $file->height = $drag_select_image->info['height'];
+          $type_params->file = $file;
+        }
       }
       elseif (!empty($paragraph->field_drag_select_text[LANGUAGE_NONE])) {
         $type->library = 'H5P.AdvancedText 1.1';
@@ -681,12 +757,14 @@ function _content_conversion_node_drag_match($node, $question) {
         $type_params->contentName = 'Image';
         $type_params->alt = drupal_html_to_text($paragraph->field_left_drag_text[LANGUAGE_NONE][0]['value']);
         $drag_match_image = image_load(image_style_path('drag_match_image', $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['uri']));
-        $file = new stdClass();
-        $file->path = file_create_url($drag_match_image->source);
-        $file->mime = $drag_match_image->info['mime_type'];
-        $file->width = $drag_match_image->info['width'];
-        $file->height = $drag_match_image->info['height'];
-        $type_params->file = $file;
+        if (!empty($drag_match_image)) {
+          $file = new stdClass();
+          $file->path = file_create_url($drag_match_image->source);
+          $file->mime = $drag_match_image->info['mime_type'];
+          $file->width = $drag_match_image->info['width'];
+          $file->height = $drag_match_image->info['height'];
+          $type_params->file = $file;
+        }
       }
       else {
         $type->library = 'H5P.AdvancedText 1.1';
@@ -844,41 +922,6 @@ function _create_text_object($text_array = null) {
   return $element;
 }
 
-function _get_content_object_fields($content_object) {
-  return array(
-    "og_group_ref" => $content_object->markets,
-    "group_content_access" => $content_object->group_content_access ? $content_object->group_content_access : array("und"=>array(array("value"=>0))),
-    "field_hero_image" => array($content_object->language=>$content_object->field_hero_image[$content_object->language]),
-    "field_headline" => array($content_object->language=>$content_object->field_headline[$content_object->language]),
-    "field_intro" => array($content_object->language=>$content_object->field_intro[$content_object->language]),
-    "field_custom_cta" => array($content_object->language=>$content_object->field_custom_cta[$content_object->language]),
-    "field_point_value" => array($content_object->language=>$content_object->field_point_value[$content_object->language]),
-    "field_tags_keywords" => array($content_object->language=>$content_object->field_tags_keywords[$content_object->language]),
-    "field_order_weight" => array($content_object->language=>$content_object->field_order_weight[$content_object->language]),
-    "field_learning_category" => array($content_object->language=>$content_object->field_learning_category[$content_object->language]),
-  );
-}
-
-function _get_content_object_arguments($content_object) {
-  $return_array = array();
-  $template = $content_object->field_learning_template[$content_object->language][0]['value'];
-  $final_exam = $content_object->field_final_exam[$content_object->language][0]['value'];
-  if (in_array($template, array("trivia", "drag_select"))) {
-    if ($final_exam) {
-      $return_array = array(
-        "field_spin_the_wheel" => array(
-          LANGUAGE_NONE => array(
-            array(
-              'value' => 1,
-            ),
-          ),
-        ),
-      );
-    }
-  }
-  return $return_array;
-}
-
 function _calculate_text_position_size($size, $text, $count, $window) {
   if ($count != 1) {
     $size['y_pos'] = $size['height'] + $size['y_pos'];
@@ -904,52 +947,4 @@ function _convert_height_percentage_to_width_percentage($window, $size, $image) 
   $image_width_pixels = $image->width * $ratio;
   $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
   return $size;
-}
-
-function _create_l10n_object($node) {
-  //We only have an english object
-  //these are the only fields we have in the content object
-  //$content_object->field_percentage_requirement[$content_object->language][0]['value']
-  //$content_object->field_exam_perfect_content[$content_object->language][0]['value']
-  //$content_object->field_exam_pass_content[$content_object->language][0]['value']
-  //$content_object->field_exam_fail_feedback[$content_object->language][0]['value']
-  //$content_object->field_exam_pass_feedback[$content_object->language][0]['value']
-  $l10n = array(
-    "slide" => "Slide",
-    "yourScore" => "Your Score",
-    "maxScore" => "Max Score",
-    "goodScore" => "Congratulations! You got @percent correct!",
-    "okScore" => "Nice effort! You got @percent correct!",
-    "badScore" => "You got @percent correct.",
-    "Total" => "Total",
-    "showSolutions" => "Show solutions",
-    "retry" => "Retry",
-    "title" => "Title",
-    "author" => "Author",
-    "lisence" => "License",
-    "license" => "License",
-    "exportAnswers" => "Export text",
-    "copyright" => "Rights of use",
-    "hideKeywords" => "Hide keywords list",
-    "showKeywords" => "Show keywords list",
-    "fullscreen" => "Fullscreen",
-    "exitFullscreen" => "Exit fullscreen",
-    "prevSlide" => "Previous slide",
-    "nextSlide" => "Next slide",
-    "currentSlide" => "Current slide",
-    "lastSlide" => "Last slide",
-    "solutionModeTitle" => "Exit solution mode",
-    "solutionModeText" => "Solution Mode",
-    "summaryMultipleTaskText" => "Multiple tasks",
-    "scoreMessage" => "You achieved:",
-    "shareFacebook" => "Share on Facebook",
-    "shareTwitter" => "Share on Twitter",
-    "summary" => "Summary",
-    "solutionsButtonTitle" => "Show comments",
-    "printTitle" => "Print",
-    "printIngress" => "How would you like to print this presentation?",
-    "printAllSlides" => "Print all slides",
-    "printCurrentSlide" => "Print current slide"
-  );
-  return $l10n;
 }

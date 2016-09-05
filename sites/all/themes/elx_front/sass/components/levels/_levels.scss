@@ -1,0 +1,62 @@
+/* LEVELS */
+body.page-levels-all,
+body.page-levels-completed,
+body.page-levels-in-progress {
+
+  h2.pane-title {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-extralarge;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .logo,
+  .logo-sub {
+    display: none;
+  }
+
+  /* TOP MENU TABS */
+  .panel-display {
+
+    ul.menu {
+      display: block;
+      background-color: #e6e9ee;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        list-style-type: none;
+        list-style-image: none;
+        margin: 38px -3px;
+
+        a {
+          font-size: $font-size-lg-extrasmall;
+          font-weight: bold;
+          letter-spacing: 3px;
+          color: #040a2b;
+          display: inline-block;
+          width: 170px;
+          height: 46px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          text-align: center;
+          text-decoration: none;
+          padding: 10px 0 0;
+          position: relative;
+
+          &.active {
+            color: #fff;
+            background-color: #040a2b;
+            border: 1px solid #040a2b;
+            z-index: 2;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

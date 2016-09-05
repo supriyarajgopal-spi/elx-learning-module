@@ -3158,6 +3158,82 @@ span.field-label {
   float: none;
 }
 
+/* LEVELS */
+/* line 2, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all,
+body.page-levels-completed,
+body.page-levels-in-progress {
+  /* TOP MENU TABS */
+}
+
+/* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all h2.pane-title,
+body.page-levels-completed h2.pane-title,
+body.page-levels-in-progress h2.pane-title {
+  font-family: "optimadisplaylightlight";
+  font-size: 72px;
+  font-weight: 100;
+  text-align: center;
+}
+
+/* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .logo,
+body.page-levels-all .logo-sub,
+body.page-levels-completed .logo,
+body.page-levels-completed .logo-sub,
+body.page-levels-in-progress .logo,
+body.page-levels-in-progress .logo-sub {
+  display: none;
+}
+
+/* line 21, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu,
+body.page-levels-completed .panel-display ul.menu,
+body.page-levels-in-progress .panel-display ul.menu {
+  display: block;
+  background-color: #e6e9ee;
+  text-align: center;
+}
+
+/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li,
+body.page-levels-completed .panel-display ul.menu li,
+body.page-levels-in-progress .panel-display ul.menu li {
+  display: inline-block;
+  list-style-type: none;
+  list-style-image: none;
+  margin: 38px -3px;
+}
+
+/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li a,
+body.page-levels-completed .panel-display ul.menu li a,
+body.page-levels-in-progress .panel-display ul.menu li a {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #040a2b;
+  display: inline-block;
+  width: 170px;
+  height: 46px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0 0;
+  position: relative;
+}
+
+/* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li a.active,
+body.page-levels-completed .panel-display ul.menu li a.active,
+body.page-levels-in-progress .panel-display ul.menu li a.active {
+  color: #fff;
+  background-color: #040a2b;
+  border: 1px solid #040a2b;
+  z-index: 2;
+}
+
 /* LOGIN PAGE*/
 /* line 2, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/login/_login.scss */
 body.not-logged-in.page-user,

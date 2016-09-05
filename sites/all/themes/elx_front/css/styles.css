@@ -3164,6 +3164,7 @@ body.page-levels-all,
 body.page-levels-completed,
 body.page-levels-in-progress {
   /* TOP MENU TABS */
+  /* needs to be in .panel-display so it doesn't interfere with header */
 }
 
 /* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
@@ -3186,7 +3187,7 @@ body.page-levels-in-progress .logo-sub {
   display: none;
 }
 
-/* line 21, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 22, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .panel-display ul.menu,
 body.page-levels-completed .panel-display ul.menu,
 body.page-levels-in-progress .panel-display ul.menu {
@@ -3195,7 +3196,7 @@ body.page-levels-in-progress .panel-display ul.menu {
   text-align: center;
 }
 
-/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .panel-display ul.menu li,
 body.page-levels-completed .panel-display ul.menu li,
 body.page-levels-in-progress .panel-display ul.menu li {
@@ -3205,7 +3206,7 @@ body.page-levels-in-progress .panel-display ul.menu li {
   margin: 38px -3px;
 }
 
-/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .panel-display ul.menu li a,
 body.page-levels-completed .panel-display ul.menu li a,
 body.page-levels-in-progress .panel-display ul.menu li a {
@@ -3224,7 +3225,7 @@ body.page-levels-in-progress .panel-display ul.menu li a {
   position: relative;
 }
 
-/* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .panel-display ul.menu li a.active,
 body.page-levels-completed .panel-display ul.menu li a.active,
 body.page-levels-in-progress .panel-display ul.menu li a.active {
@@ -3232,6 +3233,13 @@ body.page-levels-in-progress .panel-display ul.menu li a.active {
   background-color: #040a2b;
   border: 1px solid #040a2b;
   z-index: 2;
+}
+
+/* line 63, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .views-field-field-hero-image,
+body.page-levels-completed .views-field-field-hero-image,
+body.page-levels-in-progress .views-field-field-hero-image {
+  max-width: 233px;
 }
 
 /* LOGIN PAGE*/

@@ -16,6 +16,7 @@ body.page-levels-in-progress {
   }
 
   /* TOP MENU TABS */
+  /* needs to be in .panel-display so it doesn't interfere with header */
   .panel-display {
 
     ul.menu {
@@ -57,6 +58,10 @@ body.page-levels-in-progress {
 
     }
 
+  }
+
+  .views-field-field-hero-image {
+    max-width: 233px; // this should be fixed with imagemagick but we need it working now
   }
 
 }

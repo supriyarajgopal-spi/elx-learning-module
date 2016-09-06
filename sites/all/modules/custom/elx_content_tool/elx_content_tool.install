@@ -10,7 +10,7 @@
  */
 function elx_content_tool_install() {
   // Mark as needing updates.
-  drupal_set_installed_schema_version('elx_content_tool_install', SCHEMA_INSTALLED);
+  drupal_set_installed_schema_version('elx_content_tool', SCHEMA_INSTALLED);
 }
 
 /**

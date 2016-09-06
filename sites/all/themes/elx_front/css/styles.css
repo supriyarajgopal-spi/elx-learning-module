@@ -3534,6 +3534,27 @@ body.ctools-modal-open {
   font-size: 28px;
 }
 
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-helix/_blue-helix.scss */
+#modalContent.advanced-night-repair-2 .ctools-modal-content {
+  background-color: #040a2b;
+  background-image: url("../images/modal_bg/blue_helix.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 35%;
+  color: #fff;
+}
+
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-krypton/_blue-krypton.scss */
+#modalContent.advanced-night-repair .ctools-modal-content {
+  background: url("../images/modal_bg/blue_krypton.jpg");
+}
+
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/gray-ether/_gray-ether.scss */
+#modalContent.beautiful-skin-for-life .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
+}
+
 /* product library */
 /* line 5, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-product-library div.ctools-modal-content,

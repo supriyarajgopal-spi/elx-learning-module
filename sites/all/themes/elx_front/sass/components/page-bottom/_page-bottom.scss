@@ -16,8 +16,23 @@
             text-decoration: none;
         }
 
-        .pane-menu-menu-page-bottom-privacy {
+        .panel-pane.pane-custom.pane-1 {
             float: right;
+
+                    a {
+                      color: #9eafff;
+                      text-decoration: none;
+                      font-size: 15px;
+                      font-weight: normal;
+                      text-align: right;
+
+                      &:visited {
+                          color: #9eafff;
+                      }
+
+
+                    }
+
         }
     }
 }

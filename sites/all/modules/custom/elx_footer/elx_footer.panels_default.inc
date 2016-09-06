@@ -61,11 +61,37 @@ function elx_footer_default_panels_mini() {
   $display->content['new-dc34eed6-66aa-4b43-b644-84afcb83766f'] = $pane;
   $display->panels['left'][0] = 'new-dc34eed6-66aa-4b43-b644-84afcb83766f';
   $pane = new stdClass();
+  $pane->pid = 'new-49cf8ec8-726e-4e89-963d-40498e214048';
+  $pane->panel = 'right';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Privacy Policy',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<a href="/node/1445">PRIVACY POLICY/TERMS & CONDITIONS</a>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '49cf8ec8-726e-4e89-963d-40498e214048';
+  $display->content['new-49cf8ec8-726e-4e89-963d-40498e214048'] = $pane;
+  $display->panels['right'][0] = 'new-49cf8ec8-726e-4e89-963d-40498e214048';
+  $pane = new stdClass();
   $pane->pid = 'new-15c12673-4fda-447c-8aa9-8493d1ea351a';
   $pane->panel = 'right';
   $pane->type = 'block';
   $pane->subtype = 'menu-menu-page-bottom-privacy';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -78,11 +104,11 @@ function elx_footer_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '15c12673-4fda-447c-8aa9-8493d1ea351a';
   $display->content['new-15c12673-4fda-447c-8aa9-8493d1ea351a'] = $pane;
-  $display->panels['right'][0] = 'new-15c12673-4fda-447c-8aa9-8493d1ea351a';
+  $display->panels['right'][1] = 'new-15c12673-4fda-447c-8aa9-8493d1ea351a';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

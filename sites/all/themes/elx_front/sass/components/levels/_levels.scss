@@ -10,6 +10,18 @@ body.page-levels-in-progress {
     text-align: center;
   }
 
+  .panel-pane.pane-custom.pane-1 {
+    font-family: $font-family-serif;
+    font-weight: 100;
+    font-size: $font-size-lg-large;
+    text-align: center;
+    padding: 10px 0;
+    width: 75%;
+    margin: auto;
+    line-height: 1.3em;
+
+  }
+
   .logo,
   .logo-sub {
     display: none;
@@ -87,15 +99,77 @@ body.page-levels-in-progress {
 
   }
 
+  .views-label {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: $font-family-serif;
+}
+
   .views-field-name {
     font-family: $font-family-serif;
-    font-size: $font-size-lg-large;
+    font-size: 40px;
     font-weight: 100;
+    margin-bottom: 30px;
   }
 
   .views-field-field-hero-image {
     margin: 0 auto;
-    max-width: 233px; // this should be fixed with imagemagick but we need it working now
+    max-width: 388px; // this should be fixed with imagemagick but we need it working now
   }
+
+  .views-field-title {
+    font-family: $font-family-serif;
+    text-align: center;
+    font-size: 22px;
+
+    a {
+      text-decoration: none;
+      color: #000;
+
+    }
+
+  }
+
+
+  .pager {
+                margin: 30px 650px;
+
+
+            .pager-next  {
+                background-image: none;
+                background: #fff;
+                border: 1px solid #000;
+                padding: 6px 15px;
+                background-color: transparent;
+                width: auto;
+                height: auto;
+
+                a {
+                    text-transform: uppercase;
+                    color: #000;
+                    margin: 0 auto;
+                    font-weight: 700;
+                    min-width: 0;
+                    text-align: center;
+                    font-family: $font-family-sans-serif;
+                    text-decoration: none;
+                    background-image: url('../images/brand-tile.svg');
+                    background-repeat: no-repeat;
+                    background-size: 25px 17px;
+                    text-indent: 40px;
+                    display: inline-block;
+                    line-height: 1;
+                    width: auto;
+                    height: auto;
+
+                }
+
+                .ajax-progress,
+                .ajax-progress-throbber {
+                    display: none;
+                }
+            }
+
+         }
 
 }

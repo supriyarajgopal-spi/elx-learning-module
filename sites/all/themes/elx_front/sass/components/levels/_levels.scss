@@ -60,7 +60,41 @@ body.page-levels-in-progress {
 
   }
 
+  .view-content {
+
+    > .views-row {
+      width: 100%;
+      clear: both;
+
+      .view-level-content {
+
+        .view-content {
+          clear: both;
+
+          > .views-row {
+            display: inline-block;
+            width: 23%;
+            margin: 0 1% 0 0;
+            vertical-align: top;
+            text-align: center;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .views-field-name {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-large;
+    font-weight: 100;
+  }
+
   .views-field-field-hero-image {
+    margin: 0 auto;
     max-width: 233px; // this should be fixed with imagemagick but we need it working now
   }
 

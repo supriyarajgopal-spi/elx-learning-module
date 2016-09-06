@@ -314,7 +314,6 @@ features[field_instance][] = node-product_detail-field_display_title
 features[field_instance][] = node-product_detail-field_fun_fact_sheet
 features[field_instance][] = node-product_detail-field_if_she_asks_share
 features[field_instance][] = node-product_detail-field_just_for_you
-features[field_instance][] = node-product_detail-field_learning_category
 features[field_instance][] = node-product_detail-field_perfect_partners
 features[field_instance][] = node-product_detail-field_perfect_partners_text
 features[field_instance][] = node-product_detail-field_point_value

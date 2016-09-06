@@ -1,5 +1,953 @@
 <?php
+
 /**
  * @file
  * Drupal needs this blank file.
  */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function content_conversion_form_content_object_node_form_alter(&$form, &$form_state) {
+  $node = $form_state['node'];
+  if (!empty($node->nid)) {
+    $form['actions']['h5p'] = array(
+      '#type' => 'submit',
+      '#value' => t('Generate H5P content'),
+      '#weight' => 15,
+      '#submit' => array('content_conversion_h5p_submit'),
+    );
+  }
+}
+
+/**
+ * Form submission handler for node_form().
+ *
+ * Generates interactive content node for content object node.
+ *
+ * @see content_conversion_form_content_object_node_form_alter()
+ * @see node_form_validate()
+ */
+function content_conversion_h5p_submit($form, &$form_state) {
+  $h5p_node = content_conversion_content_object_h5p($form_state['node']);
+  $form_state['redirect'] = entity_uri('node', $h5p_node);
+}
+
+/**
+ * Generates an interactive content node for a Content Object node.
+ *
+ * @param object $node
+ *   A Content Object node.
+ */
+function content_conversion_content_object_h5p($node) {
+  if (!empty($node->field_h5p_node[LANGUAGE_NONE][0]['target_id'])) {
+    $h5p_node = node_load($node->field_h5p_node[LANGUAGE_NONE][0]['target_id']);
+  }
+  if (empty($h5p_node)) {
+    $h5p_node = array();
+  }
+  else {
+    $h5p_node = array(
+      'nid' => $h5p_node->nid,
+      'vid' => $h5p_node->vid,
+    );
+  }
+  $h5p_node += array(
+    'uid' => $node->uid,
+    'name' => $node->name,
+    'type' => 'h5p_content',
+    'language' => $node->language,
+    'title' => $node->title,
+    'status' => $node->status,
+    'promote' => $node->promote,
+    'sticky' => $node->sticky,
+    'created' => $node->created,
+    'revision' => FALSE,
+    'comment' => $node->comment,
+    'h5p_type' => 'create',
+    'main_library_id' => h5peditor_get_library_property('H5P.CoursePresentation 1.11', 'libraryId'),
+    'json_content' => content_conversion_h5p_json($node),
+    'embed_type' => 'div',
+    'disable' => H5PCore::DISABLE_FRAME,
+    'h5p_library' => 'H5P.CoursePresentation 1.11',
+    'markets' => $node->markets,
+    'group_content_access' => $node->group_content_access ? $node->group_content_access : array(
+      LANGUAGE_NONE => array(
+        array('value' => 0),
+      ),
+    ),
+  );
+  $h5p_node = (object) $h5p_node;
+  if (!empty($node->field_featured[$node->language])) {
+    $h5p_node->field_featured[$node->language] = $node->field_featured[$node->language];
+  }
+  if (!empty($node->field_featured_image[$node->language])) {
+    $h5p_node->field_featured_image[$node->language] = $node->field_featured_image[$node->language];
+  }
+  if (!empty($node->field_content_object_type[$node->language])) {
+    $h5p_node->field_content_object_type[$node->language] = $node->field_content_object_type[$node->language];
+  }
+  if (!empty($node->field_learning_template[$node->language]) && !empty($node->field_final_exam[$node->language])) {
+    if ($node->field_learning_template[$node->language][0]['value'] == 'trivia' && $node->field_final_exam[$node->language][0]['value']) {
+      $h5p_node->field_spin_the_wheel[LANGUAGE_NONE]['value'] = 1;
+    }
+  }
+  if (!empty($node->field_learning_category[$node->language])) {
+    $h5p_node->field_learning_category[$node->language] = $node->field_learning_category[$node->language];
+  }
+  if (!empty($node->field_order_weight[$node->language])) {
+    $h5p_node->field_order_weight[$node->language] = $node->field_order_weight[$node->language];
+  }
+  if (!empty($node->field_story_type[$node->language])) {
+    $h5p_node->field_story_type[$node->language] = $node->field_story_type[$node->language];
+  }
+  if (!empty($node->field_pulsed_content[$node->language])) {
+    $h5p_node->field_pulsed_content[$node->language] = $node->field_pulsed_content[$node->language];
+  }
+  if (!empty($node->field_tags_keywords[$node->language])) {
+    $h5p_node->field_tags_keywords[$node->language] = $node->field_tags_keywords[$node->language];
+  }
+  if (!empty($node->field_headline[$node->language])) {
+    $h5p_node->field_headline[$node->language] = $node->field_headline[$node->language];
+  }
+  if (!empty($node->field_intro[$node->language])) {
+    $h5p_node->field_intro[$node->language] = $node->field_intro[$node->language];
+  }
+  if (!empty($node->field_hero_image[$node->language])) {
+    $h5p_node->field_hero_image[$node->language] = $node->field_hero_image[$node->language];
+  }
+  if (!empty($node->field_point_value[$node->language])) {
+    $h5p_node->field_point_value[$node->language] = $node->field_point_value[$node->language];
+  }
+  node_save($h5p_node);
+  $node->field_h5p_node[LANGUAGE_NONE][0]['target_id'] = $h5p_node->nid;
+  node_save($node);
+  return $h5p_node;
+}
+
+/**
+ * Generates H5P JSON code from a Content Object node.
+ *
+ * @param object $content_object
+ *   A Content Object node.
+ */
+function content_conversion_h5p_json($content_object) {
+  $h5p = new stdClass();
+  // Convert the Content Object node into a Course Presentation.
+  $h5p->presentation = new stdClass();
+  $h5p->presentation->slides = array();
+  $question_set = array();
+  foreach ($content_object->field_learning_objects[$content_object->language] as $learning_object) {
+    $node = node_load($learning_object['target_id']);
+    switch ($node->type) {
+      case 'drag_match':
+      case 'drag_select':
+      case 'question_and_answer':
+        // Save question set nodes to be processed later.
+        $question_set[] = $node;
+        break;
+      default:
+        // Create slide for question set.
+        if (!empty($question_set)) {
+          $slide = new stdClass();
+          _content_conversion_question_set($question_set, $slide, $content_object);
+          $h5p->presentation->slides[] = $slide;
+          $question_set = array();
+        }
+        // Create slide for this node.
+        $function = '_content_conversion_node_' . $node->type;
+        if (function_exists($function)) {
+          $slide = new stdClass();
+          $function($node, $slide);
+          $h5p->presentation->slides[] = $slide;
+        }
+        break;
+    }
+  }
+  // Create slide for question set.
+  if (!empty($question_set)) {
+    $slide = new stdClass();
+    _content_conversion_question_set($question_set, $slide, $content_object);
+    $h5p->presentation->slides[] = $slide;
+    $question_set = array();
+  }
+  // We have no place for the following string values:
+  // $node->field_exam_perfect_content[$node->language][0]['value']
+  // $node->field_exam_pass_content[$node->language][0]['value']
+  $l10n = new stdClass();
+  $search = array(
+    ':USERSCORE:%',
+    ':MINSCORE:',
+  );
+  $replace = array(
+    '@percent',
+    '80',
+  );
+  if (trim($content_object->field_exam_pass_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+    $pass = str_replace($search, $replace, $content_object->field_exam_pass_feedback[$content_object->language][0]['value']);
+  }
+  if (trim($content_object->field_exam_fail_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+    $fail = str_replace($search, $replace, $content_object->field_exam_fail_feedback[$content_object->language][0]['value']);
+  }
+  $l10n->goodScore = $pass;
+  $l10n->okScore = $pass;
+  $l10n->badScore = $fail;
+  $h5p->l10n = $l10n;
+  $override = new stdClass();
+  // Hide summary slide if this is not a final exam.
+  if (empty($content_object->field_final_exam[$content_object->language]) || !$content_object->field_final_exam[$content_object->language][0]['value']) {
+    $override->hideSummarySlide = TRUE;
+  }
+  $override->showSolutionButton = 'off';
+  $override->retryButton = 'off';
+  $h5p->override = $override;
+  return json_encode($h5p);
+}
+
+/**
+ * Converts a List node to H5P slide data.
+ *
+ * @param object $node
+ *   A List node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_list($node, $slide) {
+
+  //Set defaults
+  $slide->elements = array();
+  $column_count = $node->field_layout[$node->language][0]['value'];
+  $window = array(
+    'width' => 145,
+    'height' => 22,
+    'width_pixels' => 145 * 8.8,
+    'height_pixels' => 22 * 29.5,
+  );
+  $number_of_list_items = count($node->field_list_item[$node->language]);
+  $x_pos = 0;
+  $y_pos = 50;
+  $width = 100;
+  $height = 50;
+  $x_image = 25;
+  $width_image = 50;
+  $height_image = 50;
+  $gutter_width = 2;
+
+  //Identify proper height of rows and guess at a width, impossible to identify an exact width until you run through all the rows.
+  if ($number_of_list_items > 1) {
+    $height_image = $height = 100 / $number_of_list_items;
+    $y_pos = 1;
+    $size_temp = _convert_height_percentage_to_width_percentage($window, array("height"=>$height_image), array("height"=>20,"width"=>20));
+    $width_image = $size_temp['width'];
+  }
+
+  //Adjust if multiple columns
+  if ($column_count > 1) {
+    $x_pos = $width_image + $gutter_width;
+    $width = 100 - $x_pos;
+    $x_image = 1;
+  }
+
+  //Set Final Sizing Objects
+  $size = array(
+    "x_pos" => $x_pos,
+    "y_pos" => $y_pos,
+    "width" => $width,
+    "height" => $height,
+  );
+  $size_image = array(
+    "x_pos" => $x_image,
+    "y_pos" => 1,
+    "width" => $width_image,
+    "height" => $height_image,
+  );
+
+  $count = 1;
+  $image_count = 1;
+  foreach ($node->field_list_item[$node->language] as $position => $item) {
+    $paragraph = paragraphs_item_load($item['value']);
+    if (!empty($paragraph->field_list_image[LANGUAGE_NONE])) {
+      $list_image = image_load(image_style_path('list_image', $paragraph->field_list_image[LANGUAGE_NONE][0]['uri']));
+      if (!empty($list_image)) {
+        $file = new stdClass();
+        $file->path = file_create_url($list_image->source);
+        $file->mime = $list_image->info['mime_type'];
+        $file->width = $list_image->info['width'];
+        $file->height = $list_image->info['height'];
+        $size_image = _calculate_image_position_size($size_image, $file, $image_count, $window);
+        $element = new stdClass();
+        $element->x = $size_image['x_pos'];
+        $element->y = $size_image['y_pos'];
+        $element->width = $size_image['width'];
+        $element->height = $size_image['height'];
+        $action = new stdClass();
+        $action->library = 'H5P.Image 1.0';
+        $params = new stdClass();
+        $params->file = $file;
+        $params->alt = $paragraph->field_list_image[LANGUAGE_NONE][0]['field_file_image_alt_text'];
+        $action->params = $params;
+        $element->action = $action;
+        $slide->elements[] = $element;
+      }
+      $image_count++;
+    }
+    elseif (!empty($paragraph->field_list_video[LANGUAGE_NONE])) {
+      $element = new stdClass();
+      $element->x = 25;
+      $element->y = 0;
+      $element->width = 50;
+      $element->height = 55.7;
+      $action = new stdClass();
+      $action->library = 'H5P.Video 1.2';
+      $params = new stdClass();
+      $visuals = new stdClass();
+      $visuals->fit = TRUE;
+      $visuals->controls = TRUE;
+      $params->visuals = $visuals;
+      $params->sources = array();
+      $source = new stdClass();
+      $source->path = file_create_url($paragraph->field_list_video[LANGUAGE_NONE][0]['uri']);
+      $source->mime = $paragraph->field_list_video[LANGUAGE_NONE][0]['filemime'];
+      $params->sources[] = $source;
+      $action->params = $params;
+      $element->action = $action;
+      $slide->elements[] = $element;
+    }
+    if (!empty($paragraph->field_list_text[LANGUAGE_NONE])) {
+      // Avoid creating empty text box by stripping tags from safe value and
+      // trimming white space and non-breaking spaces.
+      if (trim(strip_tags($paragraph->field_list_text[LANGUAGE_NONE][0]['safe_value']), " \t\n\r\0\x0B\xC2\xA0") != '') {
+        $size = _calculate_text_position_size($size, $paragraph->field_list_text[LANGUAGE_NONE][0], $count, $window);
+        $element = new stdClass();
+        $element->x = $size['x_pos'];
+        $element->y = $size['y_pos'];
+        $element->width = $size['width'];
+        $element->height = $size['height'];
+        $action = new stdClass();
+        $action->library = 'H5P.AdvancedText 1.1';
+        $params = new stdClass();
+        $params->text = $paragraph->field_list_text[LANGUAGE_NONE][0]['value'];
+        $action->params = $params;
+        $element->action = $action;
+        $slide->elements[] = $element;
+        $count++;
+      }
+    }
+  }
+}
+
+/**
+ * Converts a Flash Cards node to H5P slide data.
+ *
+ * @param object $node
+ *   A Flash Cards node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_flash_cards($node, $slide) {
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
+  $action = new stdClass();
+  $action->library = "H5P.Dialogcards 1.2";
+  $params = new stdClass();
+  foreach ($node->field_flash_card_collection[$node->language] as $flashid) {
+    $flash_card =  paragraphs_item_load($flashid['value']);
+    $dialog = new stdClass();
+    $dialog->answer = $flash_card->field_back_card[LANGUAGE_NONE][0]['value'];
+    $dialog->text = $flash_card->field_front_card[LANGUAGE_NONE][0]['value'];
+    if (!empty($flash_card->field_front_card_image[LANGUAGE_NONE])) {
+      $image = new stdClass();
+      $image->path = file_create_url($flash_card->field_front_card_image[LANGUAGE_NONE][0]['uri']);
+      $image->mime = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['filemime'];
+      $image->width = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['width'];
+      $image->height = $flash_card->field_front_card_image[LANGUAGE_NONE][0]['height'];
+      $dialog->image = $image;
+    }
+    $params->dialogs[] = $dialog;
+  }
+  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
+  $params->title = empty($node->field_subtitle[$node->language]) ? '' : $node->field_subtitle[$node->language][0]['value'];
+  $action->params = $params;
+  $element->action = $action;
+  $slide->elements[] = $element;
+}
+
+/**
+ * Converts a Story node to H5P slide data.
+ *
+ * @param object $node
+ *   A Story node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_story($node, $slide) {
+
+  $slide->elements = array();
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+
+  $get_text_array = array(
+    "text" => isset($node->field_story_copy[$node->language]) ? $node->field_story_copy[$node->language][0]['safe_value'] : '',
+    "label" => isset($node->field_story_label[$node->language]) ? $node->field_story_label[$node->language][0]['value'] : '',
+    "x" => 0,
+    "y" => 0,
+    "width" => 100,
+    "height" => 60,
+  );
+  $slide->elements[] = _create_text_object($get_text_array);
+
+  if (!empty($node->field_story_image[$node->language][0]['uri'])) {
+    $element = new stdClass();
+    $element->x = 0;
+    $element->y = 60;
+    $element->width = 30;
+    $element->height = 40;
+    $element->alwaysDisplayComments = false;
+    $element->backgroundOpacity = 0;
+    $element->displayAsButton = false;
+    $element->invisible = false;
+    $element->solution = '';
+
+    $params = new stdClass();
+    $params->contentName = "Image";
+    $params->alt = "Image for the slide";
+    $params->file = _create_image_object($node->field_story_image[$node->language][0]);
+
+    $action = new stdClass();
+    $action->library = "H5P.Image 1.0";
+    $action->subContentId = 0;
+    $action->params = $params;
+    $element->action = $action;
+    $slide->elements[] = $element;
+  }
+}
+
+/**
+ * Generates H5P JSON of Reveal learning object type.
+ *
+ * @param object $node
+ *   A Content Object node.
+ * @param object $slide
+ *   A slide object.
+ */
+function _content_conversion_node_reveal($node, $slide) {
+	$element = new stdClass();
+	$element->x = 0;
+	$element->y = 0;
+	$element->width = 100;
+	$element->height = 100;
+  $action = new stdClass();
+	$action->library = 'H5P.ClickToReveal 1.0';
+	$params = new stdClass();
+	// Intro text of learning object to H5P description.
+  $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];
+	if (!empty($node->field_reveal_collection[$node->language])) {
+    $params->cards = array();
+		foreach ($node->field_reveal_collection[$node->language] as $item) {
+      $paragraph = paragraphs_item_load($item['value']);
+			$card = new stdClass();
+			if (!empty($paragraph->field_reveal_thumbnail[LANGUAGE_NONE])) {
+        $reveal_thumbnail = image_load(image_style_path('reveal_thumbnail', $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['uri']));
+        if (!empty($reveal_thumbnail)) {
+          $thumbnail_image = new stdClass();
+          $thumbnail_image->path = file_create_url($reveal_thumbnail->source);
+          $thumbnail_image->mime = $reveal_thumbnail->info['mime_type'];
+          $thumbnail_image->width = $reveal_thumbnail->info['width'];
+          $thumbnail_image->height = $reveal_thumbnail->info['height'];
+          $card->thumbnail_image = $thumbnail_image;
+        }
+      }
+			// Large media object.
+			$media = new stdClass();
+			if (!empty($paragraph->field_reveal_hero[LANGUAGE_NONE])) {
+        // If uploaded media is an image.
+			  $media->library = 'H5P.Image 1.0';
+  			$media_params = new stdClass();
+			  $media_params->contentName = 'Image';
+			  $media_params->file = _create_image_object($paragraph->field_reveal_hero[LANGUAGE_NONE][0]);
+			  $media_params->alt = $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['alt'];
+  			$media->params = $media_params;
+        $card->media = $media;
+			}
+			elseif (!empty($paragraph->field_reveal_hero_video[LANGUAGE_NONE])) {
+        // If uploaded media is a video.
+				$media->library = 'H5P.Video 1.2';
+				$visuals = new stdClass();
+				$visuals->fit = TRUE;
+				$visuals->controls = TRUE;
+  			$media_params = new stdClass();
+				$media_params->visuals = $visuals;
+				$source = new stdClass();
+				$source->path = file_create_url($paragraph->field_reveal_hero_video[LANGUAGE_NONE][0]['uri']);
+				$source->mime = $paragraph->field_reveal_hero_video[LANGUAGE_NONE][0]['filemime'];
+				$media_params->sources[] = $source;
+  			$media->params = $media_params;
+        $card->media = $media;
+			}
+      $card->text = empty($paragraph->field_reveal_text[LANGUAGE_NONE]) ? '' : $paragraph->field_reveal_text[LANGUAGE_NONE][0]['value'];
+			$params->cards[] = $card;
+		}
+	}
+  $params->title = '';
+  $action->params = $params;
+  $element->action = $action;
+	$slide->elements[] = $element;
+}
+
+/**
+ * Converts a Hot Spots node to H5P slide data.
+ *
+ * @param object $node
+ *   A Hot Spots node.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_node_hot_spots($node, $slide) {
+
+  $slide->elements = array();
+  $slide->slideBackgroundSelector = new stdClass();
+  $slide->keywords = array();
+
+  if (!empty($node->field_intro[$node->language][0]['safe_value'])) {
+    $get_text_array = array(
+      "text" => $node->field_intro[$node->language][0]['safe_value'],
+      "x" => 0,
+      "y" => 0,
+      "width" => 100,
+      "height" => 100,
+    );
+    $slide->elements[] = _create_text_object($get_text_array);
+  }
+
+  $slide->elements[] = _create_hotspot_object($node);
+}
+
+/**
+ * Converts a Drag Select node to H5P question data.
+ *
+ * @param object $node
+ *   A Drag Select node.
+ * @param object $question
+ *   H5P data for a single question.
+ */
+function _content_conversion_node_drag_select($node, $question) {
+  $params = new stdClass();
+  $params->scoreShow = t('Submit', array(), array(
+    'langcode' => $node->language,
+  ));
+  $params->feedback = empty($node->field_correct_feedback[$node->language]) ? '' : $node->field_correct_feedback[$node->language][0]['value'];
+  $params->incorrect_feedback = empty($node->field_incorrect_feeback[$node->language]) ? '' : $node->field_incorrect_feeback[$node->language][0]['value'];
+  $params_question = new stdClass();
+  $settings = new stdClass();
+  $settings->questionTitle = empty($node->field_drag_select_question[$node->language]) ? '' : drupal_html_to_text($node->field_drag_select_question[$node->language][0]['value']);
+  $size = new stdClass();
+  $size->width = 800;
+  $size->height = 500;
+  $settings->size = $size;
+  if (!empty($node->field_drag_select_background[$node->language])) {
+    $drag_select_background = image_load(image_style_path('drag_select_background_image', $node->field_drag_select_background[$node->language][0]['uri']));
+    if (!empty($drag_select_background)) {
+      $background = new stdClass();
+      $background->path = file_create_url($drag_select_background->source);
+      $background->mime = $drag_select_background->info['mime_type'];
+      $background->width = $drag_select_background->info['width'];
+      $background->height = $drag_select_background->info['height'];
+      $settings->background = $background;
+    }
+  }
+  $params_question->settings = $settings;
+  $task = new stdClass();
+  $dropzone = new stdClass();
+  // Co-ordinates of Dropzone, set to appear on right hand side.
+  $dropzone->x = 50;
+  $dropzone->y = 0;
+  $dropzone->width = 25;
+  $dropzone->height = 30;
+  if (!empty($node->field_drag_select_collection[$node->language])) {
+    $task->elements = array();
+    $task_element_y = 0;
+    // The indices of correct answers to be set in dropzone object.
+    $dropzone->correctElements = array();
+    foreach ($node->field_drag_select_collection[$node->language] as $delta => $item) {
+      $paragraph = paragraphs_item_load($item['value']);
+      $task_element = new stdClass();
+      $task_element->x = 7;
+      $task_element->y = $task_element_y;
+      $task_element_y += 15;
+      $task_element->width = 18;
+      $task_element->height = 3;
+      $type = new stdClass();
+      $type_params = new stdClass();
+      if (!empty($paragraph->field_drag_select_image[LANGUAGE_NONE])) {
+        $type->library = 'H5P.Image 1.0';
+        $type_params->contentName = 'Image';
+        $type_params->alt = drupal_html_to_text($paragraph->field_drag_select_text[LANGUAGE_NONE][0]['value']);
+        $drag_select_image = image_load(image_style_path('drag_select_image', $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['uri']));
+        if (!empty($drag_select_image)) {
+          $file = new stdClass();
+          $file->path = file_create_url($drag_select_image->source);
+          $file->mime = $drag_select_image->info['mime_type'];
+          $file->width = $drag_select_image->info['width'];
+          $file->height = $drag_select_image->info['height'];
+          $type_params->file = $file;
+        }
+      }
+      elseif (!empty($paragraph->field_drag_select_text[LANGUAGE_NONE])) {
+        $type->library = 'H5P.AdvancedText 1.1';
+        $type_params->text = $paragraph->field_drag_select_text[LANGUAGE_NONE][0]['value'];
+      }
+      $type->params = $type_params;
+      $task_element->type = $type;
+      // If this is a correct answer.
+      if (!empty($paragraph->field_correct_answer[LANGUAGE_NONE]) && $paragraph->field_correct_answer[LANGUAGE_NONE][0]['value']) {
+        // Convert index to string since dropzone section expects string indices
+        // as an array.
+        $dropzone->correctElements[] = (string) $delta;
+      }
+      // Which dropzone does this draggable element correctly belong to. In our
+      // case, always 1st(0th index) because only 1 dropzone will exist.
+      $task_element->dropZones = array('0');
+      $task->elements[] = $task_element;
+    }
+  }
+  $dropzone->showLabel = FALSE;
+  $dropzone->label = '';
+  $task->dropZones = array($dropzone);
+  $params_question->task = $task;
+  $params->question = $params_question;
+  // Default, constant settings.
+  $behavior = new stdClass();
+  $behavior->enableRetry = TRUE;
+  $behavior->singlePoint = FALSE;
+  $behavior->showSolutionsRequiresInput = TRUE;
+  $params->behavior = $behavior;
+  $question->params = $params;
+  $question->library = 'H5P.DragQuestion 1.6';
+}
+
+/**
+ * Converts a set of question nodes to H5P slide data.
+ *
+ * @param object[] $nodes
+ *   An array of learning object nodes that can be converted to questions in an
+ *   H5P question set.
+ * @param object $slide
+ *   H5P data for a single slide.
+ */
+function _content_conversion_question_set($nodes, $slide, $content_object) {
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
+  $action = new stdClass();
+  $action->library = 'H5P.QuestionSet 1.8';
+  $params = new stdClass();
+  $params->questions = array();
+  foreach($nodes as $node) {
+    // Create question for this node.
+    $function = '_content_conversion_node_' . $node->type;
+    if (function_exists($function)) {
+      $question = new stdClass();
+      $function($node, $question);
+      $params->questions[] = $question;
+    }
+  }
+  // The pass percentage on the old site was hardcoded to 80.
+  // @todo: Should only be set if this is to be a quiz.
+  $params->passPercentage = 80;
+  $action->params = $params;
+  $element->action = $action;
+  $slide->elements = array($element);
+}
+
+/**
+ * Converts a Question and Answer node to H5P question data.
+ *
+ * @param object $node
+ *   A Queston and Answer node.
+ * @param object $question
+ *   H5P data for a single question.
+ */
+function _content_conversion_node_question_and_answer($node, $question) {
+  $paragraph = paragraphs_item_load($node->field_paragraph_multiple_choice[$node->language][0]['value']);
+  $question->library = 'H5P.MultiChoice 1.7';
+  $qestion_params = new stdClass();
+  $qestion_params->question = $paragraph->field_question_text[LANGUAGE_NONE][0]['safe_value'];
+  $qestion_params->answers = array();
+  foreach($paragraph->field_paragraph_answer[LANGUAGE_NONE] as $item) {
+    $answer_paragraph = paragraphs_item_load($item['value']);
+    $answer = new stdClass();
+    // field_answer_image no sample.
+    $answer->correct = $answer_paragraph->field_correct_answer[LANGUAGE_NONE][0]['value'] ? TRUE : FALSE;
+    if (trim($answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+      $tipsAndFeedback = new stdClass();
+      $tipsAndFeedback->chosenFeedback = $answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'];
+      $answer->tipsAndFeedback = $tipsAndFeedback;
+    }
+    $answer->text = $answer_paragraph->field_answer_text[LANGUAGE_NONE][0]['value'];
+    $qestion_params->answers[] = $answer;
+  }
+  if (!empty($paragraph->field_question_image[LANGUAGE_NONE])) {
+    $media = new stdClass();
+    $media_params = new stdClass();
+    $media_params->contentName = 'Image';
+    $file = new stdClass();
+    $file->path = file_create_url($paragraph->field_question_image[LANGUAGE_NONE][0]['uri']);
+    $file->mime = $paragraph->field_question_image[LANGUAGE_NONE][0]['filemime'];
+    $file->width = $paragraph->field_question_image[LANGUAGE_NONE][0]['width'];
+    $file->height = $paragraph->field_question_image[LANGUAGE_NONE][0]['height'];
+    $media_params->file = $file;
+    $media_params->alt = '';
+    $media->params = $media_params;
+    $media->library = 'H5P.Image 1.0';
+    $qestion_params->media = $media;
+  }
+  $question->params = $qestion_params;
+}
+
+/**
+ * Converts a Drag Match node to H5P question data.
+ *
+ * @param object $node
+ *   A Drag Match node.
+ * @param object $question
+ *   H5P data for a single question.
+ */
+function _content_conversion_node_drag_match($node, $question) {
+  $language = $node->language;
+  $params = new stdClass();
+  $params->scoreShow = t('Submit', array(), array(
+    'langcode' => $node->language,
+  ));
+  $params->feedback = empty($node->field_custom_correct_feedback[$node->language]) ? '' : drupal_html_to_text($node->field_custom_correct_feedback[$node->language][0]['value']);
+  $params->instant_feedback = t('That’s right!', array(), array(
+    'langcode' => $node->language,
+  ));
+  $params->incorrect_feedback = empty($node->field_custom_incorrect_feedback[$node->language]) ? '' : drupal_html_to_text($node->field_custom_incorrect_feedback[$node->language][0]['value']);
+  $params_question = new stdClass();
+  $settings = new stdClass();
+  $settings->questionTitle = empty($node->field_intro[$node->language]) ? '' : drupal_html_to_text($node->field_intro[$node->language][0]['value']);
+  $size = new stdClass();
+  $size->width = 700;
+  $size->height = 400;
+  $settings->size = $size;
+  $params_question->settings = $settings;
+  if (!empty($node->field_drag_match_collection[$node->language])) {
+    $task = new stdClass();
+    $task->dropZones = $task->elements = array();
+    // Randomize task element positions.
+    $positions = array_keys($node->field_drag_match_collection[$node->language]);
+    shuffle($positions);
+    foreach ($node->field_drag_match_collection[$node->language] as $delta => $item) {
+      $paragraph = paragraphs_item_load($item['value']);
+      $task_element = new stdClass();
+      $task_element->x = 3;
+      $task_element->y = $positions[$delta] * 20;
+      $task_element->width = 12;
+      $task_element->height = 3;
+      // Convert index to string since dropzone section expects string indices
+      // as an array.
+      $task_element->dropZones = array((string) $delta);
+      $type = new stdClass();
+      $type_params = new stdClass();
+      // If draggable element is an image. Default is text.
+      if (!empty($paragraph->field_left_drag_image[LANGUAGE_NONE])) {
+        $type->library = 'H5P.Image 1.0';
+        $type_params->contentName = 'Image';
+        $type_params->alt = drupal_html_to_text($paragraph->field_left_drag_text[LANGUAGE_NONE][0]['value']);
+        $drag_match_image = image_load(image_style_path('drag_match_image', $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['uri']));
+        if (!empty($drag_match_image)) {
+          $file = new stdClass();
+          $file->path = file_create_url($drag_match_image->source);
+          $file->mime = $drag_match_image->info['mime_type'];
+          $file->width = $drag_match_image->info['width'];
+          $file->height = $drag_match_image->info['height'];
+          $type_params->file = $file;
+        }
+      }
+      else {
+        $type->library = 'H5P.AdvancedText 1.1';
+        $type_params->text = empty($paragraph->field_left_drag_text) ? '' : $paragraph->field_left_drag_text[LANGUAGE_NONE][0]['value'];
+      }
+      $type->params = $type_params;
+      $task_element->type = $type;
+      // Only difference between Drag Match (1-to-1) & Drag Select (many-to-1).
+      $task_element->multiple = FALSE;
+      $task->elements[] = $task_element;
+      // Does not support image in dropzone. It is possible to add image under
+      // dropzone with careful alignment, but this is not implemented.
+      $dropzone = new stdClass();
+      $dropzone->x = 44;
+      $dropzone->y = $delta * 20 + 5;
+      $dropzone->width = 22.5;
+      $dropzone->height = 2.5;
+      // Convert index to string since dropzone section expects string indices
+      // as an array.
+      $dropzone->correctElements[] = (string) $delta;
+      $dropzone->showLabel = TRUE;
+      // Only difference between Drag Match (1-to-1) & Drag Select (many-to-1).
+      $dropzone->single = TRUE;
+      $dropzone->label = empty($paragraph->field_right_drag_text) ? '' : $paragraph->field_right_drag_text[LANGUAGE_NONE][0]['safe_value'];
+      $task->dropZones[] = $dropzone;
+    }
+    $params_question->task = $task;
+    $params->question = $params_question;
+  }
+  // Form behaviour object.
+  $behaviour = new stdClass();
+  $behaviour->enableRetry = TRUE;
+  $behaviour->singlePoint = FALSE;
+  $behaviour->showSolutionsRequiresInput = TRUE;
+  $params->behaviour = $behaviour;
+  $question->params = $params;
+  $question->library = 'H5P.DragQuestion 1.6';
+}
+
+/*
+ * Utility Function
+ * _create_hotspot_object - takes a node and returns the necessary element for inserting into a slide
+ */
+function _create_hotspot_object($node) {
+
+  $element = new stdClass();
+  $element->x = 0;
+  $element->y = 0;
+  $element->width = 100;
+  $element->height = 100;
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $action = new stdClass();
+  $action->library = "H5P.ImageHotspots 1.3";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->color = "ecb328";
+  $params->image = _create_image_object($node->field_hot_spot_image[$node->language][0]);
+
+  $hotspots = array();
+  foreach($node->field_hot_spot_collection[$node->language] as $key => $value) {
+    $entity = entity_load('paragraphs_item', array($value['value']));
+    $hotspot = $entity[$value['value']];
+
+    $hotspot_object = new stdClass();
+    $hotspot_object->alwaysFullscreen = 'false';
+    $hotspot_object->header = "";
+
+    $position_array = array();
+    $x_temp = $hotspot->field_hot_spot_x_cordinate['und'][0]['value'];
+    $pos_x = $params->image->width * ((ord(strtolower(str_replace("pos","",$x_temp))) - 96)/16);
+    $y_temp = $hotspot->field_hot_spot_y_cordinate['und'][0]['value'];
+    $pos_y = $params->image->height * (str_replace("pos","",$y_temp)/19);
+
+    $position_array['x'] = ($pos_x/$params->image->width) * 100;
+    $position_array['y'] = ($pos_y/$params->image->height) * 100;
+
+    $hotspot_object->position = $position_array;
+
+    $content = new stdClass();
+    $content->params = array(
+      "text" => $hotspot->field_hot_spot_text['und'][0]['safe_value'],
+    );
+    $content->library = "H5P.Text 1.1";
+    $content->subContentId = '0';
+
+    $hotspot_object->content = array($content);
+    $hotspots[] = $hotspot_object;
+  }
+
+  $params->hotspots = $hotspots;
+  $action->params = $params;
+  $element->action = $action;
+
+  return $element;
+}
+
+/**
+ * Utility Function
+ * _create_image_object - takes an image array and returns a properly formatted file object for h5p conversion
+ * receives one drupal image array
+ * uri, filemime, height, width
+ * returns an image object ready for json conversion
+ */
+function _create_image_object($image_array) {
+  $file = new stdClass();
+  $file->path = file_create_url($image_array['uri']);
+  $file->mime = $image_array['filemime'];
+  $file->width = $image_array['width'];
+  $file->height = $image_array['height'];
+  return $file;
+}
+
+/*
+ * Utility Function
+ * _create_text_object - takes a text array and returns a properly formatted text object for h5p conversion
+ * receives one drupal text array
+ * x, y, height, width, text, label
+ * returns a text object ready for json conversion
+ */
+function _create_text_object($text_array = null) {
+
+  $element = new stdClass();
+  $element->alwaysDisplayComments = false;
+  $element->backgroundOpacity = 0;
+  $element->displayAsButton = false;
+  $element->invisible = false;
+  $element->solution = '';
+
+  $element->x = $text_array['x'];
+  $element->y = $text_array['y'];
+  $element->width = $text_array['width'];
+  $element->height = $text_array['height'];
+
+  $action = new stdClass();
+  $action->library = "H5P.AdvancedText 1.1";
+  $action->subContentId = '0';
+
+  $params = new stdClass();
+  $params->text = $text_array['text'];
+  if (!empty($text_array['label'])) {
+    $params->contentName = $text_array['label'];
+  }
+  $params->alt = '';
+  $action->params = $params;
+
+  $element->action = $action;
+  $action->subContentId = 0;
+
+  return $element;
+}
+
+function _calculate_text_position_size($size, $text, $count, $window) {
+  if ($count != 1) {
+    $size['y_pos'] = $size['height'] + $size['y_pos'];
+  }
+  return $size;
+}
+
+function _calculate_image_position_size($size, $image, $count, $window) {
+  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
+  $ratio = $image_height_pixels / $image->height;
+  $image_width_pixels = $image->width * $ratio;
+  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
+  $size = _convert_height_percentage_to_width_percentage($window, $size, $image);
+  if ($count != 1) {
+    $size['y_pos'] = $size['height'] + $size['y_pos'];
+  }
+  return $size;
+}
+
+function _convert_height_percentage_to_width_percentage($window, $size, $image) {
+  $image_height_pixels = $window['height_pixels'] * ($size['height'] / 100);
+  $ratio = $image_height_pixels / $image->height;
+  $image_width_pixels = $image->width * $ratio;
+  $size['width'] = ($image_width_pixels / $window['width_pixels']) * 100;
+  return $size;
+}

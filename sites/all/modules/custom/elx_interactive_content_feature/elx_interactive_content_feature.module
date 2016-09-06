@@ -58,4 +58,64 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
   //Allow table in Advanced Text
   if($machine_name == 'H5P.AdvancedText')
 	array_push($semantics[0]->tags,'table','tr','td','thead','tbody','tfoot');
+  
+  //Make 'Correct Feedback' & new 'Incorrect Feedback' settings per Drag&Drop question instead of common setting
+  if($machine_name == 'H5P.DragQuestion')
+  {
+	//Alter existing 'Feedback text' setting
+	$semantics[3]->label = t('Correct feedback text');
+	$semantics[3]->common = false; //To show this for every Drag & Drop question inside a question set instead of common to all drag-and-drop questions
+	
+	//Create new 'Incorrect feedback text' setting
+	$incorrectFeedbackSetting = new stdClass();
+	$incorrectFeedbackSetting->label = t('Incorrect feedback text');
+	$incorrectFeedbackSetting->name = 'incorrect_feedback';
+	$incorrectFeedbackSetting->type = 'text';
+	$incorrectFeedbackSetting->default = t('Sorry, this answer is incorrect');
+	$incorrectFeedbackSetting->description = t('Feedback text when incorrect answer is provided, variables available: @score and @total.');
+	$incorrectFeedbackSetting->common = false;
+	/*Insert this new setting next to 'Correct feedback text' setting. Borrowed from http://stackoverflow.com/questions/3797239/insert-new-item-in-array-on-any-position-in-php*/
+	array_splice($semantics,4,0,array($incorrectFeedbackSetting));
+	
+	/* Create common 'Instant Feedback' field which replaces the text of draggable element whenever it is dropped to its correct dropzone.
+	 * Incorrect instant feedback field is not needed because H5P does not allow an element to be dropped in a wrong dropzone at all.
+	 */
+	/*----------------------------------------------------------------------------------------------------------*/
+	//Create new 'Incorrect feedback text' setting
+	$instantFeedbackSetting = new stdClass();
+	$instantFeedbackSetting->label = t('Instant feedback');
+	$instantFeedbackSetting->name = 'instant_feedback';
+	$instantFeedbackSetting->type = 'text';
+	$instantFeedbackSetting->widget = 'html';
+	$instantFeedbackSetting->tags = array('p','br','strong','em','ul','li','ol','dl','dt','sup','u'); //Allowed tags
+	$instantFeedbackSetting->default = t('');
+	$instantFeedbackSetting->description = t('Instant feedback which replaces the text of draggable element whenever it is dropped to its correct dropzone. This will be wrapped in <p></p> by default.');
+	$instantFeedbackSetting->common = true; //Same text is shown on all draggable elements. Appears under 'Settings & Text'.
+	$instantFeedbackSetting->optional = true;
+	array_splice($semantics,5,0,array($instantFeedbackSetting));
+	/*----------------------------------------------------------------------------------------------------------*/
+  }
+}
+
+/**
+ * Alter Javascript functionalities of H5P libraries
+ * 
+ * Included by SUPRIYA RAJGOPAL on 27Aug16
+ * Borrowed from http://cgit.drupalcode.org/h5p/tree/h5p.api.php
+ 
+ * @param array $scripts
+ *  Array of objects with properties path and version. Version is on the form
+ *  ?ver=1.0.2 and is used as a cache buster
+ * @param array $libraries
+ *  Array of libraries indexed by the library's machineName and with an array
+ *  as value. The value has the properties majorVersion and minorVersion
+ * @param string $mode
+ *  What mode are we in? Possible values are "editor", "div", "iframe" and "external"
+ */
+function elx_interactive_content_feature_h5p_scripts_alter(&$scripts, $libraries, $mode) {
+  if(isset($libraries['H5P.DragQuestion'])) {
+    $scripts[] = (object) array(
+      'path' => drupal_get_path('module', 'elx_interactive_content_feature') . '/js/h5p-dragdrop-question.js', //Custom JS file path
+    );
+  }
 }

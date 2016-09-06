@@ -89,7 +89,7 @@ function content_conversion_content_object_h5p($node) {
   }
   if (!empty($node->field_learning_template[$node->language]) && !empty($node->field_final_exam[$node->language])) {
     if ($node->field_learning_template[$node->language][0]['value'] == 'trivia' && $node->field_final_exam[$node->language][0]['value']) {
-      $h5p_node->field_spin_the_wheel[LANGUAGE_NONE]['value'] = 1;
+      $h5p_node->field_spin_the_wheel[LANGUAGE_NONE][] = array('value' => 1);
     }
   }
   if (!empty($node->field_learning_category[$node->language])) {

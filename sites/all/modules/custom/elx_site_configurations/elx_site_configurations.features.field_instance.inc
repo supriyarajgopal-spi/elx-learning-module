@@ -1135,7 +1135,7 @@ function elx_site_configurations_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_learning_category',
     'is_property' => 1,
-    'label' => 'Category',
+    'label' => 'Learning Level',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -4701,51 +4701,6 @@ function elx_site_configurations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_learning_category'.
-  $field_instances['node-product_detail-field_learning_category'] = array(
-    'bundle' => 'product_detail',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 18,
-      ),
-      'modal' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_learning_category',
-    'label' => 'Category',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-product_detail-field_perfect_partners'.
   $field_instances['node-product_detail-field_perfect_partners'] = array(
     'bundle' => 'product_detail',
@@ -4853,7 +4808,11 @@ function elx_site_configurations_field_default_field_instances() {
   // Exported field_instance: 'node-product_detail-field_point_value'.
   $field_instances['node-product_detail-field_point_value'] = array(
     'bundle' => 'product_detail',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 25,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4879,14 +4838,15 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_point_value',
+    'is_property' => 0,
     'label' => 'Point Value',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -9364,7 +9324,6 @@ function elx_site_configurations_field_default_field_instances() {
   t('Benefits');
   t('Bottom match image');
   t('Bottom match text');
-  t('Category');
   t('Completion text');
   t('Content object type');
   t('Correct answer');
@@ -9420,6 +9379,7 @@ function elx_site_configurations_field_default_field_instances() {
   t('Just for you');
   t('Last question in quiz');
   t('Layout');
+  t('Learning Level');
   t('Learning objects');
   t('Left drag image');
   t('Left drag text');

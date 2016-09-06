@@ -183,15 +183,15 @@ function content_conversion_h5p_json($content_object) {
     '@percent',
     '80',
   );
-  if (trim($content_object->field_exam_pass_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+  if (!empty($content_object->field_exam_pass_feedback[$content_object->language]) && trim($content_object->field_exam_pass_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
     $pass = str_replace($search, $replace, $content_object->field_exam_pass_feedback[$content_object->language][0]['value']);
+    $l10n->goodScore = $pass;
+    $l10n->okScore = $pass;
   }
-  if (trim($content_object->field_exam_fail_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+  if (!empty($content_object->field_exam_fail_feedback[$content_object->language]) && trim($content_object->field_exam_fail_feedback[$content_object->language][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
     $fail = str_replace($search, $replace, $content_object->field_exam_fail_feedback[$content_object->language][0]['value']);
+    $l10n->badScore = $fail;
   }
-  $l10n->goodScore = $pass;
-  $l10n->okScore = $pass;
-  $l10n->badScore = $fail;
   $h5p->l10n = $l10n;
   $override = new stdClass();
   // Hide summary slide if this is not a final exam.

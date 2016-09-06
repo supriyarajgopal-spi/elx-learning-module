@@ -3235,10 +3235,46 @@ body.page-levels-in-progress .panel-display ul.menu li a.active {
   z-index: 2;
 }
 
-/* line 63, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 65, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row,
+body.page-levels-completed .view-content > .views-row,
+body.page-levels-in-progress .view-content > .views-row {
+  width: 100%;
+  clear: both;
+}
+
+/* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row .view-level-content .view-content,
+body.page-levels-completed .view-content > .views-row .view-level-content .view-content,
+body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content {
+  clear: both;
+}
+
+/* line 74, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row .view-level-content .view-content > .views-row,
+body.page-levels-completed .view-content > .views-row .view-level-content .view-content > .views-row,
+body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content > .views-row {
+  display: inline-block;
+  width: 23%;
+  margin: 0 1% 0 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .views-field-name,
+body.page-levels-completed .views-field-name,
+body.page-levels-in-progress .views-field-name {
+  font-family: "optimadisplaylightlight";
+  font-size: 28px;
+  font-weight: 100;
+}
+
+/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-field-field-hero-image,
 body.page-levels-completed .views-field-field-hero-image,
 body.page-levels-in-progress .views-field-field-hero-image {
+  margin: 0 auto;
   max-width: 233px;
 }
 

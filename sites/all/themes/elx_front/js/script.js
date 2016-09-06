@@ -108,17 +108,17 @@
           // add new container after removing prior content in modal accumilated //
           $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart_newcontainer);
 
-          if (asset.match(/pdf/)) {
+          if (asset.match(/pdf/i)) {
 
             $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
 
           }
-          else if (asset.match(/mp4/)) {
+          else if (asset.match(/mp4/i)) {
 
             $('body.page-tools.section-tools #modalContent').append(itemtitle).append(out);
 
           }
-          else if (asset.match(/gif/)) {
+          else if (asset.match(/gif/i)) {
 
             $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
 

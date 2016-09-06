@@ -17,7 +17,30 @@ function dashboard_and_menu_default_page_manager_pages() {
   $page->admin_description = '';
   $page->path = 'node/%node/dashboard';
   $page->access = array(
-    'plugins' => array(),
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 7,
+            2 => 6,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'market' => 'market',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
     'logic' => 'and',
   );
   $page->menu = array(
@@ -63,6 +86,21 @@ function dashboard_and_menu_default_page_manager_pages() {
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'market' => 'market',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -196,10 +234,10 @@ function dashboard_and_menu_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-883c976f-5d90-4577-a09a-1d88180669ab';
+  $pane->pid = 'new-fd2036aa-2ffc-4f8f-8b67-a327b49703d4';
   $pane->panel = 'center_left';
   $pane->type = 'views_panes';
-  $pane->subtype = 'elx_untranslated_content-panel_pane_1';
+  $pane->subtype = 'elx_untranslated_content-panel_pane_3';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -215,19 +253,19 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '883c976f-5d90-4577-a09a-1d88180669ab';
-  $display->content['new-883c976f-5d90-4577-a09a-1d88180669ab'] = $pane;
-  $display->panels['center_left'][0] = 'new-883c976f-5d90-4577-a09a-1d88180669ab';
+  $pane->uuid = 'fd2036aa-2ffc-4f8f-8b67-a327b49703d4';
+  $display->content['new-fd2036aa-2ffc-4f8f-8b67-a327b49703d4'] = $pane;
+  $display->panels['center_left'][0] = 'new-fd2036aa-2ffc-4f8f-8b67-a327b49703d4';
   $pane = new stdClass();
-  $pane->pid = 'new-f628b26d-f097-4657-b83f-4d39a68f9262';
+  $pane->pid = 'new-cd01ca18-0716-4286-b54d-e8a0001428ef';
   $pane->panel = 'center_middle';
   $pane->type = 'views_panes';
-  $pane->subtype = 'elx_unpublished_content-panel_pane_1';
+  $pane->subtype = 'elx_unpublished_content-panel_pane_2';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'use_pager' => 1,
-    'pager_id' => '1',
+    'pager_id' => '0',
     'items_per_page' => '10',
   );
   $pane->cache = array();
@@ -238,19 +276,19 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'f628b26d-f097-4657-b83f-4d39a68f9262';
-  $display->content['new-f628b26d-f097-4657-b83f-4d39a68f9262'] = $pane;
-  $display->panels['center_middle'][0] = 'new-f628b26d-f097-4657-b83f-4d39a68f9262';
+  $pane->uuid = 'cd01ca18-0716-4286-b54d-e8a0001428ef';
+  $display->content['new-cd01ca18-0716-4286-b54d-e8a0001428ef'] = $pane;
+  $display->panels['center_middle'][0] = 'new-cd01ca18-0716-4286-b54d-e8a0001428ef';
   $pane = new stdClass();
-  $pane->pid = 'new-15808227-9683-4659-9303-2be16d857395';
+  $pane->pid = 'new-0256e0b6-0335-4e95-a455-da6a38a70088';
   $pane->panel = 'center_right';
   $pane->type = 'views_panes';
-  $pane->subtype = 'elx_published_content-panel_pane_1';
+  $pane->subtype = 'elx_published_content-panel_pane_2';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'use_pager' => 1,
-    'pager_id' => '2',
+    'pager_id' => '0',
     'items_per_page' => '10',
   );
   $pane->cache = array();
@@ -261,46 +299,19 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '15808227-9683-4659-9303-2be16d857395';
-  $display->content['new-15808227-9683-4659-9303-2be16d857395'] = $pane;
-  $display->panels['center_right'][0] = 'new-15808227-9683-4659-9303-2be16d857395';
+  $pane->uuid = '0256e0b6-0335-4e95-a455-da6a38a70088';
+  $display->content['new-0256e0b6-0335-4e95-a455-da6a38a70088'] = $pane;
+  $display->panels['center_right'][0] = 'new-0256e0b6-0335-4e95-a455-da6a38a70088';
   $pane = new stdClass();
-  $pane->pid = 'new-ebb9918d-6bca-4ef9-b10c-db8a5c279b59';
+  $pane->pid = 'new-e7bdc132-93da-41c6-8e66-27da957a6073';
   $pane->panel = 'top_left';
-  $pane->type = 'create';
-  $pane->subtype = 'create';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'types' => array(
-      'article' => 'article',
-      'project' => 'project',
-      'page' => 0,
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = '';
-  $pane->uuid = 'ebb9918d-6bca-4ef9-b10c-db8a5c279b59';
-  $display->content['new-ebb9918d-6bca-4ef9-b10c-db8a5c279b59'] = $pane;
-  $display->panels['top_left'][0] = 'new-ebb9918d-6bca-4ef9-b10c-db8a5c279b59';
-  $pane = new stdClass();
-  $pane->pid = 'new-0f71a8cd-eb8b-4b57-b378-88917f0157d6';
-  $pane->panel = 'top_right';
   $pane->type = 'block';
-  $pane->subtype = 'block-1';
+  $pane->subtype = 'og_extras-node_links';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'User Management',
+    'override_title_text' => 'Add Group Content',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -311,19 +322,45 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '0f71a8cd-eb8b-4b57-b378-88917f0157d6';
-  $display->content['new-0f71a8cd-eb8b-4b57-b378-88917f0157d6'] = $pane;
-  $display->panels['top_right'][0] = 'new-0f71a8cd-eb8b-4b57-b378-88917f0157d6';
+  $pane->uuid = 'e7bdc132-93da-41c6-8e66-27da957a6073';
+  $display->content['new-e7bdc132-93da-41c6-8e66-27da957a6073'] = $pane;
+  $display->panels['top_left'][0] = 'new-e7bdc132-93da-41c6-8e66-27da957a6073';
   $pane = new stdClass();
-  $pane->pid = 'new-bf37fce6-f577-4e10-8a15-481496e553bf';
+  $pane->pid = 'new-4822b56e-c93d-4617-85be-eb18731d9614';
   $pane->panel = 'top_right';
   $pane->type = 'block';
-  $pane->subtype = 'block-2';
+  $pane->subtype = 'og_extras-group_info';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Asset Management',
+    'override_title_text' => 'Group Details Pane',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4822b56e-c93d-4617-85be-eb18731d9614';
+  $display->content['new-4822b56e-c93d-4617-85be-eb18731d9614'] = $pane;
+  $display->panels['top_right'][0] = 'new-4822b56e-c93d-4617-85be-eb18731d9614';
+  $pane = new stdClass();
+  $pane->pid = 'new-d2d670c5-9755-4e2b-90af-dde8ff73bf59';
+  $pane->panel = 'top_right';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'og_members-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
@@ -334,9 +371,9 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'bf37fce6-f577-4e10-8a15-481496e553bf';
-  $display->content['new-bf37fce6-f577-4e10-8a15-481496e553bf'] = $pane;
-  $display->panels['top_right'][1] = 'new-bf37fce6-f577-4e10-8a15-481496e553bf';
+  $pane->uuid = 'd2d670c5-9755-4e2b-90af-dde8ff73bf59';
+  $display->content['new-d2d670c5-9755-4e2b-90af-dde8ff73bf59'] = $pane;
+  $display->panels['top_right'][1] = 'new-d2d670c5-9755-4e2b-90af-dde8ff73bf59';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

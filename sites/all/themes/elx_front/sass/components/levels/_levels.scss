@@ -176,3 +176,30 @@ body.page-levels-in-progress {
          }
 
 }
+
+body.page-levels-all {
+  .user-progress-bar {
+
+    background-color: white;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.15) inset;
+    display: block;
+    height: 25px;
+    width: 500px;
+
+    margin: 50px auto 50px 300px;
+    width: 70%;
+
+    .user-progress {
+      background: url('/sites/all/themes/elx_front/images/progress-bar.png');
+      display: block;
+      height: 24px;
+    }
+
+    .user-progress::before {
+      content: 'PROGRESS: %';
+      font-family: $font-family-serif;
+      margin-left: -125px;
+      font-size: 1.2em;
+    }
+  }
+}

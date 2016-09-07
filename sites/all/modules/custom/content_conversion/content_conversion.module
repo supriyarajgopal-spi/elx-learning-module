@@ -358,8 +358,9 @@ function _content_conversion_node_flash_cards($node, $slide) {
   foreach ($node->field_flash_card_collection[$node->language] as $item) {
     $paragraph = paragraphs_item_load($item['value']);
     $dialog = new stdClass();
-    $dialog->answer = $paragraph->field_back_card[LANGUAGE_NONE][0]['value'];
+    $dialog->use_same = FALSE;
     $dialog->text = $paragraph->field_front_card[LANGUAGE_NONE][0]['value'];
+    $dialog->answer = $paragraph->field_back_card[LANGUAGE_NONE][0]['value'];
     if (!empty($paragraph->field_front_card_image[LANGUAGE_NONE])) {
       $image = new stdClass();
       $image->path = file_create_url($paragraph->field_front_card_image[LANGUAGE_NONE][0]['uri']);

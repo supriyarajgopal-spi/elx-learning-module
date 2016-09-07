@@ -91,6 +91,32 @@ function elx_levels_default_page_manager_pages() {
   $display->content['new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8'] = $pane;
   $display->panels['middle'][0] = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
   $pane = new stdClass();
+  $pane->pid = 'new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Intro Text',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => 'Each of these Levels was created for you—to make you better at what you do. You decide how to experience them and how you want to Level Up.',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
+  $display->content['new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846'] = $pane;
+  $display->panels['middle'][1] = 'new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
+  $pane = new stdClass();
   $pane->pid = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -108,11 +134,11 @@ function elx_levels_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $display->content['new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8'] = $pane;
-  $display->panels['middle'][1] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
+  $display->panels['middle'][2] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $pane = new stdClass();
   $pane->pid = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $pane->panel = 'middle';
@@ -143,11 +169,11 @@ function elx_levels_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'd56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $display->content['new-d56ee6ef-3b69-402d-aeaf-6413d4862d47'] = $pane;
-  $display->panels['middle'][2] = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
+  $display->panels['middle'][3] = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

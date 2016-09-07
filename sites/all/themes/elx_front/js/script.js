@@ -108,17 +108,17 @@
           // add new container after removing prior content in modal accumilated //
           $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart_newcontainer);
 
-          if (asset.match(/pdf/)) {
+          if (asset.match(/pdf/i)) {
 
             $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
 
           }
-          else if (asset.match(/mp4/)) {
+          else if (asset.match(/mp4/i)) {
 
             $('body.page-tools.section-tools #modalContent').append(itemtitle).append(out);
 
           }
-          else if (asset.match(/gif/)) {
+          else if (asset.match(/gif/i)) {
 
             $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
 
@@ -184,6 +184,23 @@
 
         // set only 1 component //
         if (!$('#search-line-rearranged').size()) { $(search_container).insertBefore('main .view.view-search-product-library'); }
+
+      }
+
+      /* LEVELS */
+      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {
+
+        /* eslint-disable no-alert, no-console */
+        $('#modalContent').ready(function () {
+          var mClass = '';
+          mClass = $('#modalContent .field-name-field-learning-category .field-item').text();
+          mClass = mClass.replace(/\s+/g, '-').toLowerCase();
+          console.log('class = ' + mClass);
+          $('#modalContent').addClass(mClass);
+        });
+
+        /* eslint-enable no-alert, no-console */
+
 
       }
 

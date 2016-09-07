@@ -214,6 +214,7 @@ function _elx_custom_modal($js = NULL, $nid = NULL)
               'contentRight' => 5,
               'contentBottom' => 20,
             ),
+            'modalClass' => 'default',
             'animation' => 'slideDown',
             'closeText' => t(''),
             'closeImage' => t(''),

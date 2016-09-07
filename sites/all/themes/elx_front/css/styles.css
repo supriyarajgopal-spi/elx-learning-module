@@ -3158,6 +3158,126 @@ span.field-label {
   float: none;
 }
 
+/* LEVELS */
+/* line 2, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all,
+body.page-levels-completed,
+body.page-levels-in-progress {
+  /* TOP MENU TABS */
+  /* needs to be in .panel-display so it doesn't interfere with header */
+}
+
+/* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all h2.pane-title,
+body.page-levels-completed h2.pane-title,
+body.page-levels-in-progress h2.pane-title {
+  font-family: "optimadisplaylightlight";
+  font-size: 72px;
+  font-weight: 100;
+  text-align: center;
+}
+
+/* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .logo,
+body.page-levels-all .logo-sub,
+body.page-levels-completed .logo,
+body.page-levels-completed .logo-sub,
+body.page-levels-in-progress .logo,
+body.page-levels-in-progress .logo-sub {
+  display: none;
+}
+
+/* line 22, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu,
+body.page-levels-completed .panel-display ul.menu,
+body.page-levels-in-progress .panel-display ul.menu {
+  display: block;
+  background-color: #e6e9ee;
+  text-align: center;
+}
+
+/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li,
+body.page-levels-completed .panel-display ul.menu li,
+body.page-levels-in-progress .panel-display ul.menu li {
+  display: inline-block;
+  list-style-type: none;
+  list-style-image: none;
+  margin: 38px -3px;
+}
+
+/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li a,
+body.page-levels-completed .panel-display ul.menu li a,
+body.page-levels-in-progress .panel-display ul.menu li a {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #040a2b;
+  display: inline-block;
+  width: 170px;
+  height: 46px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0 0;
+  position: relative;
+}
+
+/* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .panel-display ul.menu li a.active,
+body.page-levels-completed .panel-display ul.menu li a.active,
+body.page-levels-in-progress .panel-display ul.menu li a.active {
+  color: #fff;
+  background-color: #040a2b;
+  border: 1px solid #040a2b;
+  z-index: 2;
+}
+
+/* line 65, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row,
+body.page-levels-completed .view-content > .views-row,
+body.page-levels-in-progress .view-content > .views-row {
+  width: 100%;
+  clear: both;
+}
+
+/* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row .view-level-content .view-content,
+body.page-levels-completed .view-content > .views-row .view-level-content .view-content,
+body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content {
+  clear: both;
+}
+
+/* line 74, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .view-content > .views-row .view-level-content .view-content > .views-row,
+body.page-levels-completed .view-content > .views-row .view-level-content .view-content > .views-row,
+body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content > .views-row {
+  display: inline-block;
+  width: 23%;
+  margin: 0 1% 0 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .views-field-name,
+body.page-levels-completed .views-field-name,
+body.page-levels-in-progress .views-field-name {
+  font-family: "optimadisplaylightlight";
+  font-size: 28px;
+  font-weight: 100;
+}
+
+/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .views-field-field-hero-image,
+body.page-levels-completed .views-field-field-hero-image,
+body.page-levels-in-progress .views-field-field-hero-image {
+  margin: 0 auto;
+  max-width: 233px;
+}
+
 /* LOGIN PAGE*/
 /* line 2, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/login/_login.scss */
 body.not-logged-in.page-user,
@@ -3448,6 +3568,27 @@ body.ctools-modal-open {
 .modal-default .modal-content article h2 {
   font-family: "optimadisplaylightlight";
   font-size: 28px;
+}
+
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-helix/_blue-helix.scss */
+#modalContent.advanced-night-repair-2 .ctools-modal-content {
+  background-color: #040a2b;
+  background-image: url("../images/modal_bg/blue_helix.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 35%;
+  color: #fff;
+}
+
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-krypton/_blue-krypton.scss */
+#modalContent.advanced-night-repair .ctools-modal-content {
+  background: url("../images/modal_bg/blue_krypton.jpg");
+}
+
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/gray-ether/_gray-ether.scss */
+#modalContent.beautiful-skin-for-life .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
 }
 
 /* product library */
@@ -5018,3 +5159,5 @@ tr.drag-previous {
 .view-filters .views-exposed-form .views-widget-sort-order {
   display: none;
 }
+
+/*# sourceMappingURL=styles.css.map */

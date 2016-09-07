@@ -818,10 +818,14 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
   $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_product_image']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_product_image']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-product-library';
   $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'product_detail',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_product_image']['group_column'] = 'entity_id';
@@ -832,7 +836,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
   $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-product-library';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_display_title']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['settings'] = array(
@@ -1151,7 +1155,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
   $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-search-product-library';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_display_title']['settings'] = array(
     'title_style' => '_none',
@@ -1163,11 +1167,15 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_product_image']['table'] = 'field_data_field_product_image';
   $handler->display->display_options['fields']['field_product_image']['field'] = 'field_product_image';
   $handler->display->display_options['fields']['field_product_image']['label'] = '';
+  $handler->display->display_options['fields']['field_product_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_product_image']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_product_image']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-search-product-library';
   $handler->display->display_options['fields']['field_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_product_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
+    'image_style' => 'product_detail',
+    'image_link' => '',
   );
   /* Field: Content: Why there's only 1 */
   $handler->display->display_options['fields']['field_why_there_s_only_one']['id'] = 'field_why_there_s_only_one';
@@ -1352,23 +1360,13 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
   $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-elx-tools';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_display_title']['settings'] = array(
     'title_style' => '_none',
     'title_link' => 'content',
     'title_class' => '',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Tool thumbnail */
   $handler->display->display_options['fields']['field_tool_thumbnail']['id'] = 'field_tool_thumbnail';
   $handler->display->display_options['fields']['field_tool_thumbnail']['table'] = 'field_data_field_tool_thumbnail';
@@ -1376,11 +1374,12 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_tool_thumbnail']['label'] = '';
   $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_tool_thumbnail']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-elx-tools';
   $handler->display->display_options['fields']['field_tool_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tool_thumbnail']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tool_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_tool_thumbnail']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'tools_thumbnail',
     'image_link' => '',
   );
   /* Sort criterion: Content: Post date */
@@ -1419,12 +1418,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['tools'] = array(
     t('Master'),
     t('Tools'),

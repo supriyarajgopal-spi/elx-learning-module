@@ -152,6 +152,12 @@ function elx_site_configurations_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'modal' => array(
+        'custom_settings' => TRUE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -159,7 +165,14 @@ function elx_site_configurations_strongarm() {
           'weight' => '3',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__content_object'] = $strongarm;

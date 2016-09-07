@@ -49,19 +49,25 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-levels';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'tile_thumbnail',
     'image_link' => '',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Headline */
+  $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
+  $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['label'] = '';
+  $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-levels';
+  $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -89,18 +95,8 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'content_object' => 'content_object',
     'h5p_content' => 'h5p_content',
   );
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'level_content');
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['level_content'] = array(
     t('Master'),
     t('<none>'),
@@ -119,7 +115,6 @@ function elx_levels_views_default_views() {
     t('last »'),
     t('SEE MORE'),
     t('All'),
-    t('Block'),
   );
   $export['level_content'] = $view;
 
@@ -368,7 +363,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -432,7 +426,11 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view_2']['label'] = '';
   $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_2']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view_2']['display'] = 'level_content';
+  $handler->display->display_options['fields']['view_2']['arguments'] = '[!tid]';
+  /* Sort criterion: Taxonomy vocabulary: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';

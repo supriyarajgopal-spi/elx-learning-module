@@ -368,6 +368,14 @@ function _content_conversion_node_flash_cards($node, $slide) {
       $image->height = $paragraph->field_front_card_image[LANGUAGE_NONE][0]['height'];
       $dialog->image = $image;
     }
+	if (!empty($paragraph->field_back_card_image[LANGUAGE_NONE])) {
+      $backImage = new stdClass();
+      $backImage->path = file_create_url($paragraph->field_back_card_image[LANGUAGE_NONE][0]['uri']);
+      $backImage->mime = $paragraph->field_back_card_image[LANGUAGE_NONE][0]['filemime'];
+      $backImage->width = $paragraph->field_back_card_image[LANGUAGE_NONE][0]['width'];
+      $backImage->height = $paragraph->field_back_card_image[LANGUAGE_NONE][0]['height'];
+      $dialog->back_image = $backImage;
+    }
     $params->dialogs[] = $dialog;
   }
   $params->description = empty($node->field_intro[$node->language]) ? '' : $node->field_intro[$node->language][0]['value'];

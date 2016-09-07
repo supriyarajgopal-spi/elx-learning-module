@@ -33,6 +33,8 @@ function learner_pathways_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => 0,
+    'badge_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 'full',
       'diff_standard' => 0,

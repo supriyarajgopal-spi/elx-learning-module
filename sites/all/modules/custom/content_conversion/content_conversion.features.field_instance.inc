@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * content_conversion.features.field_instance.inc
@@ -22,7 +21,7 @@ function content_conversion_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'link' => 1,
         ),
         'type' => 'entityreference_label',
         'weight' => 26,

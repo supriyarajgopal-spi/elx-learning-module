@@ -384,9 +384,6 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_content_object_type',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -1148,9 +1145,6 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_headline',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -1173,9 +1167,6 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hero_image',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -2275,9 +2266,6 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_pulsed_content',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -2828,9 +2816,6 @@ function elx_site_configurations_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_story_type',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',

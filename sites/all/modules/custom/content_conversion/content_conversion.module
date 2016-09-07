@@ -267,28 +267,30 @@ function _content_conversion_node_list($node, $slide) {
   foreach ($node->field_list_item[$node->language] as $position => $item) {
     $paragraph = paragraphs_item_load($item['value']);
     if (!empty($paragraph->field_list_image[LANGUAGE_NONE])) {
-      $list_image = image_load(image_style_path('list_image', $paragraph->field_list_image[LANGUAGE_NONE][0]['uri']));
-      if (!empty($list_image)) {
-        $file = new stdClass();
-        $file->path = file_create_url($list_image->source);
-        $file->mime = $list_image->info['mime_type'];
-        $file->width = $list_image->info['width'];
-        $file->height = $list_image->info['height'];
-        $size_image = _calculate_image_position_size($size_image, $file, $image_count, $window);
-        $element = new stdClass();
-        $element->x = $size_image['x_pos'];
-        $element->y = $size_image['y_pos'];
-        $element->width = $size_image['width'];
-        $element->height = $size_image['height'];
-        $action = new stdClass();
-        $action->library = 'H5P.Image 1.0';
-        $params = new stdClass();
-        $params->file = $file;
-        $params->alt = $paragraph->field_list_image[LANGUAGE_NONE][0]['field_file_image_alt_text'];
-        $action->params = $params;
-        $element->action = $action;
-        $slide->elements[] = $element;
+      $file = new stdClass();
+      $file->path = image_style_url('list_image', $paragraph->field_list_image[LANGUAGE_NONE][0]['uri']);
+      $file->mime = $paragraph->field_list_image[LANGUAGE_NONE][0]['filemime'];
+      $file->width = min($paragraph->field_list_image[LANGUAGE_NONE][0]['width'], 960);
+      if ($file->width == $paragraph->field_list_image[LANGUAGE_NONE][0]['width']) {
+        $file->height = $paragraph->field_list_image[LANGUAGE_NONE][0]['height'];
       }
+      else {
+        $file->height = (int) round(960 * $paragraph->field_list_image[LANGUAGE_NONE][0]['height'] / $paragraph->field_list_image[LANGUAGE_NONE][0]['width']);
+      }
+      $size_image = _calculate_image_position_size($size_image, $file, $image_count, $window);
+      $element = new stdClass();
+      $element->x = $size_image['x_pos'];
+      $element->y = $size_image['y_pos'];
+      $element->width = $size_image['width'];
+      $element->height = $size_image['height'];
+      $action = new stdClass();
+      $action->library = 'H5P.Image 1.0';
+      $params = new stdClass();
+      $params->file = $file;
+      $params->alt = $paragraph->field_list_image[LANGUAGE_NONE][0]['field_file_image_alt_text'];
+      $action->params = $params;
+      $element->action = $action;
+      $slide->elements[] = $element;
       $image_count++;
     }
     elseif (!empty($paragraph->field_list_video[LANGUAGE_NONE])) {
@@ -416,15 +418,17 @@ function _content_conversion_node_story($node, $slide) {
     $params->contentName = 'Image';
     $params->alt = 'Image for the slide';
     if (!empty($node->field_story_image[$node->language])) {
-      $story_image = image_load(image_style_path('story_hero', $node->field_story_image[$node->language][0]['uri']));
-      if (!empty($story_image)) {
-        $file = new stdClass();
-        $file->path = file_create_url($story_image->source);
-        $file->mime = $story_image->info['mime_type'];
-        $file->width = $story_image->info['width'];
-        $file->height = $story_image->info['height'];
-        $params->file = $file;
+      $file = new stdClass();
+      $file->path = image_style_url('story_hero', $node->field_story_image[$node->language][0]['uri']);
+      $file->mime = $node->field_story_image[$node->language][0]['filemime'];
+      $file->width = min($node->field_story_image[$node->language][0]['width'], 550);
+      if ($file->width == $node->field_story_image[$node->language][0]['width']) {
+        $file->height = $node->field_story_image[$node->language][0]['height'];
       }
+      else {
+        $file->height = (int) round(550 * $node->field_story_image[$node->language][0]['height'] / $node->field_story_image[$node->language][0]['width']);
+      }
+      $params->file = $file;
     }
     $action->params = $params;
     $element->action = $action;
@@ -457,15 +461,12 @@ function _content_conversion_node_reveal($node, $slide) {
       $paragraph = paragraphs_item_load($item['value']);
 			$card = new stdClass();
 			if (!empty($paragraph->field_reveal_thumbnail[LANGUAGE_NONE])) {
-        $reveal_thumbnail = image_load(image_style_path('reveal_thumbnail', $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['uri']));
-        if (!empty($reveal_thumbnail)) {
-          $thumbnail_image = new stdClass();
-          $thumbnail_image->path = file_create_url($reveal_thumbnail->source);
-          $thumbnail_image->mime = $reveal_thumbnail->info['mime_type'];
-          $thumbnail_image->width = $reveal_thumbnail->info['width'];
-          $thumbnail_image->height = $reveal_thumbnail->info['height'];
-          $card->thumbnail_image = $thumbnail_image;
-        }
+        $thumbnail_image = new stdClass();
+        $thumbnail_image->path = image_style_url('reveal_thumbnail', $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['uri']);
+        $thumbnail_image->mime = $paragraph->field_reveal_thumbnail[LANGUAGE_NONE][0]['filemime'];
+        $thumbnail_image->width = 70;
+        $thumbnail_image->height = 70;
+        $card->thumbnail_image = $thumbnail_image;
       }
 			// Large media object.
 			$media = new stdClass();
@@ -475,15 +476,17 @@ function _content_conversion_node_reveal($node, $slide) {
   			$media_params = new stdClass();
 			  $media_params->contentName = 'Image';
         if (!empty($paragraph->field_reveal_hero[LANGUAGE_NONE])) {
-          $reveal_image = image_load(image_style_path('reveal_hero', $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['uri']));
-          if (!empty($reveal_image)) {
-            $file = new stdClass();
-            $file->path = file_create_url($reveal_image->source);
-            $file->mime = $reveal_image->info['mime_type'];
-            $file->width = $reveal_image->info['width'];
-            $file->height = $reveal_image->info['height'];
-            $media_params->file = $file;
+          $file = new stdClass();
+          $file->path = image_style_url('reveal_hero', $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['uri']);
+          $file->mime = $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['filemime'];
+          $file->width = min($paragraph->field_reveal_hero[LANGUAGE_NONE][0]['width'], 765);
+          if ($file->width == $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['width']) {
+            $file->height = $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['height'];
           }
+          else {
+            $file->height = (int) round(765 * $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['height'] / $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['width']);
+          }
+          $media_params->file = $file;
         }
 			  $media_params->alt = $paragraph->field_reveal_hero[LANGUAGE_NONE][0]['alt'];
   			$media->params = $media_params;
@@ -544,15 +547,12 @@ function _content_conversion_node_hot_spots($node, $slide) {
   $params = new stdClass();
   $params->color = 'ecb328';
   if (!empty($node->field_hot_spot_image[$node->language])) {
-    $hot_spot_image = image_load(image_style_path('hot_spot', $node->field_hot_spot_image[$node->language][0]['uri']));
-    if (!empty($hot_spot_image)) {
-      $image = new stdClass();
-      $image->path = file_create_url($hot_spot_image->source);
-      $image->mime = $hot_spot_image->info['mime_type'];
-      $image->width = $hot_spot_image->info['width'];
-      $image->height = $hot_spot_image->info['height'];
-      $params->image = $image;
-    }
+    $image = new stdClass();
+    $image->path = image_style_url('hot_spot', $node->field_hot_spot_image[$node->language][0]['uri']);
+    $image->mime = $node->field_hot_spot_image[$node->language][0]['filemime'];
+    $image->width = 575;
+    $image->height = 655;
+    $params->image = $image;
   }
   if (!empty($node->field_hot_spot_collection[$node->language])) {
     $params->hotspots = array();
@@ -566,8 +566,8 @@ function _content_conversion_node_hot_spots($node, $slide) {
       $pos_x = $params->image->width * (ord(strtolower(str_replace('pos', '', $x_temp))) - 96) / 16;
       $y_temp = $paragraph->field_hot_spot_y_cordinate[LANGUAGE_NONE][0]['value'];
       $pos_y = $params->image->height * str_replace('pos', '', $y_temp) / 19;
-      $position['x'] = ($pos_x / $params->image->width) * 100;
-      $position['y'] = ($pos_y / $params->image->height) * 100;
+      $position['x'] = 100 * $pos_x / 575;
+      $position['y'] = 100 * $pos_y / 655;
       $hotspot->position = $position;
       $content = new stdClass();
       $content->params = array(
@@ -606,15 +606,17 @@ function _content_conversion_node_drag_select($node, $question) {
   $size->height = 500;
   $settings->size = $size;
   if (!empty($node->field_drag_select_background[$node->language])) {
-    $drag_select_background = image_load(image_style_path('drag_select_background_image', $node->field_drag_select_background[$node->language][0]['uri']));
-    if (!empty($drag_select_background)) {
-      $background = new stdClass();
-      $background->path = file_create_url($drag_select_background->source);
-      $background->mime = $drag_select_background->info['mime_type'];
-      $background->width = $drag_select_background->info['width'];
-      $background->height = $drag_select_background->info['height'];
-      $settings->background = $background;
+    $background = new stdClass();
+    $background->path = image_style_url('drag_select_background_image', $node->field_drag_select_background[$node->language][0]['uri']);
+    $background->mime = $node->field_drag_select_background[$node->language][0]['filemime'];
+    $background->width = min(495, $node->field_drag_select_background[$node->language][0]['width']);
+    if ($background->width == $node->field_drag_select_background[$node->language][0]['width']) {
+      $background->height = $node->field_drag_select_background[$node->language][0]['height'];
     }
+    else {
+      $background->height = (int) round(495 * $node->field_drag_select_background[$node->language][0]['height'] / $node->field_drag_select_background[$node->language][0]['width']);
+    }
+    $settings->background = $background;
   }
   $params_question->settings = $settings;
   $task = new stdClass();
@@ -643,15 +645,17 @@ function _content_conversion_node_drag_select($node, $question) {
         $type->library = 'H5P.Image 1.0';
         $type_params->contentName = 'Image';
         $type_params->alt = drupal_html_to_text($paragraph->field_drag_select_text[LANGUAGE_NONE][0]['value']);
-        $drag_select_image = image_load(image_style_path('drag_select_image', $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['uri']));
-        if (!empty($drag_select_image)) {
-          $file = new stdClass();
-          $file->path = file_create_url($drag_select_image->source);
-          $file->mime = $drag_select_image->info['mime_type'];
-          $file->width = $drag_select_image->info['width'];
-          $file->height = $drag_select_image->info['height'];
-          $type_params->file = $file;
+        $file = new stdClass();
+        $file->path = image_style_url('drag_select_image', $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['uri']);
+        $file->mime = $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['filemime'];
+        $file->width = min($paragraph->field_drag_select_image[LANGUAGE_NONE][0]['width'], 390);
+        if ($file->width == $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['width']) {
+          $file->height = $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['height'];
         }
+        else {
+          $file->height = (int) round(390 * $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['height'] / $paragraph->field_drag_select_image[LANGUAGE_NONE][0]['width']);
+        }
+        $type_params->file = $file;
       }
       elseif (!empty($paragraph->field_drag_select_text[LANGUAGE_NONE])) {
         $type->library = 'H5P.AdvancedText 1.1';
@@ -817,15 +821,12 @@ function _content_conversion_node_drag_match($node, $question) {
         $type->library = 'H5P.Image 1.0';
         $type_params->contentName = 'Image';
         $type_params->alt = drupal_html_to_text($paragraph->field_left_drag_text[LANGUAGE_NONE][0]['value']);
-        $drag_match_image = image_load(image_style_path('drag_match_image', $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['uri']));
-        if (!empty($drag_match_image)) {
-          $file = new stdClass();
-          $file->path = file_create_url($drag_match_image->source);
-          $file->mime = $drag_match_image->info['mime_type'];
-          $file->width = $drag_match_image->info['width'];
-          $file->height = $drag_match_image->info['height'];
-          $type_params->file = $file;
-        }
+        $file = new stdClass();
+        $file->path = file_create_url($paragraph->field_left_drag_image[LANGUAGE_NONE][0]['uri']);
+        $file->mime = $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['filemime'];
+        $file->width = $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['width'];
+        $file->height = $paragraph->field_left_drag_image[LANGUAGE_NONE][0]['height'];
+        $type_params->file = $file;
       }
       else {
         $type->library = 'H5P.AdvancedText 1.1';

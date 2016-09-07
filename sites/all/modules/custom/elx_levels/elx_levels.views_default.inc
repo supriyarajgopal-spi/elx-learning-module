@@ -53,7 +53,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
   $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-levels';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'tile_thumbnail',
@@ -360,8 +359,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE LEVELS';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';

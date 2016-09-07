@@ -227,7 +227,7 @@ function dashboard_and_menu_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Group Dashboard';
+  $display->title = '%node:title Dashboard';
   $display->uuid = 'ac64acd4-bc8c-40e9-a937-9997a71246c5';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_dashboard_panel_context';
@@ -307,7 +307,7 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->panel = 'top_left';
   $pane->type = 'block';
   $pane->subtype = 'og_extras-node_links';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -330,7 +330,7 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->panel = 'top_right';
   $pane->type = 'block';
   $pane->subtype = 'og_extras-group_info';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
@@ -353,7 +353,7 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->panel = 'top_right';
   $pane->type = 'views_panes';
   $pane->subtype = 'og_members-panel_pane_1';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'context' => array(

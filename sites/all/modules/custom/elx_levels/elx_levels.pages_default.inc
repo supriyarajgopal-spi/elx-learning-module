@@ -91,32 +91,6 @@ function elx_levels_default_page_manager_pages() {
   $display->content['new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8'] = $pane;
   $display->panels['middle'][0] = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
   $pane = new stdClass();
-  $pane->pid = 'new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
-  $pane->panel = 'middle';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => 'Intro Text',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => 'Each of these Levels was created for you—to make you better at what you do. You decide how to experience them and how you want to Level Up.',
-    'format' => 'full_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
-  $display->content['new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846'] = $pane;
-  $display->panels['middle'][1] = 'new-924bbd8f-81c5-4e0f-a8c7-2c3209a1f846';
-  $pane = new stdClass();
   $pane->pid = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -134,11 +108,11 @@ function elx_levels_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = 'ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $display->content['new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8'] = $pane;
-  $display->panels['middle'][2] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
+  $display->panels['middle'][1] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
   $pane = new stdClass();
   $pane->pid = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $pane->panel = 'middle';
@@ -169,11 +143,11 @@ function elx_levels_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = 'd56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $display->content['new-d56ee6ef-3b69-402d-aeaf-6413d4862d47'] = $pane;
-  $display->panels['middle'][3] = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
+  $display->panels['middle'][2] = 'new-d56ee6ef-3b69-402d-aeaf-6413d4862d47';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -286,7 +260,7 @@ function elx_levels_default_page_manager_pages() {
   $display->content['new-750af006-cd0d-4e29-b1da-07e2bcf68cf3'] = $pane;
   $display->panels['middle'][1] = 'new-750af006-cd0d-4e29-b1da-07e2bcf68cf3';
   $pane = new stdClass();
-  $pane->pid = 'new-f0318101-415d-4e25-b5d0-20eed420ce2e';
+  $pane->pid = 'new-de4906eb-ef89-45ce-8039-df8ba3707482';
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'levels_quizz_progress';
@@ -304,8 +278,8 @@ function elx_levels_default_page_manager_pages() {
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'levels_outer_view',
-    'override_title' => 0,
+    'display' => 'block_2',
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
@@ -317,9 +291,9 @@ function elx_levels_default_page_manager_pages() {
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'f0318101-415d-4e25-b5d0-20eed420ce2e';
-  $display->content['new-f0318101-415d-4e25-b5d0-20eed420ce2e'] = $pane;
-  $display->panels['middle'][2] = 'new-f0318101-415d-4e25-b5d0-20eed420ce2e';
+  $pane->uuid = 'de4906eb-ef89-45ce-8039-df8ba3707482';
+  $display->content['new-de4906eb-ef89-45ce-8039-df8ba3707482'] = $pane;
+  $display->panels['middle'][2] = 'new-de4906eb-ef89-45ce-8039-df8ba3707482';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -604,6 +578,41 @@ function elx_levels_default_page_manager_pages() {
   $pane->uuid = '06ea8663-83a6-4232-aa74-32ea28e9b929';
   $display->content['new-06ea8663-83a6-4232-aa74-32ea28e9b929'] = $pane;
   $display->panels['middle'][2] = 'new-06ea8663-83a6-4232-aa74-32ea28e9b929';
+  $pane = new stdClass();
+  $pane->pid = 'new-167a7b42-a63f-4688-b363-d134f9bc908e';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'levels_quizz_progress';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '20',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '167a7b42-a63f-4688-b363-d134f9bc908e';
+  $display->content['new-167a7b42-a63f-4688-b363-d134f9bc908e'] = $pane;
+  $display->panels['middle'][3] = 'new-167a7b42-a63f-4688-b363-d134f9bc908e';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

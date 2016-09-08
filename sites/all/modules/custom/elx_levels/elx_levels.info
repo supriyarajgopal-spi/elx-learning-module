@@ -16,7 +16,6 @@ features[ctools][] = views:views_default:3.0
 features[fe_block_boxes][] = levels_page_introduction
 features[fe_block_settings][] = block-levels_page_introduction
 features[fe_block_settings][] = menu-menu-levels-menu
-features[fe_block_settings][] = views-6dcd03e7a0a4983e50980433648537a2
 features[features_api][] = api:2
 features[menu_custom][] = menu-levels-menu
 features[page_manager_pages][] = levels_all

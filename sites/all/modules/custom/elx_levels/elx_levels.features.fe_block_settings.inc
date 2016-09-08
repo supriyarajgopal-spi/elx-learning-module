@@ -64,31 +64,5 @@ function elx_levels_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-6dcd03e7a0a4983e50980433648537a2'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '6dcd03e7a0a4983e50980433648537a2',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'elx' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'elx',
-        'weight' => 0,
-      ),
-      'elx_front' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'elx_front',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   return $export;
 }

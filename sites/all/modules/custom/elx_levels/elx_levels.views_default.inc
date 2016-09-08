@@ -423,9 +423,9 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_2']['view'] = 'level_content';
   $handler->display->display_options['fields']['view_2']['arguments'] = '[!tid]';
-  /* Sort criterion: Taxonomy vocabulary: Weight */
+  /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';

@@ -19,46 +19,11 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
       'state' => 'visible',
       'condition' => 'checked',
       'grouping' => 'AND',
-      'values_set' => 1,
-      'value' => array(),
-      'values' => array(),
-      'value_form' => array(),
       'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
-        1 => 1,
-        2 => 2,
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(),
-      'element_edit' => array(
         1 => 1,
         2 => 0,
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(),
-      'selector' => '',
-    ),
-  );
-
-  $items["node:h5p_content:1"] = array(
-    'entity' => 'node',
-    'bundle' => 'h5p_content',
-    'dependent' => 'field_learning_category',
-    'dependee' => 'field_content_object_type',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => 1,
-        2 => 2,
         5 => 0,
         3 => 0,
         4 => 0,
@@ -128,7 +93,135 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
+      ),
+      'element_edit' => array(
+        1 => 1,
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          3 => 0,
+        ),
+        6 => array(
+          1 => 1,
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => 1,
+      'value' => array(),
+      'values' => array(),
+      'value_form' => array(),
+    ),
+  );
+
+  $items["node:h5p_content:1"] = array(
+    'entity' => 'node',
+    'bundle' => 'h5p_content',
+    'dependent' => 'field_learning_category',
+    'dependee' => 'field_content_object_type',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => 1,
+        2 => 0,
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        9 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => 1,
+          2 => 2,
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
           1 => 1,
           2 => 2,
           5 => 0,
@@ -175,10 +268,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),
@@ -278,13 +367,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -325,10 +407,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),
@@ -428,13 +506,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -475,10 +546,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),
@@ -578,13 +645,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -628,10 +688,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           1 => 1,
           3 => 0,
         ),
-        10 => array(
-          1 => 1,
-          3 => 0,
-        ),
       ),
       'selector' => '',
       'values_set' => 1,
@@ -658,7 +714,7 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
       'effect_options' => array(),
       'element_view' => array(
         1 => 1,
-        2 => 2,
+        2 => 0,
         5 => 0,
         3 => 0,
         4 => 0,
@@ -728,13 +784,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -775,10 +824,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),
@@ -878,13 +923,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -925,10 +963,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),
@@ -1028,13 +1062,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
           4 => 0,
         ),
-        10 => array(
-          1 => 1,
-          2 => 2,
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
       ),
       'element_edit' => array(
         1 => 1,
@@ -1075,10 +1102,6 @@ function elx_interactive_content_feature_conditional_fields_default_fields() {
           3 => 0,
         ),
         6 => array(
-          1 => 1,
-          3 => 0,
-        ),
-        10 => array(
           1 => 1,
           3 => 0,
         ),

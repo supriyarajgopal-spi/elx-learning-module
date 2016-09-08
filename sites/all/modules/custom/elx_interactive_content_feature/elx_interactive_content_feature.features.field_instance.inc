@@ -533,14 +533,14 @@ function elx_interactive_content_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'list_key',
         'weight' => 2,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'list_key',
         'weight' => 2,
       ),
       'teaser' => array(

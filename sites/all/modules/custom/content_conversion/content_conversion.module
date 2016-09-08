@@ -134,8 +134,8 @@ function content_conversion_content_object_h5p($node) {
 function content_conversion_h5p_json($content_object) {
   $h5p = new stdClass();
   // Convert the Content Object node into a Course Presentation.
-  $h5p->presentation = new stdClass();
-  $h5p->presentation->slides = array();
+  $presentation = new stdClass();
+  $presentation->slides = array();
   $question_set = array();
   foreach ($content_object->field_learning_objects[$content_object->language] as $learning_object) {
     $node = node_load($learning_object['target_id']);
@@ -151,7 +151,7 @@ function content_conversion_h5p_json($content_object) {
         if (!empty($question_set)) {
           $slide = new stdClass();
           _content_conversion_question_set($question_set, $slide, $content_object);
-          $h5p->presentation->slides[] = $slide;
+          $presentation->slides[] = $slide;
           $question_set = array();
         }
         // Create slide for this node.
@@ -159,7 +159,7 @@ function content_conversion_h5p_json($content_object) {
         if (function_exists($function)) {
           $slide = new stdClass();
           $function($node, $slide);
-          $h5p->presentation->slides[] = $slide;
+          $presentation->slides[] = $slide;
         }
         break;
     }
@@ -168,9 +168,11 @@ function content_conversion_h5p_json($content_object) {
   if (!empty($question_set)) {
     $slide = new stdClass();
     _content_conversion_question_set($question_set, $slide, $content_object);
-    $h5p->presentation->slides[] = $slide;
+    $presentation->slides[] = $slide;
     $question_set = array();
   }
+  $presentation->keywordListEnabled = FALSE;
+  $h5p->presentation = $presentation;
   // We have no place for the following string values:
   // $node->field_exam_perfect_content[$node->language][0]['value']
   // $node->field_exam_pass_content[$node->language][0]['value']
@@ -728,7 +730,6 @@ function _content_conversion_question_set($nodes, $slide, $content_object) {
     }
   }
   // The pass percentage on the old site was hardcoded to 80.
-  // @todo: Should only be set if this is to be a quiz.
   $params->passPercentage = 80;
   $override = new stdClass();
   $override->retryButton = 'off';
@@ -736,6 +737,7 @@ function _content_conversion_question_set($nodes, $slide, $content_object) {
   $params->override = $override;
   $action->params = $params;
   $element->action = $action;
+  $element->backgroundOpacity = 100;
   $slide->elements = array($element);
 }
 

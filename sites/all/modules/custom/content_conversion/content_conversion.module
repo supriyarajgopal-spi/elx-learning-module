@@ -690,11 +690,11 @@ function _content_conversion_node_drag_select($node, $question) {
   $params_question->task = $task;
   $params->question = $params_question;
   // Default, constant settings.
-  $behavior = new stdClass();
-  $behavior->enableRetry = TRUE;
-  $behavior->singlePoint = FALSE;
-  $behavior->showSolutionsRequiresInput = TRUE;
-  $params->behavior = $behavior;
+  $behaviour = new stdClass();
+  $behaviour->enableRetry = FALSE;
+  $behaviour->singlePoint = TRUE;
+  $behaviour->showSolutionsRequiresInput = TRUE;
+  $params->behaviour = $behaviour;
   $question->params = $params;
   $question->library = 'H5P.DragQuestion 1.6';
 }
@@ -730,6 +730,10 @@ function _content_conversion_question_set($nodes, $slide, $content_object) {
   // The pass percentage on the old site was hardcoded to 80.
   // @todo: Should only be set if this is to be a quiz.
   $params->passPercentage = 80;
+  $override = new stdClass();
+  $override->retryButton = 'off';
+  $override->showSolutionButton = 'off';
+  $params->override = $override;
   $action->params = $params;
   $element->action = $action;
   $slide->elements = array($element);
@@ -746,21 +750,23 @@ function _content_conversion_question_set($nodes, $slide, $content_object) {
 function _content_conversion_node_question_and_answer($node, $question) {
   $paragraph = paragraphs_item_load($node->field_paragraph_multiple_choice[$node->language][0]['value']);
   $question->library = 'H5P.MultiChoice 1.7';
-  $qestion_params = new stdClass();
-  $qestion_params->question = trim($paragraph->field_question_text[LANGUAGE_NONE][0]['value']);
-  $qestion_params->answers = array();
-  foreach($paragraph->field_paragraph_answer[LANGUAGE_NONE] as $item) {
-    $answer_paragraph = paragraphs_item_load($item['value']);
-    $answer = new stdClass();
-    // field_answer_image no sample.
-    $answer->correct = $answer_paragraph->field_correct_answer[LANGUAGE_NONE][0]['value'] ? TRUE : FALSE;
-    if (!empty($answer_paragraph->field_answer_feedback[LANGUAGE_NONE]) && trim($answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
-      $tipsAndFeedback = new stdClass();
-      $tipsAndFeedback->chosenFeedback = $answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'];
-      $answer->tipsAndFeedback = $tipsAndFeedback;
+  $params = new stdClass();
+  $params->question = trim($paragraph->field_question_text[LANGUAGE_NONE][0]['value']);
+  if (!empty($paragraph->field_paragraph_answer[LANGUAGE_NONE])) {
+    $params->answers = array();
+    foreach ($paragraph->field_paragraph_answer[LANGUAGE_NONE] as $item) {
+      $answer_paragraph = paragraphs_item_load($item['value']);
+      $answer = new stdClass();
+      // field_answer_image no sample.
+      $answer->correct = $answer_paragraph->field_correct_answer[LANGUAGE_NONE][0]['value'] ? TRUE : FALSE;
+      if (!empty($answer_paragraph->field_answer_feedback[LANGUAGE_NONE]) && trim($answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'], " \t\n\r\0\x0B\xC2\xA0") != '') {
+        $tipsAndFeedback = new stdClass();
+        $tipsAndFeedback->chosenFeedback = $answer_paragraph->field_answer_feedback[LANGUAGE_NONE][0]['value'];
+        $answer->tipsAndFeedback = $tipsAndFeedback;
+      }
+      $answer->text = $answer_paragraph->field_answer_text[LANGUAGE_NONE][0]['value'];
+      $params->answers[] = $answer;
     }
-    $answer->text = $answer_paragraph->field_answer_text[LANGUAGE_NONE][0]['value'];
-    $qestion_params->answers[] = $answer;
   }
   if (!empty($paragraph->field_question_image[LANGUAGE_NONE])) {
     $media = new stdClass();
@@ -775,9 +781,15 @@ function _content_conversion_node_question_and_answer($node, $question) {
     $media_params->alt = '';
     $media->params = $media_params;
     $media->library = 'H5P.Image 1.0';
-    $qestion_params->media = $media;
+    $params->media = $media;
   }
-  $question->params = $qestion_params;
+  $behaviour = new stdClass();
+  $behaviour->enableRetry = FALSE;
+  $behaviour->singlePoint = TRUE;
+  $behaviour->showSolutionsRequiresInput = TRUE;
+  $behaviour->enableSolutionsButton = FALSE;
+  $params->behaviour = $behaviour;
+  $question->params = $params;
 }
 
 /**
@@ -867,8 +879,8 @@ function _content_conversion_node_drag_match($node, $question) {
   }
   // Form behaviour object.
   $behaviour = new stdClass();
-  $behaviour->enableRetry = TRUE;
-  $behaviour->singlePoint = FALSE;
+  $behaviour->enableRetry = FALSE;
+  $behaviour->singlePoint = TRUE;
   $behaviour->showSolutionsRequiresInput = TRUE;
   $params->behaviour = $behaviour;
   $question->params = $params;

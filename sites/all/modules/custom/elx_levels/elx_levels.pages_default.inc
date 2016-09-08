@@ -16,7 +16,19 @@ function elx_levels_default_page_manager_pages() {
   $page->admin_title = 'Levels All';
   $page->admin_description = 'User progress for all his/her levels';
   $page->path = 'levels_all';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access content',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',
@@ -162,7 +174,19 @@ function elx_levels_default_page_manager_pages() {
   $page->admin_title = 'Levels Completed';
   $page->admin_description = 'User progress for all his/her levels';
   $page->path = 'levels_completed';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access content',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',
@@ -446,7 +470,19 @@ function elx_levels_default_page_manager_pages() {
   $page->admin_title = 'Levels In Progress';
   $page->admin_description = 'User progress for all his/her levels';
   $page->path = 'levels_in_progress';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access content',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => '',

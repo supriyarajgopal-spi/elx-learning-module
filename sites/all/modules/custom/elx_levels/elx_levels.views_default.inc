@@ -118,209 +118,8 @@ function elx_levels_views_default_views() {
   $export['level_content'] = $view;
 
   $view = new view();
-  $view->name = 'level_nodes_count';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Level nodes count';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['required'] = TRUE;
-  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
-    'learning_category' => 'learning_category',
-    'content_object_type' => 0,
-    'product_category' => 0,
-    'pulse_content' => 0,
-    'season' => 0,
-    'story_type' => 0,
-    'tags' => 0,
-    'tools_by_role' => 0,
-    'userpoints' => 0,
-  );
-  /* Field: COUNT(Taxonomy term: Name) */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name_1']['group_type'] = 'count';
-  $handler->display->display_options['fields']['name_1']['label'] = '';
-  $handler->display->display_options['fields']['name_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['empty'] = '1';
-  $handler->display->display_options['fields']['name_1']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['name_1']['separator'] = '';
-  /* Contextual filter: Taxonomy term: Term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'learning_category' => 'learning_category',
-  );
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $translatables['level_nodes_count'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('term'),
-    t('1'),
-    t('All'),
-  );
-  $export['level_nodes_count'] = $view;
-
-  $view = new view();
-  $view->name = 'level_nodes_viewed';
-  $view->description = 'number of viewed (flagged) nodes';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Level nodes viewed';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Flags: first_viewed_content */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'first_viewed_content';
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['required'] = TRUE;
-  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
-    'learning_category' => 'learning_category',
-    'content_object_type' => 0,
-    'product_category' => 0,
-    'pulse_content' => 0,
-    'season' => 0,
-    'story_type' => 0,
-    'tags' => 0,
-    'tools_by_role' => 0,
-    'userpoints' => 0,
-  );
-  /* Field: COUNT(Taxonomy term: Name) */
-  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
-  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name_1']['group_type'] = 'count';
-  $handler->display->display_options['fields']['name_1']['label'] = '';
-  $handler->display->display_options['fields']['name_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['empty'] = '0';
-  $handler->display->display_options['fields']['name_1']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['name_1']['hide_alter_empty'] = FALSE;
-  /* Contextual filter: Taxonomy term: Term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
-    'learning_category' => 'learning_category',
-  );
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $translatables['level_nodes_viewed'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('flag'),
-    t('term'),
-    t('All'),
-  );
-  $export['level_nodes_viewed'] = $view;
-
-  $view = new view();
   $view->name = 'levels_quizz_progress';
-  $view->description = '';
+  $view->description = 'Outer view for levels';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Levels outer view';
@@ -330,7 +129,7 @@ function elx_levels_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Levels outer view';
+  $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
@@ -385,45 +184,16 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: level nodes viewed */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'level nodes viewed';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'level_nodes_viewed';
-  $handler->display->display_options['fields']['view']['arguments'] = '[!tid]';
-  /* Field: level nodes count */
-  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
-  $handler->display->display_options['fields']['view_1']['table'] = 'views';
-  $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'level nodes count';
-  $handler->display->display_options['fields']['view_1']['label'] = '';
-  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'level_nodes_count';
-  $handler->display->display_options['fields']['view_1']['arguments'] = '[!tid]';
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '';
-  $handler->display->display_options['fields']['expression']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = '%';
-  $handler->display->display_options['fields']['expression']['expression'] = '[view] / [view_1] * 100';
-  /* Field: level content */
-  $handler->display->display_options['fields']['view_2']['id'] = 'view_2';
-  $handler->display->display_options['fields']['view_2']['table'] = 'views';
-  $handler->display->display_options['fields']['view_2']['field'] = 'view';
-  $handler->display->display_options['fields']['view_2']['ui_name'] = 'level content';
-  $handler->display->display_options['fields']['view_2']['label'] = '';
-  $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_2']['view'] = 'level_content';
+  /* Field: COUNT(Flags: Flagged) */
+  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['group_type'] = 'count';
+  $handler->display->display_options['fields']['flagged']['label'] = '';
+  $handler->display->display_options['fields']['flagged']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged']['separator'] = '';
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -433,6 +203,27 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Global: Math expression */
+  $handler->display->display_options['fields']['expression']['id'] = 'expression';
+  $handler->display->display_options['fields']['expression']['table'] = 'views';
+  $handler->display->display_options['fields']['expression']['field'] = 'expression';
+  $handler->display->display_options['fields']['expression']['label'] = '';
+  $handler->display->display_options['fields']['expression']['element_type'] = '0';
+  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
+  $handler->display->display_options['fields']['expression']['precision'] = '0';
+  $handler->display->display_options['fields']['expression']['separator'] = '';
+  $handler->display->display_options['fields']['expression']['suffix'] = '%';
+  $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
+  /* Field: Level content */
+  $handler->display->display_options['fields']['view_2']['id'] = 'view_2';
+  $handler->display->display_options['fields']['view_2']['table'] = 'views';
+  $handler->display->display_options['fields']['view_2']['field'] = 'view';
+  $handler->display->display_options['fields']['view_2']['ui_name'] = 'Level content';
+  $handler->display->display_options['fields']['view_2']['label'] = '';
+  $handler->display->display_options['fields']['view_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_2']['view'] = 'level_content';
+  $handler->display->display_options['fields']['view_2']['arguments'] = '[!tid]';
   /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
@@ -452,39 +243,12 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Global: Fields comparison */
-  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
-  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
 
   /* Display: All */
-  $handler = $view->new_display('block', 'All', 'levels_outer_view');
-  $handler->display->display_options['display_description'] = 'All levels';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Taxonomy terms on node */
-  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'h5p_content' => 'h5p_content',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler = $view->new_display('panel_pane', 'All', 'all');
 
   /* Display: In Progress */
-  $handler = $view->new_display('block', 'In Progress', 'block_1');
-  $handler->display->display_options['display_description'] = 'levels with at least one content view';
+  $handler = $view->new_display('panel_pane', 'In Progress', 'in_progress');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -509,22 +273,41 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['flagged']['group_type'] = 'count';
   $handler->display->display_options['filters']['flagged']['operator'] = '>';
   $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
-  $handler->display->display_options['filters']['flagged']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['operator'] = '<';
-  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
 
   /* Display: Completed */
-  $handler = $view->new_display('block', 'Completed', 'block_2');
-  $handler->display->display_options['display_description'] = 'levels with at least one content view';
+  $handler = $view->new_display('panel_pane', 'Completed', 'completed');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Global: Fields comparison */
+  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
+  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
+  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
   $translatables['levels_quizz_progress'] = array(
     t('Master'),
-    t('Levels outer view'),
+    t('<none>'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -545,9 +328,8 @@ function elx_levels_views_default_views() {
     t('.'),
     t('%'),
     t('All'),
-    t('All levels'),
+    t('View panes'),
     t('In Progress'),
-    t('levels with at least one content view'),
     t('Completed'),
   );
   $export['levels_quizz_progress'] = $view;

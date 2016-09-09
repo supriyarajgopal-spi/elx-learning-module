@@ -1,0 +1,3 @@
+Fixed filter Fields Comparison not using aggregation settings.
+https://www.drupal.org/node/2490048
+https://www.drupal.org/files/issues/views-fields_comparison_aggregation-2490048-1.patch

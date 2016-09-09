@@ -1,0 +1,52 @@
+diff --git a/handlers/views_handler_filter_fields_compare.inc b/handlers/views_handler_filter_fields_compare.inc
+index fe94ce7..4914768 100644
+--- a/handlers/views_handler_filter_fields_compare.inc
++++ b/handlers/views_handler_filter_fields_compare.inc
+@@ -109,23 +109,41 @@ class views_handler_filter_fields_compare extends views_handler_filter {
+       return;
+     }
+ 
++    $info = $this->query->get_aggregation_info();
++    $having = FALSE;
++
+     // Get the left table and field.
+     $left_handler = $field_handlers[$left];
+     $left_handler->set_relationship();
+     $left_table_alias = $this->query->ensure_table($left_handler->table, $left_handler->relationship);
++    $left_side = $left_table_alias . '.' . $left_handler->real_field;
+ 
+-    // Get the left table and field.
++    // Apply left aggregation function.
++    $function = $left_handler->options['group_type'];
++    if ($function && $function != 'group') {
++      $left_side = call_user_func($info[$function]['method'], $function, $left_side);
++      $having = TRUE;
++    }
++
++    // Get the right table and field.
+     $right_handler = $field_handlers[$right];
+     $right_handler->set_relationship();
+     $right_table_alias = $this->query->ensure_table($right_handler->table, $right_handler->relationship);
++    $right_side = $right_table_alias . '.' . $right_handler->real_field;
++
++    // Apply right aggregation function.
++    $function = $right_handler->options['group_type'];
++    if ($function && $function != 'group') {
++      $right_side = call_user_func($info[$function]['method'], $function, $right_side);
++      $having = TRUE;
++    }
+ 
+     // Build piece of SQL.
+-    $snippet =
+-      $left_table_alias . '.' . $left_handler->real_field .
+-      ' ' . $this->options['operator'] . ' ' .
+-      $right_table_alias . '.' . $right_handler->real_field;
++    $snippet = $left_side . ' ' . $this->options['operator'] . ' ' . $right_side;
+ 
+-    $this->query->add_where_expression($this->options['group'], $snippet);
++    // Add to query using WHERE (normal) or HAVING (necessary for aggregated comparison).
++    $method = $having ? 'add_having_expression' : 'add_where_expression';
++    call_user_func(array($this->query, $method), $this->options['group'], $snippet);
+   }
+ 
+   /**

@@ -41,4 +41,5 @@ features[variable][] = menu_minipanels_menu-header-user-menu_enabled
 features[variable][] = menu_minipanels_user-menu_enabled
 features[variable][] = realname_pattern
 features[variable][] = realname_suppress_user_name_mail_validation
+features[variable][] = theme_elx_front_settings
 features[views_view][] = my_progress

@@ -30,19 +30,20 @@ function elx_spin_the_wheel_field_formatter_info() {
  */
 function elx_spin_the_wheel_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array(); // Initialize the variable
+  foreach ($items as $delta => $item) {
+    if ($item['value']) {
 
-  //Load required CSS file(s)
-  drupal_add_css(drupal_get_path('module', 'elx_spin_the_wheel') .'/styles/elx_spin_the_wheel.css', 'file');
-  
-  //Load required JS file(s)
-  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/angular.min.js', 'file');
-  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/component.module.js', 'file');
-  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/npTrivia.js', 'file');
-  
-  //Read the contents of the HTML file instead of writing HTML here for easy code maintenance
-  $spinthewheel_html = file_get_contents(drupal_get_path('module', 'elx_spin_the_wheel') .'/npTrivia.html');
-  
-  $element[0]['#markup'] = $spinthewheel_html; // Assign HTML to the #markup of the element
-  
+      //Load required CSS file(s)
+      drupal_add_css(drupal_get_path('module', 'elx_spin_the_wheel') .'/styles/elx_spin_the_wheel.css', 'file');
+
+      //Load required JS file(s)
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/angular.min.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/component.module.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/npTrivia.js', 'file');
+
+      //Read the contents of the HTML file instead of writing HTML here for easy code maintenance
+      $element[$delta]['#markup'] = file_get_contents(drupal_get_path('module', 'elx_spin_the_wheel') .'/npTrivia.html');
+    }
+  }
   return $element;
 }

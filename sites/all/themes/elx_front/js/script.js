@@ -28,9 +28,11 @@
         var linkhref = $(this).attr('href'); /* /modal/nojs/9309 */
 
         // future perfect tense-ification //
-        var launchModal = function () {
+        var launchModal = function (time) {
 
-          setTimeout(function () {
+          if(!time) { var time = 1000 }
+
+          setTimeout(function (time) {
 
             // uat debug // remove after
             var typefile = $('#modal-content .field-name-field-tool-pdf.field-type-file').html();
@@ -77,7 +79,6 @@
 
             };
 
-
             var asset;
 
             // establish main asset variable for 3 version variation for modal views at FE //
@@ -86,11 +87,8 @@
             else if (isAnimGif()) { asset = isAnimGif(); getAnimGifContent(); }
 
 
-            // works fine but without body tag //
-            // var asset = $('body.page-tools.section-tools #modalContent').find('.node-tools .field-name-field-tool-pdf').find('.field-items .field-item').html();
             var innerpart_newcontainer = $('body.page-tools.section-tools #modalContent .node-tools');
             var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(close_action);
-            // console.log(innerpart); // var outim = innerpart.html(); alert(outim);
 
             $('body.page-tools.section-tools #modalBackdrop').css({'background-color': '#040A2B', 'opacity': '0.8'});
             $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '50%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
@@ -108,6 +106,12 @@
             $('body.page-tools.section-tools #modalContent img.animated-gif').remove();
             $('body.page-tools.section-tools #modalContent .paragraph-animgif-container').remove();
             $('body.page-tools.section-tools #modalContent .item-title-inmodal').remove();
+            $('body.page-tools.section-tools #modalContent').css('border','0px');
+
+
+            // MAIN BREAK POINT FOR AJAX MODAL // if null return and check in 1.5 sec //
+            if(!!asset) { } else { launchModal(1500); return }
+
 
             // add new container after removing prior content in modal accumilated //
             $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart_newcontainer);
@@ -154,7 +158,7 @@
             // center using existing facility // resize not just initial parts that render unresize at first
             $(window).trigger('resize');
 
-          }, 500);
+          }, time);
 
         };
         // });

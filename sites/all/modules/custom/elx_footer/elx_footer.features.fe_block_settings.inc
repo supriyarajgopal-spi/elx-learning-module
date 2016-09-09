@@ -57,7 +57,7 @@ function elx_footer_default_fe_block_settings() {
         'region' => 'footer',
         'status' => 1,
         'theme' => 'elx_front',
-        'weight' => -31,
+        'weight' => -29,
       ),
     ),
     'title' => '<none>',

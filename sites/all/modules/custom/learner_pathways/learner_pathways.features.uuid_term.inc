@@ -91,7 +91,7 @@ function learner_pathways_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'learning_category',
   );
   $terms[] = array(
-    'name' => 'Holiday',
+    'name' => 'Holiday 2016 - Beauty Advisors',
     'description' => '',
     'format' => 'full_html',
     'weight' => 11,
@@ -106,16 +106,6 @@ function learner_pathways_uuid_features_default_terms() {
     'format' => 'full_html',
     'weight' => 3,
     'uuid' => 'ac916cd3-e9d9-4d6d-8b85-44f7d4d657c5',
-    'language' => 'und',
-    'i18n_tsid' => 0,
-    'vocabulary_machine_name' => 'learning_category',
-  );
-  $terms[] = array(
-    'name' => 'Beautiful Start',
-    'description' => '',
-    'format' => 'full_html',
-    'weight' => 9,
-    'uuid' => 'bb78eea6-7a77-46f2-b5c6-be7ceea6ac47',
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',

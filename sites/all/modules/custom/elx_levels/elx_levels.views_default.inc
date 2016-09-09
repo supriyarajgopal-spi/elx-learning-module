@@ -31,7 +31,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '1';
+  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
@@ -137,13 +137,8 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE LEVELS';
-  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Taxonomy terms on node */
@@ -235,6 +230,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -257,6 +260,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -273,11 +284,13 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['flagged']['group_type'] = 'count';
   $handler->display->display_options['filters']['flagged']['operator'] = '>';
   $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
+  $handler->display->display_options['filters']['flagged']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['operator'] = '<';
+  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
 
@@ -291,6 +304,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -303,6 +324,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
   $translatables['levels_quizz_progress'] = array(
@@ -314,14 +336,6 @@ function elx_levels_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('SEE MORE LEVELS'),
     t('term'),
     t('flag'),
     t('Level'),

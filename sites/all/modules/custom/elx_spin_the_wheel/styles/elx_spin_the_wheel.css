@@ -1,0 +1,1097 @@
+/**
+ * Created by SUPRIYA RAJGOPAL on 1Aug16 by copying relevant CSS from http://myelx.com/styles/vendor-0cb5de99.css
+ */
+#ANR #np_newplayer-background {
+    position: fixed;
+    background-color: #014c95;
+    background-size: cover;
+    content: "";
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0
+}
+
+#ANR #background-image {
+    position: fixed;
+    background-image: url("../assets/images/ESTL-005_ANR_bg_img.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box;
+    width: 100%;
+    height: 100%
+}
+
+#ANR .renutriv-logo-image {
+    position: relative;
+    background-image: url("../assets/images/AdvancedNightRepairLogoSm.png");
+    background-repeat: no-repeat;
+    width: 312px;
+    height: 19px;
+    padding-bottom: 11px
+}
+
+#ANR .headline {
+    font-family: "optimadisplaylightlight";
+    font-size: 36px;
+    color: #fff;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-top: 10px
+}
+
+#ANR .headline,#ANR .instructional {
+    display: inline-block;
+    margin-bottom: 20px
+}
+
+#ANR .instructional {
+    font-family: "akzidenz-grotesk_bqregular";
+    font-size: 14px;
+    color: #000;
+    letter-spacing: 1px;
+    padding-top: 0;
+    padding-bottom: 20px;
+    margin-top: 0
+}
+
+#ANR .h1,#ANR .h2,#ANR .h3,#ANR .h4,#ANR .h5 {
+    color: #fff
+}
+
+#ANR .subhead-copy {
+    text-transform: uppercase
+}
+
+#ANR .subhead-copy,#ANR .body-copy-strong {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #040A2B;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 20px
+}
+
+@media (max-width: 992px) {
+    #ANR .subhead-copy,#ANR .body-copy-strong {
+        font-size:17px;
+        letter-spacing: 1px
+    }
+}
+
+#ANR .body-copy {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #040A2B;
+    font-size: 17px;
+    letter-spacing: 2px;
+    line-height: 1.35;
+    margin-bottom: 20px
+}
+
+@media (max-width: 992px) {
+    #ANR .body-copy {
+        font-size:14px;
+        letter-spacing: 1px;
+        line-height: 1.25
+    }
+}
+
+#ANR small {
+    color: #040A2B
+}
+
+#ANR .header-dark {
+    font-family: "optimadisplaylightlight";
+    color: #000;
+    font-size: 36px;
+    letter-spacing: 2px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block
+}
+
+#ANR .npPage-title {
+    font-family: "optimadisplaylightlight";
+    margin-top: 10px
+}
+
+#ANR .npPage-title,#ANR .npPage-subTitle {
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 20px
+}
+
+#ANR .npPage-subTitle {
+    font-family: "akzidenz-grotesk_bqregular";
+    font-size: 18px;
+    text-transform: uppercase
+}
+
+#ANR .npPage-instructional {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 0;
+    display: inline-block;
+    margin-bottom: 20px
+}
+
+#ANR .gold {
+    color: #9a7d46
+}
+
+#ANR .btn {
+    position: relative;
+    border-color: #fff;
+    background-color: #040A2B;
+    width: auto!important;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin-top: 5px;
+    border-width: 1px;
+    padding: 5px 2em 3px
+}
+
+#ANR .btn span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+#ANR .btn-next {
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 50px
+}
+
+#ANR .btn-next span {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0
+}
+
+#ANR .btn-submit {
+    margin-top: 10px;
+    margin-left: 60px
+}
+
+@media (max-width: 768px) {
+    #ANR .btn-next {
+        position:absolute;
+        right: 110px;
+        bottom: 0;
+        margin-right: 0;
+        margin-bottom: 50px
+    }
+}
+
+#ANR .content-background {
+    background-color: rgba(255,255,255,.5)
+}
+
+#ANR .npHotspot {
+    top: 0;
+    left: 0
+}
+
+#ANR .hotspotImage {
+    position: relative;
+    max-width: 575px;
+    margin-bottom: 10%
+}
+
+#ANR .hotspotButton {
+    position: absolute;
+    max-width: 90px;
+    height: auto;
+    margin: -.75rem 0 0 -3.25rem;
+    padding: 0;
+    cursor: pointer
+}
+
+#ANR .hotspotButtonImage {
+    position: relative;
+    background-image: url("../assets/images/hotspot.png");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px
+}
+
+#ANR .npHotspot-feedback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px 20px 50px 30px
+}
+
+#ANR .content-background-svg rect {
+    fill: rgba(255,255,255,.5);
+    stroke: #125aa0;
+    stroke-width: 4px
+}
+
+#ANR .np-flash-card {
+    position: fixed;
+    content: "";
+    width: 100%;
+    left: 0;
+    right: 0
+}
+
+#ANR #flash-cards {
+    position: relative;
+    padding-top: 45px!important;
+    margin-left: 0
+}
+
+#ANR .flash-cards-object {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 560px;
+    margin-bottom: 222px;
+    padding-bottom: 15px
+}
+
+@media (max-width: 768px) {
+    #ANR .flash-cards-object {
+        width:280px
+    }
+}
+
+#ANR .flash-card-overlay {
+    background-color: #00518F
+}
+
+#ANR .flash-card-overlay,#ANR .flash-card-border {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0
+}
+
+#ANR .flash-card-border {
+    visibility: hidden;
+    border-color: #040A2B;
+    border-width: 10px;
+    box-shadow: inset 0 0 10px 1px #040A2B
+}
+
+#ANR .flash-card-button {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 40px;
+    height: auto;
+    cursor: pointer
+}
+
+#ANR .button-holder {
+    position: relative;
+    fill: #d9d9d9
+}
+
+#ANR .flash-card-front-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 475px
+}
+
+@media (max-width: 768px) {
+    #ANR .flash-card-front-wrapper {
+        height:235px
+    }
+}
+
+#ANR .flash-card-content-front {
+    position: absolute;
+    padding: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: #fff;
+    min-height: 475px
+}
+
+#ANR .flash-card-content-front p {
+    color: #040A2B
+}
+
+#ANR .flash-card-back-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+#ANR .flash-card-content-back {
+    position: absolute;
+    padding: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    min-height: 475px
+}
+
+#ANR .flash-card-content-back p {
+    color: #040A2B
+}
+
+#ANR .quiz-label {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block
+}
+
+#ANR input {
+    text-transform: uppercase;
+    color: #313131
+}
+
+#ANR input,#ANR .answer-text-input {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    letter-spacing: 2px
+}
+
+#ANR .answer-text-input {
+    color: #737373;
+    border-color: #9a7d46;
+    background-color: #333;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.65)
+}
+
+#ANR .answer-text-checkbox,#ANR .answer-text-radio,#ANR .answer-text span {
+    font-family: "BauerBodoniStd-Roman";
+    size: 17px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+#ANR .answer-wrapper {
+    padding: 20px
+}
+
+#ANR .answer-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer
+}
+
+#ANR .checkbox-box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.65)
+}
+
+#ANR .checkbox-box svg rect {
+    fill: #040A2B;
+    opacity: .75;
+    stroke: #fff;
+    stroke-width: 3
+}
+
+#ANR .checkbox-x {
+    width: 20px;
+    height: 20px
+}
+
+#ANR .checkbox-x,#ANR .checkbox-x svg {
+    position: absolute;
+    display: block;
+    margin: auto
+}
+
+#ANR .checkbox-x svg {
+    top: 0;
+    left: 0
+}
+
+#ANR .checkbox-x svg line {
+    stroke: #fff!important
+}
+
+#ANR .answer-content-wrapper {
+    padding: 6px;
+    opacity: .75;
+    background-color: #fff;
+    margin-left: 20px
+}
+
+#ANR .answer-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    color: #fff;
+    letter-spacing: 2px
+}
+
+#ANR .question-text {
+    font-family: "optimadisplaylightlight";
+    size: 23px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+#ANR .question-feedback-wrapper {
+    position: relative;
+    background-color: #fff;
+    box-shadow: inset 0 0 5px 3px rgba(0,0,0,.25);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%
+}
+
+#ANR .question-feedback {
+    position: relative;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#ANR .question-feedback-outline {
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+#ANR .question-feedback-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    float: left;
+    color: #040A2B;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    margin-left: 40px
+}
+
+#ANR .positive-feedback-icon,#ANR .negative-feedback-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    left: 20px
+}
+
+#ANR .question-feedback-label {
+    font-family: "akzidenz-grotesk_bqregular";
+    size: 23px;
+    color: #737373;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px
+}
+
+#ANR .question-feedback-wrapper svg polygon,#ANR .question-feedback-wrapper svg path {
+    fill: #040A2B
+}
+
+#ANR .np-result {
+    font-family: "optimadisplaylightlight";
+    color: #040A2B
+}
+
+#ANR .np-result-summary {
+    position: relative;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 1.2em
+}
+
+#ANR .results-wrapper-correct,#ANR .results-wrapper-incorrect {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    letter-spacing: 2px;
+    left: 100px;
+    right: 100px;
+    padding: 50px;
+    text-align: center
+}
+
+#ANR .results-summary-text {
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-align: center
+}
+
+#ANR .results-summary-amount-wrapper {
+    padding-top: 20px;
+    display: inline-block
+}
+
+#ANR .results-summary-label-text {
+    font-family: "akzidenz-grotesk_bqregular";
+    font-size: 36px;
+    letter-spacing: 2px;
+    float: left;
+    margin-left: auto;
+    width: auto
+}
+
+#ANR .results-summary-pecentage {
+    font-size: 100px;
+    letter-spacing: 2px;
+    float: left;
+    margin-right: auto;
+    width: auto;
+    line-height: 1
+}
+
+#ANR .results-summary-pecentage-character {
+    font-size: 60px;
+    letter-spacing: 2px;
+    float: right;
+    margin-right: auto;
+    width: auto;
+    line-height: 1
+}
+
+#ANR .results-wrapper-incorrect .results-summary-pecentage {
+    line-height: .15
+}
+
+#ANR .np-result-container {
+    opacity: .65
+}
+
+#ANR .np-result-container rect {
+    stroke: #125AA0;
+    fill: #fff;
+    stroke-width: 6
+}
+
+#ANR .np-spinner-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.65)
+}
+
+#ANR .np-spinner {
+    color: #9a7d46;
+    width: 155px
+}
+
+#ANR .np-gold-pointer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 33px
+}
+
+#ANR .method2 {
+    -webkit-mask-image: -webkit-linear-gradient(top,#f8f8aa,rgba(202,160,78,.5)50%,#f8f8aa);
+    -webkit-mask-image: linear-gradient(top,#f8f8aa,rgba(202,160,78,.5)50%,#f8f8aa)
+}
+
+#ANR .np-spinner div {
+    font-family: "BauerBodoniStd-Roman";
+    color: #014c95;
+    font-size: 35px;
+    line-height: 2.1em;
+    text-align: center
+}
+
+#ANR .np-spinner svg rect {
+    fill: transparent;
+    stroke: #040A2B;
+    stroke-width: 4
+}
+
+#ANR .np-gold-pointer svg polygon {
+    fill: #040A2B!important;
+    box-shadow: 10px 10px 25px -5px rgba(0,0,0,.75);
+    z-index: 10000
+}
+
+#ANR .np-spinner-content div:nth-last-child(2) {
+    color: #040A2B
+}
+
+#ANR .np-gold-border {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    box-shadow: inset 0 0 30px 15px rgba(0,0,0,.5)
+}
+
+#ANR .wheels {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    width: 100%
+}
+
+.no-csstransforms3d #ANR .wheels {
+    overflow: hidden;
+    height: 65px
+}
+
+#ANR .wheels .wheel {
+    position: relative;
+    height: 600px;
+    top: 69px
+}
+
+#ANR .wheels .wheel>div {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    z-index: 999;
+    background-color: #fff;
+    border-bottom: solid 1px;
+    border-bottom-color: #040A2B;
+    outline: 1px solid transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+#ANR .reveal-object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 770px
+}
+
+#ANR .np-reveal {
+    position: relative;
+    width: 100%;
+    height: 600px
+}
+
+#ANR .reveal-button {
+    cursor: pointer
+}
+
+#ANR .reveal-navigation {
+    width: 100%;
+    height: 100px
+}
+
+#ANR .reveal-button-image {
+    position: absolute;
+    height: 62px;
+    width: 62px;
+    padding: 5.5%;
+    background-color: #fff;
+    overflow: hidden
+}
+
+#ANR .reveal-button-container {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 770px
+}
+
+#ANR .reveal-button-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto
+}
+
+#ANR .button-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00518F
+}
+
+#ANR .reveal-button {
+    position: relative;
+    width: 4.46em;
+    height: 4.46em;
+    margin-left: .2em;
+    margin-right: .2em
+}
+
+#ANR .reveal-item-wrapper,#ANR .reveal-item {
+    max-width: 100%;
+    display: table;
+    margin: 0 auto
+}
+
+#ANR .reveal-video {
+    height: auto;
+    max-width: 100%
+}
+
+#ANR .reveal-content-wrapper {
+    position: relative
+}
+
+#ANR .reveal-content-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+#ANR .reveal-heading-text {
+    margin-top: -5px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+#ANR .reveal-text-body {
+    padding-bottom: 15px
+}
+
+#ANR .reveal-content-text {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+#ANR .reveal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .75
+}
+
+#ANR .list-item {
+    color: #040A2B;
+    letter-spacing: 2px
+}
+
+#ANR .column-1 {
+    margin-bottom: 1.5%
+}
+
+#ANR .list-object video {
+    max-width: 100%;
+    height: auto
+}
+
+#ANR .media-body {
+    padding: 5%;
+    background-color: #fff;
+    opacity: .75
+}
+
+#ANR .list-body-text {
+    color: #040A2B;
+    letter-spacing: 2px;
+    font-size: 14px
+}
+
+#ANR #hit-area-wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+#ANR #select-hit-area-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.65)
+}
+
+#ANR .select-button-wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+
+#ANR .btn-select-submit {
+    position: relative;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+#ANR .btn-select-submit span {
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+
+#ANR .select-button-completion-content {
+    padding: 15px 25px
+}
+
+#ANR .select-response-wrapper {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%
+}
+
+#ANR .select-response-wrapper p,#ANR h2 {
+    color: #040A2B
+}
+
+#ANR .select-response-wrapper polygon,#ANR .select-response-wrapper path {
+    fill: #040A2B!important
+}
+
+#ANR .select-response-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,.65)
+}
+
+#ANR .select-response-correct,#ANR .select-response-incorrect {
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 10px
+}
+
+#ANR .left-column-select {
+    text-align: right
+}
+
+#ANR .right-column-select {
+    text-align: left;
+    margin-top: 3px
+}
+
+#ANR .response-icon-wrapper {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    margin-top: 1px;
+    margin-bottom: 20px
+}
+
+#ANR .button-prioritize-content {
+    position: relative;
+    display: block
+}
+
+#ANR .hit-area-prioritize-content {
+    position: absolute;
+    float: right;
+    right: 43%;
+    top: 43%
+}
+
+#ANR .hit-area-number {
+    font-size: 7em;
+    color: #000;
+    opacity: .15;
+    text-align: center;
+    padding-left: 20px
+}
+
+#ANR .button-completion-prioritize-content {
+    position: absolute;
+    float: right;
+    right: 50%;
+    top: 36%
+}
+
+#ANR .centered-prioritize-content {
+    width: 100%;
+    height: 100%;
+    float: right;
+    right: -50%;
+    position: relative
+}
+
+#ANR .column-no-wrap {
+    float: none
+}
+
+#ANR .boxElements {
+    position: relative;
+    text-align: left;
+    color: #040A2B;
+    margin-bottom: 1.5%
+}
+
+#ANR .boxElements,#ANR .hit-area-background {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+#ANR .hit-area-background {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: inset 0 0 6px 3px rgba(0,0,0,.25)
+}
+
+#ANR .completeCheck {
+    position: absolute;
+    text-align: left;
+    color: #040A2B;
+    margin-bottom: 2.5%
+}
+
+#ANR .completeCheck,#ANR foreignobject {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+#ANR foreignobject {
+    position: fixed
+}
+
+#ANR .button-completion-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 10%;
+    bottom: 0;
+    margin: auto
+}
+
+#ANR .centered-content {
+    padding-top: 3em;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    resize: vertical
+}
+
+#ANR .positive-feedback-content {
+    padding-top: 10px;
+    margin-left: 35px
+}
+
+#ANR .positive-feedback-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 25px
+}
+
+#ANR .positive-feedback-image polygon,#ANR path {
+    fill: #040A2B
+}
+
+#ANR .button-content {
+    padding: 5%
+}
+
+#ANR rect {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+
+#ANR .button-content p {
+    padding: 0;
+    margin: 0
+}
+
+#ANR .draggableButton {
+    cursor: pointer
+}
+
+#ANR .draggableButton rect {
+    fill: #fff
+}
+
+#ANR .hit-area,#ANR .hit-area rect {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+#ANR .hit-area rect {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    opacity: .9
+}
+
+#ANR .hit-area svg rect {
+    fill: #fff;
+    opacity: .75;
+    stroke: #fff;
+    stroke-width: 3
+}
+
+svg {
+    width: 100%;
+    height: 100% !important;
+}
+
+ .hit-area svg {
+    -webkit-filter: blur(0);
+    filter: blur(0)
+}
+
+/* elx:724d551cebcd066b988b81858728f3aad05c3118|newplayer:0.6.75|Tue Jul 05 2016 15:08:10 GMT-0400 (EDT)|jenkins */

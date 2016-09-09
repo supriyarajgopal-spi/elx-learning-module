@@ -6,6 +6,7 @@ dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = elx_content_tool
 dependencies[] = elx_site_configurations
+dependencies[] = elx_spin_the_wheel
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = h5p

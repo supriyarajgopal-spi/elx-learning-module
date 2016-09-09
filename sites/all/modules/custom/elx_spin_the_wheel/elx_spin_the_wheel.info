@@ -1,0 +1,4 @@
+name = ELX Spin the Wheel
+description = Implements Spin the Wheel field formatter for an integer field
+core = 7.x
+package = ELX

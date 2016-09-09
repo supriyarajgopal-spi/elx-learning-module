@@ -1,0 +1,48 @@
+<?php
+/**
+ * Implements hook_help()
+ */
+function elx_spin_the_wheel_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#elx_spin_the_wheel":
+      return '' . t("Provides a 'spin-the-wheel' formatter for an integer field") . '';
+      break;
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info()
+ * Borrowed from http://www.metaltoad.com/blog/drupal-7-tutorial-creating-custom-formatters
+ */
+function elx_spin_the_wheel_field_formatter_info() {
+  return array(
+    'spinthewheel_formatter' => array( //Machine name of the formatter
+      'label' => t('Spin the Wheel'),
+      'field types' => array('list_boolean'), //This will only be available to integer fields. Borrowed from https://api.drupal.org/comment/60576#comment-60576
+      'settings'  => array(), //No settings needed
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ * Borrowed from http://www.metaltoad.com/blog/drupal-7-tutorial-creating-custom-formatters
+ */
+function elx_spin_the_wheel_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array(); // Initialize the variable
+
+  //Load required CSS file(s)
+  drupal_add_css(drupal_get_path('module', 'elx_spin_the_wheel') .'/styles/elx_spin_the_wheel.css', 'file');
+  
+  //Load required JS file(s)
+  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/angular.min.js', 'file');
+  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/component.module.js', 'file');
+  drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/npTrivia.js', 'file');
+  
+  //Read the contents of the HTML file instead of writing HTML here for easy code maintenance
+  $spinthewheel_html = file_get_contents(drupal_get_path('module', 'elx_spin_the_wheel') .'/npTrivia.html');
+  
+  $element[0]['#markup'] = $spinthewheel_html; // Assign HTML to the #markup of the element
+  
+  return $element;
+}

@@ -735,7 +735,7 @@ function elx_views_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => '',
+        'any_label' => 'All Categories',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -850,18 +850,18 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['field_why_there_s_only_one']['field'] = 'field_why_there_s_only_one';
   $handler->display->display_options['fields']['field_why_there_s_only_one']['label'] = '';
   $handler->display->display_options['fields']['field_why_there_s_only_one']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Most Popular';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title A-Z';
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Most Recently Created';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -880,9 +880,18 @@ function elx_views_views_default_views() {
   $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
   $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
   $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['value'] = array(
+    253 => '253',
+    254 => '254',
+    255 => '255',
+    256 => '256',
+    257 => '257',
+    258 => '258',
+    259 => '259',
+  );
   $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By Category';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator'] = 'field_product_categories_tid_op';
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['identifier'] = 'field_product_categories_tid';
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['remember_roles'] = array(
@@ -932,6 +941,7 @@ function elx_views_views_default_views() {
     t('Desc'),
     t('Advanced options'),
     t('Sort options'),
+    t('All Categories'),
     t('Select any filter and click on Apply to see results'),
     t('View'),
     t('- All -'),
@@ -941,9 +951,9 @@ function elx_views_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Displaying @start - @end of @total'),
+    t('Most Popular'),
     t('Title A-Z'),
-    t('Most Recently Created'),
-    t('Filter By Category'),
+    t('Filter By'),
     t('Page'),
     t('Block'),
   );

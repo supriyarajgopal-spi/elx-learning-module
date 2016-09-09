@@ -185,7 +185,7 @@ body.page-levels-all {
     display: block;
     height: 25px;
 
-    margin: 50px auto 50px 130px;
+    margin: 50px auto 50px 150px;
     width: 85%;
 
     .user-progress {
@@ -194,11 +194,20 @@ body.page-levels-all {
       height: 24px;
     }
 
+    .progress-bar-percentage {
+      font-family: arial, $font-family-serif;
+      font-size: 1.4em;
+      font-weight: bold;
+      position: absolute;
+      width: 130px;
+      margin-left: -50px;
+    }
+
     .user-progress::before {
-      content: 'PROGRESS: %';
       font-family: $font-family-serif;
-      margin-left: -125px;
       font-size: 1.2em;
+      margin-left: -145px;
+      content: 'PROGRESS ';
     }
   }
 }

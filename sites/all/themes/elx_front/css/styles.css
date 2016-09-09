@@ -3398,7 +3398,7 @@ body.page-levels-all .user-progress-bar {
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.15) inset;
   display: block;
   height: 25px;
-  margin: 50px auto 50px 130px;
+  margin: 50px auto 50px 150px;
   width: 85%;
 }
 
@@ -3410,11 +3410,21 @@ body.page-levels-all .user-progress-bar .user-progress {
 }
 
 /* line 197, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+body.page-levels-all .user-progress-bar .progress-bar-percentage {
+  font-family: arial, "optimadisplaylightlight";
+  font-size: 1.4em;
+  font-weight: bold;
+  position: absolute;
+  width: 130px;
+  margin-left: -50px;
+}
+
+/* line 206, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .user-progress::before {
-  content: 'PROGRESS: %';
   font-family: "optimadisplaylightlight";
-  margin-left: -125px;
   font-size: 1.2em;
+  margin-left: -145px;
+  content: 'PROGRESS ';
 }
 
 /* LOGIN PAGE*/

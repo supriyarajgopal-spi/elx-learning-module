@@ -3410,7 +3410,7 @@ body.page-levels-in-progress .user-progress-bar {
 body.page-levels-all .user-progress-bar .user-progress,
 body.page-levels-completed .user-progress-bar .user-progress,
 body.page-levels-in-progress .user-progress-bar .user-progress {
-  background: url("/sites/all/themes/elx_front/images/progress-bar.png");
+  background: url("../images/progress-bar.png");
   display: block;
   height: 24px;
 }

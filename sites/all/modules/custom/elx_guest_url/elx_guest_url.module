@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Guest URL feature.
+ */
+
+include_once 'elx_guest_url.features.inc';

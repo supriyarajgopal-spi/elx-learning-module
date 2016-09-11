@@ -473,41 +473,6 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_access_date'.
-  $field_instances['user-user-field_last_access_date'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 12,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_last_access_date',
-    'label' => 'Last access date',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
@@ -543,41 +508,6 @@ function elx_users_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_level'.
-  $field_instances['user-user-field_level'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_level',
-    'label' => 'Level',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_market_administrator'.
   $field_instances['user-user-field_market_administrator'] = array(
     'bundle' => 'user',
@@ -610,76 +540,6 @@ function elx_users_feature_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 20,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_modified_date'.
-  $field_instances['user-user-field_modified_date'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 16,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_modified_date',
-    'label' => 'Modified date',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_rank'.
-  $field_instances['user-user-field_rank'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_rank',
-    'label' => 'Rank',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
     ),
   );
 
@@ -798,12 +658,8 @@ function elx_users_feature_field_default_field_instances() {
   t('First name');
   t('General Manager/Brand Manager');
   t('Hire date');
-  t('Last access date');
   t('Last name');
-  t('Level');
   t('Market Administrator');
-  t('Modified date');
-  t('Rank');
   t('Region');
   t('Regional Sales/Sales Education Manager');
   t('Regional Vice President');

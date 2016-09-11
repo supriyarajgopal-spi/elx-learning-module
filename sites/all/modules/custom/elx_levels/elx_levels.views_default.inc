@@ -33,7 +33,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -51,7 +50,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-levels';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
@@ -65,7 +64,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-levels';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -112,7 +111,7 @@ function elx_levels_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('SEE MORE'),
+    t('Load more'),
     t('All'),
   );
   $export['level_content'] = $view;
@@ -130,7 +129,6 @@ function elx_levels_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = '<none>';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';

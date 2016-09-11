@@ -10,7 +10,7 @@ body.page-levels-in-progress {
     text-align: center;
   }
 
-  .panel-pane.pane-custom.pane-1 {
+  .panel-pane.pane-block-5 {
     font-family: $font-family-serif;
     font-weight: 100;
     font-size: $font-size-lg-large;
@@ -31,33 +31,36 @@ body.page-levels-in-progress {
   /* needs to be in .panel-display so it doesn't interfere with header */
   .panel-display {
 
-    ul.menu {
-      display: block;
-      background-color: #e6e9ee;
-      text-align: center;
+    .pane-menu-menu-levels-menu {
 
-      li {
-        display: inline-block;
-        list-style-type: none;
-        list-style-image: none;
-        margin: 38px -3px;
+      ul.menu {
+        display: block;
+        background-color: #e6e9ee;
+        text-align: center;
 
-        a {
-          font-size: $font-size-lg-extrasmall;
-          font-weight: bold;
-          letter-spacing: 3px;
-          color: #040a2b;
+        li {
           display: inline-block;
-          width: 170px;
-          height: 46px;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          text-align: center;
-          text-decoration: none;
-          padding: 10px 0 0;
-          position: relative;
+          list-style-type: none;
+          list-style-image: none;
+          margin: 38px -3px;
 
-          &.active {
+          a {
+            font-size: $font-size-lg-extrasmall;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #040a2b;
+            display: inline-block;
+            width: 170px;
+            height: 46px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 0 0;
+            position: relative;
+          }
+
+          a.active {
             color: #fff;
             background-color: #040a2b;
             border: 1px solid #040a2b;
@@ -104,7 +107,7 @@ body.page-levels-in-progress {
     text-transform: uppercase;
     font-size: 18px;
     font-family: $font-family-serif;
-}
+  }
 
   .views-field-name {
     font-family: $font-family-serif;
@@ -133,73 +136,79 @@ body.page-levels-in-progress {
 
   }
 
-
   .pager {
-                margin: 30px 650px;
+    margin: 30px 650px;
+    min-width: 170px;
+    padding: 0 0 60px;
 
 
-            .pager-next  {
-                background-image: none;
-                background: #fff;
-                border: 1px solid #000;
-                padding: 6px 15px;
-                background-color: transparent;
-                width: auto;
-                height: auto;
+    .pager-next  {
+      background-image: none;
+      background: #fff;
+      border: 1px solid #000;
+      padding: 6px 15px;
+      background-color: transparent;
+      width: auto;
+      height: auto;
 
-                a {
-                    text-transform: uppercase;
-                    color: #000;
-                    margin: 0 auto;
-                    font-weight: 700;
-                    min-width: 0;
-                    text-align: center;
-                    font-family: $font-family-sans-serif;
-                    text-decoration: none;
-                    background-image: url('../images/brand-tile.svg');
-                    background-repeat: no-repeat;
-                    background-size: 25px 17px;
-                    text-indent: 40px;
-                    display: inline-block;
-                    line-height: 1;
-                    width: auto;
-                    height: auto;
+      a {
+        text-transform: uppercase;
+        color: #000;
+        margin: 0 auto;
+        font-weight: 700;
+        min-width: 0;
+        text-align: center;
+        font-family: $font-family-sans-serif;
+        text-decoration: none;
+        background-image: url('../images/brand-tile.svg');
+        background-repeat: no-repeat;
+        background-size: 25px 17px;
+        text-indent: 40px;
+        display: inline-block;
+        line-height: 1;
+        width: auto;
+        height: auto;
+      }
 
-                }
+      .ajax-progress,
+      .ajax-progress-throbber {
+        display: none;
+      }
 
-                .ajax-progress,
-                .ajax-progress-throbber {
-                    display: none;
-                }
-            }
+    }
 
-         }
+  }
 
-}
-
-body.page-levels-all {
   .user-progress-bar {
-
     background-color: white;
     box-shadow: 1px 3px 10px rgba(0, 0, 0, .15) inset;
     display: block;
     height: 25px;
-    width: 500px;
-
-    margin: 50px auto 50px 300px;
-    width: 70%;
+    margin: 50px auto 50px 150px;
+    width: 85%;
 
     .user-progress {
-      background: url('/sites/all/themes/elx_front/images/progress-bar.png');
+      background: url('../images/progress-bar.png');
       display: block;
       height: 24px;
     }
 
-    .user-progress::before {
-      content: 'PROGRESS: %';
-      font-family: $font-family-serif;
-      margin-left: -125px;
-      font-size: 1.2em;
+    .progress-bar-percentage {
+      font-family: arial, $font-family-serif;
+      font-size: 1.4em;
+      font-weight: bold;
+      position: absolute;
+      width: 130px;
+      margin-left: -50px;
     }
+
+    .user-progress::before {
+      font-family: $font-family-serif;
+      font-size: 1.2em;
+      margin-left: -145px;
+      content: 'PROGRESS ';
+    }
+
   }
+
 }

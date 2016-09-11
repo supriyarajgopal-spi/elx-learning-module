@@ -65,7 +65,25 @@
     }
   }
 
-  .view-product-library,
+  .view-product-library {
+
+    // search line (w/ magnify glass icon) manipulated out of form
+    .view-filters {
+
+      .views-exposed-widgets
+
+        #edit-combine-wrapper {
+          display: none;
+        }
+
+        .views-exposed-widget.views-submit-button {
+          margin-top: 0;
+          margin-left: 10px;
+        }
+    }
+
+  }
+
   .view-search-product-library {
 
     // search line (w/ magnify glass icon) manipulated out of form
@@ -83,6 +101,10 @@
         }
     }
 
+  }
+
+  .view-product-library,
+  .view-search-product-library {
 
     // product library content
     .view-content {

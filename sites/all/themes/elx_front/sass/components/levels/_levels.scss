@@ -58,14 +58,13 @@ body.page-levels-in-progress {
             text-decoration: none;
             padding: 10px 0 0;
             position: relative;
+          }
 
-            &.active {
-              color: #fff;
-              background-color: #040a2b;
-              border: 1px solid #040a2b;
-              z-index: 2;
-            }
-
+          a.active {
+            color: #fff;
+            background-color: #040a2b;
+            border: 1px solid #040a2b;
+            z-index: 2;
           }
 
         }
@@ -189,7 +188,7 @@ body.page-levels-in-progress {
     width: 85%;
 
     .user-progress {
-      background: url('/sites/all/themes/elx_front/images/progress-bar.png');
+      background: url('../images/progress-bar.png');
       display: block;
       height: 24px;
     }

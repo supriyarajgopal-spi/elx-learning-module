@@ -3257,7 +3257,7 @@ body.page-levels-in-progress .panel-display .pane-menu-menu-levels-menu ul.menu 
   position: relative;
 }
 
-/* line 62, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 63, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .panel-display .pane-menu-menu-levels-menu ul.menu li a.active,
 body.page-levels-completed .panel-display .pane-menu-menu-levels-menu ul.menu li a.active,
 body.page-levels-in-progress .panel-display .pane-menu-menu-levels-menu ul.menu li a.active {
@@ -3267,7 +3267,7 @@ body.page-levels-in-progress .panel-display .pane-menu-menu-levels-menu ul.menu 
   z-index: 2;
 }
 
-/* line 81, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 80, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .view-content > .views-row,
 body.page-levels-completed .view-content > .views-row,
 body.page-levels-in-progress .view-content > .views-row {
@@ -3276,14 +3276,14 @@ body.page-levels-in-progress .view-content > .views-row {
   margin-bottom: 40px;
 }
 
-/* line 88, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 87, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .view-content > .views-row .view-level-content .view-content,
 body.page-levels-completed .view-content > .views-row .view-level-content .view-content,
 body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content {
   clear: both;
 }
 
-/* line 91, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .view-content > .views-row .view-level-content .view-content > .views-row,
 body.page-levels-completed .view-content > .views-row .view-level-content .view-content > .views-row,
 body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content > .views-row {
@@ -3294,7 +3294,7 @@ body.page-levels-in-progress .view-content > .views-row .view-level-content .vie
   text-align: center;
 }
 
-/* line 107, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 106, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-label,
 body.page-levels-completed .views-label,
 body.page-levels-in-progress .views-label {
@@ -3303,7 +3303,7 @@ body.page-levels-in-progress .views-label {
   font-family: "optimadisplaylightlight";
 }
 
-/* line 113, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 112, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-field-name,
 body.page-levels-completed .views-field-name,
 body.page-levels-in-progress .views-field-name {
@@ -3313,7 +3313,7 @@ body.page-levels-in-progress .views-field-name {
   margin-bottom: 30px;
 }
 
-/* line 120, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 119, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-field-field-hero-image,
 body.page-levels-completed .views-field-field-hero-image,
 body.page-levels-in-progress .views-field-field-hero-image {
@@ -3322,7 +3322,7 @@ body.page-levels-in-progress .views-field-field-hero-image {
   height: 178px;
 }
 
-/* line 126, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 125, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-field-field-headline,
 body.page-levels-completed .views-field-field-headline,
 body.page-levels-in-progress .views-field-field-headline {
@@ -3332,7 +3332,7 @@ body.page-levels-in-progress .views-field-field-headline {
   margin: 20px 0;
 }
 
-/* line 132, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 131, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .views-field-field-headline a,
 body.page-levels-completed .views-field-field-headline a,
 body.page-levels-in-progress .views-field-field-headline a {
@@ -3340,7 +3340,7 @@ body.page-levels-in-progress .views-field-field-headline a {
   color: #000;
 }
 
-/* line 140, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 139, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .pager,
 body.page-levels-completed .pager,
 body.page-levels-in-progress .pager {
@@ -3349,7 +3349,7 @@ body.page-levels-in-progress .pager {
   padding: 0 0 60px;
 }
 
-/* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 145, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .pager .pager-next,
 body.page-levels-completed .pager .pager-next,
 body.page-levels-in-progress .pager .pager-next {
@@ -3362,7 +3362,7 @@ body.page-levels-in-progress .pager .pager-next {
   height: auto;
 }
 
-/* line 155, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 154, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .pager .pager-next a,
 body.page-levels-completed .pager .pager-next a,
 body.page-levels-in-progress .pager .pager-next a {
@@ -3384,7 +3384,7 @@ body.page-levels-in-progress .pager .pager-next a {
   height: auto;
 }
 
-/* line 174, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 173, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .pager .pager-next .ajax-progress,
 body.page-levels-all .pager .pager-next .ajax-progress-throbber,
 body.page-levels-completed .pager .pager-next .ajax-progress,
@@ -3394,7 +3394,7 @@ body.page-levels-in-progress .pager .pager-next .ajax-progress-throbber {
   display: none;
 }
 
-/* line 183, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 182, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar,
 body.page-levels-completed .user-progress-bar,
 body.page-levels-in-progress .user-progress-bar {
@@ -3406,16 +3406,16 @@ body.page-levels-in-progress .user-progress-bar {
   width: 85%;
 }
 
-/* line 191, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 190, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .user-progress,
 body.page-levels-completed .user-progress-bar .user-progress,
 body.page-levels-in-progress .user-progress-bar .user-progress {
-  background: url("/sites/all/themes/elx_front/images/progress-bar.png");
+  background: url("../images/progress-bar.png");
   display: block;
   height: 24px;
 }
 
-/* line 197, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 196, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .progress-bar-percentage,
 body.page-levels-completed .user-progress-bar .progress-bar-percentage,
 body.page-levels-in-progress .user-progress-bar .progress-bar-percentage {
@@ -3427,7 +3427,7 @@ body.page-levels-in-progress .user-progress-bar .progress-bar-percentage {
   margin-left: -50px;
 }
 
-/* line 206, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 205, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .user-progress::before,
 body.page-levels-completed .user-progress-bar .user-progress::before,
 body.page-levels-in-progress .user-progress-bar .user-progress::before {
@@ -4054,7 +4054,7 @@ body.page-tools.section-tools #detail-content-btn a {
 /* line 79, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
 .page-search-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button {
-  margin-top: 0px;
+  margin-top: 0;
   margin-left: 10px;
 }
 
@@ -4071,7 +4071,7 @@ body.page-tools.section-tools #detail-content-btn a {
   margin-left: 10px;
 }
 
-/* line 109, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 110, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content,
 .page-product-library .view-search-product-library .view-content,
 .page-search-product-library .view-product-library .view-content,
@@ -4080,7 +4080,7 @@ body.page-tools.section-tools #detail-content-btn a {
   margin: 0 auto;
 }
 
-/* line 113, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 114, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul,
 .page-product-library .view-search-product-library .view-content ul,
 .page-search-product-library .view-product-library .view-content ul,
@@ -4089,7 +4089,7 @@ body.page-tools.section-tools #detail-content-btn a {
   padding: 0;
 }
 
-/* line 117, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 118, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li,
 .page-product-library .view-search-product-library .view-content ul li,
 .page-search-product-library .view-product-library .view-content ul li,
@@ -4102,7 +4102,7 @@ body.page-tools.section-tools #detail-content-btn a {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 125, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 126, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
@@ -4116,7 +4116,7 @@ body.page-tools.section-tools #detail-content-btn a {
   text-align: center;
 }
 
-/* line 137, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
@@ -4128,7 +4128,7 @@ body.page-tools.section-tools #detail-content-btn a {
   color: #040a2b;
 }
 
-/* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 147, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
@@ -5341,5 +5341,3 @@ tr.drag-previous {
 .view-filters .views-exposed-form .views-widget-sort-order {
   display: none;
 }
-
-/*# sourceMappingURL=styles.css.map */

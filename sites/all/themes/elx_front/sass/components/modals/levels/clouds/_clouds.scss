@@ -1,1 +1,16 @@
-// PLACEHOLDER FILE
+// modal theme for "clouds"
+// used by:
+// New Dimension
+// New Dimension 2
+
+#modalContent.new-dimension,
+#modalContent.new-dimension-2 {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/clouds.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+  }
+
+}

@@ -3717,34 +3717,62 @@ body.ctools-modal-open {
   overflow: hidden;
 }
 
-/* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
-.modal-default .modal-header .modal-title {
+/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+.modal-default div.modal-header {
+  background: none;
+  height: 200px;
+}
+
+/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+.modal-default div.modal-header .modal-title {
   display: none;
 }
 
-/* line 14, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
-.modal-default .modal-header a.close {
+/* line 16, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+.modal-default div.modal-header a.close {
   width: 32px;
   height: 32px;
-  background-image: url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png");
-  background-position: -105px center;
+  background: url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png") no-repeat -105px top;
 }
 
-/* line 23, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+.modal-default .modal-content > div.node-h5p-content {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content article {
   max-width: 1170px;
   margin: 0 auto;
 }
 
-/* line 30, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content article h2 {
   font-family: "optimadisplaylightlight";
   font-size: 28px;
+}
+
+/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/black-gold/_black-gold.scss */
+#modalContent.re-nutriv .ctools-modal-content {
+  background: url("../images/modal_bg/black_gold.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 50%;
+  background-color: #000;
+  color: #fff;
+}
+
+/* line 9, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-ether/_blue-ether.scss */
+#modalContent.fall-preview .ctools-modal-content,
+#modalContent.spring-preview .ctools-modal-content {
+  background: url("../images/modal_bg/blue_ether.jpg");
+  background-size: cover;
 }
 
 /* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-helix/_blue-helix.scss */
@@ -3760,6 +3788,16 @@ body.ctools-modal-open {
 /* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/blue-krypton/_blue-krypton.scss */
 #modalContent.advanced-night-repair .ctools-modal-content {
   background: url("../images/modal_bg/blue_krypton.jpg");
+  background-size: cover;
+}
+
+/* line 9, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/clouds/_clouds.scss */
+#modalContent.new-dimension .ctools-modal-content,
+#modalContent.new-dimension-2 .ctools-modal-content {
+  background: url("../images/modal_bg/clouds.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
 }
 
 /* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/gray-ether/_gray-ether.scss */

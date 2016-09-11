@@ -1,1 +1,14 @@
-// PLACEHOLDER FILE
+// modal theme for "blue-ether"
+// used by:
+// Fall Preview
+// Spring Preview
+
+#modalContent.fall-preview,
+#modalContent.spring-preview {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/blue_ether.jpg');
+    background-size: cover;
+  }
+
+}

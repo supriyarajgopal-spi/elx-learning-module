@@ -880,15 +880,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
   $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
   $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
-  $handler->display->display_options['filters']['field_product_categories_tid']['value'] = array(
-    253 => '253',
-    254 => '254',
-    255 => '255',
-    256 => '256',
-    257 => '257',
-    258 => '258',
-    259 => '259',
-  );
   $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';

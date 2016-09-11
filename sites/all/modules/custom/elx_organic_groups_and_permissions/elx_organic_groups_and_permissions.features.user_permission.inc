@@ -1081,24 +1081,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_last_access_date'.
-  $permissions['create field_last_access_date'] = array(
-    'name' => 'create field_last_access_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'create field_level'.
-  $permissions['create field_level'] = array(
-    'name' => 'create field_level',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_manifest'.
   $permissions['create field_manifest'] = array(
     'name' => 'create field_manifest',
@@ -1108,27 +1090,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_modified_date'.
-  $permissions['create field_modified_date'] = array(
-    'name' => 'create field_modified_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_price'.
   $permissions['create field_price'] = array(
     'name' => 'create field_price',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'create field_rank'.
-  $permissions['create field_rank'] = array(
-    'name' => 'create field_rank',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -2094,24 +2058,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit field_last_access_date'.
-  $permissions['edit field_last_access_date'] = array(
-    'name' => 'edit field_last_access_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_level'.
-  $permissions['edit field_level'] = array(
-    'name' => 'edit field_level',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_manifest'.
   $permissions['edit field_manifest'] = array(
     'name' => 'edit field_manifest',
@@ -2121,27 +2067,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit field_modified_date'.
-  $permissions['edit field_modified_date'] = array(
-    'name' => 'edit field_modified_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_price'.
   $permissions['edit field_price'] = array(
     'name' => 'edit field_price',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_rank'.
-  $permissions['edit field_rank'] = array(
-    'name' => 'edit field_rank',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -2232,24 +2160,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit own field_last_access_date'.
-  $permissions['edit own field_last_access_date'] = array(
-    'name' => 'edit own field_last_access_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_level'.
-  $permissions['edit own field_level'] = array(
-    'name' => 'edit own field_level',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_manifest'.
   $permissions['edit own field_manifest'] = array(
     'name' => 'edit own field_manifest',
@@ -2259,27 +2169,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit own field_modified_date'.
-  $permissions['edit own field_modified_date'] = array(
-    'name' => 'edit own field_modified_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_price'.
   $permissions['edit own field_price'] = array(
     'name' => 'edit own field_price',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_rank'.
-  $permissions['edit own field_rank'] = array(
-    'name' => 'edit own field_rank',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -3501,24 +3393,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_last_access_date'.
-  $permissions['view field_last_access_date'] = array(
-    'name' => 'view field_last_access_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view field_level'.
-  $permissions['view field_level'] = array(
-    'name' => 'view field_level',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_manifest'.
   $permissions['view field_manifest'] = array(
     'name' => 'view field_manifest',
@@ -3528,27 +3402,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_modified_date'.
-  $permissions['view field_modified_date'] = array(
-    'name' => 'view field_modified_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_price'.
   $permissions['view field_price'] = array(
     'name' => 'view field_price',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view field_rank'.
-  $permissions['view field_rank'] = array(
-    'name' => 'view field_rank',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -3574,24 +3430,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view own field_last_access_date'.
-  $permissions['view own field_last_access_date'] = array(
-    'name' => 'view own field_last_access_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_level'.
-  $permissions['view own field_level'] = array(
-    'name' => 'view own field_level',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view own field_manifest'.
   $permissions['view own field_manifest'] = array(
     'name' => 'view own field_manifest',
@@ -3601,27 +3439,9 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view own field_modified_date'.
-  $permissions['view own field_modified_date'] = array(
-    'name' => 'view own field_modified_date',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view own field_price'.
   $permissions['view own field_price'] = array(
     'name' => 'view own field_price',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_rank'.
-  $permissions['view own field_rank'] = array(
-    'name' => 'view own field_rank',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),

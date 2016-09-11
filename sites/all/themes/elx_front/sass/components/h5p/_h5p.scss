@@ -1,1 +1,21 @@
-// PLACEHOLDER FILE
+// h5p defaults, etc.
+.h5p-iframe-wrapper {
+  max-width: 970px;
+  margin: 0 auto;
+
+  .h5p-course-presentation {
+
+    .h5p-presentation-wrapper {
+      background-image: none;
+      background: rgba(255, 255, 255, .1);
+
+      .h5p-element-outer.h5p-questionset-outer-element {
+        background: none;
+        background-image: none;
+      }
+
+    }
+
+  }
+
+}

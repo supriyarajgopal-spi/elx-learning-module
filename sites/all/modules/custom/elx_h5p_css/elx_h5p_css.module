@@ -11,7 +11,7 @@
  * @param string $mode
  *  What mode are we in? Possible values are "editor", "div", "iframe" and "external"
  */
-function hook_h5p_styles_alter(&$styles, $libraries, $mode) {
+function elx_h5p_css_h5p_styles_alter(&$styles, $libraries, $mode) {
   //if (isset($libraries['H5P.MultiChoice']) && $libraries['H5P.MultiChoice']['majorVersion'] == '1') {
     $styles[] = (object) array(
       // Path relative to drupal root

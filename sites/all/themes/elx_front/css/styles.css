@@ -1228,24 +1228,6 @@ footer.footer.region.region-footer ul.menu li.first.leaf::after {
   color: #fff;
 }
 
-/* line 2, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-iframe-wrapper {
-  max-width: 970px;
-  margin: 0 auto;
-}
-
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-iframe-wrapper .h5p-course-presentation .h5p-presentation-wrapper {
-  background-image: none;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-iframe-wrapper .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
-  background: none;
-  background-image: none;
-}
-
 /* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .header {
   background-color: #040a2b;

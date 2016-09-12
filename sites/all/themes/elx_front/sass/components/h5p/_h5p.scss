@@ -1,19 +1,25 @@
-// h5p defaults, etc.
-.h5p-iframe-wrapper {
-  max-width: 970px;
-  margin: 0 auto;
+// starting iframe content tweaks
+body {
+  background: transparent;
+}
 
-  .h5p-course-presentation {
+body div.h5p-content {
+  background: transparent;
+}
 
-    .h5p-presentation-wrapper {
+.h5p-course-presentation {
+
+  .h5p-box-wrapper {
+    background: transparent;
+  }
+
+  .h5p-presentation-wrapper {
+    background-image: none;
+    background: transparent;
+
+    .h5p-element-outer.h5p-questionset-outer-element {
+      background: none;
       background-image: none;
-      background: rgba(255, 255, 255, .1);
-
-      .h5p-element-outer.h5p-questionset-outer-element {
-        background: none;
-        background-image: none;
-      }
-
     }
 
   }

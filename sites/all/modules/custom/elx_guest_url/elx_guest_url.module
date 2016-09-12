@@ -5,3 +5,186 @@
  */
 
 include_once 'elx_guest_url.features.inc';
+
+/**
+ * Implements hook_rules_condition_info().
+ * Allow this condition to appear under Conditions tab in Rules UI & mention parameters that will be passed to callback function to validate this condition
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ */
+function elx_guest_url_rules_condition_info() {
+  return array(
+    'account_created_from_guest_url' => array(
+      'group' => t('ELX'),
+      'label' => t('User account created from Guest URL'),
+      'parameter' => array(
+        'user' => array(
+          'type' => 'user',
+          'label' => t('User'),
+        )
+      ),
+	  'module' => 'elx_guest_url',
+    ),
+  );
+}
+
+/**
+ * User defined function callback to return boolean depending on whether user account is created from Guest URL or not
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ * Parameter: $user - the user object whose account is created
+ * Returns boolean - true if user account is created from guest URL or false, if user account is created in a regular fashion
+ */
+function account_created_from_guest_url($user) {
+	$query_isUserAccCreatedFromGuestURL = db_select('invite','i');
+	$query_isUserAccCreatedFromGuestURL->join('users','u','u.uid = i.invitee');
+	$query_isUserAccCreatedFromGuestURL->fields('i',array('invitee'));
+	$query_isUserAccCreatedFromGuestURL->condition('i.invitee',$user->uid,'=')->condition('i.canceled',0,'=')->condition('i.type','guest_url','=')->condition('u.login',0,'='); //User should not have logged in before
+	$result = $query_isUserAccCreatedFromGuestURL->execute();
+	
+	$isUserAccCreatedFromGuestURL = $result->rowCount();
+	
+	return ($isUserAccCreatedFromGuestURL > 0);
+}
+
+/**
+ * Implements hook_menu().
+ * To allow user account registration through guest URLs
+ */
+function elx_guest_url_menu() {
+    $items['signup'] = array(
+      'page callback' => '_guest_account_creation',
+	  'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function elx_guest_url_menu_alter(&$items) {
+  if (user_registration_by_invite_only()) {
+    /* Grant permission, if this option "New user registration through Guest URLs only." is selected in User Account settings page.*/
+    $items['user/register']['access callback'] = '_registration_invite_user_register_access';
+  }
+}
+
+/**
+ * User defined callback function to create guest user account by redirecting to user/register along with door, account name, etc. details
+ */
+function _guest_account_creation()
+{
+	$options = array('query' => drupal_get_query_parameters());
+	drupal_goto('user/register', $options);
+}
+
+/**
+ * Returns true if "New user registration through Guest URLs only." is selected.
+ */
+function user_registration_by_invite_only() {
+  return (variable_get('user_register', 1) === 'invite_only');
+}
+
+/**
+ * User defined callback function borrowed from Registration Invite module
+ */
+function _registration_invite_user_register_access() {
+  $access = TRUE;
+  if (!isset($_COOKIE[REFERRAL_COOKIE])) {
+    $invite = _invite_load_from_session();
+    //if ((!$invite) && (!user_access('administer users'))) {
+	if (!$invite) {
+      if (arg(1) === 'register') {
+        $access = FALSE;
+      }
+    }
+  }
+  if ($access) {
+    return user_register_access();
+  }
+  else {
+    drupal_set_message(t('Only guest accounts can be registered. Please request site administrator to send you the guest URL.'));
+    return FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * Pre-populate fields depending on the query parameters
+ */
+function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form_id)
+{
+	$query = drupal_get_query_parameters();
+	
+	if(isset($query['account']))
+	{
+		$form['field_account_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $query['account'];
+		$form['field_account_name'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = 'readonly';
+	}
+	
+	if(isset($query['door']))
+	{
+		$form['field_door'][LANGUAGE_NONE][0]['value']['#default_value'] = $query['door'];
+		$form['field_door'][LANGUAGE_NONE][0]['value']['#attributes']['readonly'] = 'readonly';
+	}
+	
+	if(isset($query['country']))
+	{
+		$form['field_country'][LANGUAGE_NONE]['#default_value'][0] = $query['country'];
+		$form['field_country'][LANGUAGE_NONE]['#attributes']['readonly'] = 'readonly';
+	}
+	
+	if(isset($query['region']))
+	{
+		$form['field_region_list'][LANGUAGE_NONE]['#default_value'][0] = $query['region'];
+		$form['field_region_list'][LANGUAGE_NONE]['#attributes']['readonly'] = 'readonly';
+	}
+	
+	if(isset($query['market']))
+	{
+		$form['field_market_name'][LANGUAGE_NONE]['#default_value'][0] = $query['market'];
+		$form['field_market_name'][LANGUAGE_NONE]['#attributes']['readonly'] = 'readonly';
+	}
+
+	
+	//Hide all optional fields from User Registration page since only guests access user/register & they don't need to enter these values
+	$optionalFields = array('field_employer_number','field_hire_date','field_counter_manager','field_education_manager_executiv','field_account_field_executive','field_field_sales_director_regio','field_regional_vice_president','field_general_manager_brand_mana','field_market_administrator','field_city','field_state','field_level','field_rank','field_modified_date','field_last_access_date');
+	foreach($optionalFields as $optionalField)
+		$form[$optionalField]['#access'] = 0;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ * Add option to register through guest URLs only
+ */
+function elx_guest_url_form_user_admin_settings_alter(&$form, &$form_state, $form_id)
+{
+	$item = menu_get_item('user/register');
+    if (in_array($item['access_callback'], array('_registration_invite_user_register_access', 'user_register_access'))) {
+      // Provide an option at User account settings page.
+      $form['registration_cancellation']['user_register']['#options']['invite_only'] = t('New user registration through Guest URLs only.');
+    }
+}
+
+/**
+ * Loads Invite using information stored in session.
+ * Borrowed from Invite module & modified
+ *
+ * @return bool|Invite
+ */
+function _invite_load_from_session() {
+  if (isset($_SESSION[INVITE_SESSION_CODE])) {
+    $invite = invite_by_code_load($_SESSION[INVITE_SESSION_CODE]);
+  }
+  // Legacy url support (user/register?<query_parameters>).
+  elseif (arg(0) == 'user' && arg(1) == 'register' && !empty(drupal_get_query_parameters())) {
+	$invite = entity_create('invite', array('type' => 'guest_url'));
+    if ($invite) {
+      $_SESSION[INVITE_SESSION_CODE] = $invite->reg_code;
+    }
+  }
+  if (!empty($invite)) {
+    return $invite;
+  }
+  else {
+    return FALSE;
+  }
+}

@@ -191,6 +191,27 @@ body.page-levels-in-progress {
       background: url('../images/progress-bar.png');
       display: block;
       height: 24px;
+      width: 0%;
+      -webkit-animation: progress 2s 1 forwards;
+      -moz-animation: progress 2s 1 forwards;
+      -ms-animation: progress 2s 1 forwards;
+      animation: progress 2s 1 forwards;
+    }
+
+    @-webkit-keyframes progress {
+        from { width: 0%; }
+    }
+
+    @-moz-keyframes progress {
+        from { width: 0%; }
+    }
+
+    @-ms-keyframes progress {
+        from { width: 0%; }
+    }
+
+    @keyframes progress {
+        from { width: 0%; }
     }
 
     .progress-bar-percentage {

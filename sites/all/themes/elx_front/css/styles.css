@@ -3431,9 +3431,24 @@ body.page-levels-in-progress .user-progress-bar .user-progress {
   background: url("../images/progress-bar.png");
   display: block;
   height: 24px;
+  width: 0%;
+  -webkit-animation: progress 2s 1 forwards;
+  animation: progress 2s 1 forwards;
 }
 
-/* line 196, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+@-webkit-keyframes progress {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+}
+
+/* line 217, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .progress-bar-percentage,
 body.page-levels-completed .user-progress-bar .progress-bar-percentage,
 body.page-levels-in-progress .user-progress-bar .progress-bar-percentage {
@@ -3445,7 +3460,7 @@ body.page-levels-in-progress .user-progress-bar .progress-bar-percentage {
   margin-left: -50px;
 }
 
-/* line 205, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
+/* line 226, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/levels/_levels.scss */
 body.page-levels-all .user-progress-bar .user-progress::before,
 body.page-levels-completed .user-progress-bar .user-progress::before,
 body.page-levels-in-progress .user-progress-bar .user-progress::before {
@@ -3720,7 +3735,7 @@ body.ctools-modal-open {
 /* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default div.modal-header {
   background: none;
-  height: 200px;
+  height: 60px;
 }
 
 /* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */

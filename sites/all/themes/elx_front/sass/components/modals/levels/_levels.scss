@@ -1,27 +1,119 @@
 // LEVELS
+body.page-levels-all,
+body.page-levels-completed,
+body.page-levels-in-progress {
 
-// IMPORT MODAL SPECIFIC STYLING
+  #modalContent {
 
-// black-gold
-// example: Re-Nutriv
-@import 'black-gold/black-gold';
+    .field-name-field-learning-category {
+      font-family: $font-family-sans-serif-head;
+      font-size: $font-size-lg-base;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin: 0 0 15px;
+    }
 
-// blue-ether
-//example: Spring Preview
-@import 'blue-ether/blue-ether';
+    .field-name-field-headline {
+      font-family: $font-family-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin: 0 0 20px;
+    }
 
-// blue-helix
-// example: Advanced Night Repair 2
-@import 'blue-helix/blue-helix';
+  }
 
-// blue-krypton
-// example: Advanced Night Repair
-@import 'blue-krypton/blue-krypton';
+}
 
-// clouds
-// example: New Dimension
-@import 'clouds/clouds';
+// modal theme for "clouds"
+// used by:
+// New Dimension
+// New Dimension 2
 
-// gray-ether
-// example: Beautiful Skin For Life
-@import 'gray-ether/gray-ether';
+#modalContent.re-nutriv {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/black_gold.jpg');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50%;
+    background-color: #000;
+    color: #fff;
+  }
+
+}
+
+// modal theme for "blue-ether"
+// used by:
+// Fall Preview
+// Spring Preview
+
+#modalContent.fall-preview,
+#modalContent.spring-preview {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/blue_ether.jpg');
+    background-size: cover;
+  }
+
+}
+
+// modal theme for "blue-helix"
+// used by:
+// Advanced Night Repair 2
+
+#modalContent.advanced-night-repair-2 {
+
+  .ctools-modal-content {
+    background-color: #040a2b;
+    background-image: url('../images/modal_bg/blue_helix.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 35%;
+    color: #fff;
+  }
+
+}
+
+// modal theme for "blue-krypton"
+// used by:
+// Advanced Night Repair
+
+#modalContent.advanced-night-repair {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/blue_krypton.jpg');
+    background-size: cover;
+  }
+
+}
+
+// modal theme for "clouds"
+// used by:
+// New Dimension
+// New Dimension 2
+
+#modalContent.new-dimension,
+#modalContent.new-dimension-2 {
+
+  .ctools-modal-content {
+    background: url('../images/modal_bg/clouds.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+  }
+
+}
+
+// modal theme "gray-ether"
+// used by:
+// Beautiful Skin For Life
+
+#modalContent.beautiful-skin-for-life {
+
+  .ctools-modal-content {
+    background-image: url('../images/modal_bg/gray_ether.jpg');
+    background-repeat: no-repeat;
+  }
+
+}

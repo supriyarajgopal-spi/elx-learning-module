@@ -5,7 +5,9 @@ body.ctools-modal-open {
 
 .modal-default {
 
-  .modal-header {
+  div.modal-header {
+    background: none;
+    height: 80px;
 
     .modal-title {
       display: none;
@@ -14,14 +16,22 @@ body.ctools-modal-open {
     a.close {
       width: 32px;
       height: 32px;
-      background-image: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png');
-      background-position: -105px center;
+      background: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat -105px top;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+      z-index: 2;
     }
 
   }
 
   .modal-content {
     font-family: $font-family-sans-serif;
+
+    > div.node-h5p-content {
+      max-width: 970px;
+      margin: 0 auto;
+    }
 
     article {
       max-width: 1170px;

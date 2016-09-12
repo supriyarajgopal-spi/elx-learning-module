@@ -211,8 +211,9 @@ function _elx_custom_modal($js = NULL, $nid = NULL)
               'type' => 'scale',
               'width' => 1,
               'height' => 1,
+              'addHeight' => 80, // this needs to match the css height for div.modal-header or it acts buggy
               'contentRight' => 5,
-              'contentBottom' => 20,
+              'contentBottom' => 0,
             ),
             'modalClass' => 'default',
             'animation' => 'slideDown',

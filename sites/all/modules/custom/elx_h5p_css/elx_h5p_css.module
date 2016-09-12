@@ -18,7 +18,7 @@ function elx_h5p_css_h5p_styles_alter(&$styles, $libraries, $mode) {
       // 'path' => drupal_get_path('module', 'elx_h5p_css') . '/h5p-overrides.css',
       'path' => drupal_get_path('theme', 'elx_front') . '/css/h5p.css',
       // Cache buster
-      'version' => '?ver=5',
+      'version' => '?ver=' . time(),
     );
     //}
 }

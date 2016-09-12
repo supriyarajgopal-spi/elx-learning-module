@@ -1,5 +1,29 @@
 // LEVELS
+body.page-levels-all,
+body.page-levels-completed,
+body.page-levels-in-progress {
 
+  #modalContent {
+
+    .field-name-field-learning-category {
+      font-family: $font-family-sans-serif-head;
+      font-size: $font-size-lg-base;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin: 0 0 15px;
+    }
+
+    .field-name-field-headline {
+      font-family: $font-family-serif;
+      font-size: 36px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin: 0 0 20px;
+    }
+
+  }
+
+}
 
 // modal theme for "clouds"
 // used by:

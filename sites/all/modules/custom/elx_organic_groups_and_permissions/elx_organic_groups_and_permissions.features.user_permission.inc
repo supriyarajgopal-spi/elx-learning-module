@@ -1081,15 +1081,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_manifest'.
-  $permissions['create field_manifest'] = array(
-    'name' => 'create field_manifest',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_price'.
   $permissions['create field_price'] = array(
     'name' => 'create field_price',
@@ -2058,15 +2049,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit field_manifest'.
-  $permissions['edit field_manifest'] = array(
-    'name' => 'edit field_manifest',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_price'.
   $permissions['edit field_price'] = array(
     'name' => 'edit field_price',
@@ -2154,15 +2136,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own field_fun_fact_sheet'.
   $permissions['edit own field_fun_fact_sheet'] = array(
     'name' => 'edit own field_fun_fact_sheet',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_manifest'.
-  $permissions['edit own field_manifest'] = array(
-    'name' => 'edit own field_manifest',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -3393,15 +3366,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_manifest'.
-  $permissions['view field_manifest'] = array(
-    'name' => 'view field_manifest',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_price'.
   $permissions['view field_price'] = array(
     'name' => 'view field_price',
@@ -3424,15 +3388,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'view own field_fun_fact_sheet'.
   $permissions['view own field_fun_fact_sheet'] = array(
     'name' => 'view own field_fun_fact_sheet',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_manifest'.
-  $permissions['view own field_manifest'] = array(
-    'name' => 'view own field_manifest',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),

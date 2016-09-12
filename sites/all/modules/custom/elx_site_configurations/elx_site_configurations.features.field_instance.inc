@@ -1181,6 +1181,7 @@ function elx_site_configurations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_learning_objects',
+    'is_property' => 0,
     'label' => 'Learning objects',
     'required' => 0,
     'settings' => array(

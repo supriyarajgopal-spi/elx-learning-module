@@ -3735,7 +3735,7 @@ body.ctools-modal-open {
 /* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default div.modal-header {
   background: none;
-  height: 60px;
+  height: 80px;
 }
 
 /* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
@@ -3748,26 +3748,30 @@ body.ctools-modal-open {
   width: 32px;
   height: 32px;
   background: url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png") no-repeat -105px top;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  z-index: 2;
 }
 
-/* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 28, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 31, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content > div.node-h5p-content {
   max-width: 970px;
   margin: 0 auto;
 }
 
-/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content article {
   max-width: 1170px;
   margin: 0 auto;
 }
 
-/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
+/* line 40, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/defaults/_defaults.scss */
 .modal-default .modal-content article h2 {
   font-family: "optimadisplaylightlight";
   font-size: 28px;

@@ -7,7 +7,7 @@ body.ctools-modal-open {
 
   div.modal-header {
     background: none;
-    height: 60px;
+    height: 80px;
 
     .modal-title {
       display: none;
@@ -17,6 +17,10 @@ body.ctools-modal-open {
       width: 32px;
       height: 32px;
       background: url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat -105px top;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+      z-index: 2;
     }
 
   }

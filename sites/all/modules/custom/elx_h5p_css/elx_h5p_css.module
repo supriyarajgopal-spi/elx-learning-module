@@ -22,3 +22,16 @@ function elx_h5p_css_h5p_styles_alter(&$styles, $libraries, $mode) {
     );
     //}
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function elx_h5p_css_node_view($node, $view_mode, $langcode) {
+  if (!empty($node->field_learning_category[$langcode][0]) && isset($node->field_learning_category[$langcode][0]['taxonomy_term'])) {
+    drupal_add_js(array(
+      'H5PIntegration' => array(
+        'elxLevel' => $node->field_learning_category[$langcode][0]['taxonomy_term'],
+      ),
+    ), 'setting');
+  }
+}

@@ -33,8 +33,7 @@ function elx_guest_url_menu() {
  * Grant permission to register without admin approval if "New user registration through Guest URLs only." option is selected in User Account settings page
  */
 function elx_guest_url_menu_alter(&$items) {
-  if(variable_get('user_register', 1) === 'invite_only')
-    $items['user/register']['access callback'] = '_registration_invite_user_register_access';
+  $items['user/register']['access callback'] = '_registration_invite_user_register_access';
 }
 
 /**
@@ -50,13 +49,19 @@ function _guest_account_creation()
  * User defined callback function which decides whether user/register?<query parameters> is accessible or not
  */
 function _registration_invite_user_register_access() {
-
-  if(arg(0) === 'user' && arg(1) === 'register' && empty(drupal_get_query_parameters())) {
-    drupal_set_message(t('Only guest accounts can be registered. Please request site administrator to send you the guest URL.'),'error',FALSE);
-    return FALSE;
+  if (array_diff(array(
+    'account',
+    'door',
+    'country',
+    'region',
+    'market',
+  ), array_keys(drupal_get_query_parameters()))) {
+    return user_register_access();
   }
-  else
-	return TRUE;
+  else {
+    // @todo: Check that the parameters are valid.
+    return user_is_anonymous();
+  }
 }
 
 /**

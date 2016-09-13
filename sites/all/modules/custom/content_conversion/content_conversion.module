@@ -302,12 +302,13 @@ function _content_conversion_node_list($node, $slide) {
       $element->x = 25;
       $element->y = 0;
       $element->width = 50;
-      $element->height = 55.7;
+      $element->height = 26;
+      $size['y_pos'] = 27;
+      $size['height'] = 73;
       $action = new stdClass();
       $action->library = 'H5P.Video 1.2';
       $params = new stdClass();
       $visuals = new stdClass();
-      $visuals->fit = TRUE;
       $visuals->controls = TRUE;
       $params->visuals = $visuals;
       $params->sources = array();
@@ -421,7 +422,6 @@ function _content_conversion_node_story($node, $slide) {
     $element->width = 30;
     $element->height = 40;
     $element->alwaysDisplayComments = false;
-    $element->backgroundOpacity = 0;
     $element->displayAsButton = false;
     $element->invisible = false;
     $element->solution = '';
@@ -739,7 +739,6 @@ function _content_conversion_question_set($nodes, $slide, $content_object) {
   $params->override = $override;
   $action->params = $params;
   $element->action = $action;
-  $element->backgroundOpacity = 100;
   $slide->elements = array($element);
 }
 

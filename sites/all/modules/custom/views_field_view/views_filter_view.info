@@ -1,0 +1,6 @@
+name = Views filter view
+description = Filter views by the result of another view
+dependencies[] = views
+core = 7.x
+package=Views
+files[] = views_filter_view_handler_filter_view.inc

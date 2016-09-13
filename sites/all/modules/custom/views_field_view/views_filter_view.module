@@ -1,0 +1,138 @@
+<?php
+
+/**
+ * Implements hook_views_api().
+ *
+ * @return array
+ */
+function views_filter_view_views_api() {
+  return array(
+    'api' => 3.0,
+  );
+}
+
+/**
+ * Get the view base field values of a certain view.
+ * This method should look for views which were executed before.
+ *
+ * @param $name
+ *   The name of the view which should be executed|loaded the result.
+ * @param $display
+ *   The display id which should be used.
+ * @return array
+ *   The items of the view
+ */
+function views_filter_view_get_items($name, $display) {
+  $view_display = $name . ':' . $display;
+  $view_results = &drupal_static(__FUNCTION__, array());
+
+  if (isset($view_results[$view_display])) {
+    return $view_results[$view_display];
+  }
+  else {
+    $view = views_get_view($name);
+    $items = array();
+    if ($view && $view->set_display($display)) {
+      $view->pre_execute();
+      $view->init_query();
+      $view->execute();
+      /*foreach ($view->field AS $key => $value) {
+        $view->base_field_alias = $value->field_alias;
+      }*/
+      foreach ($view->result as $values) {
+        $value = $values->{$view->base_field_alias};
+        $items[$value] = $value;
+      }
+      $view_results[$view_display] = $items;
+      return $items;
+    }
+  }
+}
+
+/**
+ * Get all views which are selected in the view filter.
+ *
+ * @see views_filter_view_handler_filter_view
+ * @return array
+ */
+function views_filter_view_get_filter_views() {
+  $filter_views = &drupal_static(__FUNCTION__, NULL);
+
+  if (!isset($filter_views)) {
+    $filter_views = array();
+
+    $cid = 'views_filter_view_get_filter_views';
+    views_include('cache');
+    if ($cache = views_cache_get($cid)) {
+      $filter_views = $cache->data;
+    }
+    else {
+      $views = views_get_all_views();
+      foreach ($views as $name => $view) {
+        // Only use active views.
+        if (!empty($view->disabled)) {
+          continue;
+        }
+        $view->init_display();
+        // Find all views which has views:view as filter.
+        foreach ($view->display as $display_id => $display) {
+          $filters = $display->handler->get_option('filters');
+          foreach ($filters as $id => $item) {
+            if ($item['table'] == 'views' && $item['field'] == 'view') {
+              if (!empty($item['view'])) {
+                $filter_views[$item['view']] = $item['view'];
+              }
+              continue;
+            }
+          }
+        }
+      }
+      views_cache_set($cid, $filter_views);
+    }
+  }
+
+  return $filter_views;
+}
+
+/**
+ * Implements hook_views_pre_execute().
+ *
+ * Add the base field to the query as it's required to let the module work.
+ *
+ * @param view $view
+ *   The actual view to act on.
+ */
+function views_filter_view_views_pre_execute(&$view) {
+  $views = views_filter_view_get_filter_views();
+  $view_display = $view->name . ':' . $view->current_display;
+  foreach ($view->field AS $key => $value) {
+    $view->base_field_alias = $value->field_alias;
+    $view->base_field = $value->field;
+  }
+  if (empty($view->base_field_alias) && isset($views[$view_display])) {
+    $view->base_field_alias = $view->query->add_field($view->base_table, $view->base_field);
+  }
+}
+
+/**
+ * Implements hook_views_post_execute().
+ *
+ * @param view $view
+ *   The actual view to act on.
+ */
+function views_filter_view_views_post_execute(&$view) {
+  // Find out whether the current view is selected somewhere as filter.
+  $views = views_filter_view_get_filter_views();
+  $view_display = $view->name . ':' . $view->current_display;
+  if (isset($views[$view_display])) {
+    // If the view is selected store the result.
+    $view_results = &drupal_static('views_filter_view_get_items', array());
+    foreach ($view->result as $values) {
+      if (isset($view->base_field_alias)) {
+        $value = $values->{$view->base_field_alias};
+        $items[$value] = $value;
+      }
+    }
+    $view_results[$view_display] = $items;
+  }
+}

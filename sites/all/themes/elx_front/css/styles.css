@@ -3938,8 +3938,8 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 41, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.re-nutriv .ctools-modal-content {
+/* line 40, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-250 .ctools-modal-content {
   background: url("../images/modal_bg/black_gold.jpg");
   background-repeat: no-repeat;
   background-position: right top;
@@ -3948,15 +3948,15 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
-/* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.fall-preview .ctools-modal-content,
-#modalContent.spring-preview .ctools-modal-content {
+/* line 59, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-13504 .ctools-modal-content,
+#modalContent.level-12739 .ctools-modal-content {
   background: url("../images/modal_bg/blue_ether.jpg");
   background-size: cover;
 }
 
-/* line 73, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.advanced-night-repair-2 .ctools-modal-content {
+/* line 72, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1299 .ctools-modal-content {
   background-color: #040a2b;
   background-image: url("../images/modal_bg/blue_helix.png");
   background-repeat: no-repeat;
@@ -3965,23 +3965,35 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
-/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.advanced-night-repair .ctools-modal-content {
+/* line 89, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-252 .ctools-modal-content {
   background: url("../images/modal_bg/blue_krypton.jpg");
   background-size: cover;
 }
 
-/* line 105, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.new-dimension .ctools-modal-content,
-#modalContent.new-dimension-2 .ctools-modal-content {
+/* line 104, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1301 .ctools-modal-content,
+#modalContent.level-12731 .ctools-modal-content {
   background: url("../images/modal_bg/clouds.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
 }
 
-/* line 120, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.beautiful-skin-for-life .ctools-modal-content {
+/* line 119, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1300 .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 131, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-579 .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 143, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-10605 .ctools-modal-content {
   background-image: url("../images/modal_bg/gray_ether.jpg");
   background-repeat: no-repeat;
 }
@@ -5577,3 +5589,5 @@ tr.drag-previous {
 .view-filters .views-exposed-form .views-widget-sort-order {
   display: none;
 }
+
+/*# sourceMappingURL=styles.css.map */

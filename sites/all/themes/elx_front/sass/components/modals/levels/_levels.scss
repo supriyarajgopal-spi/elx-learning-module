@@ -19,6 +19,12 @@ body.page-levels-in-progress {
       letter-spacing: 2px;
       font-weight: bold;
       margin: 0 0 20px;
+      line-height: 1.3em;
+    }
+
+    .field-name-field-intro {
+      font-size: $font-size-sm-large;
+      font-family: $font-family-sans-serif;
     }
 
   }

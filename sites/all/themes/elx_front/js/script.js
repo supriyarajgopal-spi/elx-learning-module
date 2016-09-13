@@ -206,6 +206,10 @@
       }
 
       /* LEVELS */
+      if(typeof Drupal.settings.H5PIntegration != "undefined") {
+        $('body').addClass(Drupal.settings.H5PIntegration.elxLevel.name);
+      }
+
       if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {
 
         /* eslint-disable no-alert, no-console */
@@ -215,7 +219,7 @@
           var mClass = '';
           mClass = $('#modalContent .field-name-field-learning-category .field-item').text();
           mClass = mClass.replace(/\s+/g, '-').toLowerCase();
-          // console.log('class = ' + mClass);
+          console.log('class = ' + mClass);
           $('#modalContent').addClass(mClass);
 
           // add learning category to iframe body

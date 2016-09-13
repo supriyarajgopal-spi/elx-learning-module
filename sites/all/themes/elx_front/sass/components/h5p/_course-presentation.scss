@@ -1,0 +1,19 @@
+// course presentation styles
+.h5p-course-presentation {
+
+  .h5p-box-wrapper {
+    background: transparent;
+  }
+
+  .h5p-presentation-wrapper {
+    background-image: none;
+    background: transparent;
+
+    .h5p-element-outer.h5p-questionset-outer-element {
+      background: none;
+      background-image: none;
+    }
+
+  }
+
+}

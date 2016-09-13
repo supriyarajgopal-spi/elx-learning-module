@@ -4135,6 +4135,7 @@ body.page-levels-in-progress #modalContent .field-name-field-headline {
   font-weight: bold;
   margin: 0 0 20px;
   line-height: 1.3em;
+<<<<<<< HEAD
 }
 
 /* line 25, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
@@ -4147,6 +4148,20 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 
 /* line 41, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.re-nutriv .ctools-modal-content {
+=======
+}
+
+/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+body.page-levels-all #modalContent .field-name-field-intro,
+body.page-levels-completed #modalContent .field-name-field-intro,
+body.page-levels-in-progress #modalContent .field-name-field-intro {
+  font-size: 18px;
+  font-family: "akzidenz-grotesk_bq";
+}
+
+/* line 40, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-250 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/black_gold.jpg");
   background-repeat: no-repeat;
   background-position: right top;
@@ -4155,15 +4170,26 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
+<<<<<<< HEAD
 /* line 60, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.fall-preview .ctools-modal-content,
 #modalContent.spring-preview .ctools-modal-content {
+=======
+/* line 59, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-13504 .ctools-modal-content,
+#modalContent.level-12739 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/blue_ether.jpg");
   background-size: cover;
 }
 
+<<<<<<< HEAD
 /* line 73, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.advanced-night-repair-2 .ctools-modal-content {
+=======
+/* line 72, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1299 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background-color: #040a2b;
   background-image: url("../images/modal_bg/blue_helix.png");
   background-repeat: no-repeat;
@@ -4172,23 +4198,51 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
+<<<<<<< HEAD
 /* line 90, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.advanced-night-repair .ctools-modal-content {
+=======
+/* line 89, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-252 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/blue_krypton.jpg");
   background-size: cover;
 }
 
+<<<<<<< HEAD
 /* line 105, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.new-dimension .ctools-modal-content,
 #modalContent.new-dimension-2 .ctools-modal-content {
+=======
+/* line 104, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1301 .ctools-modal-content,
+#modalContent.level-12731 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/clouds.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
 }
 
+<<<<<<< HEAD
 /* line 120, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.beautiful-skin-for-life .ctools-modal-content {
+=======
+/* line 119, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-1300 .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 131, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-579 .ctools-modal-content {
+  background-image: url("../images/modal_bg/gray_ether.jpg");
+  background-repeat: no-repeat;
+}
+
+/* line 143, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+#modalContent.level-10605 .ctools-modal-content {
+>>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background-image: url("../images/modal_bg/gray_ether.jpg");
   background-repeat: no-repeat;
 }

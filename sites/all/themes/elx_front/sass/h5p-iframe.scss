@@ -51,3 +51,12 @@
 @import 'components/h5p/h5p';
 @import 'components/h5p/click-to-reveal';
 @import 'components/h5p/course-presentation';
+
+// STYLES WE ONLY WANT IN THE IFRAME
+body {
+  background: transparent;
+}
+
+body div.h5p-content {
+  background: transparent;
+}

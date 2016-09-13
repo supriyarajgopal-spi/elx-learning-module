@@ -206,7 +206,7 @@
       }
 
       /* LEVELS */
-      if(typeof Drupal.settings.H5PIntegration != "undefined") {
+      if (typeof Drupal.settings.H5PIntegration != 'undefined') {
         $('body').addClass(Drupal.settings.H5PIntegration.elxLevel.name);
       }
 

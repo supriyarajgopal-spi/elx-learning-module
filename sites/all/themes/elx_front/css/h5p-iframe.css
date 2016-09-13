@@ -951,4 +951,14 @@ th {
   background-image: none;
 }
 
-/*# sourceMappingURL=h5p.css.map */
+/* line 56, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/h5p-iframe.scss */
+body {
+  background: transparent;
+}
+
+/* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/h5p-iframe.scss */
+body div.h5p-content {
+  background: transparent;
+}
+
+/*# sourceMappingURL=h5p-iframe.css.map */

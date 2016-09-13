@@ -207,7 +207,7 @@
 
       /* LEVELS */
       if (typeof Drupal.settings.H5PIntegration != 'undefined') {
-        $('body').addClass(Drupal.settings.H5PIntegration.elxLevel.name);
+        $('body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
       }
 
       if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {

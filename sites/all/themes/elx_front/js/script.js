@@ -232,6 +232,13 @@
 
       }
 
+      /* LEADERBOARD MODIFICATIONS */
+      $('.page-leaderboard').ready(function () {
+
+        // form alterations need //
+
+      }); // leaderboard
+
     }
 
   };

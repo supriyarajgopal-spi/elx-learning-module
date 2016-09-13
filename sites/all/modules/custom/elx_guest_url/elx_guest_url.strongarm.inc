@@ -14,7 +14,7 @@ function elx_guest_url_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'invite_default_expiry_time';
-  $strongarm->value = 30;
+  $strongarm->value = '30';
   $export['invite_default_expiry_time'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -81,7 +81,7 @@ To become a member of [site:name], click the link below or paste it into the add
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'referral_cookie_lifetime';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['referral_cookie_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();

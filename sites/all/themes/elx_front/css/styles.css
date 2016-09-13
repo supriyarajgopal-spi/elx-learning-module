@@ -3608,7 +3608,7 @@ body.page-leaderboard main h1 {
   margin: 77px 0 16px;
   text-align: center;
   color: #040a2b;
-  letter-spacing: 0.1em;
+  letter-spacing: '0.1em';
 }
 
 /* line 17, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
@@ -3641,19 +3641,19 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 {
   height: 120px;
 }
 
-/* line 49, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 46, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
   position: relative;
 }
 
-/* line 53, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 50, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-picture {
   margin-left: 30%;
-  margin-top: -72px;
+  margin-top: -80px;
   position: absolute;
 }
 
-/* line 58, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-picture .field-content {
   background-color: #f0f8ff;
   border: 3px solid gold;
@@ -3664,36 +3664,32 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   width: 150px;
 }
 
-/* line 70, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 67, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
   font-size: 1.3em;
-  margin-left: 43%;
+  margin-left: 45%;
   position: absolute;
   top: 0;
   width: 25%;
 }
 
-/* line 78, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
-body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
-  margin-left: 10px;
-}
-
-/* line 82, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 75, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
-  content: "#";
-  font-size: 0.5em;
+  content: '#';
+  font-size: '0.5em';
   vertical-align: super;
 }
 
-/* line 88, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 81, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
+  margin-left: 10px;
   font-family: arial;
   font-size: 1.5em;
   font-weight: bold;
   width: 15%;
 }
 
-/* line 95, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 89, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
   font-family: arial;
   font-size: 1.4em;
@@ -3703,10 +3699,10 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   top: 25px;
 }
 
-/* line 103, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 97, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 .field-content::before {
   background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
-  content: " ";
+  content: ' ';
   display: block;
   height: 27px;
   margin-left: -45px;
@@ -3714,7 +3710,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   width: 30px;
 }
 
-/* line 122, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 117, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row {
   clear: both;
   width: 95%;
@@ -3729,12 +3725,12 @@ body.page-leaderboard main .item-list ul li.views-row {
   position: relative;
 }
 
-/* line 136, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 131, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field {
   float: left;
 }
 
-/* line 139, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 135, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
   width: 15%;
   font-family: arial;
@@ -3742,35 +3738,35 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
   font-weight: bold;
 }
 
-/* line 145, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 142, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter span.field-content {
   margin-left: -10px;
 }
 
-/* line 149, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 148, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
   content: '#';
-  font-size: 0.5em;
+  font-size: '0.5em';
   vertical-align: super;
 }
 
-/* line 155, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 154, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-field-last-name {
   width: 25%;
   position: absolute;
-  margin-left: 40%;
+  margin-left: 45%;
 }
 
-/* line 161, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 160, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-picture {
   position: absolute;
   margin-left: 30%;
   margin-top: -25px;
 }
 
-/* line 167, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 166, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-picture .field-content {
-  background-color: #F0F8FF;
+  background-color: #f0f8ff;
   border: 2px solid gold;
   border-radius: 112px;
   display: block;
@@ -3783,7 +3779,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-picture .fiel
 body.page-leaderboard main .item-list ul li.views-row .views-field-field-country {
   width: 25%;
   position: absolute;
-  margin-left: 40%;
+  margin-left: 45%;
   margin-top: 42px;
 }
 
@@ -4135,7 +4131,6 @@ body.page-levels-in-progress #modalContent .field-name-field-headline {
   font-weight: bold;
   margin: 0 0 20px;
   line-height: 1.3em;
-<<<<<<< HEAD
 }
 
 /* line 25, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
@@ -4146,22 +4141,8 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 41, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.re-nutriv .ctools-modal-content {
-=======
-}
-
-/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-body.page-levels-all #modalContent .field-name-field-intro,
-body.page-levels-completed #modalContent .field-name-field-intro,
-body.page-levels-in-progress #modalContent .field-name-field-intro {
-  font-size: 18px;
-  font-family: "akzidenz-grotesk_bq";
-}
-
-/* line 40, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 40, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-250 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/black_gold.jpg");
   background-repeat: no-repeat;
   background-position: right top;
@@ -4170,26 +4151,15 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
-<<<<<<< HEAD
-/* line 60, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.fall-preview .ctools-modal-content,
-#modalContent.spring-preview .ctools-modal-content {
-=======
-/* line 59, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 59, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-13504 .ctools-modal-content,
 #modalContent.level-12739 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/blue_ether.jpg");
   background-size: cover;
 }
 
-<<<<<<< HEAD
-/* line 73, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.advanced-night-repair-2 .ctools-modal-content {
-=======
-/* line 72, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 72, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-1299 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background-color: #040a2b;
   background-image: url("../images/modal_bg/blue_helix.png");
   background-repeat: no-repeat;
@@ -4198,51 +4168,35 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   color: #fff;
 }
 
-<<<<<<< HEAD
-/* line 90, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.advanced-night-repair .ctools-modal-content {
-=======
-/* line 89, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 89, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-252 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/blue_krypton.jpg");
   background-size: cover;
 }
 
-<<<<<<< HEAD
-/* line 105, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.new-dimension .ctools-modal-content,
-#modalContent.new-dimension-2 .ctools-modal-content {
-=======
-/* line 104, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 104, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-1301 .ctools-modal-content,
 #modalContent.level-12731 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background: url("../images/modal_bg/clouds.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
 }
 
-<<<<<<< HEAD
-/* line 120, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.beautiful-skin-for-life .ctools-modal-content {
-=======
-/* line 119, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 119, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-1300 .ctools-modal-content {
   background-image: url("../images/modal_bg/gray_ether.jpg");
   background-repeat: no-repeat;
 }
 
-/* line 131, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 131, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-579 .ctools-modal-content {
   background-image: url("../images/modal_bg/gray_ether.jpg");
   background-repeat: no-repeat;
 }
 
-/* line 143, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
+/* line 143, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
 #modalContent.level-10605 .ctools-modal-content {
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
   background-image: url("../images/modal_bg/gray_ether.jpg");
   background-repeat: no-repeat;
 }

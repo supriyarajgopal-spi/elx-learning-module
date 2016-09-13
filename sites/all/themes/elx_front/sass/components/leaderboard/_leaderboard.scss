@@ -11,9 +11,9 @@ body.page-leaderboard {
       margin: 77px 0 16px;
       text-align: center;
       color: #040a2b;
-      letter-spacing: 0.1em;
+      letter-spacing: '0.1em';
     }
- 
+
     .view-filters {
       padding: 80px 0 20px;
 
@@ -21,7 +21,7 @@ body.page-leaderboard {
         select {
           width: 100%;
         }
-      }  
+      }
     }
 
     .pane-user-points-panel-pane-2 {
@@ -43,16 +43,13 @@ body.page-leaderboard {
       width: 90%;
       height: 120px;
 
-      .views-fields {
-
-      }
       .view-content {
 
         position: relative;
 
         .views-field-picture {
           margin-left: 30%;
-          margin-top: -72px;
+          margin-top: -80px;
           position: absolute;
 
           .field-content {
@@ -69,23 +66,20 @@ body.page-leaderboard {
 
         .views-field-field-last-name {
           font-size: 1.3em;
-          margin-left: 43%;
+          margin-left: 45%;
           position: absolute;
           top: 0;
           width: 25%;
         }
 
-        .views-field-points {
-          margin-left: 10px;
-        }
-
         .views-field-points::before {
-          content: "#";
-          font-size: 0.5em;
+          content: '#';
+          font-size: '0.5em';
           vertical-align: super;
         }
 
         .views-field-points {
+          margin-left: 10px;
           font-family: arial;
           font-size: 1.5em;
           font-weight: bold;
@@ -101,8 +95,8 @@ body.page-leaderboard {
           top: 25px;
 
           .field-content::before {
-            background: rgba(0, 0, 0, 0) url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
-            content: " ";
+            background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png') repeat scroll 0 0;
+            content: ' ';
             display: block;
             height: 27px;
             margin-left: -45px;
@@ -114,7 +108,8 @@ body.page-leaderboard {
       }
 
     }
-  
+
+
     .item-list {
 
       ul {
@@ -136,28 +131,32 @@ body.page-leaderboard {
           .views-field {
             float: left;
           }
+
           .views-field-counter {
+
             width: 15%;
             font-family: arial;
             font-size: 1.5em;
             font-weight: bold;
 
             span.field-content {
-              margin-left:-10px;
+              margin-left: -10px;
             }
+
           }
+
           .views-field-counter::before {
             content: '#';
-            font-size: 0.5em;
+            font-size: '0.5em';
             vertical-align: super;
           }
-  
+
           .views-field-field-last-name {
             width: 25%;
             position: absolute;
-            margin-left: 40%; 
+            margin-left: 45%;
           }
-  
+
           .views-field-picture {
 
              position: absolute;
@@ -166,7 +165,7 @@ body.page-leaderboard {
 
             .field-content {
 
-              background-color: #F0F8FF;
+              background-color: #f0f8ff;
               border: 2px solid gold;
               border-radius: $field-picture-radius;
               display: block;
@@ -177,13 +176,14 @@ body.page-leaderboard {
             }
 
           }
+
           .views-field-field-country {
             width: 25%;
             position: absolute;
-            margin-left: 40%;
+            margin-left: 45%;
             margin-top: 42px;
           }
-  
+
           .views-field-points-1 {
             float: right;
             font-family: arial;
@@ -200,6 +200,7 @@ body.page-leaderboard {
               margin-left: -45px;
               position: absolute;
             }
+
           }
 
         }

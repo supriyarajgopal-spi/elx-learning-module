@@ -916,63 +916,6 @@ th {
   }
 }
 
-<<<<<<< HEAD
-/* line 2, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-body {
-  background: transparent;
-}
-
-/* line 6, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-body div.h5p-content {
-  background: transparent;
-}
-
-/* line 12, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-=======
-/* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-card-content {
-  box-shadow: none;
-}
-
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set {
-  max-width: 32em;
-  margin: auto;
-}
-
-/* line 14, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
-  text-align: left;
-  font-size: 18px;
-  font-family: "akzidenz-grotesk_bq";
-}
-
-/* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
-.h5p-course-presentation .h5p-box-wrapper {
-  background: transparent;
-}
-
-<<<<<<< HEAD
-/* line 16, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-=======
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
-.h5p-course-presentation .h5p-presentation-wrapper {
-  background-image: none;
-  background: transparent;
-}
-
-<<<<<<< HEAD
-/* line 20, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-=======
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
->>>>>>> 74a7d0df592f0eee5ef1a77906e4811ad077f36b
-.h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
-  background: none;
-  background-image: none;
-}
-
 /* line 4, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   box-shadow: none;
@@ -989,4 +932,21 @@ body div.h5p-content {
   text-align: left;
   font-size: 18px;
   font-family: "akzidenz-grotesk_bq";
+}
+
+/* line 4, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+.h5p-course-presentation .h5p-box-wrapper {
+  background: transparent;
+}
+
+/* line 8, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+.h5p-course-presentation .h5p-presentation-wrapper {
+  background-image: none;
+  background: transparent;
+}
+
+/* line 12, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+.h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
+  background: none;
+  background-image: none;
 }

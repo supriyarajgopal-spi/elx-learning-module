@@ -121,6 +121,7 @@ function views_filter_view_views_pre_execute(&$view) {
  *   The actual view to act on.
  */
 function views_filter_view_views_post_execute(&$view) {
+  $items = array();
   // Find out whether the current view is selected somewhere as filter.
   $views = views_filter_view_get_filter_views();
   $view_display = $view->name . ':' . $view->current_display;

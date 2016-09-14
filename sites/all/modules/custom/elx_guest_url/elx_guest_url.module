@@ -51,13 +51,13 @@ function _guest_account_creation()
 function _registration_invite_user_register_access() {
   $queryParams = drupal_get_query_parameters();
   
-  if(empty(array_diff(array(
+  if(count(array_diff(array(
     'account',
     'door',
     'country',
     'region',
     'market',
-  ), array_keys($queryParams))))
+  ), array_keys($queryParams))) == 0)
   {
 	//Allow registration if query parameters are valid and exist in the system
 	$accountResult = db_select('node','n')
@@ -183,3 +183,20 @@ function elx_guest_url_node_presave($node)
         $node_wrapper->field_guest_url = $completed_urls; //Save each generated guest url in it's own key in field_guest_url
     }
 }
+
+/**
+ * Implements hook_preprocess_page()
+ * Redirect to new signup page if #/signup page is visited
+ */
+/* function elx_guest_url_preprocess_page(&$vars)
+{
+	drupal_set_message('<pre>'.print_r("Entering here",TRUE).'</pre>');
+	drupal_set_message('<pre>'.print_r(arg(0),TRUE).'</pre>');
+	drupal_set_message('<pre>'.print_r(arg(1),TRUE).'</pre>');
+	drupal_set_message('<pre>'.print_r($vars['is_front'],TRUE).'</pre>');
+	if($vars['is_front'] && arg(0) === '#' && arg(1) === 'signup')
+	{
+		drupal_set_message('<pre>'.print_r("Entering here also",TRUE).'</pre>');
+		//drupal_add_js(drupal_get_path('theme', 'my_theme') . '/my_script.js');
+	}
+} */

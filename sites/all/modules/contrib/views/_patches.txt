@@ -1,3 +1,7 @@
 Fixed filter Fields Comparison not using aggregation settings.
 https://www.drupal.org/node/2490048
 https://www.drupal.org/files/issues/views-fields_comparison_aggregation-2490048-1.patch
+
+Fixed AJAX pagers in embedded views.
+https://www.drupal.org/node/1877446#comment-8372423
+https://www.drupal.org/files/issues/1877446-15-views-ajax-pager-closest-parent_1.patch

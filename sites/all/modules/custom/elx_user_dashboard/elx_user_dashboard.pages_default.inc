@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * user_dashboard.pages_default.inc
+ * elx_user_dashboard.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_handlers().
  */
-function user_dashboard_default_page_manager_handlers() {
+function elx_user_dashboard_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();

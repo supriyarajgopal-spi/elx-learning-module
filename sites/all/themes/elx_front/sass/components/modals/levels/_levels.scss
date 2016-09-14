@@ -19,18 +19,23 @@ body.page-levels-in-progress {
       letter-spacing: 2px;
       font-weight: bold;
       margin: 0 0 20px;
+      line-height: 1.3em;
+    }
+
+    .field-name-field-intro {
+      font-size: $font-size-sm-large;
+      font-family: $font-family-sans-serif;
     }
 
   }
 
 }
 
-// modal theme for "clouds"
+// modal theme for "black & gold"
 // used by:
-// New Dimension
-// New Dimension 2
+// Re-Nutriv : level-250
 
-#modalContent.re-nutriv {
+#modalContent.level-250 {
 
   .ctools-modal-content {
     background: url('../images/modal_bg/black_gold.jpg');
@@ -45,11 +50,11 @@ body.page-levels-in-progress {
 
 // modal theme for "blue-ether"
 // used by:
-// Fall Preview
-// Spring Preview
+// Fall Preview : level-13504
+// Spring Preview : level-12739
 
-#modalContent.fall-preview,
-#modalContent.spring-preview {
+#modalContent.level-13504,
+#modalContent.level-12739 {
 
   .ctools-modal-content {
     background: url('../images/modal_bg/blue_ether.jpg');
@@ -60,9 +65,9 @@ body.page-levels-in-progress {
 
 // modal theme for "blue-helix"
 // used by:
-// Advanced Night Repair 2
+// Advanced Night Repair 2 : level-1299
 
-#modalContent.advanced-night-repair-2 {
+#modalContent.level-1299 {
 
   .ctools-modal-content {
     background-color: #040a2b;
@@ -77,9 +82,9 @@ body.page-levels-in-progress {
 
 // modal theme for "blue-krypton"
 // used by:
-// Advanced Night Repair
+// Advanced Night Repair : level-252
 
-#modalContent.advanced-night-repair {
+#modalContent.level-252 {
 
   .ctools-modal-content {
     background: url('../images/modal_bg/blue_krypton.jpg');
@@ -90,11 +95,11 @@ body.page-levels-in-progress {
 
 // modal theme for "clouds"
 // used by:
-// New Dimension
-// New Dimension 2
+// New Dimension : level-1301
+// New Dimension 2 : level-12731
 
-#modalContent.new-dimension,
-#modalContent.new-dimension-2 {
+#modalContent.level-1301,
+#modalContent.level-12731 {
 
   .ctools-modal-content {
     background: url('../images/modal_bg/clouds.jpg');
@@ -107,13 +112,38 @@ body.page-levels-in-progress {
 
 // modal theme "gray-ether"
 // used by:
-// Beautiful Skin For Life
+// Beautiful Skin For Life : level-1300
 
-#modalContent.beautiful-skin-for-life {
+#modalContent.level-1300 {
 
   .ctools-modal-content {
     background-image: url('../images/modal_bg/gray_ether.jpg');
     background-repeat: no-repeat;
+  }
+
+}
+
+// modal theme "gmtc"
+// used by:
+// GMTC : level-579
+#modalContent.level-579 {
+
+  .ctools-modal-content {
+    background-image: url('../images/modal_bg/gray_ether.jpg');
+    background-repeat: no-repeat;
+  }
+
+}
+
+// modal theme "holiday"
+// used by:
+// Holiday 2016 : level-10605
+#modalContent.level-10605 {
+
+  .ctools-modal-content {
+    background-image: url('../images/modal_bg/holiday16.jpg');
+    background-repeat: no-repeat;
+    color: #fff;
   }
 
 }

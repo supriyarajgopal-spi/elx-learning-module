@@ -1,0 +1,149 @@
+body.section-user.page-user {
+
+  main.dashboard-override {
+
+    margin-bottom: 300px;
+
+    .elx-neck-name {
+      width: 300px;
+      text-align: center;
+      margin: 25px auto;
+      font-size: 2em;
+      font-family: $font-family-serif;
+    }
+
+    .two-by-two-ux {
+
+      margin: 100px auto;
+      width: 65%;
+      padding-left: 50px;
+      padding-bottom: 100px;
+
+      .r1xc1,
+      .r1xc2,
+      .r2xc1,
+      .r2xc2,
+      .r3xc1,
+      .r4 {
+        label {
+          text-transform: uppercase;
+          font-size: 1.3em;
+          float: left;
+          letter-spacing: 1px;
+        }
+
+        span {
+          margin-left: 12px;
+          font-size: 1.3em;
+          float: left;
+          font-family: $font-family-serif;
+          font-weight: bold;
+        }
+      }
+
+      .btn-edit-profile {
+        border: 1px solid #a4a4ab;
+        margin: 20px auto 0;
+        font-size: '0.8em';
+        height: 50px;
+        letter-spacing: '0.1em';
+        padding-top: 11px;
+        width: 360px;
+        cursor: pointer;
+
+        span {
+          color: #a4a4ab;
+          text-transform: uppercase;
+          height: 50px;
+          margin: 0 auto;
+          text-align: center;
+          text-transform: uppercase;
+          width: 100%;
+        }
+
+        span::before {
+          content: '';
+          font-family: $font-family-icons;
+          color: #a4a4ab;
+          padding: 12px;
+        }
+      }
+
+      .r1xc1,
+      .r1xc2,
+      .r2xc1,
+      .r2xc2 {
+        width: 50%;
+        height: 60px;
+      }
+
+      .r3xc1,
+      .r4 {
+        width: 100%;
+      }
+
+      .r3xc1 {
+        height: 60px;
+      }
+
+      .r4 {
+        height: 90px;
+      }
+
+      .r1xc1,
+      .r2xc1,
+      .r3xc1,
+      .r4 {
+        clear: left;
+        float: left;
+      }
+
+      .r1xc2,
+      .r2xc2,
+      .r3xc1,
+      .r4 {
+        float: left;
+      }
+
+    }
+
+    .elx-round-container {
+
+      width: 200px;
+      margin: 0 auto;
+
+      .elx-inner-round {
+        height: 200px;
+        width: 200px;
+        border: 3px solid gold;
+        border-radius: 200px;
+        background-color: #f0f8ff;
+        background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+      }
+
+      .elx-inner-round::before {
+        border-top: 1px solid #ccc;
+        content: ' ';
+        display: block;
+        float: left;
+        height: 1px;
+        margin-left: -200px;
+        margin-top: 90px;
+        width: 150px;
+      }
+
+      .elx-inner-round::after {
+        border-top: 1px solid #ccc;
+        content: ' ';
+        display: block;
+        float: right;
+        height: 1px;
+        margin-right: -200px;
+        margin-top: 90px;
+        width: 150px;
+      }
+
+    }
+
+  }
+}

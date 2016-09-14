@@ -1,0 +1,144 @@
+// MULTIPLE CHOICE
+
+.question-container.h5p-question.h5p-multichoice {
+  font-family: $font-family-sans-serif-head;
+
+  .h5p-question-introduction {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-medium;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &::before {
+      content: 'QUESTION:';
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+      display: inline-block;
+      margin: 10px 0;
+      letter-spacing: 2px;
+    }
+
+  }
+
+  ul.h5p-answers {
+
+    &::before {
+      content: 'ANSWERS:';
+      font-size: $font-size-sm-small;
+      display: inline-block;
+      margin: 10px 0;
+      letter-spacing: 2px;
+    }
+
+  }
+
+}
+
+// **************
+// HOLIDAY 2016
+//***************
+.level-10605 {
+
+  .questionset {
+
+    .question-container.h5p-question.h5p-multichoice {
+      color: #fff;
+      background: none;
+
+      .h5p-alternative-container {
+        border: 0;
+        background: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+        &::before {
+          color: #fff;
+        }
+
+      }
+
+      .h5p-answer {
+
+        &:hover {
+          border: 0;
+          background: none;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+
+      }
+
+      .h5p-answer[aria-checked='true'] {
+        color: #fff;
+
+        .h5p-alternative-container {
+          color: #fff;
+          font-weight: bold;
+        }
+
+      }
+
+      .h5p-feedback-text {
+        color: #000;
+      }
+
+      .h5p-question-check-answer.h5p-joubelui-button,
+      .h5p-question-next.h5p-joubelui-button,
+      .h5p-question-prev.h5p-joubelui-button {
+        width: auto;
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sm-small;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #600;
+        background: none;
+        background-color: #fff;
+        border: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        padding: 5px 15px;
+      }
+
+      .h5p-question-next.h5p-joubelui-button,
+      .h5p-question-prev.h5p-joubelui-button {
+
+        &::before {
+          font-family: $font-family-sans-serif;
+          font-size: $font-size-sm-small;
+          letter-spacing: 2px;
+        }
+
+      }
+
+      .h5p-question-next.h5p-joubelui-button {
+        &::before {
+          content: 'NEXT';
+        }
+      }
+
+      .h5p-question-prev.h5p-joubelui-button {
+        &::before {
+          content: 'BACK';
+        }
+      }
+
+    }
+
+    .qs-footer {
+
+      .progress-dot {
+        background: rgba(255, 255, 255, .3);
+      }
+
+      .progress-dot.current {
+        background: rgba(255, 255, 255, 1);
+      }
+
+    }
+
+  }
+
+}

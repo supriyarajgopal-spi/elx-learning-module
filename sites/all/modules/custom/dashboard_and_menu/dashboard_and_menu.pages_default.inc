@@ -230,7 +230,7 @@ function dashboard_and_menu_default_page_manager_pages() {
   $display->title = '%node:title Dashboard';
   $display->uuid = 'ac64acd4-bc8c-40e9-a937-9997a71246c5';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_dashboard_panel_context';
+  $display->storage_id = 'page_group_administrative_dashboard__panel_context_90f281c4-b743-446c-b0bb-b5a93bff6c74';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();

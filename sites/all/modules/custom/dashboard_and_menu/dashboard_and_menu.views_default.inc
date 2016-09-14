@@ -275,6 +275,9 @@ function dashboard_and_menu_views_default_views() {
 
   /* Display: Personal User Points */
   $handler = $view->new_display('panel_pane', 'Personal User Points', 'panel_pane_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -560,7 +563,7 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Groups audience (og_group_ref) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -649,19 +652,19 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['arguments']['field_region_list_value']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_region_list_value']['validate']['fail'] = 'ignore';
   $handler->display->display_options['arguments']['field_region_list_value']['limit'] = '0';
-  /* Contextual filter: Content: Groups audience (og_group_ref) */
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'uid';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_options']['index'] = '5';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['validate']['fail'] = 'ignore';
+  /* Contextual filter: User: Markets (og_user_node) */
+  $handler->display->display_options['arguments']['og_user_node_target_id']['id'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['field'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_argument_options']['index'] = '5';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_user_node_target_id']['validate']['fail'] = 'ignore';
   $translatables['user_points_total'] = array(
     t('Master'),
     t('User Points Total'),

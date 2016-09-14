@@ -530,7 +530,7 @@ function elx_interactive_content_feature_field_default_field_instances() {
     'description' => 'Display the Stylized Wheel of Fortune along with the Quiz',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'elx_spin_the_wheel',
         'settings' => array(),
         'type' => 'spinthewheel_formatter',

@@ -83,7 +83,7 @@ function elx_home_page_default_page_manager_pages() {
   $display->title = '';
   $display->uuid = 'b6b338ee-ea19-44a9-90cd-9839e2649f0d';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_home_page__panel_context_daf28055-23ef-4b41-8b50-8f53216183c4';
+  $display->storage_id = 'page_home_page__panel-home-page-admin';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();

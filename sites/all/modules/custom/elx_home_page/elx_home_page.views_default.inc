@@ -47,7 +47,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Introduction Image */
+  /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
@@ -104,7 +104,7 @@ function elx_home_page_views_default_views() {
     'content_object' => 'content_object',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Category (field_learning_category) */
+  /* Filter criterion: Content: Learning Level (field_learning_category) */
   $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
   $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
   $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
@@ -139,7 +139,7 @@ function elx_home_page_views_default_views() {
     'content_object' => 'content_object',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Category (field_learning_category) */
+  /* Filter criterion: Content: Learning Level (field_learning_category) */
   $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
   $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
   $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
@@ -244,7 +244,7 @@ function elx_home_page_views_default_views() {
     'content_object' => 'content_object',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Category (field_learning_category) */
+  /* Filter criterion: Content: Learning Level (field_learning_category) */
   $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
   $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
   $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
@@ -368,7 +368,7 @@ function elx_home_page_views_default_views() {
     'content_object' => 'content_object',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Category (field_learning_category) */
+  /* Filter criterion: Content: Learning Level (field_learning_category) */
   $handler->display->display_options['filters']['field_learning_category_tid']['id'] = 'field_learning_category_tid';
   $handler->display->display_options['filters']['field_learning_category_tid']['table'] = 'field_data_field_learning_category';
   $handler->display->display_options['filters']['field_learning_category_tid']['field'] = 'field_learning_category_tid';
@@ -1062,7 +1062,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Introduction Image */
+  /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';

@@ -210,6 +210,16 @@
         $('body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
       }
 
+      var timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(function () {
+        $('.h5p-clicktoreveal-thumbnailwrap-set .h5p-clicktoreveal-thumbnailwrap::first-child').addClass('active');
+        $('.h5p-clicktoreveal-thumbnailwrap').click(function () {
+          $('.h5p-clicktoreveal-thumbnailwrap').removeClass('active');
+          $(this).addClass('active');
+        });
+      }, 10);
+
       if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {
 
         /* eslint-disable no-alert, no-console */

@@ -60,6 +60,9 @@ body.page-leaderboard {
             float: left;
             height: 150px;
             width: 150px;
+            background-color: #f0f8ff;
+            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+            background-size: 100%;
           }
 
         }
@@ -172,6 +175,9 @@ body.page-leaderboard {
               float: left;
               height: $field-picture-radius;
               width: $field-picture-radius;
+
+              background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+              background-size: 100%;
 
             }
 

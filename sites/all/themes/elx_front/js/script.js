@@ -225,12 +225,85 @@
 
       }
 
-      /* LEADERBOARD MODIFICATIONS */
-      $('.page-leaderboard').ready(function () {
+      /* DASHBOARD OVERRIDE  /user/123 */
+      if ($('body.section-user.page-user main .profile').size()) {
 
-        // form alterations need //
+        var realname;
+        var firstname;
+        var store;
+        var membersince;
+        var loc;
+        var lang;
+        var market;
 
-      }); // leaderboard
+        var set_dashboard_layout = function () {
+
+          // raw drupal page // /user/19371 for example should be hidden
+          // $('.layout-swap').find('main.layout-3col__full').hide();
+
+          var new_main = $('<main>').addClass('dashboard-override');
+          var div_elx_round = $('<div class="elx-round-container"></div>');
+          $(div_elx_round).append('<div class="elx-inner-round"></div>');
+
+          var div_elx_name = $('<div class="elx-neck-name"></div>').text(realname + ' ' + firstname);
+          var btn_edit_profile = $('<div class="btn-edit-profile">').append('<span>Edit Profile & Password</span>').click(function () {
+            window.location = window.location + '/password';
+          });
+
+          $(new_main).append(div_elx_round);
+          $(new_main).append(div_elx_name);
+
+
+          var div_2x2ux = $('<div class="two-by-two-ux" />');
+          var div_r1xc1 = $('<div class="r1xc1" />').append('<label>Store:</label>').append('<span>' + store + '</span>');
+          var div_r1xc2 = $('<div class="r1xc2" />').append('<label>Member Since:</label>').append('<span>' + membersince + '</span>');
+
+          var div_r2xc1 = $('<div class="r2xc1" />').append('<label>Location:</label>').append('<span>' + loc + '</span>');
+          var div_r2xc2 = $('<div class="r2xc2" />').append('<label>Language:</label>').append('<span>' + lang + '</span>');
+
+          var div_r3xc1 = $('<div class="r3xc1" />').append('<label>Market:</label>').append('<span>' + market + '</span>');
+          var div_r4 = $('<div class="r4" />').append(btn_edit_profile);
+
+          $(div_2x2ux).append(div_r1xc1).append(div_r1xc2);
+          $(div_2x2ux).append(div_r2xc1).append(div_r2xc2);
+          $(div_2x2ux).append(div_r3xc1);
+          $(div_2x2ux).append(div_r4);
+
+          $(new_main).append(div_2x2ux);
+
+
+          // main plug //
+          $('.layout-swap').prepend(new_main);
+
+        };
+
+        var get_page_data = function () {
+
+          realname = $('.profile .field-name-realname').find('a').text();
+          firstname = $('.profile .field-name-field-first-name').find('.field-item').text();
+
+          market = $('.profile .field-type-entityreference').find('a').text();
+          store = '';
+          membersince = $('.profile .field-name-field-hire-date').find('span.date-display-single').text();
+          loc = $('.profile .field-name-field-country').find('.field-item').text();
+          lang = '';
+
+          // not used but available // 9/13/2016 //
+          $('.profile .item-list');
+          $('.profile .userpoints-total');
+          $('.profile ul.userpoints-links');
+          $('.profile .field-name-field-last-name');
+          $('.profile dl');
+          $('.profile .field-name-field-region-list');
+          $('.profile .field-name-field-last-access-date');
+
+          setTimeout(set_dashboard_layout, 500);
+
+        };
+
+        $('body.section-user.page-user').ready(get_page_data);
+
+      } // size
 
     }
 

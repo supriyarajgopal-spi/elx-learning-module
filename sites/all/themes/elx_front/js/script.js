@@ -216,21 +216,21 @@
 
         // add learning category to modal
         $('#modalContent', context).ready(function () {
-          var mClass = '';
-          mClass = $('#modalContent .field-name-field-learning-category .field-item').text();
-          mClass = mClass.replace(/\s+/g, '-').toLowerCase();
-          console.log('class = ' + mClass);
-          $('#modalContent').addClass(mClass);
 
-          // add learning category to iframe body
-          // $('iframe').contents().find('.h5p-iframe').addClass(mClass);
-          $('iframe').ready(function () {
-            $('iframe').contents().find('html.h5p-iframe').addClass(mClass);
-          });
+          if (typeof Drupal.settings.H5PIntegration != 'undefined') {
+            $('#modalContent').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
+          }
 
         });
 
       }
+
+      /* LEADERBOARD MODIFICATIONS */
+      $('.page-leaderboard').ready(function () {
+
+        // form alterations need //
+
+      }); // leaderboard
 
     }
 

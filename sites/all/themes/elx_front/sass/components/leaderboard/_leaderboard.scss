@@ -1,0 +1,215 @@
+/* LEADERBOARD */
+body.page-leaderboard {
+
+  $field-picture-radius: 112px;
+
+  main {
+
+    h1 {
+      font-family: $font-family-serif;
+      font-size: 72px;
+      margin: 77px 0 16px;
+      text-align: center;
+      color: #040a2b;
+      letter-spacing: '0.1em';
+    }
+
+    .view-filters {
+      padding: 80px 0 20px;
+
+      form#views-exposed-form-user-points-panel-pane-1 {
+        select {
+          width: 100%;
+        }
+      }
+    }
+
+    .pane-user-points-panel-pane-2 {
+
+      clear: both;
+      width: 95%;
+      height: 150px;
+      list-style-position: inside;
+      list-style: none;
+      margin: 10px auto 30px;
+      font-size: 2em;
+      font-family: $font-family-serif;
+      padding: 25px;
+      position: relative;
+      z-index: 1000;
+      top: 80px;
+      color: white;
+      background-color: #040a2b;
+      width: 90%;
+      height: 120px;
+
+      .view-content {
+
+        position: relative;
+
+        .views-field-picture {
+          margin-left: 30%;
+          margin-top: -80px;
+          position: absolute;
+
+          .field-content {
+            background-color: #f0f8ff;
+            border: 3px solid gold;
+            border-radius: 150px;
+            display: block;
+            float: left;
+            height: 150px;
+            width: 150px;
+          }
+
+        }
+
+        .views-field-field-last-name {
+          font-size: 1.3em;
+          margin-left: 45%;
+          position: absolute;
+          top: 0;
+          width: 25%;
+        }
+
+        .views-field-points::before {
+          content: '#';
+          font-size: '0.5em';
+          vertical-align: super;
+        }
+
+        .views-field-points {
+          margin-left: 10px;
+          font-family: arial;
+          font-size: 1.5em;
+          font-weight: bold;
+          width: 15%;
+        }
+
+        .views-field-points-1 {
+          font-family: arial;
+          font-size: 1.4em;
+          font-weight: bold;
+          position: absolute;
+          right: 0;
+          top: 25px;
+
+          .field-content::before {
+            background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png') repeat scroll 0 0;
+            content: ' ';
+            display: block;
+            height: 27px;
+            margin-left: -45px;
+            position: absolute;
+            width: 30px;
+          }
+        }
+
+      }
+
+    }
+
+
+    .item-list {
+
+      ul {
+
+        li.views-row {
+
+          clear: both;
+          width: 95%;
+          height: 150px;
+          list-style-position: inside;
+          list-style: none;
+          margin: 10px auto 30px;
+          font-size: 2em;
+          font-family: $font-family-serif;
+          border-bottom: 1px solid gray;
+          padding: 25px;
+          position: relative;
+
+          .views-field {
+            float: left;
+          }
+
+          .views-field-counter {
+
+            width: 15%;
+            font-family: arial;
+            font-size: 1.5em;
+            font-weight: bold;
+
+            span.field-content {
+              margin-left: -10px;
+            }
+
+          }
+
+          .views-field-counter::before {
+            content: '#';
+            font-size: '0.5em';
+            vertical-align: super;
+          }
+
+          .views-field-field-last-name {
+            width: 25%;
+            position: absolute;
+            margin-left: 45%;
+          }
+
+          .views-field-picture {
+
+             position: absolute;
+             margin-left: 30%;
+             margin-top: -25px;
+
+            .field-content {
+
+              background-color: #f0f8ff;
+              border: 2px solid gold;
+              border-radius: $field-picture-radius;
+              display: block;
+              float: left;
+              height: $field-picture-radius;
+              width: $field-picture-radius;
+
+            }
+
+          }
+
+          .views-field-field-country {
+            width: 25%;
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 42px;
+          }
+
+          .views-field-points-1 {
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 12px;
+
+            .field-content::before {
+              content: ' ';
+              background: url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png');
+              height: 27px;
+              width: 30px;
+              display: block;
+              margin-left: -45px;
+              position: absolute;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

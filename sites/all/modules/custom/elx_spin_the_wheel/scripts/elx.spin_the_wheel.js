@@ -2,6 +2,12 @@
   'use strict';
   var app = angular.module('newplayer', []);
   app.directive('spinTheWheel', spinTheWheel);
+  app.controller('goSpinTheWheel', function($scope,$rootScope) {
+    $scope.go = function() {
+      $rootScope.$emit('spin-to-win');
+      //h5p-question-next
+    }
+  });
   /** @ngInject */
   function spinTheWheel($log, $timeout, $rootScope) {
     var directive = {
@@ -12,32 +18,32 @@
         shuffleSpaces: '@'
       },
       link: link,
-      controller: npPriceIsRightSpinnerController,
+      controller: spinTheWheelController,
       controllerAs: 'vm',
       transclude: true,
       replace: true,
       template: '<div class="np-spinner-content wheels ng-isolate-scope" spintime="2000" data-difficulty="1">'
-      + '<div class="wheel" style="opacity: 1; transform-style: preserve-3d; transform: matrix(1, 0, 0, 1, 0, 0); transform-origin: 0% 5% 0px;">'
-      + '<div style="transform: matrix(1, 0, 0, 1, 0, 0);">300</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.939693, 0.34202, 0, 0, -0.34202, 0.939693, 0, 0, -68.404, -12.0615, 1);">0</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.766044, 0.642788, 0, 0, -0.642788, 0.766044, 0, 0, -128.558, -46.7911, 1);">600</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.5, 0.866025, 0, 0, -0.866025, 0.5, 0, 0, -173.205, -100, 1);">1000</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.173648, 0.984808, 0, 0, -0.984808, 0.173648, 0, 0, -196.962, -165.27, 1);">700</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.173648, 0.984808, 0, 0, -0.984808, -0.173648, 0, 0, -196.962, -234.73, 1);">800</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.5, 0.866025, 0, 0, -0.866025, -0.5, 0, 0, -173.205, -300, 1);">500</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.766044, 0.642788, 0, 0, -0.642788, -0.766044, 0, 0, -128.558, -353.209, 1);">400</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.939693, 0.34202, 0, 0, -0.34202, -0.939693, 0, 0, -68.404, -387.939, 1);">400</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, -400, 1);">500</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.939693, -0.34202, 0, 0, 0.34202, -0.939693, 0, 0, 68.404, -387.939, 1);">200</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.766044, -0.642788, 0, 0, 0.642788, -0.766044, 0, 0, 128.558, -353.209, 1);">800</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.5, -0.866025, 0, 0, 0.866025, -0.5, 0, 0, 173.205, -300, 1);">0</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, -0.173648, -0.984808, 0, 0, 0.984808, -0.173648, 0, 0, 196.962, -234.73, 1);">300</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.173648, -0.984808, 0, 0, 0.984808, 0.173648, 0, 0, 196.962, -165.27, 1);">700</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.5, -0.866025, 0, 0, 0.866025, 0.5, 0, 0, 173.205, -100, 1);">900</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.766044, -0.642788, 0, 0, 0.642788, 0.766044, 0, 0, 128.558, -46.7911, 1);">600</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 0.939693, -0.34202, 0, 0, 0.34202, 0.939693, 0, 0, 68.404, -12.0615, 1);">100</div>'
-      + '<div style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);">200</div>'
-      + '<div data-pick="true" style="transform: matrix3d(1, 0, 0, 0, 0, 0.939693, 0.34202, 0, 0, -0.34202, 0.939693, 0, 0, -68.404, -12.0615, 1); opacity: 1;">100</div>'
+      + '<div class="wheel" ng-transclude="" style="opacity: 1; transform-style: preserve-3d; transform: matrix(1, 0, 0, 1, 0, 0); transform-origin: 0% 5% 0px;">'
+      + '<div>300</div>'
+      + '<div>0</div>'
+      + '<div>600</div>'
+      + '<div>1000</div>'
+      + '<div>700</div>'
+      + '<div>800</div>'
+      + '<div>500</div>'
+      + '<div>400</div>'
+      + '<div>400</div>'
+      + '<div>500</div>'
+      + '<div>200</div>'
+      + '<div>800</div>'
+      + '<div>0</div>'
+      + '<div>300</div>'
+      + '<div>700</div>'
+      + '<div>900</div>'
+      + '<div>600</div>'
+      + '<div>100</div>'
+      + '<div>200</div>'
+      + '<div>100</div>'
       + '</div>'
       + '</div>'
     }
@@ -123,7 +129,7 @@
         });
       }
       $timeout(function () {
-        //shuffle();
+        shuffle();
         spin();
       }, delay_time);
       function spinAgain() {
@@ -133,7 +139,7 @@
       $rootScope.$on('spin-to-win', spinAgain);
     }
     /** @ngInject */
-    function npPriceIsRightSpinnerController($scope, $rootScope) {
+    function spinTheWheelController($scope, $rootScope) {
       var vm = this;
       init();
       function init() {

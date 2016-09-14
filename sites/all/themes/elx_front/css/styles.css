@@ -1376,6 +1376,11 @@ footer.footer.region.region-footer ul.menu li.first.leaf::after {
   color: #fff;
 }
 
+/* line 42, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/footer/_footer.scss */
+div#panels-ipe-control-container {
+  z-index: 2;
+}
+
 /* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .header {
   background-color: #040a2b;

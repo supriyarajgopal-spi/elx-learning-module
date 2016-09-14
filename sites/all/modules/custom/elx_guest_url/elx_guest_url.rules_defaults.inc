@@ -16,7 +16,7 @@ function elx_guest_url_default_rules_configuration() {
       "REQUIRES" : [ "php", "rules" ],
       "ON" : { "user_presave" : [] },
       "IF" : [
-        { "php_eval" : { "code" : "\\/\\/Returns true if all the mentioned parameters exist in the query string\\r\\n$params = array(\\u0027account\\u0027,\\u0027door\\u0027,\\u0027country\\u0027,\\u0027region\\u0027,\\u0027market\\u0027);\\r\\nreturn count(array_diff($params, array_keys(drupal_get_query_parameters())));" } }
+        { "NOT php_eval" : { "code" : "\\/\\/Returns true if all the mentioned parameters exist in the query string\\r\\n$params = array(\\u0027account\\u0027,\\u0027door\\u0027,\\u0027country\\u0027,\\u0027region\\u0027,\\u0027market\\u0027);\\r\\nreturn count(array_diff($params, array_keys(drupal_get_query_parameters())));" } }
       ],
       "DO" : [
         { "user_unblock" : { "account" : [ "account" ] } },

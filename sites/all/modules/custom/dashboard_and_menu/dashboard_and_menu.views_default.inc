@@ -37,9 +37,6 @@ function dashboard_and_menu_views_default_views() {
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_country_value' => array(
       'bef_format' => 'default',
@@ -56,17 +53,11 @@ function dashboard_and_menu_views_default_views() {
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
@@ -74,22 +65,16 @@ function dashboard_and_menu_views_default_views() {
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'field_region_list_value' => array(
       'bef_format' => 'default',
@@ -106,17 +91,11 @@ function dashboard_and_menu_views_default_views() {
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
             'reset_label' => NULL,
-            'bef_filter_description' => NULL,
-            'any_label' => NULL,
-            'filter_rewrite_values' => NULL,
           ),
           'secondary_label' => NULL,
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
-          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
@@ -124,30 +103,21 @@ function dashboard_and_menu_views_default_views() {
           'collapsible_label' => NULL,
           'combine_rewrite' => NULL,
           'reset_label' => NULL,
-          'bef_filter_description' => NULL,
-          'any_label' => NULL,
         ),
         'secondary_label' => NULL,
         'collapsible_label' => NULL,
         'combine_rewrite' => NULL,
         'reset_label' => NULL,
-        'filter_rewrite_values' => NULL,
       ),
       'secondary_label' => NULL,
       'collapsible_label' => NULL,
       'combine_rewrite' => NULL,
       'reset_label' => NULL,
-      'bef_filter_description' => NULL,
-      'any_label' => NULL,
-      'filter_rewrite_values' => NULL,
     ),
     'secondary_label' => NULL,
     'collapsible_label' => NULL,
     'combine_rewrite' => NULL,
     'reset_label' => NULL,
-    'bef_filter_description' => NULL,
-    'any_label' => NULL,
-    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
@@ -229,78 +199,68 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['sorts']['points']['field'] = 'points';
   $handler->display->display_options['sorts']['points']['relationship'] = 'uid';
   $handler->display->display_options['sorts']['points']['order'] = 'DESC';
-  /* Filter criterion: Field: Country (field_country) */
-  $handler->display->display_options['filters']['field_country_value']['id'] = 'field_country_value';
-  $handler->display->display_options['filters']['field_country_value']['table'] = 'field_data_field_country';
-  $handler->display->display_options['filters']['field_country_value']['field'] = 'field_country_value';
-  $handler->display->display_options['filters']['field_country_value']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['field_country_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_country_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_country_value']['expose']['operator_id'] = 'field_country_value_op';
-  $handler->display->display_options['filters']['field_country_value']['expose']['label'] = 'Country (field_country)';
-  $handler->display->display_options['filters']['field_country_value']['expose']['operator'] = 'field_country_value_op';
-  $handler->display->display_options['filters']['field_country_value']['expose']['identifier'] = 'field_country_value';
-  $handler->display->display_options['filters']['field_country_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
-  /* Filter criterion: Field: Region (field_region_list) */
-  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
-  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['field_region_list_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region (field_region_list)';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
-  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Groups audience';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
+  /* Contextual filter: Field: Door (field_door) */
+  $handler->display->display_options['arguments']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['arguments']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_door_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_door_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_door_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_door_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_door_value']['limit'] = '0';
+  /* Contextual filter: User: Account name (field_account_name) */
+  $handler->display->display_options['arguments']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['arguments']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_account_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_account_name_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_account_name_value']['limit'] = '0';
+  /* Contextual filter: Field: Region (field_region_list) */
+  $handler->display->display_options['arguments']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['arguments']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_options']['index'] = '4';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_region_list_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_region_list_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_region_list_value']['limit'] = '0';
+  /* Contextual filter: User: Markets (og_user_node) */
+  $handler->display->display_options['arguments']['og_user_node_target_id']['id'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['field'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_argument_options']['index'] = '5';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_user_node_target_id']['validate']['fail'] = 'ignore';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'user-points';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: List User Points */
+  $handler = $view->new_display('panel_pane', 'List User Points', 'panel_pane_1');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -329,7 +289,7 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'user_points_total';
-  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_2';
+  $handler->display->display_options['fields']['view']['display'] = 'panel_pane_3';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -387,6 +347,7 @@ function dashboard_and_menu_views_default_views() {
 
   /* Display: Personal Group User Points */
   $handler = $view->new_display('panel_pane', 'Personal Group User Points', 'panel_pane_4');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -480,14 +441,11 @@ function dashboard_and_menu_views_default_views() {
     t('[field_first_name] [field_last_name]'),
     t('.'),
     t(','),
-    t('Country (field_country)'),
-    t('Region (field_region_list)'),
-    t('Groups audience'),
+    t('All'),
     t('Page'),
-    t('Content pane'),
+    t('List User Points'),
     t('View panes'),
     t('Personal User Points'),
-    t('All'),
     t('Personal Group User Points'),
   );
   $export['user_points'] = $view;
@@ -526,33 +484,55 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['fields']['points']['group_type'] = 'count';
   $handler->display->display_options['fields']['points']['label'] = '';
   $handler->display->display_options['fields']['points']['element_label_colon'] = FALSE;
+  /* Contextual filter: Field: Door (field_door) */
+  $handler->display->display_options['arguments']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['arguments']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_door_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_door_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_door_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_door_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_door_value']['limit'] = '0';
+  /* Contextual filter: User: Account name (field_account_name) */
+  $handler->display->display_options['arguments']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['arguments']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_account_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_account_name_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_account_name_value']['limit'] = '0';
+  /* Contextual filter: Field: Region (field_region_list) */
+  $handler->display->display_options['arguments']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['arguments']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_options']['index'] = '4';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_region_list_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_region_list_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_region_list_value']['limit'] = '0';
   /* Filter criterion: Global: View */
   $handler->display->display_options['filters']['view']['id'] = 'view';
   $handler->display->display_options['filters']['view']['table'] = 'views';
   $handler->display->display_options['filters']['view']['field'] = 'view';
   $handler->display->display_options['filters']['view']['operator'] = '>=';
+  $handler->display->display_options['filters']['view']['group'] = 1;
   $handler->display->display_options['filters']['view']['view'] = 'user_points:panel_pane_2';
-  /* Filter criterion: Field: Region (field_region_list) */
-  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
-  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['relationship'] = 'uid';
-  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region (field_region_list)';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
-  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -560,6 +540,9 @@ function dashboard_and_menu_views_default_views() {
 
   /* Display: Group Leaderboard Ranking */
   $handler = $view->new_display('panel_pane', 'Group Leaderboard Ranking', 'panel_pane_1');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['display_description'] = 'deprecated';
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Userpoints total: User */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -584,7 +567,7 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_options']['index'] = '5';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
@@ -592,7 +575,93 @@ function dashboard_and_menu_views_default_views() {
 
   /* Display: Leaderboard Ranking */
   $handler = $view->new_display('panel_pane', 'Leaderboard Ranking', 'panel_pane_2');
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['display_description'] = 'deprecated';
   $handler->display->display_options['exposed_block'] = TRUE;
+
+  /* Display: Full Leaderboard Ranking */
+  $handler = $view->new_display('panel_pane', 'Full Leaderboard Ranking', 'panel_pane_3');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Userpoints total: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'userpoints_total';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: OG membership: OG membership from User */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['relationship'] = 'uid';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT User: Uid) */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['uid']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Door (field_door) */
+  $handler->display->display_options['arguments']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['arguments']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['arguments']['field_door_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_door_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_door_value']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_door_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_door_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_door_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_door_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_door_value']['limit'] = '0';
+  /* Contextual filter: User: Account name (field_account_name) */
+  $handler->display->display_options['arguments']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['arguments']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['arguments']['field_account_name_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_account_name_value']['default_argument_options']['index'] = '3';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_account_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_account_name_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_account_name_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_account_name_value']['limit'] = '0';
+  /* Contextual filter: Field: Region (field_region_list) */
+  $handler->display->display_options['arguments']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['arguments']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['arguments']['field_region_list_value']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_region_list_value']['default_argument_options']['index'] = '4';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_region_list_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_region_list_value']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_region_list_value']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['field_region_list_value']['limit'] = '0';
+  /* Contextual filter: Content: Groups audience (og_group_ref) */
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_options']['index'] = '5';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['validate']['fail'] = 'ignore';
   $translatables['user_points_total'] = array(
     t('Master'),
     t('User Points Total'),
@@ -605,14 +674,15 @@ function dashboard_and_menu_views_default_views() {
     t('Users'),
     t('.'),
     t(','),
-    t('Region (field_region_list)'),
+    t('All'),
     t('Page'),
     t('Group Leaderboard Ranking'),
+    t('deprecated'),
     t('OG membership from user'),
     t('Group node from OG membership'),
-    t('All'),
     t('View panes'),
     t('Leaderboard Ranking'),
+    t('Full Leaderboard Ranking'),
   );
   $export['user_points_total'] = $view;
 

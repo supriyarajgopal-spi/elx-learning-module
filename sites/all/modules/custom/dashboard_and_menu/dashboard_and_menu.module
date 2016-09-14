@@ -5,3 +5,108 @@
  */
 
 include_once 'dashboard_and_menu.features.inc';
+
+//create a custom block
+//display a form that submits and returns a goto
+//the goto will contain /leaderboard/<store>/<retailer>/<region>/<market>
+//setup all views to handle these parameters
+//alter the submit to process the selection from the form and compare it to the current user
+//get the info for the current user and pass it to the view
+//in the case of the market, where multiple options may exist, do we want to pass them all?
+
+function dashboard_and_menu_block_info() {
+  $blocks = array();
+  $blocks['leaderboard_filter'] = array(
+    'info' => t('Leaderboard Filter'),
+  );
+
+  return $blocks;
+}
+
+function dashboard_and_menu_block_view($delta = '') {
+  // The $delta parameter tells us which block is being requested.
+  $block = array();
+  switch ($delta) {
+    case 'leaderboard_filter':
+      // Create your block content here
+      $block['subject'] = t('Leaderboard Filter');
+      $block['content'] = drupal_get_form('dashboard_and_menu_leaderboard_filter_form');
+      break;
+  }
+
+  return $block;
+}
+
+function dashboard_and_menu_leaderboard_filter_form($form, &$form_state) {
+  //set default option
+  $default_option = check_plain(arg(1)) ? check_plain(arg(1)) : "world";
+
+  $filter_options = array(
+    "world" => "My World",
+    "store" => "My Store",
+    "retailer" => "My Retailer",
+    "market" => "My Market",
+    "region" => "My Region",
+  );
+
+  $form['leaderboard_filter'] = array(
+    '#title' => t('Compare My Score To'),
+    '#type' => 'select',
+    '#options' => $filter_options,
+    '#default_value' => $default_option,
+    '#attributes' => array('onChange' => 'document.getElementById("dashboard-and-menu-leaderboard-filter-form").submit();'),
+  );
+
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Click Here!'),
+    '#attributes' => array('class' => array('element-invisible'))
+  );
+
+  return $form;
+}
+
+function dashboard_and_menu_leaderboard_filter_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['leaderboard_filter'])){
+    form_set_error('leaderboard_filter', 'Dude, you need to select an option.');
+  }
+}
+
+function dashboard_and_menu_leaderboard_filter_form_submit($form, &$form_state) {
+  $leaderboard_array = _get_leaderboard_arguments($form_state['values']['leaderboard_filter']);
+  drupal_goto("/leaderboard/".implode('/',$leaderboard_array));
+}
+
+function _get_leaderboard_arguments($filter) {
+  $filter_array = array($filter,"all","all","all");//store,retailer,region (market left off by default)
+  $index_array = array("null","store","retailer","region");
+  $index_field_array = array("null","field_door","field_account_name","field_region_list");
+  $index = array_search($filter,$index_array);
+  switch ($filter) {
+    case "store":
+    case "retailer":
+    case "region":
+      $filter_array[$index] = _get_user_field($index_field_array[$index]);
+      break;
+    case "market":
+      $filter_array[] = _get_user_field('og_user_node');
+      break;
+    case "world":
+    default:
+      break;
+  }
+  return $filter_array;
+}
+
+function _get_user_field($field_name){
+  global $user;
+  $full_user = user_load($user->uid);
+  $result = field_get_items('user', $full_user, $field_name);
+  if (!empty($result[0]['value'])) {
+    return $result[0]['value'];
+  }
+  if (!empty($result[0]['target_id'])) {
+    return $result[0]['target_id'];
+  }
+  return "all";
+}

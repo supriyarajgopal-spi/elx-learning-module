@@ -438,17 +438,7 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->subtype = 'user_points-panel_pane_2';
   $pane->shown = TRUE;
   $pane->access = array(
-    'plugins' => array(
-      0 => array(
-        'name' => 'path_visibility',
-        'settings' => array(
-          'visibility_setting' => '1',
-          'paths' => 'leaderboard/*',
-        ),
-        'context' => 'empty',
-        'not' => TRUE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $pane->configuration = array(
     'path' => 'user-points',
@@ -472,14 +462,14 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
   $pane->subtype = 'user_points-panel_pane_4';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array(
     'plugins' => array(
       0 => array(
         'name' => 'path_visibility',
         'settings' => array(
           'visibility_setting' => '1',
-          'paths' => 'leaderboard/*',
+          'paths' => 'leaderboard/market/*',
         ),
         'context' => 'empty',
         'not' => FALSE,
@@ -504,6 +494,29 @@ function dashboard_and_menu_default_page_manager_pages() {
   $display->content['new-faeed201-74f8-4818-95a6-ae700b428320'] = $pane;
   $display->panels['middle'][1] = 'new-faeed201-74f8-4818-95a6-ae700b428320';
   $pane = new stdClass();
+  $pane->pid = 'new-6a3bb64c-0515-4446-9902-1bb826860c34';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'dashboard_and_menu-leaderboard_filter';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '6a3bb64c-0515-4446-9902-1bb826860c34';
+  $display->content['new-6a3bb64c-0515-4446-9902-1bb826860c34'] = $pane;
+  $display->panels['middle'][2] = 'new-6a3bb64c-0515-4446-9902-1bb826860c34';
+  $pane = new stdClass();
   $pane->pid = 'new-3d26e91c-7ec8-48fa-808b-139ff604d4bd';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
@@ -526,11 +539,11 @@ function dashboard_and_menu_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = '3d26e91c-7ec8-48fa-808b-139ff604d4bd';
   $display->content['new-3d26e91c-7ec8-48fa-808b-139ff604d4bd'] = $pane;
-  $display->panels['middle'][2] = 'new-3d26e91c-7ec8-48fa-808b-139ff604d4bd';
+  $display->panels['middle'][3] = 'new-3d26e91c-7ec8-48fa-808b-139ff604d4bd';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

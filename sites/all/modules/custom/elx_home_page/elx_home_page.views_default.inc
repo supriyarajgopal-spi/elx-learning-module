@@ -115,6 +115,15 @@ function elx_home_page_views_default_views() {
 
   /* Display: User pane */
   $handler = $view->new_display('panel_pane', 'User pane', 'panel_pane_user');
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Admin pane */
   $handler = $view->new_display('panel_pane', 'Admin pane', 'panel_pane_admin');
@@ -147,6 +156,15 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_learning_category_tid']['value'] = '';
   $handler->display->display_options['filters']['field_learning_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_learning_category_tid']['vocabulary'] = 'learning_category';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Sort */
   $handler = $view->new_display('page', 'Sort', 'sort');
@@ -499,6 +517,15 @@ function elx_home_page_views_default_views() {
   /* Display: User pane */
   $handler = $view->new_display('panel_pane', 'User pane', 'panel_pane_user');
   $handler->display->display_options['display_description'] = 'Browse the Product Library on Homepage';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Admin pane */
   $handler = $view->new_display('panel_pane', 'Admin pane', 'panel_pane_admin');
@@ -524,6 +551,15 @@ function elx_home_page_views_default_views() {
     'product_detail' => 'product_detail',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Sort */
   $handler = $view->new_display('page', 'Sort', 'sort');
@@ -1124,6 +1160,15 @@ function elx_home_page_views_default_views() {
   /* Display: User pane */
   $handler = $view->new_display('panel_pane', 'User pane', 'panel_pane_user');
   $handler->display->display_options['display_description'] = 'What\'s New & Trending on Homepage';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Admin pane */
   $handler = $view->new_display('panel_pane', 'Admin pane', 'panel_pane_admin');
@@ -1150,6 +1195,15 @@ function elx_home_page_views_default_views() {
   );
   $handler->display->display_options['filters']['field_content_object_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Sort */
   $handler = $view->new_display('page', 'Sort', 'sort');

@@ -5,7 +5,6 @@
   app.controller('goSpinTheWheel', function($scope,$rootScope) {
     $scope.go = function() {
       $rootScope.$emit('spin-to-win');
-      //h5p-question-next
     }
   });
   /** @ngInject */
@@ -146,6 +145,14 @@
       }
     }
   }
+
+  /*Access properties of H5P Question Set. Borrowed from https://www.drupal.org/node/2389957, https://h5p.org/node/615/xapi-coverage & https://h5p.org/node/3391*/
+  H5P.externalDispatcher.on('xAPI', function(event) {
+    if (event.getVerb() == "attempted") {
+      angular.element('#goSpinTheWheel').scope().$apply();
+      angular.element('#goSpinTheWheel').scope().go();
+    }
+  });
 })();
 
 

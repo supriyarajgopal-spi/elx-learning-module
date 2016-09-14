@@ -1,12 +1,9 @@
 <div id="ANR">
-	<div ng-app="newplayer" ng-controller="goSpinTheWheel">
-		<a ng-href='#here' ng-click='go()'>click me</a>
+	<div ng-app="newplayer" ng-controller="goSpinTheWheel" id="goSpinTheWheel">
+		<!--<a ng-href='#here' ng-click='go()'>click me</a>-->
 		<div class="col-sm-2 np-spinner">
 			<div class="np-spinner-wrapper">
-				<spin-the-wheel ng-transclude="">spin the wheel</spin-the-wheel>
-				<!--<div ng-app="newplayer" ng-controller="npPriceIsRightSpinnerController">
-					<np-price-is-right-spinner>spin the wheel</np-price-is-right-spinner>
-				</div>-->
+				<spin-the-wheel></spin-the-wheel>
 				<div class="np-gold-border">
 					<svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 368 222" xml:space="preserve" preserveAspectRatio="none">
 						<style type="text/css">

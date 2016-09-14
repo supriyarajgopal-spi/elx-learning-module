@@ -38,11 +38,13 @@ function elx_spin_the_wheel_field_formatter_view($entity_type, $entity, $field, 
 
       //Load required JS file(s)
       drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/angular.min.js', 'file');
-      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/component.module.js', 'file');
-      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/npTrivia.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/elx.spin_the_wheel.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/TweenMax.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/modernizr.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'elx_spin_the_wheel') .'/scripts/lodash.js', 'file');
 
       //Read the contents of the HTML file instead of writing HTML here for easy code maintenance
-      $element[$delta]['#markup'] = file_get_contents(drupal_get_path('module', 'elx_spin_the_wheel') .'/npTrivia.html');
+      $element[$delta]['#markup'] = file_get_contents(drupal_get_path('module', 'elx_spin_the_wheel') .'/elx_spin_the_wheel.html');
     }
   }
   return $element;

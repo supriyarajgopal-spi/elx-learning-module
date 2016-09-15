@@ -1,9 +1,60 @@
 /* BADGES */
+
+.page-badges {
+
+  h1 {
+
+    font-family: $font-family-serif;
+    font-size: 4em;
+    text-align: center;
+
+  }
+
+  .views-row {
+
+    width: 680px;
+    margin: 0 auto;
+
+  }
+
+  /* initial override invisible state */
+  .ctools-modal-content {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #modalContent {
+    .modal-header {
+
+      width: 100%;
+      position: absolute;
+
+      a {
+        top: 0;
+        right: -50px;
+      }
+    }
+
+    .badge-img {
+      display: block;
+      margin: -35px auto 0;
+    }
+
+    .badge-title {
+      display: block;
+      margin: 25px auto;
+      font-family: $font-family-serif;
+      text-align: center;
+    }
+  }
+}
+
 .page-badges,
 .page-user,
 .pane-elx-recent-badges-recent-badges {
 
   .views-row {
+
     .views-field {
       width: 142px;
       height: 142px;

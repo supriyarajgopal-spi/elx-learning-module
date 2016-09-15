@@ -176,6 +176,12 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/tools">SEE ALL TOOLS</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -247,6 +253,7 @@ function elx_user_dashboard_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<a href="/tools">SEE ALL TOOLS</a>'),
   );
   $export['dashboard_tools'] = $view;
 

@@ -24,6 +24,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -19,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -34,11 +37,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Early Bird Badge".
   $flags['early_bird_badge'] = array(
@@ -55,6 +58,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -8,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -65,11 +71,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Fast Learner Badge".
   $flags['fast_learner_badge'] = array(
@@ -86,6 +92,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -10,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -96,11 +105,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "First 10000 Points Badge".
   $flags['first_10000_points_badge'] = array(
@@ -117,6 +126,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -22,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -127,11 +139,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "First 1,000 Points Badge".
   $flags['first_1_000_points_badge'] = array(
@@ -148,6 +160,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -25,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -158,11 +173,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "First 5,000 Points Badge".
   $flags['first_5_000_points_badge'] = array(
@@ -179,6 +194,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -26,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -189,11 +207,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "High Five Badge".
   $flags['high_five_badge'] = array(
@@ -201,7 +219,7 @@ function elx_badge_flags_flag_default_flags() {
     'title' => 'High Five Badge',
     'global' => 1,
     'types' => array(),
-    'flag_short' => 'Give this Badge',
+    'flag_short' => 'Give this high five badge',
     'flag_long' => '',
     'flag_message' => '',
     'unflag_short' => 'Remove Badge',
@@ -210,9 +228,13 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -31,
+    'badge_description' => '<p>High Five Badge description.</p>',
+    'badge_unearned_description' => '',
+    'badge_image' => 4629,
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
+      'token' => 0,
     ),
     'show_as_field' => 0,
     'show_on_form' => 0,
@@ -220,11 +242,12 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
+    'i18n' => 0,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Little Brown Bottle Badge".
   $flags['little_brown_bottle_badge'] = array(
@@ -241,6 +264,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -20,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -251,11 +277,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "New Dimension Badge".
   $flags['new_dimension_badge'] = array(
@@ -272,6 +298,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -17,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -282,11 +311,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "On Your Way Badge".
   $flags['on_your_way_badge'] = array(
@@ -303,6 +332,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -29,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -313,11 +345,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "100% Club Badge".
   $flags['one_hundred_percent_club_badge'] = array(
@@ -334,6 +366,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -28,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -344,11 +379,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Perfect 10 Badge".
   $flags['perfect_10_badge'] = array(
@@ -365,6 +400,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -30,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -375,11 +413,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Product Pro Badge".
   $flags['product_pro_badge'] = array(
@@ -396,6 +434,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -23,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -406,11 +447,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Rare Beauty Badge".
   $flags['rare_beauty_badge'] = array(
@@ -427,6 +468,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -18,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -437,11 +481,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Service Star Badge".
   $flags['service_star_badge'] = array(
@@ -458,6 +502,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -27,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -468,11 +515,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Sleeping Beauty Badge".
   $flags['sleeping_beauty_badge'] = array(
@@ -489,6 +536,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -16,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -499,11 +549,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "3 Minute Beauty Badge".
   $flags['three_minute_beauty_badge'] = array(
@@ -520,6 +570,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -11,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -530,11 +583,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "We Heard You Badge".
   $flags['we_heard_you_badge'] = array(
@@ -551,6 +604,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -15,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -561,11 +617,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "We Heart You Badge".
   $flags['we_heart_you_badge'] = array(
@@ -582,6 +638,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -24,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -592,11 +651,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Welcome Badge".
   $flags['welcome_badge'] = array(
@@ -613,6 +672,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -21,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -623,11 +685,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Well Read 100 Badge".
   $flags['well_read_100_badge'] = array(
@@ -644,6 +706,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -9,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -654,11 +719,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Well Read 25 Badge".
   $flags['well_read_25_badge'] = array(
@@ -675,6 +740,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -13,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -685,11 +753,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Well Read 50 Badge".
   $flags['well_read_50_badge'] = array(
@@ -706,6 +774,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -14,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -716,11 +787,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Well Read 75 Badge".
   $flags['well_read_75_badge'] = array(
@@ -737,6 +808,9 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -12,
+    'badge_description' => '',
+    'badge_unearned_description' => '',
+    'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,
       'diff_standard' => 0,
@@ -747,11 +821,11 @@ function elx_badge_flags_flag_default_flags() {
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 

@@ -5,3 +5,139 @@
  */
 
 include_once 'elx_badge_flags.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add Badge Details to Flag module.
+ * This adds 'Badge Details' fieldset to all flags regardless of Badge flags. It is the admin's responsibility to not fill values for these unnecessarily.
+ */
+function elx_badge_flags_form_alter(&$form, &$form_state, $form_id)
+{
+	if($form_id == 'flag_form') //'flag_add_form' is the one where the Flag Type (Node, User, Taxonomy, etc) is chosen whereas 'flag_form' is the actual form
+	{
+		$flag = isset($form['#flag']->name)?flag_load($form['#flag']->name):new stdClass();
+		
+		$form['badge_details'] = array(
+		  '#type' => 'fieldset',
+		  '#title' => t('Badge Details'),
+		  '#collapsible' => TRUE, 
+		  '#collapsed' => TRUE,
+		);
+		
+		$form['badge_details']['badge_description'] = array(
+			'#type' => 'text_format',
+			'#title' => t('Badge Description'),
+			'#default_value' => (!empty($flag->badge_description))?$flag->badge_description:'',
+			'#format' => 'full_html',
+			'#rows' => 2,
+		);
+		
+		$form['badge_details']['badge_unearned_description'] = array(
+			'#type' => 'text_format',
+			'#title' => t('Unearned Badge Description'),
+			'#default_value' => (!empty($flag->badge_unearned_description))?$flag->badge_unearned_description:'',
+			'#format' => 'full_html',
+			'#rows' => 2,
+		);
+		
+		//Borrowed from https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7.x#managed_file
+		$form['badge_details']['badge_image'] = array(
+		  '#title' => t('Badge Image'),
+		  '#type' => 'managed_file',
+		  '#default_value' => (!empty($flag->badge_image))?$flag->badge_image:0,
+		  '#upload_location' => 'public://badge_flag_images/', //Created if not already exists
+		);
+		
+		$form['#submit'][] = '_elx_badge_flags_form_submit'; //Additional submit handler to save Badge Details to $flag object
+	}
+}
+
+/**
+ * Implements hook_flag_options_alter().
+ * Included by SUPRIYA RAJGOPAL on 3Aug16 to add additional Band Details to Flag settings options
+ * If this is not included, then the values are not stored in 'options' column in 'flag' table
+ */
+function elx_badge_flags_flag_options_alter(&$options, $flag)
+{
+	$options['badge_description'] = '';
+	$options['badge_unearned_description'] = '';
+	$options['badge_image'] = '';
+	return $options;
+}
+
+/**
+ * User defined submit handler function to save Badge Details to $flag object.
+ * Included by SUPRIYA RAJGOPAL on 3Aug16
+ */
+function _elx_badge_flags_form_submit($form, &$form_state)
+{
+	$values = $form_state['values'];
+	$flag = $form['#flag'];
+	
+	$flag->badge_description = '';
+	$flag->badge_unearned_description = '';
+	
+	$translatableStrings = array('badge_description','badge_unearned_description'); //Applicable to text & number fields only!
+	
+	foreach($translatableStrings as $translatableString)
+	{
+		if(isset($values[$translatableString]['value']) && $values[$translatableString]['value']!='')
+			$flag->$translatableString = i18n_string('flag:elx_badge_flags:'.$translatableString,$values[$translatableString]['value'],array('format' => 'full_html','update' => TRUE));
+	}
+	
+	/** Save the badge image when Upload is clicked & remove when Remove button is clicked.
+	 * Borrowed from http://drupal.stackexchange.com/questions/58317/how-to-hook-into-file-upload-and-remove-button
+	 */
+	if($values['badge_image'] != 0) //If a file is uploaded, $form_state['values']['badge_image'] will hold a temporary file ID
+	{
+		//The file's status is set to 0(temporary).To ensure its not removed after 6 hours via cron,change its status to 1(permanent) & save image fid
+		$file = file_load($values['badge_image']);
+		$file->status = FILE_STATUS_PERMANENT;
+		file_save($file);
+
+		file_usage_add($file,'elx_badge_flags','flag',$flag->fid); //Record that this module is using this file
+		variable_set('badge_flag_image_fid',$file->fid); //If variable_get/set() is not used, then it won't be possible to actually remove the file from server
+		$flag->badge_image = $file->fid;
+	}
+	elseif($values['badge_image'] == 0) //else if the Remove button is clicked,remove the module's reference to the uploaded file & remove the file
+	{
+		$fid = variable_get('badge_flag_image_fid', FALSE);
+		$file = $fid?file_load($fid):FALSE;
+		if($file)
+		{
+		  file_usage_delete($file,'elx_badge_flags','flag',$flag->fid); //Record that this module no longer uses this file 
+		  file_delete($file); //If no other module uses this file, delete it; else cancel the delete operation (handled by this function itself)
+		}
+		//Unset relevant variables
+		variable_set('badge_flag_image_fid', FALSE);
+		unset($flag->badge_image);
+	}
+	
+	$flag->save();
+}
+
+/**
+ * Implements hook_i18n_string_info().
+ * Created by SUPRIYA RAJGOPAL on 15Sep16
+ * Borrowed from http://drupal.stackexchange.com/questions/125335/implementing-i18n-string-translation-in-a-custom-module
+ */
+function elx_badge_flags_i18n_string_info() {
+  $groups['flag'] = array(
+    'title' => t('Flags'),
+    'description' => t('Translatable flag items: flagging and badge items. E.g. earned badge description, etc.'),
+    'format' => TRUE, // This group has strings with format.
+    'list' => FALSE, // This group cannot list all strings.
+  );
+  return $groups;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function elx_badge_flags_views_api()
+{
+  return array(
+    'api' => 3.0,
+    'path' => drupal_get_path('module', 'elx_badge_flags') . '/views',
+  );
+}

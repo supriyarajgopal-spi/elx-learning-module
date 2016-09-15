@@ -2,7 +2,7 @@
 /**
  * Provides a custom views handler field for Flag Badge Images.
  */
-class elx_utility_handler_field_badge_image extends views_handler_field {
+class elx_badge_flags_handler_field_badge_image extends views_handler_field {
 
   function option_definition() {
     $options = parent::option_definition();
@@ -22,7 +22,6 @@ class elx_utility_handler_field_badge_image extends views_handler_field {
     // data provided by fields previously added in your view.
     // dpm($data);
     // Insert PHP code here, or display greeting.
-	drupal_set_message('<pre>'.print_r($values,TRUE).'</pre>');
     $output = t("Hello World!");
     return $output; 
   }

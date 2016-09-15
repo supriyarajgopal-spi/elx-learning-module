@@ -318,11 +318,11 @@
 
       /* BADGES
       *
-      * 9/15/16 - current state of modal output is insufficient for css only, so override 
+      * 9/15/16 - current state of modal output is insufficient for css only, so override
       *
       *
       */
-      if($('body.page-badges.section-badges').size()) {
+      if ($('body.page-badges.section-badges').size()) {
 
         var httpimg;
 

@@ -16,19 +16,6 @@ function elx_guest_url_form_user_admin_settings_alter(&$form, &$form_state, $for
 }
 
 /**
- * Implements hook_menu().
- * To allow user account registration through guest URLs
- */
-function elx_guest_url_menu() {
-    $items['signup'] = array(
-      'page callback' => '_guest_account_creation',
-	  'access callback' => TRUE,
-	  'type' => MENU_CALLBACK,
-    );
-    return $items;
-}
-
-/**
  * Implements hook_menu_alter().
  * Grant permission to register without admin approval if "New user registration through Guest URLs only." option is selected in User Account settings page
  */
@@ -187,15 +174,13 @@ function elx_guest_url_node_presave($node)
 		}
 		
 		//The resulting array elements will be a permutation of the no. of markets and no. of doors
-        foreach ($URLs as $url) {
-            //Example URL: http://myelx.com/signup?account=Acmexx&door=4&market=X&country=Y&region=Z
-			$guest_url_value = $base_url.'/signup?';
-			$queryString = drupal_http_build_query($url);
-
-            $completed_url = $guest_url_value.$queryString;//Add to guest URL stub
-
-            array_push($completed_urls,$completed_url);
-        }
+    foreach ($URLs as $url) {
+      //Example URL: http://myelx.com/user/register?account=Acmexx&door=4&market=X&country=Y&region=Z
+      $completed_urls[] = url('user/register', array(
+        'query' => $url,
+        'absolute' => TRUE,
+      ));
+    }
 
         $node_wrapper->field_guest_url = $completed_urls; //Save each generated guest url in it's own key in field_guest_url
     }
@@ -203,7 +188,7 @@ function elx_guest_url_node_presave($node)
 
 /**
  * Implements hook_preprocess_page()
- * Redirect to new signup page if #/signup page is visited
+ * Redirect to registration page if #/signup page is visited
  */
 function elx_guest_url_preprocess_page(&$vars)
 {

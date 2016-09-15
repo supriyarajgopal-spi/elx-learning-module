@@ -232,4 +232,9 @@ body.page-levels-in-progress {
 
   }
 
+  .ajax-progress-throbber {
+    // So it doesn't cause the text to move
+    position: absolute;
+  }
+
 }

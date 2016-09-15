@@ -334,6 +334,25 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Dashboard User Points */
+  $handler = $view->new_display('panel_pane', 'Dashboard User Points', 'dashboard_user_points');
+  $handler->display->display_options['display_description'] = 'For User Dashboard "My Leaderboard"';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['user_points'] = array(
     t('Master'),
     t('User Points'),
@@ -362,6 +381,8 @@ function dashboard_and_menu_views_default_views() {
     t('List User Points'),
     t('View panes'),
     t('Personal User Points'),
+    t('Dashboard User Points'),
+    t('For User Dashboard "My Leaderboard"'),
   );
   $export['user_points'] = $view;
 

@@ -167,8 +167,8 @@
           }, time);
 
         };
-        // });
-        $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal); // function() {
+
+        $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal);
 
       });
 
@@ -314,6 +314,103 @@
         $('body.section-user.page-user').ready(get_page_data);
 
       } // size
+
+
+      /* BADGES
+      *
+      * 9/15/16 - current state of modal output is insufficient for css only, so override 
+      *
+      *
+      */
+      if($('body.page-badges.section-badges').size()) {
+
+        var httpimg;
+
+        var launchBadgesModal = function (time) {
+
+          console.log(httpimg);
+
+          if (!time) { var time = 1000; }
+
+          setTimeout(function (time) {
+
+            var close_action = function () {
+
+              // flush out prior content //
+              $('body.page-badges.section-badges #modalContent').hide();
+              $('body.page-badges.section-badges #modalContent .ctools-modal-content').empty();
+              $('body.page-badges.section-badges #modalContent .ctools-modal-content').remove();
+              $('body.page-badges.section-badges #modalContent').remove();
+              $('body.page-badges.section-badges #modalBackdrop').hide().empty();
+
+              $('body.page-badges.section-badges').removeClass('ctools-modal-open').addClass('ctools-modal-close');
+
+            };
+
+            var asset = $('.page-badges.section-badges #modalContent .ctools-modal-content').html();
+
+            // MAIN BREAK POINT FOR AJAX MODAL // if null return and check in 1.5 sec //
+            if (asset) {
+              // do nothing
+              console.log('asset: ' + asset);
+
+              var title = $(asset).find('#modal-title').text();
+
+            }
+            else {
+              launchBadgesModal(1500);
+              return;
+            }
+
+            // empty out before dom injection //
+            $('body.page-badges.section-badges #modalContent').empty();
+
+            var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(close_action);
+            var titlepiece = $('<div class="badge-title">' + title + '</div>');
+            var centerpiece = $('<img class="badge-img" src="' + httpimg + '" />');
+
+            $('body.page-badges.section-badges #modalContent').prepend(modalheader);
+            $('body.page-badges.section-badges #modalContent').append(centerpiece);
+            $('body.page-badges.section-badges #modalContent').append(titlepiece);
+
+            // final style adjustments //
+            $('body.page-badges.section-badges #modalBackdrop').css({
+              'background-color': '#040A2B',
+              'opacity': '0.8'
+            });
+
+            $('body.page-badges.section-badges #modalContent').css({
+              'border': '1px solid black',
+              'width': '34%',
+              'margin-top': '50px',
+              'margin-left': '10px',
+              'background-color': 'white',
+              'overflow': 'visible'
+            });
+
+            $('.ctools-modal-content').css({
+              display: 'none'
+            });
+
+            // center using existing facility // resize not just initial parts that render unresize at first
+            $(window).trigger('resize');
+
+          }, time);
+
+        };
+
+
+        // PER BADGE CLICK //
+        $('.views-field a').click(function () {
+
+          var bgimg = $(this).parent().parent().css('background-image');
+          httpimg = bgimg.split('url("')[1].split('")')[0];
+
+          $('#modal-content.modal-content').ready(launchBadgesModal);
+
+        });
+
+      } // size check
 
     }
 

@@ -2,6 +2,7 @@
 body.page-leaderboard {
 
   $field-picture-radius: 112px;
+  $field-picture-radius-header: 175px;
 
   main {
 
@@ -14,14 +15,46 @@ body.page-leaderboard {
       letter-spacing: '0.1em';
     }
 
-    .view-filters {
-      padding: 80px 0 20px;
+    h1::before {
+      content: 'Rank';
+      float: left;
+      font-size: 24px;
+      margin-top: 100px;
+      margin-left: 100px;
+    }
 
-      form#views-exposed-form-user-points-panel-pane-1 {
-        select {
-          width: 100%;
+    h1::after {
+      content: 'Points';
+      float: right;
+      font-size: 24px;
+      margin-top: 100px;
+      margin-right: 100px;
+    }
+
+    form#dashboard-and-menu-leaderboard-filter-form {
+      background-color: lightgray;
+      padding: 65px 50px 1px;
+      text-align: center;
+
+      .form-item-leaderboard-filter {
+
+        label {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 1.1em;
         }
+
+        select {
+          background: white none repeat scroll 0 0;
+          width: 300px;
+          margin: 10px;
+        }
+
       }
+    }
+
+    .pane-dashboard-and-menu-leaderboard-filter {
+      margin-top: -80px;
     }
 
     .pane-user-points-panel-pane-2 {
@@ -36,8 +69,8 @@ body.page-leaderboard {
       font-family: $font-family-serif;
       padding: 25px;
       position: relative;
-      z-index: 1000;
-      top: 80px;
+      z-index: 100;
+      /* top: 80px; */
       color: white;
       background-color: #040a2b;
       width: 90%;
@@ -48,18 +81,18 @@ body.page-leaderboard {
         position: relative;
 
         .views-field-picture {
-          margin-left: 30%;
-          margin-top: -80px;
+          margin-left: 25%;
+          margin-top: -90px;
           position: absolute;
 
           .field-content {
             background-color: #f0f8ff;
             border: 3px solid gold;
-            border-radius: 150px;
+            border-radius: $field-picture-radius-header;
             display: block;
             float: left;
-            height: 150px;
-            width: 150px;
+            height: $field-picture-radius-header;
+            width: $field-picture-radius-header;
             background-color: #f0f8ff;
             background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
             background-size: 100%;
@@ -75,12 +108,14 @@ body.page-leaderboard {
           width: 25%;
         }
 
+        .views-field-uid::before,
         .views-field-points::before {
           content: '#';
-          font-size: '0.5em';
+          font-size: 32px;
           vertical-align: super;
         }
 
+        .views-field-uid,
         .views-field-points {
           margin-left: 10px;
           font-family: arial;
@@ -139,7 +174,7 @@ body.page-leaderboard {
 
             width: 15%;
             font-family: arial;
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
 
             span.field-content {
@@ -150,7 +185,7 @@ body.page-leaderboard {
 
           .views-field-counter::before {
             content: '#';
-            font-size: '0.5em';
+            font-size: 24px;
             vertical-align: super;
           }
 

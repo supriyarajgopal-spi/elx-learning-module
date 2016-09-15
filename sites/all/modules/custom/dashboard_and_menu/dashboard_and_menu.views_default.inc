@@ -125,6 +125,10 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
   /* No results behavior: Global: Result summary */
   $handler->display->display_options['empty']['result']['id'] = 'result';
   $handler->display->display_options['empty']['result']['table'] = 'views';
@@ -343,6 +347,13 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/tools">SEE FULL LEADERBOARD</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -383,6 +394,7 @@ function dashboard_and_menu_views_default_views() {
     t('Personal User Points'),
     t('Dashboard User Points'),
     t('For User Dashboard "My Leaderboard"'),
+    t('<a href="/tools">SEE FULL LEADERBOARD</a>'),
   );
   $export['user_points'] = $view;
 

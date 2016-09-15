@@ -85,12 +85,6 @@ function _elx_badge_flags_form_submit($form, &$form_state)
 			$flag->$translatableString = i18n_string('flag:elx_badge_flags:'.$translatableString,$values[$translatableString]['value'],array('format' => 'full_html','update' => TRUE));
 	}
 	
-	/* if(isset($values['badge_description']['value']) && $values['badge_description']['value']!='')
-		$flag->badge_description = i18n_string('flag:elx_badge_flags:badge_description',$values['badge_description']['value'],array('format' => 'full_html','update' => TRUE));
-	
-	if(isset($values['badge_unearned_description']['value']) && $values['badge_unearned_description']['value']!='')
-		$flag->badge_unearned_description = i18n_string('flag:elx_badge_flags:badge_unearned_description',$values['badge_unearned_description']['value'],array('format' => 'full_html','update' => TRUE)); */
-	
 	/** Save the badge image when Upload is clicked & remove when Remove button is clicked.
 	 * Borrowed from http://drupal.stackexchange.com/questions/58317/how-to-hook-into-file-upload-and-remove-button
 	 */

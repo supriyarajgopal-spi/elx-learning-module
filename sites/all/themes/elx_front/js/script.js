@@ -236,7 +236,7 @@
       }
 
       /* DASHBOARD OVERRIDE  /user/123 */
-      if ($('body.section-user.page-user main .profile').size()) {
+      if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
 
         var realname;
         var firstname;
@@ -289,23 +289,28 @@
 
         var get_page_data = function () {
 
-          realname = $('.profile .field-name-realname').find('a').text();
-          firstname = $('.profile .field-name-field-first-name').find('.field-item').text();
+          var root_node = '.profile ';
+          var alt_node = '.panel-display .inside ';
 
-          market = $('.profile .field-type-entityreference').find('a').text();
+          var context = root_node || alt_node;
+
+          realname = $('.field-name-realname', context).find('a').text();
+          firstname = $('.field-name-field-first-name', context).find('.field-item').text();
+
+          market = $('.field-type-entityreference', context).find('a').text();
           store = '';
-          membersince = $('.profile .field-name-field-hire-date').find('span.date-display-single').text();
-          loc = $('.profile .field-name-field-country').find('.field-item').text();
+          membersince = $('.field-name-field-hire-date', context).find('span.date-display-single').text();
+          loc = $('.field-name-field-country', context).find('.field-item').text();
           lang = '';
 
           // not used but available // 9/13/2016 //
-          $('.profile .item-list');
-          $('.profile .userpoints-total');
-          $('.profile ul.userpoints-links');
-          $('.profile .field-name-field-last-name');
-          $('.profile dl');
-          $('.profile .field-name-field-region-list');
-          $('.profile .field-name-field-last-access-date');
+          $('.item-list');
+          $('.userpoints-total');
+          $('ul.userpoints-links');
+          $('.field-name-field-last-name');
+          $('dl');
+          $('.field-name-field-region-list');
+          $('.field-name-field-last-access-date');
 
           setTimeout(set_dashboard_layout, 500);
 
@@ -337,11 +342,12 @@
             var close_action = function () {
 
               // flush out prior content //
-              $('body.page-badges.section-badges #modalContent').hide();
+              /*$('body.page-badges.section-badges #modalContent').hide();
               $('body.page-badges.section-badges #modalContent .ctools-modal-content').empty();
               $('body.page-badges.section-badges #modalContent .ctools-modal-content').remove();
-              $('body.page-badges.section-badges #modalContent').remove();
-              $('body.page-badges.section-badges #modalBackdrop').hide().empty();
+              */$('body.page-badges.section-badges #modalContent').remove();
+              $('body.page-badges.section-badges #modalBackdrop').hide();
+              $('body.page-badges.section-badges #modalBackdrop').removeClass('badge-modal-backdrop-area');
 
               $('body.page-badges.section-badges').removeClass('ctools-modal-open').addClass('ctools-modal-close');
 
@@ -373,24 +379,10 @@
             $('body.page-badges.section-badges #modalContent').append(centerpiece);
             $('body.page-badges.section-badges #modalContent').append(titlepiece);
 
-            // final style adjustments //
-            $('body.page-badges.section-badges #modalBackdrop').css({
-              'background-color': '#040A2B',
-              'opacity': '0.8'
-            });
+            $('body.page-badges.section-badges #modalBackdrop').addClass('badge-modal-backdrop-area');
+            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area');
 
-            $('body.page-badges.section-badges #modalContent').css({
-              'border': '1px solid black',
-              'width': '34%',
-              'margin-top': '50px',
-              'margin-left': '10px',
-              'background-color': 'white',
-              'overflow': 'visible'
-            });
-
-            $('.ctools-modal-content').css({
-              display: 'none'
-            });
+            $('.ctools-modal-content').addClass('badge-hide');
 
             // center using existing facility // resize not just initial parts that render unresize at first
             $(window).trigger('resize');

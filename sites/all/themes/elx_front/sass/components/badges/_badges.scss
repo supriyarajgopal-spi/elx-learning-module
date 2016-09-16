@@ -21,13 +21,35 @@
   .ctools-modal-content {
     opacity: 0;
     visibility: hidden;
+
+    .badge-hide {
+      display: none;
+    }
+  }
+
+  #modalBackdrop.badge-modal-backdrop-area {
+    background-color: #040a2b !important;
+    opacity: '0.8';
   }
 
   #modalContent.modal-default {
     width: 400px;
   }
 
+  #modalContent.badge-modal-content-area {
+    width: 34%;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: white;
+    overflow: visible;
+
+    a.close {
+      cursor: pointer;
+    }
+  }
+
   #modalContent {
+
     .modal-header {
 
       width: 100%;

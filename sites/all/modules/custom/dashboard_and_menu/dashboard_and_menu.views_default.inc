@@ -11,6 +11,1285 @@ function dashboard_and_menu_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'elx_administration_users';
+  $view->description = 'List, add, and edit users.';
+  $view->tag = 'admin';
+  $view->base_table = 'users';
+  $view->human_name = 'ELX Administration: Users';
+  $view->core = 0;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Defaults */
+  $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['title'] = 'Users';
+  $handler->display->display_options['css_class'] = 'admin-views-view';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'menu';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 50;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'mail' => 'name',
+    'status' => 'status',
+    'rid' => 'rid',
+    'created' => 'created',
+    'access' => 'access',
+    'edit_node' => 'edit_node',
+    'cancel_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = 'access';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br />',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '&emsp;',
+      'empty_column' => 0,
+    ),
+    'cancel_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['style_options']['empty_table'] = TRUE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No users available.';
+  /* Field: Bulk operations: User */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::user_block_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_user_cancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::flag_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Award Badges',
+    ),
+    'action::views_bulk_operations_user_roles_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Change user roles',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Send e-mail',
+    ),
+    'action::one_time_login_send_register_admin_created' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Send welcome email',
+    ),
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Field: User: Active */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['label'] = 'Position';
+  $handler->display->display_options['fields']['rid']['type'] = 'ul';
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Member for';
+  $handler->display->display_options['fields']['created']['date_format'] = 'raw time ago';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'time ago';
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  /* Field: User: Cancel link */
+  $handler->display->display_options['fields']['cancel_node']['id'] = 'cancel_node';
+  $handler->display->display_options['fields']['cancel_node']['table'] = 'users';
+  $handler->display->display_options['fields']['cancel_node']['field'] = 'cancel_node';
+  $handler->display->display_options['fields']['cancel_node']['label'] = '';
+  $handler->display->display_options['fields']['cancel_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cancel_node']['hide_alter_empty'] = FALSE;
+  /* Field: User: Market Administrator */
+  $handler->display->display_options['fields']['field_market_administrator']['id'] = 'field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['field'] = 'field_market_administrator';
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: Name */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'users';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  $handler->display->display_options['filters']['uid']['group'] = 1;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 'All';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['remember'] = TRUE;
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember'] = TRUE;
+  /* Filter criterion: User: First name (field_first_name) */
+  $handler->display->display_options['filters']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['filters']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_first_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['operator_id'] = 'field_first_name_value_op';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['label'] = 'First name';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['operator'] = 'field_first_name_value_op';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['identifier'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Last name (field_last_name) */
+  $handler->display->display_options['filters']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['filters']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['label'] = 'Last name';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['group'] = 1;
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Position';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Region (field_region_list) */
+  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Account name (field_account_name) */
+  $handler->display->display_options['filters']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['filters']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_account_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator_id'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['label'] = 'Account name';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['identifier'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Door (field_door) */
+  $handler->display->display_options['filters']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['filters']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_door_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator_id'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['label'] = 'Door';
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['identifier'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Market Administrator (field_market_administrator) */
+  $handler->display->display_options['filters']['field_market_administrator_value']['id'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['field'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_market_administrator_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator_id'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['label'] = 'Market Administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['identifier'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Created date */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'users';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['operator'] = '>';
+  $handler->display->display_options['filters']['created']['value']['type'] = 'offset';
+  $handler->display->display_options['filters']['created']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Created date';
+  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
+  $handler->display->display_options['filters']['created']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'users';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
+  $handler->display->display_options['filters']['language']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+
+  /* Display: System */
+  $handler = $view->new_display('system', 'System', 'system_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['hide_admin_links'] = TRUE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['path'] = 'admin/people';
+  $translatables['elx_administration_users'] = array(
+    t('Defaults'),
+    t('Users'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No users available.'),
+    t('- Choose an operation -'),
+    t('Award Badges'),
+    t('Change user roles'),
+    t('Send e-mail'),
+    t('Send welcome email'),
+    t('Name'),
+    t('Active'),
+    t('Position'),
+    t('Member for'),
+    t('Last access'),
+    t('Operations'),
+    t('Market Administrator'),
+    t('E-mail'),
+    t('First name'),
+    t('Last name'),
+    t('Region'),
+    t('Account name'),
+    t('Door'),
+    t('Created date'),
+    t('Language'),
+    t('System'),
+  );
+  $export['elx_administration_users'] = $view;
+
+  $view = new view();
+  $view->name = 'elx_control_users';
+  $view->description = 'Total Control over user accounts: Contains a panel pane and a page to control user accounts.';
+  $view->tag = 'total_control';
+  $view->base_table = 'users';
+  $view->human_name = 'ELX control_users';
+  $view->core = 0;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Defaults */
+  $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['title'] = 'User Accounts';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'have total control';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '35';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'mail' => 'name',
+    'status' => 'status',
+    'rid' => 'rid',
+    'created' => 'created',
+    'login' => 'login',
+    'edit_node' => 'edit_node',
+    'cancel_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = 'login';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '<br />',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'login' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '&emsp;',
+      'empty_column' => 0,
+    ),
+    'cancel_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No users available.';
+  /* Field: Bulk operations: User */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::user_block_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_user_cancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::flag_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Award Badges',
+    ),
+    'action::views_bulk_operations_user_roles_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::one_time_login_send_register_no_approval_required' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Send welcome email',
+    ),
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: Active */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['label'] = 'Position';
+  $handler->display->display_options['fields']['rid']['type'] = 'ul';
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Member for';
+  $handler->display->display_options['fields']['created']['date_format'] = 'raw time ago';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
+  /* Field: User: Cancel link */
+  $handler->display->display_options['fields']['cancel_node']['id'] = 'cancel_node';
+  $handler->display->display_options['fields']['cancel_node']['table'] = 'users';
+  $handler->display->display_options['fields']['cancel_node']['field'] = 'cancel_node';
+  $handler->display->display_options['fields']['cancel_node']['label'] = '';
+  $handler->display->display_options['fields']['cancel_node']['element_label_colon'] = FALSE;
+  /* Field: User: Market Administrator */
+  $handler->display->display_options['fields']['field_market_administrator']['id'] = 'field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['fields']['field_market_administrator']['field'] = 'field_market_administrator';
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: Name */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'users';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['operator'] = 'not in';
+  $handler->display->display_options['filters']['uid']['value'] = array(
+    0 => 0,
+  );
+  $handler->display->display_options['filters']['uid']['group'] = 1;
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'User: Name';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 'All';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: First name (field_first_name) */
+  $handler->display->display_options['filters']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['filters']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_first_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['operator_id'] = 'field_first_name_value_op';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['label'] = 'First name';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['operator'] = 'field_first_name_value_op';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['identifier'] = 'field_first_name_value';
+  $handler->display->display_options['filters']['field_first_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Last name (field_last_name) */
+  $handler->display->display_options['filters']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['filters']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['label'] = 'Last name';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['group'] = 1;
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Position';
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Region (field_region_list) */
+  $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['table'] = 'field_data_field_region_list';
+  $handler->display->display_options['filters']['field_region_list_value']['field'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_list_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator_id'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['operator'] = 'field_region_list_value_op';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['identifier'] = 'field_region_list_value';
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_region_list_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Account name (field_account_name) */
+  $handler->display->display_options['filters']['field_account_name_value']['id'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['table'] = 'field_data_field_account_name';
+  $handler->display->display_options['filters']['field_account_name_value']['field'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_account_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator_id'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['label'] = 'Account name';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['operator'] = 'field_account_name_value_op';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['identifier'] = 'field_account_name_value';
+  $handler->display->display_options['filters']['field_account_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field: Door (field_door) */
+  $handler->display->display_options['filters']['field_door_value']['id'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['table'] = 'field_data_field_door';
+  $handler->display->display_options['filters']['field_door_value']['field'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_door_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator_id'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['label'] = 'Door';
+  $handler->display->display_options['filters']['field_door_value']['expose']['operator'] = 'field_door_value_op';
+  $handler->display->display_options['filters']['field_door_value']['expose']['identifier'] = 'field_door_value';
+  $handler->display->display_options['filters']['field_door_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Market Administrator (field_market_administrator) */
+  $handler->display->display_options['filters']['field_market_administrator_value']['id'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['table'] = 'field_data_field_market_administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['field'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_market_administrator_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator_id'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['label'] = 'Market Administrator';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['operator'] = 'field_market_administrator_value_op';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['identifier'] = 'field_market_administrator_value';
+  $handler->display->display_options['filters']['field_market_administrator_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+
+  /* Display: User Admin */
+  $handler = $view->new_display('page', 'User Admin', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['hide_admin_links'] = TRUE;
+  $handler->display->display_options['path'] = 'admin/dashboard/users';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'User Accounts';
+  $handler->display->display_options['menu']['weight'] = '-14';
+  $translatables['elx_control_users'] = array(
+    t('Defaults'),
+    t('User Accounts'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No users available.'),
+    t('- Choose an operation -'),
+    t('Award Badges'),
+    t('Send welcome email'),
+    t('Name'),
+    t('E-mail'),
+    t('Active'),
+    t('Position'),
+    t('Member for'),
+    t('Last access'),
+    t('Operations'),
+    t('edit'),
+    t('Market Administrator'),
+    t('User: Name'),
+    t('First name'),
+    t('Last name'),
+    t('Region'),
+    t('Account name'),
+    t('Door'),
+    t('User Admin'),
+  );
+  $export['elx_control_users'] = $view;
+
+  $view = new view();
+  $view->name = 'elx_og_members_admin';
+  $view->description = '';
+  $view->tag = 'og';
+  $view->base_table = 'users';
+  $view->human_name = 'ELX OG members admin';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'OG members admin';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'state' => 'state',
+    'og_roles' => 'og_roles',
+    'created' => 'created',
+    'og_membership_request' => 'og_membership_request',
+    'edit_membership' => 'edit_membership',
+    'delete_membership' => 'edit_membership',
+  );
+  $handler->display->display_options['style_options']['default'] = 'name';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'state' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_roles' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_membership_request' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_membership' => array(
+      'align' => '',
+      'separator' => ' ',
+      'empty_column' => 0,
+    ),
+    'delete_membership' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: OG membership: Group membership overview */
+  $handler->display->display_options['header']['og_membership_overview']['id'] = 'og_membership_overview';
+  $handler->display->display_options['header']['og_membership_overview']['table'] = 'og_membership';
+  $handler->display->display_options['header']['og_membership_overview']['field'] = 'og_membership_overview';
+  $handler->display->display_options['header']['og_membership_overview']['manager'] = 1;
+  $handler->display->display_options['header']['og_membership_overview']['total_members_1'] = 0;
+  $handler->display->display_options['header']['og_membership_overview']['total_members_2'] = 0;
+  $handler->display->display_options['header']['og_membership_overview']['total_members_3'] = 0;
+  $handler->display->display_options['header']['og_membership_overview']['total_members'] = 1;
+  $handler->display->display_options['header']['og_membership_overview']['total_content'] = 1;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['content'] = 'No people found matching the search criteria.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Relationship: OG membership: OG membership from User */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Field: Bulk operations: OG membership */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['views_bulk_operations']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::og_user_roles_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::og_membership_delete_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+    'action::og_set_state_action' => array(
+      'selected' => 1,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'postpone_processing' => 0,
+    ),
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: OG membership: State */
+  $handler->display->display_options['fields']['state']['id'] = 'state';
+  $handler->display->display_options['fields']['state']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['state']['field'] = 'state';
+  $handler->display->display_options['fields']['state']['relationship'] = 'og_membership_rel';
+  /* Field: OG membership: OG user roles in group */
+  $handler->display->display_options['fields']['og_roles']['id'] = 'og_roles';
+  $handler->display->display_options['fields']['og_roles']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_roles']['field'] = 'og_roles';
+  $handler->display->display_options['fields']['og_roles']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['og_roles']['label'] = 'Roles';
+  $handler->display->display_options['fields']['og_roles']['type'] = 'ul';
+  /* Field: OG membership: Created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['created']['label'] = 'Member since';
+  $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
+  /* Field: OG membership: Request message */
+  $handler->display->display_options['fields']['og_membership_request']['id'] = 'og_membership_request';
+  $handler->display->display_options['fields']['og_membership_request']['table'] = 'field_data_og_membership_request';
+  $handler->display->display_options['fields']['og_membership_request']['field'] = 'og_membership_request';
+  $handler->display->display_options['fields']['og_membership_request']['relationship'] = 'og_membership_rel';
+  /* Field: OG membership: Edit link */
+  $handler->display->display_options['fields']['edit_membership']['id'] = 'edit_membership';
+  $handler->display->display_options['fields']['edit_membership']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['edit_membership']['field'] = 'edit_membership';
+  $handler->display->display_options['fields']['edit_membership']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['edit_membership']['label'] = '';
+  $handler->display->display_options['fields']['edit_membership']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_membership']['destination'] = TRUE;
+  /* Field: OG membership: Delete link */
+  $handler->display->display_options['fields']['delete_membership']['id'] = 'delete_membership';
+  $handler->display->display_options['fields']['delete_membership']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['delete_membership']['field'] = 'delete_membership';
+  $handler->display->display_options['fields']['delete_membership']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['fields']['delete_membership']['label'] = '';
+  $handler->display->display_options['fields']['delete_membership']['element_label_colon'] = FALSE;
+  /* Sort criterion: User: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'users';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  /* Contextual filter: OG membership: Group_type */
+  $handler->display->display_options['arguments']['group_type']['id'] = 'group_type';
+  $handler->display->display_options['arguments']['group_type']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['group_type']['field'] = 'group_type';
+  $handler->display->display_options['arguments']['group_type']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['arguments']['group_type']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['group_type']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['group_type']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['group_type']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['group_type']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['group_type']['limit'] = '0';
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: OG membership: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['state']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  /* Filter criterion: User: Name */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'users';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = '';
+  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'og_context';
+  $handler->display->display_options['access']['perm'] = 'manage members';
+  $handler->display->display_options['access']['group_id_arg'] = '1';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: User */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::flag_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Award Badges',
+    ),
+  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User: Markets (og_user_node) */
+  $handler->display->display_options['arguments']['og_user_node_target_id']['id'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['field'] = 'og_user_node_target_id';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_user_node_target_id']['validate']['type'] = 'og';
+  $handler->display->display_options['arguments']['og_user_node_target_id']['validate']['fail'] = 'empty';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['path'] = 'node/%/badges';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Award Badges';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['elx_og_members_admin'] = array(
+    t('Master'),
+    t('OG members admin'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('No people found matching the search criteria.'),
+    t('OG membership from user'),
+    t('OG membership'),
+    t('- Choose an operation -'),
+    t('Name'),
+    t('State'),
+    t('Roles'),
+    t('Member since'),
+    t('Request message'),
+    t('All'),
+    t('Page'),
+    t('User'),
+    t('Award Badges'),
+  );
+  $export['elx_og_members_admin'] = $view;
+
+  $view = new view();
   $view->name = 'user_points';
   $view->description = '';
   $view->tag = 'default';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Notifications feature.
+ */
+
+include_once 'elx_notifications.features.inc';

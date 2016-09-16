@@ -12,7 +12,7 @@
 
   .views-row {
 
-    width: 680px;
+    width: 80%;
     margin: 0 auto;
 
   }
@@ -21,6 +21,10 @@
   .ctools-modal-content {
     opacity: 0;
     visibility: hidden;
+  }
+
+  #modalContent.modal-default {
+    width: 400px;
   }
 
   #modalContent {

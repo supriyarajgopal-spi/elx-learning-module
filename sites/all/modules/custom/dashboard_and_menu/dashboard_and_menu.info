@@ -1,7 +1,6 @@
 name = Dashboard and Menu
 core = 7.x
 package = ELX
-version = 7.x-1.6
 dependencies[] = better_exposed_filters
 dependencies[] = context
 dependencies[] = ctools

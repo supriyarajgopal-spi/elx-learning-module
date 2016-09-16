@@ -1,7 +1,6 @@
 name = ELX Interactive Content Feature
 core = 7.x
 package = ELX
-version = 7.x-1.0
 dependencies[] = conditional_fields
 dependencies[] = ctools
 dependencies[] = ds

@@ -141,3 +141,54 @@ function elx_badge_flags_views_api()
     'path' => drupal_get_path('module', 'elx_badge_flags') . '/views',
   );
 }
+
+/**
+ * Implements of hook_token_info()
+ * The tokens we provide on generic entities require token module
+ * * Borrowed from flag\flag.tokens.inc
+ */
+function elx_badge_flags_token_info() {
+  $tokens = array();
+ 
+  $tokens['flag']['badge_description'] = array(
+    'name' => t('Earned badge description'),
+    'description' => t('The description shown when a badge is earned'),
+  );
+  
+  $tokens['flag']['badge_unearned_description'] = array(
+    'name' => t('Unearned badge description'),
+    'description' => t('The description shown when a badge is not yet earned'),
+  );
+  
+  return array(
+    'tokens' => $tokens,
+  );
+}
+
+/**
+ * Implements hook_tokens()
+ * Provide replacement values for placeholder tokens
+ * Borrowed from flag\flag.tokens.inc
+ */
+function elx_badge_flags_tokens($type, $tokens, array $data = array(), array $options = array())
+{
+	$replacements = array();
+	
+	if($type == 'flag' && !empty($data['flag']))
+	{
+		$flag = $data['flag'];
+		foreach($tokens as $name => $original)
+		{
+		  switch($name)
+		  {
+			case 'badge_description':
+			  $replacements[$original] = $flag->badge_description;
+			  break;
+			case 'badge_unearned_description':
+			  $replacements[$original] = $flag->badge_unearned_description;
+			  break;
+		  }
+		}
+	}
+	return $replacements;
+}

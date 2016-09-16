@@ -5,3 +5,25 @@
  */
 
 include_once 'elx_user_dashboard.features.inc';
+
+function elx_user_dashboard_views_pre_render(&$view) {
+  if ($view->name == 'level_quizz_progress') {
+    switch ($view->current_display) {
+      case 'completed_count':
+        $row = array_shift($view->result);
+        if ($row) {
+          $row->taxonomy_term_data_node_tid = $view->total_rows;
+          $view->result = array($row);
+        }
+        break;
+
+      case 'closest_completion':
+        $view->result = array(array_reduce($view->result, '_elx_user_dashboard_closest_completion'));
+        break;
+    }
+  }
+}
+
+function _elx_user_dashboard_closest_completion($last, $current) {
+  return $last->expression > $current->expression ? $last : $current;
+}

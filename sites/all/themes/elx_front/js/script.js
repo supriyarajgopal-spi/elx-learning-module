@@ -167,8 +167,8 @@
           }, time);
 
         };
-        // });
-        $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal); // function() {
+
+        $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal);
 
       });
 
@@ -236,7 +236,7 @@
       }
 
       /* DASHBOARD OVERRIDE  /user/123 */
-      if ($('body.section-user.page-user main .profile').size()) {
+      if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
 
         var realname;
         var firstname;
@@ -289,23 +289,28 @@
 
         var get_page_data = function () {
 
-          realname = $('.profile .field-name-realname').find('a').text();
-          firstname = $('.profile .field-name-field-first-name').find('.field-item').text();
+          var root_node = '.profile ';
+          var alt_node = '.panel-display .inside ';
 
-          market = $('.profile .field-type-entityreference').find('a').text();
+          var context = root_node || alt_node;
+
+          realname = $('.field-name-realname', context).find('a').text();
+          firstname = $('.field-name-field-first-name', context).find('.field-item').text();
+
+          market = $('.field-type-entityreference', context).find('a').text();
           store = '';
-          membersince = $('.profile .field-name-field-hire-date').find('span.date-display-single').text();
-          loc = $('.profile .field-name-field-country').find('.field-item').text();
+          membersince = $('.field-name-field-hire-date', context).find('span.date-display-single').text();
+          loc = $('.field-name-field-country', context).find('.field-item').text();
           lang = '';
 
           // not used but available // 9/13/2016 //
-          $('.profile .item-list');
-          $('.profile .userpoints-total');
-          $('.profile ul.userpoints-links');
-          $('.profile .field-name-field-last-name');
-          $('.profile dl');
-          $('.profile .field-name-field-region-list');
-          $('.profile .field-name-field-last-access-date');
+          $('.item-list');
+          $('.userpoints-total');
+          $('ul.userpoints-links');
+          $('.field-name-field-last-name');
+          $('dl');
+          $('.field-name-field-region-list');
+          $('.field-name-field-last-access-date');
 
           setTimeout(set_dashboard_layout, 500);
 
@@ -314,6 +319,90 @@
         $('body.section-user.page-user').ready(get_page_data);
 
       } // size
+
+
+      /* BADGES
+      *
+      * 9/15/16 - current state of modal output is insufficient for css only, so override
+      *
+      *
+      */
+      if ($('body.page-badges.section-badges').size()) {
+
+        var httpimg;
+
+        var launchBadgesModal = function (time) {
+
+          console.log(httpimg);
+
+          if (!time) { var time = 1000; }
+
+          setTimeout(function (time) {
+
+            var close_action = function () {
+
+              // flush out prior content //
+              /*$('body.page-badges.section-badges #modalContent').hide();
+              $('body.page-badges.section-badges #modalContent .ctools-modal-content').empty();
+              $('body.page-badges.section-badges #modalContent .ctools-modal-content').remove();
+              */$('body.page-badges.section-badges #modalContent').remove();
+              $('body.page-badges.section-badges #modalBackdrop').hide();
+              $('body.page-badges.section-badges #modalBackdrop').removeClass('badge-modal-backdrop-area');
+
+              $('body.page-badges.section-badges').removeClass('ctools-modal-open').addClass('ctools-modal-close');
+
+            };
+
+            var asset = $('.page-badges.section-badges #modalContent .ctools-modal-content').html();
+
+            // MAIN BREAK POINT FOR AJAX MODAL // if null return and check in 1.5 sec //
+            if (asset) {
+              // do nothing
+              console.log('asset: ' + asset);
+
+              var title = $(asset).find('#modal-title').text();
+
+            }
+            else {
+              launchBadgesModal(1500);
+              return;
+            }
+
+            // empty out before dom injection //
+            $('body.page-badges.section-badges #modalContent').empty();
+
+            var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(close_action);
+            var titlepiece = $('<div class="badge-title">' + title + '</div>');
+            var centerpiece = $('<img class="badge-img" src="' + httpimg + '" />');
+
+            $('body.page-badges.section-badges #modalContent').prepend(modalheader);
+            $('body.page-badges.section-badges #modalContent').append(centerpiece);
+            $('body.page-badges.section-badges #modalContent').append(titlepiece);
+
+            $('body.page-badges.section-badges #modalBackdrop').addClass('badge-modal-backdrop-area');
+            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area');
+
+            $('.ctools-modal-content').addClass('badge-hide');
+
+            // center using existing facility // resize not just initial parts that render unresize at first
+            $(window).trigger('resize');
+
+          }, time);
+
+        };
+
+
+        // PER BADGE CLICK //
+        $('.views-field a').click(function () {
+
+          var bgimg = $(this).parent().parent().css('background-image');
+          httpimg = bgimg.split('url("')[1].split('")')[0];
+
+          $('#modal-content.modal-content').ready(launchBadgesModal);
+
+        });
+
+      } // size check
 
     }
 

@@ -51,12 +51,12 @@ $font-family-serif:       Georgia, 'Times New Roman', Times, serif !default;*/
 }
 
 /*$font-family-sans-serif_head;*/
-/* line 4, /var/www/html/sites/all/themes/elx_front/sass/base/_root.scss */
+/* line 4, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_root.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 8, /var/www/html/sites/all/themes/elx_front/sass/base/_root.scss */
+/* line 8, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_root.scss */
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -67,13 +67,13 @@ html {
 }
 
 @media print {
-  /* line 8, /var/www/html/sites/all/themes/elx_front/sass/base/_root.scss */
+  /* line 8, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_root.scss */
   html {
     font-size: 12pt;
   }
 }
 
-/* line 20, /var/www/html/sites/all/themes/elx_front/sass/base/_root.scss */
+/* line 20, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_root.scss */
 body {
   margin: 0;
   padding: 0;
@@ -81,7 +81,7 @@ body {
   background-color: #fff;
 }
 
-/* line 7, /var/www/html/sites/all/themes/elx_front/sass/base/_html5.scss */
+/* line 7, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_html5.scss */
 article,
 aside,
 details,
@@ -97,7 +97,7 @@ summary {
   display: block;
 }
 
-/* line 23, /var/www/html/sites/all/themes/elx_front/sass/base/_html5.scss */
+/* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_html5.scss */
 audio,
 canvas,
 progress,
@@ -105,24 +105,24 @@ video {
   display: inline-block;
 }
 
-/* line 31, /var/www/html/sites/all/themes/elx_front/sass/base/_html5.scss */
+/* line 31, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_html5.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 37, /var/www/html/sites/all/themes/elx_front/sass/base/_html5.scss */
+/* line 37, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_html5.scss */
 progress {
   vertical-align: baseline;
 }
 
-/* line 42, /var/www/html/sites/all/themes/elx_front/sass/base/_html5.scss */
+/* line 42, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_html5.scss */
 template,
 [hidden] {
   display: none;
 }
 
-/* line 1, /var/www/html/sites/all/themes/elx_front/sass/base/_baseline.scss */
+/* line 1, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_baseline.scss */
 html {
   font-family: "akzidenz-grotesk_bq";
   -webkit-font-smoothing: antialiased;
@@ -131,61 +131,61 @@ html {
   /* Only IE, can mess with Android */
 }
 
-/* line 10, /var/www/html/sites/all/themes/elx_front/sass/base/_baseline.scss */
+/* line 10, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/_baseline.scss */
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
 a {
   color: #0072b9;
   -webkit-text-decoration-skip: objects;
 }
 
-/* line 28, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+/* line 28, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
 :visited {
   color: #003353;
 }
 
-/* line 37, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+/* line 37, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
 a:active {
   color: #c00;
 }
 
-/* line 40, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+/* line 40, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
 a:active:not(.button) {
   background-color: transparent;
 }
 
-/* line 48, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+/* line 48, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
 a:active,
 a:hover {
   outline-width: 0;
 }
 
 @media print {
-  /* line 55, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+  /* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
   :link,
   :visited {
     text-decoration: underline;
   }
-  /* line 61, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+  /* line 61, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
   a[href]::after {
     content: " (" attr(href) ")";
     font-weight: normal;
     font-size: 16px;
     text-decoration: none;
   }
-  /* line 69, /var/www/html/sites/all/themes/elx_front/sass/base/links/_links.scss */
+  /* line 69, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/links/_links.scss */
   a[href^='javascript:']::after,
   a[href^='#']::after {
     content: '';
   }
 }
 
-/* line 13, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 13, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h1 {
   font-size: 2rem;
   line-height: 3rem;
@@ -193,7 +193,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* line 23, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h2 {
   font-size: 1.5rem;
   line-height: 2.25rem;
@@ -201,7 +201,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* line 30, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 30, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h3 {
   font-size: 1.25rem;
   line-height: 2.25rem;
@@ -209,7 +209,7 @@ h3 {
   margin-bottom: 1.5rem;
 }
 
-/* line 37, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 37, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h4 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -217,7 +217,7 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
-/* line 44, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 44, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h5 {
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -225,7 +225,7 @@ h5 {
   margin-bottom: 1.5rem;
 }
 
-/* line 51, /var/www/html/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
+/* line 51, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/headings/_headings.scss */
 h6 {
   font-size: 0.625rem;
   line-height: 1.5rem;
@@ -233,7 +233,7 @@ h6 {
   margin-bottom: 1.5rem;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 abbr[title] {
   border-bottom: 0;
   text-decoration: underline;
@@ -241,25 +241,25 @@ abbr[title] {
 }
 
 @media print {
-  /* line 27, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+  /* line 27, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
 }
 
-/* line 49, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 49, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 b,
 strong {
   font-weight: inherit;
 }
 
-/* line 55, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 strong,
 b {
   font-weight: bolder;
 }
 
-/* line 85, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 85, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 pre,
 code,
 kbd,
@@ -269,23 +269,23 @@ var {
   font-size: 1em;
 }
 
-/* line 117, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 117, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 dfn {
   font-style: italic;
 }
 
-/* line 162, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 162, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 mark {
   background-color: #fd0;
   color: #000;
 }
 
-/* line 202, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 202, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 small {
   font-size: 0.875rem;
 }
 
-/* line 216, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 216, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 sub,
 sup {
   font-size: 0.625rem;
@@ -294,17 +294,17 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 226, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 226, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 sub {
   bottom: -.25em;
 }
 
-/* line 230, /var/www/html/sites/all/themes/elx_front/sass/base/text/_text.scss */
+/* line 230, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/text/_text.scss */
 sup {
   top: -.5em;
 }
 
-/* line 9, /var/www/html/sites/all/themes/elx_front/sass/components/divider/_divider.scss */
+/* line 9, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/divider/_divider.scss */
 .divider,
 hr {
   margin: 1.5rem 0;
@@ -312,17 +312,17 @@ hr {
   border-top: 1px solid #cccccc;
 }
 
-/* line 16, /var/www/html/sites/all/themes/elx_front/sass/components/divider/_divider.scss */
+/* line 16, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/divider/_divider.scss */
 .divider > :first-child, hr > :first-child {
   margin-top: 1.5rem;
 }
 
-/* line 26, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 26, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 blockquote {
   margin: 1.5rem 2rem;
 }
 
-/* line 66, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 66, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 dl,
 menu,
 ol,
@@ -330,7 +330,7 @@ ul {
   margin: 1.5rem 0;
 }
 
-/* line 77, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 77, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 ol ol,
 ol ul,
 ul ol,
@@ -338,66 +338,66 @@ ul ul {
   margin: 0;
 }
 
-/* line 87, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 87, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 dd {
   margin: 0 0 0 32px;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/init/rtl/_rtl.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/init/rtl/_rtl.scss */
 [dir="rtl"] dd {
   margin: 0 32px 0 0;
 }
 
-/* line 96, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 96, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 menu,
 ol,
 ul {
   padding: 0 0 0 32px;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/init/rtl/_rtl.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/init/rtl/_rtl.scss */
 [dir="rtl"] menu, [dir="rtl"]
 ol, [dir="rtl"]
 ul {
   padding: 0 32px 0 0;
 }
 
-/* line 127, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 127, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 figure {
   margin: 1.5rem 0;
 }
 
-/* line 146, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 146, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
-/* line 167, /var/www/html/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
+/* line 167, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/grouping/_grouping.scss */
 p,
 pre {
   margin: 1.5rem 0;
 }
 
-/* line 15, /var/www/html/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
+/* line 15, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
 img {
   border-style: none;
 }
 
-/* line 25, /var/www/html/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
+/* line 25, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
 img,
 svg {
   max-width: 100%;
   height: auto;
 }
 
-/* line 43, /var/www/html/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
+/* line 43, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/embedded/_embedded.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 20, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 20, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 button,
 input,
 optgroup,
@@ -409,52 +409,52 @@ textarea {
   margin: 0;
 }
 
-/* line 41, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 41, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 button {
   overflow: visible;
 }
 
-/* line 46, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 46, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 52, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 52, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 input {
   overflow: visible;
 }
 
-/* line 61, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 61, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 66, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 66, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 [type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-/* line 73, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 73, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 [type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 80, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 80, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: .54;
 }
 
-/* line 85, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 85, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 .button,
 button,
 html [type='button'],
@@ -464,7 +464,7 @@ html [type='button'],
   -webkit-appearance: button;
 }
 
-/* line 29, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 .button,
 button,
 [type='button'],
@@ -478,7 +478,7 @@ button,
   color: #000;
 }
 
-/* line 49, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 49, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 .button::-moz-focus-inner,
 button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
@@ -488,7 +488,7 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/* line 55, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 .button:-moz-focusring,
 button:-moz-focusring,
 [type='button']:-moz-focusring,
@@ -497,7 +497,7 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/* line 59, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 59, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 .button:hover, .button:focus, .button:active,
 button:hover,
 button:focus,
@@ -515,7 +515,7 @@ button:active,
   color: #000;
 }
 
-/* line 78, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 78, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 [disabled].button,
 button[disabled],
 [disabled][type='button'],
@@ -525,7 +525,7 @@ button[disabled],
   color: #999999;
 }
 
-/* line 83, /var/www/html/sites/all/themes/elx_front/sass/forms/button/_button.scss */
+/* line 83, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/forms/button/_button.scss */
 [disabled].button:hover,
 button[disabled]:hover,
 [disabled][type='button']:hover,
@@ -542,21 +542,21 @@ button[disabled]:active,
   color: #999999;
 }
 
-/* line 174, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 174, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 [type='checkbox'],
 [type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/* line 197, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 197, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 fieldset {
   padding: 0.525rem 0.9375rem 0.975rem;
   border: 1px solid #cccccc;
   margin: 0 2px;
 }
 
-/* line 204, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 204, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 legend {
   box-sizing: border-box;
   display: table;
@@ -567,23 +567,23 @@ legend {
   padding: 0 5px;
 }
 
-/* line 232, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 232, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 label {
   display: block;
   font-weight: bold;
 }
 
-/* line 254, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 254, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 optgroup {
   font-weight: bold;
 }
 
-/* line 267, /var/www/html/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
+/* line 267, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/forms/_forms.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 11, /var/www/html/sites/all/themes/elx_front/sass/base/tables/_tables.scss */
+/* line 11, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/tables/_tables.scss */
 table {
   margin: 1.5rem 0;
   border-collapse: collapse;
@@ -591,13 +591,13 @@ table {
   width: 100%;
 }
 
-/* line 21, /var/www/html/sites/all/themes/elx_front/sass/base/tables/_tables.scss */
+/* line 21, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/base/tables/_tables.scss */
 td,
 th {
   padding: 0;
 }
 
-/* line 50, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+/* line 50, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
 .layout-3col {
   margin-left: -20px;
   margin-right: -20px;
@@ -605,20 +605,20 @@ th {
   padding-right: 0;
 }
 
-/* line 97, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+/* line 97, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
 .layout-3col:before {
   content: "";
   display: table;
 }
 
-/* line 101, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+/* line 101, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
 .layout-3col:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 57, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+/* line 57, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
 .layout-3col__full, .layout-3col__left-content, .layout-3col__right-content, .layout-3col__left-sidebar, .layout-3col__right-sidebar, .layout-3col__first-left-sidebar, .layout-3col__second-left-sidebar, .layout-3col__col-1, .layout-3col__col-2, .layout-3col__col-3, .layout-3col__col-4, .layout-3col__col-x {
   clear: both;
   padding-left: 20px;
@@ -629,7 +629,7 @@ th {
   margin-right: -100%;
 }
 
-/* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+/* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
 [dir="rtl"] .layout-3col__full, [dir="rtl"] .layout-3col__left-content, [dir="rtl"] .layout-3col__right-content, [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__right-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x {
   float: right;
   margin-right: 0%;
@@ -637,30 +637,30 @@ th {
 }
 
 @media (min-width: 777px) {
-  /* line 50, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 50, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col {
     margin-left: -12px;
     margin-right: -13px;
     padding-left: 0;
     padding-right: 0;
   }
-  /* line 97, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 97, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   .layout-3col:before {
     content: "";
     display: table;
   }
-  /* line 101, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 101, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   .layout-3col:after {
     content: "";
     display: table;
     clear: both;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col {
     margin-left: -13px;
     margin-right: -12px;
   }
-  /* line 79, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 79, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__full, .layout-3col__left-content, .layout-3col__right-content, .layout-3col__left-sidebar, .layout-3col__right-sidebar {
     float: left;
     width: 100%;
@@ -669,18 +669,18 @@ th {
     padding-left: 12px;
     padding-right: 13px;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__full, [dir="rtl"] .layout-3col__left-content, [dir="rtl"] .layout-3col__right-content, [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__right-sidebar {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__full, [dir="rtl"] .layout-3col__left-content, [dir="rtl"] .layout-3col__right-content, [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__right-sidebar {
     padding-left: 13px;
     padding-right: 12px;
   }
-  /* line 90, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 90, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__first-left-sidebar, .layout-3col__col-1, .layout-3col__col-3, .layout-3col__col-x:nth-child(2n + 1) {
     float: left;
     width: 50%;
@@ -689,18 +689,18 @@ th {
     padding-left: 12px;
     padding-right: 13px;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(2n + 1) {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(2n + 1) {
     padding-left: 13px;
     padding-right: 12px;
   }
-  /* line 98, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 98, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__second-left-sidebar, .layout-3col__col-2, .layout-3col__col-4, .layout-3col__col-x:nth-child(2n) {
     clear: none;
     float: left;
@@ -710,13 +710,13 @@ th {
     padding-left: 12px;
     padding-right: 13px;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x:nth-child(2n) {
     float: right;
     margin-right: 50%;
     margin-left: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x:nth-child(2n) {
     padding-left: 13px;
     padding-right: 12px;
@@ -724,46 +724,46 @@ th {
 }
 
 @media (min-width: 999px) {
-  /* line 111, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 111, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__full {
     float: left;
     width: 100%;
     margin-left: 0%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__full {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 115, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 115, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__left-content {
     float: left;
     width: 66.66667%;
     margin-left: 0%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__left-content {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 119, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 119, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__right-content {
     float: left;
     width: 66.66667%;
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__right-content {
     float: right;
     margin-right: 33.33333%;
     margin-left: -100%;
   }
-  /* line 123, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 123, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__left-sidebar, .layout-3col__first-left-sidebar, .layout-3col__second-left-sidebar {
     clear: right;
     float: right;
@@ -771,17 +771,17 @@ th {
     margin-right: 66.66667%;
     margin-left: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
     clear: left;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
     float: left;
     margin-left: 66.66667%;
     margin-right: -100%;
   }
-  /* line 130, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 130, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__right-sidebar {
     clear: right;
     float: right;
@@ -789,17 +789,17 @@ th {
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__right-sidebar {
     clear: left;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__right-sidebar {
     float: left;
     margin-left: 0%;
     margin-right: -100%;
   }
-  /* line 135, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 135, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__col-1, .layout-3col__col-x:nth-child(3n+1) {
     clear: both;
     float: left;
@@ -807,13 +807,13 @@ th {
     margin-left: 0%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-x:nth-child(3n+1) {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
   }
-  /* line 141, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 141, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__col-2, .layout-3col__col-x:nth-child(3n+2) {
     clear: none;
     float: left;
@@ -821,13 +821,13 @@ th {
     margin-left: 33.33333%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-x:nth-child(3n+2) {
     float: right;
     margin-right: 33.33333%;
     margin-left: -100%;
   }
-  /* line 147, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 147, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__col-3, .layout-3col__col-x:nth-child(3n) {
     clear: none;
     float: left;
@@ -835,38 +835,38 @@ th {
     margin-left: 66.66667%;
     margin-right: -100%;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(3n) {
     float: right;
     margin-right: 66.66667%;
     margin-left: -100%;
   }
-  /* line 153, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+  /* line 153, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
   .layout-3col__col-4 {
     display: none;
   }
 }
 
-/* line 159, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
+/* line 159, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-3col/_layout-3col.scss */
 .layout-3col__grid-item-container {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 97, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+/* line 97, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
 .layout-3col__grid-item-container:before {
   content: "";
   display: table;
 }
 
-/* line 101, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+/* line 101, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
 .layout-3col__grid-item-container:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 27, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
+/* line 27, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
 .layout-center {
   padding-left: 20px;
   padding-right: 20px;
@@ -875,39 +875,39 @@ th {
 }
 
 @media (min-width: 777px) {
-  /* line 27, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
+  /* line 27, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
   .layout-center {
     padding-left: 12px;
     padding-right: 13px;
   }
-  /* line 29, /var/www/html/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
+  /* line 29, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/node_modules/zen-grids/sass/zen-grids/_grids.scss */
   [dir="rtl"] .layout-center {
     padding-left: 13px;
     padding-right: 12px;
   }
 }
 
-/* line 48, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
+/* line 48, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-center/_layout-center.scss */
 .layout-center--shared-grid,
 .layout-center.layout-3col {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 14, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
+/* line 14, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
 .layout-swap {
   position: relative;
 }
 
 @media (min-width: 555px) {
-  /* line 14, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
+  /* line 14, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
   .layout-swap {
     padding-top: 48px;
   }
 }
 
 @media (min-width: 555px) {
-  /* line 23, /var/www/html/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
+  /* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/layouts/layout-swap/_layout-swap.scss */
   .layout-swap__top {
     position: absolute;
     top: 0;
@@ -916,12 +916,12 @@ th {
   }
 }
 
-/* line 3, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 3, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-course-presentation {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 5, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 5, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   box-shadow: none;
   -webkit-transition-duration: 1s;
@@ -931,7 +931,7 @@ th {
   opacity: 0;
 }
 
-/* line 12, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 12, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -940,7 +940,7 @@ th {
   opacity: 1;
 }
 
-/* line 18, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 18, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set {
   max-width: 48em;
   margin: auto;
@@ -951,39 +951,39 @@ th {
   width: 100%;
 }
 
-/* line 26, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 26, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper {
   position: relative;
 }
 
-/* line 32, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 30, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
   text-align: left;
   font-size: 18px;
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 39, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 37, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder {
   max-width: 48em;
 }
 
-/* line 43, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 41, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper {
   height: 32em !important;
 }
 
-/* line 47, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 45, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper {
   height: 18em;
 }
 
-/* line 58, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 58, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap.active .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   display: none;
 }
 
-/* line 65, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 66, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   background-color: #4ea1bf;
   opacity: .65;
@@ -995,17 +995,17 @@ th {
   pointer-events: none;
 }
 
-/* line 77, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 79, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-inner {
   background-color: #f6fbfd;
 }
 
-/* line 81, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 83, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   background: transparent;
 }
 
-/* line 97, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 96, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   background-color: #000;
   opacity: .65;
@@ -1018,66 +1018,66 @@ th {
   border: 3px solid #fff;
 }
 
-/* line 111, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 110, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-current-thumbnail {
   border: 3px solid #fff;
 }
 
-/* line 117, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 116, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-current-thumbnail .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   display: none !important;
 }
 
-/* line 123, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 122, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-inner {
   background-color: #000;
 }
 
-/* line 127, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 126, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
   color: #fff;
 }
 
-/* line 131, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+/* line 130, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   background-color: transparent;
 }
 
-/* line 4, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 4, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .h5p-course-presentation .h5p-box-wrapper {
   background: transparent;
 }
 
-/* line 8, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 8, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .h5p-course-presentation .h5p-presentation-wrapper {
   background-image: none;
   background: transparent;
 }
 
-/* line 12, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 12, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
   background: none;
   background-image: none;
 }
 
-/* line 26, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 24, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .level-12739 .h5p-course-presentation .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 40, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 36, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .level-250 .h5p-course-presentation .h5p-progressbar .h5p-progressbar-part-show {
   background: #9a7d46 !important;
   background-image: none !important;
 }
 
-/* line 3, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 3, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .question-container.h5p-question.h5p-multichoice {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 6, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 6, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
   font-family: "optimadisplaylightlight";
   font-size: 20px;
@@ -1085,7 +1085,7 @@ th {
   letter-spacing: 2px;
 }
 
-/* line 12, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 12, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction::before {
   content: 'QUESTION:';
   font-family: "akzidenz-grotesk_bq";
@@ -1095,7 +1095,7 @@ th {
   letter-spacing: 2px;
 }
 
-/* line 25, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 25, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .question-container.h5p-question.h5p-multichoice ul.h5p-answers::before {
   content: 'ANSWERS:';
   font-size: 14px;
@@ -1104,48 +1104,48 @@ th {
   letter-spacing: 2px;
 }
 
-/* line 44, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 44, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #fff;
   background: none;
 }
 
-/* line 48, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 48, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 55, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
   color: #fff;
 }
 
-/* line 63, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 63, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 73, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 73, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #fff;
 }
 
-/* line 76, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 76, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 83, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 83, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #000;
 }
 
-/* line 87, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 87, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
@@ -1162,7 +1162,7 @@ th {
   padding: 5px 15px;
 }
 
-/* line 108, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 108, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   font-family: "akzidenz-grotesk_bq";
@@ -1170,37 +1170,37 @@ th {
   letter-spacing: 2px;
 }
 
-/* line 117, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 117, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 123, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 123, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
 }
 
-/* line 132, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 132, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .qs-footer .progress-dot {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 136, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 136, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .level-10605 .questionset .qs-footer .progress-dot.current {
   background: white;
 }
 
-/* line 57, /var/www/html/sites/all/themes/elx_front/sass/h5p-iframe.scss */
+/* line 57, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/h5p-iframe.scss */
 body {
   background: transparent;
 }
 
-/* line 61, /var/www/html/sites/all/themes/elx_front/sass/h5p-iframe.scss */
+/* line 61, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/h5p-iframe.scss */
 body div.h5p-content {
   background: transparent;
 }
 
-/* line 65, /var/www/html/sites/all/themes/elx_front/sass/h5p-iframe.scss */
+/* line 65, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/h5p-iframe.scss */
 .h5p-box-wrapper {
   max-height: 750px;
 }

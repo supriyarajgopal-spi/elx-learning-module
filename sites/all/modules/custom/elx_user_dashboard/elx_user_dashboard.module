@@ -7,13 +7,20 @@
 include_once 'elx_user_dashboard.features.inc';
 
 function elx_user_dashboard_views_pre_render(&$view) {
-  if ($view->name == 'level_quizz_progress') {
+  if ($view->name == 'levels_quizz_progress') {
+    //die("pre_render $view->name and $view->current_display");
     switch ($view->current_display) {
       case 'completed_count':
+        //dpm($view->result);
         $row = array_shift($view->result);
         if ($row) {
           $row->taxonomy_term_data_node_tid = $view->total_rows;
           $view->result = array($row);
+          //$view->result = $view->total_rows;
+          //dpm($view->result);
+           //dpm('after shift!');
+           //dpm($view->result);
+           dpm($view);
         }
         break;
 

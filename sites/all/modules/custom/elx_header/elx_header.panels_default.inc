@@ -110,7 +110,7 @@ function elx_header_default_panels_mini() {
   $pane->panel = 'middle';
   $pane->type = 'views';
   $pane->subtype = 'my_progress';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -141,6 +141,75 @@ function elx_header_default_panels_mini() {
   $display->content['new-fb9af835-2618-42aa-bbcc-79374a5de9c3'] = $pane;
   $display->panels['middle'][3] = 'new-fb9af835-2618-42aa-bbcc-79374a5de9c3';
   $pane = new stdClass();
+  $pane->pid = 'new-3bf41cf1-c754-4295-b835-03c162a89ad2';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'levels_quizz_progress-completed_count';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'My Progress',
+    'override_title_heading' => 'div',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '3bf41cf1-c754-4295-b835-03c162a89ad2';
+  $display->content['new-3bf41cf1-c754-4295-b835-03c162a89ad2'] = $pane;
+  $display->panels['middle'][4] = 'new-3bf41cf1-c754-4295-b835-03c162a89ad2';
+  $pane = new stdClass();
+  $pane->pid = 'new-7502f6dc-1c31-4aa9-beaf-9fc2c9b83495';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'levels_quizz_progress-closest_completion';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Closest to Completion',
+    'override_title_heading' => 'div',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '7502f6dc-1c31-4aa9-beaf-9fc2c9b83495';
+  $display->content['new-7502f6dc-1c31-4aa9-beaf-9fc2c9b83495'] = $pane;
+  $display->panels['middle'][5] = 'new-7502f6dc-1c31-4aa9-beaf-9fc2c9b83495';
+  $pane = new stdClass();
+  $pane->pid = 'new-48f49543-463a-4f91-b4e7-d4eab2eaf7af';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'dashboard_user_activities-suggested';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Suggested for me:',
+    'override_title_heading' => 'div',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '48f49543-463a-4f91-b4e7-d4eab2eaf7af';
+  $display->content['new-48f49543-463a-4f91-b4e7-d4eab2eaf7af'] = $pane;
+  $display->panels['middle'][6] = 'new-48f49543-463a-4f91-b4e7-d4eab2eaf7af';
+  $pane = new stdClass();
   $pane->pid = 'new-c0d2048e-ce6e-45d7-b559-1caf8ad3f0a2';
   $pane->panel = 'middle';
   $pane->type = 'block';
@@ -158,11 +227,11 @@ function elx_header_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 4;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'c0d2048e-ce6e-45d7-b559-1caf8ad3f0a2';
   $display->content['new-c0d2048e-ce6e-45d7-b559-1caf8ad3f0a2'] = $pane;
-  $display->panels['middle'][4] = 'new-c0d2048e-ce6e-45d7-b559-1caf8ad3f0a2';
+  $display->panels['middle'][7] = 'new-c0d2048e-ce6e-45d7-b559-1caf8ad3f0a2';
   $pane = new stdClass();
   $pane->pid = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
   $pane->panel = 'middle';
@@ -181,11 +250,11 @@ function elx_header_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '1c929848-8651-48f3-9522-70f6d86fa31b';
   $display->content['new-1c929848-8651-48f3-9522-70f6d86fa31b'] = $pane;
-  $display->panels['middle'][5] = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
+  $display->panels['middle'][8] = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

@@ -14,3 +14,4 @@ features[page_manager_handlers][] = user_view__panel_context_4e3f1360-5f3c-4627-
 features[views_view][] = dashboard_favorites
 features[views_view][] = dashboard_tools
 features[views_view][] = dashboard_user
+features[views_view][] = dashboard_user_activities

@@ -275,7 +275,9 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: User: First name */
@@ -348,8 +350,8 @@ function elx_user_dashboard_views_default_views() {
   /* Display: All */
   $handler = $view->new_display('panel_pane', 'All', 'all');
 
-  /* Display: User Information Name */
-  $handler = $view->new_display('panel_pane', 'User Information Name', 'user_information_name');
+  /* Display: User name */
+  $handler = $view->new_display('panel_pane', 'User name', 'user_information_name');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
@@ -364,8 +366,8 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['label'] = '';
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
 
-  /* Display: User Information Left */
-  $handler = $view->new_display('panel_pane', 'User Information Left', 'user_information_left');
+  /* Display: User Info Left */
+  $handler = $view->new_display('panel_pane', 'User Info Left', 'user_information_left');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
@@ -388,8 +390,8 @@ function elx_user_dashboard_views_default_views() {
   );
   $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
 
-  /* Display: User Information Right */
-  $handler = $view->new_display('panel_pane', 'User Information Right', 'user_information_right');
+  /* Display: User Info Right */
+  $handler = $view->new_display('panel_pane', 'User Info Right', 'user_information_right');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Hire date */
   $handler->display->display_options['fields']['field_hire_date']['id'] = 'field_hire_date';
@@ -408,6 +410,26 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'users';
   $handler->display->display_options['fields']['language']['field'] = 'language';
+
+  /* Display: Last Login */
+  $handler = $view->new_display('panel_pane', 'Last Login', 'last_login');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Last login */
+  $handler->display->display_options['fields']['login']['id'] = 'login';
+  $handler->display->display_options['fields']['login']['table'] = 'users';
+  $handler->display->display_options['fields']['login']['field'] = 'login';
+  $handler->display->display_options['fields']['login']['label'] = 'LAST LOGIN';
+  $handler->display->display_options['fields']['login']['date_format'] = 'short';
+  $handler->display->display_options['fields']['login']['second_date_format'] = 'long';
+
+  /* Display: My Points */
+  $handler = $view->new_display('panel_pane', 'My Points', 'my_points');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Userpoints total: Current total points */
+  $handler->display->display_options['fields']['points']['id'] = 'points';
+  $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
+  $handler->display->display_options['fields']['points']['field'] = 'points';
+  $handler->display->display_options['fields']['points']['label'] = 'MY POINTS';
   $translatables['dashboard_user'] = array(
     t('Master'),
     t('more'),
@@ -416,13 +438,6 @@ function elx_user_dashboard_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
     t('Store'),
     t('Location'),
     t('Markets'),
@@ -431,11 +446,132 @@ function elx_user_dashboard_views_default_views() {
     t('Language'),
     t('All'),
     t('View panes'),
-    t('User Information Name'),
-    t('User Information Left'),
-    t('User Information Right'),
+    t('User name'),
+    t('User Info Left'),
+    t('User Info Right'),
+    t('Last Login'),
+    t('LAST LOGIN'),
+    t('My Points'),
+    t('MY POINTS'),
+    t('.'),
+    t(','),
   );
   $export['dashboard_user'] = $view;
+
+  $view = new view();
+  $view->name = 'dashboard_user_activities';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'dashboard user activities';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Flags: first_viewed_content */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'first_viewed_content';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Completed';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+
+  /* Display: Activities */
+  $handler = $view->new_display('panel_pane', 'Activities', 'activities');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Suggested */
+  $handler = $view->new_display('panel_pane', 'Suggested', 'suggested');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: first_viewed_content */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'first_viewed_content';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Suggested';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '0';
+  $translatables['dashboard_user_activities'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('flag'),
+    t('Completed'),
+    t('Activities'),
+    t('View panes'),
+    t('Suggested'),
+  );
+  $export['dashboard_user_activities'] = $view;
 
   return $export;
 }

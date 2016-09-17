@@ -406,7 +406,11 @@ function elx_user_dashboard_default_page_manager_handlers() {
   $pane->subtype = 'levels_quizz_progress-completed_count';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'My Completed Levels',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -425,7 +429,11 @@ function elx_user_dashboard_default_page_manager_handlers() {
   $pane->subtype = 'levels_quizz_progress-closest_completion';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Closets to Completion',
+    'override_title_heading' => 'h2',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,

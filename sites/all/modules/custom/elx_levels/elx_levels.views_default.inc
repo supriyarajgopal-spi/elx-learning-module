@@ -390,6 +390,15 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Closest to completion */
   $handler = $view->new_display('panel_pane', 'Closest to completion', 'closest_completion');
@@ -430,7 +439,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -474,6 +482,15 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['levels_quizz_progress'] = array(
     t('Master'),
     t('<none>'),

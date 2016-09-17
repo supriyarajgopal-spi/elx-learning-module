@@ -1444,14 +1444,14 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_last_name']['alter']['text'] = '[field_first_name] [field_last_name]';
   $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  /* Field: User: Gravatar */
+  $handler->display->display_options['fields']['user_gravatar_picture']['id'] = 'user_gravatar_picture';
+  $handler->display->display_options['fields']['user_gravatar_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_gravatar_picture']['field'] = 'user_gravatar_picture';
+  $handler->display->display_options['fields']['user_gravatar_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['user_gravatar_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_gravatar_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_gravatar_picture']['picture'] = TRUE;
   /* Field: Field: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
@@ -1563,14 +1563,14 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'user_points_total';
   $handler->display->display_options['fields']['view']['display'] = 'panel_pane_3';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  /* Field: User: Gravatar */
+  $handler->display->display_options['fields']['user_gravatar_picture']['id'] = 'user_gravatar_picture';
+  $handler->display->display_options['fields']['user_gravatar_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_gravatar_picture']['field'] = 'user_gravatar_picture';
+  $handler->display->display_options['fields']['user_gravatar_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['user_gravatar_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_gravatar_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_gravatar_picture']['picture'] = TRUE;
   /* Field: User: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';

@@ -247,3 +247,33 @@
   }
 
 }
+
+// hide unearned bagdes on user page
+.page-user {
+  .three-minute-beauty-no,
+  .one-hundred-percent-club-no,
+  .beauty-queen-no,
+  .early-bird-no,
+  .fast-learner-no,
+  .first-1000-points-no,
+  .first-5000-points-no,
+  .first-10000-points-no,
+  .high-five-no,
+  .little-brown-bottle-no,
+  .new-dimension-no,
+  .on-your-way-no,
+  .perfect-ten-no,
+  .product-pro-no,
+  .rare-beauty-no,
+  .service-star-no,
+  .sleeping-beauty-no,
+  .we-heard-you-no,
+  .we-heart-you-no,
+  .welcome-no,
+  .well-read-25-no,
+  .well-read-50-no,
+  .well-read-75-no,
+  .well-read-100-no {
+    display: none;
+  }
+}

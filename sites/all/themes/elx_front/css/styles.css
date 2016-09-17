@@ -1337,6 +1337,34 @@ th {
   filter: grayscale(100%);
 }
 
+/* line 253, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-user .three-minute-beauty-no,
+.page-user .one-hundred-percent-club-no,
+.page-user .beauty-queen-no,
+.page-user .early-bird-no,
+.page-user .fast-learner-no,
+.page-user .first-1000-points-no,
+.page-user .first-5000-points-no,
+.page-user .first-10000-points-no,
+.page-user .high-five-no,
+.page-user .little-brown-bottle-no,
+.page-user .new-dimension-no,
+.page-user .on-your-way-no,
+.page-user .perfect-ten-no,
+.page-user .product-pro-no,
+.page-user .rare-beauty-no,
+.page-user .service-star-no,
+.page-user .sleeping-beauty-no,
+.page-user .we-heard-you-no,
+.page-user .we-heart-you-no,
+.page-user .welcome-no,
+.page-user .well-read-25-no,
+.page-user .well-read-50-no,
+.page-user .well-read-75-no,
+.page-user .well-read-100-no {
+  display: none;
+}
+
 /* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/box/_box.scss */
 .box {
   margin-bottom: 1.5rem;
@@ -4336,8 +4364,8 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/levels/_levels.scss */
-#modalContent.level-10605 .ctools-modal-content,
-#modalContent.level-14108 .ctools-modal-content {
+.level-10605 .ctools-modal-content,
+.level-14108 .ctools-modal-content {
   background-image: url("../images/modal_bg/holiday16.jpg");
   background-repeat: no-repeat;
   color: #fff;

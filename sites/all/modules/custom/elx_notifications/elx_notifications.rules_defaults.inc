@@ -28,7 +28,18 @@ function elx_notifications_default_rules_configuration() {
         "flag_unflagged_little_brown_bottle_badge" : [],
         "flag_unflagged_new_dimension_badge" : [],
         "flag_flagged_sleeping_beauty_badge" : [],
-        "flag_flagged_well_read_75_badge" : []
+        "flag_flagged_well_read_75_badge" : [],
+        "flag_flagged_perfect_10_badge" : [],
+        "flag_flagged_on_your_way_badge" : [],
+        "flag_flagged_service_star_badge" : [],
+        "flag_flagged_we_heart_you_badge" : [],
+        "flag_flagged_product_pro_badge" : [],
+        "flag_flagged_welcome_badge" : [],
+        "flag_unflagged_rare_beauty_badge" : [],
+        "flag_unflagged_we_heard_you_badge" : [],
+        "flag_flagged_well_read_50_badge" : [],
+        "flag_unflagged_well_read_25_badge" : [],
+        "flag_unflagged_well_read_100_badge" : []
       },
       "DO" : [
         { "entity_create" : {

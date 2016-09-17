@@ -20,7 +20,6 @@ function elx_user_dashboard_views_pre_execute(&$view) {
  */
 function elx_user_dashboard_views_pre_render(&$view) {
   if ($view->name == 'levels_quizz_progress') {
-    //die("pre_render $view->name and $view->current_display");
     switch ($view->current_display) {
       case 'completed_count':
         $row = array_shift($view->result);

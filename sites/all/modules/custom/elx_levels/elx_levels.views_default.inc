@@ -399,7 +399,8 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'Level';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: COUNT(Flags: Flagged) */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
@@ -429,7 +430,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
   $handler->display->display_options['fields']['expression']['precision'] = '0';
   $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;

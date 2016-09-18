@@ -28,15 +28,15 @@
 // *********************************************
 // COMMON INCLUDES FOR ALL QUIZ TYPES AND STYLES
 // *********************************************
-#modalContent.level-250,
-#modalContent.level-13504,
-#modalContent.level-12739,
-#modalContent.level-1299,
-#modalContent.level-252,
-#modalContent.level-1301,
-#modalContent.level-12731,
-#modalContent.level-10605,
-#modalContent.level-14108 {
+.modal-default.level-250,
+.modal-default.level-13504,
+.modal-default.level-12739,
+.modal-default.level-1299,
+.modal-default.level-252,
+.modal-default.level-1301,
+.modal-default.level-12731,
+.modal-default.level-10605,
+.modal-default.level-14108 {
 
   // click-to-reveal
   @extend %click-to-reveal-common;
@@ -59,7 +59,7 @@
 // BLACK & GOLD
 // ************
 // Re-Nutriv : level-250
-#modalContent.level-250 {
+.modal-default.level-250 {
 
   // click-to-reveal
   @extend %click-to-reveal-black-gold;
@@ -83,8 +83,8 @@
 // ************
 // Fall Preview : level-13504
 // Spring Preview : level-12739
-#modalContent.level-13504,
-#modalContent.level-12739 {
+.modal-default.level-13504,
+.modal-default.level-12739 {
 
   // click-to-reveal
   @extend %click-to-reveal-blue-ether;
@@ -107,7 +107,7 @@
 // BLUE HELIX
 // **********
 // Advanced Night Repair 2 : level-1299
-#modalContent.level-1299 {
+.modal-default.level-1299 {
 
   // click-to-reveal
   @extend %click-to-reveal-blue-helix;
@@ -130,7 +130,7 @@
 // BLUE KRYPTON
 // ************
 // Advanced Night Repair : level-252
-#modalContent.level-252 {
+.modal-default.level-252 {
 
   // click-to-reveal
   @extend %click-to-reveal-blue-krypton;
@@ -154,8 +154,8 @@
 // ******
 // New Dimension : level-1301
 // New Dimension 2 : level-12731
-#modalContent.level-1301,
-#modalContent.level-12731 {
+.modal-default.level-1301,
+.modal-default.level-12731 {
 
   // click-to-reveal
   @extend %click-to-reveal-clouds;
@@ -179,8 +179,8 @@
 // *******
 // Holiday 2015 : level-10605
 // Holiday 2016 : level-14108
-#modalContent.level-10605,
-#modalContent.level-14108 {
+.modal-default.level-10605,
+.modal-default.level-14108 {
 
   // click-to-reveal
   @extend %click-to-reveal-holiday;

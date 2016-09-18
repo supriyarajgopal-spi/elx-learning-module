@@ -150,7 +150,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->subtype = 'homepage_whatsnewtrending-panel_pane_admin';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '1',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -188,7 +191,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->subtype = 'homepage_browseproductlibrary-panel_pane_admin';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '2',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -326,7 +332,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->subtype = 'homepage_whatsnewtrending-panel_pane_user';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '1',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
@@ -364,7 +373,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->subtype = 'homepage_browseproductlibrary-panel_pane_user';
   $pane->shown = TRUE;
   $pane->access = array();
-  $pane->configuration = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '2',
+  );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,

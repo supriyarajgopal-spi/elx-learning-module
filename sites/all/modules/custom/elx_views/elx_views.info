@@ -2,7 +2,6 @@ name = ELX Views
 description = Feature for ELX Node Views
 core = 7.x
 package = ELX
-version = 7.x-1.0
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = ds

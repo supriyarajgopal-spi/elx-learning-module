@@ -2,7 +2,6 @@ name = ELX User Dashboard
 description = Custom user profile dashboard
 core = 7.x
 package = ELX
-version = 7.x-1.2
 dependencies[] = ctools
 dependencies[] = page_manager
 dependencies[] = views

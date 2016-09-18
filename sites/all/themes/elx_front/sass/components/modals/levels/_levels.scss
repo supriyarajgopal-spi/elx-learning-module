@@ -43,7 +43,6 @@ body.page-levels-in-progress {
     background-position: right top;
     background-size: 50%;
     background-color: #000;
-    color: #fff;
   }
 
 }
@@ -76,7 +75,6 @@ body.page-levels-in-progress {
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 35%;
-    color: #fff;
   }
 
 }
@@ -104,6 +102,7 @@ body.page-levels-in-progress {
 
   .ctools-modal-content {
     background: url('../images/modal_bg/clouds.jpg');
+    background-color: #4ea1bf;
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100%;
@@ -140,13 +139,12 @@ body.page-levels-in-progress {
 // used by:
 // Holiday 2015 : level-10605
 // Holiday 2016 : level-14108
-.level-10605,
-.level-14108 {
+#modalContent.level-10605,
+#modalContent.level-14108 {
 
   .ctools-modal-content {
     background-image: url('../images/modal_bg/holiday16.jpg');
     background-repeat: no-repeat;
-    color: #fff;
   }
 
 }

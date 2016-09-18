@@ -1,3 +1,10 @@
+// COMPONENTS
+@import 'click-to-reveal';
+@import 'course-presentation';
+@import 'dialog-cards';
+@import 'drag-match';
+@import 'multiple-choice';
+
 // generic h5p styles
 
 .h5p-course-presentation {
@@ -11,3 +18,6 @@
     left: 0 !important;
 }
 
+.h5p-iframe-wrapper {
+  max-height: 2000px;
+}

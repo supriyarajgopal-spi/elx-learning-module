@@ -916,19 +916,6 @@ th {
   }
 }
 
-/* line 3, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-course-presentation {
-  font-family: "akzidenz-grotesk_bq";
-}
-
-/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-element.h5p-transparent {
-  width: 100% !important;
-  height: 83.43% !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
 /* line 5, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   box-shadow: none;

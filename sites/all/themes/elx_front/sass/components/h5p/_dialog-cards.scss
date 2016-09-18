@@ -1,0 +1,63 @@
+// DRAG MATCH
+
+// general overrides
+/*
+.question-container.h5p-question.h5p-dialogcards {
+  font-family: $font-family-sans-serif-head;
+  background: transparent;
+
+  .h5p-advanced-text {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-lg-medium;
+  }
+
+  .h5p-question-introduction {
+    font-family: $font-family-serif;
+    font-size: $font-size-lg-medium;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &::before {
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+      display: inline-block;
+      margin: 10px 0;
+      letter-spacing: 2px;
+    }
+
+  }
+
+  ul.h5p-answers {
+
+    &::before {
+      font-size: $font-size-sm-small;
+      display: inline-block;
+      margin: 10px 0;
+      letter-spacing: 2px;
+    }
+
+  }
+
+}
+*/
+
+// *******
+// HOLIDAY
+//********
+// Holiday 2015 : level-10605
+// Holiday 2016 : level-14108
+.level-10605,
+.level-14108 {
+
+  .h5p-dialogcards {
+
+    .h5p-dialogcards-cardwrap-set {
+      color: #000;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+      letter-spacing: 2px;
+    }
+
+  }
+
+}

@@ -13,11 +13,22 @@
  */
 function elx_h5p_css_h5p_styles_alter(&$styles, $libraries, $mode) {
   //if (isset($libraries['H5P.MultiChoice']) && $libraries['H5P.MultiChoice']['majorVersion'] == '1') {
+  if ($mode == 'iframe') {
     $styles[] = (object) array(
       'path' => drupal_get_path('theme', 'elx_front') . '/css/h5p-iframe.css',
       // Cache buster
       'version' => '?ver=' . time(),
+      'mode' => 'iframe',
     );
+  } elseif ($mode == 'div') {
+    $styles[] = (object) array(
+      'path' => drupal_get_path('theme', 'elx_front') . '/css/h5p.css',
+      // Cache buster
+      'version' => '?ver=' . time(),
+      'mode' => 'div',
+    );
+    
+  }
     //}
 }
 

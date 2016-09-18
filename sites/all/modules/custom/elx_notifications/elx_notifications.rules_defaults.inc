@@ -23,10 +23,6 @@ function elx_notifications_default_rules_configuration() {
         "flag_flagged_fast_learner_badge" : [],
         "flag_flagged_first_1_000_points_badge" : [],
         "flag_flagged_first_10000_points_badge" : [],
-        "flag_unflagged_first_5_000_points_badge" : [],
-        "flag_unflagged_high_five_badge" : [],
-        "flag_unflagged_little_brown_bottle_badge" : [],
-        "flag_unflagged_new_dimension_badge" : [],
         "flag_flagged_sleeping_beauty_badge" : [],
         "flag_flagged_well_read_75_badge" : [],
         "flag_flagged_perfect_10_badge" : [],
@@ -35,11 +31,15 @@ function elx_notifications_default_rules_configuration() {
         "flag_flagged_we_heart_you_badge" : [],
         "flag_flagged_product_pro_badge" : [],
         "flag_flagged_welcome_badge" : [],
-        "flag_unflagged_rare_beauty_badge" : [],
-        "flag_unflagged_we_heard_you_badge" : [],
         "flag_flagged_well_read_50_badge" : [],
-        "flag_unflagged_well_read_25_badge" : [],
-        "flag_unflagged_well_read_100_badge" : []
+        "flag_flagged_first_5_000_points_badge" : [],
+        "flag_flagged_high_five_badge" : [],
+        "flag_flagged_little_brown_bottle_badge" : [],
+        "flag_flagged_new_dimension_badge" : [],
+        "flag_flagged_rare_beauty_badge" : [],
+        "flag_flagged_we_heard_you_badge" : [],
+        "flag_flagged_well_read_25_badge" : [],
+        "flag_flagged_well_read_100_badge" : []
       },
       "DO" : [
         { "entity_create" : {

@@ -2,7 +2,6 @@ name = ELX header
 description = Provides ELX header with logo, links, search, and dropdown user menu
 core = 7.x
 package = ELX
-version = 7.x-1.0
 dependencies[] = accountmenu
 dependencies[] = blockify
 dependencies[] = ctools

@@ -602,17 +602,24 @@ function elx_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'badges';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'ds';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  /* Display: User dashboard */
+  $handler = $view->new_display('page', 'User dashboard', 'user_dashboard');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/badges">SEE ALL BADGES</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'You currently have no earned badges';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['path'] = 'badges';
   $translatables['badges'] = array(
     t('Master'),
     t('Badges'),
@@ -657,7 +664,9 @@ function elx_views_views_default_views() {
     t('no'),
     t('All'),
     t('Page'),
-    t('Block'),
+    t('User dashboard'),
+    t('<a href="/badges">SEE ALL BADGES</a>'),
+    t('You currently have no earned badges'),
   );
   $export['badges'] = $view;
 

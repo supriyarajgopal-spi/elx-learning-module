@@ -1631,7 +1631,7 @@ function dashboard_and_menu_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/tools">SEE FULL LEADERBOARD</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/leaderboard">SEE FULL LEADERBOARD</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -1673,7 +1673,7 @@ function dashboard_and_menu_views_default_views() {
     t('Personal User Points'),
     t('Dashboard User Points'),
     t('For User Dashboard "My Leaderboard"'),
-    t('<a href="/tools">SEE FULL LEADERBOARD</a>'),
+    t('<a href="/leaderboard">SEE FULL LEADERBOARD</a>'),
   );
   $export['user_points'] = $view;
 

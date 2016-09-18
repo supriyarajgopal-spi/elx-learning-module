@@ -1,7 +1,6 @@
 name = ELX Levels
 core = 7.x
 package = ELX
-version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = features

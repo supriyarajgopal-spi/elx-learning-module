@@ -9,6 +9,8 @@
     text-transform: uppercase;
     letter-spacing: 2px;
 
+    /*
+    // this needs to be done in code so we can get the translation
     &::before {
       content: 'QUESTION:';
       font-family: $font-family-sans-serif;
@@ -17,11 +19,14 @@
       margin: 10px 0;
       letter-spacing: 2px;
     }
+    */
 
   }
 
   ul.h5p-answers {
 
+    /*
+    // this needs to be done in code so we can get the translation
     &::before {
       content: 'ANSWERS:';
       font-size: $font-size-sm-small;
@@ -29,6 +34,7 @@
       margin: 10px 0;
       letter-spacing: 2px;
     }
+    */
 
   }
 
@@ -57,7 +63,10 @@
 // **************
 // HOLIDAY 2016
 //***************
-.level-10605 {
+// Holiday 2015 : level-10605
+// Holiday 2016 : level-14108
+.level-10605,
+.level-14108 {
 
   .questionset {
 
@@ -171,8 +180,10 @@
 // ******************************************
 // FALL/SPRING PREVIEW, BEAUTIFUL SKIN & GMTC
 //*******************************************
-
-
+// Fall Preview : level-13504
+// Spring Preview : level-12739
+// GMTC : level-579
+// Beautiful Skin For Life : level-1300
 .level-13504,
 .level-12739,
 .level-579,
@@ -278,56 +289,56 @@
 
     }
 
-.h5p-question-feedback-content {
+    .h5p-question-feedback-content {
+      color: #4ea1bf;
+    }
+
+    button.h5p-question-show-solution.h5p-joubelui-button,
+    button.h5p-question-try-again.h5p-joubelui-button,
+    button.h5p-question-finish.h5p-joubelui-button {
+      background: #4ea1bf;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+    }
+
+  }
+
+  .h5p-element-inner .questionset-results {
+    background: transparent !important;
+    font-family: $font-family-sans-serif;
     color: #4ea1bf;
-}
 
-button.h5p-question-show-solution.h5p-joubelui-button,
-button.h5p-question-try-again.h5p-joubelui-button,
-button.h5p-question-finish.h5p-joubelui-button {
-  background: #4ea1bf;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-}
+    .greeting,
+    .feedback-text {
+      font-family: $font-family-sans-serif;
+      color: #4ea1bf;
+      font-size: $font-size-sm-extralarge;
+    }
 
-  }
+    .result-header {
+      font-family: $font-family-serif;
+      color: #4ea1bf;
+      font-size: $font-size-lg-extralarge;
+      letter-spacing: 3px;
+    }
 
-   .h5p-element-inner .questionset-results {
-  background: transparent !important;
-  font-family: $font-family-sans-serif;
-  color: #4ea1bf;
+    .result-text {
+      font-family: $font-family-serif;
+      color: #4ea1bf;
+      font-size: $font-size-lg-large;
+      letter-spacing: 3px;
 
-  .greeting,
-  .feedback-text {
-  font-family: $font-family-sans-serif;
-  color: #4ea1bf;
-  font-size: $font-size-sm-extralarge;
-  }
+    }
 
-  .result-header {
-    font-family: $font-family-serif;
-    color: #4ea1bf;
-    font-size: $font-size-lg-extralarge;
-    letter-spacing: 3px;
-  }
+    button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+    button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+      background: #4ea1bf;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
 
-  .result-text {
-    font-family: $font-family-serif;
-    color: #4ea1bf;
-    font-size: $font-size-lg-large;
-    letter-spacing: 3px;
-
-  }
-
-  button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-  button.h5p-joubelui-button.h5p-button.qs-retrybutton {
-  background: #4ea1bf;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-
-  }
+    }
 
   }
 
@@ -337,7 +348,8 @@ button.h5p-question-finish.h5p-joubelui-button {
 // *******************************
 // NEW DIMENSION & NEW DIMENSION 2
 //********************************
-
+// New Dimension : level-1301
+// New Dimension 2 : level-12731
 .level-12731,
 .level-1301 {
 
@@ -445,56 +457,56 @@ button.h5p-question-finish.h5p-joubelui-button {
 
     }
 
-.h5p-question-feedback-content {
+    .h5p-question-feedback-content {
+      color: #fff;
+    }
+
+    button.h5p-question-show-solution.h5p-joubelui-button,
+    button.h5p-question-finish.h5p-joubelui-button,
+    button.h5p-question-try-again.h5p-joubelui-button {
+      background: #4ea1bf;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+    }
+
+  }
+
+  .h5p-element-inner .questionset-results {
+    background: transparent !important;
+    font-family: $font-family-sans-serif;
     color: #fff;
-}
 
-button.h5p-question-show-solution.h5p-joubelui-button,
-button.h5p-question-finish.h5p-joubelui-button,
-button.h5p-question-try-again.h5p-joubelui-button {
-  background: #4ea1bf;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-}
+    .greeting,
+    .feedback-text {
+      font-family: $font-family-sans-serif;
+      color: #fff;
+      font-size: $font-size-sm-extralarge;
+    }
 
-  }
+    .result-header {
+      font-family: $font-family-serif;
+      color: #fff;
+      font-size: $font-size-lg-extralarge;
+      letter-spacing: 3px;
+    }
 
-   .h5p-element-inner .questionset-results {
-  background: transparent !important;
-  font-family: $font-family-sans-serif;
-  color: #fff;
+    .result-text {
+      font-family: $font-family-serif;
+      color: #fff;
+      font-size: $font-size-lg-large;
+      letter-spacing: 3px;
 
-  .greeting,
-  .feedback-text {
-  font-family: $font-family-sans-serif;
-  color: #fff;
-  font-size: $font-size-sm-extralarge;
-  }
+    }
 
-  .result-header {
-    font-family: $font-family-serif;
-    color: #fff;
-    font-size: $font-size-lg-extralarge;
-    letter-spacing: 3px;
-  }
+    button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+    button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+      background: #080f30;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
 
-  .result-text {
-    font-family: $font-family-serif;
-    color: #fff;
-    font-size: $font-size-lg-large;
-    letter-spacing: 3px;
-
-  }
-
-  button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-  button.h5p-joubelui-button.h5p-button.qs-retrybutton {
-  background: #080f30;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-
-  }
+    }
 
   }
 
@@ -503,8 +515,9 @@ button.h5p-question-try-again.h5p-joubelui-button {
 // ****************************
 // ADVANCED NIGHT REPAIR 1 & 2
 //*****************************
-
-
+// Advanced Night Repair : level-252
+// Advanced Night Repair 2 : level-1299
+.level-252,
 .level-1299 {
 
   .questionset {
@@ -611,18 +624,18 @@ button.h5p-question-try-again.h5p-joubelui-button {
 
     }
 
-.h5p-question-feedback-content {
-    color: #fff;
-}
+    .h5p-question-feedback-content {
+      color: #fff;
+    }
 
-button.h5p-question-show-solution.h5p-joubelui-button,
-button.h5p-question-try-again.h5p-joubelui-button,
-button.h5p-question-finish.h5p-joubelui-button  {
-  background: #080f30;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-}
+    button.h5p-question-show-solution.h5p-joubelui-button,
+    button.h5p-question-try-again.h5p-joubelui-button,
+    button.h5p-question-finish.h5p-joubelui-button  {
+      background: #080f30;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+    }
 
   }
 
@@ -632,8 +645,7 @@ button.h5p-question-finish.h5p-joubelui-button  {
 // *********
 // RE-NUTRIV
 //***********
-
-
+// Re-Nutriv : level-250
 .level-250 {
 
   .questionset {
@@ -740,57 +752,57 @@ button.h5p-question-finish.h5p-joubelui-button  {
 
     }
 
-.h5p-question-feedback-content {
-    color: #fff;
-}
+    .h5p-question-feedback-content {
+      color: #fff;
+    }
 
-button.h5p-question-show-solution.h5p-joubelui-button,
-button.h5p-question-try-again.h5p-joubelui-button,
-button.h5p-question-finish.h5p-joubelui-button  {
-  background: #000;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-}
+    button.h5p-question-show-solution.h5p-joubelui-button,
+    button.h5p-question-try-again.h5p-joubelui-button,
+    button.h5p-question-finish.h5p-joubelui-button  {
+      background: #000;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+    }
 
   }
 
   .h5p-element-inner .questionset-results {
-  background: transparent !important;
-  font-family: $font-family-sans-serif;
-  color: #fff;
-
-  .greeting,
-  .feedback-text {
-  font-family: $font-family-sans-serif;
-  color: #fff;
-  font-size: $font-size-sm-extralarge;
-  }
-
-  .result-header {
-    font-family: $font-family-serif;
-    color: #9a7d46;
-    font-size: $font-size-lg-extralarge;
-    letter-spacing: 3px;
-  }
-
-  .result-text {
-    font-family: $font-family-serif;
+    background: transparent !important;
+    font-family: $font-family-sans-serif;
     color: #fff;
-    font-size: $font-size-lg-large;
-    letter-spacing: 3px;
 
-  }
+    .greeting,
+    .feedback-text {
+      font-family: $font-family-sans-serif;
+      color: #fff;
+      font-size: $font-size-sm-extralarge;
+    }
 
-  button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-  button.h5p-joubelui-button.h5p-button.qs-retrybutton {
-  background: #000;
-  color: #fff;
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-sm-small;
-  border: 1px solid #9a7d46;
+    .result-header {
+      font-family: $font-family-serif;
+      color: #9a7d46;
+      font-size: $font-size-lg-extralarge;
+      letter-spacing: 3px;
+    }
 
-  }
+    .result-text {
+      font-family: $font-family-serif;
+      color: #fff;
+      font-size: $font-size-lg-large;
+      letter-spacing: 3px;
+
+    }
+
+    button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+    button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+      background: #000;
+      color: #fff;
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-sm-small;
+      border: 1px solid #9a7d46;
+
+    }
 
   }
 

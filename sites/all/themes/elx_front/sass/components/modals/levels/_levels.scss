@@ -110,14 +110,15 @@ body.page-levels-in-progress {
 
 }
 
-// modal theme "gray-ether"
+// modal theme "holiday"
 // used by:
-// Beautiful Skin For Life : level-1300
-
-#modalContent.level-1300 {
+// Holiday 2015 : level-10605
+// Holiday 2016 : level-14108
+#modalContent.level-10605,
+#modalContent.level-14108 {
 
   .ctools-modal-content {
-    background-image: url('../images/modal_bg/gray_ether.jpg');
+    background-image: url('../images/modal_bg/holiday16.jpg');
     background-repeat: no-repeat;
   }
 
@@ -135,15 +136,14 @@ body.page-levels-in-progress {
 
 }
 
-// modal theme "holiday"
+// modal theme "gray-ether"
 // used by:
-// Holiday 2015 : level-10605
-// Holiday 2016 : level-14108
-#modalContent.level-10605,
-#modalContent.level-14108 {
+// Beautiful Skin For Life : level-1300
+
+#modalContent.level-1300 {
 
   .ctools-modal-content {
-    background-image: url('../images/modal_bg/holiday16.jpg');
+    background-image: url('../images/modal_bg/gray_ether.jpg');
     background-repeat: no-repeat;
   }
 

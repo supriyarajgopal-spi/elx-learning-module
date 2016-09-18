@@ -4,3 +4,183 @@
 @import 'dialog-cards';
 @import 'drag-match';
 @import 'multiple-choice';
+
+/*
+// SKETCHING OUT NEW STRUCTURE
+
+// *********************************************
+// COMMON INCLUDES FOR ALL QUIZ TYPES AND STYLES
+// *********************************************
+body.level-250,
+body.level-13504,
+body.level-12739,
+body.level-1299,
+body.level-252,
+body.level-1301,
+body.level-12731,
+body.level-10605,
+body.level-14108 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-common;
+
+  // course-presentation
+  @extend %course-presentation-common;
+
+  // dialog-cards
+  @extend %dialog-cards-common;
+
+  // drag-match
+  @extend %drag-match-common;
+
+  // multiple-choice
+  @extend %multiple-choice-common;
+
+}
+
+// ************
+// BLACK & GOLD
+// ************
+// Re-Nutriv : level-250
+body.level-250 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-black-gold;
+
+  // course-presentation
+  @extend %course-presentation-black-gold;
+
+  // dialog-cards
+  @extend %dialog-cards-black-gold;
+
+  // drag-match
+  @extend %drag-match-black-gold;
+
+  // multiple-choice
+  @extend %multiple-choice-black-gold;
+
+}
+
+// ************
+// BLUE ETHER
+// ************
+// Fall Preview : level-13504
+// Spring Preview : level-12739
+body.level-13504,
+body.level-12739 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-blue-ether;
+
+  // course-presentation
+  @extend %course-presentation-blue-ether;
+
+  // dialog-cards
+  @extend %dialog-cards-blue-ether;
+
+  // drag-match
+  @extend %drag-match-blue-ether;
+
+  // multiple-choice
+  @extend %multiple-choice-blue-ether;
+
+}
+
+// **********
+// BLUE HELIX
+// **********
+// Advanced Night Repair 2 : level-1299
+body.level-1299 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-blue-helix;
+
+  // course-presentation
+  @extend %course-presentation-blue-helix;
+
+  // dialog-cards
+  @extend %dialog-cards-blue-helix;
+
+  // drag-match
+  @extend %drag-match-blue-helix;
+
+  // multiple-choice
+  @extend %multiple-choice-blue-helix;
+
+}
+
+// ************
+// BLUE KRYPTON
+// ************
+// Advanced Night Repair : level-252
+body.level-252 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-blue-krypton;
+
+  // course-presentation
+  @extend %course-presentation-blue-krypton;
+
+  // dialog-cards
+  @extend %dialog-cards-blue-krypton;
+
+  // drag-match
+  @extend %drag-match-blue-krypton;
+
+  // multiple-choice
+  @extend %multiple-choice-blue-krypton;
+
+}
+
+// ******
+// CLOUDS
+// ******
+// New Dimension : level-1301
+// New Dimension 2 : level-12731
+body.level-1301,
+body.level-12731 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-clouds;
+
+  // course-presentation
+  @extend %course-presentation-clouds;
+
+  // dialog-cards
+  @extend %dialog-cards-clouds;
+
+  // drag-match
+  @extend %drag-match-clouds;
+
+  // multiple-choice
+  @extend %multiple-choice-clouds;
+
+}
+
+// *******
+// HOLIDAY
+// *******
+// Holiday 2015 : level-10605
+// Holiday 2016 : level-14108
+body.level-10605,
+body.level-14108 {
+
+  // click-to-reveal
+  @extend %click-to-reveal-holiday;
+
+  // course-presentation
+  @extend %course-presentation-holiday;
+
+  // dialog-cards
+  @extend %dialog-cards-holiday;
+
+  // drag-match
+  @extend %drag-match-holiday;
+
+  // multiple-choice
+  @extend %multiple-choice-holiday;
+
+}
+
+
+*/

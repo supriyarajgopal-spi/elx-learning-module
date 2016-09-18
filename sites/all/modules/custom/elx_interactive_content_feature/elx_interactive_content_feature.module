@@ -81,6 +81,7 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	 * Incorrect instant feedback field is not needed because H5P does not allow an element to be dropped in a wrong dropzone at all.
 	 */
 	/*----------------------------------------------------------------------------------------------------------*/
+	$dragDropDescription = "Instant feedback which replaces the text of draggable element whenever it is dropped to its correct dropzone. This will be wrapped in <p></p> tag by default. The default value of this field is <br>.";
 	//Create new 'Incorrect feedback text' setting
 	$instantFeedbackSetting = new stdClass();
 	$instantFeedbackSetting->label = t('Instant feedback');
@@ -89,7 +90,7 @@ function elx_interactive_content_feature_h5p_semantics_alter(&$semantics, $machi
 	$instantFeedbackSetting->widget = 'html';
 	$instantFeedbackSetting->tags = array('p','br','strong','em','ul','li','ol','dl','dt','sup','u'); //Allowed tags
 	$instantFeedbackSetting->default = t('');
-	$instantFeedbackSetting->description = t('Instant feedback which replaces the text of draggable element whenever it is dropped to its correct dropzone. This will be wrapped in <p></p> by default.');
+	$instantFeedbackSetting->description = t('@description',array('@description' => $dragDropDescription)); //Using placeholder to sanitize HTML inside text
 	$instantFeedbackSetting->common = true; //Same text is shown on all draggable elements. Appears under 'Settings & Text'.
 	$instantFeedbackSetting->optional = true;
 	array_splice($semantics,5,0,array($instantFeedbackSetting));

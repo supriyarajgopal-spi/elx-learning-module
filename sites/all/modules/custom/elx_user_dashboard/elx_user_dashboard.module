@@ -37,5 +37,12 @@ function elx_user_dashboard_views_pre_render(&$view) {
 }
 
 function _elx_user_dashboard_closest_completion($last, $current) {
-  return $last->expression > $current->expression ? $last : $current;
+  if (isset($last)) {
+    $last_percent = $last->flagging_node_uid / $last->nid;
+    $current_percent = $current->flagging_node_uid / $current->nid;
+    return $last_percent > $current_percent ? $last : $current;
+  }
+  else {
+    return $current;
+  }
 }

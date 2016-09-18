@@ -5,7 +5,7 @@
 @import 'drag-match';
 @import 'multiple-choice';
 
-/*
+
 // SKETCHING OUT NEW STRUCTURE
 
 // *********************************************
@@ -28,7 +28,7 @@ body.level-14108 {
   @extend %course-presentation-common;
 
   // dialog-cards
-  @extend %dialog-cards-common;
+  // @extend %dialog-cards-common;
 
   // drag-match
   @extend %drag-match-common;
@@ -51,10 +51,10 @@ body.level-250 {
   @extend %course-presentation-black-gold;
 
   // dialog-cards
-  @extend %dialog-cards-black-gold;
+  // @extend %dialog-cards-black-gold;
 
   // drag-match
-  @extend %drag-match-black-gold;
+  // @extend %drag-match-black-gold;
 
   // multiple-choice
   @extend %multiple-choice-black-gold;
@@ -76,13 +76,13 @@ body.level-12739 {
   @extend %course-presentation-blue-ether;
 
   // dialog-cards
-  @extend %dialog-cards-blue-ether;
+  // @extend %dialog-cards-blue-ether;
 
   // drag-match
-  @extend %drag-match-blue-ether;
+  // @extend %drag-match-blue-ether;
 
   // multiple-choice
-  @extend %multiple-choice-blue-ether;
+  @extend %multiple-choice-dark-on-light;
 
 }
 
@@ -93,19 +93,19 @@ body.level-12739 {
 body.level-1299 {
 
   // click-to-reveal
-  @extend %click-to-reveal-blue-helix;
+  // @extend %click-to-reveal-blue-helix;
 
   // course-presentation
-  @extend %course-presentation-blue-helix;
+  // @extend %course-presentation-blue-helix;
 
   // dialog-cards
-  @extend %dialog-cards-blue-helix;
+  // @extend %dialog-cards-blue-helix;
 
   // drag-match
-  @extend %drag-match-blue-helix;
+  // @extend %drag-match-blue-helix;
 
   // multiple-choice
-  @extend %multiple-choice-blue-helix;
+  @extend %multiple-choice-anr;
 
 }
 
@@ -116,19 +116,19 @@ body.level-1299 {
 body.level-252 {
 
   // click-to-reveal
-  @extend %click-to-reveal-blue-krypton;
+  // @extend %click-to-reveal-blue-krypton;
 
   // course-presentation
-  @extend %course-presentation-blue-krypton;
+  // @extend %course-presentation-blue-krypton;
 
   // dialog-cards
-  @extend %dialog-cards-blue-krypton;
+  // @extend %dialog-cards-blue-krypton;
 
   // drag-match
-  @extend %drag-match-blue-krypton;
+  // @extend %drag-match-blue-krypton;
 
   // multiple-choice
-  @extend %multiple-choice-blue-krypton;
+  @extend %multiple-choice-anr;
 
 }
 
@@ -141,16 +141,16 @@ body.level-1301,
 body.level-12731 {
 
   // click-to-reveal
-  @extend %click-to-reveal-clouds;
+  // @extend %click-to-reveal-clouds;
 
   // course-presentation
-  @extend %course-presentation-clouds;
+  // @extend %course-presentation-clouds;
 
   // dialog-cards
-  @extend %dialog-cards-clouds;
+  // @extend %dialog-cards-clouds;
 
   // drag-match
-  @extend %drag-match-clouds;
+  // @extend %drag-match-clouds;
 
   // multiple-choice
   @extend %multiple-choice-clouds;
@@ -166,10 +166,10 @@ body.level-10605,
 body.level-14108 {
 
   // click-to-reveal
-  @extend %click-to-reveal-holiday;
+  // @extend %click-to-reveal-holiday;
 
   // course-presentation
-  @extend %course-presentation-holiday;
+  // @extend %course-presentation-holiday;
 
   // dialog-cards
   @extend %dialog-cards-holiday;
@@ -182,5 +182,27 @@ body.level-14108 {
 
 }
 
+// ***********
+// GRAY ETHER
+// ***********
+// GMTC : level-579
+// Beautiful Skin For Life : level-1300
+body.level-579,
+body.level-1300 {
 
-*/
+  // click-to-reveal
+  // @extend %click-to-reveal-gray-ether;
+
+  // course-presentation
+  // @extend %course-presentation-gray-ether;
+
+  // dialog-cards
+  // @extend %dialog-cards-gray-ether;
+
+  // drag-match
+  // @extend %drag-match-gray-ether;
+
+  // multiple-choice
+  @extend %multiple-choice-dark-on-light;
+
+}

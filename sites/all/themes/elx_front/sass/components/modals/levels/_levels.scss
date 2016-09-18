@@ -124,22 +124,11 @@ body.page-levels-in-progress {
 
 }
 
-// modal theme "gmtc"
-// used by:
-// GMTC : level-579
-#modalContent.level-579 {
-
-  .ctools-modal-content {
-    background-image: url('../images/modal_bg/gray_ether.jpg');
-    background-repeat: no-repeat;
-  }
-
-}
-
 // modal theme "gray-ether"
 // used by:
+// GMTC : level-579
 // Beautiful Skin For Life : level-1300
-
+#modalContent.level-579,
 #modalContent.level-1300 {
 
   .ctools-modal-content {

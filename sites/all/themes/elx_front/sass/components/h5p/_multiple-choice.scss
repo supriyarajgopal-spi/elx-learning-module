@@ -1,45 +1,47 @@
 // MULTIPLE CHOICE
+%multiple-choice-common {
 
-.question-container.h5p-question.h5p-multichoice {
-  font-family: $font-family-sans-serif-head;
+  .question-container.h5p-question.h5p-multichoice {
+    font-family: $font-family-sans-serif-head;
 
-  .h5p-question-introduction {
-    font-family: $font-family-serif;
-    font-size: $font-size-lg-medium;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
-    /*
-    // this needs to be done in code so we can get the translation
-    &::before {
-      content: 'QUESTION:';
-      font-family: $font-family-sans-serif;
-      font-size: $font-size-sm-small;
-      display: inline-block;
-      margin: 10px 0;
+    .h5p-question-introduction {
+      font-family: $font-family-serif;
+      font-size: $font-size-lg-medium;
+      text-transform: uppercase;
       letter-spacing: 2px;
+
+      /*
+      // this needs to be done in code so we can get the translation
+      &::before {
+        content: 'QUESTION:';
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
+      */
+
     }
-    */
 
-  }
+    ul.h5p-answers {
 
-  ul.h5p-answers {
+      /*
+      // this needs to be done in code so we can get the translation
+      &::before {
+        content: 'ANSWERS:';
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
+      */
 
-    /*
-    // this needs to be done in code so we can get the translation
-    &::before {
-      content: 'ANSWERS:';
-      font-size: $font-size-sm-small;
-      display: inline-block;
-      margin: 10px 0;
-      letter-spacing: 2px;
     }
-    */
 
   }
 
 }
-
 // For multichoice with an iFrame
 
 .h5p-question {
@@ -65,8 +67,7 @@
 //***************
 // Holiday 2015 : level-10605
 // Holiday 2016 : level-14108
-.level-10605,
-.level-14108 {
+%multiple-choice-holiday {
 
   .questionset {
 
@@ -184,10 +185,7 @@
 // Spring Preview : level-12739
 // GMTC : level-579
 // Beautiful Skin For Life : level-1300
-.level-13504,
-.level-12739,
-.level-579,
-.level-1300 {
+%multiple-choice-dark-on-light {
 
   .questionset {
 
@@ -350,8 +348,7 @@
 //********************************
 // New Dimension : level-1301
 // New Dimension 2 : level-12731
-.level-12731,
-.level-1301 {
+%multiple-choice-clouds {
 
   .questionset {
 
@@ -517,8 +514,7 @@
 //*****************************
 // Advanced Night Repair : level-252
 // Advanced Night Repair 2 : level-1299
-.level-252,
-.level-1299 {
+%multiple-choice-anr {
 
   .questionset {
 
@@ -646,7 +642,7 @@
 // RE-NUTRIV
 //***********
 // Re-Nutriv : level-250
-.level-250 {
+%multiple-choice-black-gold {
 
   .questionset {
 

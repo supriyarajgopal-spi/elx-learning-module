@@ -2,6 +2,8 @@
 	Drupal.behaviors.elx_notifications = {
 	  attach: function (context, settings) {
 		
+                var popup_url = settings.basePath + 'notifications_popup'; //Defined in hook_menu()
+		
 		//Prevent navigating to page as per default
 		$('a.link-badge-wrapper').click(function(event) {
 			event.preventDefault();
@@ -13,7 +15,7 @@
 				content: {
 					text: function(event, api) {
 						$.ajax({
-							url: 'http://localhost:81/elx-learning-module/notifications_popup' //Defined in hook_menu()
+							url: popup_url
 						})
 						.then(function(content) {
 							api.set('content.text', content); // Set the tooltip content upon successful retrieval

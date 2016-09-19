@@ -76,6 +76,11 @@
   // multiple-choice
   @extend %multiple-choice-black-gold;
 
+  // styles for content outside of h5p
+  div.ctools-modal-content {
+    color: #fff;
+  }
+
 }
 
 // ************
@@ -124,6 +129,11 @@
   // multiple-choice
   @extend %multiple-choice-anr;
 
+  // styles for content outside of h5p
+  div.ctools-modal-content {
+    color: #fff;
+  }
+
 }
 
 // ************
@@ -146,6 +156,11 @@
 
   // multiple-choice
   @extend %multiple-choice-anr;
+
+  // styles for content outside of h5p
+  div.ctools-modal-content {
+    color: #fff;
+  }
 
 }
 
@@ -196,6 +211,12 @@
 
   // multiple-choice
   @extend %multiple-choice-holiday;
+
+  // styles for content outside of h5p
+  div.ctools-modal-content {
+    color: #fff;
+  }
+
 
 }
 

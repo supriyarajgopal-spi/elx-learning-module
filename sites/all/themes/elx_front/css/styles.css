@@ -2614,6 +2614,27 @@ div#panels-ipe-control-container {
   max-height: 2000px;
 }
 
+/* line 80, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+.modal-default.level-250 div.ctools-modal-content {
+  color: #fff;
+}
+
+/* line 133, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+.modal-default.level-1299 div.ctools-modal-content {
+  color: #fff;
+}
+
+/* line 161, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+.modal-default.level-252 div.ctools-modal-content {
+  color: #fff;
+}
+
+/* line 216, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+.modal-default.level-10605 div.ctools-modal-content,
+.modal-default.level-14108 div.ctools-modal-content {
+  color: #fff;
+}
+
 /* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .header {
   background-color: #040a2b;

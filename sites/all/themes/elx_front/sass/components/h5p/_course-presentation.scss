@@ -23,8 +23,21 @@
 
 }
 
+// *********
+// BLACK & GOLD
+// *********
+// Re-Nutriv : level-250
+%course-presentation-black-gold {
+
+  .h5p-progressbar .h5p-progressbar-part-show {
+    background: #9a7d46 !important;
+    background-image: none !important;
+  }
+
+}
+
 // **************
-// SPRING PREVIEW
+// BLUE ETHER
 //***************
 // Fall Preview : level-13504
 // Spring Preview : level-12739
@@ -38,14 +51,14 @@
 }
 
 // *********
-// RE-NUTRIV
+// HOLIDAY
 // *********
-// Re-Nutriv : level-250
-%course-presentation-black-gold {
+// Holiday 2015 : level-10605
+// Holiday 2016 : level-14108
+%course-presentation-holiday {
 
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: #9a7d46 !important;
-    background-image: none !important;
+  .h5p-course-presentation {
+    color: #fff;
   }
 
 }

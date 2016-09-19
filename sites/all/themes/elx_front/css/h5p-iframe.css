@@ -1147,16 +1147,16 @@ body.level-14108 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element
   background-image: none;
 }
 
-/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-body.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
-body.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
-  background: #4ea1bf !important;
+/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-250 .h5p-progressbar .h5p-progressbar-part-show {
+  background: #9a7d46 !important;
   background-image: none !important;
 }
 
 /* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-body.level-250 .h5p-progressbar .h5p-progressbar-part-show {
-  background: #9a7d46 !important;
+body.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
+body.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
+  background: #4ea1bf !important;
   background-image: none !important;
 }
 

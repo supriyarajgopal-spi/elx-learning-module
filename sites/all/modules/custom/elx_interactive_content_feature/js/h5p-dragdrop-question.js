@@ -19,6 +19,9 @@
 				//Enable each draggable which is disabled by default if skipVisuals = false (as set above)
 				this.draggables.forEach(function(draggable) {
 					draggable.enable();
+					//If already dropped in a dropzone, lock it there.
+					if(draggable.isInDropZone(draggable.id))
+						draggable.disable();
 				});
 
 				//Change text of draggable element depending on whether it is dropped in correct dropzone or not

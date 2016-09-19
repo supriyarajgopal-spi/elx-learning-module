@@ -368,7 +368,15 @@ function elx_user_dashboard_views_default_views() {
 
   /* Display: User Info Left */
   $handler = $view->new_display('panel_pane', 'User Info Left', 'user_information_left');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   /* Field: Field: Door */
   $handler->display->display_options['fields']['field_door']['id'] = 'field_door';
   $handler->display->display_options['fields']['field_door']['table'] = 'field_data_field_door';
@@ -389,6 +397,12 @@ function elx_user_dashboard_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['og_user_node']['delta_offset'] = '0';
+  /* Field: User: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
 
   /* Display: User Info Right */
   $handler = $view->new_display('panel_pane', 'User Info Right', 'user_information_right');

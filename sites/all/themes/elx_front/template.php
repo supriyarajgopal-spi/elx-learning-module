@@ -413,3 +413,23 @@ function elx_front_pager($variables) {
 
   }
 }
+
+/**
+ * Overrides theme_front_file_link().
+ */
+function elx_front_file_link($variables) {
+  $file = $variables['file'];
+
+  $url = file_create_url($file->uri);
+
+  // Set options as per anchor format described at
+  // http://microformats.org/wiki/file-format-examples
+  $options = array(
+    'attributes' => array(
+      'type' => $file->filemime . '; length=' . $file->filesize,
+      'target' => '_blank',
+    ),
+  );
+
+  return '<div id="detail-content-btn">' . l(t('VIEW TOOL'), $url, $options) . '</div>';
+}

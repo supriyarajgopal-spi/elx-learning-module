@@ -5,3 +5,31 @@
  */
 
 include_once 'elx_notifications.features.inc';
+
+/**
+ * Implements hook_enable().
+ */
+
+/**
+ * Implements hook_menu().
+ * Used to populate the pop-up shown when Notifications link is clicked
+ */
+function elx_notifications_menu()
+{
+  $items['notifications_popup'] = array(
+      'title' => 'Notifications Modal',
+      'page callback' => '_elx_notifications_modal', //User defined function called when the link is clicked
+	  'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * User defined page callback to show Notifications view in a qTip popup
+ * Borrowed from https://www.drupal.org/node/469472#comment-1615298
+ */
+function _elx_notifications_modal()
+{
+  print views_embed_view('notifications','page'); //print instead of return renders only the view instead of whole HTML page
+  exit;
+}

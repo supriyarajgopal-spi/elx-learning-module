@@ -24,24 +24,30 @@ function elx_notifications_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Notifications';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no new notifications.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Relationship: Flags: message_seen_unseen */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'message';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'message_seen_unseen';
-  /* Field: Message: Message ID */
-  $handler->display->display_options['fields']['mid']['id'] = 'mid';
-  $handler->display->display_options['fields']['mid']['table'] = 'message';
-  $handler->display->display_options['fields']['mid']['field'] = 'mid';
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
@@ -50,7 +56,6 @@ function elx_notifications_views_default_views() {
   $handler->display->display_options['fields']['flagged']['label'] = '';
   $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['flagged']['type'] = 'custom';
-  $handler->display->display_options['fields']['flagged']['type_custom_true'] = 'Seen';
   $handler->display->display_options['fields']['flagged']['type_custom_false'] = 'New';
   $handler->display->display_options['fields']['flagged']['not'] = 0;
   /* Field: Message: Rendered Message */
@@ -63,6 +68,12 @@ function elx_notifications_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'full';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 1;
+  /* Sort criterion: Flags: Flagged time */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'flagging';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   /* Contextual filter: Message: User uid */
   $handler->display->display_options['arguments']['user']['id'] = 'user';
   $handler->display->display_options['arguments']['user']['table'] = 'message';
@@ -87,7 +98,10 @@ function elx_notifications_views_default_views() {
   $handler = $view->new_display('menu_badge', 'Menu badge', 'menu_badge_1');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -140,15 +154,13 @@ function elx_notifications_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('There are no new notifications.'),
     t('flag'),
-    t('Message ID'),
-    t('.'),
-    t(','),
-    t('Seen'),
     t('New'),
     t('All'),
     t('Page'),
     t('Menu badge'),
+    t('.'),
   );
   $export['notifications'] = $view;
 

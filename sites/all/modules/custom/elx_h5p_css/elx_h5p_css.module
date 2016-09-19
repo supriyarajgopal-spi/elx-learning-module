@@ -20,16 +20,8 @@ function elx_h5p_css_h5p_styles_alter(&$styles, $libraries, $mode) {
       'version' => '?ver=' . time(),
       'mode' => 'iframe',
     );
-  } elseif ($mode == 'div') {
-    $styles[] = (object) array(
-      'path' => drupal_get_path('theme', 'elx_front') . '/css/h5p.css',
-      // Cache buster
-      'version' => '?ver=' . time(),
-      'mode' => 'div',
-    );
-    
   }
-    //}
+  //}
 }
 
 /**

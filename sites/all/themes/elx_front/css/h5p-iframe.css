@@ -916,21 +916,16 @@ th {
   }
 }
 
-/* line 3, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-course-presentation {
-  font-family: "akzidenz-grotesk_bq";
-}
-
-/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
-.h5p-element.h5p-transparent {
-  width: 100% !important;
-  height: 83.43% !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-/* line 5, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-card-content {
+/* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-card-content,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
   box-shadow: none;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
@@ -939,8 +934,16 @@ th {
   opacity: 0;
 }
 
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content {
+/* line 13, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-current .h5p-clicktoreveal-card-content {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
   -webkit-transition-property: opacity;
@@ -948,8 +951,16 @@ th {
   opacity: 1;
 }
 
-/* line 18, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set {
+/* line 19, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap-set {
   max-width: 48em;
   margin: auto;
   display: -webkit-box;
@@ -959,40 +970,82 @@ th {
   width: 100%;
 }
 
-/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper {
+/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper {
   position: relative;
 }
 
-/* line 30, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
+/* line 31, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
   text-align: left;
   font-size: 18px;
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 37, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-cardholder {
+/* line 38, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-cardholder {
   max-width: 48em;
 }
 
-/* line 41, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper {
+/* line 42, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-image-wrapper {
   height: 32em !important;
 }
 
-/* line 45, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper {
+/* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-13504 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-1299 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-252 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-1301 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-12731 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-10605 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper,
+body.level-14108 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-wrapper {
   height: 18em;
 }
 
-/* line 58, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailwrap.active .h5p-clicktoreveal-thumbnailimage-wrapper::before {
+/* line 65, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-13504 .h5p-clicktoreveal-thumbnailwrap.active .h5p-clicktoreveal-thumbnailimage-wrapper::before,
+body.level-12739 .h5p-clicktoreveal-thumbnailwrap.active .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   display: none;
 }
 
-/* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper::before {
+/* line 73, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-13504 .h5p-clicktoreveal-thumbnailimage-wrapper::before,
+body.level-12739 .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   background-color: #4ea1bf;
   opacity: .65;
   display: block;
@@ -1003,18 +1056,20 @@ th {
   pointer-events: none;
 }
 
-/* line 79, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-inner {
+/* line 86, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-13504 .h5p-clicktoreveal-card-text-inner,
+body.level-12739 .h5p-clicktoreveal-card-text-inner {
   background-color: #f6fbfd;
 }
 
-/* line 83, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-12739 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
+/* line 90, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-13504 .h5p-clicktoreveal-card-content,
+body.level-12739 .h5p-clicktoreveal-card-content {
   background: transparent;
 }
 
-/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-thumbnailimage-wrapper::before {
+/* line 104, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   background-color: #000;
   opacity: .65;
   display: block;
@@ -1026,56 +1081,81 @@ th {
   border: 3px solid #fff;
 }
 
-/* line 110, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-current-thumbnail {
+/* line 118, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-current-thumbnail {
   border: 3px solid #fff;
 }
 
-/* line 116, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-current-thumbnail .h5p-clicktoreveal-thumbnailimage-wrapper::before {
+/* line 124, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-current-thumbnail .h5p-clicktoreveal-thumbnailimage-wrapper::before {
   display: none !important;
 }
 
-/* line 122, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-inner {
+/* line 130, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-card-text-inner {
   background-color: #000;
 }
 
-/* line 126, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-text-area p {
+/* line 134, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-card-text-area p {
   color: #fff;
 }
 
-/* line 130, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
-.level-250 .h5p-clicktoreveal .h5p-clicktoreveal-card-content {
+/* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_click-to-reveal.scss */
+body.level-250 .h5p-clicktoreveal-card-content {
   background-color: transparent;
 }
 
-/* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.h5p-course-presentation .h5p-box-wrapper {
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-250 .h5p-course-presentation .h5p-box-wrapper,
+body.level-13504 .h5p-course-presentation .h5p-box-wrapper,
+body.level-12739 .h5p-course-presentation .h5p-box-wrapper,
+body.level-1299 .h5p-course-presentation .h5p-box-wrapper,
+body.level-252 .h5p-course-presentation .h5p-box-wrapper,
+body.level-1301 .h5p-course-presentation .h5p-box-wrapper,
+body.level-12731 .h5p-course-presentation .h5p-box-wrapper,
+body.level-10605 .h5p-course-presentation .h5p-box-wrapper,
+body.level-14108 .h5p-course-presentation .h5p-box-wrapper {
   background: transparent;
 }
 
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.h5p-course-presentation .h5p-presentation-wrapper {
+/* line 11, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-250 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-13504 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-12739 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-1299 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-252 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-1301 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-12731 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-10605 .h5p-course-presentation .h5p-presentation-wrapper,
+body.level-14108 .h5p-course-presentation .h5p-presentation-wrapper {
   background-image: none;
   background: transparent;
 }
 
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
+/* line 15, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-250 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-13504 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-12739 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-1299 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-252 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-1301 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-12731 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-10605 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element,
+body.level-14108 .h5p-course-presentation .h5p-presentation-wrapper .h5p-element-outer.h5p-questionset-outer-element {
   background: none;
   background-image: none;
 }
 
-/* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.level-12739 .h5p-course-presentation .h5p-progressbar .h5p-progressbar-part-show {
+/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
+body.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.level-250 .h5p-course-presentation .h5p-progressbar .h5p-progressbar-part-show {
+/* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+body.level-250 .h5p-progressbar .h5p-progressbar-part-show {
   background: #9a7d46 !important;
   background-image: none !important;
 }
@@ -1119,155 +1199,209 @@ th {
 
 }
 */
-/* line 54, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
-.level-10605 .h5p-dialogcards .h5p-dialogcards-cardwrap-set,
-.level-14108 .h5p-dialogcards .h5p-dialogcards-cardwrap-set {
+/* line 53, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+body.level-10605 .h5p-dialogcards .h5p-dialogcards-cardwrap-set,
+body.level-14108 .h5p-dialogcards .h5p-dialogcards-cardwrap-set {
   color: #000;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
 }
 
-/* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
-.question-container.h5p-question.h5p-dragquestion {
+/* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
+body.level-250 .question-container.h5p-question.h5p-dragquestion,
+body.level-13504 .question-container.h5p-question.h5p-dragquestion,
+body.level-12739 .question-container.h5p-question.h5p-dragquestion,
+body.level-1299 .question-container.h5p-question.h5p-dragquestion,
+body.level-252 .question-container.h5p-question.h5p-dragquestion,
+body.level-1301 .question-container.h5p-question.h5p-dragquestion,
+body.level-12731 .question-container.h5p-question.h5p-dragquestion,
+body.level-10605 .question-container.h5p-question.h5p-dragquestion,
+body.level-14108 .question-container.h5p-question.h5p-dragquestion {
   font-family: "akzidenz-grotesk_bq";
   background: transparent;
   /*
-  .h5p-question-introduction {
-    font-family: $font-family-serif;
-    font-size: $font-size-lg-medium;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
-    &::before {
-      font-family: $font-family-sans-serif;
-      font-size: $font-size-sm-small;
-      display: inline-block;
-      margin: 10px 0;
+    .h5p-question-introduction {
+      font-family: $font-family-serif;
+      font-size: $font-size-lg-medium;
+      text-transform: uppercase;
       letter-spacing: 2px;
+
+      &::before {
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
+
     }
 
-  }
+    ul.h5p-answers {
 
-  ul.h5p-answers {
+      &::before {
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
 
-    &::before {
-      font-size: $font-size-sm-small;
-      display: inline-block;
-      margin: 10px 0;
-      letter-spacing: 2px;
     }
-
-  }
-  */
+    */
 }
 
-/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
-.question-container.h5p-question.h5p-dragquestion .h5p-advanced-text {
+/* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
+body.level-250 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-13504 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-12739 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-1299 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-252 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-1301 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-12731 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-10605 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text,
+body.level-14108 .question-container.h5p-question.h5p-dragquestion .h5p-advanced-text {
   font-family: "akzidenz-grotesk_bq";
   font-size: 20px;
 }
 
-/* line 54, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice,
-.level-14108 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 57, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice {
   border: 0;
 }
 
-/* line 3, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.question-container.h5p-question.h5p-multichoice {
+/* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .question-container.h5p-question.h5p-multichoice,
+body.level-13504 .question-container.h5p-question.h5p-multichoice,
+body.level-12739 .question-container.h5p-question.h5p-multichoice,
+body.level-1299 .question-container.h5p-question.h5p-multichoice,
+body.level-252 .question-container.h5p-question.h5p-multichoice,
+body.level-1301 .question-container.h5p-question.h5p-multichoice,
+body.level-12731 .question-container.h5p-question.h5p-multichoice,
+body.level-10605 .question-container.h5p-question.h5p-multichoice,
+body.level-14108 .question-container.h5p-question.h5p-multichoice {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
+/* line 7, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-13504 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-12739 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-1299 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-252 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-1301 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-12731 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-10605 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-14108 .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
   font-family: "optimadisplaylightlight";
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  /*
+      // this needs to be done in code so we can get the translation
+      &::before {
+        content: 'QUESTION:';
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
+      */
 }
 
-/* line 12, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.question-container.h5p-question.h5p-multichoice .h5p-question-introduction::before {
-  content: 'QUESTION:';
-  font-family: "akzidenz-grotesk_bq";
-  font-size: 14px;
-  display: inline-block;
-  margin: 10px 0;
-  letter-spacing: 2px;
+/* line 27, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-13504 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-12739 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-1299 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-252 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-1301 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-12731 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-10605 .question-container.h5p-question.h5p-multichoice ul.h5p-answers,
+body.level-14108 .question-container.h5p-question.h5p-multichoice ul.h5p-answers {
+  /*
+      // this needs to be done in code so we can get the translation
+      &::before {
+        content: 'ANSWERS:';
+        font-size: $font-size-sm-small;
+        display: inline-block;
+        margin: 10px 0;
+        letter-spacing: 2px;
+      }
+      */
 }
 
-/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.question-container.h5p-question.h5p-multichoice ul.h5p-answers::before {
-  content: 'ANSWERS:';
-  font-size: 14px;
-  display: inline-block;
-  margin: 10px 0;
-  letter-spacing: 2px;
-}
-
-/* line 39, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .h5p-question {
   background: transparent;
 }
 
-/* line 44, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 52, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .h5p-multichoice .h5p-alternative-container {
   background: none;
   border: 0;
   box-shadow: none;
 }
 
-/* line 51, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+/* line 59, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
 .h5p-element-outer.h5p-questionset-outer-element {
   background: transparent !important;
 }
 
-/* line 64, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 74, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #fff;
   background: none;
 }
 
-/* line 68, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
+/* line 78, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 75, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
+/* line 85, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
   color: #fff;
-}
-
-/* line 83, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
-  border: 0;
-  background: none;
-  box-shadow: none;
 }
 
 /* line 93, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* line 103, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #fff;
 }
 
-/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
+/* line 106, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 103, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
+/* line 113, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #000;
 }
 
-/* line 107, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
+/* line 117, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
   width: auto;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
@@ -1281,114 +1415,108 @@ th {
   padding: 5px 15px;
 }
 
-/* line 128, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
 }
 
-/* line 137, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
+/* line 147, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 143, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 153, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-14108 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
-}
-
-/* line 152, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .qs-footer .progress-dot {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* line 156, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .qs-footer .progress-dot.current {
-  background: white;
 }
 
 /* line 162, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-10605 .questionset .h5p-question-feedback-content {
+body.level-10605 .questionset .qs-footer .progress-dot,
+body.level-14108 .questionset .qs-footer .progress-dot {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* line 166, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .qs-footer .progress-dot.current,
+body.level-14108 .questionset .qs-footer .progress-dot.current {
+  background: white;
+}
+
+/* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-10605 .questionset .h5p-question-feedback-content,
+body.level-14108 .questionset .h5p-question-feedback-content {
   color: #000;
 }
 
-/* line 183, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 192, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #000;
   background: none;
 }
 
-/* line 187, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
+/* line 196, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 194, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
+/* line 203, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
   color: #000;
 }
 
-/* line 202, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
+/* line 211, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 212, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
+/* line 221, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'], body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #000;
 }
 
-/* line 215, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
+/* line 224, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #000;
   font-weight: bold;
 }
 
-/* line 222, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
+/* line 231, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #000;
 }
 
-/* line 226, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
+/* line 235, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
   width: auto;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
@@ -1400,203 +1528,179 @@ th {
   border: 0;
   border-radius: 0;
   padding: 5px 15px;
-}
-
-/* line 247, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
-  font-family: "akzidenz-grotesk_bq";
-  font-size: 14px;
-  letter-spacing: 2px;
 }
 
 /* line 256, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+  font-family: "akzidenz-grotesk_bq";
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* line 265, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 262, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 271, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-12739 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before, body.level-579 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-1300 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
 }
 
-/* line 271, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .qs-footer .progress-dot,
-.level-12739 .questionset .qs-footer .progress-dot,
-.level-579 .questionset .qs-footer .progress-dot,
-.level-1300 .questionset .qs-footer .progress-dot {
+/* line 280, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .qs-footer .progress-dot,
+body.level-12739 .questionset .qs-footer .progress-dot, body.level-579 .questionset .qs-footer .progress-dot,
+body.level-1300 .questionset .qs-footer .progress-dot {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 275, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .qs-footer .progress-dot.current,
-.level-12739 .questionset .qs-footer .progress-dot.current,
-.level-579 .questionset .qs-footer .progress-dot.current,
-.level-1300 .questionset .qs-footer .progress-dot.current {
+/* line 284, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .qs-footer .progress-dot.current,
+body.level-12739 .questionset .qs-footer .progress-dot.current, body.level-579 .questionset .qs-footer .progress-dot.current,
+body.level-1300 .questionset .qs-footer .progress-dot.current {
   background: white;
 }
 
-/* line 281, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset .h5p-question-feedback-content,
-.level-12739 .questionset .h5p-question-feedback-content,
-.level-579 .questionset .h5p-question-feedback-content,
-.level-1300 .questionset .h5p-question-feedback-content {
+/* line 290, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset .h5p-question-feedback-content,
+body.level-12739 .questionset .h5p-question-feedback-content, body.level-579 .questionset .h5p-question-feedback-content,
+body.level-1300 .questionset .h5p-question-feedback-content {
   color: #4ea1bf;
 }
 
-/* line 285, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-13504 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-13504 .questionset button.h5p-question-finish.h5p-joubelui-button,
-.level-12739 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-12739 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-12739 .questionset button.h5p-question-finish.h5p-joubelui-button,
-.level-579 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-579 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-579 .questionset button.h5p-question-finish.h5p-joubelui-button,
-.level-1300 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-1300 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-1300 .questionset button.h5p-question-finish.h5p-joubelui-button {
+/* line 294, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
+body.level-12739 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-579 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
+body.level-1300 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-13504 .questionset button.h5p-question-try-again.h5p-joubelui-button,
+body.level-12739 .questionset button.h5p-question-try-again.h5p-joubelui-button, body.level-579 .questionset button.h5p-question-try-again.h5p-joubelui-button,
+body.level-1300 .questionset button.h5p-question-try-again.h5p-joubelui-button, body.level-13504 .questionset button.h5p-question-finish.h5p-joubelui-button,
+body.level-12739 .questionset button.h5p-question-finish.h5p-joubelui-button, body.level-579 .questionset button.h5p-question-finish.h5p-joubelui-button,
+body.level-1300 .questionset button.h5p-question-finish.h5p-joubelui-button {
   background: #4ea1bf;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 296, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .h5p-element-inner .questionset-results,
-.level-12739 .h5p-element-inner .questionset-results,
-.level-579 .h5p-element-inner .questionset-results,
-.level-1300 .h5p-element-inner .questionset-results {
+/* line 305, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .h5p-element-inner .questionset-results,
+body.level-12739 .h5p-element-inner .questionset-results, body.level-579 .h5p-element-inner .questionset-results,
+body.level-1300 .h5p-element-inner .questionset-results {
   background: transparent !important;
   font-family: "akzidenz-grotesk_bq";
   color: #4ea1bf;
 }
 
-/* line 301, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .h5p-element-inner .questionset-results .greeting,
-.level-13504 .h5p-element-inner .questionset-results .feedback-text,
-.level-12739 .h5p-element-inner .questionset-results .greeting,
-.level-12739 .h5p-element-inner .questionset-results .feedback-text,
-.level-579 .h5p-element-inner .questionset-results .greeting,
-.level-579 .h5p-element-inner .questionset-results .feedback-text,
-.level-1300 .h5p-element-inner .questionset-results .greeting,
-.level-1300 .h5p-element-inner .questionset-results .feedback-text {
+/* line 310, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .h5p-element-inner .questionset-results .greeting,
+body.level-12739 .h5p-element-inner .questionset-results .greeting, body.level-579 .h5p-element-inner .questionset-results .greeting,
+body.level-1300 .h5p-element-inner .questionset-results .greeting, body.level-13504 .h5p-element-inner .questionset-results .feedback-text,
+body.level-12739 .h5p-element-inner .questionset-results .feedback-text, body.level-579 .h5p-element-inner .questionset-results .feedback-text,
+body.level-1300 .h5p-element-inner .questionset-results .feedback-text {
   font-family: "akzidenz-grotesk_bq";
   color: #4ea1bf;
   font-size: 30px;
 }
 
-/* line 308, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .h5p-element-inner .questionset-results .result-header,
-.level-12739 .h5p-element-inner .questionset-results .result-header,
-.level-579 .h5p-element-inner .questionset-results .result-header,
-.level-1300 .h5p-element-inner .questionset-results .result-header {
+/* line 317, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .h5p-element-inner .questionset-results .result-header,
+body.level-12739 .h5p-element-inner .questionset-results .result-header, body.level-579 .h5p-element-inner .questionset-results .result-header,
+body.level-1300 .h5p-element-inner .questionset-results .result-header {
   font-family: "optimadisplaylightlight";
   color: #4ea1bf;
   font-size: 72px;
   letter-spacing: 3px;
 }
 
-/* line 315, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .h5p-element-inner .questionset-results .result-text,
-.level-12739 .h5p-element-inner .questionset-results .result-text,
-.level-579 .h5p-element-inner .questionset-results .result-text,
-.level-1300 .h5p-element-inner .questionset-results .result-text {
+/* line 324, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .h5p-element-inner .questionset-results .result-text,
+body.level-12739 .h5p-element-inner .questionset-results .result-text, body.level-579 .h5p-element-inner .questionset-results .result-text,
+body.level-1300 .h5p-element-inner .questionset-results .result-text {
   font-family: "optimadisplaylightlight";
   color: #4ea1bf;
   font-size: 28px;
   letter-spacing: 3px;
 }
 
-/* line 323, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-13504 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-13504 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
-.level-12739 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-12739 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
-.level-579 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-579 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
-.level-1300 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-1300 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+/* line 332, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-13504 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+body.level-12739 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton, body.level-579 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+body.level-1300 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton, body.level-13504 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
+body.level-12739 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton, body.level-579 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
+body.level-1300 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
   background: #4ea1bf;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 346, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 355, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #fff;
   background: none;
 }
 
-/* line 350, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
+/* line 359, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
   font-weight: 600;
 }
 
-/* line 354, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
+/* line 363, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 361, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
+/* line 370, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
   color: #fff;
 }
 
-/* line 369, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
+/* line 378, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 379, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
+/* line 388, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'],
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #fff;
 }
 
-/* line 382, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
+/* line 391, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 389, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
+/* line 398, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #fff;
 }
 
-/* line 393, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
+/* line 402, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
   width: auto;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
@@ -1610,156 +1714,149 @@ th {
   padding: 5px 15px;
 }
 
-/* line 414, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 423, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
 }
 
-/* line 423, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
+/* line 432, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 429, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
-.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 438, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before,
+body.level-12731 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
 }
 
-/* line 438, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .qs-footer .progress-dot,
-.level-1301 .questionset .qs-footer .progress-dot {
+/* line 447, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .qs-footer .progress-dot,
+body.level-12731 .questionset .qs-footer .progress-dot {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 442, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .qs-footer .progress-dot.current,
-.level-1301 .questionset .qs-footer .progress-dot.current {
+/* line 451, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .qs-footer .progress-dot.current,
+body.level-12731 .questionset .qs-footer .progress-dot.current {
   background: white;
 }
 
-/* line 448, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset .h5p-question-feedback-content,
-.level-1301 .questionset .h5p-question-feedback-content {
+/* line 457, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset .h5p-question-feedback-content,
+body.level-12731 .questionset .h5p-question-feedback-content {
   color: #fff;
 }
 
-/* line 452, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-12731 .questionset button.h5p-question-finish.h5p-joubelui-button,
-.level-12731 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-1301 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-1301 .questionset button.h5p-question-finish.h5p-joubelui-button,
-.level-1301 .questionset button.h5p-question-try-again.h5p-joubelui-button {
+/* line 461, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
+body.level-12731 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-1301 .questionset button.h5p-question-finish.h5p-joubelui-button,
+body.level-12731 .questionset button.h5p-question-finish.h5p-joubelui-button, body.level-1301 .questionset button.h5p-question-try-again.h5p-joubelui-button,
+body.level-12731 .questionset button.h5p-question-try-again.h5p-joubelui-button {
   background: #4ea1bf;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 463, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .h5p-element-inner .questionset-results,
-.level-1301 .h5p-element-inner .questionset-results {
+/* line 472, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .h5p-element-inner .questionset-results,
+body.level-12731 .h5p-element-inner .questionset-results {
   background: transparent !important;
   font-family: "akzidenz-grotesk_bq";
   color: #fff;
 }
 
-/* line 468, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .h5p-element-inner .questionset-results .greeting,
-.level-12731 .h5p-element-inner .questionset-results .feedback-text,
-.level-1301 .h5p-element-inner .questionset-results .greeting,
-.level-1301 .h5p-element-inner .questionset-results .feedback-text {
+/* line 477, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .h5p-element-inner .questionset-results .greeting,
+body.level-12731 .h5p-element-inner .questionset-results .greeting, body.level-1301 .h5p-element-inner .questionset-results .feedback-text,
+body.level-12731 .h5p-element-inner .questionset-results .feedback-text {
   font-family: "akzidenz-grotesk_bq";
   color: #fff;
   font-size: 30px;
 }
 
-/* line 475, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .h5p-element-inner .questionset-results .result-header,
-.level-1301 .h5p-element-inner .questionset-results .result-header {
+/* line 484, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .h5p-element-inner .questionset-results .result-header,
+body.level-12731 .h5p-element-inner .questionset-results .result-header {
   font-family: "optimadisplaylightlight";
   color: #fff;
   font-size: 72px;
   letter-spacing: 3px;
 }
 
-/* line 482, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .h5p-element-inner .questionset-results .result-text,
-.level-1301 .h5p-element-inner .questionset-results .result-text {
+/* line 491, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .h5p-element-inner .questionset-results .result-text,
+body.level-12731 .h5p-element-inner .questionset-results .result-text {
   font-family: "optimadisplaylightlight";
   color: #fff;
   font-size: 28px;
   letter-spacing: 3px;
 }
 
-/* line 490, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-12731 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-12731 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
-.level-1301 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-1301 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+/* line 499, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1301 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
+body.level-12731 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton, body.level-1301 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton,
+body.level-12731 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
   background: #080f30;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 512, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 521, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #fff;
   background: none;
 }
 
-/* line 516, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
+/* line 525, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
   font-weight: 600;
 }
 
-/* line 520, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
+/* line 529, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 527, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
+/* line 536, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
   color: #fff;
 }
 
-/* line 535, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
+/* line 544, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 545, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
+/* line 554, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'], body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #fff;
 }
 
-/* line 548, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
+/* line 557, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 555, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
+/* line 564, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #080f30;
 }
 
-/* line 559, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
+/* line 568, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
   width: auto;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
@@ -1773,99 +1870,94 @@ th {
   padding: 5px 15px;
 }
 
-/* line 580, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 589, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
 }
 
-/* line 589, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
+/* line 598, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 595, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 604, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before, body.level-252 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
 }
 
-/* line 604, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .qs-footer .progress-dot {
+/* line 613, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .qs-footer .progress-dot, body.level-252 .questionset .qs-footer .progress-dot {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 608, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .qs-footer .progress-dot.current {
+/* line 617, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .qs-footer .progress-dot.current, body.level-252 .questionset .qs-footer .progress-dot.current {
   background: white;
 }
 
-/* line 614, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset .h5p-question-feedback-content {
+/* line 623, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset .h5p-question-feedback-content, body.level-252 .questionset .h5p-question-feedback-content {
   color: #fff;
 }
 
-/* line 618, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-1299 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-1299 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-1299 .questionset button.h5p-question-finish.h5p-joubelui-button {
+/* line 627, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-1299 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-252 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-1299 .questionset button.h5p-question-try-again.h5p-joubelui-button, body.level-252 .questionset button.h5p-question-try-again.h5p-joubelui-button, body.level-1299 .questionset button.h5p-question-finish.h5p-joubelui-button, body.level-252 .questionset button.h5p-question-finish.h5p-joubelui-button {
   background: #080f30;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 641, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice {
+/* line 649, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice {
   color: #fff;
   background: none;
 }
 
-/* line 645, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
+/* line 653, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-introduction {
   font-weight: 600;
 }
 
-/* line 649, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
+/* line 657, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container {
   border: 0;
   background: none;
   box-shadow: none;
-}
-
-/* line 656, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
-  color: #9a7d46;
 }
 
 /* line 664, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-alternative-container::before {
+  color: #9a7d46;
+}
+
+/* line 672, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer:hover {
   border: 0;
   background: none;
   box-shadow: none;
 }
 
-/* line 674, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
+/* line 682, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] {
   color: #9a7d46;
 }
 
-/* line 677, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
+/* line 685, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-answer[aria-checked='true'] .h5p-alternative-container {
   color: #fff;
   font-weight: bold;
 }
 
-/* line 684, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
+/* line 692, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-feedback-text {
   color: #080f30;
 }
 
-/* line 688, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button,
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button,
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
+/* line 696, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-check-answer.h5p-joubelui-button, body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button, body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button {
   width: auto;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
@@ -1879,83 +1971,78 @@ th {
   padding: 5px 15px;
 }
 
-/* line 709, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before,
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 717, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before, body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
 }
 
-/* line 718, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
+/* line 726, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-next.h5p-joubelui-button::before {
   content: 'NEXT';
 }
 
-/* line 724, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
+/* line 732, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .question-container.h5p-question.h5p-multichoice .h5p-question-prev.h5p-joubelui-button::before {
   content: 'BACK';
 }
 
-/* line 733, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .qs-footer .progress-dot {
+/* line 741, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .qs-footer .progress-dot {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* line 737, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .qs-footer .progress-dot.current {
+/* line 745, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .qs-footer .progress-dot.current {
   background: white;
 }
 
-/* line 743, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset .h5p-question-feedback-content {
+/* line 751, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset .h5p-question-feedback-content {
   color: #fff;
 }
 
-/* line 747, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .questionset button.h5p-question-show-solution.h5p-joubelui-button,
-.level-250 .questionset button.h5p-question-try-again.h5p-joubelui-button,
-.level-250 .questionset button.h5p-question-finish.h5p-joubelui-button {
+/* line 755, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .questionset button.h5p-question-show-solution.h5p-joubelui-button, body.level-250 .questionset button.h5p-question-try-again.h5p-joubelui-button, body.level-250 .questionset button.h5p-question-finish.h5p-joubelui-button {
   background: #000;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
 }
 
-/* line 758, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .h5p-element-inner .questionset-results {
+/* line 766, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .h5p-element-inner .questionset-results {
   background: transparent !important;
   font-family: "akzidenz-grotesk_bq";
   color: #fff;
 }
 
-/* line 763, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .h5p-element-inner .questionset-results .greeting,
-.level-250 .h5p-element-inner .questionset-results .feedback-text {
+/* line 771, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .h5p-element-inner .questionset-results .greeting, body.level-250 .h5p-element-inner .questionset-results .feedback-text {
   font-family: "akzidenz-grotesk_bq";
   color: #fff;
   font-size: 30px;
 }
 
-/* line 770, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .h5p-element-inner .questionset-results .result-header {
+/* line 778, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .h5p-element-inner .questionset-results .result-header {
   font-family: "optimadisplaylightlight";
   color: #9a7d46;
   font-size: 72px;
   letter-spacing: 3px;
 }
 
-/* line 777, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .h5p-element-inner .questionset-results .result-text {
+/* line 785, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .h5p-element-inner .questionset-results .result-text {
   font-family: "optimadisplaylightlight";
   color: #fff;
   font-size: 28px;
   letter-spacing: 3px;
 }
 
-/* line 785, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
-.level-250 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton,
-.level-250 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
+/* line 793, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_multiple-choice.scss */
+body.level-250 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-solutionbutton, body.level-250 .h5p-element-inner .questionset-results button.h5p-joubelui-button.h5p-button.qs-retrybutton {
   background: #000;
   color: #fff;
   font-family: "akzidenz-grotesk_bq";

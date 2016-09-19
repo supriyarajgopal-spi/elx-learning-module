@@ -321,12 +321,7 @@
       } // size
 
 
-      /* BADGES
-      *
-      * 9/15/16 - current state of modal output is insufficient for css only, so override
-      *
-      *
-      */
+      /* BADGES */
       if ($('body.page-badges.section-badges').size()) {
 
         var httpimg;
@@ -342,10 +337,7 @@
             var close_action = function () {
 
               // flush out prior content //
-              /*$('body.page-badges.section-badges #modalContent').hide();
-              $('body.page-badges.section-badges #modalContent .ctools-modal-content').empty();
-              $('body.page-badges.section-badges #modalContent .ctools-modal-content').remove();
-              */$('body.page-badges.section-badges #modalContent').remove();
+              $('body.page-badges.section-badges #modalContent').remove();
               $('body.page-badges.section-badges #modalBackdrop').hide();
               $('body.page-badges.section-badges #modalBackdrop').removeClass('badge-modal-backdrop-area');
 
@@ -380,7 +372,7 @@
             $('body.page-badges.section-badges #modalContent').append(titlepiece);
 
             $('body.page-badges.section-badges #modalBackdrop').addClass('badge-modal-backdrop-area');
-            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area');
+            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area').css('overflow','visible'); // only ctools override option remaining //
 
             $('.ctools-modal-content').addClass('badge-hide');
 

@@ -5,38 +5,21 @@
 @import 'drag-match';
 @import 'multiple-choice';
 
-// generic h5p styles
-
-.h5p-course-presentation {
-    font-family: $font-family-sans-serif;
-}
-
-.h5p-element.h5p-transparent {
-    width: 100% !important;
-    height: 83.43% !important;
-    top: 0 !important;
-    left: 0 !important;
-}
-
-.h5p-iframe-wrapper {
-  max-height: 2000px;
-}
-
 
 // SKETCHING OUT NEW STRUCTURE
 
 // *********************************************
 // COMMON INCLUDES FOR ALL QUIZ TYPES AND STYLES
 // *********************************************
-.modal-default.level-250,
-.modal-default.level-13504,
-.modal-default.level-12739,
-.modal-default.level-1299,
-.modal-default.level-252,
-.modal-default.level-1301,
-.modal-default.level-12731,
-.modal-default.level-10605,
-.modal-default.level-14108 {
+body.level-250,
+body.level-13504,
+body.level-12739,
+body.level-1299,
+body.level-252,
+body.level-1301,
+body.level-12731,
+body.level-10605,
+body.level-14108 {
 
   // click-to-reveal
   @extend %click-to-reveal-common;
@@ -59,7 +42,7 @@
 // BLACK & GOLD
 // ************
 // Re-Nutriv : level-250
-.modal-default.level-250 {
+body.level-250 {
 
   // click-to-reveal
   @extend %click-to-reveal-black-gold;
@@ -76,11 +59,6 @@
   // multiple-choice
   @extend %multiple-choice-black-gold;
 
-  // styles for content outside of h5p
-  div.ctools-modal-content {
-    color: #fff;
-  }
-
 }
 
 // ************
@@ -88,8 +66,8 @@
 // ************
 // Fall Preview : level-13504
 // Spring Preview : level-12739
-.modal-default.level-13504,
-.modal-default.level-12739 {
+body.level-13504,
+body.level-12739 {
 
   // click-to-reveal
   @extend %click-to-reveal-blue-ether;
@@ -112,7 +90,7 @@
 // BLUE HELIX
 // **********
 // Advanced Night Repair 2 : level-1299
-.modal-default.level-1299 {
+body.level-1299 {
 
   // click-to-reveal
   // @extend %click-to-reveal-blue-helix;
@@ -129,18 +107,13 @@
   // multiple-choice
   @extend %multiple-choice-anr;
 
-  // styles for content outside of h5p
-  div.ctools-modal-content {
-    color: #fff;
-  }
-
 }
 
 // ************
 // BLUE KRYPTON
 // ************
 // Advanced Night Repair : level-252
-.modal-default.level-252 {
+body.level-252 {
 
   // click-to-reveal
   // @extend %click-to-reveal-blue-krypton;
@@ -157,11 +130,6 @@
   // multiple-choice
   @extend %multiple-choice-anr;
 
-  // styles for content outside of h5p
-  div.ctools-modal-content {
-    color: #fff;
-  }
-
 }
 
 // ******
@@ -169,8 +137,8 @@
 // ******
 // New Dimension : level-1301
 // New Dimension 2 : level-12731
-.modal-default.level-1301,
-.modal-default.level-12731 {
+body.level-1301,
+body.level-12731 {
 
   // click-to-reveal
   // @extend %click-to-reveal-clouds;
@@ -194,8 +162,8 @@
 // *******
 // Holiday 2015 : level-10605
 // Holiday 2016 : level-14108
-.modal-default.level-10605,
-.modal-default.level-14108 {
+body.level-10605,
+body.level-14108 {
 
   // click-to-reveal
   // @extend %click-to-reveal-holiday;
@@ -212,12 +180,6 @@
   // multiple-choice
   @extend %multiple-choice-holiday;
 
-  // styles for content outside of h5p
-  div.ctools-modal-content {
-    color: #fff;
-  }
-
-
 }
 
 // ***********
@@ -225,8 +187,8 @@
 // ***********
 // GMTC : level-579
 // Beautiful Skin For Life : level-1300
-.modal-default.level-579,
-.modal-default.level-1300 {
+body.level-579,
+body.level-1300 {
 
   // click-to-reveal
   // @extend %click-to-reveal-gray-ether;

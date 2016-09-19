@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Disable views that are being overwritten by this module
+ */
+function dashboard_and_menu_enable() {
+
+  // a list of views (their view name) I want to disable
+  $viewnames = array(
+    'admin_views_user',
+    'control_users',
+    'og_members_admin',
+  );
+
+  // grab list of views that are already disabled
+  $views_status = variable_get('views_defaults', array());
+
+  // add our views to be disabled to the list
+  foreach ($viewnames as $key => $viewname) {
+    $views_status[$viewname] = TRUE;
+  }
+
+  // reset the variable with the new list
+  variable_set('views_defaults', $views_status);
+
+  // empty cache now
+  if (function_exists('views_invalidate_cache')) {
+    views_invalidate_cache();
+  }
+  drupal_set_message('The Dashboard and Menu feature module was successfully enabled. And the System User, OG Member Admin and Total Control User Views are disabled.', 'status');
+}

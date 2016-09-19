@@ -17,12 +17,13 @@
 				this.showButton('check-answer'); //Show 'Check/Submit' button. By default, this is hidden if skipVisuals = false (as set above)
 				
 				//Enable each draggable which is disabled by default if skipVisuals = false (as set above)
-				for (var i = 0; i < this.draggables.length; i++)
-				  this.draggables[i].enable();
+				this.draggables.forEach(function(draggable) {
+					draggable.enable();
+				});
 
 				//Change text of draggable element depending on whether it is dropped in correct dropzone or not
 				var lastElementChild = this.$container[0].lastElementChild; //Last child of container holds the draggable element text & other properties
-				if(lastElementChild.classList.contains("h5p-correct") && this.options.instant_feedback.length != 0) //Borrowed from https://developer.mozilla.org/en/docs/Web/API/Element/classList
+				if(lastElementChild.classList.contains("h5p-correct") && this.options.instant_feedback.length != 0 && this.options.instant_feedback != '<br>' && this.options.instant_feedback != '<p></p>') //Borrowed from https://developer.mozilla.org/en/docs/Web/API/Element/classList
 					this.$container[0].lastElementChild.innerHTML = this.options.instant_feedback;
 			}
 			

@@ -1,0 +1,14 @@
+name = ELX Badges Rules
+core = 7.x
+package = ELX
+dependencies[] = elx_user_points_feature
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = flag
+dependencies[] = rules
+dependencies[] = rules_conditional
+dependencies[] = taxonomy
+dependencies[] = userpoints
+dependencies[] = userpoints_rules
+features[features_api][] = api:2
+features[taxonomy][] = userpoints

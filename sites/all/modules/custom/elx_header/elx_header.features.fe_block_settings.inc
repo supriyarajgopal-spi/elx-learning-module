@@ -64,6 +64,32 @@ function elx_header_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['elx_recent_badges-recent_badges'] = array(
+    'cache' => 2,
+    'custom' => 0,
+    'delta' => 'recent_badges',
+    'module' => 'elx_recent_badges',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx_front',
+        'weight' => 6,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-header-menu'] = array(
     'cache' => -1,
     'custom' => 0,

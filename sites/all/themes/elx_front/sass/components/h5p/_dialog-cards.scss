@@ -48,13 +48,54 @@
 // Holiday 2016 : level-14108
 %dialog-cards-holiday {
 
+  .h5p-content.h5p-initialized.h5p-no-frame {
+    background: transparent;
+  }
+
   .h5p-dialogcards {
+    min-height: 360px;
 
     .h5p-dialogcards-cardwrap-set {
+      min-height: 220px;
       color: #000;
       font-family: $font-family-sans-serif;
       font-size: $font-size-sm-small;
       letter-spacing: 2px;
+    }
+
+  }
+
+  .h5p-dialogcards-card-footer {
+
+    .h5p-dialogcards-turn.h5p-joubelui-button {
+      color: #fff;
+      background: transparent;
+      margin: 0 0 0 20px;
+
+      &::before {
+        font-size: $font-size-lg-medium;
+        color: #000;
+      }
+
+      &:active {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+
+    }
+
+  }
+
+  .h5p-dialogcards-footer {
+
+    .h5p-dialogcards-progress {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .h5p-joubelui-button {
+      background: #fff;
     }
 
   }

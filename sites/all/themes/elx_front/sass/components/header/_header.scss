@@ -568,6 +568,468 @@ div#block-menu-menu-header-user-menu {
   padding: 0 !important;
   border-bottom: 1px solid #040a2b !important;
 
+  // mini-panel-header_user_menu
+  #mini-panel-header_user_menu {
+
+    .panel-pane {
+      clear: left;
+      float: left;
+      width: 100%;
+    }
+
+    .pane-levels-quizz-progress-completed-count {
+
+      background-color: #1e2341;
+      display: none; /* temporary */
+
+      .pane-title {
+        font-size: 1.5em;
+        padding: 10px 20px;
+        width: 200px;
+      }
+
+      .view-display-id-completed_count {
+        .views-field.views-field-tid {
+          height: 25px;
+          margin-left: 0;
+          width: 100%;
+
+          span.field-content {
+            font-size: 1.1em;
+          }
+
+          span.field-content::before {
+            font-size: '0.9em';
+            content: 'Levels Completed';
+            padding: 5px 20px;
+            color: #999;
+          }
+        }
+      }
+
+      margin-bottom: 2px;
+      padding-bottom: 10px;
+    }
+
+    .pane-levels-quizz-progress-closest-completion {
+
+      background-color: #1e2341;
+      padding-bottom: 20px;
+
+      .views-field-expression {
+        width: 260px;
+
+        .progress-bar-percentage {
+          left: -20px;
+          position: absolute;
+        }
+      }
+
+      .pane-title {
+        font-size: '0.9em';
+        padding: 10px 20px;
+        width: 200px;
+        color: #999;
+      }
+
+      .view-id-levels_quizz_progress.view-display-id-closest_completion {
+
+        .views-field-expression {
+          margin: 0;
+          height: 25px;
+        }
+
+        .views-field-name {
+          display: none;
+        }
+      }
+
+      .views-field.views-field-expression::after {
+          float: left;
+          height: 1px;
+          margin-left: 0;
+          margin-top: 0;
+          position: absolute;
+          color: gray;
+          content: '';
+          font-family: 'elx-icons';
+          font-size: 18px;
+          font-weight: 700;
+          position: absolute;
+          top: -4px;
+          right: 20px;
+      }
+
+      .user-progress-bar {
+        margin: 0 20px;
+        background-color: #999;
+        position: relative;
+        margin-left: 40px;
+
+        .progress-bar-percentage {
+          float: left;
+        }
+
+        .user-progress {
+          float: left;
+          height: 1px;
+          background-color: white;
+          margin-left: 17px;
+          margin-top: 17px;
+          background-image: url('../images/progress-bar.png');
+        }
+
+        /*.user-progress::after {
+          float: left;
+          height: 1px;
+          margin-left: 0;
+          margin-top: 0;
+          position: absolute;
+          color: gray;
+          content: "";
+          font-family: "elx-icons";
+          font-size: 18px;
+          font-weight: 700;
+          position: absolute;
+          top: -40px;
+          right: -4px;
+        } */
+
+      }
+
+      .view-id-levels_quizz_progress {
+        .views-row-1 {
+          .views-field-name {
+            span.field-content {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .pane-dashboard-user-activities-suggested {
+      background-color: #1e2341;
+      margin-top: 1px;
+      padding: 20px;
+      color: #999;
+
+      .view-display-id-suggested {
+        .views-field-field-headline {
+          height: 25px;
+
+          .field-content a {
+            color: #9eafff;
+            font-size: 1.2em;
+            text-indent: 0;
+          }
+        }
+
+        .views-field-field-display-title {
+          display: none;
+        }
+      }
+    }
+
+    .pane-badges-my-badges {
+      background-color: #1e2341;
+      margin-top: 1px;
+
+      h2.pane-title {
+        color: #999;
+        font-size: 15px;
+        padding-left: 20px;
+        display: block;
+        width: 125px;
+        float: left;
+      }
+
+      .view-badges.view-id-badges.view-display-id-my_badges {
+        float: left;
+        margin-top: 25px;
+
+        .view-content {
+          height: 33px;
+          overflow: hidden;
+          float: left;
+
+          .views-row {
+            width: 150px;
+
+            .views-field {
+              float: left;
+              margin: 0;
+
+              span.field-content {
+                float: left;
+              }
+            }
+          }
+
+          .views-row::after {
+            height: 1px;
+            margin-left: 0;
+            margin-top: 0;
+            position: absolute;
+            color: gray;
+            content: '';
+            font-family: 'elx-icons';
+            font-size: 18px;
+            font-weight: 700;
+            position: absolute;
+            right: -4px;
+            top: 0;
+          }
+
+          .high-five-no,
+          .perfect-ten-no,
+          .on-your-way-no,
+          .one-hundred-percent-club-no,
+          .service-star-no,
+          .first-5000-points-no,
+          .first-10000-points-no,
+          .we-heart-you-no,
+          .product-pro-no,
+          .high-five-no,
+          .welcome-no,
+          .little-brown-bottle-no,
+          .beauty-queen-no,
+          .rare-beauty-no,
+          .new-dimension-no,
+          .sleeping-beauty-no,
+          .we-heard-you-no,
+          .well-read-50-no,
+          .well-read-25-no,
+          .well-read-75-no,
+          .three-minute-beauty-no,
+          .fast-learner-no,
+          .well-read-100-no,
+          .early-bird-no {
+            display: none;
+          }
+
+          .high-five-yes,
+          .perfect-ten-yes,
+          .on-your-way-yes,
+          .one-hundred-percent-club-yes,
+          .service-star-yes,
+          .first-5000-points-yes,
+          .first-10000-points-yes,
+          .we-heart-you-yes,
+          .product-pro-yes,
+          .high-five-yes,
+          .welcome-yes,
+          .little-brown-bottle-yes,
+          .beauty-queen-yes,
+          .rare-beauty-yes,
+          .new-dimension-yes,
+          .sleeping-beauty-yes,
+          .we-heard-you-yes,
+          .well-read-50-yes,
+          .well-read-25-yes,
+          .well-read-75-yes,
+          .three-minute-beauty-yes,
+          .fast-learner-yes,
+          .well-read-100-yes,
+          .early-bird-yes {
+            display: block;
+          }
+
+          .high-five-no,
+          .perfect-ten-no,
+          .on-your-way-no,
+          .one-hundred-percent-club-no,
+          .service-star-no,
+          .first-5000-points-no,
+          .first-10000-points-no,
+          .we-heart-you-no,
+          .product-pro-no,
+          .high-five-no,
+          .welcome-no,
+          .little-brown-bottle-no,
+          .beauty-queen-no,
+          .rare-beauty-no,
+          .new-dimension-no,
+          .sleeping-beauty-no,
+          .we-heard-you-no,
+          .well-read-50-no,
+          .well-read-25-no,
+          .well-read-75-no,
+          .three-minute-beauty-no,
+          .fast-learner-no,
+          .well-read-100-no,
+          .early-bird-no,
+          .high-five-yes,
+          .perfect-ten-yes,
+          .on-your-way-yes,
+          .one-hundred-percent-club-yes,
+          .service-star-yes,
+          .first-5000-points-yes,
+          .first-10000-points-yes,
+          .we-heart-you-yes,
+          .product-pro-yes,
+          .high-five-yes,
+          .welcome-yes,
+          .little-brown-bottle-yes,
+          .beauty-queen-yes,
+          .rare-beauty-yes,
+          .new-dimension-yes,
+          .sleeping-beauty-yes,
+          .we-heard-you-yes,
+          .well-read-50-yes,
+          .well-read-25-yes,
+          .well-read-75-yes,
+          .three-minute-beauty-yes,
+          .fast-learner-yes,
+          .well-read-100-yes,
+          .early-bird-yes {
+            height: 33px;
+            width: 33px;
+            background-size: 33px;
+
+            .field-content {
+              text-indent: -5000px;
+            }
+          }
+        }
+      }
+
+      .view-footer {
+        display: none;
+      }
+    }
+
+    /* logout */
+    .pane-menu-menu-header-user-menu-2 {
+      ul.menu {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .three-minute-beauty-no,
+    .three-minute-beauty-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-3minbeauty.svg') no-repeat 0 0;
+    }
+
+    .one-hundred-percent-club-no,
+    .one-hundred-percent-club-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-100club.svg') no-repeat 0 0;
+    }
+
+    .beauty-queen-no,
+    .beauty-queen-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautyqueen.png') no-repeat 0 0;
+    }
+
+    .early-bird-no,
+    .early-bird-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-earlybird.svg') no-repeat 0 0;
+    }
+
+    .fast-learner-no,
+    .fast-learner-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-fastlearner.svg') no-repeat 0 0;
+    }
+
+    .first-1000-points-no,
+    .first-1000-points-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first1000.svg') no-repeat 0 0;
+    }
+
+    .first-5000-points-no,
+    .first-5000-points-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first5000.svg') no-repeat 0 0;
+    }
+
+    .first-10000-points-no,
+    .first-10000-points-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg') no-repeat 0 0;
+    }
+
+    .high-five-no,
+    .high-five-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg') no-repeat 0 0;
+    }
+
+    .little-brown-bottle-no,
+    .little-brown-bottle-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png') no-repeat 0 0;
+    }
+
+    .new-dimension-no,
+    .new-dimension-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png') no-repeat 0 0;
+    }
+
+    .on-your-way-no,
+    .on-your-way-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg') no-repeat 0 0;
+    }
+
+    .perfect-ten-no,
+    .perfect-ten-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg') no-repeat 0 0;
+    }
+
+    .product-pro-no,
+    .product-pro-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg') no-repeat 0 0;
+    }
+
+    .rare-beauty-no,
+    .rare-beauty-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png') no-repeat 0 0;
+    }
+
+    .service-star-no,
+    .service-star-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg') no-repeat 0 0;
+    }
+
+    .sleeping-beauty-no,
+    .sleeping-beauty-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png') no-repeat 0 0;
+    }
+
+    .we-heard-you-no,
+    .we-heard-you-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg') no-repeat 0 0;
+    }
+
+    .we-heart-you-no,
+    .we-heart-you-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg') no-repeat 0 0;
+    }
+
+    .welcome-no,
+    .welcome-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg') no-repeat 0 0;
+    }
+
+    .well-read-25-no,
+    .well-read-25-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg') no-repeat 0 0;
+    }
+
+    .well-read-50-no,
+    .well-read-50-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg') no-repeat 0 0;
+    }
+
+    .well-read-75-no,
+    .well-read-75-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg') no-repeat 0 0;
+    }
+
+    .well-read-100-no,
+    .well-read-100-yes {
+      background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg') no-repeat 0 0;
+    }
+
+  }
+
+
 ul.menu {
 
 
@@ -595,6 +1057,9 @@ ul.menu {
     border-bottom: 1px solid #1e2441;
   }
 }
+
+
+
 }
 
 .pane-menu-menu-header-user-menu-1 {

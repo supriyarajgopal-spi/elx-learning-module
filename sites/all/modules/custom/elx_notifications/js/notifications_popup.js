@@ -2,6 +2,14 @@
 	Drupal.behaviors.elx_notifications = {
 	  attach: function (context, settings) {
 		
+		var sitename = '';
+		if(window.location.pathname.length != 0)
+		{
+			var pathArray = window.location.pathname.split('/'); //Get the query string
+			sitename = '/'+pathArray[1]; //0th element will be empty because pathname will be of form /<sitename>/
+		}
+		var popup_url = window.location.protocol + "//" + window.location.host + sitename + "/notifications_popup"; //Defined in hook_menu()
+		
 		//Prevent navigating to page as per default
 		$('a.link-badge-wrapper').click(function(event) {
 			event.preventDefault();
@@ -13,7 +21,7 @@
 				content: {
 					text: function(event, api) {
 						$.ajax({
-							url: 'http://localhost:81/elx-learning-module/notifications_popup' //Defined in hook_menu()
+							url: popup_url
 						})
 						.then(function(content) {
 							api.set('content.text', content); // Set the tooltip content upon successful retrieval

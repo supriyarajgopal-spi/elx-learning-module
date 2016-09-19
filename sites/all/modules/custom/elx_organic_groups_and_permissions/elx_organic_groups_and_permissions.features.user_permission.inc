@@ -26,7 +26,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'access administration pages',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Brand Management and Field' => 'Brand Management and Field',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
@@ -2941,6 +2940,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'locale',
   );
@@ -2951,6 +2951,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'i18n_string',
   );
@@ -3498,7 +3499,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'view the administration theme',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'Brand Management and Field' => 'Brand Management and Field',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),

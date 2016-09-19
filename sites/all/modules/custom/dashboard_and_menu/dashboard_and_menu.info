@@ -7,6 +7,7 @@ dependencies[] = ctools
 dependencies[] = elx_content_tool
 dependencies[] = elx_dashboard
 dependencies[] = elx_menu
+dependencies[] = gravatar
 dependencies[] = og_context
 dependencies[] = og_extras
 dependencies[] = page_manager

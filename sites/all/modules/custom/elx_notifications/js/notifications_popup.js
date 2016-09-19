@@ -2,13 +2,7 @@
 	Drupal.behaviors.elx_notifications = {
 	  attach: function (context, settings) {
 		
-		var sitename = '';
-		if(window.location.pathname.length != 0)
-		{
-			var pathArray = window.location.pathname.split('/'); //Get the query string
-			sitename = '/'+pathArray[1]; //0th element will be empty because pathname will be of form /<sitename>/
-		}
-		var popup_url = window.location.protocol + "//" + window.location.host + sitename + "/notifications_popup"; //Defined in hook_menu()
+                var popup_url = settings.basePath + 'notifications_popup'; //Defined in hook_menu()
 		
 		//Prevent navigating to page as per default
 		$('a.link-badge-wrapper').click(function(event) {

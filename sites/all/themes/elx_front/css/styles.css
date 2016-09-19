@@ -1745,13 +1745,60 @@ div#panels-ipe-control-container {
 
 }
 */
-/* line 53, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+/* line 51, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-content.h5p-initialized.h5p-no-frame,
+.modal-default.level-14108 .h5p-content.h5p-initialized.h5p-no-frame {
+  background: transparent;
+}
+
+/* line 55, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards,
+.modal-default.level-14108 .h5p-dialogcards {
+  min-height: 360px;
+}
+
+/* line 58, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
 .modal-default.level-10605 .h5p-dialogcards .h5p-dialogcards-cardwrap-set,
 .modal-default.level-14108 .h5p-dialogcards .h5p-dialogcards-cardwrap-set {
+  min-height: 220px;
   color: #000;
   font-family: "akzidenz-grotesk_bq";
   font-size: 14px;
   letter-spacing: 2px;
+}
+
+/* line 70, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button,
+.modal-default.level-14108 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button {
+  color: #fff;
+  background: transparent;
+  margin: 0 0 0 20px;
+}
+
+/* line 75, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button::before,
+.modal-default.level-14108 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button::before {
+  font-size: 20px;
+  color: #000;
+}
+
+/* line 80, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button:active,
+.modal-default.level-14108 .h5p-dialogcards-card-footer .h5p-dialogcards-turn.h5p-joubelui-button:active {
+  box-shadow: none;
+}
+
+/* line 92, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards-footer .h5p-dialogcards-progress,
+.modal-default.level-14108 .h5p-dialogcards-footer .h5p-dialogcards-progress {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* line 97, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_dialog-cards.scss */
+.modal-default.level-10605 .h5p-dialogcards-footer .h5p-joubelui-button,
+.modal-default.level-14108 .h5p-dialogcards-footer .h5p-joubelui-button {
+  background: #fff;
 }
 
 /* line 6, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_drag-match.scss */

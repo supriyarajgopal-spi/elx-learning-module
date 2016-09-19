@@ -1693,16 +1693,16 @@ div#panels-ipe-control-container {
   background-image: none;
 }
 
-/* line 33, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.modal-default.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
-.modal-default.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
-  background: #4ea1bf !important;
+/* line 32, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+.modal-default.level-250 .h5p-progressbar .h5p-progressbar-part-show {
+  background: #9a7d46 !important;
   background-image: none !important;
 }
 
 /* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
-.modal-default.level-250 .h5p-progressbar .h5p-progressbar-part-show {
-  background: #9a7d46 !important;
+.modal-default.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
+.modal-default.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
+  background: #4ea1bf !important;
   background-image: none !important;
 }
 
@@ -2650,33 +2650,35 @@ div#panels-ipe-control-container {
 
 /* line 14, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-element.h5p-transparent {
-  width: 100% !important;
-  height: 83.43% !important;
-  top: 0 !important;
-  left: 0 !important;
+  /*
+    width: 100% !important;
+    height: 83.43% !important;
+    top: 0 !important;
+    left: 0 !important;
+  */
 }
 
-/* line 21, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 23, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-iframe-wrapper {
   max-height: 2000px;
 }
 
-/* line 80, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 82, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-250 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 133, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 135, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-1299 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 161, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 163, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-252 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 216, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 218, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-10605 div.ctools-modal-content,
 .modal-default.level-14108 div.ctools-modal-content {
   color: #fff;

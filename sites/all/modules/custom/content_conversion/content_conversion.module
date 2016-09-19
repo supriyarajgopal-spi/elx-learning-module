@@ -828,13 +828,15 @@ function _content_conversion_node_drag_match($node, $question) {
     // Randomize task element positions.
     $positions = array_keys($node->field_drag_match_collection[$node->language]);
     shuffle($positions);
+    $collection_count = count($node->field_drag_match_collection[$node->language]);
+    $row_percentage = 100 / $collection_count;
     foreach ($node->field_drag_match_collection[$node->language] as $delta => $item) {
       $paragraph = paragraphs_item_load($item['value']);
       $task_element = new stdClass();
       $task_element->x = 3;
-      $task_element->y = $positions[$delta] * 20;
-      $task_element->width = 12;
-      $task_element->height = 3;
+      $task_element->y = $positions[$delta] * $row_percentage;
+      $task_element->width = 22;
+      $task_element->height = 36 / $collection_count;
       // Convert index to string since dropzone section expects string indices
       // as an array.
       $task_element->dropZones = array((string) $delta);
@@ -865,9 +867,9 @@ function _content_conversion_node_drag_match($node, $question) {
       // dropzone with careful alignment, but this is not implemented.
       $dropzone = new stdClass();
       $dropzone->x = 44;
-      $dropzone->y = $delta * 20 + 5;
+      $dropzone->y = $delta * $row_percentage + 5;
       $dropzone->width = 22.5;
-      $dropzone->height = 2.5;
+      $dropzone->height = 21 / $collection_count;
       // Convert index to string since dropzone section expects string indices
       // as an array.
       $dropzone->correctElements[] = (string) $delta;

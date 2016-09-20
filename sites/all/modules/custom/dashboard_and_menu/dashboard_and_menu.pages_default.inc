@@ -118,8 +118,7 @@ function dashboard_and_menu_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 2,
-          1 => 1,
+          0 => 1,
         ),
         'parent' => 'canvas',
         'class' => '',
@@ -134,35 +133,6 @@ function dashboard_and_menu_default_page_manager_pages() {
           2 => 'center_right',
         ),
         'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      2 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'top_left',
-          1 => 'top_right',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'top_left' => array(
-        'type' => 'region',
-        'title' => 'Top left',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'top_right' => array(
-        'type' => 'region',
-        'title' => 'Top right',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '2',
         'class' => '',
         'hide_empty' => 1,
       ),
@@ -291,78 +261,6 @@ function dashboard_and_menu_default_page_manager_pages() {
   $pane->uuid = '0256e0b6-0335-4e95-a455-da6a38a70088';
   $display->content['new-0256e0b6-0335-4e95-a455-da6a38a70088'] = $pane;
   $display->panels['center_right'][0] = 'new-0256e0b6-0335-4e95-a455-da6a38a70088';
-  $pane = new stdClass();
-  $pane->pid = 'new-e7bdc132-93da-41c6-8e66-27da957a6073';
-  $pane->panel = 'top_left';
-  $pane->type = 'block';
-  $pane->subtype = 'og_extras-node_links';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Add Group Content',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'e7bdc132-93da-41c6-8e66-27da957a6073';
-  $display->content['new-e7bdc132-93da-41c6-8e66-27da957a6073'] = $pane;
-  $display->panels['top_left'][0] = 'new-e7bdc132-93da-41c6-8e66-27da957a6073';
-  $pane = new stdClass();
-  $pane->pid = 'new-4822b56e-c93d-4617-85be-eb18731d9614';
-  $pane->panel = 'top_right';
-  $pane->type = 'block';
-  $pane->subtype = 'og_extras-group_info';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Group Details Pane',
-    'override_title_heading' => 'h1',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '4822b56e-c93d-4617-85be-eb18731d9614';
-  $display->content['new-4822b56e-c93d-4617-85be-eb18731d9614'] = $pane;
-  $display->panels['top_right'][0] = 'new-4822b56e-c93d-4617-85be-eb18731d9614';
-  $pane = new stdClass();
-  $pane->pid = 'new-d2d670c5-9755-4e2b-90af-dde8ff73bf59';
-  $pane->panel = 'top_right';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'og_members-panel_pane_1';
-  $pane->shown = FALSE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'context' => array(
-      0 => 'argument_entity_id:node_1',
-    ),
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'd2d670c5-9755-4e2b-90af-dde8ff73bf59';
-  $display->content['new-d2d670c5-9755-4e2b-90af-dde8ff73bf59'] = $pane;
-  $display->panels['top_right'][1] = 'new-d2d670c5-9755-4e2b-90af-dde8ff73bf59';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

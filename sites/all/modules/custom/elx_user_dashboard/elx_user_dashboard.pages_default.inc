@@ -312,6 +312,7 @@ function elx_user_dashboard_default_page_manager_handlers() {
     'override_title' => 1,
     'override_title_text' => 'My Badges',
     'override_title_heading' => 'h2',
+    'more_link' => 1,
   );
   $pane->cache = array();
   $pane->style = array(

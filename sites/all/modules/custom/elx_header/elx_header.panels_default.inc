@@ -207,6 +207,7 @@ function elx_header_default_panels_mini() {
     'override_title' => 1,
     'override_title_text' => 'Recent Badges:',
     'override_title_heading' => 'h2',
+    'more_link' => 0,
   );
   $pane->cache = array();
   $pane->style = array(

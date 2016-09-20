@@ -13,7 +13,7 @@ function elx_views_views_default_views() {
   $view = new view();
   $view->name = 'badges';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'users';
   $view->human_name = 'Badges';
   $view->core = 7;
@@ -24,7 +24,8 @@ function elx_views_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Badges';
   $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'See all badges';
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     2 => '2',
@@ -32,17 +33,10 @@ function elx_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/badges">SEE ALL BADGES</a>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -587,11 +581,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_23']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_23']['type_custom_false'] = 'no';
   $handler->display->display_options['fields']['flagged_23']['not'] = 0;
-  /* Sort criterion: User: Created date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'users';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Flags: Flagging ID */
   $handler->display->display_options['arguments']['flagging_id']['id'] = 'flagging_id';
   $handler->display->display_options['arguments']['flagging_id']['table'] = 'flagging';
@@ -601,13 +590,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['arguments']['flagging_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['flagging_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['flagging_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: User: Current */
   $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['table'] = 'users';
@@ -616,34 +598,15 @@ function elx_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['path'] = 'badges';
 
   /* Display: My Badges */
   $handler = $view->new_display('panel_pane', 'My Badges', 'my_badges');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-
-  /* Display: Recent Badges */
-  $handler = $view->new_display('panel_pane', 'Recent Badges', 'recent_badges');
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
-  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
@@ -651,13 +614,12 @@ function elx_views_views_default_views() {
   $translatables['badges'] = array(
     t('Master'),
     t('Badges'),
-    t('more'),
+    t('See all badges'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<a href="/badges">SEE ALL BADGES</a>'),
     t('You currently have no earned badges'),
     t('High Five Badge Flag'),
     t('Perfect 10 Badge Flag'),
@@ -687,16 +649,16 @@ function elx_views_views_default_views() {
     t('no'),
     t('All'),
     t('Page'),
+    t('more'),
     t('My Badges'),
     t('View panes'),
-    t('Recent Badges'),
   );
   $export['badges'] = $view;
 
   $view = new view();
   $view->name = 'product_library';
   $view->description = 'View of Estee Lauder products';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Product Library';
   $view->core = 7;
@@ -901,6 +863,14 @@ function elx_views_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -908,10 +878,12 @@ function elx_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'product_detail' => 'product_detail',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Product categories (field_product_categories) */
   $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
   $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
   $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
   $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';
@@ -930,57 +902,56 @@ function elx_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_product_categories_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_product_categories_tid']['vocabulary'] = 'product_category';
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-
-  /* Display: Product Library Admin */
-  $handler = $view->new_display('panel_pane', 'Product Library Admin', 'product_library_admin');
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'product_detail' => 'product_detail',
-  );
-  /* Filter criterion: Content: Product categories (field_product_categories) */
-  $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
-  $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
-  $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
-  $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator'] = 'field_product_categories_tid_op';
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['identifier'] = 'field_product_categories_tid';
-  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    9 => 0,
-    8 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_product_categories_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_product_categories_tid']['vocabulary'] = 'product_category';
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
 
   /* Display: Product Library */
   $handler = $view->new_display('panel_pane', 'Product Library', 'product_library');
+
+  /* Display: Product Library Admin */
+  $handler = $view->new_display('panel_pane', 'Product Library Admin', 'product_library_admin');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Product categories (field_product_categories) */
+  $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
+  $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator'] = 'field_product_categories_tid_op';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['identifier'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_product_categories_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_product_categories_tid']['vocabulary'] = 'product_category';
   $translatables['product_library'] = array(
     t('Master'),
     t('Product Library'),
@@ -1005,15 +976,15 @@ function elx_views_views_default_views() {
     t('Most Popular'),
     t('Title A-Z'),
     t('Filter By'),
-    t('Product Library Admin'),
     t('View panes'),
+    t('Product Library Admin'),
   );
   $export['product_library'] = $view;
 
   $view = new view();
   $view->name = 'search_product_library';
   $view->description = 'View of Estee Lauder products';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Search Product Library';
   $view->core = 7;
@@ -1271,14 +1242,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'product_detail' => 'product_detail',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'node';
@@ -1287,6 +1250,14 @@ function elx_views_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language_1']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Global: Combine fields filter */
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX RPU145 Badges View feature.
+ */
+
+include_once 'elx_rpu145_badges_view.features.inc';

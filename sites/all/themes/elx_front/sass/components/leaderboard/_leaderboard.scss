@@ -4,6 +4,22 @@ body.page-leaderboard {
   $field-picture-radius: 112px;
   $field-picture-radius-header: 175px;
 
+  @media screen and (max-width: 320px) {
+    .layout-3col {
+      main.layout-3col__full {
+        width: 1024px;
+      }
+    }
+  }
+  // @media screen and (max-width: 568px) {
+  @media screen and (max-width: 667px) {
+    .layout-3col {
+      main.layout-3col__full {
+        width: 1024px;
+      }
+    }
+  }
+
   main {
 
     h1 {

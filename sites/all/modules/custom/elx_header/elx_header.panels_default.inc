@@ -137,7 +137,7 @@ function elx_header_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Closest to Completion',
+    'override_title_text' => 'Closest Level to Completion:',
     'override_title_heading' => 'div',
   );
   $pane->cache = array();
@@ -175,6 +175,25 @@ function elx_header_default_panels_mini() {
   $display->content['new-48f49543-463a-4f91-b4e7-d4eab2eaf7af'] = $pane;
   $display->panels['middle'][5] = 'new-48f49543-463a-4f91-b4e7-d4eab2eaf7af';
   $pane = new stdClass();
+  $pane->pid = 'new-74b50f90-14f9-40fe-a653-0a51e8ed26a3';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'dashboard_user-my_points';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '74b50f90-14f9-40fe-a653-0a51e8ed26a3';
+  $display->content['new-74b50f90-14f9-40fe-a653-0a51e8ed26a3'] = $pane;
+  $display->panels['middle'][6] = 'new-74b50f90-14f9-40fe-a653-0a51e8ed26a3';
+  $pane = new stdClass();
   $pane->pid = 'new-6bd0c627-a5c3-48e7-a131-35260e1ab82a';
   $pane->panel = 'middle';
   $pane->type = 'views_panes';
@@ -195,11 +214,11 @@ function elx_header_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = '6bd0c627-a5c3-48e7-a131-35260e1ab82a';
   $display->content['new-6bd0c627-a5c3-48e7-a131-35260e1ab82a'] = $pane;
-  $display->panels['middle'][6] = 'new-6bd0c627-a5c3-48e7-a131-35260e1ab82a';
+  $display->panels['middle'][7] = 'new-6bd0c627-a5c3-48e7-a131-35260e1ab82a';
   $pane = new stdClass();
   $pane->pid = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
   $pane->panel = 'middle';
@@ -218,11 +237,11 @@ function elx_header_default_panels_mini() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 7;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '1c929848-8651-48f3-9522-70f6d86fa31b';
   $display->content['new-1c929848-8651-48f3-9522-70f6d86fa31b'] = $pane;
-  $display->panels['middle'][7] = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
+  $display->panels['middle'][8] = 'new-1c929848-8651-48f3-9522-70f6d86fa31b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

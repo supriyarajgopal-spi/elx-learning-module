@@ -443,7 +443,7 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['points']['id'] = 'points';
   $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
   $handler->display->display_options['fields']['points']['field'] = 'points';
-  $handler->display->display_options['fields']['points']['label'] = 'MY POINTS';
+  $handler->display->display_options['fields']['points']['label'] = 'My Points';
   $translatables['dashboard_user'] = array(
     t('Master'),
     t('more'),
@@ -466,7 +466,6 @@ function elx_user_dashboard_views_default_views() {
     t('Last Login'),
     t('LAST LOGIN'),
     t('My Points'),
-    t('MY POINTS'),
     t('.'),
     t(','),
   );

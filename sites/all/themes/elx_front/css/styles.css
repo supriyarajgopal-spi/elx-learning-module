@@ -6313,7 +6313,7 @@ body.page-tools.section-tools .modal-header a.close {
   right: -50px;
 }
 
-/* line 19, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
+/* line 20, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
 body.page-tools.section-tools #modalContent .field-name-field-display-title .field-item {
   color: #040a2b;
   font-family: "optimadisplaylightlight";
@@ -6323,17 +6323,17 @@ body.page-tools.section-tools #modalContent .field-name-field-display-title .fie
   text-decoration: none;
 }
 
-/* line 31, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
+/* line 32, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
 body.page-tools.section-tools #modalContent .field-name-field-tool-description .field-item p {
   font-size: 1.2em;
 }
 
-/* line 39, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
+/* line 40, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
 body.page-tools.section-tools #modalContent .field-name-field-tool-pdf .file-video-mp4 video {
   width: 100%;
 }
 
-/* line 45, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
+/* line 46, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
 body.page-tools.section-tools #modalContent #detail-content-btn {
   margin: 10px 0;
   padding: 5px;
@@ -6344,7 +6344,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn {
   background-color: white;
 }
 
-/* line 54, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
+/* line 55, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/tools/_tools.scss */
 body.page-tools.section-tools #modalContent #detail-content-btn a {
   text-decoration: none;
   color: #040a2b;

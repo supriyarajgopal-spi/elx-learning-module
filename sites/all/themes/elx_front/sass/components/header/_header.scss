@@ -583,7 +583,7 @@ div#block-menu-menu-header-user-menu {
       display: none; /* temporary */
 
       .pane-title {
-        font-size: 1.5em;
+        font-size: 20px;
         padding: 10px 20px;
         width: 200px;
       }
@@ -633,7 +633,7 @@ div#block-menu-menu-header-user-menu {
       .pane-title {
         font-size: 16px;
         padding: 10px 20px;
-        width: 200px;
+        width: 230px;
         color: #999;
       }
 
@@ -684,22 +684,6 @@ div#block-menu-menu-header-user-menu {
           background-image: url('../images/progress-bar.png');
         }
 
-        /*.user-progress::after {
-          float: left;
-          height: 1px;
-          margin-left: 0;
-          margin-top: 0;
-          position: absolute;
-          color: gray;
-          content: "";
-          font-family: "elx-icons";
-          font-size: 18px;
-          font-weight: 700;
-          position: absolute;
-          top: -40px;
-          right: -4px;
-        } */
-
       }
 
       .view-id-levels_quizz_progress {
@@ -742,6 +726,41 @@ div#block-menu-menu-header-user-menu {
 
         .views-field-field-display-title {
           display: none;
+        }
+      }
+    }
+
+    .pane-dashboard-user-my-points { 
+      background-color: #1e2341;
+      color: #999;
+      font-size: 16px;
+      margin-top: 1px;
+      padding: 20px 5px 20px 20px;
+      height: 70px;
+      width: 100%;
+
+      .view-display-id-my_points {
+        .views-field-points {
+          .views-label-points {
+
+          }
+          .field-content {
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            margin-left: 36px;
+          }
+          .field-content::before {
+            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
+            content: ' ';
+            display: block;
+            height: 17px;
+            margin-left: 76px;
+            position: absolute;
+            width: 20px;
+            top: 5px;
+            background-size: 20px;
+          }
         }
       }
     }

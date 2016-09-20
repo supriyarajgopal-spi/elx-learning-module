@@ -42,7 +42,9 @@
     margin-left: 10px;
     background-color: white;
     overflow: visible !important;
-
+    min-width: 200px;
+    margin-left: -20px;
+ 
     a.close {
       cursor: pointer;
     }
@@ -78,6 +80,36 @@
 .page-badges,
 .page-user,
 .pane-elx-recent-badges-recent-badges {
+
+  @media screen and (max-width: 320px) {
+    .view-badges {
+      .views-row {
+         margin: 0 auto;
+         width: 100%;
+
+         .views-field {
+           margin: 0;
+           width: 50%
+         }
+      }
+    }
+  }
+
+  // @media screen and (max-width: 568px) {
+  @media screen and (min-width: 321px) and (max-width: 667px) {
+    .view-badges {
+      .views-row {
+         margin: 0 auto;
+         width: 100%;
+
+         .views-field {
+           margin: 0;
+           width: 33%;
+           background-size: 100px;
+         }
+      }
+    }
+  }
 
   .views-row {
 

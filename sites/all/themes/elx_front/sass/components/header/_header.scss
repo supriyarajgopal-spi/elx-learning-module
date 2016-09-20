@@ -599,7 +599,7 @@ div#block-menu-menu-header-user-menu {
           }
 
           span.field-content::before {
-            font-size: '0.9em';
+            font-size: 16px;
             content: 'Levels Completed';
             padding: 5px 20px;
             color: #999;
@@ -616,17 +616,22 @@ div#block-menu-menu-header-user-menu {
       background-color: #1e2341;
       padding-bottom: 20px;
 
+      .views-row {
+        width: 100%;
+      }
+
       .views-field-expression {
         width: 260px;
 
         .progress-bar-percentage {
           left: -20px;
           position: absolute;
+          font-size: 16px;
         }
       }
 
       .pane-title {
-        font-size: '0.9em';
+        font-size: 16px;
         padding: 10px 20px;
         width: 200px;
         color: #999;
@@ -713,6 +718,16 @@ div#block-menu-menu-header-user-menu {
       margin-top: 1px;
       padding: 20px;
       color: #999;
+      font-size: 16px;
+
+      .views-row {
+        width: 100%;
+        margin: 10px 0;
+
+        .views-field {
+          margin-left: 0;
+        }
+      }
 
       .view-display-id-suggested {
         .views-field-field-headline {
@@ -720,7 +735,7 @@ div#block-menu-menu-header-user-menu {
 
           .field-content a {
             color: #9eafff;
-            font-size: 1.2em;
+            font-size: 20px;
             text-indent: 0;
           }
         }
@@ -777,8 +792,10 @@ div#block-menu-menu-header-user-menu {
             font-size: 18px;
             font-weight: 700;
             position: absolute;
-            right: -4px;
-            top: 0;
+            right: 0;
+            top: 12px;
+
+            visibility: hidden;
           }
 
           .high-five-no,

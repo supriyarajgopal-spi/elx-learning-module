@@ -21,6 +21,34 @@
       /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
       $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
 
+      /*
+      var site = 'sites/all/themes/elx_front/_gnav_tpl-temporary.php';
+      //$.get('/sites/default/files/modules/custom/elx_front/_gnav-tpl-temporary.php', function (data) {
+      $.get(site, function (data) {
+
+        // alert(data);
+        // $('body').append(data);
+        // var qtipwr = $(data).find('.qtip-wrapper').html();
+
+        localStorage.setItem('gnav',data);
+
+      });
+      $('#block-menu-menu-header-user-menu ul.menu').click(function () {
+
+        var outpt = localStorage.getItem('gnav');
+        //alert(outpt);
+
+        $('.qtip-contentWrapper #mini-panel-header_user_menu').find('.panel-panel.panel-col').html(outpt);
+
+      });
+
+      */
+      setInterval(function(){ 
+
+        $('.qtip.qtip-light').show();
+
+      },3000);
+
       /* TOOLS section // per title link // */
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 

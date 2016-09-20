@@ -50,10 +50,11 @@
       },3000);
 
       /* TOOLS section // per title link // */
+/*
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 
         // click should trigger function with overlay
-        var linkhref = $(this).attr('href'); /* /modal/nojs/9309 */
+        var linkhref = $(this).attr('href'); 
 
         // future perfect tense-ification //
         var launchModal = function (time) {
@@ -199,7 +200,7 @@
         $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal);
 
       });
-
+*/
       /* SEARCH #edit-combine search field alteration */
       if ($('body.page-search-product-library.section-search-product-library').size()) {
 

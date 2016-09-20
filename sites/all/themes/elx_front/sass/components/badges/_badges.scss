@@ -97,6 +97,14 @@
 
     }
   }
+}
+
+
+.page-badges {
+
+  .view-footer {
+    display: none;
+  }
 
   .three-minute-beauty-no,
   .three-minute-beauty-yes {
@@ -244,6 +252,57 @@
   .well-read-100-no {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+  }
+
+
+  // gnav exception //
+  .qtip-content.qtip-content {
+    #mini-panel-header_user_menu {
+    /*  .pane-levels-quizz-progress-closest-completion {
+        .user-progress-bar {
+          background-color: #1e2341;
+        }
+        .views-field-expression {
+          .progress-bar-percentage {
+            left: 30px;
+          }
+        }
+      } */
+
+      .pane-dashboard-user-my-points {
+        .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
+          width: 100%;
+        }
+        .view-display-id-my_points {
+          margin: 0;
+
+          .views-field-points {
+            width: 100%;
+            margin: 0;
+
+            .field-content::before {
+              margin-left: 86px;
+            }
+            .field-content {
+              margin-left: 46px;
+            }
+          }
+        }
+      }
+
+      .pane-dashboard-user-activities-suggested {
+        .view-display-id-suggested {
+          .views-field-field-headline {
+            margin: 0;
+
+            .field-content {
+              text-align: left;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
 }

@@ -19,9 +19,11 @@ function elx_tools_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'perm',
+        'name' => 'role',
         'settings' => array(
-          'perm' => 'access content',
+          'rids' => array(
+            0 => 2,
+          ),
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,
@@ -85,25 +87,6 @@ function elx_tools_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-313abbde-3997-495a-948e-22769b78c79c';
-  $pane->panel = 'center';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'tools-tools';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '313abbde-3997-495a-948e-22769b78c79c';
-  $display->content['new-313abbde-3997-495a-948e-22769b78c79c'] = $pane;
-  $display->panels['center'][0] = 'new-313abbde-3997-495a-948e-22769b78c79c';
-  $pane = new stdClass();
   $pane->pid = 'new-b96d816f-c8fa-4132-acf2-c16e62364879';
   $pane->panel = 'center';
   $pane->type = 'views_panes';
@@ -117,11 +100,11 @@ function elx_tools_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = 'b96d816f-c8fa-4132-acf2-c16e62364879';
   $display->content['new-b96d816f-c8fa-4132-acf2-c16e62364879'] = $pane;
-  $display->panels['center'][1] = 'new-b96d816f-c8fa-4132-acf2-c16e62364879';
+  $display->panels['center'][0] = 'new-b96d816f-c8fa-4132-acf2-c16e62364879';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -145,6 +128,10 @@ function elx_tools_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

@@ -22,11 +22,11 @@ function elx_home_page_default_page_manager_pages() {
         'name' => 'role',
         'settings' => array(
           'rids' => array(
-            0 => 1,
+            0 => 2,
           ),
         ),
         'context' => 'logged-in-user',
-        'not' => TRUE,
+        'not' => FALSE,
       ),
     ),
     'logic' => 'and',

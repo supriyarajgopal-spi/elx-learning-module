@@ -99,6 +99,9 @@ function elx_tools_views_default_views() {
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
 
+  /* Display: Tools */
+  $handler = $view->new_display('panel_pane', 'Tools', 'tools');
+
   /* Display: Tools Admin */
   $handler = $view->new_display('panel_pane', 'Tools Admin', 'tools_admin');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -119,9 +122,6 @@ function elx_tools_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-
-  /* Display: Tools */
-  $handler = $view->new_display('panel_pane', 'Tools', 'tools');
   $translatables['tools'] = array(
     t('Master'),
     t('Tools'),
@@ -131,8 +131,8 @@ function elx_tools_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Tools Admin'),
     t('View panes'),
+    t('Tools Admin'),
   );
   $export['tools'] = $view;
 

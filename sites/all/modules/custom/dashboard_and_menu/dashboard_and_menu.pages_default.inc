@@ -87,18 +87,7 @@ function dashboard_and_menu_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'name' => '',
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'node_type',
-          'settings' => array(
-            'type' => array(
-              'market' => 'market',
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
@@ -388,7 +377,19 @@ function dashboard_and_menu_default_page_manager_pages() {
   $page->admin_title = 'Leaderboard';
   $page->admin_description = '';
   $page->path = 'leaderboard';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'access user profiles',
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -414,6 +415,10 @@ function dashboard_and_menu_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'onecol';

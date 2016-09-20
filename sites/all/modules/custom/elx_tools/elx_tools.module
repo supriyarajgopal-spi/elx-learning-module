@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ELX Tools feature.
+ */
+
+include_once 'elx_tools.features.inc';

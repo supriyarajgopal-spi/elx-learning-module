@@ -336,8 +336,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
   $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['tid']['label'] = '';
-  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['label'] = 'Levels completed';
   $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Field: COUNT(Flags: Flagged) */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
@@ -511,6 +510,7 @@ function elx_levels_views_default_views() {
     t('In Progress'),
     t('Completed'),
     t('Completed count'),
+    t('Levels completed'),
     t('Closest to completion'),
   );
   $export['levels_quizz_progress'] = $view;

@@ -19,9 +19,11 @@ function elx_levels_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'perm',
+        'name' => 'role',
         'settings' => array(
-          'perm' => 'access content',
+          'rids' => array(
+            0 => 2,
+          ),
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,
@@ -44,133 +46,6 @@ function elx_levels_default_page_manager_pages() {
   $page->arguments = array();
   $page->conf = array();
   $page->default_handlers = array();
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_levels_all__panel_context_13ae3a16-503c-473d-9e19-b146d1f59e51';
-  $handler->task = 'page';
-  $handler->subtask = 'levels_all';
-  $handler->handler = 'panel_context';
-  $handler->weight = -29;
-  $handler->conf = array(
-    'title' => 'Levels All',
-    'no_blocks' => 0,
-    'pipeline' => 'ipe',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-  );
-  $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'middle' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = '';
-  $display->uuid = 'd312ae66-a7e6-4c0b-8307-17c33e924876';
-  $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_levels_all__panel_context_13ae3a16-503c-473d-9e19-b146d1f59e51';
-  $display->content = array();
-  $display->panels = array();
-  $pane = new stdClass();
-  $pane->pid = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
-  $pane->panel = 'middle';
-  $pane->type = 'block';
-  $pane->subtype = 'block-4';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'Levels',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
-  $display->content['new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8'] = $pane;
-  $display->panels['middle'][0] = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
-  $pane = new stdClass();
-  $pane->pid = 'new-68bc77e5-716a-42e9-83cf-98a76b32412f';
-  $pane->panel = 'middle';
-  $pane->type = 'block';
-  $pane->subtype = 'block-5';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '68bc77e5-716a-42e9-83cf-98a76b32412f';
-  $display->content['new-68bc77e5-716a-42e9-83cf-98a76b32412f'] = $pane;
-  $display->panels['middle'][1] = 'new-68bc77e5-716a-42e9-83cf-98a76b32412f';
-  $pane = new stdClass();
-  $pane->pid = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
-  $pane->panel = 'middle';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-levels-menu';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
-  $display->content['new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8'] = $pane;
-  $display->panels['middle'][2] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
-  $pane = new stdClass();
-  $pane->pid = 'new-12f601b9-acee-4a89-9e51-4fafa59f7c31';
-  $pane->panel = 'middle';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'levels_quizz_progress-all';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = '12f601b9-acee-4a89-9e51-4fafa59f7c31';
-  $display->content['new-12f601b9-acee-4a89-9e51-4fafa59f7c31'] = $pane;
-  $display->panels['middle'][3] = 'new-12f601b9-acee-4a89-9e51-4fafa59f7c31';
-  $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
@@ -312,6 +187,133 @@ function elx_levels_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_levels_all__panel_context_13ae3a16-503c-473d-9e19-b146d1f59e51';
+  $handler->task = 'page';
+  $handler->subtask = 'levels_all';
+  $handler->handler = 'panel_context';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'Levels All',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'd312ae66-a7e6-4c0b-8307-17c33e924876';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'page_levels_all__panel_context_13ae3a16-503c-473d-9e19-b146d1f59e51';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'block-4';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Levels',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
+  $display->content['new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8'] = $pane;
+  $display->panels['middle'][0] = 'new-dcecd236-7735-4abe-ab79-3ed2f6bd89c8';
+  $pane = new stdClass();
+  $pane->pid = 'new-68bc77e5-716a-42e9-83cf-98a76b32412f';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'block-5';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '68bc77e5-716a-42e9-83cf-98a76b32412f';
+  $display->content['new-68bc77e5-716a-42e9-83cf-98a76b32412f'] = $pane;
+  $display->panels['middle'][1] = 'new-68bc77e5-716a-42e9-83cf-98a76b32412f';
+  $pane = new stdClass();
+  $pane->pid = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-levels-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
+  $display->content['new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8'] = $pane;
+  $display->panels['middle'][2] = 'new-ec7c8518-aacc-41d1-b1fa-f2f1ea0a8ae8';
+  $pane = new stdClass();
+  $pane->pid = 'new-12f601b9-acee-4a89-9e51-4fafa59f7c31';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'levels_quizz_progress-all';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '12f601b9-acee-4a89-9e51-4fafa59f7c31';
+  $display->content['new-12f601b9-acee-4a89-9e51-4fafa59f7c31'] = $pane;
+  $display->panels['middle'][3] = 'new-12f601b9-acee-4a89-9e51-4fafa59f7c31';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
   $pages['levels_all'] = $page;
 
   $page = new stdClass();
@@ -325,9 +327,11 @@ function elx_levels_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'perm',
+        'name' => 'role',
         'settings' => array(
-          'perm' => 'access content',
+          'rids' => array(
+            0 => 2,
+          ),
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,
@@ -630,9 +634,11 @@ function elx_levels_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'perm',
+        'name' => 'role',
         'settings' => array(
-          'perm' => 'access content',
+          'rids' => array(
+            0 => 2,
+          ),
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,

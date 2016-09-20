@@ -68,7 +68,7 @@ function elx_notifications_default_message_type() {
   $items['badge_award_notifications'] = entity_import('message_type', '{
     "name" : "badge_award_notifications",
     "description" : "Badge Award Notifications",
-    "argument_keys" : [ "!badge_description" ],
+    "argument_keys" : [ "!badge_name", "!badge_awarded_by" ],
     "argument" : [],
     "category" : "message_type",
     "data" : {
@@ -80,9 +80,9 @@ function elx_notifications_default_message_type() {
     "message_text" : {
       "en" : [
         {
-          "value" : "\\u003Cp\\u003E!badge_description\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EThe !badge_name\\u0026nbsp;badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003E!badge_description\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EThe !badge_name\\u00a0badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
         }
       ],
       "und" : [

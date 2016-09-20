@@ -154,7 +154,7 @@ function elx_notifications_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('There are no new notifications.'),
+    t('There are no notifications.'),
     t('flag'),
     t('New'),
     t('All'),

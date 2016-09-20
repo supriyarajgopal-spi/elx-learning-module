@@ -43,7 +43,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
@@ -330,15 +329,15 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content Admin pane */
+  /* Field: Level Content */
   $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
   $handler->display->display_options['fields']['view_1']['table'] = 'views';
   $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Level Content Admin pane';
+  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Level Content';
   $handler->display->display_options['fields']['view_1']['label'] = '';
   $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view_1']['display'] = 'level_content_admin';
+  $handler->display->display_options['fields']['view_1']['display'] = 'level_content';
 
   /* Display: In Progress */
   $handler = $view->new_display('panel_pane', 'In Progress', 'in_progress');
@@ -744,15 +743,15 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content Admin pane */
-  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
-  $handler->display->display_options['fields']['view_1']['table'] = 'views';
-  $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Level Content Admin pane';
-  $handler->display->display_options['fields']['view_1']['label'] = '';
-  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view_1']['display'] = 'level_content_admin';
+  /* Field: Level Content Admin */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['ui_name'] = 'Level Content Admin';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'level_content';
+  $handler->display->display_options['fields']['view']['display'] = 'level_content_admin';
   $translatables['levels_quizz_progress'] = array(
     t('Master'),
     t('<none>'),

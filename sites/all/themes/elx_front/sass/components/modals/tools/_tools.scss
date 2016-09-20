@@ -13,6 +13,51 @@ body.page-tools.section-tools {
       right: -50px;
     }
   }
+  #modalContent {
+
+    .field-name-field-display-title {
+      .field-item {
+        color: #040a2b;
+        font-family: "optimadisplaylightlight";
+        font-size: 23px;
+        font-weight: bold;
+        margin: 10px 0;
+        text-decoration: none;
+
+      }
+    }
+    .field-name-field-tool-description {
+      .field-item {
+        p {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    .field-name-field-tool-pdf {
+      .file-video-mp4 {
+        video {
+          width: 100%;
+        }
+      }
+    }
+
+    #detail-content-btn {
+      margin: 10px 0;
+      padding: 5px;
+      border: 1px solid gray;
+      width: 150px;
+      text-align: center;
+      color: gray;
+      background-color: white;
+
+      a {
+        text-decoration: none;
+        color: #040a2b;
+      }
+    }
+  }
+
   /*
   #modalContent
 

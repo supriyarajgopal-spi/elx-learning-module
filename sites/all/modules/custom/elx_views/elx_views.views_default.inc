@@ -938,21 +938,49 @@ function elx_views_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'product-library';
+  /* Display: Product Library Admin */
+  $handler = $view->new_display('panel_pane', 'Product Library Admin', 'product_library_admin');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  /* Filter criterion: Content: Product categories (field_product_categories) */
+  $handler->display->display_options['filters']['field_product_categories_tid']['id'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['table'] = 'field_data_field_product_categories';
+  $handler->display->display_options['filters']['field_product_categories_tid']['field'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator_id'] = 'field_product_categories_tid_op';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['label'] = 'Filter By';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['operator'] = 'field_product_categories_tid_op';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['identifier'] = 'field_product_categories_tid';
+  $handler->display->display_options['filters']['field_product_categories_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_product_categories_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_product_categories_tid']['vocabulary'] = 'product_category';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  /* Display: Product Library */
+  $handler = $view->new_display('panel_pane', 'Product Library', 'product_library');
   $translatables['product_library'] = array(
     t('Master'),
     t('Product Library'),
@@ -977,8 +1005,8 @@ function elx_views_views_default_views() {
     t('Most Popular'),
     t('Title A-Z'),
     t('Filter By'),
-    t('Page'),
-    t('Block'),
+    t('Product Library Admin'),
+    t('View panes'),
   );
   $export['product_library'] = $view;
 

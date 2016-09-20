@@ -1,0 +1,10 @@
+name = ELX RPU145 Badges View
+description = Fixes the bug RPU 145 in JIRA
+core = 7.x
+package = ELX
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = badges
+features_exclude[dependencies][ctools] = ctools

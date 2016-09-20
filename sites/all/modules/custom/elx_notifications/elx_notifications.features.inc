@@ -45,15 +45,11 @@ function elx_notifications_flag_default_flags() {
     'badge_description' => '',
     'badge_unearned_description' => '',
     'badge_image' => NULL,
-    'show_in_links' => array(
-      'full' => 0,
-      'diff_standard' => 0,
-      'token' => 0,
-    ),
-    'show_as_field' => 0,
-    'show_on_form' => 0,
+    'show_in_links' => array(),
+    'show_as_field' => FALSE,
+    'show_on_form' => FALSE,
     'access_author' => '',
-    'show_contextual_link' => 0,
+    'show_contextual_link' => FALSE,
     'module' => 'elx_notifications',
     'locked' => array(
       0 => 'name',
@@ -72,7 +68,7 @@ function elx_notifications_default_message_type() {
   $items['badge_award_notifications'] = entity_import('message_type', '{
     "name" : "badge_award_notifications",
     "description" : "Badge Award Notifications",
-    "argument_keys" : [ "!badge_name", "!badge_awarded_by" ],
+    "argument_keys" : [ "!badge_description" ],
     "argument" : [],
     "category" : "message_type",
     "data" : {
@@ -84,9 +80,9 @@ function elx_notifications_default_message_type() {
     "message_text" : {
       "en" : [
         {
-          "value" : "\\u003Cp\\u003EThe !badge_name\\u0026nbsp;badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003E!badge_description\\u003C\\/p\\u003E",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003EThe !badge_name\\u00a0badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E!badge_description\\u003C\\/p\\u003E\\n"
         }
       ],
       "und" : [

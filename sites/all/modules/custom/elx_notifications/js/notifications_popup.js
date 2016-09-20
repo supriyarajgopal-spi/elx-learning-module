@@ -2,7 +2,7 @@
 	Drupal.behaviors.elx_notifications = {
 	  attach: function (context, settings) {
 		
-		var popup_url = settings.basePath + 'notifications_popup'; //Defined in hook_menu()
+        var popup_url = settings.basePath + 'notifications_popup'; //Defined in hook_menu()
 		
 		//Prevent navigating to page as per default
 		$('a.link-badge-wrapper').click(function(event) {

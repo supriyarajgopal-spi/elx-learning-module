@@ -59,6 +59,29 @@
 
   .h5p-course-presentation {
     color: #fff;
+
+    a {
+      color: #fff;
+    }
+
+  }
+
+  .h5p-image {
+    overflow: hidden;
+  }
+
+  .h5p-footer-previous-slide,
+  .h5p-footer-next-slide,
+  .h5p-footer-toggle-full-screen {
+
+    &::before {
+      color: #fff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+
   }
 
 }

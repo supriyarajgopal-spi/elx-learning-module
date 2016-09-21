@@ -13,7 +13,7 @@ function elx_levels_views_default_views() {
   $view = new view();
   $view->name = 'level_content';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Level content';
   $view->core = 7;
@@ -67,6 +67,10 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
   $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Order weight (field_order_weight) */
+  $handler->display->display_options['sorts']['field_order_weight_value']['id'] = 'field_order_weight_value';
+  $handler->display->display_options['sorts']['field_order_weight_value']['table'] = 'field_data_field_order_weight';
+  $handler->display->display_options['sorts']['field_order_weight_value']['field'] = 'field_order_weight_value';
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -97,8 +101,11 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
 
-  /* Display: Level Content Admin */
-  $handler = $view->new_display('panel_pane', 'Level Content Admin', 'level_content_admin');
+  /* Display: Admin */
+  $handler = $view->new_display('block', 'Admin', 'admin');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Language */
@@ -115,9 +122,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'h5p_content' => 'h5p_content',
   );
-
-  /* Display: Level Content */
-  $handler = $view->new_display('panel_pane', 'Level Content', 'level_content');
   $translatables['level_content'] = array(
     t('Master'),
     t('<none>'),
@@ -136,16 +140,14 @@ function elx_levels_views_default_views() {
     t('last »'),
     t('SEE MORE'),
     t('All'),
-    t('Level Content Admin'),
-    t('View panes'),
-    t('Level Content'),
+    t('Admin'),
   );
   $export['level_content'] = $view;
 
   $view = new view();
   $view->name = 'levels_quizz_progress';
   $view->description = 'Outer view for levels';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Levels outer view';
   $view->core = 7;
@@ -234,24 +236,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content pane */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Level Content pane';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view']['display'] = 'level_content';
-  /* Field: Level Content Admin pane */
-  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
-  $handler->display->display_options['fields']['view_1']['table'] = 'views';
-  $handler->display->display_options['fields']['view_1']['field'] = 'view';
-  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Level Content Admin pane';
-  $handler->display->display_options['fields']['view_1']['label'] = '';
-  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view_1']['display'] = 'level_content_admin';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!tid]';
   /* Sort criterion: Taxonomy term: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
@@ -339,8 +331,11 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
   $handler->display->display_options['fields']['view_1']['display'] = 'level_content';
 
-  /* Display: In Progress */
-  $handler = $view->new_display('panel_pane', 'In Progress', 'in_progress');
+  /* Display: All admin */
+  $handler = $view->new_display('panel_pane', 'All admin', 'all_admin');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -388,15 +383,36 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content pane */
+  /* Field: Global: View */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Level Content pane';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view']['display'] = 'level_content';
+  $handler->display->display_options['fields']['view']['display'] = 'admin';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!tid]';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: In Progress */
+  $handler = $view->new_display('panel_pane', 'In Progress', 'in_progress');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -439,24 +455,16 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
 
-  /* Display: Completed */
-  $handler = $view->new_display('panel_pane', 'Completed', 'completed');
+  /* Display: Closest to completion */
+  $handler = $view->new_display('panel_pane', 'Closest to completion', 'closest_completion');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'Level';
-  /* Field: Taxonomy term: Term ID */
-  $handler->display->display_options['fields']['tid']['id'] = 'tid';
-  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['tid']['field'] = 'tid';
-  $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['tid']['label'] = '';
-  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['tid']['separator'] = '';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: COUNT(Flags: Flagged) */
   $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
   $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
@@ -488,15 +496,60 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = '%';
   $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content pane */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Level Content pane';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view']['display'] = 'level_content';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: COUNT(Flags: Flagged) */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['group_type'] = 'count';
+  $handler->display->display_options['filters']['flagged']['operator'] = '>';
+  $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
+  $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: Global: Fields comparison */
+  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
+  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['operator'] = '<';
+  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
+  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
+  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Completed */
+  $handler = $view->new_display('panel_pane', 'Completed', 'completed');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -600,158 +653,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
-
-  /* Display: Closest to completion */
-  $handler = $view->new_display('panel_pane', 'Closest to completion', 'closest_completion');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: COUNT(Flags: Flagged) */
-  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
-  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged']['group_type'] = 'count';
-  $handler->display->display_options['fields']['flagged']['label'] = '';
-  $handler->display->display_options['fields']['flagged']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged']['separator'] = '';
-  /* Field: COUNT(Content: Nid) */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '';
-  $handler->display->display_options['fields']['expression']['element_type'] = '0';
-  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = '%';
-  $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'h5p_content' => 'h5p_content',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: COUNT(Flags: Flagged) */
-  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
-  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
-  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['filters']['flagged']['group_type'] = 'count';
-  $handler->display->display_options['filters']['flagged']['operator'] = '>';
-  $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
-  $handler->display->display_options['filters']['flagged']['group'] = 1;
-  /* Filter criterion: Global: Fields comparison */
-  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
-  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
-  $handler->display->display_options['filters']['fields_compare']['operator'] = '<';
-  $handler->display->display_options['filters']['fields_compare']['group'] = 1;
-  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
-  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-
-  /* Display: All admin */
-  $handler = $view->new_display('panel_pane', 'All admin', 'all_admin');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'Level';
-  /* Field: Taxonomy term: Term ID */
-  $handler->display->display_options['fields']['tid']['id'] = 'tid';
-  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['tid']['field'] = 'tid';
-  $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['fields']['tid']['label'] = '';
-  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Field: COUNT(Flags: Flagged) */
-  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
-  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged']['group_type'] = 'count';
-  $handler->display->display_options['fields']['flagged']['label'] = '';
-  $handler->display->display_options['fields']['flagged']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged']['separator'] = '';
-  /* Field: COUNT(Content: Nid) */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Global: Math expression */
-  $handler->display->display_options['fields']['expression']['id'] = 'expression';
-  $handler->display->display_options['fields']['expression']['table'] = 'views';
-  $handler->display->display_options['fields']['expression']['field'] = 'expression';
-  $handler->display->display_options['fields']['expression']['label'] = '';
-  $handler->display->display_options['fields']['expression']['element_type'] = '0';
-  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
-  $handler->display->display_options['fields']['expression']['precision'] = '0';
-  $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = '%';
-  $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
-  /* Field: Level Content Admin */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['ui_name'] = 'Level Content Admin';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'level_content';
-  $handler->display->display_options['fields']['view']['display'] = 'level_content_admin';
   $translatables['levels_quizz_progress'] = array(
     t('Master'),
     t('<none>'),
@@ -768,11 +669,11 @@ function elx_levels_views_default_views() {
     t('%'),
     t('All'),
     t('View panes'),
+    t('All admin'),
     t('In Progress'),
+    t('Closest to completion'),
     t('Completed'),
     t('Completed count'),
-    t('Closest to completion'),
-    t('All admin'),
   );
   $export['levels_quizz_progress'] = $view;
 

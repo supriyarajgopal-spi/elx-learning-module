@@ -13,7 +13,7 @@ function elx_tools_views_default_views() {
   $view = new view();
   $view->name = 'tools';
   $view->description = 'View of Estee Lauder tools';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Tools';
   $view->core = 7;
@@ -82,14 +82,6 @@ function elx_tools_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'tools' => 'tools',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -98,22 +90,25 @@ function elx_tools_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'tools' => 'tools',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Tools */
   $handler = $view->new_display('panel_pane', 'Tools', 'tools');
 
   /* Display: Tools Admin */
   $handler = $view->new_display('panel_pane', 'Tools Admin', 'tools_admin');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer nodes';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'tools' => 'tools',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -122,6 +117,14 @@ function elx_tools_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'tools' => 'tools',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $translatables['tools'] = array(
     t('Master'),
     t('Tools'),

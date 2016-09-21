@@ -91,8 +91,8 @@ function learner_pathways_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'learning_category',
   );
   $terms[] = array(
-    'name' => 'Holiday 2016 - Beauty Advisors',
-    'description' => '',
+    'name' => 'The Holiday Experience',
+    'description' => 'Holiday 2016 for Beauty Advisors',
     'format' => 'full_html',
     'weight' => 11,
     'uuid' => '9b2fed0e-b181-4493-a001-65176f3de310',

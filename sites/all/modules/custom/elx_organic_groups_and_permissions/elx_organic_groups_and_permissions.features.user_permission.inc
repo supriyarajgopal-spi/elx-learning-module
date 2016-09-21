@@ -200,6 +200,27 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'restws',
   );
 
+  // Exported permission: 'access resource message'.
+  $permissions['access resource message'] = array(
+    'name' => 'access resource message',
+    'roles' => array(),
+    'module' => 'restws',
+  );
+
+  // Exported permission: 'access resource message_type'.
+  $permissions['access resource message_type'] = array(
+    'name' => 'access resource message_type',
+    'roles' => array(),
+    'module' => 'restws',
+  );
+
+  // Exported permission: 'access resource message_type_category'.
+  $permissions['access resource message_type_category'] = array(
+    'name' => 'access resource message_type_category',
+    'roles' => array(),
+    'module' => 'restws',
+  );
+
   // Exported permission: 'access resource node'.
   $permissions['access resource node'] = array(
     'name' => 'access resource node',
@@ -328,6 +349,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access statistics'.
+  $permissions['access statistics'] = array(
+    'name' => 'access statistics',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'statistics',
+  );
+
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
@@ -335,6 +365,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'user',
   );
@@ -578,6 +609,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'administer gravatar'.
+  $permissions['administer gravatar'] = array(
+    'name' => 'administer gravatar',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'gravatar',
+  );
+
   // Exported permission: 'administer group'.
   $permissions['administer group'] = array(
     'name' => 'administer group',
@@ -650,6 +690,24 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'menu',
+  );
+
+  // Exported permission: 'administer menu badges'.
+  $permissions['administer menu badges'] = array(
+    'name' => 'administer menu badges',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'menu_badges',
+  );
+
+  // Exported permission: 'administer message types'.
+  $permissions['administer message types'] = array(
+    'name' => 'administer message types',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'message',
   );
 
   // Exported permission: 'administer mini panels'.
@@ -816,6 +874,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer statistics'.
+  $permissions['administer statistics'] = array(
+    'name' => 'administer statistics',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'statistics',
   );
 
   // Exported permission: 'administer tac_lite'.
@@ -1157,6 +1224,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'name' => 'create matching_game content',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: 'create messages'.
+  $permissions['create messages'] = array(
+    'name' => 'create messages',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'message',
   );
 
   // Exported permission: 'create mini panels'.
@@ -1747,6 +1823,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'apply_for_role',
+  );
+
+  // Exported permission: 'disable own gravatar'.
+  $permissions['disable own gravatar'] = array(
+    'name' => 'disable own gravatar',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'gravatar',
   );
 
   // Exported permission: 'display drupal links'.
@@ -2381,6 +2466,18 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'devel',
   );
 
+  // Exported permission: 'flag admin_upload_training'.
+  $permissions['flag admin_upload_training'] = array(
+    'name' => 'flag admin_upload_training',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'flag beautiful_start'.
   $permissions['flag beautiful_start'] = array(
     'name' => 'flag beautiful_start',
@@ -2471,6 +2568,18 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'flag gift_genius'.
+  $permissions['flag gift_genius'] = array(
+    'name' => 'flag gift_genius',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'flag high_five_badge'.
   $permissions['flag high_five_badge'] = array(
     'name' => 'flag high_five_badge',
@@ -2488,6 +2597,13 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag message_seen_unseen'.
+  $permissions['flag message_seen_unseen'] = array(
+    'name' => 'flag message_seen_unseen',
+    'roles' => array(),
     'module' => 'flag',
   );
 
@@ -2527,6 +2643,18 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag perfect_present'.
+  $permissions['flag perfect_present'] = array(
+    'name' => 'flag perfect_present',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );
@@ -2704,7 +2832,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'total_control',
   );
@@ -2800,6 +2927,26 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'services',
+  );
+
+  // Exported permission: 'publish any content'.
+  $permissions['publish any content'] = array(
+    'name' => 'publish any content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'publish editable content'.
+  $permissions['publish editable content'] = array(
+    'name' => 'publish editable content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+    ),
+    'module' => 'publishcontent',
   );
 
   // Exported permission: 'rename features'.
@@ -2956,6 +3103,17 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'i18n_string',
   );
 
+  // Exported permission: 'unflag admin_upload_training'.
+  $permissions['unflag admin_upload_training'] = array(
+    'name' => 'unflag admin_upload_training',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'unflag beautiful_start'.
   $permissions['unflag beautiful_start'] = array(
     'name' => 'unflag beautiful_start',
@@ -3046,6 +3204,18 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'flag',
   );
 
+  // Exported permission: 'unflag gift_genius'.
+  $permissions['unflag gift_genius'] = array(
+    'name' => 'unflag gift_genius',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'unflag high_five_badge'.
   $permissions['unflag high_five_badge'] = array(
     'name' => 'unflag high_five_badge',
@@ -3063,6 +3233,13 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag message_seen_unseen'.
+  $permissions['unflag message_seen_unseen'] = array(
+    'name' => 'unflag message_seen_unseen',
+    'roles' => array(),
     'module' => 'flag',
   );
 
@@ -3102,6 +3279,18 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag perfect_present'.
+  $permissions['unflag perfect_present'] = array(
+    'name' => 'unflag perfect_present',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );
@@ -3246,6 +3435,33 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'unpublish any content'.
+  $permissions['unpublish any content'] = array(
+    'name' => 'unpublish any content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'unpublish editable content'.
+  $permissions['unpublish editable content'] = array(
+    'name' => 'unpublish editable content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
+    ),
+    'module' => 'publishcontent',
+  );
+
+  // Exported permission: 'use PHP for settings'.
+  $permissions['use PHP for settings'] = array(
+    'name' => 'use PHP for settings',
+    'roles' => array(),
+    'module' => 'php',
+  );
+
   // Exported permission: 'use advanced search'.
   $permissions['use advanced search'] = array(
     'name' => 'use advanced search',
@@ -3272,6 +3488,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'flag',
+  );
+
+  // Exported permission: 'use gravatar'.
+  $permissions['use gravatar'] = array(
+    'name' => 'use gravatar',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'gravatar',
   );
 
   // Exported permission: 'use ipe with page manager'.
@@ -3346,6 +3571,13 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
       'authenticated user' => 'authenticated user',
     ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format php_code'.
+  $permissions['use text format php_code'] = array(
+    'name' => 'use text format php_code',
+    'roles' => array(),
     'module' => 'filter',
   );
 
@@ -3462,6 +3694,15 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
     ),
     'module' => 'aes',
+  );
+
+  // Exported permission: 'view post access counter'.
+  $permissions['view post access counter'] = array(
+    'name' => 'view post access counter',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'statistics',
   );
 
   // Exported permission: 'view private files'.

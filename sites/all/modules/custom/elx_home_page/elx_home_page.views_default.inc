@@ -13,7 +13,7 @@ function elx_home_page_views_default_views() {
   $view = new view();
   $view->name = 'explore_learning_levels';
   $view->description = 'Explore Learning Levels on Hompage';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Homepage: Explore Learning Levels';
   $view->core = 7;
@@ -424,7 +424,7 @@ function elx_home_page_views_default_views() {
   $view = new view();
   $view->name = 'homepage_browseproductlibrary';
   $view->description = 'Browse the Product Library on Homepage';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Homepage: BrowseProductLibrary';
   $view->core = 7;
@@ -806,7 +806,7 @@ function elx_home_page_views_default_views() {
   $view = new view();
   $view->name = 'homepage_spotlight';
   $view->description = 'Spotlight on Hompage';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'HomePage: Spotlight';
   $view->core = 7;
@@ -1064,7 +1064,7 @@ function elx_home_page_views_default_views() {
   $view = new view();
   $view->name = 'homepage_whatsnewtrending';
   $view->description = 'What\'s New & Trending on Homepage';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'node';
   $view->human_name = 'Homepage: WhatsNewTrending';
   $view->core = 7;

@@ -68,7 +68,7 @@ function elx_levels_default_page_manager_pages() {
         0 => array(
           'name' => 'perm',
           'settings' => array(
-            'perm' => 'bypass node access',
+            'perm' => 'administer nodes',
           ),
           'context' => 'logged-in-user',
           'not' => FALSE,

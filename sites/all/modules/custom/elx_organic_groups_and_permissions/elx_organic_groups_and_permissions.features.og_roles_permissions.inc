@@ -23,6 +23,16 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
       'manage members' => TRUE,
       'manage permissions' => TRUE,
       'manage roles' => TRUE,
+      'publish any content' => TRUE,
+      'publish editable content' => TRUE,
+      'unpublish any content' => TRUE,
+      'unpublish editable content' => TRUE,
+      'update any badge content' => TRUE,
+      'update any content_object content' => TRUE,
+      'update any disclaimer content' => TRUE,
+      'update any h5p_content content' => TRUE,
+      'update any product_detail content' => TRUE,
+      'update any tools content' => TRUE,
       'update group' => TRUE,
     ),
   );
@@ -52,7 +62,15 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
     'group_bundle' => 'market',
     'name' => 'translator',
     'permissions' => array(
-      'update any badge content' => TRUE,
+      'create h5p_content content' => TRUE,
+      'create product_detail content' => TRUE,
+      'create tools content' => TRUE,
+      'delete own h5p_content content' => TRUE,
+      'delete own product_detail content' => TRUE,
+      'delete own tools content' => TRUE,
+      'update any h5p_content content' => TRUE,
+      'update any product_detail content' => TRUE,
+      'update any tools content' => TRUE,
     ),
   );
 

@@ -84,7 +84,9 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:update any content_object content'
   $permissions['node:market:update any content_object content'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   // Exported og permission: 'node:market:update group'

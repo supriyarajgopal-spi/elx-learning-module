@@ -13,7 +13,7 @@ function elx_notifications_views_default_views() {
   $view = new view();
   $view->name = 'notifications';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'ELX';
   $view->base_table = 'message';
   $view->human_name = 'Notifications';
   $view->core = 7;
@@ -154,7 +154,7 @@ function elx_notifications_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('There are no notifications.'),
+    t('There are no new notifications.'),
     t('flag'),
     t('New'),
     t('All'),

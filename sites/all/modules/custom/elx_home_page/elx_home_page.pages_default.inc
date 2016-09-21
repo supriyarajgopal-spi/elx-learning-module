@@ -19,11 +19,9 @@ function elx_home_page_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'role',
+        'name' => 'perm',
         'settings' => array(
-          'rids' => array(
-            0 => 2,
-          ),
+          'perm' => 'access content',
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,
@@ -61,7 +59,7 @@ function elx_home_page_default_page_manager_pages() {
         1 => array(
           'name' => 'perm',
           'settings' => array(
-            'perm' => 'bypass node access',
+            'perm' => 'administer nodes',
           ),
           'context' => 'logged-in-user',
           'not' => FALSE,

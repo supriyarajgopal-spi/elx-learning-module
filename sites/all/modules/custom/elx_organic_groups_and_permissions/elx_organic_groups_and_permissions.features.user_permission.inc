@@ -3753,6 +3753,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
       'EL Regional Market Admin' => 'EL Regional Market Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'userpoints',
   );

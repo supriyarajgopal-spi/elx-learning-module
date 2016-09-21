@@ -77,11 +77,7 @@ function elx_badge_flags_views_pre_render(&$view)
 		
 		//..or add the same classes to all Views fields at oncce
 		foreach($view->field as $field)
-			$field->options['alter']['link_class'] = t('use-ajax'); //Separate each class name with a space. 'use-ajax' is mandatory
-		break;
-	 
-	case 'product_library':
-		$view->field['field_display_title']->options['alter']['link_class'] = t('use-ajax'); //'use-ajax' is mandatory
+			$field->options['alter']['link_class'] = 'use-ajax'; //Separate each class name with a space. 'use-ajax' is mandatory
 		break;
   }
 }

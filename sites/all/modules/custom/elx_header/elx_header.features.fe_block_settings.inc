@@ -158,8 +158,8 @@ function elx_header_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'elx_front',
         'weight' => -27,
       ),

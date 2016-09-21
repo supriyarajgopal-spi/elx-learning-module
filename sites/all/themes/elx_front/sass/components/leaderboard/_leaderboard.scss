@@ -73,6 +73,59 @@ body.page-leaderboard {
       margin-top: -80px;
     }
 
+    .pane-user-points-panel-pane-1 {
+/*
+          .views-field-user-gravatar-picture  {
+
+             position: absolute;
+             margin-left: 30%;
+             margin-top: -25px;
+
+            .field-content {
+
+              background-color: #f0f8ff;
+              border: 2px solid gold;
+              // border-radius: $field-picture-radius;
+              display: block;
+              float: left;
+              // height: $field-picture-radius;
+              // width: $field-picture-radius;
+
+              background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+              background-size: 100%;
+
+            }
+          }
+
+        //}
+*/
+        .views-field-user-gravatar-picture {
+
+          margin-left: 25%;
+          margin-top: 0;
+          position: absolute;
+
+          .field-content {
+
+            background-color: #f0f8ff;
+            background-size: 100% auto;
+            border: 3px solid gold;
+            border-radius: 90px;
+            display: block;
+            float: left;
+            height: 90px;
+            overflow: hidden;
+            width: 90px;
+            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+
+            img {
+              max-width: 110%;
+              transform: scale(1.1);
+            }
+          }
+        }
+    }
+
     .pane-user-points-panel-pane-2 {
 
       clear: both;
@@ -96,22 +149,45 @@ body.page-leaderboard {
 
         position: relative;
 
-        .views-field-picture {
+        .views-field-user-gravatar-picture {
+
           margin-left: 25%;
           margin-top: -90px;
           position: absolute;
 
+          /*
           .field-content {
+
+            background-color: #f0f8ff;
+            background-size: 100% auto;
+            border: 3px solid gold;
+            border-radius: 90px;
+            display: block;
+            float: left;
+            height: 90px;
+            overflow: hidden;
+            width: 90px;
+            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png')
+          }
+          */
+
+          .field-content {
+
+            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
             background-color: #f0f8ff;
             border: 3px solid gold;
-            border-radius: $field-picture-radius-header;
+            border-radius: 90px;
+            //border-radius: $field-picture-radius-header;
             display: block;
             float: left;
             height: $field-picture-radius-header;
             width: $field-picture-radius-header;
             background-color: #f0f8ff;
-            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
             background-size: 100%;
+
+            /*img {
+              transform: scale(1.1);
+            //} */
           }
 
         }
@@ -211,7 +287,8 @@ body.page-leaderboard {
             margin-left: 45%;
           }
 
-          .views-field-picture {
+          /*
+          .views-field-user-gravatar-picture  {
 
              position: absolute;
              margin-left: 30%;
@@ -221,11 +298,11 @@ body.page-leaderboard {
 
               background-color: #f0f8ff;
               border: 2px solid gold;
-              border-radius: $field-picture-radius;
+              // border-radius: $field-picture-radius;
               display: block;
               float: left;
-              height: $field-picture-radius;
-              width: $field-picture-radius;
+              // height: $field-picture-radius;
+              // width: $field-picture-radius;
 
               background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
               background-size: 100%;
@@ -233,6 +310,7 @@ body.page-leaderboard {
             }
 
           }
+          */
 
           .views-field-field-country {
             width: 25%;

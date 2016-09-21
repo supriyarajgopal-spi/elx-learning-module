@@ -21,6 +21,7 @@
       /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
       $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
 
+
       /* TOOLS section // per title link // */
 /*
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
@@ -389,7 +390,7 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = bgimg.split('url("')[1].split('")')[0];
+          httpimg = 'http://' + bgimg.split('http://')[1].replace('"','').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

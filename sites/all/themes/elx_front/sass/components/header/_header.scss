@@ -715,7 +715,7 @@ div#block-menu-menu-header-user-menu {
 
       .view-display-id-suggested {
         .views-field-field-headline {
-          height: 25px;
+          height: 0;
 
           .field-content a {
             color: #9eafff;
@@ -725,8 +725,19 @@ div#block-menu-menu-header-user-menu {
         }
 
         .views-field-field-display-title {
-          display: none;
+          display: block;
+
+          height: 25px;
+
+          .field-content a {
+            color: #9eafff;
+            font-size: 16px;
+            text-indent: 0;
+
+            width: 230px;
+          }
         }
+
       }
     }
 

@@ -1,5 +1,248 @@
 <?php
+
 /**
- * @file
- * Drupal needs this blank file.
+ * Implements hook_form_alter().
+ * To add event to Badge Award Notification rule whenever You are an Inspiration badge is created manually because we cannot expect the ELX admin to manually add this event to the rule
+ * Whenever a user flag is created, if it has a non-empty 'Earned Badge Description' field, we consider that this is a badge flag & add event if not already added
  */
+function elx_badges_rules_form_alter(&$form, &$form_state, $form_id)
+{
+	if($form_id == 'flag_form') //'flag_add_form' is the one where the Flag Type (Node, User, Taxonomy, etc) is chosen whereas 'flag_form' is the actual form
+	{	
+		$flag = isset($form['#flag']->name)?flag_load($form['#flag']->name):new stdClass();
+		
+		//Additional submit handler to add event to existing rule iff flag is being created, already existing flags are already handled in the rule
+		if(empty($flag))
+			$form['#submit'][] = '_elx_badges_rules_form_submit_add_flagged_event_to_rule'; 
+	}
+}
+
+/**
+ * User defined submit handler function to add event to Badge Award Notification rule whenever You are an Inspiration badge is created manually
+ * This is because we cannot expect the ELX admin to manually add this event to the rule
+ * Borrowed from http://drupal.stackexchange.com/questions/167717/what-is-the-correct-way-to-update-existing-modules-rules-programmatically & https://www.drupal.org/node/1675748
+ */
+function _elx_badges_rules_form_submit_add_flagged_event_to_rule($form, &$form_state)
+{
+	$values = $form_state['values'];
+	$flag = $form['#flag'];
+	
+	if($flag->entity_type == 'user' && !empty($flag->badge_description['value']))
+	{
+		$rule = rules_config_load('rules_badge_award_notification');
+		$event = "flag_flagged_".$flag->name; //Machine name of event borrowed from flag\flag.rules.inc
+		$rule->event($event); //Add the event to the rule
+		$rule->save(); //Save the rule
+	}
+}
+
+/**
+ * Implements hook_flag_delete().
+ * Removes this 'user flagged' event from Badge Award Notifications rule
+ */
+function elx_badges_rules_flag_delete($flag)
+{
+	$rule = rules_config_load('rules_badge_award_notification');
+	$event = "flag_flagged_".$flag->name; //Machine name of event borrowed from flag\flag.rules.inc
+	if(in_array($event,$rule->events()))
+	{
+		$rule->removeEvent($event);
+		$rule->save();
+	}
+}
+
+/**
+ * Implements hook_rules_action_info().
+ */
+function elx_badges_rules_rules_action_info() {
+	return array(
+		'_elx_badge_rules_get_h5p_max_points' => array(
+		  'label' => t('Load maximum H5P points of Interactive Content node (H5P quiz)'),
+		  'parameter' => array(
+			'node' => array(
+			  'type' => 'node',
+			  'label' => t('Interactive Content node'),
+			  'description' => t('The maximum points that can be scored on an Interactive Content node (H5P quiz)'),
+			),
+		  ),
+		  'new variables' => array(
+			'loaded_h5p_max_points' => array(
+			  'type' => 'integer',
+			  'label' => t('Maximum H5P points'),
+			),
+		  ),
+		  'group' => t('ELX'),
+		),
+		'_elx_badge_rules_get_h5p_user_points' => array(
+		  'label' => t('Load H5P points of user scored on Interactive Content node (H5P quiz)'),
+		  'parameter' => array(
+			'user' => array(
+			  'type' => 'user',
+			  'label' => t('User'),
+			  'description' => t('The user who scored points on the Interactive Content node (H5P quiz)'),
+			),
+			'node' => array(
+			  'type' => 'node',
+			  'label' => t('Interactive Content node'),
+			  'description' => t('The points scored by user on the Interactive Content node (H5P quiz)'),
+			),
+		  ),
+		  'new variables' => array(
+			'loaded_h5p_user_points' => array(
+			  'type' => 'integer',
+			  'label' => t('H5P user points'),
+			),
+		  ),
+		  'group' => t('ELX'),
+		),
+		'_elx_badge_rules_get_h5p_tagged_count' => array(
+		  'label' => t('Load count of H5P nodes tagged with a specific Learning Level'),
+		  'parameter' => array(
+			'user' => array(
+			  'type' => 'user',
+			  'label' => t('User'),
+			  'description' => t('The user on whose behalf this H5P node is flagged. Leave blank to ignore this condition.'),
+			  'optional' => TRUE,
+			),
+			'taxonomy' => array(
+			  'type' => 'integer',
+			  'label' => t('Learning Level'),
+			  'description' => t('The learning level that this H5P node is tagged with'),
+			  'options list' => '_get_taxonomy_term_options',
+			),
+		  ),
+		  'new variables' => array(
+			'h5p_tagged_count' => array(
+			  'type' => 'integer',
+			  'label' => t('H5P tagged count'),
+			),
+		  ),
+		  'group' => t('ELX'),
+		),
+	);
+}
+
+/**
+ * Rules action - Load the maximum points that can be scored on an Interactive Content node (H5P quiz)
+ */
+function _elx_badge_rules_get_h5p_max_points($node) {
+  return array('loaded_h5p_max_points' => _elx_badge_rules_get_h5p_max_points_callback($node->vid));
+}
+
+/**
+ * Rules action - Load the points scored by user on the Interactive Content node (H5P quiz)
+ */
+function _elx_badge_rules_get_h5p_user_points($account,$node) {
+  return array('loaded_h5p_user_points' => _elx_badge_rules_get_h5p_user_points_callback($account->uid,$node->vid));
+}
+
+/**
+ * Get maximum points that can be scored on an Interactive Content node (H5P quiz)
+ * @param $vid
+ *   Revision ID of the Interactive Content node whose maximum achievable H5P points are to be loaded
+ *
+ * @return
+ *   Maximum achievable H5P points for that node
+ */
+function _elx_badge_rules_get_h5p_max_points_callback($vid = NULL)
+{
+  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+  if(!$vid)
+    return -1; 
+
+  $query = db_select('h5p_points','p');
+  $query->join('node_revision','nr','nr.vid = p.content_id');
+  $query->fields('p',array('max_points'));
+  $query->condition('content_id',$vid,'=');
+  $query->groupBy('content_id');
+  $points = $query->execute()->fetchField();
+  if($points == null)
+	return -1;
+  else
+	return $points;
+}
+
+/**
+ * Get points scored by the user on an Interactive Content node (H5P quiz)
+ * @param $uid
+ *	 User ID of the user who scored points
+ * @param $vid
+ *   Revision ID of the Interactive Content node on which, H5P points scored by the the user are to be loaded
+ *
+ * @return
+ *   H5P points for that node scored by this user
+ */
+function _elx_badge_rules_get_h5p_user_points_callback($uid = NULL,$vid = NULL)
+{
+  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+  if(!$vid || !$uid)
+    return -1;
+
+  $query = db_select('h5p_points','p');
+  $query->join('node_revision','nr','nr.vid = p.content_id');
+  $query->fields('p',array('points'));
+  $query->condition('content_id',$vid,'=');
+  $query->condition('uid',$uid,'=');
+  $points = $query->execute()->fetchField();
+  if($points == null)
+	return -1;
+  else
+	return $points;
+}
+
+/**
+ * Get number of H5P nodes tagged with a specific Learning Level
+ * @param $uid
+ *	 User ID of the user on behalf of whom the node is flagged as First Viewed Content
+ * @param $tid
+ *   Term ID of the Learning Level
+ *
+ * @return
+ *   Count of H5P nodes tagged with this learning level (and flagged as First Viewed Content by the current user, if uid is passed)
+ */
+function _elx_badge_rules_get_h5p_tagged_count($user = NULL,$tid = NULL)
+{
+  $flagName = 'first_viewed_content';
+  
+  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+  if(!$tid)
+    return -1; 
+
+  $query = db_select('h5p_nodes','h');
+  $query->join('field_data_field_learning_category','l','l.entity_id = h.nid');
+  if($user)
+  {
+	$query->join('flagging','fg','fg.entity_id = h.nid');
+	$query->join('flag','f','f.fid = fg.fid');
+	$query->condition('f.name',db_like($flagName),'LIKE');
+	$query->condition('fg.uid',$user->uid,'=');
+  }
+  $query->condition('l.field_learning_category_tid',$tid,'=');
+  $query->groupBy('l.field_learning_category_tid');
+  $query->addExpression('COUNT(nid)', 'count');
+  $count = $query->execute()->fetchField();
+  
+  return array('h5p_tagged_count' => $count);
+}
+
+/**
+ * Helper function to get an array of taxonomy terms of a vocabulary
+ * Borrowed from http://dropbucket.org/node/688
+ * @param (string) $vocabulary_name: vocabulary machine name
+ * @return associative array of terms keyed by tid
+ */
+function _get_taxonomy_term_options()
+{
+	$vname = 'learning_category';
+    $options = array();
+    $vocabulary = taxonomy_vocabulary_machine_name_load($vname);
+	$vid = $vocabulary->vid;
+    $options_source = taxonomy_get_tree($vid); //Get array of taxonomy term objects of this vocabulary
+    foreach($options_source as $item)
+	{
+        $key = $item->tid;
+        $value = $item->name;
+        $options[$key] = $value;
+    }
+    return $options;
+}

@@ -39,13 +39,12 @@ function elx_user_dashboard_default_page_manager_handlers() {
         'contains' => 'column',
         'children' => array(
           0 => 'main',
-          1 => 1,
         ),
         'parent' => NULL,
       ),
       'main' => array(
         'type' => 'column',
-        'width' => '71.69916804063145',
+        'width' => 100,
         'width_type' => '%',
         'children' => array(
           0 => 'main-row',
@@ -53,9 +52,7 @@ function elx_user_dashboard_default_page_manager_handlers() {
           2 => 4,
           3 => 5,
           4 => 6,
-          5 => 7,
-          6 => 8,
-          7 => 9,
+          5 => 8,
         ),
         'parent' => 'canvas',
       ),
@@ -66,36 +63,6 @@ function elx_user_dashboard_default_page_manager_handlers() {
           0 => 'user_information',
         ),
         'parent' => 'main',
-      ),
-      1 => array(
-        'type' => 'column',
-        'width' => '28.300831959368548',
-        'width_type' => '%',
-        'parent' => 'canvas',
-        'children' => array(
-          0 => 2,
-        ),
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      2 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'my_favorites',
-        ),
-        'parent' => '1',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'my_favorites' => array(
-        'type' => 'region',
-        'title' => 'My Favorites',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       'user_information' => array(
         'type' => 'region',
@@ -212,25 +179,6 @@ function elx_user_dashboard_default_page_manager_handlers() {
         'class' => '',
         'hide_empty' => 0,
       ),
-      7 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'my_badges',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'my_badges' => array(
-        'type' => 'region',
-        'title' => 'My Badges',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '7',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
       8 => array(
         'type' => 'row',
         'contains' => 'region',
@@ -243,29 +191,10 @@ function elx_user_dashboard_default_page_manager_handlers() {
       ),
       'my_leaderboard' => array(
         'type' => 'region',
-        'title' => 'My Leaderboard',
+        'title' => 'My Stuff',
         'width' => 100,
         'width_type' => '%',
         'parent' => '8',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      9 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'my_tools',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'my_tools' => array(
-        'type' => 'region',
-        'title' => 'My Tools',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '9',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -300,7 +229,7 @@ function elx_user_dashboard_default_page_manager_handlers() {
   $display->panels = array();
   $pane = new stdClass();
   $pane->pid = 'new-d033ebc3-39ee-4bb9-837b-7ccb3c8707ff';
-  $pane->panel = 'my_badges';
+  $pane->panel = 'my_leaderboard';
   $pane->type = 'views_panes';
   $pane->subtype = 'badges-my_badges';
   $pane->shown = TRUE;
@@ -324,10 +253,92 @@ function elx_user_dashboard_default_page_manager_handlers() {
   $pane->locks = array();
   $pane->uuid = 'd033ebc3-39ee-4bb9-837b-7ccb3c8707ff';
   $display->content['new-d033ebc3-39ee-4bb9-837b-7ccb3c8707ff'] = $pane;
-  $display->panels['my_badges'][0] = 'new-d033ebc3-39ee-4bb9-837b-7ccb3c8707ff';
+  $display->panels['my_leaderboard'][0] = 'new-d033ebc3-39ee-4bb9-837b-7ccb3c8707ff';
+  $pane = new stdClass();
+  $pane->pid = 'new-7053f751-cf5c-4053-a845-222943504d4c';
+  $pane->panel = 'my_leaderboard';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'user_points-panel_pane_2';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'path' => 'user-points',
+    'override_title' => 1,
+    'override_title_text' => 'My Leaderboard',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '7053f751-cf5c-4053-a845-222943504d4c';
+  $display->content['new-7053f751-cf5c-4053-a845-222943504d4c'] = $pane;
+  $display->panels['my_leaderboard'][1] = 'new-7053f751-cf5c-4053-a845-222943504d4c';
+  $pane = new stdClass();
+  $pane->pid = 'new-8fb10998-a2a2-4ce3-8da6-468943816ec7';
+  $pane->panel = 'my_leaderboard';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'user_points-dashboard_user_points';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '8fb10998-a2a2-4ce3-8da6-468943816ec7';
+  $display->content['new-8fb10998-a2a2-4ce3-8da6-468943816ec7'] = $pane;
+  $display->panels['my_leaderboard'][2] = 'new-8fb10998-a2a2-4ce3-8da6-468943816ec7';
+  $pane = new stdClass();
+  $pane->pid = 'new-f7d63bbf-c88e-452f-bd04-585818556878';
+  $pane->panel = 'my_leaderboard';
+  $pane->type = 'views';
+  $pane->subtype = 'dashboard_tools';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '8',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'default',
+    'override_title' => 1,
+    'override_title_text' => 'My Tools',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'f7d63bbf-c88e-452f-bd04-585818556878';
+  $display->content['new-f7d63bbf-c88e-452f-bd04-585818556878'] = $pane;
+  $display->panels['my_leaderboard'][3] = 'new-f7d63bbf-c88e-452f-bd04-585818556878';
   $pane = new stdClass();
   $pane->pid = 'new-8082173d-aeb5-495e-bd28-d3ba30ab3454';
-  $pane->panel = 'my_favorites';
+  $pane->panel = 'my_leaderboard';
   $pane->type = 'views';
   $pane->subtype = 'dashboard_favorites';
   $pane->shown = TRUE;
@@ -355,58 +366,11 @@ function elx_user_dashboard_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = '8082173d-aeb5-495e-bd28-d3ba30ab3454';
   $display->content['new-8082173d-aeb5-495e-bd28-d3ba30ab3454'] = $pane;
-  $display->panels['my_favorites'][0] = 'new-8082173d-aeb5-495e-bd28-d3ba30ab3454';
-  $pane = new stdClass();
-  $pane->pid = 'new-7053f751-cf5c-4053-a845-222943504d4c';
-  $pane->panel = 'my_leaderboard';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'user_points-panel_pane_2';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'path' => 'user-points',
-    'override_title' => 1,
-    'override_title_text' => 'My Leaderboard',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '7053f751-cf5c-4053-a845-222943504d4c';
-  $display->content['new-7053f751-cf5c-4053-a845-222943504d4c'] = $pane;
-  $display->panels['my_leaderboard'][0] = 'new-7053f751-cf5c-4053-a845-222943504d4c';
-  $pane = new stdClass();
-  $pane->pid = 'new-8fb10998-a2a2-4ce3-8da6-468943816ec7';
-  $pane->panel = 'my_leaderboard';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'user_points-dashboard_user_points';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '8fb10998-a2a2-4ce3-8da6-468943816ec7';
-  $display->content['new-8fb10998-a2a2-4ce3-8da6-468943816ec7'] = $pane;
-  $display->panels['my_leaderboard'][1] = 'new-8fb10998-a2a2-4ce3-8da6-468943816ec7';
+  $display->panels['my_leaderboard'][4] = 'new-8082173d-aeb5-495e-bd28-d3ba30ab3454';
   $pane = new stdClass();
   $pane->pid = 'new-ac07613b-783b-446b-a4de-3bfffbb6aecb';
   $pane->panel = 'my_progress_last_login';
@@ -521,41 +485,6 @@ function elx_user_dashboard_default_page_manager_handlers() {
   $pane->uuid = 'aff44bed-880b-4856-a7a8-46aba952b3cf';
   $display->content['new-aff44bed-880b-4856-a7a8-46aba952b3cf'] = $pane;
   $display->panels['my_progress_suggested_for_you'][0] = 'new-aff44bed-880b-4856-a7a8-46aba952b3cf';
-  $pane = new stdClass();
-  $pane->pid = 'new-f7d63bbf-c88e-452f-bd04-585818556878';
-  $pane->panel = 'my_tools';
-  $pane->type = 'views';
-  $pane->subtype = 'dashboard_tools';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '8',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
-    'args' => '',
-    'url' => '',
-    'display' => 'default',
-    'override_title' => 1,
-    'override_title_text' => 'My Tools',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'f7d63bbf-c88e-452f-bd04-585818556878';
-  $display->content['new-f7d63bbf-c88e-452f-bd04-585818556878'] = $pane;
-  $display->panels['my_tools'][0] = 'new-f7d63bbf-c88e-452f-bd04-585818556878';
   $pane = new stdClass();
   $pane->pid = 'new-94e9be33-c3b3-4b66-a696-85b1751fd1d9';
   $pane->panel = 'user_information';

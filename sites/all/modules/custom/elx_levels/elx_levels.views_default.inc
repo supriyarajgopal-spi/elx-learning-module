@@ -32,7 +32,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '3';
+  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['more_button_text'] = 'SEE MORE';
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
@@ -43,6 +43,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';

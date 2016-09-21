@@ -40,7 +40,7 @@ function elx_notifications_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are no new notifications.';
+  $handler->display->display_options['empty']['area']['content'] = 'There are no notifications.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Relationship: Flags: message_seen_unseen */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
@@ -122,6 +122,7 @@ function elx_notifications_views_default_views() {
   $handler->display->display_options['fields']['mid']['group_type'] = 'count';
   $handler->display->display_options['fields']['mid']['label'] = '';
   $handler->display->display_options['fields']['mid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mid']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['mid']['separator'] = '';
   /* Contextual filter: Message: User uid */
   $handler->display->display_options['arguments']['user']['id'] = 'user';
@@ -138,6 +139,22 @@ function elx_notifications_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<?php global $base_url; ?>
+<a href="<?php echo $base_url; ?>/notifications"><?php echo t(\'More..\'); ?></a>';
+  $handler->display->display_options['footer']['area']['format'] = 'php_code';
+  $handler->display->display_options['path'] = 'notifications_limited';
   $translatables['notifications'] = array(
     t('Master'),
     t('Notifications'),
@@ -154,13 +171,15 @@ function elx_notifications_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('There are no new notifications.'),
+    t('There are no notifications.'),
     t('flag'),
     t('New'),
     t('All'),
     t('Page'),
     t('Menu badge'),
     t('.'),
+    t('<?php global $base_url; ?>
+<a href="<?php echo $base_url; ?>/notifications"><?php echo t(\'More..\'); ?></a>'),
   );
   $export['notifications'] = $view;
 

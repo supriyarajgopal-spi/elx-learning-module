@@ -10,6 +10,118 @@
 function elx_organic_groups_and_permissions_og_features_default_permissions() {
   $permissions = array();
 
+  // Exported og permission: 'node:market:access authoring options of badge content'
+  $permissions['node:market:access authoring options of badge content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access authoring options of content_object content'
+  $permissions['node:market:access authoring options of content_object content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access authoring options of disclaimer content'
+  $permissions['node:market:access authoring options of disclaimer content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access authoring options of h5p_content content'
+  $permissions['node:market:access authoring options of h5p_content content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access authoring options of product_detail content'
+  $permissions['node:market:access authoring options of product_detail content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access authoring options of tools content'
+  $permissions['node:market:access authoring options of tools content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of badge content'
+  $permissions['node:market:access publishing options of badge content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of content_object content'
+  $permissions['node:market:access publishing options of content_object content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of disclaimer content'
+  $permissions['node:market:access publishing options of disclaimer content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of h5p_content content'
+  $permissions['node:market:access publishing options of h5p_content content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of product_detail content'
+  $permissions['node:market:access publishing options of product_detail content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access publishing options of tools content'
+  $permissions['node:market:access publishing options of tools content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of badge content'
+  $permissions['node:market:access revisions options of badge content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of content_object content'
+  $permissions['node:market:access revisions options of content_object content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of disclaimer content'
+  $permissions['node:market:access revisions options of disclaimer content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of h5p_content content'
+  $permissions['node:market:access revisions options of h5p_content content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of product_detail content'
+  $permissions['node:market:access revisions options of product_detail content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:access revisions options of tools content'
+  $permissions['node:market:access revisions options of tools content'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:clone node'
+  $permissions['node:market:clone node'] = array(
+    'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:clone own nodes'
+  $permissions['node:market:clone own nodes'] = array(
+    'roles' => array(),
+  );
+
   // Exported og permission: 'node:market:create badge content'
   $permissions['node:market:create badge content'] = array(
     'roles' => array(),
@@ -186,6 +298,48 @@ function elx_organic_groups_and_permissions_og_features_default_permissions() {
   // Exported og permission: 'node:market:update own tools content'
   $permissions['node:market:update own tools content'] = array(
     'roles' => array(),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished badge content'
+  $permissions['node:market:view any unpublished badge content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished content_object content'
+  $permissions['node:market:view any unpublished content_object content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished disclaimer content'
+  $permissions['node:market:view any unpublished disclaimer content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished h5p_content content'
+  $permissions['node:market:view any unpublished h5p_content content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished product_detail content'
+  $permissions['node:market:view any unpublished product_detail content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:market:view any unpublished tools content'
+  $permissions['node:market:view any unpublished tools content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
   );
 
   return $permissions;

@@ -42,7 +42,9 @@
     margin-left: 10px;
     background-color: white;
     overflow: visible !important;
-
+    min-width: 200px;
+    margin-left: -20px;
+ 
     a.close {
       cursor: pointer;
     }
@@ -79,6 +81,36 @@
 .page-user,
 .pane-elx-recent-badges-recent-badges {
 
+  @media screen and (max-width: 320px) {
+    .view-badges {
+      .views-row {
+         margin: 0 auto;
+         width: 100%;
+
+         .views-field {
+           margin: 0;
+           width: 50%
+         }
+      }
+    }
+  }
+
+  // @media screen and (max-width: 568px) {
+  @media screen and (min-width: 321px) and (max-width: 667px) {
+    .view-badges {
+      .views-row {
+         margin: 0 auto;
+         width: 100%;
+
+         .views-field {
+           margin: 0;
+           width: 33%;
+           background-size: 100px;
+         }
+      }
+    }
+  }
+
   .views-row {
 
     .views-field {
@@ -96,6 +128,14 @@
       }
 
     }
+  }
+}
+
+
+.page-badges {
+
+  .view-footer {
+    display: none;
   }
 
   .three-minute-beauty-no,
@@ -244,6 +284,57 @@
   .well-read-100-no {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+  }
+
+
+  // gnav exception //
+  .qtip-content.qtip-content {
+    #mini-panel-header_user_menu {
+    /*  .pane-levels-quizz-progress-closest-completion {
+        .user-progress-bar {
+          background-color: #1e2341;
+        }
+        .views-field-expression {
+          .progress-bar-percentage {
+            left: 30px;
+          }
+        }
+      } */
+
+      .pane-dashboard-user-my-points {
+        .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
+          width: 100%;
+        }
+        .view-display-id-my_points {
+          margin: 0;
+
+          .views-field-points {
+            width: 100%;
+            margin: 0;
+
+            .field-content::before {
+              margin-left: 86px;
+            }
+            .field-content {
+              margin-left: 46px;
+            }
+          }
+        }
+      }
+
+      .pane-dashboard-user-activities-suggested {
+        .view-display-id-suggested {
+          .views-field-field-headline {
+            margin: 0;
+
+            .field-content {
+              text-align: left;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
 }

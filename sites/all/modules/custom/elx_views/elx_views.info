@@ -13,5 +13,4 @@ features[ctools][] = views:views_default:3.0
 features[ds_layout_settings][] = node|tools|modal
 features[features_api][] = api:2
 features[views_view][] = badges
-features[views_view][] = product_library
 features[views_view][] = search_product_library

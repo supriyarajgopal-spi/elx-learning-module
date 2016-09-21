@@ -43,7 +43,6 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
@@ -275,6 +274,62 @@ function elx_levels_views_default_views() {
 
   /* Display: All */
   $handler = $view->new_display('panel_pane', 'All', 'all');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['name']['label'] = 'Level';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: COUNT(Flags: Flagged) */
+  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['group_type'] = 'count';
+  $handler->display->display_options['fields']['flagged']['label'] = '';
+  $handler->display->display_options['fields']['flagged']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged']['separator'] = '';
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Global: Math expression */
+  $handler->display->display_options['fields']['expression']['id'] = 'expression';
+  $handler->display->display_options['fields']['expression']['table'] = 'views';
+  $handler->display->display_options['fields']['expression']['field'] = 'expression';
+  $handler->display->display_options['fields']['expression']['label'] = '';
+  $handler->display->display_options['fields']['expression']['element_type'] = '0';
+  $handler->display->display_options['fields']['expression']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['expression']['set_precision'] = TRUE;
+  $handler->display->display_options['fields']['expression']['precision'] = '0';
+  $handler->display->display_options['fields']['expression']['separator'] = '';
+  $handler->display->display_options['fields']['expression']['suffix'] = '%';
+  $handler->display->display_options['fields']['expression']['expression'] = '[flagged] / [nid] * 100';
+  /* Field: Level Content */
+  $handler->display->display_options['fields']['view_1']['id'] = 'view_1';
+  $handler->display->display_options['fields']['view_1']['table'] = 'views';
+  $handler->display->display_options['fields']['view_1']['field'] = 'view';
+  $handler->display->display_options['fields']['view_1']['ui_name'] = 'Level Content';
+  $handler->display->display_options['fields']['view_1']['label'] = '';
+  $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
+  $handler->display->display_options['fields']['view_1']['display'] = 'level_content';
 
   /* Display: All admin */
   $handler = $view->new_display('panel_pane', 'All admin', 'all_admin');

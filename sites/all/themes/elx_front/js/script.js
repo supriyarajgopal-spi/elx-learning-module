@@ -239,7 +239,10 @@
 
       /* DASHBOARD OVERRIDE  /user/123 */
       // if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
-      if ($('body.section-user.page-user main').size()) { // || $('body.section-user.page-user main .panel-display .inside').size()) {
+      if ( $('body.section-user.page-user main').size()) { //  
+      // || $('body.section-user.page-user main .panel-display .inside').size()) {
+
+        if( $('body.page-user-login').size() ) { return; alert('return;'); }
 
         var realname;
         var firstname;

@@ -184,10 +184,11 @@ body.page-leaderboard {
             width: $field-picture-radius-header;
             background-color: #f0f8ff;
             background-size: 100%;
+            overflow: hidden;
 
-            /*img {
-              transform: scale(1.1);
-            //} */
+            img {
+              width: 100%;
+            }
           }
 
         }

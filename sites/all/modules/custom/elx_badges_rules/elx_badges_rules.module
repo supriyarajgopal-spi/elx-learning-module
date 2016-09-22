@@ -119,6 +119,51 @@ function elx_badges_rules_rules_action_info() {
 		  ),
 		  'group' => t('ELX'),
 		),
+		'_elx_get_list_count' => array(
+		  'label' => t('Get length of list'),
+		  'group' => t('ELX'),
+		  'parameter' => array(
+			'list' => array(
+			  'type' => '*',
+			  'label' => t('List'),
+			),
+		  ),
+		  'provides' => array(
+			'list_length' => array(
+			  'type' => 'integer',
+			  'label' => t('List length'),
+			),
+		  ),
+		),
+		'_elx_flag_fetch_node_bundle_by_user' => array(
+		  'label' => t('Fetch nodes flagged by user based on bundle'),
+          'parameter' => array(
+            'flag' => array(
+              'type' => 'flag',
+              'label' => t('Flag'),
+              'description' => t('The flag to check for.'),
+            ),
+            'flagging_user' => array(
+              'type' => 'user',
+              'label' => t('User who flagged the node'),
+              'description' => t('For non-global flags, this is the user who flagged the node. (For global flags, this argument is ignored.)'),
+            ),
+		    'bundle' => array(
+			  'type' => 'list',
+              'label' => t('Content Type(s)'),
+              'options list' => '_get_bundles',
+              'description' => t('The content type(s) to filter the flagged nodes on'),
+			  'optional' => TRUE,
+		    ),
+          ),
+          'provides' => array(
+            'content_flagged_by_user' => array(
+              'label' => t('Nodes flagged by user'),
+              'type' => 'list<node>',
+            ),
+          ),
+          'group' => t('ELX'),
+        ),
 	);
 }
 
@@ -226,10 +271,64 @@ function _elx_badge_rules_get_h5p_tagged_count($user = NULL,$tid = NULL)
 }
 
 /**
- * Helper function to get an array of taxonomy terms of a vocabulary
+ * Get count of a list
+ * Borrowed from http://drupal.stackexchange.com/questions/45205/how-can-i-get-the-length-of-a-list-in-rules
+ * @param $list
+ *	 List whose length is to be returned
+ * @return
+ *   Length of this list
+ */
+function _elx_get_list_count($list)
+{
+  return array(
+    'list_length' => is_array($list) ? count($list) : NULL,
+  );
+}
+
+/**
+ * Fetch nodes filtered by bundle flagged by a user.
+ * Borrowed from flag\flag.rules.inc
+ *
+ * @param $flag
+ *	 Flag object to check for
+ * @param $entity
+ *   Nodes to be flagged
+ *
+ * @return
+ *   Nodes of the chosen bundles flagged by the user 
+ */
+function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
+  $query = db_select('flagging', 'fc')
+    ->fields('fc', array('entity_id'))
+    ->condition('entity_type', $flag->entity_type)
+    ->condition('fid', $flag->fid);
+  if(!empty($bundle))
+  {
+	$operand = is_array($bundle)?'IN':'=';
+	$query->join('node','n','n.nid = fc.entity_id');
+	$query->condition('n.bundle',$bundle,$operand);
+  }
+  // For global flags the user parameter is ignored, so we add the
+  // extra 'uid' condition when the flag is NOT global.
+  if (!$flag->global) {
+    $user = entity_metadata_wrapper('user', $entity);
+    $sid = $user->flag_sid->value();
+    $query = $query->condition('uid', $user->uid->value());
+    // Filter out any bad session ids and any users that aren't anonymous.
+    if (!empty($sid) && $sid != -1) {
+      $query->condition('sid', $sid);
+    }
+  }
+  $result = $query->execute();
+  $flagged = $result->fetchCol();
+  return array('content_flagged_by_user' => $flagged);
+}
+
+/**
+ * Helper function to get an array of taxonomy terms of Learning Level vocabulary
  * Borrowed from http://dropbucket.org/node/688
- * @param (string) $vocabulary_name: vocabulary machine name
- * @return associative array of terms keyed by tid
+ * Vocabulary ID is not passed as parameter because rules doesn't have an option to do so for 'options list'
+ * @return associative array of terms keyed by tid for Learning Level vocabulary
  */
 function _get_taxonomy_term_options()
 {
@@ -245,4 +344,19 @@ function _get_taxonomy_term_options()
         $options[$key] = $value;
     }
     return $options;
+}
+
+/**
+ * Helper function to get an array of content types
+ * Borrowed from flag\includes\flag\flag_entity.inc
+ * @return associative array of content types keyed by their machine names
+ */
+function _get_bundles()
+{
+	$bundles = array();
+    $entity_info = entity_get_info('node');
+    foreach ($entity_info['bundles'] as $bundle_key => $bundle) {
+      $bundles[$bundle_key] = check_plain($bundle['label']);
+    }
+	return $bundles;
 }

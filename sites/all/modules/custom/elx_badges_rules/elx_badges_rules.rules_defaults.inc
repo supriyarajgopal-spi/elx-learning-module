@@ -148,7 +148,7 @@ function elx_badges_rules_default_rules_configuration() {
             "USING" : { "data" : [ "flagged-node:field-learning-category" ] },
             "DO" : [
               { "CASE" : {
-                  "USING" : { "value" : "14097" },
+                  "USING" : { "value" : "14134" },
                   "DO" : [
                     { "component_rules_flag_a_user_with_a_specific_flag" : {
                         "flag_to_set" : "gift_genius",
@@ -160,10 +160,82 @@ function elx_badges_rules_default_rules_configuration() {
                 }
               },
               { "CASE" : {
-                  "USING" : { "value" : "14098" },
+                  "USING" : { "value" : "14133" },
                   "DO" : [
                     { "component_rules_flag_a_user_with_a_specific_flag" : {
                         "flag_to_set" : "perfect_present",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "252" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "little_brown_bottle_badge",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "250" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "rare_beauty_badge",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "579" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "service_star_badge",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "1299" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "sleeping_beauty_badge",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "1301" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "new_dimension_badge",
+                        "tagged_node_count" : [ "h5p-tagged-count-action" ],
+                        "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "CASE" : {
+                  "USING" : { "value" : "1300" },
+                  "DO" : [
+                    { "component_rules_flag_a_user_with_a_specific_flag" : {
+                        "flag_to_set" : "beauty_queen_badge",
                         "tagged_node_count" : [ "h5p-tagged-count-action" ],
                         "tagged_flagged_node_count" : [ "h5p-tagged-flagged-count-action" ]
                       }
@@ -178,7 +250,7 @@ function elx_badges_rules_default_rules_configuration() {
     }
   }');
   $items['rules_flag_a_user_with_a_specific_flag'] = entity_import('rules_config', '{ "rules_flag_a_user_with_a_specific_flag" : {
-      "LABEL" : "Flag a user with a specific flag",
+      "LABEL" : "Flag a user with a specific flag if node count equal to flag count",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "flag", "rules" ],

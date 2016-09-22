@@ -21,6 +21,4 @@ features[rules_config][] = rules_flag_a_user_with_a_specific_flag
 features[rules_config][] = rules_load_counts_of_nodes_flagged_with_specific_learning_level_
 features[rules_config][] = rules_total_nodes_equal_to_flagged_nodes
 features[taxonomy][] = userpoints
-features[uuid_term][] = 0b514722-fd49-40cb-a5f3-05d40c036d12
-features[uuid_term][] = 1d9bb770-145a-458d-8bf3-d889b80590fe
-features[uuid_term][] = bb78eea6-7a77-46f2-b5c6-be7ceea6ac47
+mtime = 1474463457

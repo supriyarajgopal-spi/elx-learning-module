@@ -21,6 +21,7 @@
       /* remove the link from the @realname dropdown menu so it doesn't conflict with menu minipanel */
       $('#block-menu-menu-header-user-menu a.menu-minipanel').removeAttr('href');
 
+
       /* TOOLS section // per title link // */
 /*
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
@@ -237,7 +238,8 @@
       }
 
       /* DASHBOARD OVERRIDE  /user/123 */
-      if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
+      // if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
+      if ($('body.section-user.page-user main').size()) { // || $('body.section-user.page-user main .panel-display .inside').size()) {
 
         var realname;
         var firstname;
@@ -317,6 +319,10 @@
 
         };
 
+        // DASHBOARD MARKUP CONTAINERS //
+        $('.pane-user-points-dashboard-user-points');
+
+
         $('body.section-user.page-user').ready(get_page_data);
 
       } // size
@@ -389,7 +395,7 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = bgimg.split('url("')[1].split('")')[0];
+          httpimg = 'http://' + bgimg.split('http://')[1].replace('"','').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

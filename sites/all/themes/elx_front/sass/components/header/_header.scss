@@ -580,7 +580,6 @@ div#block-menu-menu-header-user-menu {
     .pane-levels-quizz-progress-completed-count {
 
       background-color: #1e2341;
-      display: none; /* temporary */
 
       .pane-title {
         font-size: 20px;
@@ -701,13 +700,14 @@ div#block-menu-menu-header-user-menu {
     .pane-dashboard-user-activities-suggested {
       background-color: #1e2341;
       margin-top: 1px;
-      padding: 20px 10px 0px 20px;
+      padding: 20px 10px 0 20px;
       color: #999;
       font-size: 16px;
 
       .views-row {
         width: 100%;
         margin: 0 0 10px;
+
         .views-field {
           margin-left: 0;
         }
@@ -715,7 +715,7 @@ div#block-menu-menu-header-user-menu {
 
       .view-display-id-suggested {
         .views-field-field-headline {
-          height: 25px;
+          height: 0;
 
           .field-content a {
             color: #9eafff;
@@ -725,12 +725,23 @@ div#block-menu-menu-header-user-menu {
         }
 
         .views-field-field-display-title {
-          display: none;
+          display: block;
+
+          height: 25px;
+
+          .field-content a {
+            color: #9eafff;
+            font-size: 16px;
+            text-indent: 0;
+
+            width: 230px;
+          }
         }
+
       }
     }
 
-    .pane-dashboard-user-my-points { 
+    .pane-dashboard-user-my-points {
       background-color: #1e2341;
       color: #999;
       font-size: 16px;
@@ -747,14 +758,16 @@ div#block-menu-menu-header-user-menu {
           .views-label-points {
             text-transform: none;
           }
+
           .field-content {
             font-weight: bold;
             font-size: 20px;
             color: white;
             margin-left: 36px;
           }
+
           .field-content::before {
-            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
+            background: transparent url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png') repeat scroll 0 0;
             content: ' ';
             display: block;
             height: 17px;

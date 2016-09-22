@@ -240,16 +240,19 @@ body.page-levels-in-progress {
   // gnav exception //
   .qtip-content.qtip-content {
     #mini-panel-header_user_menu {
+
       .pane-levels-quizz-progress-closest-completion {
         .user-progress-bar {
           background-color: #1e2341;
         }
+
         .views-field-expression {
           .progress-bar-percentage {
             left: 30px;
           }
         }
       }
+
       .pane-dashboard-user-my-points {
         .view-display-id-my_points {
           .views-field-points {
@@ -259,6 +262,7 @@ body.page-levels-in-progress {
           }
         }
       }
+
       .pane-dashboard-user-activities-suggested {
         .view-display-id-suggested {
           .views-field-field-headline {
@@ -271,16 +275,17 @@ body.page-levels-in-progress {
           }
         }
       }
+
+      .pane-badges-my-badges {
+        background-color: #1e2341;
+        margin-top: 1px;
+
+        h2.pane-title {
+          padding-left: 5px;
+        }
+
+      }
     }
-/*
-      .pane-dashboard-user-activities-suggested {
-      .
-    margin-top: 0;
-    padding-top: 0;
-    position: relative;
-    top: -15px;
-    }
-*/
 
   }
 

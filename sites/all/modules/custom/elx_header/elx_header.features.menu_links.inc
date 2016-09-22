@@ -33,6 +33,37 @@ function elx_header_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: menu-header-menu_messages:notifications.
+  $menu_links['menu-header-menu_messages:notifications'] = array(
+    'menu_name' => 'menu-header-menu',
+    'link_path' => 'notifications',
+    'router_path' => 'notifications',
+    'link_title' => 'Messages',
+    'options' => array(
+      'link_badge' => array(
+        'callback' => 'menu_badges_execute_view',
+        'arguments' => array(
+          'view_name' => 'notifications',
+          'view_display_id' => 'menu_badge_1',
+        ),
+        'key' => 'views_notifications_menu_badge_1',
+      ),
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-header-menu_messages:notifications',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: menu-header-menu_product-library:product-library.
   $menu_links['menu-header-menu_product-library:product-library'] = array(
     'menu_name' => 'menu-header-menu',
@@ -52,6 +83,29 @@ function elx_header_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -50,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-header-menu_search:search-product-library.
+  $menu_links['menu-header-menu_search:search-product-library'] = array(
+    'menu_name' => 'menu-header-menu',
+    'link_path' => 'search-product-library',
+    'router_path' => 'search-product-library',
+    'link_title' => 'Search',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Custom search of product library',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-header-menu_search:search-product-library',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
     'customized' => 1,
     'language' => 'und',
     'menu_links_customized' => 1,
@@ -275,7 +329,9 @@ function elx_header_menu_default_menu_links() {
   t('LEVELS');
   t('LOG OUT');
   t('MY DASHBOARD');
+  t('Messages');
   t('PRODUCT LIBRARY');
+  t('Search');
   t('TOOLS');
   t('Trigger Link Menu');
 

@@ -433,3 +433,12 @@ function elx_front_file_link($variables) {
 
   return '<div id="detail-content-btn">' . l(t('VIEW TOOL'), $url, $options) . '</div>';
 }
+
+function elx_front_preprocess_html(&$variables) {
+  // If on an individual node page, add the node type to body classes.
+  if ($node = menu_get_object()) {
+    if (!empty($node->field_learning_category)) {
+      $variables['classes_array'][] = 'page-levels-all';
+    }
+  }
+}

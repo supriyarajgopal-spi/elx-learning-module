@@ -242,7 +242,7 @@
       if ( $('body.section-user.page-user main').size()) { //  
       // || $('body.section-user.page-user main .panel-display .inside').size()) {
 
-        if( $('body.page-user-login').size() ) { return; alert('return;'); }
+        if( $('body.page-user-login').size() ) { return; }
 
         var realname;
         var firstname;
@@ -326,7 +326,7 @@
         $('.pane-user-points-dashboard-user-points');
 
 
-        $('body.section-user.page-user').ready(get_page_data);
+        if(!$('.dashboard-override').size()) { $('body.section-user.page-user').ready(get_page_data); }
 
       } // size
 

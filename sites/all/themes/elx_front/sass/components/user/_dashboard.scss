@@ -60,6 +60,7 @@ body.section-user.page-user {
       background-color: #040a2b;
       color: #fff;
       text-transform: uppercase;
+      width: 1024px;
     }
 
     // 10 progress count //
@@ -145,8 +146,10 @@ body.section-user.page-user {
     }
 
     // badges
-    .panels-flexible-row.panels-flexible-row-new-7 {
-      .panels-flexible-region-new-my_badges {
+    // changed // .panels-flexible-row.panels-flexible-row-new-7 {
+    .panels-flexible-row.panels-flexible-row-new-8 {
+      // .panels-flexible-region-new-my_badges {
+      .panels-flexible-region-new-my_leaderboard  {
         // .panels-flexible-region-new-my_badges-inside {
 
           h2.pane-title {
@@ -189,10 +192,18 @@ body.section-user.page-user {
 
       }
 
+      // MY FAVORITES
+      .panel-pane.pane-views.pane-dashboard-favorites {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
     }
 
+
     // leaderboard
-    .panels-flexible-row.panels-flexible-row-new-8 {
+    .panels-flexible-row.panels-flexible-row-new--changed--8 {
       margin: 50px 0;
 
       .panels-flexible-region-new-my_leaderboard {
@@ -289,10 +300,12 @@ body.section-user.page-user {
     }
 
     // tools
-    .panels-flexible-row.panels-flexible-row-new-9 {
+    .panels-flexible-row-new-8 {
+
       margin: 50px 0;
 
-      .panels-flexible-region-new-my_tools {
+      .panels-flexible-region-new-my_leaderboard {
+      // changed // .panels-flexible-region-new-my_tools {
 
         h2.pane-title {
           margin: 40px auto;

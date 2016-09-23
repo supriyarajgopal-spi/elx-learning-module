@@ -1357,10 +1357,10 @@ th {
   filter: grayscale(100%);
 }
 
-/* line 243, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu {
+/* line 241, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .qtip-content.qtip-content,
+.page-user .qtip-content.qtip-content,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content {
   /*  .pane-levels-quizz-progress-closest-completion {
         .user-progress-bar {
           background-color: #1e2341;
@@ -1384,59 +1384,59 @@ th {
 }
 
 /* line 260, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before {
+.page-badges .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
+.page-user .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before {
   padding: 5px 20px 0 5px;
 }
 
 /* line 270, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
   width: 100%;
 }
 
 /* line 274, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points {
   margin: 0;
 }
 
 /* line 277, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points {
   width: 100%;
   margin: 0;
 }
 
 /* line 281, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before {
   margin-left: 86px;
 }
 
 /* line 285, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content {
   margin-left: 46px;
 }
 
 /* line 299, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline {
   margin: 0;
 }
 
 /* line 302, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
-.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
-.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content {
+.page-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
+.page-user .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
+.pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content {
   text-align: left;
   padding: 0;
 }
@@ -7710,9 +7710,10 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   background-color: #040a2b;
   color: #fff;
   text-transform: uppercase;
+  width: 1024px;
 }
 
-/* line 70, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 71, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-4 .panels-flexible-region-new-my_progress_levels .pane-levels-quizz-progress-closest-completion .view-content .views-field.views-field-name,
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-4 .panels-flexible-region-new-my_progress_levels .pane-levels-quizz-progress-closest-completion .view-content .views-field.views-field-expression {
   height: 50px;
@@ -7720,21 +7721,21 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   width: 100%;
 }
 
-/* line 88, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 89, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_last_login .view-id-dashboard_user.view-display-id-last_login .view-content .views-field.views-field-login {
   height: 50px;
   margin: 0;
   width: 100%;
 }
 
-/* line 103, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 104, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points {
   height: 50px;
   margin: 0;
   width: 100%;
 }
 
-/* line 116, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 117, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-6 {
   /*
       .panels-flexible-region-new-my_progress_suggested_for_you {
@@ -7743,12 +7744,12 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
 */
 }
 
-/* line 122, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 123, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-6 .panels-flexible-region-new-my_progress_recently_completed_activites .view-id-dashboard_user_activities.view-dashboard-user-activities .view-content .views-row a {
   color: #9eafff;
 }
 
-/* line 126, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 127, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-6 .panels-flexible-region-new-my_progress_recently_completed_activites .view-id-dashboard_user_activities.view-dashboard-user-activities .views-field.views-field-field-headline,
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-6 .panels-flexible-region-new-my_progress_recently_completed_activites .view-id-dashboard_user_activities.view-dashboard-user-activities .views-field.views-field-field-headline a {
   height: 50px;
@@ -7756,13 +7757,13 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   width: 100%;
 }
 
-/* line 133, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 134, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-6 .panels-flexible-region-new-my_progress_recently_completed_activites .view-id-dashboard_user_activities.view-dashboard-user-activities .views-field.views-field-field-display-title {
   display: none;
 }
 
-/* line 152, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-7 .panels-flexible-region-new-my_badges h2.pane-title {
+/* line 155, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard h2.pane-title {
   margin: 40px auto;
   text-align: center;
   font-family: 'optimadisplaylightlight';
@@ -7770,37 +7771,44 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   font-weight: normal;
 }
 
-/* line 162, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-7 .panels-flexible-region-new-my_badges .view-badges.view-id-badges .more-link {
+/* line 165, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .view-badges.view-id-badges .more-link {
   display: none;
 }
 
-/* line 166, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-7 .panels-flexible-region-new-my_badges .view-badges.view-id-badges .views-row {
+/* line 169, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .view-badges.view-id-badges .views-row {
   width: 600px;
   margin: 0 auto;
 }
 
-/* line 170, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-7 .panels-flexible-region-new-my_badges .view-badges.view-id-badges .views-row .views-field {
+/* line 173, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .view-badges.view-id-badges .views-row .views-field {
   margin: 0;
   -webkit-transform: scale(0.8);
       -ms-transform: scale(0.8);
           transform: scale(0.8);
 }
 
-/* line 176, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-7 .panels-flexible-region-new-my_badges .view-badges.view-id-badges .views-row .views-field .field-content a {
+/* line 179, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .view-badges.view-id-badges .views-row .views-field .field-content a {
   text-indent: -5000px;
 }
 
-/* line 195, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 {
+/* line 196, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panel-pane.pane-views.pane-dashboard-favorites {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* line 206, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 {
   margin: 50px 0;
 }
 
-/* line 202, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 h2.pane-title {
+/* line 213, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 h2.pane-title {
   margin: 40px auto;
   text-align: center;
   font-family: 'optimadisplaylightlight';
@@ -7808,27 +7816,27 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   font-weight: normal;
 }
 
-/* line 210, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points {
+/* line 221, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points {
   height: 50px;
   margin: 0;
 }
 
-/* line 214, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .view-content {
+/* line 225, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .view-content {
   height: 40px;
   background-color: #040a2b;
   color: #fff;
 }
 
-/* line 219, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .view-content .views-field {
+/* line 230, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .view-content .views-field {
   height: 50px;
   width: 20%;
 }
 
-/* line 238, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row {
+/* line 249, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row {
   clear: left;
   border: 0 solid white;
   width: 100%;
@@ -7857,27 +7865,27 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
 */
 }
 
-/* line 249, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field {
+/* line 260, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field {
   height: 50px;
   width: 15%;
 }
 
-/* line 254, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field.views-field-counter {
+/* line 265, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new--changed--8 .panels-flexible-region-new-my_leaderboard .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field.views-field-counter {
   float: left;
   height: 50px;
   margin: 0;
   width: 100px;
 }
 
-/* line 292, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 {
+/* line 303, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 {
   margin: 50px 0;
 }
 
-/* line 297, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools h2.pane-title {
+/* line 310, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard h2.pane-title {
   margin: 40px auto;
   text-align: center;
   font-family: 'optimadisplaylightlight';
@@ -7885,8 +7893,8 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   font-weight: normal;
 }
 
-/* line 309, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools .item-list li.views-row {
+/* line 322, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .item-list li.views-row {
   border: 0 solid white;
   width: 880px;
   height: 220px;
@@ -7896,16 +7904,16 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   margin: 0 25px;
 }
 
-/* line 318, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools .item-list li.views-row .views-field.views-field-field-display-title {
+/* line 331, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field.views-field-field-display-title {
   position: absolute;
   margin: 0;
   width: 500px;
   height: 100px;
 }
 
-/* line 326, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools .item-list li.views-row .views-field.views-field-field-display-title .field-content a {
+/* line 339, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field.views-field-field-display-title .field-content a {
   font-family: 'optimadisplaylightlight';
   position: absolute;
   top: 15px;
@@ -7917,28 +7925,28 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   text-decoration: none;
 }
 
-/* line 342, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools .item-list li.views-row .views-field.views-field-field-tool-thumbnail {
+/* line 355, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field.views-field-field-tool-thumbnail {
   float: left;
   clear: left;
   height: 200px;
   margin: 10px;
 }
 
-/* line 350, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-9 .panels-flexible-region-new-my_tools .item-list li.views-row .views-field.views-field-field-tool-thumbnail .field-content a {
+/* line 363, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field.views-field-field-tool-thumbnail .field-content a {
   background-size: 0;
   height: 150px;
   margin: 0;
   width: 250px;
 }
 
-/* line 382, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 395, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override {
   margin-bottom: 300px;
 }
 
-/* line 385, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 398, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-neck-name {
   width: 300px;
   text-align: center;
@@ -7947,7 +7955,7 @@ body.section-user.page-user main.dashboard-override .elx-neck-name {
   font-family: "optimadisplaylightlight";
 }
 
-/* line 393, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 406, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux {
   margin: 100px auto;
   width: 65%;
@@ -7955,7 +7963,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux {
   padding-bottom: 100px;
 }
 
-/* line 406, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 419, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1 label,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2 label,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1 label,
@@ -7968,7 +7976,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 label {
   letter-spacing: 1px;
 }
 
-/* line 413, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 426, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1 span,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2 span,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1 span,
@@ -7982,7 +7990,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 span {
   font-weight: bold;
 }
 
-/* line 423, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 436, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile {
   border: 1px solid #a4a4ab;
   margin: 20px auto 0;
@@ -7994,7 +8002,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   cursor: pointer;
 }
 
-/* line 433, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 446, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile span {
   color: #a4a4ab;
   text-transform: uppercase;
@@ -8005,7 +8013,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   width: 100%;
 }
 
-/* line 443, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 456, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile span::before {
   content: '';
   font-family: "elx-icons";
@@ -8013,7 +8021,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   padding: 12px;
 }
 
-/* line 451, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 464, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1,
@@ -8022,23 +8030,23 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc2 {
   height: 60px;
 }
 
-/* line 459, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 472, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   width: 100%;
 }
 
-/* line 464, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 477, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1 {
   height: 60px;
 }
 
-/* line 468, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 481, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   height: 90px;
 }
 
-/* line 472, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 485, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
@@ -8047,7 +8055,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   float: left;
 }
 
-/* line 480, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 493, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
@@ -8055,13 +8063,13 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   float: left;
 }
 
-/* line 489, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 502, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container {
   width: 200px;
   margin: 0 auto;
 }
 
-/* line 493, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 506, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round {
   height: 200px;
   width: 200px;
@@ -8071,7 +8079,7 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   background-image: url("/sites/all/themes/elx_front/images/user/elx-circle-bg.png");
 }
 
-/* line 502, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 515, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round::before {
   border-top: 1px solid #ccc;
   content: ' ';
@@ -8083,7 +8091,7 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   width: 150px;
 }
 
-/* line 513, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 526, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round::after {
   border-top: 1px solid #ccc;
   content: ' ';

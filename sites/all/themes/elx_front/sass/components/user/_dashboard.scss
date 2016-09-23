@@ -147,7 +147,7 @@ body.section-user.page-user {
     // badges
     .panels-flexible-row.panels-flexible-row-new-7 {
       .panels-flexible-region-new-my_badges {
-        .panels-flexible-region-new-my_badges-inside {
+        // .panels-flexible-region-new-my_badges-inside {
 
           h2.pane-title {
             margin: 40px auto;
@@ -185,7 +185,7 @@ body.section-user.page-user {
 
           }
 
-        }
+        // }
 
       }
 
@@ -233,7 +233,7 @@ body.section-user.page-user {
 
             .item-list {
 
-              ul {
+              // ul {
 
                 li.views-row {
                   clear: left;
@@ -276,7 +276,7 @@ body.section-user.page-user {
 */
                 }
 
-              }
+              // }
 
             }
 
@@ -304,7 +304,7 @@ body.section-user.page-user {
 
         .item-list {
 
-          ul {
+          // ul {
 
             li.views-row {
               border: 0 solid white;
@@ -322,9 +322,8 @@ body.section-user.page-user {
                  width: 500px;
                  height: 100px;
 
-                .field-content {
-
-                  a {
+                 // .field-content {
+                 .field-content a {
                     font-family: 'optimadisplaylightlight';
                     position: absolute;
                     top: 15px;
@@ -336,7 +335,7 @@ body.section-user.page-user {
                     text-decoration: none;
                   }
 
-                }
+                // }
 
               }
 
@@ -361,7 +360,7 @@ body.section-user.page-user {
 
             } // li
 
-          } // ul
+          // } // ul
 
         }
 

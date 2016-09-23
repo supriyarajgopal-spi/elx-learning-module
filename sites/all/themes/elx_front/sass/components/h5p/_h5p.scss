@@ -246,3 +246,43 @@
   @extend %multiple-choice-dark-on-light;
 
 }
+
+
+// H5P MODAL ALTERNATIVE
+body.html.node-type-h5p-content {
+  .layout-center {
+
+    padding-left: 0;
+    padding-right: 0;
+
+    main.layout-3col__full {
+      padding-left: 0;
+      padding-right: 0;
+
+      > h1,
+      ul.tabs {
+        display: none;
+      }
+
+      #modalContent {
+        margin-top: 0;
+
+        .ctools-modal-content {
+          padding: 0 24px;
+        }
+
+      }
+
+      > .block-views.contextual-links-region {
+        display: none;
+      }
+
+      > .action-links {
+        display: none;
+      }
+
+    }
+  }
+
+}
+

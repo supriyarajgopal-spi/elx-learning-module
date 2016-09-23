@@ -153,7 +153,9 @@ function content_conversion_h5p_json($content_object) {
         if (!empty($question_set)) {
           $slide = new stdClass();
           _content_conversion_question_set($question_set, $slide, $content_object);
-          $presentation->slides[] = $slide;
+          if (!empty($slide->elements)) {
+            $presentation->slides[] = $slide;
+          }
           $question_set = array();
         }
         // Create slide for this node.
@@ -172,7 +174,9 @@ function content_conversion_h5p_json($content_object) {
   if (!empty($question_set)) {
     $slide = new stdClass();
     _content_conversion_question_set($question_set, $slide, $content_object);
-    $presentation->slides[] = $slide;
+    if (!empty($slide->elements)) {
+      $presentation->slides[] = $slide;
+    }
     $question_set = array();
   }
   $presentation->keywordListEnabled = FALSE;

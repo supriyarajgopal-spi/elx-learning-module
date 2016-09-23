@@ -4189,10 +4189,12 @@ div#block-menu-menu-header-user-menu ul.menu li a {
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges h2.pane-title {
   color: #999;
   font-size: 15px;
-  padding-left: 20px;
+  padding-left: 5px;
   display: block;
   width: 125px;
   float: left;
+  margin-left: 0;
+  margin-top: 25px;
 }
 
 /* line 812, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */

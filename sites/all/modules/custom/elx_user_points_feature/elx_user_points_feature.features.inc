@@ -27,7 +27,7 @@ function elx_user_points_feature_flag_default_flags() {
     'flag_short' => 'Viewed first',
     'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Unflagged',
+    'unflag_short' => 'Unflag',
     'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',

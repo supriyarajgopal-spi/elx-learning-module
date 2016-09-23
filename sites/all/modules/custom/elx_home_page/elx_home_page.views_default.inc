@@ -47,6 +47,17 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Spin the Wheel */
+  $handler->display->display_options['fields']['field_spin_the_wheel']['id'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['table'] = 'field_data_field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['field'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['label'] = '';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['text'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['type'] = 'list_key';
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
@@ -54,7 +65,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
@@ -69,7 +80,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -101,7 +112,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'content_object' => 'content_object',
+    'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Learning Level (field_learning_category) */
@@ -145,7 +156,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'content_object' => 'content_object',
+    'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Learning Level (field_learning_category) */
@@ -259,7 +270,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'content_object' => 'content_object',
+    'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Learning Level (field_learning_category) */
@@ -383,7 +394,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'content_object' => 'content_object',
+    'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Learning Level (field_learning_category) */
@@ -411,6 +422,7 @@ function elx_home_page_views_default_views() {
     t('next ›'),
     t('last »'),
     t('See more'),
+    t('spin-the-wheel-link'),
     t('User pane'),
     t('View panes'),
     t('Admin pane'),
@@ -463,7 +475,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_product_image_1']['label'] = '';
   $handler->display->display_options['fields']['field_product_image_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_product_image_1']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_product_image_1']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_product_image_1']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-product-library';
   $handler->display->display_options['fields']['field_product_image_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_product_image_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_product_image_1']['click_sort_column'] = 'fid';
@@ -478,7 +490,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
   $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal ctools-modal-product-library';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -835,6 +847,17 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Spin the Wheel */
+  $handler->display->display_options['fields']['field_spin_the_wheel']['id'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['table'] = 'field_data_field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['field'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['label'] = '';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['text'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['type'] = 'list_key';
   /* Field: Content: Featured image */
   $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
   $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
@@ -866,7 +889,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'View the details';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -894,6 +917,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured) */
   $handler->display->display_options['filters']['field_featured_value']['id'] = 'field_featured_value';
   $handler->display->display_options['filters']['field_featured_value']['table'] = 'field_data_field_featured';
@@ -922,6 +953,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured) */
   $handler->display->display_options['filters']['field_featured_value']['id'] = 'field_featured_value';
   $handler->display->display_options['filters']['field_featured_value']['table'] = 'field_data_field_featured';
@@ -1026,6 +1065,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Featured (field_featured) */
   $handler->display->display_options['filters']['field_featured_value']['id'] = 'field_featured_value';
   $handler->display->display_options['filters']['field_featured_value']['table'] = 'field_data_field_featured';
@@ -1044,6 +1091,7 @@ function elx_home_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('spin-the-wheel-link'),
     t('View the details'),
     t('User pane'),
     t('View panes'),
@@ -1098,6 +1146,17 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Spin the Wheel */
+  $handler->display->display_options['fields']['field_spin_the_wheel']['id'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['table'] = 'field_data_field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['field'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['label'] = '';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['text'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['type'] = 'list_key';
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
@@ -1105,7 +1164,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hero_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
@@ -1120,7 +1179,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
@@ -1147,6 +1206,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Content object type (field_content_object_type) */
   $handler->display->display_options['filters']['field_content_object_type_tid']['id'] = 'field_content_object_type_tid';
   $handler->display->display_options['filters']['field_content_object_type_tid']['table'] = 'field_data_field_content_object_type';
@@ -1154,6 +1221,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_content_object_type_tid']['value'] = array(
     249 => '249',
   );
+  $handler->display->display_options['filters']['field_content_object_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_content_object_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
 
@@ -1186,6 +1254,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Content object type (field_content_object_type) */
   $handler->display->display_options['filters']['field_content_object_type_tid']['id'] = 'field_content_object_type_tid';
   $handler->display->display_options['filters']['field_content_object_type_tid']['table'] = 'field_data_field_content_object_type';
@@ -1193,6 +1269,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_content_object_type_tid']['value'] = array(
     249 => '249',
   );
+  $handler->display->display_options['filters']['field_content_object_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_content_object_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
@@ -1292,6 +1369,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Content object type (field_content_object_type) */
   $handler->display->display_options['filters']['field_content_object_type_tid']['id'] = 'field_content_object_type_tid';
   $handler->display->display_options['filters']['field_content_object_type_tid']['table'] = 'field_data_field_content_object_type';
@@ -1299,6 +1384,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_content_object_type_tid']['value'] = array(
     249 => '249',
   );
+  $handler->display->display_options['filters']['field_content_object_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_content_object_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
   $handler->display->display_options['path'] = 'homepage-whatsnewtrending';
@@ -1411,6 +1497,14 @@ function elx_home_page_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'h5p_content' => 'h5p_content',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Content object type (field_content_object_type) */
   $handler->display->display_options['filters']['field_content_object_type_tid']['id'] = 'field_content_object_type_tid';
   $handler->display->display_options['filters']['field_content_object_type_tid']['table'] = 'field_data_field_content_object_type';
@@ -1418,6 +1512,7 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['filters']['field_content_object_type_tid']['value'] = array(
     249 => '249',
   );
+  $handler->display->display_options['filters']['field_content_object_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_content_object_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_content_object_type_tid']['vocabulary'] = 'content_object_type';
   $translatables['homepage_whatsnewtrending'] = array(
@@ -1437,6 +1532,7 @@ function elx_home_page_views_default_views() {
     t('next ›'),
     t('last »'),
     t('SEE MORE'),
+    t('spin-the-wheel-link'),
     t('User pane'),
     t('What\'s New & Trending on Homepage'),
     t('View panes'),

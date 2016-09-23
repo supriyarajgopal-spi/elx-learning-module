@@ -45,6 +45,17 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Spin the Wheel */
+  $handler->display->display_options['fields']['field_spin_the_wheel']['id'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['table'] = 'field_data_field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['field'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['label'] = '';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['text'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_spin_the_wheel']['type'] = 'list_key';
   /* Field: Content: Hero image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
@@ -52,7 +63,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
@@ -66,7 +77,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Order weight (field_order_weight) */
   $handler->display->display_options['sorts']['field_order_weight_value']['id'] = 'field_order_weight_value';
@@ -76,6 +87,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
@@ -140,6 +152,7 @@ function elx_levels_views_default_views() {
     t('next ›'),
     t('last »'),
     t('SEE MORE'),
+    t('spin-the-wheel-link'),
     t('All'),
     t('Admin'),
   );

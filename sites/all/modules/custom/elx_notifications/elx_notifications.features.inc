@@ -84,9 +84,9 @@ function elx_notifications_default_message_type() {
     "message_text" : {
       "en" : [
         {
-          "value" : "\\u003Cp\\u003EThe !badge_name\\u0026nbsp;badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EThe !badge_name\\u0026 badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003EThe !badge_name\\u00a0badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EThe !badge_name\\u0026amp; badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
         }
       ],
       "und" : [

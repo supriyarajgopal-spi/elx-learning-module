@@ -34,7 +34,11 @@ function elx_interactive_content_feature_ds_layout_settings_info() {
       'field_spin_the_wheel' => 'ds_content',
       'h5p' => 'ds_content',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
       'ds_content' => 'div',
     ),

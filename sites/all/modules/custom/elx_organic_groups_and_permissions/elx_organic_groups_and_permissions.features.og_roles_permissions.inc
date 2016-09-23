@@ -17,6 +17,12 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
     'group_bundle' => 'market',
     'name' => 'administrator member',
     'permissions' => array(
+      'access publishing options of badge content' => TRUE,
+      'access publishing options of content_object content' => TRUE,
+      'access publishing options of disclaimer content' => TRUE,
+      'access publishing options of h5p_content content' => TRUE,
+      'access publishing options of product_detail content' => TRUE,
+      'access publishing options of tools content' => TRUE,
       'add user' => TRUE,
       'administer group' => TRUE,
       'approve and deny subscription' => TRUE,
@@ -34,6 +40,12 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
       'update any product_detail content' => TRUE,
       'update any tools content' => TRUE,
       'update group' => TRUE,
+      'view any unpublished badge content' => TRUE,
+      'view any unpublished content_object content' => TRUE,
+      'view any unpublished disclaimer content' => TRUE,
+      'view any unpublished h5p_content content' => TRUE,
+      'view any unpublished product_detail content' => TRUE,
+      'view any unpublished tools content' => TRUE,
     ),
   );
 

@@ -17,10 +17,11 @@ body.section-user.page-user {
       display: none;
     }
 
+/*
     .panels-flexible-column-new-main {
 
     }
-
+*/
     .panels-flexible-column-new-1 {
       float: right;
       background-color: #e6e9ee;
@@ -28,12 +29,13 @@ body.section-user.page-user {
           h2.pane-title {
             margin: 40px auto;
             text-align: center;
-            font-family: "optimadisplaylightlight";
+            font-family: 'optimadisplaylightlight';
             font-size: 3em;
             font-weight: normal;
           }
     }
 
+/*
     // dp dp //
     .panels-flexible-row.panels-flexible-row-new-main-row {
       .panels-flexible-region-new-user_information {
@@ -50,6 +52,7 @@ body.section-user.page-user {
 
       }
     }
+*/
 
     .panels-flexible-row.panels-flexible-row-new-4,
     .panels-flexible-row.panels-flexible-row-new-5,
@@ -79,54 +82,66 @@ body.section-user.page-user {
     .panels-flexible-row.panels-flexible-row-new-5 {
 
       .panels-flexible-region-new-my_progress_last_login {
+
         .view-id-dashboard_user.view-display-id-last_login {
+
           .view-content .views-field.views-field-login {
               height: 50px;
               margin: 0;
               width: 100%;
           }
+
         }
+
       }
+
       // my progress my points
       .panels-flexible-region-new-my_progress_my_points {
+
         .panels-flexible-region-new-my_progress_my_points-inside {
+
           .view-content .views-field.views-field-points {
               height: 50px;
               margin: 0;
               width: 100%;
           }
+
         }
+
       }
+
     }
 
     // blue box //
     .panels-flexible-row.panels-flexible-row-new-6 {
 
       .panels-flexible-region-new-my_progress_recently_completed_activites {
+
         .view-id-dashboard_user_activities.view-dashboard-user-activities {
+
           .view-content .views-row a {
-            color: #9EAFFF;
+            color: #9eafff;
           }
 
           .views-field.views-field-field-headline,
           .views-field.views-field-field-headline a {
-
               height: 50px;
               margin: -2px 10px;
               width: 100%;
-
           }
 
           .views-field.views-field-field-display-title {
             display: none;
           }
-        }
-      }
 
+        }
+
+      }
+/*
       .panels-flexible-region-new-my_progress_suggested_for_you {
 
       }
-
+*/
     }
 
     // badges
@@ -137,7 +152,7 @@ body.section-user.page-user {
           h2.pane-title {
             margin: 40px auto;
             text-align: center;
-            font-family: "optimadisplaylightlight";
+            font-family: 'optimadisplaylightlight';
             font-size: 3em;
             font-weight: normal;
           }
@@ -149,43 +164,45 @@ body.section-user.page-user {
             }
 
             .views-row {
-
               width: 600px;
               margin: 0 auto;
- 
-              .views-field {
 
+              .views-field {
                 margin: 0;
-                transform: scale(0.8);
+                transform: scale(.8);
 
                 .field-content {
-
 
                   a {
                     text-indent: -5000px;
                   }
+
                 }
+
               }
+
             }
 
           }
 
         }
+
       }
+
     }
 
     // leaderboard
     .panels-flexible-row.panels-flexible-row-new-8 {
-
       margin: 50px 0;
 
       .panels-flexible-region-new-my_leaderboard {
+
         .pane-user-points-panel-pane-2 {
 
           h2.pane-title {
             margin: 40px auto;
             text-align: center;
-            font-family: "optimadisplaylightlight";
+            font-family: 'optimadisplaylightlight';
             font-size: 3em;
             font-weight: normal;
           }
@@ -203,6 +220,7 @@ body.section-user.page-user {
                 height: 50px;
                 width: 20%;
               }
+
             }
 
           }
@@ -210,23 +228,22 @@ body.section-user.page-user {
         }
 
         .pane-user-points-dashboard-user-points {
+
           .view-display-id-dashboard_user_points {
+
             .item-list {
 
               ul {
 
                 li.views-row {
-
                   clear: left;
-                  border: 0px solid white;
-
+                  border: 0 solid white;
                   width: 100%; // 880px; //
                   height: 125px;
                   list-style: none;
                   list-style-position: inside;
                   padding: 0;
                   margin: 0;
-
                   border-bottom: 1px solid lightgray;
 
                   .views-field {
@@ -240,7 +257,7 @@ body.section-user.page-user {
                     margin: 0;
                     width: 100px;
                   }
-
+/*
                   .views-field.views-field-field-last-name {
 
                   }
@@ -256,19 +273,23 @@ body.section-user.page-user {
                   .views-field.views-field-points-1 {
 
                   }
-
+*/
                 }
+
               }
- 
+
             }
+
           }
+
         }
+
       }
+
     }
 
     // tools
     .panels-flexible-row.panels-flexible-row-new-9 {
-
       margin: 50px 0;
 
       .panels-flexible-region-new-my_tools {
@@ -276,7 +297,7 @@ body.section-user.page-user {
         h2.pane-title {
           margin: 40px auto;
           text-align: center;
-          font-family: "optimadisplaylightlight";
+          font-family: 'optimadisplaylightlight';
           font-size: 3em;
           font-weight: normal;
         }
@@ -284,10 +305,9 @@ body.section-user.page-user {
         .item-list {
 
           ul {
+
             li.views-row {
-
-              border: 0px solid white;
-
+              border: 0 solid white;
               width: 880px;
               height: 220px;
               list-style: none;
@@ -303,10 +323,9 @@ body.section-user.page-user {
                  height: 100px;
 
                 .field-content {
+
                   a {
-
-                    font-family: "optimadisplaylightlight";
-
+                    font-family: 'optimadisplaylightlight';
                     position: absolute;
                     top: 15px;
                     left: 250px;
@@ -316,30 +335,38 @@ body.section-user.page-user {
                     position: absolute;
                     text-decoration: none;
                   }
+
                 }
+
               }
 
               .views-field.views-field-field-tool-thumbnail {
                  float: left;
                  clear: left;
-
                  height: 200px;
                  margin: 10px;
 
                 .field-content {
+
                   a {
                     background-size: 0;
                     height: 150px;
                     margin: 0;
                     width: 250px;
                   }
+
                 }
-              }           
+
+              }
 
             } // li
+
           } // ul
+
         }
+
       }
+
     }
 
   }
@@ -354,7 +381,6 @@ body.section-user.page-user {
   // */
 
   main.dashboard-override {
-
     margin-bottom: 300px;
 
     .elx-neck-name {
@@ -366,7 +392,6 @@ body.section-user.page-user {
     }
 
     .two-by-two-ux {
-
       margin: 100px auto;
       width: 65%;
       padding-left: 50px;
@@ -378,6 +403,7 @@ body.section-user.page-user {
       .r2xc2,
       .r3xc1,
       .r4 {
+
         label {
           text-transform: uppercase;
           font-size: 1.3em;
@@ -392,6 +418,7 @@ body.section-user.page-user {
           font-family: $font-family-serif;
           font-weight: bold;
         }
+
       }
 
       .btn-edit-profile {
@@ -461,7 +488,6 @@ body.section-user.page-user {
     }
 
     .elx-round-container {
-
       width: 200px;
       margin: 0 auto;
 

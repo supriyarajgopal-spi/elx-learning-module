@@ -585,6 +585,7 @@ div#block-menu-menu-header-user-menu {
         font-size: 20px;
         padding: 10px 20px;
         width: 200px;
+        line-height: 24px;
       }
 
       .view-display-id-completed_count {
@@ -594,7 +595,7 @@ div#block-menu-menu-header-user-menu {
           width: 100%;
 
           span.field-content {
-            font-size: 1.1em;
+            font-size: 24px;
           }
 
           span.field-content::before {
@@ -615,6 +616,10 @@ div#block-menu-menu-header-user-menu {
       background-color: #1e2341;
       padding: 0 0 10px;
       height: 80px;
+
+      .pane-title {
+        line-height: 24px;
+      }
 
       .views-row {
         width: 100%;
@@ -704,6 +709,10 @@ div#block-menu-menu-header-user-menu {
       color: #999;
       font-size: 16px;
 
+      .pane-title {
+        line-height: 24px;
+      }
+
       .views-row {
         width: 100%;
         margin: 0 0 10px;
@@ -729,12 +738,17 @@ div#block-menu-menu-header-user-menu {
 
           height: 25px;
 
-          .field-content a {
-            color: #9eafff;
-            font-size: 16px;
-            text-indent: 0;
+          .field-content { 
+            line-height: 24px;
+            height: 24px;
 
-            width: 230px;
+            a {
+              color: #9eafff;
+              font-size: 16px;
+              text-indent: 0;
+
+              width: 230px;
+            }
           }
         }
 
@@ -774,7 +788,7 @@ div#block-menu-menu-header-user-menu {
             margin-left: 76px;
             position: absolute;
             width: 20px;
-            top: 8px;
+            top: 4px;
             background-size: 20px;
           }
         }

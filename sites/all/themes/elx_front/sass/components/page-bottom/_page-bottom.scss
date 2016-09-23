@@ -1,38 +1,93 @@
 .region.region-bottom {
-    background-color: #040a2b;
+  background-color: #040a2b;
 
-    div#block-panels-mini-page-bottom {
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 100px;
+  div#block-panels-mini-page-bottom {
+    margin-left: auto;
+    margin-right: auto;
 
-        p {
-            color: white;
-            font-size: .778em;
-        }
-
-        a {
-            color: #9eafff;
-            text-decoration: none;
-        }
-
-        .panel-pane.pane-custom.pane-1 {
-            float: right;
-
-                    a {
-                      color: #9eafff;
-                      text-decoration: none;
-                      font-size: 15px;
-                      font-weight: normal;
-                      text-align: right;
-
-                      &:visited {
-                          color: #9eafff;
-                      }
-
-
-                    }
-
-        }
+    @include respond-to('mobile') {
+      padding: 0 10px;
     }
+
+    @include respond-to('tablet') {
+      padding: 0 100px;
+    }
+
+    @include respond-to('desktop') {
+      padding: 0 100px;
+    }
+
+    @include respond-to('wide') {
+      padding: 0 100px;
+    }
+
+    @include respond-to('xwide') {
+      padding: 0 100px;
+    }
+
+    p {
+      color: white;
+      font-size: .778em;
+    }
+
+    a {
+      color: #9eafff;
+      text-decoration: none;
+    }
+
+    .panel-pane.pane-custom.pane-1 {
+      float: right;
+
+      @include respond-to('mobile') {
+        float: none;
+      }
+
+      a {
+        color: #9eafff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: normal;
+        text-align: right;
+
+        &:visited {
+          color: #9eafff;
+        }
+
+      }
+
+    }
+
+  }
+
+  @include respond-to('mobile') {
+    .panel-2col {
+
+      .panel-col-first,
+      .panel-col-last {
+        width: 100%;
+        float: none;
+      }
+
+    }
+
+  }
+
 }
+
+/*
+@include respond-to('tablet') {
+
+}
+
+@include respond-to('desktop') {
+
+}
+
+@include respond-to('wide') {
+
+}
+
+@include respond-to('xwide') {
+
+}
+*/

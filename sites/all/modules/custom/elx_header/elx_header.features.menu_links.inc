@@ -56,29 +56,6 @@ function elx_header_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-header-menu_search:search-product-library.
-  $menu_links['menu-header-menu_search:search-product-library'] = array(
-    'menu_name' => 'menu-header-menu',
-    'link_path' => 'search-product-library',
-    'router_path' => 'search-product-library',
-    'link_title' => 'Search',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Custom search of product library',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'menu-header-menu_search:search-product-library',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
   // Exported menu link: menu-header-user-menu-1_badges:badges.
   $menu_links['menu-header-user-menu-1_badges:badges'] = array(
     'menu_name' => 'menu-header-user-menu-1',
@@ -299,7 +276,6 @@ function elx_header_menu_default_menu_links() {
   t('LOG OUT');
   t('MY DASHBOARD');
   t('PRODUCT LIBRARY');
-  t('Search');
   t('TOOLS');
   t('Trigger Link Menu');
 

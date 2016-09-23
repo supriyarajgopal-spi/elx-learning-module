@@ -612,14 +612,9 @@ div#block-menu-menu-header-user-menu {
     }
 
     .pane-levels-quizz-progress-closest-completion {
-
       background-color: #1e2341;
       padding: 0 0 10px;
       height: 80px;
-
-      .pane-title {
-        line-height: 24px;
-      }
 
       .views-row {
         width: 100%;
@@ -636,6 +631,7 @@ div#block-menu-menu-header-user-menu {
       }
 
       .pane-title {
+        line-height: 24px;
         font-size: 16px;
         padding: 10px 20px;
         width: 230px;
@@ -738,7 +734,7 @@ div#block-menu-menu-header-user-menu {
 
           height: 25px;
 
-          .field-content { 
+          .field-content {
             line-height: 24px;
             height: 24px;
 

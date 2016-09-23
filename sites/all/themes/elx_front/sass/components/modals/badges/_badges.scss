@@ -1,1 +1,79 @@
-// PLACEHOLDER FILE
+// BAGES MODAL
+.page-badges {
+  /* initial override invisible state */
+  .ctools-modal-content {
+    opacity: 0;
+    visibility: hidden;
+
+    .badge-hide {
+      display: none;
+    }
+
+  }
+
+  #modalBackdrop.badge-modal-backdrop-area {
+    background-color: #040a2b !important;
+    opacity: '.8' !important;
+  }
+
+  #modalContent.modal-default {
+    width: 400px;
+  }
+
+  #modalContent.badge-modal-content-area {
+    width: 34%;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: white;
+    overflow: visible !important;
+    min-width: 200px;
+    margin-left: -20px;
+
+    @include respond-to('mobile') {
+      width: 100% !important;
+      margin: 0;
+    }
+
+    a.close {
+      cursor: pointer;
+
+      @include respond-to('mobile') {
+        width: 50px;
+        height: 48px;
+        top: -16px;
+        right: 0;
+        background: url('../images/buttons_etc/spr-modal-mobile.png') no-repeat top left;
+      }
+
+    }
+
+  }
+
+  #modalContent {
+
+    .modal-header {
+      width: 100%;
+      position: absolute;
+
+      a {
+        top: 0;
+        right: -50px;
+      }
+
+    }
+
+    .badge-img {
+      display: block;
+      margin: -35px auto 0;
+    }
+
+    .badge-title {
+      display: block;
+      margin: 25px auto;
+      font-family: $font-family-serif;
+      text-align: center;
+    }
+
+  }
+
+}

@@ -1,7 +1,6 @@
 name = ELX Badges Rules
 core = 7.x
 package = ELX
-dependencies[] = elx_badges_rules
 dependencies[] = elx_quiz_rule_trigger
 dependencies[] = elx_user_points_feature
 dependencies[] = entity

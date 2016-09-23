@@ -164,6 +164,30 @@ function elx_badges_rules_rules_action_info() {
           ),
           'group' => t('ELX'),
         ),
+		'_elx_get_completed_levels_count' => array(
+		  'label' => t('Load count of Learning Levels completed by a user'),
+		  'parameter' => array(
+			'user' => array(
+			  'type' => 'user',
+			  'label' => t('User'),
+			  'description' => t('The user on whose behalf this H5P node is flagged.'),
+			),
+			'taxonomy' => array(
+			  'type' => 'integer',
+			  'label' => t('Learning Level'),
+			  'description' => t('The learning level that this H5P node is tagged with. Leave blank to ignore this condition.'),
+			  'options list' => '_get_taxonomy_term_options',
+			  'optional' => TRUE,
+			),
+		  ),
+		  'new variables' => array(
+			'completed_level_count' => array(
+			  'type' => 'integer',
+			  'label' => t('Completed level count'),
+			),
+		  ),
+		  'group' => t('ELX'),
+		),
 	);
 }
 
@@ -325,6 +349,55 @@ function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
 }
 
 /**
+ * Get count of Learning Levels completed by a user
+ * @param $uid
+ *	 User ID of the user on behalf of whom the node is flagged as First Viewed Content
+ * @param $tid
+ *   Term ID of the Learning Level (optional)
+ *
+ * @return
+ *   Count of Learning Levels completed by a user
+ */
+function _elx_get_completed_levels_count($user = NULL,$tid = 0)
+{
+  $flagName = 'first_viewed_content';
+  
+  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+  if(!$user)
+    return -1;
+  
+  $tidCondition = ($tid) ? " where x.learning_level = ".$tid : " where 1=1"; //Optionally filter based on Learning Level passed as parameter
+  
+  //Get the total no. of nodes tagged with learning levels and the no. of nodes viewed by the user in the same query
+  //Borrowed from http://stackoverflow.com/questions/13400726/mysql-combine-two-queries
+  $query = db_query('select y.learning_level,total,viewed 
+			from 
+			( select count(nid) as viewed, l.field_learning_category_tid as learning_level 
+			  from {h5p_nodes} as h join {field_data_field_learning_category} as l on l.entity_id = h.nid 
+			  join {flagging} as fg on fg.entity_id = h.nid 
+			  join {flag} as f on f.fid = fg.fid 
+			  where f.name like :flag_name and fg.uid = :flagging_uid
+			  group by l.field_learning_category_tid
+			) x
+			right outer join
+			( select count(nid) as total, l.field_learning_category_tid as learning_level 
+			  from {h5p_nodes} as h join {field_data_field_learning_category} as l on l.entity_id = h.nid 
+			  group by l.field_learning_category_tid
+			) y 
+			on x.learning_level = y.learning_level '.$tidCondition.' ',array(':flag_name' => $flagName,':flagging_uid' => $user->uid));
+  $rows = $query->fetchAll(); //Retrieve all records into an indexed array of stdClass objects.
+  
+  $completed_level_count = 0;
+  foreach($rows as $row)
+  {
+	if($row->total == $row->viewed)
+		$completed_level_count++;
+  }
+  
+  return array('completed_level_count' => $completed_level_count);
+}
+
+/**
  * Helper function to get an array of taxonomy terms of Learning Level vocabulary
  * Borrowed from http://dropbucket.org/node/688
  * Vocabulary ID is not passed as parameter because rules doesn't have an option to do so for 'options list'
@@ -333,7 +406,7 @@ function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
 function _get_taxonomy_term_options()
 {
 	$vname = 'learning_category';
-    $options = array();
+    $options = array('0' => t('--Select--'));
     $vocabulary = taxonomy_vocabulary_machine_name_load($vname);
 	$vid = $vocabulary->vid;
     $options_source = taxonomy_get_tree($vid); //Get array of taxonomy term objects of this vocabulary

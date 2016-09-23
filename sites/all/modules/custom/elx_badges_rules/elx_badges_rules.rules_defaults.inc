@@ -249,6 +249,163 @@ function elx_badges_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_completed_levels_badges'] = entity_import('rules_config', '{ "rules_completed_levels_badges" : {
+      "LABEL" : "Completed Levels Badges",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "elx_badges_rules", "rules_conditional", "flag" ],
+      "ON" : { "flag_flagged_first_viewed_content" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "flagged-node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "h5p_content" : "h5p_content" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "_elx_get_completed_levels_count" : {
+            "USING" : { "user" : [ "site:current-user" ], "taxonomy" : "0" },
+            "PROVIDE" : { "completed_level_count" : { "completed_level_count" : "Completed level count" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "completed-level-count" ], "op" : "\\u003E", "value" : "0" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "on_your_way_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "on_your_way_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "completed-level-count" ], "op" : "\\u003E", "value" : "4" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "high_five_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "high_five_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "completed-level-count" ], "op" : "\\u003E", "value" : "9" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "perfect_10_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "perfect_10_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "completed-level-count" ], "op" : "\\u003E", "value" : "2" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "fast_learner_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "data_calc" : {
+                            "USING" : {
+                              "input_1" : [ "site:current-user:last-access" ],
+                              "op" : "-",
+                              "input_2" : 2592000
+                            },
+                            "PROVIDE" : { "result" : { "result" : "Calculation result" } }
+                          }
+                        },
+                        { "CONDITIONAL" : [
+                            {
+                              "IF" : { "data_is" : {
+                                  "data" : [ "result" ],
+                                  "op" : "\\u003C",
+                                  "value" : [ "site:current-user:created" ]
+                                }
+                              },
+                              "DO" : [
+                                { "flag_flaguser" : {
+                                    "flag" : "fast_learner_badge",
+                                    "user" : [ "site:current-user" ],
+                                    "flagging_user" : [ "site:current-user" ],
+                                    "permission_check" : "1"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_flag_a_user_with_a_specific_flag'] = entity_import('rules_config', '{ "rules_flag_a_user_with_a_specific_flag" : {
       "LABEL" : "Flag a user with a specific flag if node count equal to flag count",
       "PLUGIN" : "rule",
@@ -333,6 +490,154 @@ function elx_badges_rules_default_rules_configuration() {
             "data" : [ "h5p-tagged-count-condition" ],
             "value" : [ "h5p-tagged-flagged-count-condition" ]
           }
+        }
+      ]
+    }
+  }');
+  $items['rules_well_read_badges'] = entity_import('rules_config', '{ "rules_well_read_badges" : {
+      "LABEL" : "Well Read Badges",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "flag", "elx_badges_rules", "rules_conditional" ],
+      "ON" : { "flag_flagged_first_viewed_content" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "flagged-node" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "h5p_content" : "h5p_content",
+                "product_detail" : "product_detail",
+                "story" : "story"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "flag_fetch_node_by_user" : {
+            "USING" : {
+              "flag" : "first_viewed_content",
+              "flagging_user" : [ "site:current-user" ]
+            },
+            "PROVIDE" : { "content_flagged_by_user" : { "content_flagged_by_user" : "Content flagged by user" } }
+          }
+        },
+        { "_elx_get_list_count" : {
+            "USING" : { "list" : [ "content-flagged-by-user" ] },
+            "PROVIDE" : { "list_length" : { "firstviewed_flag_count" : "List length" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "firstviewed-flag-count" ], "op" : "\\u003E", "value" : "24" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "well_read_25_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "well_read_25_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "firstviewed-flag-count" ], "op" : "\\u003E", "value" : "49" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "well_read_50_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "well_read_50_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "firstviewed-flag-count" ], "op" : "\\u003E", "value" : "74" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "well_read_75_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "well_read_75_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "firstviewed-flag-count" ], "op" : "\\u003E", "value" : "99" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "well_read_100_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "well_read_100_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

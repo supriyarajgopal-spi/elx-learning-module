@@ -161,7 +161,9 @@ function content_conversion_h5p_json($content_object) {
         if (function_exists($function)) {
           $slide = new stdClass();
           $function($node, $slide);
-          $presentation->slides[] = $slide;
+          if (!empty($slide->elements)) {
+            $presentation->slides[] = $slide;
+          }
         }
         break;
     }

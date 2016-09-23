@@ -252,6 +252,19 @@
         }
       } */
 
+      .pane-levels-quizz-progress-completed-count {
+
+        .view-display-id-completed_count {
+          .views-field.views-field-tid {
+
+            span.field-content::before {
+              padding: 5px 20px 0 5px;;
+            }
+          }
+        }
+      }
+
+
       .pane-dashboard-user-my-points {
 
         .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
@@ -296,6 +309,17 @@
         }
 
       }
+
+      /*
+      .pane-badges-my-badges {
+
+         h2.pane-title {
+           margin-left: 15px;
+           margin-top: 5px;
+        }
+
+      }
+      */
 
     }
 

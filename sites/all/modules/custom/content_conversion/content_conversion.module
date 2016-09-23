@@ -54,13 +54,17 @@ function content_conversion_content_object_h5p($node) {
       'vid' => $h5p_node->vid,
     );
   }
+
+  // If no markets are assigned to the Content Object, unpublish its H5P node.
+  $h5p_node_status = empty($node->markets) ? NODE_NOT_PUBLISHED : $node->status;
+  
   $h5p_node += array(
     'uid' => $node->uid,
     'name' => $node->name,
     'type' => 'h5p_content',
     'language' => $node->language,
     'title' => $node->title,
-    'status' => $node->status,
+    'status' => $h5p_node_status,
     'promote' => $node->promote,
     'sticky' => $node->sticky,
     'created' => $node->created,

@@ -7445,13 +7445,33 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   text-align: center;
 }
 
-/* line 11, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 3, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools h1 {
+    font-size: 2.85em;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 3, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools h1 {
+    font-size: 2.85em;
+    margin: 0 0 10px;
+  }
+}
+
+/* line 20, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+.page-tools h2 {
+  display: none;
+}
+
+/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
 .page-tools .view-tools ul {
   margin: 0;
   padding: 0;
 }
 
-/* line 15, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+/* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
 .page-tools .view-tools ul li {
   float: left;
   width: 50%;
@@ -7461,7 +7481,23 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   min-height: 125px;
 }
 
-/* line 23, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 29, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li {
+    width: 50%;
+    padding: 0;
+  }
+}
+
+/* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
 .page-tools .view-tools ul li .views-field-field-tool-thumbnail {
   width: 198px;
   height: 198px;
@@ -7469,7 +7505,41 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   margin: 0 15px 0 0;
 }
 
-/* line 31, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-tool-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 47, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-tool-thumbnail {
+    width: 33%;
+    height: 100px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-display-title {
+    float: right;
+    width: 180px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-display-title {
+    float: right;
+    width: 57%;
+    padding: 0 5% 0 0;
+  }
+}
+
+/* line 79, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
 .page-tools .view-tools ul li .views-field-field-display-title a {
   font-family: "optimadisplaylightlight";
   font-size: 18px;
@@ -7477,7 +7547,21 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   color: #040a2b;
 }
 
-/* line 37, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 79, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-display-title a {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 79, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
+  .page-tools .view-tools ul li .views-field-field-display-title a {
+    font-size: 1em;
+  }
+}
+
+/* line 93, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/tools-page/_tools-page.scss */
 .page-tools .view-tools ul li .views-field-field-display-title a:hover {
   text-decoration: underline;
 }

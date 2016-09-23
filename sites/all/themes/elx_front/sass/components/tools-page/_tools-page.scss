@@ -5,6 +5,20 @@
     font-size: $font-size-lg-extralarge;
     font-weight: 100;
     text-align: center;
+
+    @include respond-to('mobile') {
+      font-size: 2.85em;
+    }
+
+    @include respond-to('mobile-landscape') {
+      font-size: 2.85em;
+      margin: 0 0 10px;
+    }
+
+  }
+
+  h2 {
+    display: none;
   }
 
   .view-tools {
@@ -20,26 +34,74 @@
         list-style-type: none;
         min-height: 125px;
 
+        @include respond-to('mobile') {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        @include respond-to('mobile-landscape') {
+          width: 50%;
+          padding: 0;
+        }
+
         .views-field-field-tool-thumbnail {
           width: 198px;
           height: 198px;
           float: left;
           margin: 0 15px 0 0;
+
+          @include respond-to('mobile') {
+            width: 100px;
+            height: 100px;
+          }
+
+          @include respond-to('mobile-landscape') {
+            width: 33%;
+            height: 100px;
+            margin: 0;
+          }
+
         }
 
         .views-field-field-display-title {
+
+          @include respond-to('mobile') {
+            float: right;
+            width: 180px;
+          }
+
+          @include respond-to('mobile-landscape') {
+            float: right;
+            width: 57%;
+            padding: 0 5% 0 0;
+          }
+
           a {
             font-family: $font-family-serif;
             font-size: $font-size-sm-large;
             text-decoration: none;
             color: #040a2b;
 
+            @include respond-to('mobile') {
+              font-size: 1em;
+            }
+
+            @include respond-to('mobile-landscape') {
+              font-size: 1em;
+            }
+
             &:hover {
               text-decoration: underline;
             }
+
           }
+
         }
+
       }
+
     }
+
   }
+
 }

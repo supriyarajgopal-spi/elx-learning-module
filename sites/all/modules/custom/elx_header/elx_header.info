@@ -24,6 +24,7 @@ features[fe_block_settings][] = blockify-blockify-site-name
 features[fe_block_settings][] = elx_recent_badges-recent_badges
 features[fe_block_settings][] = menu-menu-header-menu
 features[fe_block_settings][] = menu-menu-header-user-menu
+features[fe_block_settings][] = search-form
 features[fe_block_settings][] = views-search_product_library-block
 features[features_api][] = api:2
 features[menu_custom][] = menu-header-menu

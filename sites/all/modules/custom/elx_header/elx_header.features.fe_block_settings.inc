@@ -142,6 +142,32 @@ function elx_header_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['search-form'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'form',
+    'module' => 'search',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => 'dashboard_inactive',
+        'status' => 1,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx_front',
+        'weight' => -27,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-search_product_library-block'] = array(
     'cache' => -1,
     'custom' => 0,

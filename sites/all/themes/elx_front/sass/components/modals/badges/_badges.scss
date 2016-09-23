@@ -2,7 +2,7 @@
 .page-badges {
   /* initial override invisible state */
   .ctools-modal-content {
-    opacity: 0;
+    opacity: 0 !important;
     visibility: hidden;
 
     .badge-hide {
@@ -13,7 +13,7 @@
 
   #modalBackdrop.badge-modal-backdrop-area {
     background-color: #040a2b !important;
-    opacity: '.8' !important;
+    opacity: '0.8' !important;
   }
 
   #modalContent.modal-default {
@@ -34,11 +34,25 @@
       margin: 0;
     }
 
+    @include respond-to('mobile-landscape') {
+      width: 80% !important;
+      max-width: 380px;
+      margin: 0;
+    }
+
     a.close {
       cursor: pointer;
 
       @include respond-to('mobile') {
-        width: 50px;
+        width: 60px;
+        height: 48px;
+        top: -16px;
+        right: 0;
+        background: url('../images/buttons_etc/spr-modal-mobile.png') no-repeat top left;
+      }
+
+      @include respond-to('mobile-landscape') {
+        width: 60px;
         height: 48px;
         top: -16px;
         right: 0;
@@ -64,7 +78,8 @@
 
     .badge-img {
       display: block;
-      margin: -35px auto 0;
+      margin: -55px auto 0;
+      width: 154px;
     }
 
     .badge-title {

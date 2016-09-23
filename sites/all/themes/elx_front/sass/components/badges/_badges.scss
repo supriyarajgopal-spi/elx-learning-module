@@ -6,6 +6,15 @@
     font-family: $font-family-serif;
     font-size: 4em;
     text-align: center;
+
+    @include respond-to('mobile') {
+      font-size: 2.85em;
+    }
+
+    @include respond-to('mobile-landscape') {
+      font-size: 2.85em;
+    }
+
   }
 
   .views-row {
@@ -19,46 +28,19 @@
 .page-user,
 .pane-elx-recent-badges-recent-badges {
 
-  @media screen and (max-width: 320px) {
-    .view-badges {
-
-      .views-row {
-         margin: 0 auto;
-         width: 100%;
-
-         .views-field {
-           margin: 0;
-           width: 50%;
-         }
-
-      }
-
-    }
-
-  }
-
-  // @media screen and (max-width: 568px) {
-  @media screen and (min-width: 321px) and (max-width: 667px) {
-
-    .view-badges {
-
-      .views-row {
-         margin: 0 auto;
-         width: 100%;
-
-         .views-field {
-           margin: 0;
-           width: 33%;
-           background-size: 100px;
-         }
-
-      }
-
-    }
-
-  }
-
   .views-row {
+
+    @include respond-to('mobile') {
+      margin: 0 auto;
+      max-width: 320px;
+      height: 100px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      margin: 0 auto;
+      max-width: 400px;
+      height: 100px;
+    }
 
     .views-field {
       width: 142px;
@@ -67,6 +49,20 @@
       margin: 0 13px 26px;
       background-size: 142px 142px;
 
+      @include respond-to('mobile') {
+        margin: 0;
+        width: 33%;
+        height: 100px;
+        background-size: 88px;
+      }
+
+      @include respond-to('mobile-landscape') {
+        margin: 0;
+        width: 25%;
+        height: 100px;
+        background-size: 100px;
+      }
+
       a {
         display: inline-block;
         width: 142px;
@@ -74,6 +70,10 @@
         text-indent: -5000px;
 
         @include respond-to('mobile') {
+          width: 100%;
+          height: 110px;
+        }
+        @include respond-to('mobile-landscape') {
           width: 100%;
           height: 110px;
         }

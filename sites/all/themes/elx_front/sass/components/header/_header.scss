@@ -551,7 +551,7 @@ div#block-menu-menu-header-user-menu {
 }
 
 .qtip.qtip-light {
-   width: 300px !important;
+  width: 300px !important;
   position: absolute !important;
   right: 0 !important;
   //left: -50px !important;
@@ -580,6 +580,7 @@ div#block-menu-menu-header-user-menu {
     .pane-levels-quizz-progress-completed-count {
 
       background-color: #1e2341;
+      height: 80px;
 
       .pane-title {
         font-size: 20px;
@@ -794,14 +795,18 @@ div#block-menu-menu-header-user-menu {
     .pane-badges-my-badges {
       background-color: #1e2341;
       margin-top: 1px;
+      height: 80px;
 
       h2.pane-title {
         color: #999;
         font-size: 15px;
-        padding-left: 20px;
+        padding-left: 5px;
+        // padding-left: 20px;
         display: block;
         width: 125px;
         float: left;
+        margin-left: 0;
+        margin-top: 25px;
       }
 
       .view-badges.view-id-badges.view-display-id-my_badges {

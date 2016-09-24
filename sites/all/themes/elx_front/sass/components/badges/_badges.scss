@@ -240,7 +240,7 @@
   // gnav exception //
   .qtip-content.qtip-content {
 
-    #mini-panel-header_user_menu {
+    // #mini-panel-header_user_menu {
     /*  .pane-levels-quizz-progress-closest-completion {
         .user-progress-bar {
           background-color: #1e2341;
@@ -251,6 +251,19 @@
           }
         }
       } */
+
+      .pane-levels-quizz-progress-completed-count {
+
+        .view-display-id-completed_count {
+          .views-field.views-field-tid {
+
+            span.field-content::before {
+              padding: 5px 20px 0 5px;;
+            }
+          }
+        }
+      }
+
 
       .pane-dashboard-user-my-points {
 
@@ -297,8 +310,19 @@
 
       }
 
+      /*
+      .pane-badges-my-badges {
+
+         h2.pane-title {
+           margin-left: 15px;
+           margin-top: 5px;
+        }
+
+      }
+      */
+
     }
 
-  }
+  // }
 
 }

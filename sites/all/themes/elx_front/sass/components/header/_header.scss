@@ -10,6 +10,19 @@
 //
 // Style guide: components.header
 
+@include respond-to('mobile') {
+
+  html {
+
+    body.admin-menu {
+      margin-top: 78px !important; // adjust the header position for mobile
+    }
+
+  }
+
+}
+
+
 .header,
 %header {
   @extend %clearfix;
@@ -407,7 +420,7 @@ div#block-menu-menu-header-user-menu {
 
   @include respond-to('mobile') {
     top: -193px;
-    right: -30px;
+    right: 0;
   }
 
   @include respond-to('tablet') {

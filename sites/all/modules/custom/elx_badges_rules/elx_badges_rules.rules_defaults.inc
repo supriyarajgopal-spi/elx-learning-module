@@ -249,6 +249,153 @@ function elx_badges_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_badge_award_rules_2'] = entity_import('rules_config', '{ "rules_badge_award_rules_2" : {
+      "LABEL" : "Badge Award Rules 2",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "3 Minute Beauty", "Product Pro" ],
+      "REQUIRES" : [ "rules_conditional", "elx_badges_rules", "rules", "flag" ],
+      "ON" : { "flag_flagged_first_viewed_content" : [] },
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "flagged-node" ],
+                  "type" : "node",
+                  "bundle" : { "value" : { "tools" : "tools" } }
+                }
+              },
+              "DO" : [
+                { "_elx_flag_fetch_node_bundle_by_user" : {
+                    "USING" : {
+                      "flag" : "first_viewed_content",
+                      "flagging_user" : [ "site:current-user" ],
+                      "bundle" : { "value" : { "tools" : "tools" } }
+                    },
+                    "PROVIDE" : { "content_flagged_by_user" : { "content_flagged_by_user" : "Nodes flagged by user" } }
+                  }
+                },
+                { "variable_add" : {
+                    "USING" : { "type" : "list\\u003Cnode\\u003E", "value" : [ "" ] },
+                    "PROVIDE" : { "variable_added" : { "three_min_beauty_list" : "List of nodes whose titles contain \\u00273 Minute Beauty\\u0027" } }
+                  }
+                },
+                { "LOOP" : {
+                    "USING" : { "list" : [ "content-flagged-by-user" ] },
+                    "ITEM" : { "flagged_tool_node" : "Flagged Tool Node" },
+                    "DO" : [
+                      { "CONDITIONAL" : [
+                          {
+                            "IF" : { "text_matches" : { "text" : [ "flagged-node:title-field" ], "match" : "3 Minute Beauty" } },
+                            "DO" : [
+                              { "list_add" : {
+                                  "list" : [ "three-min-beauty-list" ],
+                                  "item" : [ "flagged-tool-node" ],
+                                  "unique" : "1"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                { "_elx_get_list_count" : {
+                    "USING" : { "list" : [ "three-min-beauty-list" ] },
+                    "PROVIDE" : { "list_length" : { "list_length" : "Count of Tool nodes containing \\u00273 Min Beauty\\u0027 admin title" } }
+                  }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "data_is" : { "data" : [ "list-length" ], "op" : "\\u003E", "value" : "5" } },
+                      "DO" : [
+                        { "CONDITIONAL" : [
+                            {
+                              "IF" : { "NOT flag_flagged_user" : {
+                                  "flag" : "three_minute_beauty_badge",
+                                  "user" : [ "site:current-user" ],
+                                  "flagging_user" : [ "site:current-user" ]
+                                }
+                              },
+                              "DO" : [
+                                { "flag_flaguser" : {
+                                    "flag" : "three_minute_beauty_badge",
+                                    "user" : [ "site:current-user" ],
+                                    "flagging_user" : [ "site:current-user" ],
+                                    "permission_check" : "1"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_is_of_bundle" : {
+                  "entity" : [ "flagged-node" ],
+                  "type" : "node",
+                  "bundle" : { "value" : { "product_detail" : "product_detail" } }
+                }
+              },
+              "DO" : [
+                { "_elx_flag_fetch_node_bundle_by_user" : {
+                    "USING" : {
+                      "flag" : "first_viewed_content",
+                      "flagging_user" : [ "site:current-user" ],
+                      "bundle" : { "value" : { "product_detail" : "product_detail" } }
+                    },
+                    "PROVIDE" : { "content_flagged_by_user" : { "products_flagged_by_user" : "Products flagged by user" } }
+                  }
+                },
+                { "_elx_get_list_count" : {
+                    "USING" : { "list" : [ "products-flagged-by-user" ] },
+                    "PROVIDE" : { "list_length" : { "product_list_length" : "Count of products flagged by user" } }
+                  }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "data_is" : { "data" : [ "product-list-length" ], "op" : "\\u003E", "value" : "4" } },
+                      "DO" : [
+                        { "CONDITIONAL" : [
+                            {
+                              "IF" : { "NOT flag_flagged_user" : {
+                                  "flag" : "product_pro_badge",
+                                  "user" : [ "site:current-user" ],
+                                  "flagging_user" : [ "site:current-user" ]
+                                }
+                              },
+                              "DO" : [
+                                { "flag_flaguser" : {
+                                    "flag" : "product_pro_badge",
+                                    "user" : [ "site:current-user" ],
+                                    "flagging_user" : [ "site:current-user" ],
+                                    "permission_check" : "1"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_completed_levels_badges'] = entity_import('rules_config', '{ "rules_completed_levels_badges" : {
       "LABEL" : "Completed Levels Badges",
       "PLUGIN" : "reaction rule",
@@ -490,6 +637,54 @@ function elx_badges_rules_default_rules_configuration() {
             "data" : [ "h5p-tagged-count-condition" ],
             "value" : [ "h5p-tagged-flagged-count-condition" ]
           }
+        }
+      ]
+    }
+  }');
+  $items['rules_we_heart_you_badge'] = entity_import('rules_config', '{ "rules_we_heart_you_badge" : {
+      "LABEL" : "We Heart You Badge",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag", "elx_badges_rules", "rules_conditional", "rules" ],
+      "ON" : { "flag_flagged_favorites" : [] },
+      "DO" : [
+        { "flag_fetch_node_by_user" : {
+            "USING" : { "flag" : "favorites", "flagging_user" : [ "site:current-user" ] },
+            "PROVIDE" : { "content_flagged_by_user" : { "content_favorited_by_user" : "Content favorited by user" } }
+          }
+        },
+        { "_elx_get_list_count" : {
+            "USING" : { "list" : [ "content-favorited-by-user" ] },
+            "PROVIDE" : { "list_length" : { "favorited_count" : "Count of nodes favorited by user" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "favorited-count" ], "op" : "\\u003E", "value" : "4" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
+                          "flag" : "we_heart_you_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ]
+                        }
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "we_heart_you_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

@@ -344,7 +344,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
   $handler->display->display_options['fields']['view_1']['display'] = 'level_content';
-
+  $handler->display->display_options['fields']['view_1']['arguments'] = '[!tid]';
   /* Display: All admin */
   $handler = $view->new_display('panel_pane', 'All admin', 'all_admin');
   $handler->display->display_options['defaults']['access'] = FALSE;

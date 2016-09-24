@@ -22,7 +22,7 @@ function elx_user_points_feature_rules_condition_info() {
           'label' => t('User'),
         )
       ),
-	  'module' => 'elx_badges_rules',
+	  'module' => 'elx_user_points_feature',
     ),
   );
 }

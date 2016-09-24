@@ -56,7 +56,7 @@ function elx_user_points_feature_default_rules_configuration() {
       "userpoints_rules",
       "flag",
       "rules_conditional",
-      "elx_badges_rules"
+      "elx_user_points_feature"
     ],
     "ON" : { "user_login" : [] },
     "IF" : [ { "data_is_empty" : { "data" : [ "account:last-access" ] } } ],

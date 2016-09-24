@@ -51,7 +51,13 @@ function elx_user_points_feature_default_rules_configuration() {
     "LABEL" : "Award points when user logs in first time",
     "PLUGIN" : "reaction rule",
     "OWNER" : "rules",
-    "REQUIRES" : [ "rules", "userpoints_rules", "flag" ],
+    "REQUIRES" : [
+      "rules",
+      "userpoints_rules",
+      "flag",
+      "rules_conditional",
+      "elx_badges_rules"
+    ],
     "ON" : { "user_login" : [] },
     "IF" : [ { "data_is_empty" : { "data" : [ "account:last-access" ] } } ],
     "DO" : [
@@ -73,6 +79,34 @@ function elx_user_points_feature_default_rules_configuration() {
           "flagging_user" : [ "account" ],
           "permission_check" : "1"
         }
+      },
+      { "CONDITIONAL" : [
+          {
+            "IF" : { "user_is_among_first_50_in_market" : { "user" : [ "account" ] } },
+            "DO" : [
+              { "CONDITIONAL" : [
+                  {
+                    "IF" : { "NOT flag_flagged_user" : {
+                        "flag" : "early_bird_badge",
+                        "user" : [ "site:current-user" ],
+                        "flagging_user" : [ "site:current-user" ]
+                      }
+                    },
+                    "DO" : [
+                      { "flag_flaguser" : {
+                          "flag" : "early_bird_badge",
+                          "user" : [ "site:current-user" ],
+                          "flagging_user" : [ "site:current-user" ],
+                          "permission_check" : "1"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
    }

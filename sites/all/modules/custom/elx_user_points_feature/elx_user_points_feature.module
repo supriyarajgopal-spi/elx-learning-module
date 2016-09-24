@@ -5,3 +5,47 @@
  */
 
 include_once 'elx_user_points_feature.features.inc';
+
+/**
+ * Implements hook_rules_condition_info().
+ * Allow this condition to appear under Conditions tab in Rules UI & mention parameters that will be passed to callback function to validate this condition
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ */
+function elx_user_points_feature_rules_condition_info() {
+  return array(
+    'user_is_among_first_50_in_market' => array(
+      'group' => t('ELX'),
+      'label' => t('User is among the 1st 50 users in his/her market'),
+      'parameter' => array(
+        'user' => array(
+          'type' => 'user',
+          'label' => t('User'),
+        )
+      ),
+	  'module' => 'elx_user_points_feature',
+    ),
+  );
+}
+
+/**
+ * User defined function callback to return boolean depending on whether user is among 1st 50 logged in users in his/her market
+ * Borrowed from http://drupal.stackexchange.com/questions/121461/how-to-programmatically-add-modify-a-rule
+ * Parameters: $user - the user object who has passed quiz; $quiz: Interactive Content node object
+ * Returns boolean - true if user has taken this quiz before or false, if this is the first time the user passed this quiz
+ */
+function user_is_among_first_50_in_market($user) {
+    //If user is not assigned any market, return FALSE
+	if(empty($user->og_user_node))
+		return FALSE;
+
+	$query_isUserAmong1st50 = db_select('users','u');
+	$query_isUserAmong1st50->join('field_data_og_user_node','og','og.entity_id = u.uid');
+	$query_isUserAmong1st50->fields('u',array('uid'));
+	$query_isUserAmong1st50->condition('u.status',1,'=')->condition('u.access',0,'>'); //Users should be active & logged in atleast once
+	$query_isUserAmong1st50->condition('og.bundle','user','=')->condition('og.og_user_node_target_id',$user->og_user_node[LANGUAGE_NONE][0]['target_id'],'='); //Users should be of the same market as this user
+	$query_isUserAmong1st50->orderBy('u.access','asc'); //Users in the order of the earliest logged in
+	$query_isUserAmong1st50->range(0,50); //Take 1st 50 users only
+	$first_50_uids = $query_isUserAmong1st50->execute()->fetchCol();
+	
+	return (!empty($first_50_uids) && in_array($user->uid,$first_50_uids));
+}

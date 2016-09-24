@@ -148,13 +148,15 @@ function elx_badges_rules_rules_action_info() {
               'label' => t('User who flagged the node'),
               'description' => t('For non-global flags, this is the user who flagged the node. (For global flags, this argument is ignored.)'),
             ),
+			//Borrowed from rules\modules\entity.rules.inc
 		    'bundle' => array(
-			  'type' => 'list',
-              'label' => t('Content Type(s)'),
-              'options list' => '_get_bundles',
-              'description' => t('The content type(s) to filter the flagged nodes on'),
-			  'optional' => TRUE,
-		    ),
+			  'type' => 'list<text>',
+			  'label' => t('Entity bundle'),
+			  'description' => t('The condition is met if the entity is of one of the selected bundles.'),
+			  'options list' => '_get_bundles',
+			  'restriction' => 'input',
+			  'optional' => TRUE
+			),
           ),
           'provides' => array(
             'content_flagged_by_user' => array(

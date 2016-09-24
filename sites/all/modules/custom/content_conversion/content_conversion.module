@@ -157,7 +157,9 @@ function content_conversion_h5p_json($content_object) {
         if (!empty($question_set)) {
           $slide = new stdClass();
           _content_conversion_question_set($question_set, $slide, $content_object);
-          $presentation->slides[] = $slide;
+          if (!empty($slide->elements)) {
+            $presentation->slides[] = $slide;
+          }
           $question_set = array();
         }
         // Create slide for this node.
@@ -165,7 +167,9 @@ function content_conversion_h5p_json($content_object) {
         if (function_exists($function)) {
           $slide = new stdClass();
           $function($node, $slide);
-          $presentation->slides[] = $slide;
+          if (!empty($slide->elements)) {
+            $presentation->slides[] = $slide;
+          }
         }
         break;
     }
@@ -174,7 +178,9 @@ function content_conversion_h5p_json($content_object) {
   if (!empty($question_set)) {
     $slide = new stdClass();
     _content_conversion_question_set($question_set, $slide, $content_object);
-    $presentation->slides[] = $slide;
+    if (!empty($slide->elements)) {
+      $presentation->slides[] = $slide;
+    }
     $question_set = array();
   }
   $presentation->keywordListEnabled = FALSE;
@@ -303,11 +309,11 @@ function _content_conversion_node_list($node, $slide) {
     }
     elseif (!empty($paragraph->field_list_video[LANGUAGE_NONE])) {
       $element = new stdClass();
-      $element->x = 25;
+      $element->x = 12;
       $element->y = 0;
-      $element->width = 50;
-      $element->height = 26;
-      $size['y_pos'] = 27;
+      $element->width = 75;
+      $element->height = 74;
+      $size['y_pos'] = 77;
       $size['height'] = 73;
       $action = new stdClass();
       $action->library = 'H5P.Video 1.2';

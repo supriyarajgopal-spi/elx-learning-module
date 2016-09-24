@@ -3,115 +3,44 @@
 .page-badges {
 
   h1 {
-
     font-family: $font-family-serif;
     font-size: 4em;
     text-align: center;
 
+    @include respond-to('mobile') {
+      font-size: 2.85em;
+    }
+
+    @include respond-to('mobile-landscape') {
+      font-size: 2.85em;
+    }
+
   }
 
   .views-row {
-
     width: 85%;
     margin: 0 auto;
-
   }
 
-  /* initial override invisible state */
-  .ctools-modal-content {
-    opacity: 0;
-    visibility: hidden;
-
-    .badge-hide {
-      display: none;
-    }
-  }
-
-  #modalBackdrop.badge-modal-backdrop-area {
-    background-color: #040a2b !important;
-    opacity: '0.8';
-  }
-
-  #modalContent.modal-default {
-    width: 400px;
-  }
-
-  #modalContent.badge-modal-content-area {
-    width: 34%;
-    margin-top: 50px;
-    margin-left: 10px;
-    background-color: white;
-    overflow: visible !important;
-    min-width: 200px;
-    margin-left: -20px;
-
-    a.close {
-      cursor: pointer;
-    }
-  }
-
-  #modalContent {
-
-    .modal-header {
-
-      width: 100%;
-      position: absolute;
-
-      a {
-        top: 0;
-        right: -50px;
-      }
-    }
-
-    .badge-img {
-      display: block;
-      margin: -35px auto 0;
-    }
-
-    .badge-title {
-      display: block;
-      margin: 25px auto;
-      font-family: $font-family-serif;
-      text-align: center;
-    }
-  }
 }
 
 .page-badges,
 .page-user,
 .pane-elx-recent-badges-recent-badges {
 
-  @media screen and (max-width: 320px) {
-    .view-badges {
-      .views-row {
-         margin: 0 auto;
-         width: 100%;
-
-         .views-field {
-           margin: 0;
-           width: 50%;
-         }
-      }
-    }
-  }
-
-  // @media screen and (max-width: 568px) {
-  @media screen and (min-width: 321px) and (max-width: 667px) {
-    .view-badges {
-      .views-row {
-         margin: 0 auto;
-         width: 100%;
-
-         .views-field {
-           margin: 0;
-           width: 33%;
-           background-size: 100px;
-         }
-      }
-    }
-  }
-
   .views-row {
+
+    @include respond-to('mobile') {
+      margin: 0 auto;
+      max-width: 320px;
+      height: 100px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      margin: 0 auto;
+      max-width: 400px;
+      height: 100px;
+    }
 
     .views-field {
       width: 142px;
@@ -120,14 +49,39 @@
       margin: 0 13px 26px;
       background-size: 142px 142px;
 
+      @include respond-to('mobile') {
+        margin: 0;
+        width: 33%;
+        height: 100px;
+        background-size: 88px;
+      }
+
+      @include respond-to('mobile-landscape') {
+        margin: 0;
+        width: 25%;
+        height: 100px;
+        background-size: 100px;
+      }
+
       a {
         display: inline-block;
         width: 142px;
         height: 142px;
         text-indent: -5000px;
+
+        @include respond-to('mobile') {
+          width: 100%;
+          height: 110px;
+        }
+        @include respond-to('mobile-landscape') {
+          width: 100%;
+          height: 110px;
+        }
+
       }
 
     }
+
   }
 
   .view-footer {
@@ -285,7 +239,8 @@
 
   // gnav exception //
   .qtip-content.qtip-content {
-    #mini-panel-header_user_menu {
+
+    // #mini-panel-header_user_menu {
     /*  .pane-levels-quizz-progress-closest-completion {
         .user-progress-bar {
           background-color: #1e2341;
@@ -297,7 +252,21 @@
         }
       } */
 
+      .pane-levels-quizz-progress-completed-count {
+
+        .view-display-id-completed_count {
+          .views-field.views-field-tid {
+
+            span.field-content::before {
+              padding: 5px 20px 0 5px;;
+            }
+          }
+        }
+      }
+
+
       .pane-dashboard-user-my-points {
+
         .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
           width: 100%;
         }
@@ -306,7 +275,6 @@
           margin: 0;
 
           .views-field-points {
-
             width: 100%;
             margin: 0;
 
@@ -317,12 +285,17 @@
             .field-content {
               margin-left: 46px;
             }
+
           }
+
         }
+
       }
 
       .pane-dashboard-user-activities-suggested {
+
         .view-display-id-suggested {
+
           .views-field-field-headline {
             margin: 0;
 
@@ -330,10 +303,26 @@
               text-align: left;
               padding: 0;
             }
+
           }
+
         }
+
       }
+
+      /*
+      .pane-badges-my-badges {
+
+         h2.pane-title {
+           margin-left: 15px;
+           margin-top: 5px;
+        }
+
+      }
+      */
+
     }
-  }
+
+  // }
 
 }

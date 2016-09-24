@@ -4,18 +4,20 @@ body.page-leaderboard {
   $field-picture-radius: 112px;
   $field-picture-radius-header: 175px;
 
-  @media screen and (max-width: 320px) {
+  @include respond-to('mobile') {
     .layout-3col {
       main.layout-3col__full {
-        width: 1024px;
+        width: 100%;
+        padding: 0;
       }
     }
   }
-  // @media screen and (max-width: 568px) {
-  @media screen and (max-width: 667px) {
+
+  @include respond-to('mobile-landscape') {
     .layout-3col {
       main.layout-3col__full {
-        width: 1024px;
+        width: 100%;
+        padding: 0;
       }
     }
   }
@@ -29,26 +31,19 @@ body.page-leaderboard {
       text-align: center;
       color: #040a2b;
       letter-spacing: '0.1em';
-    }
 
-    h1::before {
-      content: 'Rank';
-      float: left;
-      font-size: 24px;
-      margin-top: 100px;
-      margin-left: 100px;
-    }
+      @include respond-to('mobile') {
+        font-size: 2.85em;
+      }
 
-    h1::after {
-      content: 'Points';
-      float: right;
-      font-size: 24px;
-      margin-top: 100px;
-      margin-right: 100px;
+      @include respond-to('mobile') {
+        font-size: 2.85em;
+      }
+
     }
 
     form#dashboard-and-menu-leaderboard-filter-form {
-      background-color: lightgray;
+      background-color: #e6e9ee;
       padding: 65px 50px 1px;
       text-align: center;
 
@@ -71,111 +66,131 @@ body.page-leaderboard {
 
     .pane-dashboard-and-menu-leaderboard-filter {
       margin-top: -80px;
+
+      @include respond-to('mobile') {
+        margin-top: -25px;
+      }
+
+      @include respond-to('mobile') {
+        margin-top: -25px;
+      }
+
     }
 
     .pane-user-points-panel-pane-1 {
-/*
-          .views-field-user-gravatar-picture  {
 
-             position: absolute;
-             margin-left: 30%;
-             margin-top: -25px;
+      .views-field-user-gravatar-picture {
+        margin-left: 25%;
+        margin-top: 0;
+        position: absolute;
 
-            .field-content {
+        .field-content {
+          background-color: #f0f8ff;
+          background-size: 100% auto;
+          border: 3px solid #d9b544;
+          border-radius: 90px;
+          display: block;
+          float: left;
+          width: 90px;
+          height: 90px;
+          overflow: hidden;
+          background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
 
-              background-color: #f0f8ff;
-              border: 2px solid gold;
-              // border-radius: $field-picture-radius;
-              display: block;
-              float: left;
-              // height: $field-picture-radius;
-              // width: $field-picture-radius;
-
-              background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
-              background-size: 100%;
-
-            }
+          @include respond-to('mobile') {
+            width: 42px;
+            height: 42px;
           }
 
-        //}
-*/
-        .views-field-user-gravatar-picture {
-
-          margin-left: 25%;
-          margin-top: 0;
-          position: absolute;
-
-          .field-content {
-
-            background-color: #f0f8ff;
-            background-size: 100% auto;
-            border: 3px solid gold;
-            border-radius: 90px;
-            display: block;
-            float: left;
-            height: 90px;
-            overflow: hidden;
-            width: 90px;
-            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
-
-            img {
-              max-width: 110%;
-              transform: scale(1.1);
-            }
+          @include respond-to('mobile-landscape') {
+            width: 42px;
+            height: 42px;
           }
+
+          img {
+            max-width: 110%;
+            transform: scale(1.1);
+          }
+
         }
+
+      }
+
     }
 
     .pane-user-points-panel-pane-2 {
-
       clear: both;
-      width: 95%;
-      height: 150px;
-      list-style-position: inside;
-      list-style: none;
-      margin: 10px auto 30px;
       font-size: 2em;
       font-family: $font-family-serif;
       padding: 25px;
+      margin: 10px auto 30px;
+      list-style-position: inside;
+      list-style: none;
       position: relative;
       z-index: 100;
-      /* top: 80px; */
       color: white;
       background-color: #040a2b;
       width: 90%;
       height: 120px;
 
-      .view-content {
+      @include respond-to('mobile') {
+        width: 100%;
+        margin: 20px 0 0;
+        padding: 0;
+        height: 40px;
+      }
 
+      @include respond-to('mobile-landscape') {
+        width: 100%;
+        margin: 20px 0 0;
+        padding: 0;
+        height: 40px;
+      }
+
+      .view-content {
         position: relative;
 
-        .views-field-user-gravatar-picture {
+        // user's rank number
+        .views-field-view {
 
+          @include respond-to('mobile') {
+            float: left;
+            width: 50%;
+            padding: 6px 0 0;
+          }
+
+          @include respond-to('mobile-landscape') {
+            float: left;
+            width: 50%;
+            padding: 6px 0 0;
+          }
+
+        }
+
+        .views-field-user-gravatar-picture {
           margin-left: 25%;
           margin-top: -90px;
           position: absolute;
 
-          /*
-          .field-content {
-
-            background-color: #f0f8ff;
-            background-size: 100% auto;
-            border: 3px solid gold;
-            border-radius: 90px;
-            display: block;
-            float: left;
-            height: 90px;
-            overflow: hidden;
-            width: 90px;
-            background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png')
+          @include respond-to('mobile') {
+            width: 56px;
+            height: 56px;
+            margin: -7px auto 0;
+            left: 0;
+            right: 0;
           }
-          */
+
+          @include respond-to('mobile-landscape') {
+            width: 56px;
+            height: 56px;
+            margin: -7px auto 0;
+            left: 0;
+            right: 0;
+          }
 
           .field-content {
-
             background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
             background-color: #f0f8ff;
-            border: 3px solid gold;
+            border: 3px solid #d9b544;
             border-radius: 90px;
             //border-radius: $field-picture-radius-header;
             display: block;
@@ -186,9 +201,20 @@ body.page-leaderboard {
             background-size: 100%;
             overflow: hidden;
 
+            @include respond-to('mobile') {
+              width: 56px;
+              height: 56px;
+            }
+
+            @include respond-to('mobile-landscape') {
+              width: 56px;
+              height: 56px;
+            }
+
             img {
               width: 100%;
             }
+
           }
 
         }
@@ -199,6 +225,15 @@ body.page-leaderboard {
           position: absolute;
           top: 0;
           width: 25%;
+
+          @include respond-to('mobile') {
+            display: none;
+          }
+
+          @include respond-to('mobile-landscape') {
+            display: none;
+          }
+
         }
 
         .views-field-uid::before,
@@ -206,24 +241,58 @@ body.page-leaderboard {
           content: '#';
           font-size: 32px;
           vertical-align: super;
+
+          @include respond-to('mobile') {
+            font-size: 13px;
+          }
+
+          @include respond-to('mobile-landscape') {
+            font-size: 13px;
+          }
+
         }
 
         .views-field-uid,
         .views-field-points {
           margin-left: 10px;
-          font-family: arial;
+          font-family: $font-family-sans-serif;
           font-size: 1.5em;
           font-weight: bold;
           width: 15%;
+
+          @include respond-to('mobile') {
+            font-size: $font-size-lg-medium;
+            width: 100%;
+          }
+
+          @include respond-to('mobile-landscape') {
+            font-size: $font-size-lg-medium;
+            width: 100%;
+          }
+
         }
 
         .views-field-points-1 {
-          font-family: arial;
+          font-family: $font-family-sans-serif;
           font-size: 1.4em;
           font-weight: bold;
           position: absolute;
           right: 0;
           top: 25px;
+
+          @include respond-to('mobile') {
+            float: right;
+            right: 10px;
+            top: 6px;
+            font-size: $font-size-lg-medium;
+          }
+
+          @include respond-to('mobile-landscape') {
+            float: right;
+            right: 10px;
+            top: 6px;
+            font-size: $font-size-lg-medium;
+          }
 
           .field-content::before {
             background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png') repeat scroll 0 0;
@@ -245,8 +314,17 @@ body.page-leaderboard {
 
       ul {
 
-        li.views-row {
+        @include respond-to('mobile') {
+          margin: 0;
+          padding: 0;
+        }
 
+        @include respond-to('mobile') {
+          margin: 0;
+          padding: 0;
+        }
+
+        li.views-row {
           clear: both;
           width: 95%;
           height: 150px;
@@ -259,19 +337,40 @@ body.page-leaderboard {
           padding: 25px;
           position: relative;
 
+          @include respond-to('mobile') {
+            margin: 0;
+            padding: 0;
+            height: 65px;
+            font-size: 16px;
+          }
+
+          @include respond-to('mobile') {
+            margin: 0;
+            padding: 0;
+            height: 65px;
+            font-size: 16px;
+          }
+
           .views-field {
             float: left;
           }
 
           .views-field-counter {
-
             width: 15%;
-            font-family: arial;
+            font-family: $font-family-sans-serif;
             font-size: 1.3em;
             font-weight: bold;
 
+            @include respond-to('mobile') {
+              font-size: $font-size-lg-medium;
+            }
+
+            @include respond-to('mobile-landscape') {
+              font-size: $font-size-lg-medium;
+            }
+
             span.field-content {
-              margin-left: -10px;
+              margin-left: -5px;
             }
 
           }
@@ -280,6 +379,15 @@ body.page-leaderboard {
             content: '#';
             font-size: 24px;
             vertical-align: super;
+
+            @include respond-to('mobile') {
+              font-size: 13px;
+            }
+
+            @include respond-to('mobile-landscape') {
+              font-size: 13px;
+            }
+
           }
 
           .views-field-field-last-name {
@@ -287,31 +395,6 @@ body.page-leaderboard {
             position: absolute;
             margin-left: 45%;
           }
-
-          /*
-          .views-field-user-gravatar-picture  {
-
-             position: absolute;
-             margin-left: 30%;
-             margin-top: -25px;
-
-            .field-content {
-
-              background-color: #f0f8ff;
-              border: 2px solid gold;
-              // border-radius: $field-picture-radius;
-              display: block;
-              float: left;
-              // height: $field-picture-radius;
-              // width: $field-picture-radius;
-
-              background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
-              background-size: 100%;
-
-            }
-
-          }
-          */
 
           .views-field-field-country {
             width: 25%;
@@ -322,10 +405,18 @@ body.page-leaderboard {
 
           .views-field-points-1 {
             float: right;
-            font-family: arial;
+            font-family: $font-family-sans-serif;
             font-weight: bold;
             font-size: 1.2em;
             margin-top: 12px;
+
+            @include respond-to('mobile') {
+              font-size: $font-size-lg-small;
+            }
+
+            @include respond-to('mobile-landscape') {
+              font-size: $font-size-lg-small;
+            }
 
             .field-content::before {
               content: ' ';
@@ -345,6 +436,25 @@ body.page-leaderboard {
 
     }
 
+  }
+
+
+  // gnav exception //
+  .qtip-content.qtip-content {
+
+    #mini-panel-header_user_menu {
+
+      /*
+      .pane-badges-my-badges {
+
+         h2.pane-title {
+           margin-left: 15px;
+           margin-top: 5px;
+        }
+      }
+      */
+
+    }
   }
 
 }

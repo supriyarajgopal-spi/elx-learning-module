@@ -27,7 +27,7 @@
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 
         // click should trigger function with overlay
-        var linkhref = $(this).attr('href'); 
+        var linkhref = $(this).attr('href');
 
         // future perfect tense-ification //
         var launchModal = function (time) {
@@ -239,10 +239,10 @@
 
       /* DASHBOARD OVERRIDE  /user/123 */
       // if ($('body.section-user.page-user main .profile').size() || $('body.section-user.page-user main .panel-display .inside').size()) {
-      if ( $('body.section-user.page-user main').size()) { //  
+      if ($('body.section-user.page-user main').size()) {
       // || $('body.section-user.page-user main .panel-display .inside').size()) {
 
-        if( $('body.page-user-login').size() ) { return; alert('return;'); }
+        if ($('body.page-user-login').size()) { return; }
 
         var realname;
         var firstname;
@@ -326,7 +326,7 @@
         $('.pane-user-points-dashboard-user-points');
 
 
-        $('body.section-user.page-user').ready(get_page_data);
+        if (!$('.dashboard-override').size()) { $('body.section-user.page-user').ready(get_page_data); }
 
       } // size
 
@@ -382,7 +382,7 @@
             $('body.page-badges.section-badges #modalContent').append(titlepiece);
 
             $('body.page-badges.section-badges #modalBackdrop').addClass('badge-modal-backdrop-area');
-            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area').css('overflow','visible'); // only ctools override option remaining //
+            $('body.page-badges.section-badges #modalContent').addClass('badge-modal-content-area').css('overflow', 'visible'); // only ctools override option remaining //
 
             $('.ctools-modal-content').addClass('badge-hide');
 
@@ -398,7 +398,7 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = 'http://' + bgimg.split('http://')[1].replace('"','').split(')')[0];
+          httpimg = 'http://' + bgimg.split('http://')[1].replace('"', '').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

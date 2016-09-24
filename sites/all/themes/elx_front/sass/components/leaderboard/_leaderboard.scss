@@ -27,7 +27,7 @@ body.page-leaderboard {
     h1 {
       font-family: $font-family-serif;
       font-size: 72px;
-      margin: 77px 0 16px;
+      margin: 77px 0;
       text-align: center;
       color: #040a2b;
       letter-spacing: '0.1em';
@@ -131,6 +131,10 @@ body.page-leaderboard {
       background-color: #040a2b;
       width: 90%;
       height: 120px;
+
+      .view-empty {
+        visibility: hidden;
+      }
 
       @include respond-to('mobile') {
         width: 100%;

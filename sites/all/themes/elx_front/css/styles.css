@@ -3206,33 +3206,38 @@ body.html.node-type-h5p-content .layout-center {
 }
 
 /* line 258, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+body.html.node-type-h5p-content .layout-center .layout-3col.layout-swap {
+  padding-top: 0;
+}
+
+/* line 262, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 262, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 266, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > h1,
 body.html.node-type-h5p-content .layout-center main.layout-3col__full ul.tabs {
   display: none;
 }
 
-/* line 267, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 271, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent {
   margin-top: 0;
 }
 
-/* line 270, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 274, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent .ctools-modal-content {
   padding: 0 24px;
 }
 
-/* line 276, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 280, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .block-views.contextual-links-region {
   display: none;
 }
 
-/* line 280, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 284, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-links {
   display: none;
 }
@@ -6153,7 +6158,7 @@ body.page-levels-in-progress .qtip-content.qtip-content #mini-panel-header_user_
 body.page-leaderboard main h1 {
   font-family: "optimadisplaylightlight";
   font-size: 72px;
-  margin: 77px 0 16px;
+  margin: 77px 0;
   text-align: center;
   color: #040a2b;
   letter-spacing: '0.1em';
@@ -6275,6 +6280,11 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 {
   height: 120px;
 }
 
+/* line 135, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+body.page-leaderboard main .pane-user-points-panel-pane-2 .view-empty {
+  visibility: hidden;
+}
+
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
   /* line 120, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 {
@@ -6295,13 +6305,13 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 {
   }
 }
 
-/* line 149, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 153, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
   position: relative;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 153, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 157, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-view {
     float: left;
     width: 50%;
@@ -6310,7 +6320,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 153, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 157, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-view {
     float: left;
     width: 50%;
@@ -6318,7 +6328,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
   }
 }
 
-/* line 169, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 173, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
   margin-left: 25%;
   margin-top: -90px;
@@ -6326,7 +6336,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 169, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 173, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
     width: 56px;
     height: 56px;
@@ -6337,7 +6347,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 169, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 173, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
     width: 56px;
     height: 56px;
@@ -6347,7 +6357,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-/* line 190, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 194, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content {
   background-image: url("/sites/all/themes/elx_front/images/user/elx-circle-bg.png");
   background-color: #f0f8ff;
@@ -6363,7 +6373,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 190, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 194, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content {
     width: 56px;
     height: 56px;
@@ -6371,19 +6381,19 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 190, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 194, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content {
     width: 56px;
     height: 56px;
   }
 }
 
-/* line 214, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 218, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content img {
   width: 100%;
 }
 
-/* line 222, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 226, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
   font-size: 1.3em;
   margin-left: 45%;
@@ -6393,20 +6403,20 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 222, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 226, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
     display: none;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 222, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 226, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
     display: none;
   }
 }
 
-/* line 239, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 243, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid::before,
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
   content: '#';
@@ -6415,7 +6425,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 239, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 243, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid::before,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
     font-size: 13px;
@@ -6423,14 +6433,14 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 239, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 243, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid::before,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
     font-size: 13px;
   }
 }
 
-/* line 255, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 259, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
   margin-left: 10px;
@@ -6441,7 +6451,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 255, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 259, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
     font-size: 20px;
@@ -6450,7 +6460,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 255, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 259, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
     font-size: 20px;
@@ -6458,7 +6468,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-/* line 275, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 279, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
   font-family: "akzidenz-grotesk_bq";
   font-size: 1.4em;
@@ -6469,7 +6479,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 275, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 279, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
     float: right;
     right: 10px;
@@ -6479,7 +6489,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 275, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 279, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
     float: right;
     right: 10px;
@@ -6488,7 +6498,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-/* line 297, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 301, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 .field-content::before {
   background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
   content: ' ';
@@ -6500,7 +6510,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 315, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 319, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul {
     margin: 0;
     padding: 0;
@@ -6508,14 +6518,14 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 315, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 319, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul {
     margin: 0;
     padding: 0;
   }
 }
 
-/* line 327, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 331, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row {
   clear: both;
   width: 95%;
@@ -6531,7 +6541,7 @@ body.page-leaderboard main .item-list ul li.views-row {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 327, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 331, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row {
     margin: 0;
     padding: 0;
@@ -6541,7 +6551,7 @@ body.page-leaderboard main .item-list ul li.views-row {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 327, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 331, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row {
     margin: 0;
     padding: 0;
@@ -6550,12 +6560,12 @@ body.page-leaderboard main .item-list ul li.views-row {
   }
 }
 
-/* line 354, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 358, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field {
   float: left;
 }
 
-/* line 358, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 362, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
   width: 15%;
   font-family: "akzidenz-grotesk_bq";
@@ -6564,25 +6574,25 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 358, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 362, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
     font-size: 20px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 358, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 362, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
     font-size: 20px;
   }
 }
 
-/* line 372, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 376, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter span.field-content {
   margin-left: -5px;
 }
 
-/* line 378, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 382, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
   content: '#';
   font-size: 24px;
@@ -6590,27 +6600,27 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter::befo
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 378, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 382, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
     font-size: 13px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 378, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 382, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
     font-size: 13px;
   }
 }
 
-/* line 393, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 397, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-field-last-name {
   width: 25%;
   position: absolute;
   margin-left: 45%;
 }
 
-/* line 399, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 403, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-field-country {
   width: 25%;
   position: absolute;
@@ -6618,7 +6628,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-field-country
   margin-top: 42px;
 }
 
-/* line 406, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 410, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
   float: right;
   font-family: "akzidenz-grotesk_bq";
@@ -6628,20 +6638,20 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 406, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 410, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
     font-size: 15px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 406, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+  /* line 410, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
   body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
     font-size: 15px;
   }
 }
 
-/* line 421, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 425, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 .field-content::before {
   content: ' ';
   background: url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png");
@@ -6652,7 +6662,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 .fie
   position: absolute;
 }
 
-/* line 445, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
+/* line 449, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/leaderboard/_leaderboard.scss */
 body.page-leaderboard .qtip-content.qtip-content #mini-panel-header_user_menu {
   /*
       .pane-badges-my-badges {
@@ -7002,7 +7012,7 @@ body.ctools-modal-open {
 /* line 23, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/badges/_badges.scss */
 .page-badges #modalContent.badge-modal-content-area {
   width: 34%;
-  margin-top: 50px;
+  margin-top: -50px;
   margin-left: 10px;
   background-color: white;
   overflow: visible !important;

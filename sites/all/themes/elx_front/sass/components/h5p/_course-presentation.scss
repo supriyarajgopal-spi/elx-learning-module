@@ -4,6 +4,8 @@
 
   .h5p-course-presentation {
 
+    font-family: $font-family-sans-serif;
+
     .h5p-box-wrapper {
       background: transparent;
     }
@@ -29,12 +31,56 @@
 // Re-Nutriv : level-250
 %course-presentation-black-gold {
 
+  .h5p-course-presentation {
+    color: #fff;
+
+
+ a {
+      color: #fff;
+    }
+
+  p {
+    color: #fff;
+  }
+
+.h5p-slide p {
+    color: white;
+}
+
+
+  }
+
+
+  .h5p-image {
+    overflow: hidden;
+  }
+
+  .h5p-footer-previous-slide,
+  .h5p-footer-next-slide,
+  .h5p-footer-toggle-full-screen {
+
+    &::before {
+      color: #fff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+
+  }
+
+  .h5p-joubelui-button {
+    color: #9a7d46;
+    background: #000;
+  }
+}
+
   .h5p-progressbar .h5p-progressbar-part-show {
     background: #9a7d46 !important;
     background-image: none !important;
   }
 
-}
+
 
 // **************
 // BLUE ETHER
@@ -64,7 +110,17 @@
       color: #fff;
     }
 
+  p {
+    color: #fff;
   }
+
+.h5p-slide p {
+    color: white;
+}
+
+
+  }
+
 
   .h5p-image {
     overflow: hidden;
@@ -84,4 +140,201 @@
 
   }
 
+  .h5p-joubelui-button {
+    color: #600;
+    background: #fff;
+  }
+
 }
+
+
+// ************
+// BLUE KRYPTON
+// ************
+
+
+%course-presentation-blue-krypton {
+
+    .h5p-course-presentation {
+      color: #fff;
+
+    a {
+      color: #fff;
+    }
+
+  p {
+    color: #fff;
+  }
+
+.h5p-slide p {
+    color: white;
+}
+
+
+  }
+
+
+  .h5p-image {
+    overflow: hidden;
+  }
+
+  .h5p-footer-previous-slide,
+  .h5p-footer-next-slide,
+  .h5p-footer-toggle-full-screen {
+
+    &::before {
+      color: #fff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+
+  }
+
+  .h5p-joubelui-button {
+    color: #080f30;
+    background: #fff;
+  }
+
+.h5p-progressbar .h5p-progressbar-part-show {
+    background: #080f30 !important;
+    background-image: none !important;
+}
+
+
+}
+
+
+// ***********
+// GRAY ETHER
+// ***********
+
+%course-presentation-gray-ether {
+
+   .h5p-course-presentation {
+     color: #fff;
+
+/*.h5p-presentation-wrapper {
+      background-image: none;
+      background: transparent !important;
+
+      .h5p-element-outer.h5p-questionset-outer-element {
+        background: none;
+        background-image: none;
+      }
+
+    }*/
+
+ a {
+      color: #fff;
+    }
+
+  p {
+    color: #fff;
+  }
+
+.h5p-slide p {
+    color: white;
+}
+
+
+  }
+
+
+  .h5p-image {
+    overflow: hidden;
+  }
+
+  .h5p-footer-previous-slide,
+  .h5p-footer-next-slide,
+  .h5p-footer-toggle-full-screen {
+
+    &::before {
+      color: #fff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+
+  }
+
+  .h5p-joubelui-button {
+    color: #4ea1bf;
+    background: #000;
+  }
+
+
+  .h5p-progressbar .h5p-progressbar-part-show {
+    background: #4ea1bf !important;
+    background-image: none !important;
+  }
+
+
+
+}
+
+
+// ******
+// CLOUDS
+// ******
+
+
+
+
+%course-presentation-clouds {
+
+   .h5p-course-presentation {
+     color: #fff;
+
+
+ a {
+      color: #fff;
+    }
+
+  p {
+    color: #fff;
+  }
+
+.h5p-slide p {
+    color: white;
+}
+
+
+  }
+
+
+  .h5p-image {
+    overflow: hidden;
+  }
+
+  .h5p-footer-previous-slide,
+  .h5p-footer-next-slide,
+  .h5p-footer-toggle-full-screen {
+
+    &::before {
+      color: #fff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+
+  }
+
+  .h5p-joubelui-button {
+    color: #4ea1bf;
+    background: #000;
+  }
+
+
+  .h5p-progressbar .h5p-progressbar-part-show {
+    background: #4ea1bf !important;
+    background-image: none !important;
+  }
+
+
+
+}
+

@@ -307,7 +307,7 @@
   }
 }
 
-div#block-search-form {
+form#search-block-form {
   display: none;
   @include respond-to('tablet') {
     display: none;
@@ -325,8 +325,10 @@ div#block-search-form {
     display: inline;
   }
 
-  form {
+  .form-item {
     position: relative;
+    display: inline-flex;
+  }
 
     .form-item-search-block-form::before {
       content: '\e60f';
@@ -383,7 +385,7 @@ div#block-search-form {
       right: 0;
       display: none;
     }
-  }
+
 }
 
 div#block-menu-menu-header-menu {

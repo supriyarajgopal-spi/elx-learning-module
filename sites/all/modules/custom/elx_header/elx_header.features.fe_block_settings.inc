@@ -12,6 +12,32 @@ function elx_header_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-product_library_search_form'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'product_library_search_form',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'elx' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'elx',
+        'weight' => 0,
+      ),
+      'elx_front' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'elx_front',
+        'weight' => -27,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['blockify-blockify-logo'] = array(
     'cache' => 8,
     'custom' => 0,
@@ -158,8 +184,8 @@ function elx_header_default_fe_block_settings() {
         'weight' => 0,
       ),
       'elx_front' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'elx_front',
         'weight' => -27,
       ),

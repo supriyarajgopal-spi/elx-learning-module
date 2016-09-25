@@ -725,6 +725,25 @@ div#block-menu-menu-header-user-menu {
           margin-left: 17px;
           margin-top: 17px;
           background-image: url('../images/progress-bar.png');
+          -moz-animation: progress 2s 1 forwards;
+          -ms-animation: progress 2s 1 forwards;
+          animation: progress 2s 1 forwards;
+        }
+
+        @-webkit-keyframes progress {
+          from { width: 0%; }
+        }
+
+        @-moz-keyframes progress {
+          from { width: 0%; }
+        }
+
+        @-ms-keyframes progress {
+          from { width: 0%; }
+        }
+
+        @keyframes progress {
+          from { width: 0%; }
         }
 
       }

@@ -1103,7 +1103,7 @@ function elx_views_views_default_views() {
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => '',
+        'any_label' => 'All Categories',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -1234,7 +1234,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Most Relevent';
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Most Popular';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1336,6 +1336,7 @@ function elx_views_views_default_views() {
     t('Desc'),
     t('Advanced options'),
     t('Sort options'),
+    t('All Categories'),
     t('Select any filter and click on Apply to see results'),
     t('View'),
     t('- All -'),
@@ -1346,7 +1347,7 @@ function elx_views_views_default_views() {
     t('last »'),
     t('Displaying @start - @end of @total'),
     t('Title A-Z'),
-    t('Most Relevent'),
+    t('Most Popular'),
     t('Filter By Category'),
     t('Page'),
     t('Block'),

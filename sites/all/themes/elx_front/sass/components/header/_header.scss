@@ -10,6 +10,30 @@
 //
 // Style guide: components.header
 
+@include respond-to('mobile') {
+  html {
+    body.admin-menu {
+      margin-top: 0 !important; // adjust the header position for mobile
+    }
+
+    #admin-menu {
+      display: none;
+    }
+  }
+}
+
+@include respond-to('mobile-landscape') {
+  html {
+    body.admin-menu {
+      margin-top: 0 !important; // adjust the header position for mobile
+    }
+
+    #admin-menu {
+      display: none;
+    }
+  }
+}
+
 .header,
 %header {
   @extend %clearfix;
@@ -406,8 +430,15 @@ div#block-menu-menu-header-user-menu {
   right: -30px;
 
   @include respond-to('mobile') {
-    top: -193px;
-    right: -30px;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  @include respond-to('mobile-landscape') {
+    top: 0;
+    right: 0;
+    position: absolute;
   }
 
   @include respond-to('tablet') {
@@ -554,7 +585,15 @@ div#block-menu-menu-header-user-menu {
   width: 300px !important;
   position: absolute !important;
   right: 0 !important;
-  //left: -50px !important;
+
+  @include respond-to('mobile') {
+    left: auto !important;
+  }
+
+  @include respond-to('mobile-landscape') {
+    left: auto !important;
+  }
+
 }
 
 .qtip-contentWrapper {

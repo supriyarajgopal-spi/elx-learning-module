@@ -458,7 +458,7 @@ function elx_badge_flags_flag_default_flags() {
   $flags['perfect_present'] = array(
     'entity_type' => 'user',
     'title' => 'Perfect Present',
-    'global' => 0,
+    'global' => 1,
     'types' => array(),
     'flag_short' => 'Give Perfect Present Badge',
     'flag_long' => '',
@@ -473,21 +473,21 @@ function elx_badge_flags_flag_default_flags() {
     'badge_unearned_description' => '',
     'badge_image' => NULL,
     'show_in_links' => array(
-      'full' => 0,
+      'full' => 'full',
       'diff_standard' => 0,
       'token' => 0,
     ),
-    'show_as_field' => 0,
+    'show_as_field' => 1,
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'show_on_profile' => 0,
+    'show_on_profile' => 1,
     'access_uid' => 'others',
-    'api_version' => 3,
     'module' => 'elx_badge_flags',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   // Exported flag: "Product Pro Badge".
   $flags['product_pro_badge'] = array(

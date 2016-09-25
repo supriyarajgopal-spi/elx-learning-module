@@ -1,5 +1,16 @@
 body.section-user.page-user {
 
+  #modalContent {
+    .ctools-modal-content {
+      .modal-header {
+        a.close {
+          right: -50px;
+          top: 0;
+          background-color: lightgray;
+        }
+      }
+    }
+  }
 
   //.page-badges .views-row .views-field a,
   .views-row {
@@ -60,19 +71,55 @@ body.section-user.page-user {
       background-color: #040a2b;
       color: #fff;
       text-transform: uppercase;
-      width: 1024px;
+      // width: 1024px;
+      width: 100%;
     }
 
     // 10 progress count //
     .panels-flexible-row.panels-flexible-row-new-4 {
 
       .panels-flexible-region-new-my_progress_levels {
-        .pane-levels-quizz-progress-closest-completion {
-          .view-content .views-field.views-field-name,
+        // .pane-levels-quizz-progress-closest-completion {
+
+          .view-content .views-field.views-field-name {
+            display: none;
+          }
+
           .view-content .views-field.views-field-expression {
-            height: 50px;
-            margin: 0;
-            width: 100%;
+            height: 100px;
+            margin: 0 auto;
+            width: 95%;
+
+            .user-progress-bar {
+              background-color: white;
+              box-shadow: 1px 3px 10px gray inset;
+              display: block;
+              height: 24px;
+              margin: 50px auto 50px 70px;
+              width: 95%;
+
+              .progress-bar-percentage {
+                font-family: arial, 'optimadisplaylightlight';
+                font-size: 1.4em;
+                font-weight: bold;
+                margin-left: -50px;
+                position: absolute;
+                width: 130px;
+              }
+
+              .user-progress {
+                animation: 2s ease 0s normal forwards 1 running progress;
+                background: black url('../images/progress-bar.png') repeat scroll 0 0;
+                display: block;
+                height: 24px;
+                width: 0;
+              }
+            }
+
+          // }
+
+          .view-content .views-field.views-field-name {
+            display: none;
           }
         }
 
@@ -82,17 +129,25 @@ body.section-user.page-user {
     // my points
     .panels-flexible-row.panels-flexible-row-new-5 {
 
+      font-size: 1.2em;
+
       .panels-flexible-region-new-my_progress_last_login {
 
         .view-id-dashboard_user.view-display-id-last_login {
 
           .view-content .views-field.views-field-login {
-              height: 50px;
-              margin: 0;
-              width: 100%;
+            height: 50px;
+            margin: 0 auto 0 20px;
+            width: 100%;
+            text-transform: uppercase;
+
+            .views-label {
+              font-weight: bold;
+            }
           }
 
         }
+
 
       }
 
@@ -102,9 +157,15 @@ body.section-user.page-user {
         .panels-flexible-region-new-my_progress_my_points-inside {
 
           .view-content .views-field.views-field-points {
-              height: 50px;
-              margin: 0;
-              width: 100%;
+            height: 50px;
+            margin: 0 auto;
+            width: 100%;
+            text-transform: uppercase;
+
+            .views-label {
+              font-weight: bold;
+            }
+
           }
 
         }
@@ -138,21 +199,66 @@ body.section-user.page-user {
         }
 
       }
-/*
+
       .panels-flexible-region-new-my_progress_suggested_for_you {
 
+        .view-id-dashboard_user_activities.view-dashboard-user-activities {
+
+          .view-content .views-row a {
+            color: #9eafff;
+          }
+
+          .views-field.views-field-field-headline,
+          .views-field.views-field-field-headline a {
+              height: 50px;
+              margin: -2px 10px;
+              width: 100%;
+
+              display: none;
+          }
+
+          .views-field.views-field-field-display-title {
+            display: block; // none;
+            width: 100%;
+            height: 50px;
+
+            .field-content {
+              width: 100%;
+              height: 50px;
+            }
+
+            .field-content a {
+              color: white;
+              width: 100%;
+              height: 50px;
+              text-decoration: none;
+            }
+
+            .field-content a::before {
+              color: white;
+              font-weight: normal;
+              font-size: 1.2em;
+              content: 'SUGGESTED FOR YOU: ';
+            }
+
+          }
+
+        }
+
       }
-*/
+
     }
 
     // badges
     // changed // .panels-flexible-row.panels-flexible-row-new-7 {
     .panels-flexible-row.panels-flexible-row-new-8 {
       // .panels-flexible-region-new-my_badges {
+/*
       .panels-flexible-region-new-my_leaderboard  {
         // .panels-flexible-region-new-my_badges-inside {
 
           h2.pane-title {
+            padding-top: 50px;
             margin: 40px auto;
             text-align: center;
             font-family: 'optimadisplaylightlight';
@@ -197,20 +303,60 @@ body.section-user.page-user {
         position: absolute;
         top: 0;
         right: 0;
+        display: none;
       }
 
-    }
-
+    // }
+*/
 
     // leaderboard
-    .panels-flexible-row.panels-flexible-row-new--changed--8 {
+    // //.panels-flexible-row.panels-flexible-row-new-8 {
+    // .panels-flexible-row.panels-flexible-row-new--changed--8 {
       margin: 50px 0;
 
       .panels-flexible-region-new-my_leaderboard {
 
+        .view-badges.view-id-badges {
+
+            .more-link {
+              display: none;
+            }
+
+            .views-row {
+              width: 600px;
+              margin: 0 auto;
+
+              .views-field {
+                margin: 0;
+                transform: scale(.8);
+
+                .field-content {
+
+                  a {
+                    text-indent: -5000px;
+                  }
+
+                }
+
+              }
+
+            }
+
+        }
+
+        // MY FAVORITES
+        .panel-pane.pane-views.pane-dashboard-favorites {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: none;
+        }
+
+
         .pane-user-points-panel-pane-2 {
 
           h2.pane-title {
+            padding-top: 100px;
             margin: 40px auto;
             text-align: center;
             font-family: 'optimadisplaylightlight';
@@ -226,12 +372,11 @@ body.section-user.page-user {
               height: 40px;
               background-color: #040a2b;
               color: #fff;
+            }
 
-              .views-field {
-                height: 50px;
-                width: 20%;
-              }
-
+            .views-field {
+              height: 50px;
+              width: 20%;
             }
 
           }
@@ -308,11 +453,13 @@ body.section-user.page-user {
       // changed // .panels-flexible-region-new-my_tools {
 
         h2.pane-title {
+          padding-top: 50px;
           margin: 40px auto;
           text-align: center;
           font-family: 'optimadisplaylightlight';
           font-size: 3em;
           font-weight: normal;
+          clear: both;
         }
 
         .item-list {

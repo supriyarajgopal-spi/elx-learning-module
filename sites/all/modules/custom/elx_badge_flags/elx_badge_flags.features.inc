@@ -473,15 +473,15 @@ function elx_badge_flags_flag_default_flags() {
     'badge_unearned_description' => '',
     'badge_image' => NULL,
     'show_in_links' => array(
-      'full' => 'full',
+      'full' => 0,
       'diff_standard' => 0,
       'token' => 0,
     ),
-    'show_as_field' => 1,
+    'show_as_field' => 0,
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'show_on_profile' => 1,
+    'show_on_profile' => 0,
     'access_uid' => 'others',
     'module' => 'elx_badge_flags',
     'locked' => array(

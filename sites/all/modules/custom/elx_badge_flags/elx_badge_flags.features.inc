@@ -213,6 +213,41 @@ function elx_badge_flags_flag_default_flags() {
     ),
     'api_version' => 3,
   );
+  // Exported flag: "Gift Genius".
+  $flags['gift_genius'] = array(
+    'entity_type' => 'user',
+    'title' => 'Gift Genius',
+    'global' => 1,
+    'types' => array(),
+    'flag_short' => 'Give Gift Genius Badge',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Remove Gift Genius Badge',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'badge_description' => '<p>Your leadership is really stacking up&mdash;get ready for success! You&rsquo;ve completed the Holiday 2016 Level.</p>',
+    'badge_unearned_description' => '',
+    'badge_image' => NULL,
+    'show_in_links' => array(
+      'full' => 0,
+      'diff_standard' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'show_on_profile' => 0,
+    'access_uid' => 'others',
+    'api_version' => 3,
+    'module' => 'elx_badge_flags',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
   // Exported flag: "High Five Badge".
   $flags['high_five_badge'] = array(
     'entity_type' => 'user',
@@ -412,6 +447,41 @@ function elx_badge_flags_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'show_on_profile' => 1,
+    'access_uid' => 'others',
+    'module' => 'elx_badge_flags',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
+  // Exported flag: "Perfect Present".
+  $flags['perfect_present'] = array(
+    'entity_type' => 'user',
+    'title' => 'Perfect Present',
+    'global' => 1,
+    'types' => array(),
+    'flag_short' => 'Give Perfect Present Badge',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Remove Perfect Present Badge',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'badge_description' => '<p>You&rsquo;re ready to give your customers the gift of a great holiday experience! You&rsquo;ve completed the Holiday 2016 Level.</p>',
+    'badge_unearned_description' => '',
+    'badge_image' => NULL,
+    'show_in_links' => array(
+      'full' => 0,
+      'diff_standard' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'show_on_profile' => 0,
     'access_uid' => 'others',
     'module' => 'elx_badge_flags',
     'locked' => array(

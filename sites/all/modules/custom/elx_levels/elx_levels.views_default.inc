@@ -285,6 +285,13 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
 
   /* Display: All */
   $handler = $view->new_display('panel_pane', 'All', 'all');
@@ -345,6 +352,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['view_1']['view'] = 'level_content';
   $handler->display->display_options['fields']['view_1']['display'] = 'level_content';
   $handler->display->display_options['fields']['view_1']['arguments'] = '[!tid]';
+
   /* Display: All admin */
   $handler = $view->new_display('panel_pane', 'All admin', 'all_admin');
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -424,6 +432,13 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
 
   /* Display: In Progress */
   $handler = $view->new_display('panel_pane', 'In Progress', 'in_progress');
@@ -460,6 +475,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['flagged']['operator'] = '>';
   $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
@@ -544,6 +567,14 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['flagged']['operator'] = '>';
   $handler->display->display_options['filters']['flagged']['value']['value'] = '0';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
@@ -588,6 +619,14 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
@@ -651,6 +690,14 @@ function elx_levels_views_default_views() {
     'h5p_content' => 'h5p_content',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: COUNT(Content: Nid) */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group_type'] = 'count';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Global: Fields comparison */
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';

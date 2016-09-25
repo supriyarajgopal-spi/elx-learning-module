@@ -295,19 +295,19 @@
 
         var get_page_data = function () {
 
-          var root_node = '.profile ';
-          var alt_node = '.panel-display .inside ';
+          var root_node = '.panels-flexible-row-new-3';
+          var alt_node = '.panels-flexible-row-new-main-row';
 
           var context = root_node || alt_node;
 
-          realname = $('.field-name-realname', context).find('a').text();
-          firstname = $('.field-name-field-first-name', context).find('.field-item').text();
+          realname = $('.views-field-field-first-name', alt_node).find('.field-content').text();
+          firstname = $('.views-field-field-last-name', alt_node).find('.field-content').text();
 
-          market = $('.field-type-entityreference', context).find('a').text();
-          store = '';
-          membersince = $('.field-name-field-hire-date', context).find('span.date-display-single').text();
-          loc = $('.field-name-field-country', context).find('.field-item').text();
-          lang = '';
+          market = $('.views-field-og-user-node', context).find('.field-content').text();
+          store = $('.views-field-field-door', context).find('.field-content').text();
+          membersince = $('.views-field-field-hire-date', context).find('.field-content').text(); //, context).find('span.date-display-single').text();
+          loc = $('.views-field-field-country', context).find('.field-content').text();
+          lang = $('.views-field-language', context).find('.field-content').text();
 
           // not used but available // 9/13/2016 //
           $('.item-list');

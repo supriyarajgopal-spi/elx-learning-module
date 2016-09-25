@@ -33,6 +33,14 @@ body.section-user.page-user {
 
     }
 */
+    .panel-flexible-inside.panels-flexible-new-inside {
+
+      .panels-flexible-row.panels-flexible-row-new-main-row,
+      .panels-flexible-row.panels-flexible-row-new-3 {
+        display: none;
+      }
+    }
+
     .panels-flexible-column-new-1 {
       float: right;
       background-color: #e6e9ee;
@@ -252,52 +260,13 @@ body.section-user.page-user {
     // badges
     // changed // .panels-flexible-row.panels-flexible-row-new-7 {
     .panels-flexible-row.panels-flexible-row-new-8 {
+
+      .contextual-links-region.panel-pane.pane-views-panes.pane-user-points-panel-pane-2,
+      .contextual-links-region.panel-pane.pane-views-panes.pane-user-points-dashboard-user-points {
+        display: none;
+      }
       // .panels-flexible-region-new-my_badges {
 /*
-      .panels-flexible-region-new-my_leaderboard  {
-        // .panels-flexible-region-new-my_badges-inside {
-
-          h2.pane-title {
-            padding-top: 50px;
-            margin: 40px auto;
-            text-align: center;
-            font-family: 'optimadisplaylightlight';
-            font-size: 3em;
-            font-weight: normal;
-          }
-
-          .view-badges.view-id-badges {
-
-            .more-link {
-              display: none;
-            }
-
-            .views-row {
-              width: 600px;
-              margin: 0 auto;
-
-              .views-field {
-                margin: 0;
-                transform: scale(.8);
-
-                .field-content {
-
-                  a {
-                    text-indent: -5000px;
-                  }
-
-                }
-
-              }
-
-            }
-
-          }
-
-        // }
-
-      }
-
       // MY FAVORITES
       .panel-pane.pane-views.pane-dashboard-favorites {
         position: absolute;
@@ -312,6 +281,7 @@ body.section-user.page-user {
     // leaderboard
     // //.panels-flexible-row.panels-flexible-row-new-8 {
     // .panels-flexible-row.panels-flexible-row-new--changed--8 {
+
       margin: 50px 0;
 
       .panels-flexible-region-new-my_leaderboard {
@@ -453,7 +423,7 @@ body.section-user.page-user {
       // changed // .panels-flexible-region-new-my_tools {
 
         h2.pane-title {
-          padding-top: 50px;
+          padding-top: 100px;
           margin: 40px auto;
           text-align: center;
           font-family: 'optimadisplaylightlight';

@@ -38,17 +38,19 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Nid */
+  /* Field: NID : Not Shown */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['ui_name'] = 'NID : Not Shown';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Spin the Wheel */
+  /* Field: Spin Wheel : Not Shown */
   $handler->display->display_options['fields']['field_spin_the_wheel']['id'] = 'field_spin_the_wheel';
   $handler->display->display_options['fields']['field_spin_the_wheel']['table'] = 'field_data_field_spin_the_wheel';
   $handler->display->display_options['fields']['field_spin_the_wheel']['field'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['field_spin_the_wheel']['ui_name'] = 'Spin Wheel : Not Shown';
   $handler->display->display_options['fields']['field_spin_the_wheel']['label'] = '';
   $handler->display->display_options['fields']['field_spin_the_wheel']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_spin_the_wheel']['alter']['alter_text'] = TRUE;
@@ -56,28 +58,58 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_spin_the_wheel']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_spin_the_wheel']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_spin_the_wheel']['type'] = 'list_key';
-  /* Field: Content: Hero image */
+  /* Field: Link to Content : Not Shown */
+  $handler->display->display_options['fields']['views_conditional']['id'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional']['ui_name'] = 'Link to Content : Not Shown';
+  $handler->display->display_options['fields']['views_conditional']['label'] = '';
+  $handler->display->display_options['fields']['views_conditional']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional']['if'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['views_conditional']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional']['equalto'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['views_conditional']['then'] = 'node/[nid]';
+  $handler->display->display_options['fields']['views_conditional']['or'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['views_conditional']['strip_tags'] = 0;
+  /* Field: CSS for Link */
+  $handler->display->display_options['fields']['views_conditional_1']['id'] = 'views_conditional_1';
+  $handler->display->display_options['fields']['views_conditional_1']['table'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_1']['field'] = 'views_conditional';
+  $handler->display->display_options['fields']['views_conditional_1']['ui_name'] = 'CSS for Link';
+  $handler->display->display_options['fields']['views_conditional_1']['label'] = '';
+  $handler->display->display_options['fields']['views_conditional_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['views_conditional_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_conditional_1']['if'] = 'field_spin_the_wheel';
+  $handler->display->display_options['fields']['views_conditional_1']['condition'] = '1';
+  $handler->display->display_options['fields']['views_conditional_1']['equalto'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['views_conditional_1']['then'] = 'spin-the-wheel-link';
+  $handler->display->display_options['fields']['views_conditional_1']['or'] = 'use-ajax ctools-modal-levels';
+  $handler->display->display_options['fields']['views_conditional_1']['strip_tags'] = 0;
+  /* Field: Hero Image */
   $handler->display->display_options['fields']['field_hero_image']['id'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['table'] = 'field_data_field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
+  $handler->display->display_options['fields']['field_hero_image']['ui_name'] = 'Hero Image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
   $handler->display->display_options['fields']['field_hero_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = '[views_conditional]';
+  $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = '[views_conditional_1]';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hero_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_hero_image']['settings'] = array(
     'image_style' => 'tile_thumbnail',
     'image_link' => '',
   );
-  /* Field: Content: Headline */
+  /* Field: Headline */
   $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
   $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
   $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['ui_name'] = 'Headline';
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-modal-levels [field_spin_the_wheel]';
+  $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[views_conditional]';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = '[views_conditional_1]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Order weight (field_order_weight) */
   $handler->display->display_options['sorts']['field_order_weight_value']['id'] = 'field_order_weight_value';
@@ -574,6 +606,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['operator'] = '>=';
   $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';
@@ -645,6 +678,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
   $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
   $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['operator'] = '>=';
   $handler->display->display_options['filters']['fields_compare']['group'] = 1;
   $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid';
   $handler->display->display_options['filters']['fields_compare']['left_field'] = 'flagged';

@@ -401,7 +401,10 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = 'http://' + bgimg.split('http://')[1].replace('"', '').split(')')[0];
+
+          console.log(bgimg); // launch debug //
+
+          httpimg =  location.protocol + '//' + bgimg.split('://')[1].replace('"', '').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

@@ -471,6 +471,24 @@ div#block-menu-menu-header-user-menu {
 
     li {
 
+      @include respond-to('mobile') {
+        width: 50%;
+        float: left;
+        text-align: right;
+        padding: 20px 0 0;
+        list-style-type: none;
+        list-style-image: none;
+      }
+
+      @include respond-to('mobile-landscape') {
+        width: 50%;
+        float: left;
+        text-align: right;
+        padding: 20px 0 0;
+        list-style-type: none;
+        list-style-image: none;
+      }
+
       a.menu-minipanel {
 
         @include respond-to('mobile') {
@@ -479,7 +497,28 @@ div#block-menu-menu-header-user-menu {
           position: relative;
           display: inline-block;
           width: 30px;
-          margin-right: .3em;
+          margin-right: 1em;
+          border-top: .2em solid #fff;
+          border-bottom: .2em solid #fff;
+          bottom: 0;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 100%;
+            border-top: .2em solid #fff;
+          }
+        }
+
+        @include respond-to('mobile-landscape') {
+          color: transparent;
+          height: 25px;
+          position: relative;
+          display: inline-block;
+          width: 30px;
+          margin-right: 1em;
           border-top: .2em solid #fff;
           border-bottom: .2em solid #fff;
           bottom: 0;
@@ -576,6 +615,20 @@ div#block-menu-menu-header-user-menu {
     float: left;
     padding-right: 30px;
 
+    @include respond-to('mobile') {
+      top: auto;
+      left: auto;
+      float: none;
+      padding: 0;
+    }
+
+    @include respond-to('mobile-landscape') {
+      top: auto;
+      left: auto;
+      float: none;
+      padding: 0;
+    }
+
     @include respond-to('desktop') {
       padding-right: 0;
     }
@@ -587,7 +640,9 @@ div#block-menu-menu-header-user-menu {
     @include respond-to('xwide') {
       padding-right: 0;
     }
+
   }
+
 }
 
 .qtip.qtip-light {

@@ -2,6 +2,11 @@
 
 .page-badges {
 
+  .layout-3col.layout-swap {
+    max-width: 1230px;
+    margin: 0 auto;
+  }
+
   h1 {
     font-family: $font-family-serif;
     font-size: 4em;

@@ -28,9 +28,7 @@ function elx_tools_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -41,6 +39,11 @@ function elx_tools_views_default_views() {
   $handler->display->display_options['relationships']['field_tool_pdf_fid']['table'] = 'field_data_field_tool_pdf';
   $handler->display->display_options['relationships']['field_tool_pdf_fid']['field'] = 'field_tool_pdf_fid';
   $handler->display->display_options['relationships']['field_tool_pdf_fid']['required'] = TRUE;
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -150,6 +153,7 @@ function elx_tools_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('file from field_tool_pdf'),
+    t('OG membership from node'),
     t('View panes'),
     t('Tools Admin'),
   );

@@ -73,14 +73,27 @@
     color: #9a7d46;
     background: #000;
   }
-}
+
 
   .h5p-progressbar .h5p-progressbar-part-show {
     background: #9a7d46 !important;
     background-image: none !important;
   }
 
+  .h5p-press-to-go.h5p-visible {
+    background: #9a7d46;
+    color: #000;
+    padding: 10px;
 
+    &:hover {
+      background: #9a7d46;
+      opacity: 1;
+      color: #000;
+    }
+
+}
+
+}
 
 // **************
 // BLUE ETHER
@@ -93,6 +106,20 @@
     background: #4ea1bf !important;
     background-image: none !important;
   }
+
+ .h5p-press-to-go.h5p-visible {
+    background: #4ea1bf;
+    color: #fff;
+    padding: 10px;
+
+    &:hover {
+      background: #fff;
+      opacity: 1;
+      color: #4ea1bf;
+    }
+
+}
+
 
 }
 
@@ -150,6 +177,19 @@
     background-image: none !important;
   }
 
+  .h5p-press-to-go.h5p-visible {
+    background: #fff;
+    color: #600;
+    padding: 10px;
+
+    &:hover {
+      background: #600;
+      opacity: 1;
+      color: #fff;
+    }
+
+}
+
 
 }
 
@@ -206,6 +246,19 @@
 .h5p-progressbar .h5p-progressbar-part-show {
     background: #080f30 !important;
     background-image: none !important;
+}
+
+.h5p-press-to-go.h5p-visible {
+    background: #080f30;
+    color: #fff;
+    padding: 10px;
+
+    &:hover {
+      background: #fff;
+      opacity: 1;
+      color: #080f30;
+    }
+
 }
 
 
@@ -277,7 +330,18 @@
     background-image: none !important;
   }
 
+.h5p-press-to-go.h5p-visible {
+    background: #4ea1bf;
+    color: #fff;
+    padding: 10px;
 
+    &:hover {
+      background: #4ea1bf;
+      opacity: 1;
+      color: #fff;
+    }
+
+}
 
 }
 
@@ -340,7 +404,18 @@
     background-image: none !important;
   }
 
+.h5p-press-to-go.h5p-visible {
+    background: #4ea1bf;
+    color: #fff;
+    padding: 10px;
 
+    &:hover {
+      background: #4ea1bf;
+      opacity: 1;
+      color: #fff;
+    }
+
+}
 
 }
 

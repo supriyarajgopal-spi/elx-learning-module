@@ -1,7 +1,7 @@
 name = ELX Levels
 core = 7.x
 package = ELX
-version = 7.x-1.0
+version = 7.x-1.1
 dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = features
@@ -9,6 +9,7 @@ dependencies[] = menu
 dependencies[] = page_manager
 dependencies[] = strongarm
 dependencies[] = views
+dependencies[] = views_conditional
 dependencies[] = views_content
 dependencies[] = views_field_view
 dependencies[] = views_load_more

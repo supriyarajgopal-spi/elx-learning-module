@@ -13,7 +13,7 @@ function elx_notifications_default_rules_configuration() {
       "LABEL" : "Badge Award Notification",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "php", "flag" ],
+      "REQUIRES" : [ "rules", "flag" ],
       "ON" : {
         "flag_flagged_beautiful_start" : [],
         "flag_flagged_one_hundred_percent_club_badge" : [],

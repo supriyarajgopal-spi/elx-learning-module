@@ -305,7 +305,7 @@
 
           market = $('.views-field-og-user-node', context).find('.field-content').text();
           store = $('.views-field-field-door', context).find('.field-content').text();
-          membersince = $('.views-field-field-hire-date', context).find('.field-content').text(); //, context).find('span.date-display-single').text();
+          membersince = $('.views-field-field-hire-date', context).find('.field-content').text(); // , context).find('span.date-display-single').text();
           loc = $('.views-field-field-country', context).find('.field-content').text();
           lang = $('.views-field-language', context).find('.field-content').text();
 

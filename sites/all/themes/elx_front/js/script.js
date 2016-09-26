@@ -216,7 +216,7 @@
       clearTimeout(timeout);
       timeout = setTimeout(function () {
 
-        $(".h5p-press-to-go").append($(".h5p-press-to-go").attr("title"));
+        $('.h5p-press-to-go').append($('.h5p-press-to-go').attr('title'));
 
         $('.h5p-clicktoreveal-thumbnailwrap-set .h5p-clicktoreveal-thumbnailwrap::first-child').addClass('active');
         $('.h5p-clicktoreveal-thumbnailwrap').click(function () {
@@ -404,7 +404,7 @@
 
           console.log(bgimg); // launch debug //
 
-          httpimg =  location.protocol + '//' + bgimg.split('://')[1].replace('"', '').split(')')[0];
+          httpimg = location.protocol + '//' + bgimg.split('://')[1].replace('"', '').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

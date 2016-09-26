@@ -15,7 +15,7 @@ function elx_header_menu_default_menu_links() {
     'menu_name' => 'menu-header-menu',
     'link_path' => 'levels_all',
     'router_path' => 'levels_all',
-    'link_title' => 'LEVELS',
+    'link_title' => 'Levels',
     'options' => array(
       'attributes' => array(
         'title' => 'Your progress',
@@ -38,7 +38,7 @@ function elx_header_menu_default_menu_links() {
     'menu_name' => 'menu-header-menu',
     'link_path' => 'product-library',
     'router_path' => 'product-library',
-    'link_title' => 'PRODUCT LIBRARY',
+    'link_title' => 'Product Library',
     'options' => array(
       'attributes' => array(
         'title' => 'Library of Products',
@@ -272,10 +272,10 @@ function elx_header_menu_default_menu_links() {
   t('@realname');
   t('BADGES');
   t('LEADERBOARD');
-  t('LEVELS');
   t('LOG OUT');
+  t('Levels');
   t('MY DASHBOARD');
-  t('PRODUCT LIBRARY');
+  t('Product Library');
   t('TOOLS');
   t('Trigger Link Menu');
 

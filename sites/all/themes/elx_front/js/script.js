@@ -254,6 +254,7 @@
         var loc;
         var lang;
         var market;
+        var editpw;
 
         var set_dashboard_layout = function () {
 
@@ -265,9 +266,10 @@
           $(div_elx_round).append('<div class="elx-inner-round"></div>');
 
           var div_elx_name = $('<div class="elx-neck-name"></div>').text(realname + ' ' + firstname);
-          var btn_edit_profile = $('<div class="btn-edit-profile">').append('<span>Edit Profile & Password</span>').click(function () {
-            window.location = window.location + '/password';
-          });
+          // var btn_edit_profile = $('<div class="btn-edit-profile">').append('<span>Edit Profile & Password</span>').click(function () {
+          //   window.location = window.location + '/password';
+          // });
+          var btn_edit_profile = $('<div class="btn-edit-profile">').append('<a href="'+editpw+'"><span>Edit Profile & Password</span></a>'); // .click(function () {
 
           $(new_main).append(div_elx_round);
           $(new_main).append(div_elx_name);
@@ -311,6 +313,7 @@
           membersince = $('.views-field-field-hire-date', context).find('.field-content').text(); // , context).find('span.date-display-single').text();
           loc = $('.views-field-field-country', context).find('.field-content').text();
           lang = $('.views-field-language', context).find('.field-content').text();
+          editpw = $('.views-field-edit-node', context).find('.field-content a').attr('href');
 
           // not used but available // 9/13/2016 //
           $('.item-list');

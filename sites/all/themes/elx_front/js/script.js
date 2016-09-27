@@ -406,6 +406,23 @@
 
       } // size check
 
+      /* SWIPER CHANGES */
+      $('.views-slideshow-swiper-main-frame').ready(function () {
+        var getWidth = effectiveDeviceWidth() - 40;
+        $('.views-slideshow-swiper-main-frame').width(getWidth);
+      });
+
+      /* GET DEVICE WIDTH */
+      function effectiveDeviceWidth() {
+        var deviceWidth = window.orientation === 0 ? window.screen.height : window.screen.width;
+        // iOS returns available pixels, Android returns pixels / pixel ratio
+        // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+        if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
+          deviceWidth = deviceWidth / window.devicePixelRatio;
+        }
+        return deviceWidth;
+      }
+
     }
 
   };

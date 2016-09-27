@@ -22,6 +22,8 @@
 					//If already dropped in a dropzone, lock it there.
 					if(draggable.isInDropZone(draggable.id))
 						draggable.disable();
+					else if(draggable.element.dropZone !== undefined) //When multiple draggables can be dropped in a single dropzone
+						draggable.disable();
 				});
 
 				//Change text of draggable element depending on whether it is dropped in correct dropzone or not
@@ -35,14 +37,19 @@
 			if(dragDropQuestion.verb.display['en-US'] == 'answered')
 			{
 				var scoreText; //Used to convert tokens
+				
+				var maxScore = this.calculateMaxScore();
+				if (this.options.behaviour.singlePoint)
+				  maxScore = 1;
+				
 				//Show the feedback (across the star animation that appears) as set in 'Correct/Incorrect feedback text' H5P setting
-				if(dragDropQuestion.result.success == true)
+				if(dragDropQuestion.result.success == true && this.getScore() == this.getMaxScore())
 				{
 					//console.log(this) prints the entire set of options available. This function is defined in H5P Question library's question.js
-					scoreText = this.options.feedback.replace('@score', this.points).replace('@total', maxScore);
+					scoreText = this.options.feedback.replace('@score', this.getScore()).replace('@total', maxScore);
 				}
 				else
-					scoreText = this.options.incorrect_feedback.replace('@score', this.points).replace('@total', maxScore); //'incorrect_feedback' is the 'name' property defined in semantics.json or hook_h5p_semantics_alter()
+					scoreText = this.options.incorrect_feedback.replace('@score', this.getScore()).replace('@total', maxScore); //'incorrect_feedback' is the 'name' property defined in semantics.json or hook_h5p_semantics_alter()
 				this.updateFeedbackContent(scoreText,false);
 			}
 		}

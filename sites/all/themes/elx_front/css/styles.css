@@ -3560,12 +3560,38 @@ body.spin-the-wheel .flag-favorites a::before {
   font-size: 26px;
 }
 
-/* line 11, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 3, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_interactive-video.scss */
+.modal-default.level-250 .h5p-dialog-interaction,
+.modal-default.level-13504 .h5p-dialog-interaction,
+.modal-default.level-12739 .h5p-dialog-interaction,
+.modal-default.level-1299 .h5p-dialog-interaction,
+.modal-default.level-252 .h5p-dialog-interaction,
+.modal-default.level-1301 .h5p-dialog-interaction,
+.modal-default.level-12731 .h5p-dialog-interaction,
+.modal-default.level-10605 .h5p-dialog-interaction,
+.modal-default.level-14108 .h5p-dialog-interaction {
+  padding: 0 20px;
+  font-family: "optimadisplaylightlight";
+}
+
+/* line 17, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_interactive-video.scss */
+.modal-default.level-10605 .h5p-interactive-video div > .h5p-interaction-button,
+.modal-default.level-14108 .h5p-interactive-video div > .h5p-interaction-button {
+  background: #c80000;
+}
+
+/* line 20, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_interactive-video.scss */
+.modal-default.level-10605 .h5p-interactive-video div > .h5p-interaction-button:hover,
+.modal-default.level-14108 .h5p-interactive-video div > .h5p-interaction-button:hover {
+  background: #600;
+}
+
+/* line 12, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-course-presentation {
   font-family: "akzidenz-grotesk_bq";
 }
 
-/* line 15, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 16, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-element.h5p-transparent {
   /*
     width: 100% !important;
@@ -3575,71 +3601,71 @@ body.spin-the-wheel .flag-favorites a::before {
   */
 }
 
-/* line 24, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 25, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .h5p-iframe-wrapper {
   max-height: 2000px;
 }
 
-/* line 83, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 90, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-250 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 136, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 149, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-1299 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 164, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 180, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-252 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 219, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 241, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 .modal-default.level-10605 div.ctools-modal-content,
 .modal-default.level-14108 div.ctools-modal-content {
   color: #fff;
 }
 
-/* line 254, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 279, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 259, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 284, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center .layout-3col.layout-swap {
   padding-top: 0;
 }
 
-/* line 263, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 288, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 267, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 292, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > h1,
 body.html.node-type-h5p-content .layout-center main.layout-3col__full ul.tabs {
   display: none;
 }
 
-/* line 272, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 297, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent {
   margin-top: 0;
 }
 
-/* line 275, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 300, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent .ctools-modal-content {
   padding: 0 24px;
 }
 
-/* line 281, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 306, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .block-views.contextual-links-region {
   display: none;
 }
 
-/* line 285, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 310, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-links {
   display: none;
 }

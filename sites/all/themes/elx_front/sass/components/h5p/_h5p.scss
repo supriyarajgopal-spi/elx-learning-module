@@ -5,6 +5,7 @@
 @import 'drag-match';
 @import 'multiple-choice';
 @import 'spin-the-wheel';
+@import 'interactive-video';
 
 // generic h5p styles
 
@@ -56,6 +57,9 @@
   // multiple-choice
   @extend %multiple-choice-common;
 
+  // interactive-video
+  @extend %interactive-video-common;
+
 }
 
 // ************
@@ -78,6 +82,9 @@
 
   // multiple-choice
   @extend %multiple-choice-black-gold;
+
+  // interactive-video
+  //@extend %interactive-video-black-gold;
 
   // styles for content outside of h5p
   div.ctools-modal-content {
@@ -109,6 +116,9 @@
   // multiple-choice
   @extend %multiple-choice-dark-on-light;
 
+  // interactive-video
+  //@extend %interactive-video-blue-ether;
+
 }
 
 // **********
@@ -131,6 +141,9 @@
 
   // multiple-choice
   @extend %multiple-choice-anr;
+
+  // interactive-video
+  //@extend %interactive-video-blue-helix;
 
   // styles for content outside of h5p
   div.ctools-modal-content {
@@ -159,6 +172,9 @@
 
   // multiple-choice
   @extend %multiple-choice-anr;
+
+// interactive-video
+  //@extend %interactive-video-blue-krypton;
 
   // styles for content outside of h5p
   div.ctools-modal-content {
@@ -190,6 +206,9 @@
   // multiple-choice
   @extend %multiple-choice-clouds;
 
+  // interactive-video
+  //@extend %interactive-video-clouds;
+
 }
 
 // *******
@@ -214,6 +233,9 @@
 
   // multiple-choice
   @extend %multiple-choice-holiday;
+
+// interactive-video
+  @extend %interactive-video-holiday;
 
   // styles for content outside of h5p
   div.ctools-modal-content {
@@ -245,6 +267,9 @@
 
   // multiple-choice
   @extend %multiple-choice-dark-on-light;
+
+  // interactive-video
+  //@extend %interactive-video-dark-on-light;
 
 }
 

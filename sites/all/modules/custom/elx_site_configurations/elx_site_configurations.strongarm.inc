@@ -1682,6 +1682,66 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'elx_front';
   $export['theme_default'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_body';
+  $strongarm->value = '<p>Dear [user:name],</p>
+
+<p>Please click the link below to access the site using the login details below:</p>
+
+<p>http://myelx.com/#/signin</p>
+<b>User Name</b>: [user:mail]<br />
+<b>Password</b>: [user:account-password]<br />
+
+<p>Sincerely yours,</p>
+
+<p>Estée Lauder Global Education</p>
+';
+  $export['user_mail_password_reset_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_body';
+  $strongarm->value = '[user:name],
+
+Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:mail]
+password: [user:account-password]
+
+--  [site:name] team';
+  $export['user_mail_register_no_approval_required_body'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_body';
+  $strongarm->value = '[user:name],
+
+Your account at [site:name] has been activated.
+
+You may now log in by clicking this link or copying and pasting it into your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:mail]
+password: [user:account-password]
+
+--  [site:name] team';
+  $export['user_mail_status_activated_body'] = $strongarm;
 
   return $export;
 }

@@ -15,7 +15,7 @@ function elx_flags_flag_default_flags() {
     'title' => 'Favorites',
     'global' => 0,
     'types' => array(
-      0 => 'content_object',
+      0 => 'h5p_content',
       1 => 'product_detail',
       2 => 'tools',
     ),
@@ -34,9 +34,11 @@ function elx_flags_flag_default_flags() {
     'show_in_links' => array(
       'full' => 'full',
       'teaser' => 'teaser',
+      'modal' => 'modal',
       'rss' => 0,
+      'search_index' => 0,
+      'search_result' => 0,
       'diff_standard' => 0,
-      'modal' => 0,
       'token' => 0,
       'revision' => 0,
     ),

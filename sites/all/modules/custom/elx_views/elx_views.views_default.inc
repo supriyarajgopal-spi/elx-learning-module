@@ -246,7 +246,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_1']['alter']['path'] = 'modal/nojs/flags/perfect_10_badge';
   $handler->display->display_options['fields']['flagged_1']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_1']['element_wrapper_class'] = 'perfect-ten-[flagged]';
+  $handler->display->display_options['fields']['flagged_1']['element_wrapper_class'] = 'perfect-ten-[flagged_1]';
   $handler->display->display_options['fields']['flagged_1']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_1']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_1']['type_custom_false'] = 'no';
@@ -261,7 +261,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_2']['alter']['path'] = 'modal/nojs/flags/on_your_way_badge';
   $handler->display->display_options['fields']['flagged_2']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_2']['element_wrapper_class'] = 'on-your-way-[flagged]';
+  $handler->display->display_options['fields']['flagged_2']['element_wrapper_class'] = 'on-your-way-[flagged_2]';
   $handler->display->display_options['fields']['flagged_2']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_2']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_2']['type_custom_false'] = 'no';
@@ -276,7 +276,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_3']['alter']['path'] = 'modal/nojs/flags/one_hundred_percent_club_badge';
   $handler->display->display_options['fields']['flagged_3']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_3']['element_wrapper_class'] = 'one-hundred-percent-club-[flagged]';
+  $handler->display->display_options['fields']['flagged_3']['element_wrapper_class'] = 'one-hundred-percent-club-[flagged_3]';
   $handler->display->display_options['fields']['flagged_3']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_3']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_3']['type_custom_false'] = 'no';
@@ -291,7 +291,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_4']['alter']['path'] = 'modal/nojs/flags/service_star_badge';
   $handler->display->display_options['fields']['flagged_4']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_4']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_4']['element_wrapper_class'] = 'service-star-[flagged]';
+  $handler->display->display_options['fields']['flagged_4']['element_wrapper_class'] = 'service-star-[flagged_4]';
   $handler->display->display_options['fields']['flagged_4']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_4']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_4']['type_custom_false'] = 'no';
@@ -306,7 +306,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_5']['alter']['path'] = 'modal/nojs/flags/first_5_000_points_badge';
   $handler->display->display_options['fields']['flagged_5']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_5']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_5']['element_wrapper_class'] = 'first-5000-points-[flagged]';
+  $handler->display->display_options['fields']['flagged_5']['element_wrapper_class'] = 'first-5000-points-[flagged_5]';
   $handler->display->display_options['fields']['flagged_5']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_5']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_5']['type_custom_false'] = 'no';
@@ -321,7 +321,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_6']['alter']['path'] = 'modal/nojs/flags/first_1_000_points_badge';
   $handler->display->display_options['fields']['flagged_6']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_6']['element_wrapper_class'] = 'first-10000-points-[flagged]';
+  $handler->display->display_options['fields']['flagged_6']['element_wrapper_class'] = 'first-10000-points-[flagged_6]';
   $handler->display->display_options['fields']['flagged_6']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_6']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_6']['type_custom_false'] = 'no';
@@ -336,7 +336,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_7']['alter']['path'] = 'modal/nojs/flags/we_heart_you_badge';
   $handler->display->display_options['fields']['flagged_7']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_7']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_7']['element_wrapper_class'] = 'we-heart-you-[flagged]';
+  $handler->display->display_options['fields']['flagged_7']['element_wrapper_class'] = 'we-heart-you-[flagged_7]';
   $handler->display->display_options['fields']['flagged_7']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_7']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_7']['type_custom_false'] = 'no';
@@ -351,26 +351,11 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_8']['alter']['path'] = 'modal/nojs/flags/product_pro_badge';
   $handler->display->display_options['fields']['flagged_8']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_8']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_8']['element_wrapper_class'] = 'product-pro-[flagged]';
+  $handler->display->display_options['fields']['flagged_8']['element_wrapper_class'] = 'product-pro-[flagged_8]';
   $handler->display->display_options['fields']['flagged_8']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_8']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_8']['type_custom_false'] = 'no';
   $handler->display->display_options['fields']['flagged_8']['not'] = 0;
-  /* Field: Flags: Flagged */
-  $handler->display->display_options['fields']['flagged_9']['id'] = 'flagged_9';
-  $handler->display->display_options['fields']['flagged_9']['table'] = 'flagging';
-  $handler->display->display_options['fields']['flagged_9']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged_9']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged_9']['label'] = '';
-  $handler->display->display_options['fields']['flagged_9']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['flagged_9']['alter']['path'] = 'modal/nojs/flags/first_10000_points_badge';
-  $handler->display->display_options['fields']['flagged_9']['alter']['link_class'] = 'use-ajax';
-  $handler->display->display_options['fields']['flagged_9']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_9']['element_wrapper_class'] = 'high-five-[flagged]';
-  $handler->display->display_options['fields']['flagged_9']['type'] = 'custom';
-  $handler->display->display_options['fields']['flagged_9']['type_custom_true'] = 'yes';
-  $handler->display->display_options['fields']['flagged_9']['type_custom_false'] = 'no';
-  $handler->display->display_options['fields']['flagged_9']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_10']['id'] = 'flagged_10';
   $handler->display->display_options['fields']['flagged_10']['table'] = 'flagging';
@@ -381,7 +366,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_10']['alter']['path'] = 'modal/nojs/flags/welcome_badge';
   $handler->display->display_options['fields']['flagged_10']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_10']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_10']['element_wrapper_class'] = 'welcome-[flagged]';
+  $handler->display->display_options['fields']['flagged_10']['element_wrapper_class'] = 'welcome-[flagged_10]';
   $handler->display->display_options['fields']['flagged_10']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_10']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_10']['type_custom_false'] = 'no';
@@ -396,7 +381,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_11']['alter']['path'] = 'modal/nojs/flags/little_brown_bottle_badge';
   $handler->display->display_options['fields']['flagged_11']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_11']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_11']['element_wrapper_class'] = 'little-brown-bottle-[flagged]';
+  $handler->display->display_options['fields']['flagged_11']['element_wrapper_class'] = 'little-brown-bottle-[flagged_11]';
   $handler->display->display_options['fields']['flagged_11']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_11']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_11']['type_custom_false'] = 'no';
@@ -411,7 +396,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_12']['alter']['path'] = 'modal/nojs/flags/beauty_queen_badge';
   $handler->display->display_options['fields']['flagged_12']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_12']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_12']['element_wrapper_class'] = 'beauty-queen-[flagged]';
+  $handler->display->display_options['fields']['flagged_12']['element_wrapper_class'] = 'beauty-queen-[flagged_12]';
   $handler->display->display_options['fields']['flagged_12']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_12']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_12']['type_custom_false'] = 'no';
@@ -426,7 +411,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_13']['alter']['path'] = 'modal/nojs/flags/rare_beauty_badge';
   $handler->display->display_options['fields']['flagged_13']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_13']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_13']['element_wrapper_class'] = 'rare-beauty-[flagged]';
+  $handler->display->display_options['fields']['flagged_13']['element_wrapper_class'] = 'rare-beauty-[flagged_13]';
   $handler->display->display_options['fields']['flagged_13']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_13']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_13']['type_custom_false'] = 'no';
@@ -441,7 +426,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_14']['alter']['path'] = 'modal/nojs/flags/new_dimension_badge';
   $handler->display->display_options['fields']['flagged_14']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_14']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_14']['element_wrapper_class'] = 'new-dimension-[flagged]';
+  $handler->display->display_options['fields']['flagged_14']['element_wrapper_class'] = 'new-dimension-[flagged_14]';
   $handler->display->display_options['fields']['flagged_14']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_14']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_14']['type_custom_false'] = 'no';
@@ -456,7 +441,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_15']['alter']['path'] = 'modal/nojs/flags/sleeping_beauty_badge';
   $handler->display->display_options['fields']['flagged_15']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_15']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_15']['element_wrapper_class'] = 'sleeping-beauty-[flagged]';
+  $handler->display->display_options['fields']['flagged_15']['element_wrapper_class'] = 'sleeping-beauty-[flagged_15]';
   $handler->display->display_options['fields']['flagged_15']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_15']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_15']['type_custom_false'] = 'no';
@@ -471,7 +456,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_16']['alter']['path'] = 'modal/nojs/flags/we_heard_you_badge';
   $handler->display->display_options['fields']['flagged_16']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_16']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_16']['element_wrapper_class'] = 'we-heard-you-[flagged]';
+  $handler->display->display_options['fields']['flagged_16']['element_wrapper_class'] = 'we-heard-you-[flagged_16]';
   $handler->display->display_options['fields']['flagged_16']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_16']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_16']['type_custom_false'] = 'no';
@@ -486,7 +471,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_17']['alter']['path'] = 'modal/nojs/flags/well_read_50_badge';
   $handler->display->display_options['fields']['flagged_17']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_17']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_17']['element_wrapper_class'] = 'well-read-50-[flagged]';
+  $handler->display->display_options['fields']['flagged_17']['element_wrapper_class'] = 'well-read-50-[flagged_17]';
   $handler->display->display_options['fields']['flagged_17']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_17']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_17']['type_custom_false'] = 'no';
@@ -501,7 +486,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_18']['alter']['path'] = 'modal/nojs/flags/well_read_25_badge';
   $handler->display->display_options['fields']['flagged_18']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_18']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_18']['element_wrapper_class'] = 'well-read-25-[flagged]';
+  $handler->display->display_options['fields']['flagged_18']['element_wrapper_class'] = 'well-read-25-[flagged_18]';
   $handler->display->display_options['fields']['flagged_18']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_18']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_18']['type_custom_false'] = 'no';
@@ -516,7 +501,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_19']['alter']['path'] = 'modal/nojs/flags/well_read_75_badge';
   $handler->display->display_options['fields']['flagged_19']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_19']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_19']['element_wrapper_class'] = 'well-read-75-[flagged]';
+  $handler->display->display_options['fields']['flagged_19']['element_wrapper_class'] = 'well-read-75-[flagged_19]';
   $handler->display->display_options['fields']['flagged_19']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_19']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_19']['type_custom_false'] = 'no';
@@ -531,7 +516,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_20']['alter']['path'] = 'modal/nojs/flags/three_minute_beauty_badge';
   $handler->display->display_options['fields']['flagged_20']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_20']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_20']['element_wrapper_class'] = 'three-minute-beauty-[flagged]';
+  $handler->display->display_options['fields']['flagged_20']['element_wrapper_class'] = 'three-minute-beauty-[flagged_20]';
   $handler->display->display_options['fields']['flagged_20']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_20']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_20']['type_custom_false'] = 'no';
@@ -546,7 +531,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_21']['alter']['path'] = 'modal/nojs/flags/fast_learner_badge';
   $handler->display->display_options['fields']['flagged_21']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_21']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_21']['element_wrapper_class'] = 'fast-learner-[flagged]';
+  $handler->display->display_options['fields']['flagged_21']['element_wrapper_class'] = 'fast-learner-[flagged_21]';
   $handler->display->display_options['fields']['flagged_21']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_21']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_21']['type_custom_false'] = 'no';
@@ -561,7 +546,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_22']['alter']['path'] = 'modal/nojs/flags/well_read_100_badge';
   $handler->display->display_options['fields']['flagged_22']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_22']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_22']['element_wrapper_class'] = 'well-read-100-[flagged]';
+  $handler->display->display_options['fields']['flagged_22']['element_wrapper_class'] = 'well-read-100-[flagged_22]';
   $handler->display->display_options['fields']['flagged_22']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_22']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_22']['type_custom_false'] = 'no';
@@ -576,7 +561,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_23']['alter']['path'] = 'modal/nojs/flags/early_bird_badge';
   $handler->display->display_options['fields']['flagged_23']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_23']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_23']['element_wrapper_class'] = 'early-bird-[flagged]';
+  $handler->display->display_options['fields']['flagged_23']['element_wrapper_class'] = 'early-bird-[flagged_23]';
   $handler->display->display_options['fields']['flagged_23']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_23']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_23']['type_custom_false'] = 'no';
@@ -674,7 +659,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Refine Search';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
@@ -799,6 +783,11 @@ function elx_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -973,6 +962,7 @@ function elx_views_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Displaying @start - @end of @total'),
+    t('OG membership from node'),
     t('Most Popular'),
     t('Title A-Z'),
     t('Filter By'),
@@ -1000,7 +990,6 @@ function elx_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Refine Search';
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
@@ -1173,6 +1162,11 @@ function elx_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1313,18 +1307,6 @@ function elx_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'search-product-library';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['search_product_library'] = array(
     t('Master'),
     t('Search'),
@@ -1346,11 +1328,11 @@ function elx_views_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Displaying @start - @end of @total'),
+    t('OG membership from node'),
     t('Title A-Z'),
     t('Most Popular'),
     t('Filter By Category'),
     t('Page'),
-    t('Block'),
   );
   $export['search_product_library'] = $view;
 

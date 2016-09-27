@@ -745,7 +745,7 @@ function elx_interactive_content_feature_field_default_field_instances() {
     'field_name' => 'markets',
     'is_property' => 0,
     'label' => 'Markets',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(

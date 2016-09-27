@@ -2524,6 +2524,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );
@@ -3160,6 +3161,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'flag',
   );

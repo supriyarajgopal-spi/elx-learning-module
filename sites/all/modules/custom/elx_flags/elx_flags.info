@@ -7,5 +7,4 @@ dependencies[] = flag
 dependencies[] = token
 features[features_api][] = api:2
 features[flag][] = favorites
-mtime = 1468822236
 project path = sites/all/modules/custom

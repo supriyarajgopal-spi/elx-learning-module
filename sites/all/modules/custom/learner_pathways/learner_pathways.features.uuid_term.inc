@@ -110,5 +110,15 @@ function learner_pathways_uuid_features_default_terms() {
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
   );
+  $terms[] = array(
+    'name' => 'Leading the Holiday Experience',
+    'description' => 'Holiday 2016 Level for Counter Managers',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'e2282f46-cc2b-4412-9d85-c827349ce149',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'learning_category',
+  );
   return $terms;
 }

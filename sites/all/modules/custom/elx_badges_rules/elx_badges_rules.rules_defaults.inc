@@ -148,7 +148,7 @@ function elx_badges_rules_default_rules_configuration() {
             "USING" : { "data" : [ "flagged-node:field-learning-category" ] },
             "DO" : [
               { "CASE" : {
-                  "USING" : { "value" : "14134" },
+                  "USING" : { "value" : "14108" },
                   "DO" : [
                     { "component_rules_flag_a_user_with_a_specific_flag" : {
                         "flag_to_set" : "gift_genius",
@@ -160,7 +160,7 @@ function elx_badges_rules_default_rules_configuration() {
                 }
               },
               { "CASE" : {
-                  "USING" : { "value" : "14133" },
+                  "USING" : { "value" : "10605" },
                   "DO" : [
                     { "component_rules_flag_a_user_with_a_specific_flag" : {
                         "flag_to_set" : "perfect_present",

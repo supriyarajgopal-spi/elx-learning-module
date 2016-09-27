@@ -30,6 +30,7 @@ features[uuid_term][] = 8f0f849b-6d9c-4bc9-9bd9-c9292d5b63ad
 features[uuid_term][] = 9900e7bb-9c18-4cbd-a0f6-2123ef2a04fd
 features[uuid_term][] = 9b2fed0e-b181-4493-a001-65176f3de310
 features[uuid_term][] = ac916cd3-e9d9-4d6d-8b85-44f7d4d657c5
+features[uuid_term][] = e2282f46-cc2b-4412-9d85-c827349ce149
 features[variable][] = tac_lite_categories
 features[variable][] = tac_lite_config_scheme_1
 features[variable][] = tac_lite_grants_scheme_1

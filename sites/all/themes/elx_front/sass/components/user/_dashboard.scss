@@ -86,8 +86,54 @@ body.section-user.page-user {
     // 10 progress count //
     .panels-flexible-row.panels-flexible-row-new-4 {
 
-      .panels-flexible-region-new-my_progress_levels {
-        // .pane-levels-quizz-progress-closest-completion {
+      // .panels-flexible-region-new-my_progress_levels {
+
+       .pane-levels-quizz-progress-completed-count {
+
+          margin-left: 10px;
+
+          .view-content::before {
+            content: 'My Progress';
+            display: block;
+            font-size: 32px;
+            margin: 25px 15px;
+          }
+
+          .view-content .views-field.views-field-tid {
+            height: 24px;
+            width: 100%;
+            margin: 0 15px;
+
+            .field-content {
+              font-size: 24px;
+            }
+
+            .field-content::before {
+              content: 'Levels Completed: ';
+            }
+          }
+
+          .contextual-links-wrapper.contextual-links-processed {
+            display: none;
+          }
+
+          /*
+
+          .view-content .views-field.views-field-name {
+            display: none;
+          }
+
+          .view-content .views-field.views-field-expression {
+            height: 100px;
+            margin: 0 auto;
+            width: 95%;
+          }
+
+          */
+
+       }
+
+       .pane-levels-quizz-progress-closest-completion {
 
           .view-content .views-field.views-field-name {
             display: none;
@@ -110,7 +156,7 @@ body.section-user.page-user {
                 font-family: arial, 'optimadisplaylightlight';
                 font-size: 1.4em;
                 font-weight: bold;
-                margin-left: -50px;
+                margin-left: -55px;
                 position: absolute;
                 width: 130px;
               }

@@ -215,6 +215,9 @@
       var timeout;
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+
+        $('.h5p-press-to-go').append($('.h5p-press-to-go').attr('title'));
+
         $('.h5p-clicktoreveal-thumbnailwrap-set .h5p-clicktoreveal-thumbnailwrap::first-child').addClass('active');
         $('.h5p-clicktoreveal-thumbnailwrap').click(function () {
           $('.h5p-clicktoreveal-thumbnailwrap').removeClass('active');
@@ -398,13 +401,33 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = 'http://' + bgimg.split('http://')[1].replace('"', '').split(')')[0];
+
+          console.log(bgimg); // launch debug //
+
+          httpimg = location.protocol + '//' + bgimg.split('://')[1].replace('"', '').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 
         });
 
       } // size check
+
+      /* SWIPER CHANGES */
+      $('.views-slideshow-swiper-main-frame').ready(function () {
+        var getWidth = effectiveDeviceWidth() - 40;
+        $('.views-slideshow-swiper-main-frame').width(getWidth);
+      });
+
+      /* GET DEVICE WIDTH */
+      function effectiveDeviceWidth() {
+        var deviceWidth = window.orientation === 0 ? window.screen.height : window.screen.width;
+        // iOS returns available pixels, Android returns pixels / pixel ratio
+        // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
+        if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
+          deviceWidth = deviceWidth / window.devicePixelRatio;
+        }
+        return deviceWidth;
+      }
 
     }
 

@@ -142,12 +142,14 @@ body.page-home-page {
       padding: 75px;
       width: 75%;
       margin: auto;
+      margin-left: 75px;
     }
 
     @include respond-to('wide') {
       padding: 75px;
       width: 75%;
       margin: auto;
+      margin-left: 75px;
     }
 
     @include respond-to('xwide') {

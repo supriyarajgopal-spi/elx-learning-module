@@ -2876,20 +2876,21 @@ body.spin-the-wheel .h5p-iframe-wrapper::after {
 body.spin-the-wheel .field-name-field-spin-the-wheel {
   float: left;
   margin-right: 50px;
+  margin-bottom: 30px;
 }
 
-/* line 26, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+/* line 27, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
 body.spin-the-wheel .flag-outer.flag-outer-favorites {
   clear: both;
 }
 
-/* line 31, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+/* line 32, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
 body.spin-the-wheel .flag-favorites a {
   font-size: 0;
-  margin: 20px;
+  text-decoration: none;
 }
 
-/* line 36, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+/* line 37, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
 body.spin-the-wheel .flag-favorites a::before {
   content: '\e60c';
   color: #fff;

@@ -21,6 +21,7 @@ body.spin-the-wheel {
 .field-name-field-spin-the-wheel {
     float: left;
     margin-right: 50px;
+    margin-bottom: 30px;
 }
 
 .flag-outer.flag-outer-favorites {
@@ -30,7 +31,7 @@ body.spin-the-wheel {
 
 .flag-favorites a {
     font-size: 0;
-    margin: 20px;
+    text-decoration: none;
 
 
 &::before {

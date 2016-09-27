@@ -1,0 +1,35 @@
+//General theming for Spin the Wheel layout
+
+
+body.spin-the-wheel {
+
+
+.h5p-iframe-wrapper {
+    width: 600px;
+    height: auto;
+    float: left;
+
+&::after {
+    display: block;
+    clear: both;
+    content: ' ';
+    margin-bottom: 50px;
+
+}
+}
+
+.field-name-field-spin-the-wheel {
+    float: left;
+    margin-right: 50px;
+}
+
+.flag-outer.flag-outer-favorites {
+    clear: both;
+}
+
+
+
+}
+
+
+

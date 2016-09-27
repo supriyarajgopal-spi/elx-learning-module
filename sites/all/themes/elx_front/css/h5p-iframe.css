@@ -2857,6 +2857,32 @@ body.level-250 .h5p-element-inner .questionset-results button.h5p-joubelui-butto
   border: 1px solid #9a7d46;
 }
 
+/* line 7, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .h5p-iframe-wrapper {
+  width: 600px;
+  height: auto;
+  float: left;
+}
+
+/* line 12, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .h5p-iframe-wrapper::after {
+  display: block;
+  clear: both;
+  content: ' ';
+  margin-bottom: 50px;
+}
+
+/* line 21, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .field-name-field-spin-the-wheel {
+  float: left;
+  margin-right: 50px;
+}
+
+/* line 26, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .flag-outer.flag-outer-favorites {
+  clear: both;
+}
+
 /* line 59, /var/www/html/sites/all/themes/elx_front/sass/h5p-iframe.scss */
 body {
   background: transparent;

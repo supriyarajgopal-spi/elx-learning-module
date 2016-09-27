@@ -440,5 +440,9 @@ function elx_front_preprocess_html(&$variables) {
     if (!empty($node->field_learning_category)) {
       $variables['classes_array'][] = 'page-levels-all';
     }
+    // If spin the wheel field is checked, add a bod class for theming
+    if (!empty($node->field_spin_the_wheel)) {
+      $variables['classes_array'][] = 'spin-the-wheel';
+    }
   }
 }

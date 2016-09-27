@@ -2883,6 +2883,20 @@ body.spin-the-wheel .flag-outer.flag-outer-favorites {
   clear: both;
 }
 
+/* line 31, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .flag-favorites a {
+  font-size: 0;
+  margin: 20px;
+}
+
+/* line 36, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_spin-the-wheel.scss */
+body.spin-the-wheel .flag-favorites a::before {
+  content: '\e60c';
+  color: #fff;
+  font-family: "elx-icons";
+  font-size: 26px;
+}
+
 /* line 59, /var/www/html/sites/all/themes/elx_front/sass/h5p-iframe.scss */
 body {
   background: transparent;

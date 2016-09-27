@@ -28,6 +28,19 @@ body.spin-the-wheel {
 }
 
 
+.flag-favorites a {
+    font-size: 0;
+    margin: 20px;
+
+
+&::before {
+    content: '\e60c';
+    color: #fff;
+    font-family: $font-family-icons;
+    font-size: 26px;
+}
+
+}
 
 }
 

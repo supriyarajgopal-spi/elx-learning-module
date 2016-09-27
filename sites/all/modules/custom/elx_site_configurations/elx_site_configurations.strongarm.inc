@@ -1682,7 +1682,7 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'elx_front';
   $export['theme_default'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
@@ -1720,7 +1720,7 @@ password: [user:account-password]
 
 --  [site:name] team';
   $export['user_mail_register_no_approval_required_body'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

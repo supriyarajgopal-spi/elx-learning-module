@@ -1976,68 +1976,74 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 204, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 193, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+.modal-default.level-10605 .h5p-question-feedback-content,
+.modal-default.level-14108 .h5p-question-feedback-content {
+  color: white !important;
+}
+
+/* line 208, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-course-presentation {
   color: #fff;
 }
 
-/* line 207, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 211, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 211, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 215, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 215, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 219, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 223, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 227, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-image {
   overflow: hidden;
 }
 
-/* line 231, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 235, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-footer-previous-slide::before, .modal-default.level-252 .h5p-footer-next-slide::before, .modal-default.level-252 .h5p-footer-toggle-full-screen::before {
   color: #fff;
 }
 
-/* line 235, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 239, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-footer-previous-slide::after, .modal-default.level-252 .h5p-footer-next-slide::after, .modal-default.level-252 .h5p-footer-toggle-full-screen::after {
   color: #fff;
 }
 
-/* line 241, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 245, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-joubelui-button {
   color: #080f30;
   background: #fff;
 }
 
-/* line 246, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 250, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-progressbar .h5p-progressbar-part-show {
   background: #080f30 !important;
   background-image: none !important;
 }
 
-/* line 251, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 255, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-press-to-go.h5p-visible {
   background: #080f30;
   color: #fff;
   padding: 10px;
 }
 
-/* line 256, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 260, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-252 .h5p-press-to-go.h5p-visible:hover {
   background: #fff;
   opacity: 1;
   color: #080f30;
 }
 
-/* line 274, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 278, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-course-presentation,
 .modal-default.level-1300 .h5p-course-presentation {
   color: #fff;
@@ -2053,31 +2059,31 @@ div#panels-ipe-control-container {
     }*/
 }
 
-/* line 288, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 292, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-course-presentation a,
 .modal-default.level-1300 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 292, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 296, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-course-presentation p,
 .modal-default.level-1300 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 296, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 300, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-course-presentation .h5p-slide p,
 .modal-default.level-1300 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 304, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 308, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-image,
 .modal-default.level-1300 .h5p-image {
   overflow: hidden;
 }
 
-/* line 312, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 316, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-footer-previous-slide::before,
 .modal-default.level-1300 .h5p-footer-previous-slide::before, .modal-default.level-579 .h5p-footer-next-slide::before,
 .modal-default.level-1300 .h5p-footer-next-slide::before, .modal-default.level-579 .h5p-footer-toggle-full-screen::before,
@@ -2085,7 +2091,7 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 316, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 320, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-footer-previous-slide::after,
 .modal-default.level-1300 .h5p-footer-previous-slide::after, .modal-default.level-579 .h5p-footer-next-slide::after,
 .modal-default.level-1300 .h5p-footer-next-slide::after, .modal-default.level-579 .h5p-footer-toggle-full-screen::after,
@@ -2093,21 +2099,21 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 322, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 326, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-joubelui-button,
 .modal-default.level-1300 .h5p-joubelui-button {
   color: #4ea1bf;
   background: #000;
 }
 
-/* line 328, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 332, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-progressbar .h5p-progressbar-part-show,
 .modal-default.level-1300 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 333, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 337, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-press-to-go.h5p-visible,
 .modal-default.level-1300 .h5p-press-to-go.h5p-visible {
   background: #4ea1bf;
@@ -2115,7 +2121,7 @@ div#panels-ipe-control-container {
   padding: 10px;
 }
 
-/* line 338, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 342, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-579 .h5p-press-to-go.h5p-visible:hover,
 .modal-default.level-1300 .h5p-press-to-go.h5p-visible:hover {
   background: #4ea1bf;
@@ -2123,37 +2129,37 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 358, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 362, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-course-presentation,
 .modal-default.level-12731 .h5p-course-presentation {
   color: #fff;
 }
 
-/* line 362, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 366, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-course-presentation a,
 .modal-default.level-12731 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 366, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 370, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-course-presentation p,
 .modal-default.level-12731 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 370, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 374, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-course-presentation .h5p-slide p,
 .modal-default.level-12731 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 378, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 382, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-image,
 .modal-default.level-12731 .h5p-image {
   overflow: hidden;
 }
 
-/* line 386, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 390, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-footer-previous-slide::before,
 .modal-default.level-12731 .h5p-footer-previous-slide::before, .modal-default.level-1301 .h5p-footer-next-slide::before,
 .modal-default.level-12731 .h5p-footer-next-slide::before, .modal-default.level-1301 .h5p-footer-toggle-full-screen::before,
@@ -2161,7 +2167,7 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 390, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 394, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-footer-previous-slide::after,
 .modal-default.level-12731 .h5p-footer-previous-slide::after, .modal-default.level-1301 .h5p-footer-next-slide::after,
 .modal-default.level-12731 .h5p-footer-next-slide::after, .modal-default.level-1301 .h5p-footer-toggle-full-screen::after,
@@ -2169,21 +2175,21 @@ div#panels-ipe-control-container {
   color: #fff;
 }
 
-/* line 396, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 400, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-joubelui-button,
 .modal-default.level-12731 .h5p-joubelui-button {
   color: #4ea1bf;
   background: #000;
 }
 
-/* line 402, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 406, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-progressbar .h5p-progressbar-part-show,
 .modal-default.level-12731 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 407, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 411, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-press-to-go.h5p-visible,
 .modal-default.level-12731 .h5p-press-to-go.h5p-visible {
   background: #4ea1bf;
@@ -2191,7 +2197,7 @@ div#panels-ipe-control-container {
   padding: 10px;
 }
 
-/* line 412, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 416, /var/www/html/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 .modal-default.level-1301 .h5p-press-to-go.h5p-visible:hover,
 .modal-default.level-12731 .h5p-press-to-go.h5p-visible:hover {
   background: #4ea1bf;

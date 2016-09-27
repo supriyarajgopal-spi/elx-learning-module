@@ -15,10 +15,9 @@ function elx_flags_flag_default_flags() {
     'title' => 'Favorites',
     'global' => 0,
     'types' => array(
-      0 => 'content_object',
-      1 => 'h5p_content',
-      2 => 'product_detail',
-      3 => 'tools',
+      0 => 'h5p_content',
+      1 => 'product_detail',
+      2 => 'tools',
     ),
     'flag_short' => 'Favorite This  <span>[node:flag-favorites-count]</span></a>',
     'flag_long' => '',

@@ -326,23 +326,22 @@ function _elx_get_list_count($list)
 function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
   $query = db_select('flagging', 'fc')
     ->fields('fc', array('entity_id'))
-    ->condition('entity_type', $flag->entity_type)
-    ->condition('fid', $flag->fid);
+    ->condition('fc.entity_type', $flag->entity_type)
+    ->condition('fc.fid', $flag->fid);
   if(!empty($bundle))
   {
-	$operand = is_array($bundle)?'IN':'=';
 	$query->join('node','n','n.nid = fc.entity_id');
-	$query->condition('n.type',$bundle,$operand);
+	$query->condition('n.type',$bundle);
   }
   // For global flags the user parameter is ignored, so we add the
   // extra 'uid' condition when the flag is NOT global.
   if (!$flag->global) {
     $user = entity_metadata_wrapper('user', $entity);
     $sid = $user->flag_sid->value();
-    $query = $query->condition('uid', $user->uid->value());
+    $query = $query->condition('fc.uid', $user->uid->value());
     // Filter out any bad session ids and any users that aren't anonymous.
     if (!empty($sid) && $sid != -1) {
-      $query->condition('sid', $sid);
+      $query->condition('fc.sid', $sid);
     }
   }
   $result = $query->execute();

@@ -215,6 +215,9 @@
       var timeout;
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+
+        $('.h5p-press-to-go').append($('.h5p-press-to-go').attr('title'));
+
         $('.h5p-clicktoreveal-thumbnailwrap-set .h5p-clicktoreveal-thumbnailwrap::first-child').addClass('active');
         $('.h5p-clicktoreveal-thumbnailwrap').click(function () {
           $('.h5p-clicktoreveal-thumbnailwrap').removeClass('active');
@@ -398,7 +401,10 @@
         $('.views-field a').click(function () {
 
           var bgimg = $(this).parent().parent().css('background-image');
-          httpimg = 'http://' + bgimg.split('http://')[1].replace('"', '').split(')')[0];
+
+          console.log(bgimg); // launch debug //
+
+          httpimg = location.protocol + '//' + bgimg.split('://')[1].replace('"', '').split(')')[0];
 
           $('#modal-content.modal-content').ready(launchBadgesModal);
 

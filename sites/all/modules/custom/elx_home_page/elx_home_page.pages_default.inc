@@ -96,7 +96,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-spotlight',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -115,7 +118,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-learning-levels',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -134,7 +140,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-learning-levels-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
@@ -156,7 +165,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-news',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
@@ -175,7 +187,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-news-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
@@ -197,7 +212,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-product-library',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
@@ -216,7 +234,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-product-library-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();
@@ -278,7 +299,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-spotlight',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -297,7 +321,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-learning-levels',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
@@ -316,7 +343,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-learning-levels-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
@@ -338,7 +368,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-news',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
@@ -357,7 +390,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-news-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 4;
   $pane->locks = array();
@@ -379,7 +415,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-product-library',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 5;
   $pane->locks = array();
@@ -398,7 +437,10 @@ function elx_home_page_default_page_manager_pages() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => 'homepage-product-library-mobile',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 6;
   $pane->locks = array();

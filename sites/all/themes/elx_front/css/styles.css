@@ -8847,10 +8847,11 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row-new-8 .p
 
 /* line 558, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override {
+  display: none;
   margin-bottom: 300px;
 }
 
-/* line 561, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 562, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-neck-name {
   width: 300px;
   text-align: center;
@@ -8859,7 +8860,7 @@ body.section-user.page-user main.dashboard-override .elx-neck-name {
   font-family: "optimadisplaylightlight";
 }
 
-/* line 569, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 570, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux {
   margin: 100px auto;
   width: 65%;
@@ -8867,7 +8868,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux {
   padding-bottom: 100px;
 }
 
-/* line 582, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 583, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1 label,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2 label,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1 label,
@@ -8880,7 +8881,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 label {
   letter-spacing: 1px;
 }
 
-/* line 589, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 590, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1 span,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2 span,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1 span,
@@ -8894,7 +8895,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 span {
   font-weight: bold;
 }
 
-/* line 599, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 600, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile {
   border: 1px solid #a4a4ab;
   margin: 20px auto 0;
@@ -8906,7 +8907,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   cursor: pointer;
 }
 
-/* line 609, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 610, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile span {
   color: #a4a4ab;
   text-transform: uppercase;
@@ -8917,7 +8918,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   width: 100%;
 }
 
-/* line 619, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 620, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-profile span::before {
   content: '';
   font-family: "elx-icons";
@@ -8925,7 +8926,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .btn-edit-pro
   padding: 12px;
 }
 
-/* line 627, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 628, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1,
@@ -8934,23 +8935,23 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc2 {
   height: 60px;
 }
 
-/* line 635, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 636, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   width: 100%;
 }
 
-/* line 640, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 641, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1 {
   height: 60px;
 }
 
-/* line 644, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 645, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   height: 90px;
 }
 
-/* line 648, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 649, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc1,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
@@ -8959,7 +8960,7 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   float: left;
 }
 
-/* line 656, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 657, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r1xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r2xc2,
 body.section-user.page-user main.dashboard-override .two-by-two-ux .r3xc1,
@@ -8967,13 +8968,13 @@ body.section-user.page-user main.dashboard-override .two-by-two-ux .r4 {
   float: left;
 }
 
-/* line 665, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 666, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container {
   width: 200px;
   margin: 0 auto;
 }
 
-/* line 669, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 670, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round {
   height: 200px;
   width: 200px;
@@ -8983,7 +8984,7 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   background-image: url("/sites/all/themes/elx_front/images/user/elx-circle-bg.png");
 }
 
-/* line 678, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 679, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round::before {
   border-top: 1px solid #ccc;
   content: ' ';
@@ -8995,7 +8996,7 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   width: 150px;
 }
 
-/* line 689, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
+/* line 690, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/user/_dashboard.scss */
 body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round::after {
   border-top: 1px solid #ccc;
   content: ' ';

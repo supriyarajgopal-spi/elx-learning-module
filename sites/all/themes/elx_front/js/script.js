@@ -291,6 +291,7 @@
           $(div_2x2ux).append(div_r4);
 
           $(new_main).append(div_2x2ux);
+          $(new_main).show();
 
 
           // main plug //

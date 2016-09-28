@@ -93,6 +93,15 @@ body.page-levels-in-progress {
             margin: 0 1% 0 0;
             vertical-align: top;
             text-align: center;
+
+            @include respond-to('mobile') {
+              display: none;
+            }
+
+            @include respond-to('mobile-landscape') {
+              display: none;
+            }
+
           }
 
         }
@@ -290,15 +299,62 @@ body.page-levels-in-progress {
   }
 
 
-.view-display-id-levels_admin_mobile {
+  .view-display-id-levels_admin_mobile {
     display: none;
-}
+  }
 
-.view-display-id-levels_user_mobile {
+  .view-display-id-levels_user_mobile {
     display: none;
-}
+  }
 
+  @include respond-to('mobile') {
 
+    .view-level-content {
 
+      .view-display-id-levels_admin_mobile {
+        display: block;
+
+        .view-content {
+
+          .views-row {
+            display: block;
+          }
+
+        }
+
+      }
+
+      .pager {
+        display: none;
+      }
+
+    }
+
+  }
+
+  @include respond-to('mobile-landscape') {
+
+    .view-level-content {
+
+      .view-display-id-levels_admin_mobile {
+        display: block;
+
+        .view-content {
+
+          .views-row {
+            display: block;
+          }
+
+        }
+
+      }
+
+      .pager {
+        display: none;
+      }
+
+    }
+
+  }
 
 }

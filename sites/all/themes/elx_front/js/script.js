@@ -209,7 +209,7 @@
 
       /* LEVELS */
       if (typeof Drupal.settings.H5PIntegration != 'undefined' && typeof Drupal.settings.H5PIntegration.elxLevel != 'undefined') {
-        $('body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
+        $('#modalContent, .h5p-iframe body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
       }
 
       var timeout;

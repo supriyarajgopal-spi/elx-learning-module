@@ -32,8 +32,9 @@
 
 ?>
 <?php
-print '<div class="user-progress-bar">' .
+print '<div class="percent-label">Progress:</div>' .
 '<div class="progress-bar-percentage">' . $output  . '</div>' .
-'<div class="user-progress" style="width:' . $output . '"></div>' .
+'<div class="user-progress-bar">' .
+  '<div class="user-progress" style="width:' . $output . '"></div>' .
 '</div>';
 ?>

@@ -87,7 +87,8 @@
   //@extend %interactive-video-black-gold;
 
   // styles for content outside of h5p
-  div.ctools-modal-content {
+  div.ctools-modal-content,
+  .back-to-levels {
     color: #fff;
   }
 
@@ -146,7 +147,8 @@
   //@extend %interactive-video-blue-helix;
 
   // styles for content outside of h5p
-  div.ctools-modal-content {
+  div.ctools-modal-content,
+  .back-to-levels {
     color: #fff;
   }
 
@@ -177,7 +179,8 @@
   //@extend %interactive-video-blue-krypton;
 
   // styles for content outside of h5p
-  div.ctools-modal-content {
+  div.ctools-modal-content,
+  .back-to-levels {
     color: #fff;
   }
 
@@ -238,7 +241,8 @@
   @extend %interactive-video-holiday;
 
   // styles for content outside of h5p
-  div.ctools-modal-content {
+  div.ctools-modal-content,
+  .back-to-levels {
     color: #fff;
   }
 
@@ -276,6 +280,12 @@
 
 // H5P MODAL ALTERNATIVE
 body.html.node-type-h5p-content {
+
+  .back-to-levels {
+    float: right;
+    text-decoration: none;
+  }
+
   .layout-center {
 
     padding-left: 0;

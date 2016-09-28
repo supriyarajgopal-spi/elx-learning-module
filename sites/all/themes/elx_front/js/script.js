@@ -416,6 +416,11 @@
 
       } // size check
 
+      /* ADD BACK TO LEVELS LINk */
+      if ($('body.page-node.node-type-h5p-content').size()) {
+        $('div.content').prepend('<a class="back-to-levels" href="/levels_all">&laquo; Back to Levels</a>');
+      }
+
       /* SWIPER CHANGES */
       $('.views-slideshow-swiper-main-frame').ready(function () {
         var getWidth = effectiveDeviceWidth() - 40;

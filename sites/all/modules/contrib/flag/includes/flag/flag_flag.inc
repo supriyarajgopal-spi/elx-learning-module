@@ -762,6 +762,8 @@ class flag_flag {
       if ($flagged) {
         // Load the existing Flagging entity.
         $flagging = flagging_load($existing_flagging_id);
+        // This is an ugly hack to preserve previous behaviour.
+        $flagging->given_as_parameter = TRUE;
       }
       else {
         // Construct a new Flagging entity to flag with.

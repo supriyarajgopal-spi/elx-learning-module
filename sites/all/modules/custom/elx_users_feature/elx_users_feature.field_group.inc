@@ -128,7 +128,7 @@ function elx_users_feature_field_group_info() {
       1 => 'field_country',
       2 => 'field_region_list',
       3 => 'field_state',
-      4 => 'field_market_name',
+      4 => 'og_user_node',
       5 => 'timezone',
     ),
     'format_type' => 'fieldset',

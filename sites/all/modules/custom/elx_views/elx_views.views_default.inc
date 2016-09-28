@@ -212,6 +212,27 @@ function elx_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel_23']['label'] = 'Early Bird Badge Flag';
   $handler->display->display_options['relationships']['flag_content_rel_23']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel_23']['flag'] = 'early_bird_badge';
+  /* Relationship: Flags: perfect_present */
+  $handler->display->display_options['relationships']['flag_content_rel_24']['id'] = 'flag_content_rel_24';
+  $handler->display->display_options['relationships']['flag_content_rel_24']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel_24']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_24']['label'] = 'Perfect Present';
+  $handler->display->display_options['relationships']['flag_content_rel_24']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel_24']['flag'] = 'perfect_present';
+  /* Relationship: Flags: gift_genius */
+  $handler->display->display_options['relationships']['flag_content_rel_25']['id'] = 'flag_content_rel_25';
+  $handler->display->display_options['relationships']['flag_content_rel_25']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel_25']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_25']['label'] = 'Gift Genius Badge';
+  $handler->display->display_options['relationships']['flag_content_rel_25']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel_25']['flag'] = 'gift_genius';
+  /* Relationship: Flags: beautiful_start */
+  $handler->display->display_options['relationships']['flag_content_rel_26']['id'] = 'flag_content_rel_26';
+  $handler->display->display_options['relationships']['flag_content_rel_26']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_content_rel_26']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_26']['label'] = 'Beautiful Start Badge';
+  $handler->display->display_options['relationships']['flag_content_rel_26']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel_26']['flag'] = 'beautiful_start';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -297,6 +318,21 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_4']['type_custom_false'] = 'no';
   $handler->display->display_options['fields']['flagged_4']['not'] = 0;
   /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_6']['id'] = 'flagged_6';
+  $handler->display->display_options['fields']['flagged_6']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_6']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_6']['relationship'] = 'flag_content_rel_6';
+  $handler->display->display_options['fields']['flagged_6']['label'] = '';
+  $handler->display->display_options['fields']['flagged_6']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['flagged_6']['alter']['path'] = 'modal/nojs/flags/first_1_000_points_badge';
+  $handler->display->display_options['fields']['flagged_6']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['flagged_6']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_6']['element_wrapper_class'] = 'first-1000-points-[flagged_6]';
+  $handler->display->display_options['fields']['flagged_6']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_6']['type_custom_true'] = 'yes';
+  $handler->display->display_options['fields']['flagged_6']['type_custom_false'] = 'no';
+  $handler->display->display_options['fields']['flagged_6']['not'] = 0;
+  /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_5']['id'] = 'flagged_5';
   $handler->display->display_options['fields']['flagged_5']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_5']['field'] = 'flagged';
@@ -312,20 +348,20 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_5']['type_custom_false'] = 'no';
   $handler->display->display_options['fields']['flagged_5']['not'] = 0;
   /* Field: Flags: Flagged */
-  $handler->display->display_options['fields']['flagged_6']['id'] = 'flagged_6';
-  $handler->display->display_options['fields']['flagged_6']['table'] = 'flagging';
-  $handler->display->display_options['fields']['flagged_6']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged_6']['relationship'] = 'flag_content_rel_6';
-  $handler->display->display_options['fields']['flagged_6']['label'] = '';
-  $handler->display->display_options['fields']['flagged_6']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['flagged_6']['alter']['path'] = 'modal/nojs/flags/first_1_000_points_badge';
-  $handler->display->display_options['fields']['flagged_6']['alter']['link_class'] = 'use-ajax';
-  $handler->display->display_options['fields']['flagged_6']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_6']['element_wrapper_class'] = 'first-10000-points-[flagged_6]';
-  $handler->display->display_options['fields']['flagged_6']['type'] = 'custom';
-  $handler->display->display_options['fields']['flagged_6']['type_custom_true'] = 'yes';
-  $handler->display->display_options['fields']['flagged_6']['type_custom_false'] = 'no';
-  $handler->display->display_options['fields']['flagged_6']['not'] = 0;
+  $handler->display->display_options['fields']['flagged_9']['id'] = 'flagged_9';
+  $handler->display->display_options['fields']['flagged_9']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_9']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_9']['relationship'] = 'flag_content_rel_9';
+  $handler->display->display_options['fields']['flagged_9']['label'] = '';
+  $handler->display->display_options['fields']['flagged_9']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['flagged_9']['alter']['path'] = '/modal/nojs/flags/first_10000_points_badge';
+  $handler->display->display_options['fields']['flagged_9']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['flagged_9']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_9']['element_wrapper_class'] = 'first-10000-points-[flagged]';
+  $handler->display->display_options['fields']['flagged_9']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_9']['type_custom_true'] = 'yes';
+  $handler->display->display_options['fields']['flagged_9']['type_custom_false'] = 'no';
+  $handler->display->display_options['fields']['flagged_9']['not'] = 0;
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_7']['id'] = 'flagged_7';
   $handler->display->display_options['fields']['flagged_7']['table'] = 'flagging';
@@ -566,6 +602,51 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_23']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_23']['type_custom_false'] = 'no';
   $handler->display->display_options['fields']['flagged_23']['not'] = 0;
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_24']['id'] = 'flagged_24';
+  $handler->display->display_options['fields']['flagged_24']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_24']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_24']['relationship'] = 'flag_content_rel_24';
+  $handler->display->display_options['fields']['flagged_24']['label'] = '';
+  $handler->display->display_options['fields']['flagged_24']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['flagged_24']['alter']['path'] = '/modal/nojs/flags/perfect_present';
+  $handler->display->display_options['fields']['flagged_24']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['flagged_24']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_24']['element_wrapper_class'] = 'perfect-present-[flagged]';
+  $handler->display->display_options['fields']['flagged_24']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_24']['type_custom_true'] = 'yes';
+  $handler->display->display_options['fields']['flagged_24']['type_custom_false'] = 'no';
+  $handler->display->display_options['fields']['flagged_24']['not'] = 0;
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_25']['id'] = 'flagged_25';
+  $handler->display->display_options['fields']['flagged_25']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_25']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_25']['relationship'] = 'flag_content_rel_25';
+  $handler->display->display_options['fields']['flagged_25']['label'] = '';
+  $handler->display->display_options['fields']['flagged_25']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['flagged_25']['alter']['path'] = '/modal/nojs/flags/gift_genius';
+  $handler->display->display_options['fields']['flagged_25']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['flagged_25']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_25']['element_wrapper_class'] = 'gift-genius-[flagged]';
+  $handler->display->display_options['fields']['flagged_25']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_25']['type_custom_true'] = 'yes';
+  $handler->display->display_options['fields']['flagged_25']['type_custom_false'] = 'no';
+  $handler->display->display_options['fields']['flagged_25']['not'] = 0;
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_26']['id'] = 'flagged_26';
+  $handler->display->display_options['fields']['flagged_26']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_26']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_26']['relationship'] = 'flag_content_rel_26';
+  $handler->display->display_options['fields']['flagged_26']['label'] = '';
+  $handler->display->display_options['fields']['flagged_26']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['flagged_26']['alter']['path'] = '/modal/nojs/flags/beautiful_start';
+  $handler->display->display_options['fields']['flagged_26']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['flagged_26']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_26']['element_wrapper_class'] = 'beautiful-start-[flagged]';
+  $handler->display->display_options['fields']['flagged_26']['type'] = 'custom';
+  $handler->display->display_options['fields']['flagged_26']['type_custom_true'] = 'yes';
+  $handler->display->display_options['fields']['flagged_26']['type_custom_false'] = 'no';
+  $handler->display->display_options['fields']['flagged_26']['not'] = 0;
   /* Contextual filter: Flags: Flagging ID */
   $handler->display->display_options['arguments']['flagging_id']['id'] = 'flagging_id';
   $handler->display->display_options['arguments']['flagging_id']['table'] = 'flagging';
@@ -630,6 +711,9 @@ function elx_views_views_default_views() {
     t('Fast Learner Badge Flag'),
     t('Well Read 100 Badge Flag'),
     t('Early Bird Badge Flag'),
+    t('Perfect Present'),
+    t('Gift Genius Badge'),
+    t('Beautiful Start Badge'),
     t('yes'),
     t('no'),
     t('All'),

@@ -1,6 +1,7 @@
 name = ELX Badges Rules
 core = 7.x
 package = ELX
+dependencies[] = elx_badges_rules
 dependencies[] = elx_quiz_rule_trigger
 dependencies[] = elx_user_points_feature
 dependencies[] = entity
@@ -24,4 +25,4 @@ features[rules_config][] = rules_total_nodes_equal_to_flagged_nodes
 features[rules_config][] = rules_we_heart_you_badge
 features[rules_config][] = rules_well_read_badges
 features[taxonomy][] = userpoints
-mtime = 1474463457
+features[uuid_term][] = ed909de6-0281-4642-bd0d-54586fd022be

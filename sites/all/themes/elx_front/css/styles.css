@@ -8838,41 +8838,38 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   }
 }
 
-/* line 1, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-.page-product-library,
-.page-search-product-library {
-  /*
-  .view-product-library {
-
-    // search line (w/ magnify glass icon) manipulated out of form
-    .view-filters {
-
-      .views-exposed-widgets
-
-        #edit-combine-wrapper {
-          display: none;
-        }
-
-        .views-exposed-widget.views-submit-button {
-          margin-top: 0;
-          margin-left: 10px;
-        }
-    }
-
-  }
-*/
-}
-
 /* line 4, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library h1,
 .page-search-product-library h1 {
+  display: none;
+}
+
+/* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library h2.pane-title,
+.page-search-product-library h2.pane-title {
   font-family: "optimadisplaylightlight";
   font-size: 72px;
   font-weight: 100;
   text-align: center;
 }
 
-/* line 11, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library h2.pane-title,
+  .page-search-product-library h2.pane-title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 8, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library h2.pane-title,
+  .page-search-product-library h2.pane-title {
+    font-size: 40px;
+  }
+}
+
+/* line 24, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-header,
 .page-search-product-library .view-header {
   max-width: 1024px;
@@ -8881,19 +8878,13 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   font-size: 18px;
 }
 
-/* line 18, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-.page-product-library .messages.messages--error,
-.page-search-product-library .messages.messages--error {
-  display: none;
-}
-
-/* line 22, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 31, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged,
 .page-search-product-library div#search-line-rearranged {
   margin: 25px auto;
 }
 
-/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 35, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged #search-line-pipe,
 .page-search-product-library div#search-line-rearranged #search-line-pipe {
   outline: none;
@@ -8907,7 +8898,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   position: relative;
 }
 
-/* line 39, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged .icon-component,
 .page-search-product-library div#search-line-rearranged .icon-component {
   margin: 0 auto;
@@ -8917,7 +8908,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 39, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  /* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
   .page-product-library div#search-line-rearranged .icon-component,
   .page-search-product-library div#search-line-rearranged .icon-component {
     width: 320px;
@@ -8926,7 +8917,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 39, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  /* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
   .page-product-library div#search-line-rearranged .icon-component,
   .page-search-product-library div#search-line-rearranged .icon-component {
     width: 568px;
@@ -8935,7 +8926,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
 }
 
 @media (min-width: 768px) {
-  /* line 39, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  /* line 48, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
   .page-product-library div#search-line-rearranged .icon-component,
   .page-search-product-library div#search-line-rearranged .icon-component {
     width: 100%;
@@ -8943,7 +8934,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   }
 }
 
-/* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 69, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged .icon-component .icon-holder-placement,
 .page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement {
   bottom: 0;
@@ -8953,7 +8944,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   position: absolute;
 }
 
-/* line 67, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 76, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder,
 .page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder {
   float: right;
@@ -8962,7 +8953,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   cursor: pointer;
 }
 
-/* line 74, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 83, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder::before,
 .page-search-product-library div#search-line-rearranged .icon-component .icon-holder-placement .icon-holder::before {
   color: black;
@@ -8974,134 +8965,33 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   font-size: 2.5em;
 }
 
-/* line 114, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 101, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
+.page-search-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper {
+  display: none;
+}
+
+/* line 107, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+.page-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
+.page-search-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+/* line 120, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-search-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
-.page-search-product-library .view-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper,
 .page-search-product-library .view-search-product-library .view-filters .views-exposed-widgets #edit-combine-wrapper {
   display: none;
 }
 
-/* line 120, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-.page-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
+/* line 126, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-search-product-library .view-filters .views-exposed-widget.views-submit-button,
-.page-search-product-library .view-product-library .view-filters .views-exposed-widget.views-submit-button,
 .page-search-product-library .view-search-product-library .view-filters .views-exposed-widget.views-submit-button {
   margin-top: 5px;
   margin-left: 10px;
 }
 
-@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 125, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select {
-    width: 95%;
-    margin-left: 5px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 125, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select {
-    width: 95%;
-    margin-left: 5px;
-  }
-}
-
-@media (min-width: 768px) {
-  /* line 125, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-sort-by select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-sort-by select {
-    margin-left: 5px;
-  }
-}
-
-@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page {
-    margin-left: 10px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page {
-    margin-left: 10px;
-  }
-}
-
-@media (min-width: 768px) {
-  /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-product-library .view-filters .views-exposed-form .views-widget-per-page,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form label,
-  .page-search-product-library .view-search-product-library .view-filters .views-exposed-form .views-widget-per-page {
-    margin-left: 5px;
-  }
-}
-
-/* line 164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content,
 .page-product-library .view-search-product-library .view-content,
 .page-search-product-library .view-product-library .view-content,
@@ -9110,7 +9000,7 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   margin: 0 auto;
 }
 
-/* line 168, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 142, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul,
 .page-product-library .view-search-product-library .view-content ul,
 .page-search-product-library .view-product-library .view-content ul,
@@ -9119,12 +9009,12 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   padding: 0;
 }
 
-/* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li,
 .page-product-library .view-search-product-library .view-content ul li,
 .page-search-product-library .view-product-library .view-content ul li,
 .page-search-product-library .view-search-product-library .view-content ul li {
-  height: 280px;
+  height: 260px;
   margin: 0;
   padding: 23px 30px;
   list-style-type: none;
@@ -9133,38 +9023,28 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
   .page-product-library .view-product-library .view-content ul li,
   .page-product-library .view-search-product-library .view-content ul li,
   .page-search-product-library .view-product-library .view-content ul li,
   .page-search-product-library .view-search-product-library .view-content ul li {
-    height: 100%;
+    height: 120px;
+    padding: 10px 0;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  /* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
   .page-product-library .view-product-library .view-content ul li,
   .page-product-library .view-search-product-library .view-content ul li,
   .page-search-product-library .view-product-library .view-content ul li,
   .page-search-product-library .view-search-product-library .view-content ul li {
-    height: 100%;
-    min-height: 280px;
+    height: 120px;
+    padding: 10px 0;
   }
 }
 
-@media (min-width: 768px) {
-  /* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
-  .page-product-library .view-product-library .view-content ul li,
-  .page-product-library .view-search-product-library .view-content ul li,
-  .page-search-product-library .view-product-library .view-content ul li,
-  .page-search-product-library .view-search-product-library .view-content ul li {
-    height: 100%;
-    min-height: 280px;
-  }
-}
-
-/* line 195, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+/* line 164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
@@ -9178,7 +9058,55 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   text-align: center;
 }
 
-/* line 207, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-product-image {
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-product-image,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-product-image,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-product-image,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-product-image {
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 191, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-display-title,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-display-title {
+    padding: 22px 0 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 191, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-display-title,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-display-title {
+    padding: 22px 0 0;
+  }
+}
+
+/* line 201, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
@@ -9190,12 +9118,52 @@ body.page-tools.section-tools #modalContent #detail-content-btn a {
   color: #040a2b;
 }
 
-/* line 216, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 201, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 201, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-display-title a,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-display-title a {
+    font-size: 16px;
+  }
+}
+
+/* line 219, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
 .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
 .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one {
   font-size: 18px;
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 219, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 219, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/product-library/_product-library.scss */
+  .page-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-search-product-library .view-product-library .view-content ul li .views-field-field-why-there-s-only-one,
+  .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one {
+    display: none;
+  }
 }
 
 /* line 14, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/responsive-video/_responsive-video.scss */

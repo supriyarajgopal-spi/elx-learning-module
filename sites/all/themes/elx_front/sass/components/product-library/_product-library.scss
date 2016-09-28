@@ -2,10 +2,23 @@
 .page-search-product-library {
 
   h1 {
+    display: none;
+  }
+
+  h2.pane-title {
     font-family: $font-family-serif;
     font-size: $font-size-lg-extralarge;
     font-weight: 100;
     text-align: center;
+
+    @include respond-to('mobile') {
+      font-size: 40px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      font-size: 40px;
+    }
+
   }
 
   .view-header {
@@ -13,10 +26,6 @@
     margin: 0 auto;
     font-style: italic;
     font-size: $font-size-large;
-  }
-
-  .messages.messages--error {
-    display: none;
   }
 
   div#search-line-rearranged {
@@ -84,7 +93,6 @@
     }
   }
 
-/*
   .view-product-library {
 
     // search line (w/ magnify glass icon) manipulated out of form
@@ -103,9 +111,7 @@
     }
 
   }
-*/
 
-  .view-product-library,
   .view-search-product-library {
 
     // search line (w/ magnify glass icon) manipulated out of form
@@ -121,44 +127,12 @@
           margin-top: 5px;
           margin-left: 10px;
         }
-
-        .views-exposed-form #edit-field-product-categories-tid-wrapper,
-        .views-exposed-form .views-widget-sort-by,
-        .views-exposed-form #edit-field-product-categories-tid-wrapper select,
-        .views-exposed-form .views-widget-sort-by select {
-
-          @include respond-to('mobile') {
-            width: 95%;
-            margin-left: 5px;
-          }
-
-          @include respond-to('mobile-landscape') {
-            width: 95%;
-            margin-left: 5px;
-          }
-
-          @include respond-to('tablet') {
-            margin-left: 5px;
-          }
-
-        }
-
-        .views-exposed-form label,
-        .views-exposed-form .views-widget-per-page {
-
-          @include respond-to('mobile') {
-            margin-left: 10px;
-          }
-
-          @include respond-to('mobile-landscape') {
-            margin-left: 10px;
-          }
-
-          @include respond-to('tablet') {
-            margin-left: 5px;
-          }
-        }
     }
+
+  }
+
+  .view-product-library,
+  .view-search-product-library {
 
     // product library content
     .view-content {
@@ -170,27 +144,22 @@
         padding: 0;
 
         li {
-
-          @include respond-to('mobile') {
-            height: 100%;
-          }
-
-          @include respond-to('mobile-landscape') {
-            height: 100%;
-            min-height: 280px;
-          }
-
-          @include respond-to('tablet') {
-            height: 100%;
-            min-height: 280px;
-          }
-
-          height: 280px;
+          height: 260px;
           margin: 0;
           padding: 23px 30px;
           list-style-type: none;
           clear: both;
           border-bottom: 1px solid #ccc;
+
+          @include respond-to('mobile') {
+            height: 120px;
+            padding: 10px 0;
+          }
+
+          @include respond-to('mobile-landscape') {
+            height: 120px;
+            padding: 10px 0;
+          }
 
           .views-field-field-product-image {
             float: left;
@@ -200,9 +169,34 @@
             min-width: 240px;
             margin: 0 20px 0 0;
             text-align: center;
+
+            @include respond-to('mobile') {
+              max-height: 100px;
+              max-width: 100px;
+              min-height: 100px;
+              min-width: 100px;
+              margin: 0 10px 0 0;
+            }
+
+            @include respond-to('mobile-landscape') {
+              max-height: 100px;
+              max-width: 100px;
+              min-height: 100px;
+              min-width: 100px;
+              margin: 0 10px 0 0;
+            }
+
           }
 
           .views-field-field-display-title {
+
+            @include respond-to('mobile') {
+              padding: 22px 0 0;
+            }
+
+            @include respond-to('mobile-landscape') {
+              padding: 22px 0 0;
+            }
 
             a {
               margin: 22px 0 11px;
@@ -210,11 +204,29 @@
               font-size: $font-size-lg-large;
               text-decoration: none;
               color: #040a2b;
+
+              @include respond-to('mobile') {
+                font-size: 16px;
+              }
+
+              @include respond-to('mobile-landscape') {
+                font-size: 16px;
+              }
+
             }
           }
 
           .views-field-field-why-there-s-only-one {
             font-size: $font-size-large;
+
+            @include respond-to('mobile') {
+              display: none;
+            }
+
+            @include respond-to('mobile-landscape') {
+              display: none;
+            }
+
           }
 
         }

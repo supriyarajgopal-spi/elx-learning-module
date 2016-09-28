@@ -418,7 +418,10 @@
 
       /* ADD BACK TO LEVELS LINk */
       if ($('body.page-node.node-type-h5p-content').size()) {
-        $('div.content').prepend('<a class="back-to-levels" href="/levels_all">&laquo; Back to Levels</a>');
+        // $('div.content').prepend('<a class="back-to-levels" href="/levels_all">&laquo; Back to Levels</a>');
+        $('div.content').prepend('<a class="gobacktowhereyoucamefrom"> &nbsp; </a>').click(function () {
+          window.history.go(-1);
+        });
       }
 
       /* SWIPER CHANGES */

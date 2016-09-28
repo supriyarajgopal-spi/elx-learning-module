@@ -3655,56 +3655,71 @@ body.spin-the-wheel .flag-favorites a::before {
 }
 
 /* line 284, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+body.html.node-type-h5p-content .gobacktowhereyoucamefrom,
 body.html.node-type-h5p-content .back-to-levels {
   float: right;
   text-decoration: none;
 }
 
-/* line 289, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 290, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+body.html.node-type-h5p-content .gobacktowhereyoucamefrom::after {
+  background: transparent url("/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png") no-repeat scroll -105px top;
+  height: 32px;
+  position: absolute;
+  right: 100px;
+  top: 80px;
+  width: 32px;
+  z-index: 2;
+  content: ' ';
+  display: block;
+  cursor: pointer;
+}
+
+/* line 303, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center {
   padding-left: 0;
   padding-right: 0;
   max-width: 100%;
 }
 
-/* line 295, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 309, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center .layout-3col.layout-swap {
   padding-top: 0;
 }
 
-/* line 299, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 313, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 303, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 317, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > h1 {
   display: none;
 }
 
-/* line 307, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 321, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > ul.tabs {
   display: block;
   margin-left: 20px;
 }
 
-/* line 312, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 326, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent {
   margin-top: 0;
 }
 
-/* line 315, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 329, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full #modalContent .ctools-modal-content {
   padding: 0 24px;
 }
 
-/* line 321, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 335, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .block-views.contextual-links-region {
   display: none;
 }
 
-/* line 325, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
+/* line 339, /Users/peterchoi/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_h5p.scss */
 body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-links {
   display: none;
 }
@@ -4781,7 +4796,7 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   margin-left: 76px;
   position: absolute;
   width: 20px;
-  top: 4px;
+  top: 8px;
   background-size: 20px;
 }
 
@@ -4800,7 +4815,6 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   display: block;
   width: 125px;
   float: left;
-  margin-left: 15px;
   margin-top: 25px;
 }
 

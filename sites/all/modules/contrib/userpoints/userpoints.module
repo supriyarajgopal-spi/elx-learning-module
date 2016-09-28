@@ -1414,7 +1414,7 @@ function userpoints_filter_parse_input($form_state, $tid = NULL) {
 function userpoints_filter_query(SelectQueryInterface $query, $values) {
     // Check for filtering. isset() is used because 0 is a valid value
   // (Uncategorized).
-  if (isset($values['tid']) && $values['tid'] != 'all') {
+  if (!empty($values['tid']) && $values['tid'] != 'all') {
     // If a category is selected, limit both the default query and the query
     // that displays pending points to this category.
     $query->condition('p.tid', (int)$values['tid']);

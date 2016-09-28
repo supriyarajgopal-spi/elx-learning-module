@@ -44,6 +44,13 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
+  /* Relationship: Flags: favorites */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'flag_favorite';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'favorites';
   /* Field: NID : Not Shown */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -117,6 +124,13 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[views_conditional]';
   $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = '[views_conditional_1]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Order weight (field_order_weight) */
   $handler->display->display_options['sorts']['field_order_weight_value']['id'] = 'field_order_weight_value';
   $handler->display->display_options['sorts']['field_order_weight_value']['table'] = 'field_data_field_order_weight';
@@ -320,6 +334,7 @@ function elx_levels_views_default_views() {
     t('last »'),
     t('SEE MORE'),
     t('OG membership from node'),
+    t('flag_favorite'),
     t('spin-the-wheel-link'),
     t('All'),
     t('Admin'),

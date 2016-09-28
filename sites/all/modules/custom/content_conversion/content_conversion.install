@@ -21,6 +21,7 @@ function content_conversion_update_7100(&$sandbox) {
     $field = field_info_field('field_h5p_node');
     $sandbox['table'] = _field_sql_storage_tablename($field);
     $sandbox['progress'] = 0;
+    $sandbox['nid'] = 0;
     $query = db_select('node', 'n');
     $query->leftJoin($sandbox['table'], 'f', "f.entity_type = 'node' AND n.nid = f.entity_id");
     $query->leftJoin('node', 'h5p', 'f.field_h5p_node_target_id = h5p.nid');
@@ -35,16 +36,17 @@ function content_conversion_update_7100(&$sandbox) {
     $query = db_select('node', 'n');
     $query->leftJoin($sandbox['table'], 'f', 'n.nid = f.entity_id');
     $query->leftJoin('node', 'h5p', "f.entity_type = 'node' AND f.field_h5p_node_target_id = h5p.nid");
-    $nid = $query
+    $result = $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'content_object')
-      ->isNull('h5p.nid')
-      ->range(0, 1)
-      ->execute()
-      ->fetchField();
-    if ($nid) {
-      content_conversion_content_object_h5p(node_load($nid));
+      ->condition('n.nid', $sandbox['nid'], '>')
+      ->range(0, 10)
+      ->execute();
+    foreach ($result as $record) {
+      content_conversion_content_object_h5p(node_load($record->nid));
+      $sandbox['nid'] = $record->nid;
+      ++$sandbox['progress'];
     }
-    $sandbox['#finished'] = ++$sandbox['progress'] / $sandbox['max'];
+    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
   }
 }

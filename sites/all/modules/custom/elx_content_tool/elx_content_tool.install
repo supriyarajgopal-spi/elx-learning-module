@@ -286,6 +286,14 @@ function elx_content_tool_update_7104() {
         $market_options += $field_markets['settings']['allowed_values'];
       }
     }
+    foreach ($market_options as &$name) {
+      if ($name = 'Travel Retail Middle Pacific') {
+        $name = 'TR Mid-Pac';
+      }
+      elseif (strpos($name, 'Travel Retail ') === 0) {
+        $name = substr_replace($name, 'TR ', 0, 14);
+      }
+    }
     // Handle market typos.
     $market_options['Colombia-Ecuador-Central America '] = 'Colombia - Ecuador - Central America';
     $market_options['Eau Claire'] = 'Eau Claire';
@@ -293,16 +301,16 @@ function elx_content_tool_update_7104() {
     $market_options['English'] = 'United States';
     $market_options['Ireland'] = 'Ireland';
     $market_options['KRn'] = 'Korea';
-    $market_options['NOAM'] = 'Travel Retail Americas - North America';
+    $market_options['NOAM'] = 'TR Americas - North America';
     $market_options['Southern Cone-Chile-Peru-Argentina'] = 'Southern Cone - Chile - Peru - Argentina';
     $market_options['TR MY'] = 'TR Malaysia';
     $market_options['TR SG'] = 'TR Singapore';
     $market_options['TR TH'] = 'TR Thailand';
-    $market_options['Travel Retail CN'] = 'Travel Retail China';
-    $market_options['Travel Retail HK-Macau-TW'] = 'Travel Retail Hong Kong-Macau-Taiwan';
-    $market_options['Travel Retail JP'] = 'Travel Retail Japan';
-    $market_options['Travel Retail KR'] = 'Travel Retail Korea';
-    $market_options['TRRAM-CC'] = 'Travel Retail Americas - Caribbean - Cancun';
+    $market_options['Travel Retail CN'] = 'TR China';
+    $market_options['Travel Retail HK-Macau-TW'] = 'TR Hong Kong-Macau-Taiwan';
+    $market_options['Travel Retail JP'] = 'TR Japan';
+    $market_options['Travel Retail KR'] = 'TR Korea';
+    $market_options['TRRAM-CC'] = 'TR Americas - Caribbean - Cancun';
     $market_options['U.K.'] = 'U.K.';
     $market_options['unisted states'] = 'United States';
     $market_options['ZAe'] = 'South Africa';

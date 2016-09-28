@@ -919,13 +919,27 @@ th {
 }
 
 /* BADGES */
-/* line 5, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 5, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  .page-badges .layout-center {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 11, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  .page-badges .layout-center .layout-3col__full {
+    padding: 0;
+  }
+}
+
+/* line 21, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .layout-3col.layout-swap {
   max-width: 1230px;
   margin: 0 auto;
 }
 
-/* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges h1 {
   font-family: "optimadisplaylightlight";
   font-size: 4em;
@@ -933,27 +947,27 @@ th {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges h1 {
     font-size: 2.85em;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 10, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges h1 {
     font-size: 2.85em;
   }
 }
 
-/* line 25, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 41, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .views-row {
   width: 85%;
   margin: 0 auto;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 52, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row,
   .page-user .views-row,
   .pane-elx-recent-badges-recent-badges .views-row {
@@ -964,7 +978,7 @@ th {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 36, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 52, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row,
   .page-user .views-row,
   .pane-elx-recent-badges-recent-badges .views-row {
@@ -974,7 +988,7 @@ th {
   }
 }
 
-/* line 50, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .views-row .views-field,
 .page-user .views-row .views-field,
 .pane-elx-recent-badges-recent-badges .views-row .views-field {
@@ -986,7 +1000,7 @@ th {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 50, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row .views-field,
   .page-user .views-row .views-field,
   .pane-elx-recent-badges-recent-badges .views-row .views-field {
@@ -998,7 +1012,7 @@ th {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 50, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 66, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row .views-field,
   .page-user .views-row .views-field,
   .pane-elx-recent-badges-recent-badges .views-row .views-field {
@@ -1009,7 +1023,7 @@ th {
   }
 }
 
-/* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 87, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .views-row .views-field a,
 .page-user .views-row .views-field a,
 .pane-elx-recent-badges-recent-badges .views-row .views-field a {
@@ -1020,7 +1034,7 @@ th {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 87, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row .views-field a,
   .page-user .views-row .views-field a,
   .pane-elx-recent-badges-recent-badges .views-row .views-field a {
@@ -1030,7 +1044,7 @@ th {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 71, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+  /* line 87, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
   .page-badges .views-row .views-field a,
   .page-user .views-row .views-field a,
   .pane-elx-recent-badges-recent-badges .views-row .views-field a {
@@ -1039,14 +1053,14 @@ th {
   }
 }
 
-/* line 92, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 108, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .view-footer,
 .page-user .view-footer,
 .pane-elx-recent-badges-recent-badges .view-footer {
   display: none;
 }
 
-/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 112, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .three-minute-beauty-no,
 .page-badges .three-minute-beauty-yes,
 .page-user .three-minute-beauty-no,
@@ -1056,7 +1070,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-3minbeauty.svg") no-repeat 0 0;
 }
 
-/* line 101, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 117, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .one-hundred-percent-club-no,
 .page-badges .one-hundred-percent-club-yes,
 .page-user .one-hundred-percent-club-no,
@@ -1066,7 +1080,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-100club.svg") no-repeat 0 0;
 }
 
-/* line 106, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 122, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .beauty-queen-no,
 .page-badges .beauty-queen-yes,
 .page-user .beauty-queen-no,
@@ -1076,7 +1090,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautyqueen.png") no-repeat 0 0;
 }
 
-/* line 111, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 127, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .early-bird-no,
 .page-badges .early-bird-yes,
 .page-user .early-bird-no,
@@ -1086,7 +1100,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-earlybird.svg") no-repeat 0 0;
 }
 
-/* line 116, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 132, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .fast-learner-no,
 .page-badges .fast-learner-yes,
 .page-user .fast-learner-no,
@@ -1096,7 +1110,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-fastlearner.svg") no-repeat 0 0;
 }
 
-/* line 121, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 137, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .first-1000-points-no,
 .page-badges .first-1000-points-yes,
 .page-user .first-1000-points-no,
@@ -1106,7 +1120,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first1000.svg") no-repeat 0 0;
 }
 
-/* line 126, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 142, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .first-5000-points-no,
 .page-badges .first-5000-points-yes,
 .page-user .first-5000-points-no,
@@ -1116,7 +1130,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first5000.svg") no-repeat 0 0;
 }
 
-/* line 131, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 147, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .first-10000-points-no,
 .page-badges .first-10000-points-yes,
 .page-user .first-10000-points-no,
@@ -1126,7 +1140,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg") no-repeat 0 0;
 }
 
-/* line 136, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 152, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .high-five-no,
 .page-badges .high-five-yes,
 .page-user .high-five-no,
@@ -1136,7 +1150,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg") no-repeat 0 0;
 }
 
-/* line 141, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 157, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .little-brown-bottle-no,
 .page-badges .little-brown-bottle-yes,
 .page-user .little-brown-bottle-no,
@@ -1146,7 +1160,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png") no-repeat 0 0;
 }
 
-/* line 146, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 162, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .new-dimension-no,
 .page-badges .new-dimension-yes,
 .page-user .new-dimension-no,
@@ -1156,7 +1170,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png") no-repeat 0 0;
 }
 
-/* line 151, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 167, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .on-your-way-no,
 .page-badges .on-your-way-yes,
 .page-user .on-your-way-no,
@@ -1166,7 +1180,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg") no-repeat 0 0;
 }
 
-/* line 156, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .perfect-ten-no,
 .page-badges .perfect-ten-yes,
 .page-user .perfect-ten-no,
@@ -1176,7 +1190,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg") no-repeat 0 0;
 }
 
-/* line 161, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 177, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .product-pro-no,
 .page-badges .product-pro-yes,
 .page-user .product-pro-no,
@@ -1186,7 +1200,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg") no-repeat 0 0;
 }
 
-/* line 166, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 182, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .rare-beauty-no,
 .page-badges .rare-beauty-yes,
 .page-user .rare-beauty-no,
@@ -1196,7 +1210,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png") no-repeat 0 0;
 }
 
-/* line 171, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 187, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .service-star-no,
 .page-badges .service-star-yes,
 .page-user .service-star-no,
@@ -1206,7 +1220,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg") no-repeat 0 0;
 }
 
-/* line 176, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 192, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .sleeping-beauty-no,
 .page-badges .sleeping-beauty-yes,
 .page-user .sleeping-beauty-no,
@@ -1216,7 +1230,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png") no-repeat 0 0;
 }
 
-/* line 181, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 197, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .we-heard-you-no,
 .page-badges .we-heard-you-yes,
 .page-user .we-heard-you-no,
@@ -1226,7 +1240,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg") no-repeat 0 0;
 }
 
-/* line 186, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 202, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .we-heart-you-no,
 .page-badges .we-heart-you-yes,
 .page-user .we-heart-you-no,
@@ -1236,7 +1250,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg") no-repeat 0 0;
 }
 
-/* line 191, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 207, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .welcome-no,
 .page-badges .welcome-yes,
 .page-user .welcome-no,
@@ -1246,7 +1260,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg") no-repeat 0 0;
 }
 
-/* line 196, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 212, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .well-read-25-no,
 .page-badges .well-read-25-yes,
 .page-user .well-read-25-no,
@@ -1256,7 +1270,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg") no-repeat 0 0;
 }
 
-/* line 201, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 217, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .well-read-50-no,
 .page-badges .well-read-50-yes,
 .page-user .well-read-50-no,
@@ -1266,7 +1280,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg") no-repeat 0 0;
 }
 
-/* line 206, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 222, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .well-read-75-no,
 .page-badges .well-read-75-yes,
 .page-user .well-read-75-no,
@@ -1276,7 +1290,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg") no-repeat 0 0;
 }
 
-/* line 211, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 227, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .well-read-100-no,
 .page-badges .well-read-100-yes,
 .page-user .well-read-100-no,
@@ -1286,7 +1300,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg") no-repeat 0 0;
 }
 
-/* line 216, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 232, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .three-minute-beauty-no,
 .page-badges .one-hundred-percent-club-no,
 .page-badges .beauty-queen-no,
@@ -1363,7 +1377,7 @@ th {
   filter: grayscale(100%);
 }
 
-/* line 246, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 262, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content,
 .page-user .qtip-content.qtip-content,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content {
@@ -1389,28 +1403,28 @@ th {
       */
 }
 
-/* line 265, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 281, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
 .page-user .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid span.field-content::before {
   padding: 5px 20px 0 5px;
 }
 
-/* line 275, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 291, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
   width: 100%;
 }
 
-/* line 279, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 295, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points {
   margin: 0;
 }
 
-/* line 282, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 298, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points {
@@ -1418,28 +1432,28 @@ th {
   margin: 0;
 }
 
-/* line 286, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 302, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before {
   margin-left: 86px;
 }
 
-/* line 290, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 306, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content {
   margin-left: 46px;
 }
 
-/* line 304, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 320, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline {
   margin: 0;
 }
 
-/* line 307, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 323, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
 .page-user .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content,
 .pane-elx-recent-badges-recent-badges .qtip-content.qtip-content .pane-dashboard-user-activities-suggested .view-display-id-suggested .views-field-field-headline .field-content {

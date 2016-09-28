@@ -2,6 +2,22 @@
 
 .page-badges {
 
+  .layout-center {
+
+    @include respond-to('mobile') {
+      padding: 0;
+    }
+
+    .layout-3col__full {
+
+      @include respond-to('mobile') {
+        padding: 0;
+      }
+
+    }
+
+  }
+
   .layout-3col.layout-swap {
     max-width: 1230px;
     margin: 0 auto;

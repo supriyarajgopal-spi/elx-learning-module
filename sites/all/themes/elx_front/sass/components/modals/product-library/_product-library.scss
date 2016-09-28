@@ -52,6 +52,15 @@
       max-width: 1170px;
       padding: 30px 90px;
       margin: 0 auto;
+
+      @include respond-to('mobile') {
+        padding: 30px 0;
+      }
+
+      @include respond-to('mobile-landscape') {
+        padding: 30px 0;
+      }
+
     }
 
   }
@@ -168,7 +177,8 @@
         }
 
         @include respond-to('mobile-landscape') {
-          width: 75%;
+          width: 101%;
+          margin: 25px 0;
         }
 
         p {

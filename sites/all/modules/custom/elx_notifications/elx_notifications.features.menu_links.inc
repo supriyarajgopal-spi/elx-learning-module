@@ -15,7 +15,7 @@ function elx_notifications_menu_default_menu_links() {
     'menu_name' => 'menu-header-menu',
     'link_path' => 'notifications',
     'router_path' => 'notifications',
-    'link_title' => 'Messages',
+    'link_title' => '✉',
     'options' => array(
       'link_badge' => array(
         'callback' => 'menu_badges_execute_view',

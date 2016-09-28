@@ -2,10 +2,23 @@
 .page-search-product-library {
 
   h1 {
+    display: none;
+  }
+
+  h2.pane-title {
     font-family: $font-family-serif;
     font-size: $font-size-lg-extralarge;
     font-weight: 100;
     text-align: center;
+
+    @include respond-to('mobile') {
+      font-size: 40px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      font-size: 40px;
+    }
+
   }
 
   .view-header {
@@ -123,6 +136,16 @@
           clear: both;
           border-bottom: 1px solid #ccc;
 
+          @include respond-to('mobile') {
+            height: 120px;
+            padding: 10px 0;
+          }
+
+          @include respond-to('mobile-landscape') {
+            height: 120px;
+            padding: 10px 0;
+          }
+
           .views-field-field-product-image {
             float: left;
             max-height: 240px;
@@ -131,9 +154,34 @@
             min-width: 240px;
             margin: 0 20px 0 0;
             text-align: center;
+
+            @include respond-to('mobile') {
+              max-height: 100px;
+              max-width: 100px;
+              min-height: 100px;
+              min-width: 100px;
+              margin: 0 10px 0 0;
+            }
+
+            @include respond-to('mobile-landscape') {
+              max-height: 100px;
+              max-width: 100px;
+              min-height: 100px;
+              min-width: 100px;
+              margin: 0 10px 0 0;
+            }
+
           }
 
           .views-field-field-display-title {
+
+            @include respond-to('mobile') {
+              padding: 22px 0 0;
+            }
+
+            @include respond-to('mobile-landscape') {
+              padding: 22px 0 0;
+            }
 
             a {
               margin: 22px 0 11px;
@@ -141,11 +189,29 @@
               font-size: $font-size-lg-large;
               text-decoration: none;
               color: #040a2b;
+
+              @include respond-to('mobile') {
+                font-size: 16px;
+              }
+
+              @include respond-to('mobile-landscape') {
+                font-size: 16px;
+              }
+
             }
           }
 
           .views-field-field-why-there-s-only-one {
             font-size: $font-size-large;
+
+            @include respond-to('mobile') {
+              display: none;
+            }
+
+            @include respond-to('mobile-landscape') {
+              display: none;
+            }
+
           }
 
         }

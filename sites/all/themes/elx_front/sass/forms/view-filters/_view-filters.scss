@@ -7,9 +7,29 @@
   padding: 30px 0;
   background-color: #e6e9ee;
 
+  @include respond-to('mobile') {
+    background-color: transparent;
+  }
+
+  @include respond-to('mobile-landscape') {
+    background-color: transparent;
+  }
+
   .views-exposed-form {
     max-width: 1024px;
     margin: 0 auto;
+
+    @include respond-to('mobile') {
+      background-color: #e6e9ee;
+      margin: 0 -20px;
+      padding: 10px 20px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      background-color: #e6e9ee;
+      margin: 0 -20px;
+      padding: 10px 20px;
+    }
 
     label {
       color: #040a2b;
@@ -43,6 +63,10 @@
     #edit-field-product-categories-tid-wrapper,
     .views-widget-sort-by {
       width: 33%;
+
+      @include respond-to('mobile') {
+        width: 100%;
+      }
 
       select {
         width: 100%;
@@ -126,8 +150,19 @@
 
     .views-exposed-widget.views-submit-button {
 
+      @include respond-to('mobile') {
+        float: right;
+        margin: 0;
+        padding: 0;
+      }
+
       #edit-submit-product-library {
         margin: 24px 0 0;
+
+        @include respond-to('mobile') {
+          margin: 30px 0 0;
+        }
+
       }
 
     }

@@ -45,7 +45,12 @@
 .h5p-dialogcards {
   .h5p-dialogcards-card-text-area strong,
   p {
-    font-size: 1rem;
+    font-size: 1.5em;
+  }
+
+  .h5p-dialogcards-card-text {
+    text-align: center;
+    position: relative !important;
   }
 
   .h5p-dialogcards-cardholder,
@@ -54,7 +59,7 @@
   }
 
   .h5p-dialogcards-card-text-wrapper {
-    text-align: left;
+
     height: inherit;
   }
 

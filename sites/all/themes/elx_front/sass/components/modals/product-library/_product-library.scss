@@ -35,6 +35,25 @@
       // background-color: #e6e9ee;
     }
 
+    h1 {
+      font-family: $font-family-serif;
+      font-size: 50px;
+      text-align: left;
+      font-weight: 100;
+    }
+
+    h2 {
+      font-family: $font-family-serif;
+      font-size: 28px;
+      font-weight: 100;
+    }
+
+    .node-product-detail {
+      max-width: 1170px;
+      padding: 30px 90px;
+      margin: 0 auto;
+    }
+
   }
 
   div.ctools-modal-content #modal-content::after {

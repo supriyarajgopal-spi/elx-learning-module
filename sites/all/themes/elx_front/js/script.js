@@ -208,7 +208,7 @@
       }
 
       /* LEVELS */
-      if (typeof Drupal.settings.H5PIntegration != 'undefined') {
+      if (typeof Drupal.settings.H5PIntegration != 'undefined' && typeof Drupal.settings.H5PIntegration.tid != 'undefined') {
         $('body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
       }
 
@@ -225,14 +225,14 @@
         });
       }, 10);
 
-      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length) {
+      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length || $('body.front').length ) {
 
         /* eslint-disable no-alert, no-console */
 
         // add learning category to modal
         $('#modalContent', context).ready(function () {
 
-          if (typeof Drupal.settings.H5PIntegration != 'undefined') {
+          if (typeof Drupal.settings.H5PIntegration != 'undefined' && typeof Drupal.settings.H5PIntegration.elxLevel.tid != 'undefined') {
             $('#modalContent').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
           }
 

@@ -290,6 +290,7 @@ body.html.node-type-h5p-content {
 
     padding-left: 0;
     padding-right: 0;
+    max-width: 100%;
 
     .layout-3col.layout-swap {
       padding-top: 0;
@@ -299,9 +300,13 @@ body.html.node-type-h5p-content {
       padding-left: 0;
       padding-right: 0;
 
-      > h1,
-      ul.tabs {
+      > h1 {
         display: none;
+      }
+
+      > ul.tabs {
+        display: block;
+        margin-left: 20px;
       }
 
       #modalContent {

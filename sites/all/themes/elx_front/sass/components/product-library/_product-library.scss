@@ -73,12 +73,12 @@
         width: 568px;
         float: right;
       }
-
+/*
       @include respond-to('tablet') {
         width: 100%;
         float: right;
       }
-
+*/
       .icon-holder-placement {
         bottom: 0;
         right: 50px;
@@ -157,7 +157,7 @@
         padding: 0;
 
         li {
-          height: 260px;
+          // min-height: 260px;
           margin: 0;
           padding: 23px 30px;
           list-style-type: none;
@@ -165,12 +165,12 @@
           border-bottom: 1px solid #ccc;
 
           @include respond-to('mobile') {
-            height: 120px;
+            min-height: 260px;
             padding: 10px 0;
           }
 
           @include respond-to('mobile-landscape') {
-            height: 120px;
+            min-height: 160px;
             padding: 10px 0;
           }
 
@@ -233,11 +233,11 @@
             font-size: $font-size-large;
 
             @include respond-to('mobile') {
-              display: none;
+              font-size: $font-size-small;
             }
 
             @include respond-to('mobile-landscape') {
-              display: none;
+              font-size: $font-size-small;
             }
 
           }

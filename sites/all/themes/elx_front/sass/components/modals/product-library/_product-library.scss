@@ -80,10 +80,12 @@
 
       @include respond-to('mobile') {
         margin: 0;
+        padding: 30px 0;
       }
 
       @include respond-to('mobile-landscape') {
         margin: 0;
+        padding: 30px 0;
       }
 /*
       @include respond-to('tablet') {
@@ -154,7 +156,7 @@
       .content .field-name-field-why-there-s-only-one {
         background-color: #e6e9ee;
         float: right;
-        margin: 25px 75px;
+        // margin: 25px 75px;
         padding: 10px 30px;
         width: 40%;
 

@@ -208,7 +208,7 @@
       }
 
       /* LEVELS */
-      if (typeof Drupal.settings.H5PIntegration != 'undefined' && typeof Drupal.settings.H5PIntegration.tid != 'undefined') {
+      if (typeof Drupal.settings.H5PIntegration != 'undefined' && typeof Drupal.settings.H5PIntegration.elxLevel != 'undefined') {
         $('body').addClass('level-' + Drupal.settings.H5PIntegration.elxLevel.tid);
       }
 

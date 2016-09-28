@@ -1203,6 +1203,11 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['required'] = TRUE;
   /* Relationship: Flags: favorites */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -1610,6 +1615,7 @@ function elx_home_page_views_default_views() {
     t('next ›'),
     t('last »'),
     t('SEE MORE'),
+    t('OG membership from node'),
     t('flag_favorite'),
     t('spin-the-wheel-link'),
     t('User pane'),

@@ -530,7 +530,7 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-use-modal';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Field: Content: Display title */
   $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
@@ -540,7 +540,7 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['field_display_title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_display_title']['alter']['alt'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   /* Sort criterion: Flags: Flagged time */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
@@ -640,7 +640,6 @@ function elx_user_dashboard_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('flag'),
-    t('use-ajax'),
     t('Activities'),
     t('View panes'),
     t('Suggested'),

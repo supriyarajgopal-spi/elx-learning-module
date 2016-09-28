@@ -61,16 +61,9 @@ function _registration_invite_user_register_access() {
 				$nodeTitle = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
 				$nodeCountry = $node_wrapper->field_country->value();
 				$nodeRegion = $node_wrapper->field_region_list->value();
-				
-				$nodeMarketArr = $node_wrapper->author->og_user_node->value();
-				$nodeMarkets = array();
-				if(is_array($nodeMarketArr) && !empty($nodeMarketArr))
-					foreach($nodeMarketArr as $market)
-						array_push($nodeMarkets,$market->title);
-
+				$market = $node_wrapper->field_market_name->value();
 				$nodeDoors = $node_wrapper->field_door->value();
-				
-				if($queryParams['account'] == $nodeTitle && $queryParams['country'] == $nodeCountry && $queryParams['region'] == $nodeRegion && in_array($queryParams['market'],$nodeMarkets) && in_array($queryParams['door'],$nodeDoors))
+				if ($queryParams['account'] == $nodeTitle && $queryParams['country'] == $nodeCountry && $queryParams['region'] == $nodeRegion && $queryParams['market'] == $market && in_array($queryParams['door'], $nodeDoors))
 					return user_is_anonymous();
 			}
 		}
@@ -192,6 +185,6 @@ function elx_guest_url_node_presave($node)
  */
 function elx_guest_url_preprocess_page(&$vars)
 {
-	if($vars['is_front'])
+	if($vars['is_front'] || current_path() == 'user/login')
 		drupal_add_js(drupal_get_path('module','elx_guest_url') . '/js/guest_url_redirect.js');
 }

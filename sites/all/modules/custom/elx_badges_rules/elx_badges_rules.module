@@ -434,3 +434,46 @@ function _get_bundles()
     }
 	return $bundles;
 }
+
+/**
+ * Implements hook_menu().
+ */
+function elx_badges_rules_menu() {
+	$items['admin/config/people/userpoints/consolidate'] = array(
+		'title' => 'Consolidate',
+		'page callback' => 'elx_badges_rules_consolidate_userpoints',
+		'access callback' => TRUE,
+	);
+
+	return $items;
+}
+
+/* This is a simple utility that can clean up the category column of the userpoints while tallying the points.
+ *
+ *
+ */
+function elx_badges_rules_consolidate_userpoints() {
+	$result = db_query("SELECT * FROM {userpoints} WHERE tid = 14095");
+	foreach ($result as $row) {
+		$item = array(
+			"points" => $row->points,
+			"tid" => 14135
+		);
+		if (!empty($row->uid)) {
+			//$delete = 0;$delete2 = 0;
+			$result2 = db_query("SELECT * FROM {userpoints} WHERE uid = ".$row->uid." AND tid = 14094");
+			foreach ($result2 as $row2) {
+				$item['points'] += $row2->points;
+				$delete = db_query("DELETE FROM {userpoints} WHERE pid = ".$row2->pid);
+			}
+			$result3 = db_query("SELECT * FROM {userpoints} WHERE uid = ".$row->uid." AND tid = 14095");
+			foreach ($result3 as $row3) {
+				$item['points'] += $row3->points;
+				$delete2 = db_query("DELETE FROM {userpoints} WHERE pid = ".$row3->pid);
+			}
+			$update = db_query("UPDATE {userpoints} SET tid = 14135, points = ".$item['points'].", max_points = ".$item['points']." WHERE pid = ".$row->pid);
+			//drupal_set_message("update 1st: ".$update." delete 2nd: ".$delete." delete 3rd: ".$delete2);
+		}
+	}
+	return "welcome to archie's";
+}

@@ -57,6 +57,7 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['fields']['field_hero_image']['field'] = 'field_hero_image';
   $handler->display->display_options['fields']['field_hero_image']['ui_name'] = 'Hero Image';
   $handler->display->display_options['fields']['field_hero_image']['label'] = '';
+  $handler->display->display_options['fields']['field_hero_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hero_image']['alter']['path'] = '[views_conditional]';
   $handler->display->display_options['fields']['field_hero_image']['alter']['link_class'] = '[views_conditional_1]';
   $handler->display->display_options['fields']['field_hero_image']['element_label_colon'] = FALSE;
@@ -65,6 +66,19 @@ function elx_levels_views_default_views() {
     'image_style' => 'tile_thumbnail',
     'image_link' => 'content',
   );
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged_1']['id'] = 'flagged_1';
+  $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged_1']['label'] = '';
+  $handler->display->display_options['fields']['flagged_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['flagged_1']['alter']['text'] = '<span class="field-content lp-viewed">[field_hero_image]</span>';
+  $handler->display->display_options['fields']['flagged_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['flagged_1']['empty'] = '[field_hero_image]';
+  $handler->display->display_options['fields']['flagged_1']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['flagged_1']['type'] = 'boolean';
+  $handler->display->display_options['fields']['flagged_1']['not'] = 0;
   /* Field: Headline */
   $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
   $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
@@ -301,6 +315,8 @@ function elx_levels_views_default_views() {
     t('SEE MORE'),
     t('OG membership from node'),
     t('flag_favorite'),
+    t('<span class="field-content lp-viewed">[field_hero_image]</span>'),
+    t('[field_hero_image]'),
     t('All'),
     t('Admin'),
     t('User Mobile'),

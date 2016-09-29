@@ -225,7 +225,7 @@
         });
       }, 10);
 
-      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length || $('body.front').length ) {
+      if ($('body.page-levels-all').length || $('body.page-levels-complete').length || $('body.page-levels-in-progress').length || $('body.front').length) {
 
         /* eslint-disable no-alert, no-console */
 
@@ -269,7 +269,7 @@
           // var btn_edit_profile = $('<div class="btn-edit-profile">').append('<span>Edit Profile & Password</span>').click(function () {
           //   window.location = window.location + '/password';
           // });
-          var btn_edit_profile = $('<div class="btn-edit-profile">').append('<a href="'+editpw+'"><span>Edit Profile & Password</span></a>'); // .click(function () {
+          var btn_edit_profile = $('<div class="btn-edit-profile">').append('<a href="' + editpw + '"><span>Edit Profile & Password</span></a>'); // .click(function () {
 
           $(new_main).append(div_elx_round);
           $(new_main).append(div_elx_name);
@@ -418,10 +418,25 @@
 
       /* ADD BACK TO LEVELS LINk */
       if ($('body.page-node.node-type-h5p-content').size()) {
-        // $('div.content').prepend('<a class="back-to-levels" href="/levels_all">&laquo; Back to Levels</a>');
-        $('div.content').prepend('<a class="gobacktowhereyoucamefrom"> &nbsp; </a>').click(function () {
-          window.history.go(-1);
+
+        $('div.content').prepend('<a class="gobacktowhereyoucamefrom"> &nbsp; </a>');
+
+        $('.gobacktowhereyoucamefrom').on('click', function () {
+          var referringURL = document.referrer;
+          var refTest = /levels_all()|levels_in_progress()|levels_completed()|myelx.com|cloudapp.net/g;
+          var fromELX = refTest.test(referringURL);
+
+          console.log( );
+
+          if (fromELX === true) {
+            window.history.go(-1);
+          }
+          else {
+            window.location = window.location.protocol + '//' + window.location.hostname + '/levels_all';
+          }
+
         });
+
       }
 
       /* SWIPER CHANGES */

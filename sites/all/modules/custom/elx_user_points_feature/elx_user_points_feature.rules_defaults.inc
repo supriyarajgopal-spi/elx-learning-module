@@ -35,7 +35,7 @@ function elx_user_points_feature_default_rules_configuration() {
         { "userpoints_action_grant_points" : {
             "user" : [ "site:current-user" ],
             "points" : "25",
-            "tid" : "14133",
+            "tid" : "14135",
             "entity" : [ "node" ],
             "description" : "Viewed [node:title] for the first time",
             "operation" : "Insert",
@@ -64,7 +64,7 @@ function elx_user_points_feature_default_rules_configuration() {
       { "userpoints_action_grant_points" : {
           "user" : [ "account" ],
           "points" : "500",
-          "tid" : "14133",
+          "tid" : "14135",
           "entity" : [ "account" ],
           "description" : "First time a user logged in",
           "operation" : "Insert",
@@ -137,7 +137,7 @@ function elx_user_points_feature_default_rules_configuration() {
       { "userpoints_action_grant_points" : {
           "user" : [ "user" ],
           "points" : "400",
-          "tid" : "14133",
+          "tid" : "14135",
           "entity" : [ "quiz" ],
           "description" : "For passing the quiz for the first time",
           "operation" : "Insert",
@@ -241,7 +241,7 @@ function elx_user_points_feature_default_rules_configuration() {
                         { "userpoints_action_grant_points" : {
                             "user" : [ "site:current-user" ],
                             "points" : [ "int-point-value" ],
-                            "tid" : "14133",
+                            "tid" : "14135",
                             "entity" : [ "node" ],
                             "description" : "For viewing a content object for the first time",
                             "operation" : "Insert",

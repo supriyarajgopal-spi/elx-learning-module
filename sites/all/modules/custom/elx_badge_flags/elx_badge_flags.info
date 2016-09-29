@@ -32,4 +32,3 @@ features[flag][] = well_read_100_badge
 features[flag][] = well_read_25_badge
 features[flag][] = well_read_50_badge
 features[flag][] = well_read_75_badge
-mtime = 1468586604

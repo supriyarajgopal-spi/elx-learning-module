@@ -8,12 +8,12 @@
 function elx_badges_rules_form_alter(&$form, &$form_state, $form_id)
 {
 	if($form_id == 'flag_form') //'flag_add_form' is the one where the Flag Type (Node, User, Taxonomy, etc) is chosen whereas 'flag_form' is the actual form
-	{	
+	{
 		$flag = isset($form['#flag']->name)?flag_load($form['#flag']->name):new stdClass();
-		
+
 		//Additional submit handler to add event to existing rule iff flag is being created, already existing flags are already handled in the rule
 		if(empty($flag))
-			$form['#submit'][] = '_elx_badges_rules_form_submit_add_flagged_event_to_rule'; 
+			$form['#submit'][] = '_elx_badges_rules_form_submit_add_flagged_event_to_rule';
 	}
 }
 
@@ -26,7 +26,7 @@ function _elx_badges_rules_form_submit_add_flagged_event_to_rule($form, &$form_s
 {
 	$values = $form_state['values'];
 	$flag = $form['#flag'];
-	
+
 	if($flag->entity_type == 'user' && !empty($flag->badge_description['value']))
 	{
 		$rule = rules_config_load('rules_badge_award_notification');
@@ -57,138 +57,138 @@ function elx_badges_rules_flag_delete($flag)
 function elx_badges_rules_rules_action_info() {
 	return array(
 		'_elx_badge_rules_get_h5p_max_points' => array(
-		  'label' => t('Load maximum H5P points of Interactive Content node (H5P quiz)'),
-		  'parameter' => array(
-			'node' => array(
-			  'type' => 'node',
-			  'label' => t('Interactive Content node'),
-			  'description' => t('The maximum points that can be scored on an Interactive Content node (H5P quiz)'),
+			'label' => t('Load maximum H5P points of Interactive Content node (H5P quiz)'),
+			'parameter' => array(
+				'node' => array(
+					'type' => 'node',
+					'label' => t('Interactive Content node'),
+					'description' => t('The maximum points that can be scored on an Interactive Content node (H5P quiz)'),
+				),
 			),
-		  ),
-		  'new variables' => array(
-			'loaded_h5p_max_points' => array(
-			  'type' => 'integer',
-			  'label' => t('Maximum H5P points'),
+			'new variables' => array(
+				'loaded_h5p_max_points' => array(
+					'type' => 'integer',
+					'label' => t('Maximum H5P points'),
+				),
 			),
-		  ),
-		  'group' => t('ELX'),
+			'group' => t('ELX'),
 		),
 		'_elx_badge_rules_get_h5p_user_points' => array(
-		  'label' => t('Load H5P points of user scored on Interactive Content node (H5P quiz)'),
-		  'parameter' => array(
-			'user' => array(
-			  'type' => 'user',
-			  'label' => t('User'),
-			  'description' => t('The user who scored points on the Interactive Content node (H5P quiz)'),
+			'label' => t('Load H5P points of user scored on Interactive Content node (H5P quiz)'),
+			'parameter' => array(
+				'user' => array(
+					'type' => 'user',
+					'label' => t('User'),
+					'description' => t('The user who scored points on the Interactive Content node (H5P quiz)'),
+				),
+				'node' => array(
+					'type' => 'node',
+					'label' => t('Interactive Content node'),
+					'description' => t('The points scored by user on the Interactive Content node (H5P quiz)'),
+				),
 			),
-			'node' => array(
-			  'type' => 'node',
-			  'label' => t('Interactive Content node'),
-			  'description' => t('The points scored by user on the Interactive Content node (H5P quiz)'),
+			'new variables' => array(
+				'loaded_h5p_user_points' => array(
+					'type' => 'integer',
+					'label' => t('H5P user points'),
+				),
 			),
-		  ),
-		  'new variables' => array(
-			'loaded_h5p_user_points' => array(
-			  'type' => 'integer',
-			  'label' => t('H5P user points'),
-			),
-		  ),
-		  'group' => t('ELX'),
+			'group' => t('ELX'),
 		),
 		'_elx_badge_rules_get_h5p_tagged_count' => array(
-		  'label' => t('Load count of H5P nodes tagged with a specific Learning Level'),
-		  'parameter' => array(
-			'user' => array(
-			  'type' => 'user',
-			  'label' => t('User'),
-			  'description' => t('The user on whose behalf this H5P node is flagged. Leave blank to ignore this condition.'),
-			  'optional' => TRUE,
+			'label' => t('Load count of H5P nodes tagged with a specific Learning Level'),
+			'parameter' => array(
+				'user' => array(
+					'type' => 'user',
+					'label' => t('User'),
+					'description' => t('The user on whose behalf this H5P node is flagged. Leave blank to ignore this condition.'),
+					'optional' => TRUE,
+				),
+				'taxonomy' => array(
+					'type' => 'integer',
+					'label' => t('Learning Level'),
+					'description' => t('The learning level that this H5P node is tagged with'),
+					'options list' => '_get_taxonomy_term_options',
+				),
 			),
-			'taxonomy' => array(
-			  'type' => 'integer',
-			  'label' => t('Learning Level'),
-			  'description' => t('The learning level that this H5P node is tagged with'),
-			  'options list' => '_get_taxonomy_term_options',
+			'new variables' => array(
+				'h5p_tagged_count' => array(
+					'type' => 'integer',
+					'label' => t('H5P tagged count'),
+				),
 			),
-		  ),
-		  'new variables' => array(
-			'h5p_tagged_count' => array(
-			  'type' => 'integer',
-			  'label' => t('H5P tagged count'),
-			),
-		  ),
-		  'group' => t('ELX'),
+			'group' => t('ELX'),
 		),
 		'_elx_get_list_count' => array(
-		  'label' => t('Get length of list'),
-		  'group' => t('ELX'),
-		  'parameter' => array(
-			'list' => array(
-			  'type' => '*',
-			  'label' => t('List'),
+			'label' => t('Get length of list'),
+			'group' => t('ELX'),
+			'parameter' => array(
+				'list' => array(
+					'type' => '*',
+					'label' => t('List'),
+				),
 			),
-		  ),
-		  'provides' => array(
-			'list_length' => array(
-			  'type' => 'integer',
-			  'label' => t('List length'),
+			'provides' => array(
+				'list_length' => array(
+					'type' => 'integer',
+					'label' => t('List length'),
+				),
 			),
-		  ),
 		),
 		'_elx_flag_fetch_node_bundle_by_user' => array(
-		  'label' => t('Fetch nodes flagged by user based on bundle'),
-          'parameter' => array(
-            'flag' => array(
-              'type' => 'flag',
-              'label' => t('Flag'),
-              'description' => t('The flag to check for.'),
-            ),
-            'flagging_user' => array(
-              'type' => 'user',
-              'label' => t('User who flagged the node'),
-              'description' => t('For non-global flags, this is the user who flagged the node. (For global flags, this argument is ignored.)'),
-            ),
-			//Borrowed from rules\modules\entity.rules.inc
-		    'bundle' => array(
-			  'type' => 'list<text>',
-			  'label' => t('Entity bundle'),
-			  'description' => t('The condition is met if the entity is of one of the selected bundles.'),
-			  'options list' => '_get_bundles',
-			  'restriction' => 'input',
-			  'optional' => TRUE
+			'label' => t('Fetch nodes flagged by user based on bundle'),
+			'parameter' => array(
+				'flag' => array(
+					'type' => 'flag',
+					'label' => t('Flag'),
+					'description' => t('The flag to check for.'),
+				),
+				'flagging_user' => array(
+					'type' => 'user',
+					'label' => t('User who flagged the node'),
+					'description' => t('For non-global flags, this is the user who flagged the node. (For global flags, this argument is ignored.)'),
+				),
+				//Borrowed from rules\modules\entity.rules.inc
+				'bundle' => array(
+					'type' => 'list<text>',
+					'label' => t('Entity bundle'),
+					'description' => t('The condition is met if the entity is of one of the selected bundles.'),
+					'options list' => '_get_bundles',
+					'restriction' => 'input',
+					'optional' => TRUE
+				),
 			),
-          ),
-          'provides' => array(
-            'content_flagged_by_user' => array(
-              'label' => t('Nodes flagged by user'),
-              'type' => 'list<node>',
-            ),
-          ),
-          'group' => t('ELX'),
-        ),
+			'provides' => array(
+				'content_flagged_by_user' => array(
+					'label' => t('Nodes flagged by user'),
+					'type' => 'list<node>',
+				),
+			),
+			'group' => t('ELX'),
+		),
 		'_elx_get_completed_levels_count' => array(
-		  'label' => t('Load count of Learning Levels completed by a user'),
-		  'parameter' => array(
-			'user' => array(
-			  'type' => 'user',
-			  'label' => t('User'),
-			  'description' => t('The user on whose behalf this H5P node is flagged.'),
+			'label' => t('Load count of Learning Levels completed by a user'),
+			'parameter' => array(
+				'user' => array(
+					'type' => 'user',
+					'label' => t('User'),
+					'description' => t('The user on whose behalf this H5P node is flagged.'),
+				),
+				'taxonomy' => array(
+					'type' => 'integer',
+					'label' => t('Learning Level'),
+					'description' => t('The learning level that this H5P node is tagged with. Leave blank to ignore this condition.'),
+					'options list' => '_get_taxonomy_term_options',
+					'optional' => TRUE,
+				),
 			),
-			'taxonomy' => array(
-			  'type' => 'integer',
-			  'label' => t('Learning Level'),
-			  'description' => t('The learning level that this H5P node is tagged with. Leave blank to ignore this condition.'),
-			  'options list' => '_get_taxonomy_term_options',
-			  'optional' => TRUE,
+			'new variables' => array(
+				'completed_level_count' => array(
+					'type' => 'integer',
+					'label' => t('Completed level count'),
+				),
 			),
-		  ),
-		  'new variables' => array(
-			'completed_level_count' => array(
-			  'type' => 'integer',
-			  'label' => t('Completed level count'),
-			),
-		  ),
-		  'group' => t('ELX'),
+			'group' => t('ELX'),
 		),
 	);
 }
@@ -197,14 +197,14 @@ function elx_badges_rules_rules_action_info() {
  * Rules action - Load the maximum points that can be scored on an Interactive Content node (H5P quiz)
  */
 function _elx_badge_rules_get_h5p_max_points($node) {
-  return array('loaded_h5p_max_points' => _elx_badge_rules_get_h5p_max_points_callback($node->vid));
+	return array('loaded_h5p_max_points' => _elx_badge_rules_get_h5p_max_points_callback($node->vid));
 }
 
 /**
  * Rules action - Load the points scored by user on the Interactive Content node (H5P quiz)
  */
 function _elx_badge_rules_get_h5p_user_points($account,$node) {
-  return array('loaded_h5p_user_points' => _elx_badge_rules_get_h5p_user_points_callback($account->uid,$node->vid));
+	return array('loaded_h5p_user_points' => _elx_badge_rules_get_h5p_user_points_callback($account->uid,$node->vid));
 }
 
 /**
@@ -217,20 +217,20 @@ function _elx_badge_rules_get_h5p_user_points($account,$node) {
  */
 function _elx_badge_rules_get_h5p_max_points_callback($vid = NULL)
 {
-  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
-  if(!$vid)
-    return -1; 
+	//When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+	if(!$vid)
+		return -1;
 
-  $query = db_select('h5p_points','p');
-  $query->join('node_revision','nr','nr.vid = p.content_id');
-  $query->fields('p',array('max_points'));
-  $query->condition('content_id',$vid,'=');
-  $query->groupBy('content_id');
-  $points = $query->execute()->fetchField();
-  if($points == null)
-	return -1;
-  else
-	return $points;
+	$query = db_select('h5p_points','p');
+	$query->join('node_revision','nr','nr.vid = p.content_id');
+	$query->fields('p',array('max_points'));
+	$query->condition('content_id',$vid,'=');
+	$query->groupBy('content_id');
+	$points = $query->execute()->fetchField();
+	if($points == null)
+		return -1;
+	else
+		return $points;
 }
 
 /**
@@ -245,20 +245,20 @@ function _elx_badge_rules_get_h5p_max_points_callback($vid = NULL)
  */
 function _elx_badge_rules_get_h5p_user_points_callback($uid = NULL,$vid = NULL)
 {
-  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
-  if(!$vid || !$uid)
-    return -1;
+	//When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+	if(!$vid || !$uid)
+		return -1;
 
-  $query = db_select('h5p_points','p');
-  $query->join('node_revision','nr','nr.vid = p.content_id');
-  $query->fields('p',array('points'));
-  $query->condition('content_id',$vid,'=');
-  $query->condition('uid',$uid,'=');
-  $points = $query->execute()->fetchField();
-  if($points == null)
-	return -1;
-  else
-	return $points;
+	$query = db_select('h5p_points','p');
+	$query->join('node_revision','nr','nr.vid = p.content_id');
+	$query->fields('p',array('points'));
+	$query->condition('content_id',$vid,'=');
+	$query->condition('uid',$uid,'=');
+	$points = $query->execute()->fetchField();
+	if($points == null)
+		return -1;
+	else
+		return $points;
 }
 
 /**
@@ -273,27 +273,27 @@ function _elx_badge_rules_get_h5p_user_points_callback($uid = NULL,$vid = NULL)
  */
 function _elx_badge_rules_get_h5p_tagged_count($user = NULL,$tid = NULL)
 {
-  $flagName = 'first_viewed_content';
-  
-  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
-  if(!$tid)
-    return -1; 
+	$flagName = 'first_viewed_content';
 
-  $query = db_select('h5p_nodes','h');
-  $query->join('field_data_field_learning_category','l','l.entity_id = h.nid');
-  if($user)
-  {
-	$query->join('flagging','fg','fg.entity_id = h.nid');
-	$query->join('flag','f','f.fid = fg.fid');
-	$query->condition('f.name',db_like($flagName),'LIKE');
-	$query->condition('fg.uid',$user->uid,'=');
-  }
-  $query->condition('l.field_learning_category_tid',$tid,'=');
-  $query->groupBy('l.field_learning_category_tid');
-  $query->addExpression('COUNT(nid)', 'count');
-  $count = $query->execute()->fetchField();
-  
-  return array('h5p_tagged_count' => $count);
+	//When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+	if(!$tid)
+		return -1;
+
+	$query = db_select('h5p_nodes','h');
+	$query->join('field_data_field_learning_category','l','l.entity_id = h.nid');
+	if($user)
+	{
+		$query->join('flagging','fg','fg.entity_id = h.nid');
+		$query->join('flag','f','f.fid = fg.fid');
+		$query->condition('f.name',db_like($flagName),'LIKE');
+		$query->condition('fg.uid',$user->uid,'=');
+	}
+	$query->condition('l.field_learning_category_tid',$tid,'=');
+	$query->groupBy('l.field_learning_category_tid');
+	$query->addExpression('COUNT(nid)', 'count');
+	$count = $query->execute()->fetchField();
+
+	return array('h5p_tagged_count' => $count);
 }
 
 /**
@@ -306,9 +306,9 @@ function _elx_badge_rules_get_h5p_tagged_count($user = NULL,$tid = NULL)
  */
 function _elx_get_list_count($list)
 {
-  return array(
-    'list_length' => is_array($list) ? count($list) : NULL,
-  );
+	return array(
+		'list_length' => is_array($list) ? count($list) : NULL,
+	);
 }
 
 /**
@@ -321,32 +321,32 @@ function _elx_get_list_count($list)
  *   Nodes to be flagged
  *
  * @return
- *   Nodes of the chosen bundles flagged by the user 
+ *   Nodes of the chosen bundles flagged by the user
  */
 function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
-  $query = db_select('flagging', 'fc')
-    ->fields('fc', array('entity_id'))
-    ->condition('fc.entity_type', $flag->entity_type)
-    ->condition('fc.fid', $flag->fid);
-  if(!empty($bundle))
-  {
-	$query->join('node','n','n.nid = fc.entity_id');
-	$query->condition('n.type',$bundle);
-  }
-  // For global flags the user parameter is ignored, so we add the
-  // extra 'uid' condition when the flag is NOT global.
-  if (!$flag->global) {
-    $user = entity_metadata_wrapper('user', $entity);
-    $sid = $user->flag_sid->value();
-    $query = $query->condition('fc.uid', $user->uid->value());
-    // Filter out any bad session ids and any users that aren't anonymous.
-    if (!empty($sid) && $sid != -1) {
-      $query->condition('fc.sid', $sid);
-    }
-  }
-  $result = $query->execute();
-  $flagged = $result->fetchCol();
-  return array('content_flagged_by_user' => $flagged);
+	$query = db_select('flagging', 'fc')
+		->fields('fc', array('entity_id'))
+		->condition('fc.entity_type', $flag->entity_type)
+		->condition('fc.fid', $flag->fid);
+	if(!empty($bundle))
+	{
+		$query->join('node','n','n.nid = fc.entity_id');
+		$query->condition('n.type',$bundle);
+	}
+	// For global flags the user parameter is ignored, so we add the
+	// extra 'uid' condition when the flag is NOT global.
+	if (!$flag->global) {
+		$user = entity_metadata_wrapper('user', $entity);
+		$sid = $user->flag_sid->value();
+		$query = $query->condition('fc.uid', $user->uid->value());
+		// Filter out any bad session ids and any users that aren't anonymous.
+		if (!empty($sid) && $sid != -1) {
+			$query->condition('fc.sid', $sid);
+		}
+	}
+	$result = $query->execute();
+	$flagged = $result->fetchCol();
+	return array('content_flagged_by_user' => $flagged);
 }
 
 /**
@@ -361,17 +361,17 @@ function _elx_flag_fetch_node_bundle_by_user($flag, $entity, $bundle) {
  */
 function _elx_get_completed_levels_count($user = NULL,$tid = 0)
 {
-  $flagName = 'first_viewed_content';
-  
-  //When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
-  if(!$user)
-    return -1;
-  
-  $tidCondition = ($tid) ? " where x.learning_level = ".$tid : " where 1=1"; //Optionally filter based on Learning Level passed as parameter
-  
-  //Get the total no. of nodes tagged with learning levels and the no. of nodes viewed by the user in the same query
-  //Borrowed from http://stackoverflow.com/questions/13400726/mysql-combine-two-queries
-  $query = db_query('select y.learning_level,total,viewed 
+	$flagName = 'first_viewed_content';
+
+	//When an Interactive Content node is not of type 'Question Set/Quiz', no points will be associated with it. In such a case, return -1.
+	if(!$user)
+		return -1;
+
+	$tidCondition = ($tid) ? " where x.learning_level = ".$tid : " where 1=1"; //Optionally filter based on Learning Level passed as parameter
+
+	//Get the total no. of nodes tagged with learning levels and the no. of nodes viewed by the user in the same query
+	//Borrowed from http://stackoverflow.com/questions/13400726/mysql-combine-two-queries
+	$query = db_query('select y.learning_level,total,viewed
 			from 
 			( select count(nid) as viewed, l.field_learning_category_tid as learning_level 
 			  from {h5p_nodes} as h join {field_data_field_learning_category} as l on l.entity_id = h.nid 
@@ -386,16 +386,16 @@ function _elx_get_completed_levels_count($user = NULL,$tid = 0)
 			  group by l.field_learning_category_tid
 			) y 
 			on x.learning_level = y.learning_level '.$tidCondition.' ',array(':flag_name' => $flagName,':flagging_uid' => $user->uid));
-  $rows = $query->fetchAll(); //Retrieve all records into an indexed array of stdClass objects.
-  
-  $completed_level_count = 0;
-  foreach($rows as $row)
-  {
-	if($row->total == $row->viewed)
-		$completed_level_count++;
-  }
-  
-  return array('completed_level_count' => $completed_level_count);
+	$rows = $query->fetchAll(); //Retrieve all records into an indexed array of stdClass objects.
+
+	$completed_level_count = 0;
+	foreach($rows as $row)
+	{
+		if($row->total == $row->viewed)
+			$completed_level_count++;
+	}
+
+	return array('completed_level_count' => $completed_level_count);
 }
 
 /**
@@ -407,17 +407,17 @@ function _elx_get_completed_levels_count($user = NULL,$tid = 0)
 function _get_taxonomy_term_options()
 {
 	$vname = 'learning_category';
-    $options = array('0' => t('--Select--'));
-    $vocabulary = taxonomy_vocabulary_machine_name_load($vname);
+	$options = array('0' => t('--Select--'));
+	$vocabulary = taxonomy_vocabulary_machine_name_load($vname);
 	$vid = $vocabulary->vid;
-    $options_source = taxonomy_get_tree($vid); //Get array of taxonomy term objects of this vocabulary
-    foreach($options_source as $item)
+	$options_source = taxonomy_get_tree($vid); //Get array of taxonomy term objects of this vocabulary
+	foreach($options_source as $item)
 	{
-        $key = $item->tid;
-        $value = $item->name;
-        $options[$key] = $value;
-    }
-    return $options;
+		$key = $item->tid;
+		$value = $item->name;
+		$options[$key] = $value;
+	}
+	return $options;
 }
 
 /**
@@ -428,9 +428,57 @@ function _get_taxonomy_term_options()
 function _get_bundles()
 {
 	$bundles = array();
-    $entity_info = entity_get_info('node');
-    foreach ($entity_info['bundles'] as $bundle_key => $bundle) {
-      $bundles[$bundle_key] = check_plain($bundle['label']);
-    }
+	$entity_info = entity_get_info('node');
+	foreach ($entity_info['bundles'] as $bundle_key => $bundle) {
+		$bundles[$bundle_key] = check_plain($bundle['label']);
+	}
 	return $bundles;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function elx_badges_rules_menu() {
+	$items['admin/config/people/userpoints/consolidate'] = array(
+		'title' => 'Consolidate',
+		'page callback' => 'elx_badges_rules_consolidate_userpoints',
+		'access callback' => TRUE,
+	);
+
+	return $items;
+}
+
+/* This is a simple utility that can clean up the category column of the userpoints while tallying the points.
+ *
+ *
+ */
+function elx_badges_rules_consolidate_userpoints() {
+	drupal_set_message("Consolidating UserPoints");
+	$item = array(
+		"concolidate_tids" => array(0,14094,14095),
+		"tid" => 14135
+	);
+	$output = '';
+	$result = db_query("SELECT * FROM {userpoints} WHERE tid = ".$item['concolidate_tids'][0]);
+	foreach ($result as $row) {
+		$item['points'] = $row->points;
+		if (!empty($row->uid)) {
+			//$delete = 0;$delete2 = 0;
+			$result2 = db_query("SELECT * FROM {userpoints} WHERE uid = ".$row->uid." AND tid = ".$item['consolidate_tids'][1]);
+			foreach ($result2 as $row2) {
+				$item['points'] += $row2->points;
+				$delete = db_query("DELETE FROM {userpoints} WHERE pid = ".$row2->pid);
+				$output .= "Delete User Point (Category ID:PID) ".$item['consolidate_tids'][1].":".$row2->pid."<br>";
+			}
+			$result3 = db_query("SELECT * FROM {userpoints} WHERE uid = ".$row->uid." AND tid = ".$item['consolidate_tids'][2]);
+			foreach ($result3 as $row3) {
+				$item['points'] += $row3->points;
+				$delete2 = db_query("DELETE FROM {userpoints} WHERE pid = ".$row3->pid);
+				$output .= "Delete User Point (Category ID:PID) ".$item['consolidate_tids'][2].":".$row3->pid."<br>";
+			}
+			$update = db_query("UPDATE {userpoints} SET tid = ".$item['tid'].", points = ".$item['points'].", max_points = ".$item['points']." WHERE pid = ".$row->pid);
+			$output .= "New Category ID : ".$item['tid'].", Points = ".$item['points'].", Max Points = ".$item['points']." UserPoint ID ".$row->pid."<br>";
+		}
+	}
+	return "<h1>User Points Concolidation Has Run</h1><div>".$output."</div>";
 }

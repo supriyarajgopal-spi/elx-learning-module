@@ -1,5 +1,4 @@
 name = ELX Badges Rules
-version = 7.x-1.0
 core = 7.x
 package = ELX
 dependencies[] = elx_badges_rules

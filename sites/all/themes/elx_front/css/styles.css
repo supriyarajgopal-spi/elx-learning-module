@@ -1140,177 +1140,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg") no-repeat 0 0;
 }
 
-/* line 152, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .high-five-no,
-.page-badges .high-five-yes,
-.page-user .high-five-no,
-.page-user .high-five-yes,
-.pane-elx-recent-badges-recent-badges .high-five-no,
-.pane-elx-recent-badges-recent-badges .high-five-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg") no-repeat 0 0;
-}
-
-/* line 157, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .little-brown-bottle-no,
-.page-badges .little-brown-bottle-yes,
-.page-user .little-brown-bottle-no,
-.page-user .little-brown-bottle-yes,
-.pane-elx-recent-badges-recent-badges .little-brown-bottle-no,
-.pane-elx-recent-badges-recent-badges .little-brown-bottle-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png") no-repeat 0 0;
-}
-
-/* line 162, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .new-dimension-no,
-.page-badges .new-dimension-yes,
-.page-user .new-dimension-no,
-.page-user .new-dimension-yes,
-.pane-elx-recent-badges-recent-badges .new-dimension-no,
-.pane-elx-recent-badges-recent-badges .new-dimension-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png") no-repeat 0 0;
-}
-
-/* line 167, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .on-your-way-no,
-.page-badges .on-your-way-yes,
-.page-user .on-your-way-no,
-.page-user .on-your-way-yes,
-.pane-elx-recent-badges-recent-badges .on-your-way-no,
-.pane-elx-recent-badges-recent-badges .on-your-way-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg") no-repeat 0 0;
-}
-
-/* line 172, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .perfect-ten-no,
-.page-badges .perfect-ten-yes,
-.page-user .perfect-ten-no,
-.page-user .perfect-ten-yes,
-.pane-elx-recent-badges-recent-badges .perfect-ten-no,
-.pane-elx-recent-badges-recent-badges .perfect-ten-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg") no-repeat 0 0;
-}
-
-/* line 177, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .product-pro-no,
-.page-badges .product-pro-yes,
-.page-user .product-pro-no,
-.page-user .product-pro-yes,
-.pane-elx-recent-badges-recent-badges .product-pro-no,
-.pane-elx-recent-badges-recent-badges .product-pro-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg") no-repeat 0 0;
-}
-
-/* line 182, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .rare-beauty-no,
-.page-badges .rare-beauty-yes,
-.page-user .rare-beauty-no,
-.page-user .rare-beauty-yes,
-.pane-elx-recent-badges-recent-badges .rare-beauty-no,
-.pane-elx-recent-badges-recent-badges .rare-beauty-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png") no-repeat 0 0;
-}
-
-/* line 187, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .service-star-no,
-.page-badges .service-star-yes,
-.page-user .service-star-no,
-.page-user .service-star-yes,
-.pane-elx-recent-badges-recent-badges .service-star-no,
-.pane-elx-recent-badges-recent-badges .service-star-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg") no-repeat 0 0;
-}
-
-/* line 192, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .sleeping-beauty-no,
-.page-badges .sleeping-beauty-yes,
-.page-user .sleeping-beauty-no,
-.page-user .sleeping-beauty-yes,
-.pane-elx-recent-badges-recent-badges .sleeping-beauty-no,
-.pane-elx-recent-badges-recent-badges .sleeping-beauty-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png") no-repeat 0 0;
-}
-
-/* line 197, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .we-heard-you-no,
-.page-badges .we-heard-you-yes,
-.page-user .we-heard-you-no,
-.page-user .we-heard-you-yes,
-.pane-elx-recent-badges-recent-badges .we-heard-you-no,
-.pane-elx-recent-badges-recent-badges .we-heard-you-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg") no-repeat 0 0;
-}
-
-/* line 202, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .we-heart-you-no,
-.page-badges .we-heart-you-yes,
-.page-user .we-heart-you-no,
-.page-user .we-heart-you-yes,
-.pane-elx-recent-badges-recent-badges .we-heart-you-no,
-.pane-elx-recent-badges-recent-badges .we-heart-you-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg") no-repeat 0 0;
-}
-
-/* line 207, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .welcome-no,
-.page-badges .welcome-yes,
-.page-user .welcome-no,
-.page-user .welcome-yes,
-.pane-elx-recent-badges-recent-badges .welcome-no,
-.pane-elx-recent-badges-recent-badges .welcome-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg") no-repeat 0 0;
-}
-
-/* line 212, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .well-read-25-no,
-.page-badges .well-read-25-yes,
-.page-user .well-read-25-no,
-.page-user .well-read-25-yes,
-.pane-elx-recent-badges-recent-badges .well-read-25-no,
-.pane-elx-recent-badges-recent-badges .well-read-25-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg") no-repeat 0 0;
-}
-
-/* line 217, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .well-read-50-no,
-.page-badges .well-read-50-yes,
-.page-user .well-read-50-no,
-.page-user .well-read-50-yes,
-.pane-elx-recent-badges-recent-badges .well-read-50-no,
-.pane-elx-recent-badges-recent-badges .well-read-50-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg") no-repeat 0 0;
-}
-
-/* line 222, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .well-read-75-no,
-.page-badges .well-read-75-yes,
-.page-user .well-read-75-no,
-.page-user .well-read-75-yes,
-.pane-elx-recent-badges-recent-badges .well-read-75-no,
-.pane-elx-recent-badges-recent-badges .well-read-75-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg") no-repeat 0 0;
-}
-
-/* line 227, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .well-read-100-no,
-.page-badges .well-read-100-yes,
-.page-user .well-read-100-no,
-.page-user .well-read-100-yes,
-.pane-elx-recent-badges-recent-badges .well-read-100-no,
-.pane-elx-recent-badges-recent-badges .well-read-100-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg") no-repeat 0 0;
-}
-
-/* line 232, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .perfect-present-no,
-.page-badges .perfect-present-yes,
-.page-user .perfect-present-no,
-.page-user .perfect-present-yes,
-.pane-elx-recent-badges-recent-badges .perfect-present-no,
-.pane-elx-recent-badges-recent-badges .perfect-present-yes {
-  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect-present.png") no-repeat 0 0;
-}
-
-/* line 237, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 152, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .gift-genius-no,
 .page-badges .gift-genius-yes,
 .page-user .gift-genius-no,
@@ -1320,7 +1150,177 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-gift-genius.png") no-repeat 0 0;
 }
 
-/* line 242, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+/* line 157, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .high-five-no,
+.page-badges .high-five-yes,
+.page-user .high-five-no,
+.page-user .high-five-yes,
+.pane-elx-recent-badges-recent-badges .high-five-no,
+.pane-elx-recent-badges-recent-badges .high-five-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg") no-repeat 0 0;
+}
+
+/* line 162, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .little-brown-bottle-no,
+.page-badges .little-brown-bottle-yes,
+.page-user .little-brown-bottle-no,
+.page-user .little-brown-bottle-yes,
+.pane-elx-recent-badges-recent-badges .little-brown-bottle-no,
+.pane-elx-recent-badges-recent-badges .little-brown-bottle-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png") no-repeat 0 0;
+}
+
+/* line 167, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .new-dimension-no,
+.page-badges .new-dimension-yes,
+.page-user .new-dimension-no,
+.page-user .new-dimension-yes,
+.pane-elx-recent-badges-recent-badges .new-dimension-no,
+.pane-elx-recent-badges-recent-badges .new-dimension-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png") no-repeat 0 0;
+}
+
+/* line 172, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .on-your-way-no,
+.page-badges .on-your-way-yes,
+.page-user .on-your-way-no,
+.page-user .on-your-way-yes,
+.pane-elx-recent-badges-recent-badges .on-your-way-no,
+.pane-elx-recent-badges-recent-badges .on-your-way-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg") no-repeat 0 0;
+}
+
+/* line 177, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .perfect-present-no,
+.page-badges .perfect-present-yes,
+.page-user .perfect-present-no,
+.page-user .perfect-present-yes,
+.pane-elx-recent-badges-recent-badges .perfect-present-no,
+.pane-elx-recent-badges-recent-badges .perfect-present-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect-present.png") no-repeat 0 0;
+}
+
+/* line 182, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .perfect-ten-no,
+.page-badges .perfect-ten-yes,
+.page-user .perfect-ten-no,
+.page-user .perfect-ten-yes,
+.pane-elx-recent-badges-recent-badges .perfect-ten-no,
+.pane-elx-recent-badges-recent-badges .perfect-ten-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg") no-repeat 0 0;
+}
+
+/* line 187, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .product-pro-no,
+.page-badges .product-pro-yes,
+.page-user .product-pro-no,
+.page-user .product-pro-yes,
+.pane-elx-recent-badges-recent-badges .product-pro-no,
+.pane-elx-recent-badges-recent-badges .product-pro-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg") no-repeat 0 0;
+}
+
+/* line 192, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .rare-beauty-no,
+.page-badges .rare-beauty-yes,
+.page-user .rare-beauty-no,
+.page-user .rare-beauty-yes,
+.pane-elx-recent-badges-recent-badges .rare-beauty-no,
+.pane-elx-recent-badges-recent-badges .rare-beauty-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png") no-repeat 0 0;
+}
+
+/* line 197, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .service-star-no,
+.page-badges .service-star-yes,
+.page-user .service-star-no,
+.page-user .service-star-yes,
+.pane-elx-recent-badges-recent-badges .service-star-no,
+.pane-elx-recent-badges-recent-badges .service-star-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg") no-repeat 0 0;
+}
+
+/* line 202, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .sleeping-beauty-no,
+.page-badges .sleeping-beauty-yes,
+.page-user .sleeping-beauty-no,
+.page-user .sleeping-beauty-yes,
+.pane-elx-recent-badges-recent-badges .sleeping-beauty-no,
+.pane-elx-recent-badges-recent-badges .sleeping-beauty-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png") no-repeat 0 0;
+}
+
+/* line 207, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .we-heard-you-no,
+.page-badges .we-heard-you-yes,
+.page-user .we-heard-you-no,
+.page-user .we-heard-you-yes,
+.pane-elx-recent-badges-recent-badges .we-heard-you-no,
+.pane-elx-recent-badges-recent-badges .we-heard-you-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg") no-repeat 0 0;
+}
+
+/* line 212, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .we-heart-you-no,
+.page-badges .we-heart-you-yes,
+.page-user .we-heart-you-no,
+.page-user .we-heart-you-yes,
+.pane-elx-recent-badges-recent-badges .we-heart-you-no,
+.pane-elx-recent-badges-recent-badges .we-heart-you-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg") no-repeat 0 0;
+}
+
+/* line 217, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .welcome-no,
+.page-badges .welcome-yes,
+.page-user .welcome-no,
+.page-user .welcome-yes,
+.pane-elx-recent-badges-recent-badges .welcome-no,
+.pane-elx-recent-badges-recent-badges .welcome-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg") no-repeat 0 0;
+}
+
+/* line 222, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .well-read-25-no,
+.page-badges .well-read-25-yes,
+.page-user .well-read-25-no,
+.page-user .well-read-25-yes,
+.pane-elx-recent-badges-recent-badges .well-read-25-no,
+.pane-elx-recent-badges-recent-badges .well-read-25-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg") no-repeat 0 0;
+}
+
+/* line 227, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .well-read-50-no,
+.page-badges .well-read-50-yes,
+.page-user .well-read-50-no,
+.page-user .well-read-50-yes,
+.pane-elx-recent-badges-recent-badges .well-read-50-no,
+.pane-elx-recent-badges-recent-badges .well-read-50-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg") no-repeat 0 0;
+}
+
+/* line 232, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .well-read-75-no,
+.page-badges .well-read-75-yes,
+.page-user .well-read-75-no,
+.page-user .well-read-75-yes,
+.pane-elx-recent-badges-recent-badges .well-read-75-no,
+.pane-elx-recent-badges-recent-badges .well-read-75-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg") no-repeat 0 0;
+}
+
+/* line 237, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
+.page-badges .well-read-100-no,
+.page-badges .well-read-100-yes,
+.page-user .well-read-100-no,
+.page-user .well-read-100-yes,
+.pane-elx-recent-badges-recent-badges .well-read-100-no,
+.pane-elx-recent-badges-recent-badges .well-read-100-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg") no-repeat 0 0;
+}
+
+/* line 242, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .beautiful-start-no,
 .page-badges .beautiful-start-yes,
 .page-user .beautiful-start-no,
@@ -1330,9 +1330,7 @@ th {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautiful-start.png") no-repeat 0 0;
 }
 
-/* line 247, /var/www/html/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
-.page-badges .perfect-present-no,
-.page-badges .gift-genius-no,
+/* line 247, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/badges/_badges.scss */
 .page-badges .beautiful-start-no,
 .page-badges .three-minute-beauty-no,
 .page-badges .one-hundred-percent-club-no,
@@ -1342,10 +1340,12 @@ th {
 .page-badges .first-1000-points-no,
 .page-badges .first-5000-points-no,
 .page-badges .first-10000-points-no,
+.page-badges .gift-genius-no,
 .page-badges .high-five-no,
 .page-badges .little-brown-bottle-no,
 .page-badges .new-dimension-no,
 .page-badges .on-your-way-no,
+.page-badges .perfect-present-no,
 .page-badges .perfect-ten-no,
 .page-badges .product-pro-no,
 .page-badges .rare-beauty-no,
@@ -1358,8 +1358,6 @@ th {
 .page-badges .well-read-50-no,
 .page-badges .well-read-75-no,
 .page-badges .well-read-100-no,
-.page-user .perfect-present-no,
-.page-user .gift-genius-no,
 .page-user .beautiful-start-no,
 .page-user .three-minute-beauty-no,
 .page-user .one-hundred-percent-club-no,
@@ -1369,10 +1367,12 @@ th {
 .page-user .first-1000-points-no,
 .page-user .first-5000-points-no,
 .page-user .first-10000-points-no,
+.page-user .gift-genius-no,
 .page-user .high-five-no,
 .page-user .little-brown-bottle-no,
 .page-user .new-dimension-no,
 .page-user .on-your-way-no,
+.page-user .perfect-present-no,
 .page-user .perfect-ten-no,
 .page-user .product-pro-no,
 .page-user .rare-beauty-no,
@@ -1385,8 +1385,6 @@ th {
 .page-user .well-read-50-no,
 .page-user .well-read-75-no,
 .page-user .well-read-100-no,
-.pane-elx-recent-badges-recent-badges .perfect-present-no,
-.pane-elx-recent-badges-recent-badges .gift-genius-no,
 .pane-elx-recent-badges-recent-badges .beautiful-start-no,
 .pane-elx-recent-badges-recent-badges .three-minute-beauty-no,
 .pane-elx-recent-badges-recent-badges .one-hundred-percent-club-no,
@@ -1396,10 +1394,12 @@ th {
 .pane-elx-recent-badges-recent-badges .first-1000-points-no,
 .pane-elx-recent-badges-recent-badges .first-5000-points-no,
 .pane-elx-recent-badges-recent-badges .first-10000-points-no,
+.pane-elx-recent-badges-recent-badges .gift-genius-no,
 .pane-elx-recent-badges-recent-badges .high-five-no,
 .pane-elx-recent-badges-recent-badges .little-brown-bottle-no,
 .pane-elx-recent-badges-recent-badges .new-dimension-no,
 .pane-elx-recent-badges-recent-badges .on-your-way-no,
+.pane-elx-recent-badges-recent-badges .perfect-present-no,
 .pane-elx-recent-badges-recent-badges .perfect-ten-no,
 .pane-elx-recent-badges-recent-badges .product-pro-no,
 .pane-elx-recent-badges-recent-badges .rare-beauty-no,
@@ -4915,324 +4915,368 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   visibility: hidden;
 }
 
-/* line 976, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no,
+/* line 976, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no {
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-no {
   display: none;
 }
 
+<<<<<<< HEAD
 /* line 1003, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes,
+=======
+/* line 1006, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes,
+>>>>>>> 7c4fb6fc50182439be89e8a1b1ececf6bb3f9e5e
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes {
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes {
   display: block;
 }
 
-/* line 1030, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no,
+/* line 1036, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-yes,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes {
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes {
   height: 33px;
   width: 33px;
   background-size: 33px;
 }
 
+<<<<<<< HEAD
 /* line 1082, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no .field-content,
+=======
+/* line 1094, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no .field-content,
+>>>>>>> 7c4fb6fc50182439be89e8a1b1ececf6bb3f9e5e
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-no .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-no .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-no .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beautiful-start-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .one-hundred-percent-club-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-1000-points-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-5000-points-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .first-10000-points-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .gift-genius-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .high-five-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .little-brown-bottle-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .beauty-queen-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .new-dimension-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .on-your-way-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-present-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .perfect-ten-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .product-pro-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .rare-beauty-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .service-star-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .sleeping-beauty-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heard-you-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .we-heart-you-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .welcome-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-25-yes .field-content,
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-50-yes .field-content,
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-75-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .three-minute-beauty-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .fast-learner-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes .field-content,
-.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .early-bird-yes .field-content {
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-badges.view-id-badges.view-display-id-my_badges .view-content .well-read-100-yes .field-content {
   text-indent: -5000px;
 }
 
-/* line 1089, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1101, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges .view-footer {
   display: none;
 }
 
-/* line 1096, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1108, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-menu-menu-header-user-menu-2 ul.menu {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 1102, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1114, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .three-minute-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .three-minute-beauty-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-3minbeauty.svg") no-repeat 0 0;
 }
 
-/* line 1107, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1119, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .one-hundred-percent-club-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .one-hundred-percent-club-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-100club.svg") no-repeat 0 0;
 }
 
-/* line 1112, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1124, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .beauty-queen-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .beauty-queen-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautyqueen.png") no-repeat 0 0;
 }
 
-/* line 1117, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1129, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .early-bird-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .early-bird-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-earlybird.svg") no-repeat 0 0;
 }
 
-/* line 1122, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1134, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .fast-learner-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .fast-learner-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-fastlearner.svg") no-repeat 0 0;
 }
 
-/* line 1127, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1139, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-1000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-1000-points-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first1000.svg") no-repeat 0 0;
 }
 
-/* line 1132, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1144, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-5000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-5000-points-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first5000.svg") no-repeat 0 0;
 }
 
-/* line 1137, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1149, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-10000-points-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .first-10000-points-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg") no-repeat 0 0;
 }
 
-/* line 1142, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1154, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .gift-genius-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .gift-genius-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-gift-genius.png") no-repeat 0 0;
+}
+
+/* line 1159, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .high-five-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .high-five-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg") no-repeat 0 0;
 }
 
-/* line 1147, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .little-brown-bottle-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .little-brown-bottle-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-littlebrownbottle_0.png") no-repeat 0 0;
 }
 
-/* line 1152, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1169, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .new-dimension-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .new-dimension-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-newdimension.png") no-repeat 0 0;
 }
 
-/* line 1157, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1174, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .on-your-way-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .on-your-way-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg") no-repeat 0 0;
 }
 
-/* line 1162, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1179, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+.qtip-content.qtip-content #mini-panel-header_user_menu .perfect-present-no,
+.qtip-content.qtip-content #mini-panel-header_user_menu .perfect-present-yes {
+  background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect-present.png") no-repeat 0 0;
+}
+
+/* line 1184, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .perfect-ten-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .perfect-ten-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect10.svg") no-repeat 0 0;
 }
 
-/* line 1167, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1189, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .product-pro-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .product-pro-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-productpro.svg") no-repeat 0 0;
 }
 
-/* line 1172, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1194, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .rare-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .rare-beauty-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-rarebeauty.png") no-repeat 0 0;
 }
 
-/* line 1177, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1199, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .service-star-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .service-star-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-servicestarblue.svg") no-repeat 0 0;
 }
 
-/* line 1182, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1204, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .sleeping-beauty-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .sleeping-beauty-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-sleepingbeauty.png") no-repeat 0 0;
 }
 
-/* line 1187, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1209, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .we-heard-you-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .we-heard-you-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheardyou.svg") no-repeat 0 0;
 }
 
-/* line 1192, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1214, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .we-heart-you-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .we-heart-you-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-weheartyou.svg") no-repeat 0 0;
 }
 
-/* line 1197, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1219, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .welcome-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .welcome-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-welcome.svg") no-repeat 0 0;
 }
 
-/* line 1202, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1224, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-25-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-25-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread25.svg") no-repeat 0 0;
 }
 
-/* line 1207, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1229, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-50-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-50-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread50.svg") no-repeat 0 0;
 }
 
-/* line 1212, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1234, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-75-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-75-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread75.svg") no-repeat 0 0;
 }
 
-/* line 1217, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1239, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-100-no,
 .qtip-content.qtip-content #mini-panel-header_user_menu .well-read-100-yes {
   background: url("/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg") no-repeat 0 0;
 }
 
-/* line 1230, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1252, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .qtip-content.qtip-content ul.menu li::after {
   position: relative;
   color: #9eafff;
@@ -5243,7 +5287,11 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   font-family: "elx-icons";
 }
 
+<<<<<<< HEAD
 /* line 1241, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+=======
+/* line 1263, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
+>>>>>>> 7c4fb6fc50182439be89e8a1b1ececf6bb3f9e5e
 .qtip-content.qtip-content ul.menu a {
   text-decoration: none;
   color: #9eafff;
@@ -5255,110 +5303,110 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   border-bottom: 1px solid #1e2441;
 }
 
-/* line 1257, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1279, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-1 {
   background: #040a2b;
 }
 
-/* line 1261, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1283, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-1 ul.menu {
   padding-left: 0;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 1261, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1283, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   .pane-menu-menu-header-user-menu-1 ul.menu {
     margin: 0;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 1261, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1283, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   .pane-menu-menu-header-user-menu-1 ul.menu {
     margin: 0;
   }
 }
 
-/* line 1272, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1294, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-1 ul.menu li {
   padding: 20px;
   border-bottom: 1px solid #1e2441;
 }
 
-/* line 1276, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1298, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-1 ul.menu li:hover {
   background-color: #1e2341;
 }
 
-/* line 1280, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1302, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-1 ul.menu li a {
   text-decoration: none;
 }
 
 /*Menu in dropdown during mobile and tablet*/
-/* line 1289, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1311, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 div#mini-panel-header_user_menu {
   background: #040a2b;
 }
 
-/* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
   padding-left: 0;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     margin: 0;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     margin: 0;
   }
 }
 
-/* line 1303, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1325, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu li {
   padding: 20px;
   border-bottom: 1px solid #1e2441;
 }
 
-/* line 1307, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1329, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu li:hover {
   background-color: #1e2341;
 }
 
-/* line 1311, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1333, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu li a {
   text-decoration: none;
 }
 
 @media (min-width: 990px) {
-  /* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     display: none;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     display: none;
   }
 }
 
 @media (min-width: 1500px) {
-  /* line 1292, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     display: none;
   }
 }
 
 /*Search form in dropdown during mobile and tablet*/
-/* line 1334, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1356, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 .form-item-search-block-form::before {
   content: '\e60f';
   position: absolute;
@@ -5369,7 +5417,7 @@ form#search-block-form--2 .form-item-search-block-form::before {
   right: 15px;
 }
 
-/* line 1344, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1366, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 input[type='text'] {
   border-bottom: 1px solid transparent;
   border-top: 0;
@@ -5390,19 +5438,19 @@ form#search-block-form--2 input[type='text'] {
   font-size: 18px;
 }
 
-/* line 1362, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1384, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 input[type='text']::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   opacity: 1 !important;
 }
 
-/* line 1367, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1389, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 input[type='text']::-moz-placeholder {
   /* Firefox 19+ */
   opacity: 1;
 }
 
-/* line 1372, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1394, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 input[type='text']:focus {
   width: 300px;
   outline-color: 0 transparent;
@@ -5413,7 +5461,7 @@ form#search-block-form--2 input[type='text']:focus {
   border-bottom: 1px solid #fff;
 }
 
-/* line 1383, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1405, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 form#search-block-form--2 input[type='submit'] {
   position: absolute;
   top: 0;
@@ -5422,21 +5470,21 @@ form#search-block-form--2 input[type='submit'] {
 }
 
 @media (min-width: 990px) {
-  /* line 1332, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1354, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   form#search-block-form--2 {
     display: none;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 1332, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1354, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   form#search-block-form--2 {
     display: none;
   }
 }
 
 @media (min-width: 1500px) {
-  /* line 1332, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1354, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   form#search-block-form--2 {
     display: none;
   }
@@ -5444,7 +5492,7 @@ form#search-block-form--2 input[type='submit'] {
 
 /* Hide advanced menu display on mobile */
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 1401, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1423, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   .pane-levels-quizz-progress-completed-count,
   .pane-levels-quizz-progress-closest-completion,
   .pane-dashboard-user-activities-suggested,
@@ -5455,7 +5503,7 @@ form#search-block-form--2 input[type='submit'] {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 1401, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+  /* line 1423, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
   .pane-levels-quizz-progress-completed-count,
   .pane-levels-quizz-progress-closest-completion,
   .pane-dashboard-user-activities-suggested,
@@ -5466,21 +5514,21 @@ form#search-block-form--2 input[type='submit'] {
 }
 
 /*Recent Badges*/
-/* line 1418, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1440, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-elx-recent-badges-recent-badges {
   padding: 0 20px;
   margin-top: 10px;
   margin-bottom: 45px;
 }
 
-/* line 1423, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1445, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-elx-recent-badges-recent-badges h2 {
   font-size: .95em;
   color: #999;
   float: left;
 }
 
-/* line 1429, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1451, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-elx-recent-badges-recent-badges img {
   width: 32px;
   position: relative;
@@ -5488,27 +5536,27 @@ form#search-block-form--2 input[type='submit'] {
   margin-left: 5px;
 }
 
-/* line 1438, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1460, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-2 {
   background-color: #040a2b;
 }
 
-/* line 1441, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1463, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-2 ul.menu {
   padding: 0;
 }
 
-/* line 1444, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1466, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-2 ul.menu li {
   padding: 20px;
 }
 
-/* line 1447, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1469, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-menu-menu-header-user-menu-2 ul.menu li:hover {
   background-color: #1e2341;
 }
 
-/* line 1455, /var/www/html/sites/all/themes/elx_front/sass/components/header/_header.scss */
+/* line 1477, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/header/_header.scss */
 .pane-my-progress {
   padding: 0 20px;
 }
@@ -8224,12 +8272,12 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   .page-home-page .modal-default div.modal-header a.close,
   .page-product-library .modal-default div.modal-header a.close,
   .page-search-product-library .modal-default div.modal-header a.close {
-    margin-top: -18px;
+    margin-top: -28px;
     margin-right: -22px;
     background-size: 50px;
-    width: 16px;
-    height: 16px;
-    background-size: 50px;
+    width: 20px;
+    height: 20px;
+    background-size: 80px;
   }
 }
 
@@ -8251,7 +8299,25 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   border: 0;
 }
 
-/* line 30, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content,
+  .page-product-library div.ctools-modal-content,
+  .page-search-product-library div.ctools-modal-content {
+    background-color: #fff;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 26, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content,
+  .page-product-library div.ctools-modal-content,
+  .page-search-product-library div.ctools-modal-content {
+    background-color: #fff;
+  }
+}
+
+/* line 38, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page div.ctools-modal-content .modal-header,
 .page-product-library div.ctools-modal-content .modal-header,
 .page-search-product-library div.ctools-modal-content .modal-header {
@@ -8261,7 +8327,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   z-index: 10;
 }
 
-/* line 38, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 46, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page div.ctools-modal-content h1,
 .page-product-library div.ctools-modal-content h1,
 .page-search-product-library div.ctools-modal-content h1 {
@@ -8269,9 +8335,10 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-size: 50px;
   text-align: left;
   font-weight: 100;
+  display: block;
 }
 
-/* line 45, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 54, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page div.ctools-modal-content h2,
 .page-product-library div.ctools-modal-content h2,
 .page-search-product-library div.ctools-modal-content h2 {
@@ -8280,7 +8347,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-weight: 100;
 }
 
-/* line 51, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page div.ctools-modal-content .node-product-detail,
 .page-product-library div.ctools-modal-content .node-product-detail,
 .page-search-product-library div.ctools-modal-content .node-product-detail {
@@ -8289,7 +8356,43 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   margin: 0 auto;
 }
 
-/* line 59, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content .node-product-detail,
+  .page-product-library div.ctools-modal-content .node-product-detail,
+  .page-search-product-library div.ctools-modal-content .node-product-detail {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 60, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content .node-product-detail,
+  .page-product-library div.ctools-modal-content .node-product-detail,
+  .page-search-product-library div.ctools-modal-content .node-product-detail {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  /* line 75, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content .modal-content,
+  .page-product-library div.ctools-modal-content .modal-content,
+  .page-search-product-library div.ctools-modal-content .modal-content {
+    padding: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  /* line 75, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  .page-home-page div.ctools-modal-content .modal-content,
+  .page-product-library div.ctools-modal-content .modal-content,
+  .page-search-product-library div.ctools-modal-content .modal-content {
+    padding: 0;
+  }
+}
+
+/* line 87, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page div.ctools-modal-content #modal-content::after,
 .page-product-library div.ctools-modal-content #modal-content::after,
 .page-search-product-library div.ctools-modal-content #modal-content::after {
@@ -8301,7 +8404,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   z-index: 20000;
 }
 
-/* line 68, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content,
 .page-product-library .modal-content,
 .page-search-product-library .modal-content {
@@ -8309,30 +8412,32 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 68, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content,
   .page-product-library .modal-content,
   .page-search-product-library .modal-content {
-    margin-left: -8px;
+    margin: 0;
+    background-color: #fff;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 68, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 96, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content,
   .page-product-library .modal-content,
   .page-search-product-library .modal-content {
-    margin-left: -5px;
+    margin: 0;
+    background-color: #fff;
   }
 }
 
-/* line 79, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 109, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail,
 .page-product-library .modal-content .node-product-detail,
 .page-search-product-library .modal-content .node-product-detail {
   /*
       @include respond-to('tablet') {
-        margin: 25px; 
+        margin: 25px;
       }
 */
   margin: 0 100px;
@@ -8340,7 +8445,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 79, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 109, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail,
   .page-product-library .modal-content .node-product-detail,
   .page-search-product-library .modal-content .node-product-detail {
@@ -8349,7 +8454,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 79, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 109, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail,
   .page-product-library .modal-content .node-product-detail,
   .page-search-product-library .modal-content .node-product-detail {
@@ -8357,7 +8462,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 97, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 127, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail > h2,
 .page-product-library .modal-content .node-product-detail > h2,
 .page-search-product-library .modal-content .node-product-detail > h2 {
@@ -8366,14 +8471,14 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   top: 75px;
 }
 
-/* line 103, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 133, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-label,
 .page-product-library .modal-content .node-product-detail .field-label,
 .page-search-product-library .modal-content .node-product-detail .field-label {
   margin: 12px 0;
 }
 
-/* line 108, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-display-title .field-item h1,
 .page-product-library .modal-content .node-product-detail .field-name-field-display-title .field-item h1,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-display-title .field-item h1 {
@@ -8384,19 +8489,19 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 108, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 138, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-display-title .field-item h1,
   .page-product-library .modal-content .node-product-detail .field-name-field-display-title .field-item h1,
   .page-search-product-library .modal-content .node-product-detail .field-name-field-display-title .field-item h1 {
     margin: 30px 10px 10px;
     background-color: #fff;
     width: 90%;
-    font-size: 27px;
+    font-size: 50px;
     padding: 0;
   }
 }
 
-/* line 126, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 156, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-subtitle .field-item h2,
 .page-product-library .modal-content .node-product-detail .field-name-field-subtitle .field-item h2,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-subtitle .field-item h2 {
@@ -8407,30 +8512,29 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 126, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 156, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-subtitle .field-item h2,
   .page-product-library .modal-content .node-product-detail .field-name-field-subtitle .field-item h2,
   .page-search-product-library .modal-content .node-product-detail .field-name-field-subtitle .field-item h2 {
     margin: 5px 10px;
     background-color: #fff;
     width: 90%;
-    font-size: 17px;
+    font-size: 28px;
     padding: 0;
     font-weight: normal;
   }
 }
 
-/* line 144, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 174, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-product-image,
 .page-product-library .modal-content .node-product-detail .field-name-field-product-image,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-product-image {
-  margin-top: 80px;
   padding: 10px;
   float: left;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 144, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 174, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-product-image,
   .page-product-library .modal-content .node-product-detail .field-name-field-product-image,
   .page-search-product-library .modal-content .node-product-detail .field-name-field-product-image {
@@ -8438,31 +8542,33 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 154, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 184, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
 .page-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one {
   background-color: #e6e9ee;
   float: right;
-  margin: 25px 75px;
+  margin: 0;
   padding: 10px 30px;
   width: 40%;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 154, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 184, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
   .page-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
   .page-search-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one {
     margin: 25px 0;
-    background-color: #fff;
-    width: 99%;
+    background-color: #040a2b;
+    width: auto;
     padding: 10px;
+    color: #fff;
+    margin: 0 -10px;
   }
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
-  /* line 154, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 184, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
   .page-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one,
   .page-search-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one {
@@ -8470,7 +8576,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 172, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 204, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-why-there-s-only-one p,
 .page-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one p,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-why-there-s-only-one p {
@@ -8479,7 +8585,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   line-height: 28px;
 }
 
-/* line 179, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 211, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-demonstration,
 .page-home-page .modal-content .node-product-detail .field-name-field-benefits,
 .page-home-page .modal-content .node-product-detail .field-name-field-if-she-asks-share,
@@ -8504,7 +8610,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 179, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 211, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field-name-field-demonstration,
   .page-home-page .modal-content .node-product-detail .field-name-field-benefits,
   .page-home-page .modal-content .node-product-detail .field-name-field-if-she-asks-share,
@@ -8527,7 +8633,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 201, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 233, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail fieldset.group-partners,
 .page-product-library .modal-content .node-product-detail fieldset.group-partners,
 .page-search-product-library .modal-content .node-product-detail fieldset.group-partners {
@@ -8537,7 +8643,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 201, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 233, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail fieldset.group-partners,
   .page-product-library .modal-content .node-product-detail fieldset.group-partners,
   .page-search-product-library .modal-content .node-product-detail fieldset.group-partners {
@@ -8546,7 +8652,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 211, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 243, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-legend,
 .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-legend,
 .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-legend {
@@ -8557,7 +8663,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 211, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 243, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-legend,
   .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-legend,
   .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-legend {
@@ -8566,14 +8672,14 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 224, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 256, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners,
 .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners,
 .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners {
   display: none;
 }
 
-/* line 228, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 260, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text,
 .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text,
 .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text {
@@ -8583,7 +8689,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   text-transform: uppercase;
 }
 
-/* line 234, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 266, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p,
 .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p,
 .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p {
@@ -8592,7 +8698,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 234, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 266, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p,
   .page-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p,
   .page-search-product-library .modal-content .node-product-detail fieldset.group-partners .fieldset-wrapper .field-name-field-perfect-partners-text p {
@@ -8600,7 +8706,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   }
 }
 
-/* line 247, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 279, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-if-she-asks-share div,
 .page-home-page .modal-content .node-product-detail .field-name-field-customer-questions div,
 .page-product-library .modal-content .node-product-detail .field-name-field-if-she-asks-share div,
@@ -8610,7 +8716,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   margin: 12px 0;
 }
 
-/* line 252, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 284, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field-name-field-related-products,
 .page-product-library .modal-content .node-product-detail .field-name-field-related-products,
 .page-search-product-library .modal-content .node-product-detail .field-name-field-related-products {
@@ -8618,7 +8724,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   display: none;
 }
 
-/* line 257, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 289, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail .field .field-label,
 .page-product-library .modal-content .node-product-detail .field .field-label,
 .page-search-product-library .modal-content .node-product-detail .field .field-label {
@@ -8626,28 +8732,30 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-weight: bold;
   padding: 20px 0 0;
   text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
-  /* line 257, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+  /* line 289, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
   .page-home-page .modal-content .node-product-detail .field .field-label,
   .page-product-library .modal-content .node-product-detail .field .field-label,
   .page-search-product-library .modal-content .node-product-detail .field .field-label {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0;
     text-transform: uppercase;
   }
 }
 
-/* line 272, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 306, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content .node-product-detail ul.links.inline,
 .page-product-library .modal-content .node-product-detail ul.links.inline,
 .page-search-product-library .modal-content .node-product-detail ul.links.inline {
   visibility: hidden;
 }
 
-/* line 278, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 312, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article,
 .page-product-library .modal-content article,
 .page-search-product-library .modal-content article {
@@ -8656,7 +8764,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   font-size: 18px;
 }
 
-/* line 285, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 319, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field .field-label,
 .page-product-library .modal-content article .field .field-label,
 .page-search-product-library .modal-content article .field .field-label {
@@ -8668,21 +8776,21 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 294, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 328, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field .field-items,
 .page-product-library .modal-content article .field .field-items,
 .page-search-product-library .modal-content article .field .field-items {
   margin: 10px 0;
 }
 
-/* line 299, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 333, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field .field-items .field-item > div,
 .page-product-library .modal-content article .field .field-items .field-item > div,
 .page-search-product-library .modal-content article .field .field-items .field-item > div {
   margin: 0 0 24px;
 }
 
-/* line 309, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 343, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field-name-field-product-image,
 .page-product-library .modal-content article .field-name-field-product-image,
 .page-search-product-library .modal-content article .field-name-field-product-image {
@@ -8690,14 +8798,14 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   float: left;
 }
 
-/* line 313, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 347, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field-name-field-product-image .field-label,
 .page-product-library .modal-content article .field-name-field-product-image .field-label,
 .page-search-product-library .modal-content article .field-name-field-product-image .field-label {
   display: none;
 }
 
-/* line 319, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 353, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field-name-field-why-there-s-only-one,
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one,
 .page-search-product-library .modal-content article .field-name-field-why-there-s-only-one {
@@ -8709,7 +8817,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   letter-spacing: 2px;
 }
 
-/* line 328, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 362, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field-name-field-why-there-s-only-one .field-label,
 .page-product-library .modal-content article .field-name-field-why-there-s-only-one .field-label,
 .page-search-product-library .modal-content article .field-name-field-why-there-s-only-one .field-label {
@@ -8720,7 +8828,7 @@ body.page-levels-in-progress #modalContent .field-name-field-intro {
   border-bottom: 1px solid #fff;
 }
 
-/* line 338, /var/www/html/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
+/* line 372, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/modals/product-library/_product-library.scss */
 .page-home-page .modal-content article .field-name-field-demonstration,
 .page-product-library .modal-content article .field-name-field-demonstration,
 .page-search-product-library .modal-content article .field-name-field-demonstration {

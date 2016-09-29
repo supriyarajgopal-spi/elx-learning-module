@@ -8,13 +8,13 @@
     margin-top: -30px;
 
     @include respond-to('mobile') {
-      margin-top: -18px;
+      margin-top: -28px;
       margin-right: -22px;
       // transform: scale(0.5); // gulp is wrong here - needs leading zero for scale
       background-size: 50px;
-      width: 16px;
-      height: 16px;
-      background-size: 50px;
+      width: 20px;
+      height: 20px;
+      background-size: 80px;
     }
 
     @include respond-to('mobile-landscape') {
@@ -26,6 +26,14 @@
   div.ctools-modal-content {
     background-color: #e6e9ee;
     border: 0;
+
+    @include respond-to('mobile') {
+      background-color: #fff;
+    }
+
+    @include respond-to('mobile-landscape') {
+      background-color: #fff;
+    }
 
     .modal-header {
       position: absolute;
@@ -40,6 +48,7 @@
       font-size: 50px;
       text-align: left;
       font-weight: 100;
+      display: block;
     }
 
     h2 {
@@ -52,6 +61,25 @@
       max-width: 1170px;
       padding: 30px 90px;
       margin: 0 auto;
+
+      @include respond-to('mobile') {
+        padding: 0 10px;
+      }
+
+      @include respond-to('mobile-landscape') {
+        padding: 0 10px;
+      }
+
+    }
+
+    .modal-content {
+      @include respond-to('mobile') {
+        padding: 0;
+      }
+
+      @include respond-to('mobile-landscape') {
+        padding: 0;
+      }
     }
 
   }
@@ -69,11 +97,13 @@
     background-color: #e6e9ee;
 
     @include respond-to('mobile') {
-      margin-left: -8px;
+      margin: 0;
+      background-color: #fff;
     }
 
     @include respond-to('mobile-landscape') {
-      margin-left: -5px;
+      margin: 0;
+      background-color: #fff;
     }
 
     .node-product-detail {
@@ -111,7 +141,7 @@
             margin: 30px 10px 10px;
             background-color: #fff;
             width: 90%;
-            font-size: 27px;
+            font-size: 50px;
             padding: 0;
           }
 
@@ -129,7 +159,7 @@
             margin: 5px 10px;
             background-color: #fff;
             width: 90%;
-            font-size: 17px;
+            font-size: 28px;
             padding: 0;
             font-weight: normal;
           }
@@ -142,27 +172,29 @@
       }
 
       .field-name-field-product-image {
+        padding: 10px;
+        float: left;
+
         @include respond-to('mobile') {
           margin-top: 0;
         }
 
-        margin-top: 80px;
-        padding: 10px;
-        float: left;
       }
 
       .field-name-field-why-there-s-only-one {
         background-color: #e6e9ee;
         float: right;
-        margin: 25px 75px;
+        margin: 0;
         padding: 10px 30px;
         width: 40%;
 
         @include respond-to('mobile') {
           margin: 25px 0;
-          background-color: #fff;
-          width: 99%;
+          background-color: #040a2b;
+          width: auto;
           padding: 10px;
+          color: #fff;
+          margin: 0 -10px;
         }
 
         @include respond-to('mobile-landscape') {
@@ -255,18 +287,20 @@
       }
 
       .field .field-label  {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 0 0;
+        text-transform: uppercase;
+        border-bottom: 1px solid #fff;
+        display: inline-block;
 
         @include respond-to('mobile') {
-          font-size: 12px;
+          font-size: 20px;
           font-weight: bold;
           padding: 0;
           text-transform: uppercase;
         }
 
-        font-size: 20px;
-        font-weight: bold;
-        padding: 20px 0 0;
-        text-transform: uppercase;
       }
 
       ul.links.inline {

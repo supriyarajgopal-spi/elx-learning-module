@@ -455,11 +455,11 @@ function elx_badges_rules_menu() {
 function elx_badges_rules_consolidate_userpoints() {
 	drupal_set_message("Consolidating UserPoints");
 	$item = array(
-		"concolidate_tids" => array(0,14094,14095),
+		"consolidate_tids" => array(0,14094,14095),
 		"tid" => 14135
 	);
 	$output = '';
-	$result = db_query("SELECT * FROM {userpoints} WHERE tid = ".$item['concolidate_tids'][0]);
+	$result = db_query("SELECT * FROM {userpoints} WHERE tid = ".$item['consolidate_tids'][0]);
 	foreach ($result as $row) {
 		$item['points'] = $row->points;
 		if (!empty($row->uid)) {

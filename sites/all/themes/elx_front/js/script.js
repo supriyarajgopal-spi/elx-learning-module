@@ -367,11 +367,11 @@
             // MAIN BREAK POINT FOR AJAX MODAL // if null return and check in 1.5 sec //
             if (asset) {
               // do nothing
-              console.log('asset: ' + asset);
-              
+              // console.log('asset: ' + asset);
+
               var title = $(asset).find('#modal-title').text();
-              var title_array = title.split(":");
-              title = "<div>"+title_array[0]+"</div><div style='padding:10px;'>"+title_array[1]+"</div>";
+              var title_array = title.split(':');
+              title = '<div>' + title_array[0] + '</div><div style="padding:10px;">' + title_array[1] + '</div>';
 
             }
             else {

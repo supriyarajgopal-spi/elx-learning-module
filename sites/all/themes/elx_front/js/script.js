@@ -426,8 +426,6 @@
           var refTest = /levels_all()|levels_in_progress()|levels_completed()|myelx.com|cloudapp.net/g;
           var fromELX = refTest.test(referringURL);
 
-          console.log( );
-
           if (fromELX === true) {
             window.history.go(-1);
           }

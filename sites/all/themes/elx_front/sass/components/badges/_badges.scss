@@ -149,6 +149,11 @@
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-first10000.svg') no-repeat 0 0;
   }
 
+  .gift-genius-no,
+  .gift-genius-yes {
+    background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-gift-genius.png') no-repeat 0 0;
+  }
+
   .high-five-no,
   .high-five-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-highfive.svg') no-repeat 0 0;
@@ -167,6 +172,11 @@
   .on-your-way-no,
   .on-your-way-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-onyourway.svg') no-repeat 0 0;
+  }
+
+  .perfect-present-no,
+  .perfect-present-yes {
+    background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect-present.png') no-repeat 0 0;
   }
 
   .perfect-ten-no,
@@ -229,23 +239,11 @@
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-wellread100.svg') no-repeat 0 0;
   }
 
-  .perfect-present-no,
-  .perfect-present-yes {
-    background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-perfect-present.png') no-repeat 0 0;
-  }
-
-  .gift-genius-no,
-  .gift-genius-yes {
-    background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-gift-genius.png') no-repeat 0 0;
-  }
-
   .beautiful-start-no,
   .beautiful-start-yes {
     background: url('/sites/all/themes/elx_front/images/badges/ELX-Badge125x125-beautiful-start.png') no-repeat 0 0;
   }
 
-  .perfect-present-no,
-  .gift-genius-no,
   .beautiful-start-no,
   .three-minute-beauty-no,
   .one-hundred-percent-club-no,
@@ -255,10 +253,12 @@
   .first-1000-points-no,
   .first-5000-points-no,
   .first-10000-points-no,
+  .gift-genius-no,
   .high-five-no,
   .little-brown-bottle-no,
   .new-dimension-no,
   .on-your-way-no,
+  .perfect-present-no,
   .perfect-ten-no,
   .product-pro-no,
   .rare-beauty-no,

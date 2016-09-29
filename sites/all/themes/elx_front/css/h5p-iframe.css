@@ -1209,7 +1209,7 @@ body.level-250 .h5p-progressbar .h5p-progressbar-part-show {
 
 /* line 83, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-250 .h5p-press-to-go.h5p-visible {
-  background: #9a7d46;
+  background: transparent;
   color: #000;
   padding: 10px;
 }
@@ -1217,64 +1217,62 @@ body.level-250 .h5p-press-to-go.h5p-visible {
 /* line 88, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-250 .h5p-press-to-go.h5p-visible:hover {
   background: #9a7d46;
-  opacity: 1;
+  opacity: .5;
   color: #000;
 }
 
-/* line 105, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 106, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-13504 .h5p-progressbar .h5p-progressbar-part-show,
 body.level-12739 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 110, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 111, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-13504 .h5p-press-to-go.h5p-visible,
 body.level-12739 .h5p-press-to-go.h5p-visible {
-  background: #4ea1bf;
-  color: #fff;
+  background: transparent;
   padding: 10px;
 }
 
 /* line 115, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-13504 .h5p-press-to-go.h5p-visible:hover,
 body.level-12739 .h5p-press-to-go.h5p-visible:hover {
-  background: #fff;
-  opacity: 1;
-  color: #4ea1bf;
+  background: #4ea1bf;
+  opacity: .5;
 }
 
-/* line 133, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 132, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-course-presentation,
 body.level-14108 .h5p-course-presentation {
   color: #fff;
 }
 
-/* line 136, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 135, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-course-presentation a,
 body.level-14108 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 140, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 139, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-course-presentation p,
 body.level-14108 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 144, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 143, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-course-presentation .h5p-slide p,
 body.level-14108 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 152, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 151, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-image,
 body.level-14108 .h5p-image {
   overflow: hidden;
 }
 
-/* line 160, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 159, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-footer-previous-slide::before,
 body.level-14108 .h5p-footer-previous-slide::before, body.level-10605 .h5p-footer-next-slide::before,
 body.level-14108 .h5p-footer-next-slide::before, body.level-10605 .h5p-footer-toggle-full-screen::before,
@@ -1282,7 +1280,7 @@ body.level-14108 .h5p-footer-toggle-full-screen::before {
   color: #fff;
 }
 
-/* line 164, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 163, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-footer-previous-slide::after,
 body.level-14108 .h5p-footer-previous-slide::after, body.level-10605 .h5p-footer-next-slide::after,
 body.level-14108 .h5p-footer-next-slide::after, body.level-10605 .h5p-footer-toggle-full-screen::after,
@@ -1290,104 +1288,103 @@ body.level-14108 .h5p-footer-toggle-full-screen::after {
   color: #fff;
 }
 
-/* line 170, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 169, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-joubelui-button,
 body.level-14108 .h5p-joubelui-button {
   color: #600;
   background: #fff;
 }
 
-/* line 175, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 174, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-progressbar .h5p-progressbar-part-show,
 body.level-14108 .h5p-progressbar .h5p-progressbar-part-show {
   background: #fff !important;
   background-image: none !important;
 }
 
-/* line 180, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 179, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-press-to-go.h5p-visible,
 body.level-14108 .h5p-press-to-go.h5p-visible {
-  background: #fff;
+  background: transparent;
   color: #600;
   padding: 10px;
 }
 
-/* line 185, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 184, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-press-to-go.h5p-visible:hover,
 body.level-14108 .h5p-press-to-go.h5p-visible:hover {
   background: #600;
-  opacity: 1;
-  color: #fff;
+  opacity: .5;
 }
 
-/* line 193, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 191, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-10605 .h5p-question-feedback-content,
 body.level-14108 .h5p-question-feedback-content {
   color: white !important;
 }
 
-/* line 208, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 206, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-course-presentation {
   color: #fff;
 }
 
-/* line 211, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 209, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 215, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 213, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 219, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 217, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 227, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 225, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-image {
   overflow: hidden;
 }
 
-/* line 235, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 233, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-footer-previous-slide::before, body.level-252 .h5p-footer-next-slide::before, body.level-252 .h5p-footer-toggle-full-screen::before {
   color: #fff;
 }
 
-/* line 239, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 237, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-footer-previous-slide::after, body.level-252 .h5p-footer-next-slide::after, body.level-252 .h5p-footer-toggle-full-screen::after {
   color: #fff;
 }
 
-/* line 245, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 243, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-joubelui-button {
   color: #080f30;
   background: #fff;
 }
 
-/* line 250, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 248, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-progressbar .h5p-progressbar-part-show {
   background: #080f30 !important;
   background-image: none !important;
 }
 
-/* line 255, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 253, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-press-to-go.h5p-visible {
-  background: #080f30;
+  background: transparent;
   color: #fff;
   padding: 10px;
 }
 
-/* line 260, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 258, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-252 .h5p-press-to-go.h5p-visible:hover {
-  background: #fff;
-  opacity: 1;
+  background: #080f30;
+  opacity: .5;
   color: #080f30;
 }
 
-/* line 278, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 276, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-course-presentation,
 body.level-1300 .h5p-course-presentation {
   color: #fff;
@@ -1403,31 +1400,31 @@ body.level-1300 .h5p-course-presentation {
     }*/
 }
 
-/* line 292, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 290, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-course-presentation a,
 body.level-1300 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 296, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 294, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-course-presentation p,
 body.level-1300 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 300, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 298, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-course-presentation .h5p-slide p,
 body.level-1300 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 308, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 306, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-image,
 body.level-1300 .h5p-image {
   overflow: hidden;
 }
 
-/* line 316, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 314, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-footer-previous-slide::before,
 body.level-1300 .h5p-footer-previous-slide::before, body.level-579 .h5p-footer-next-slide::before,
 body.level-1300 .h5p-footer-next-slide::before, body.level-579 .h5p-footer-toggle-full-screen::before,
@@ -1435,7 +1432,7 @@ body.level-1300 .h5p-footer-toggle-full-screen::before {
   color: #fff;
 }
 
-/* line 320, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 318, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-footer-previous-slide::after,
 body.level-1300 .h5p-footer-previous-slide::after, body.level-579 .h5p-footer-next-slide::after,
 body.level-1300 .h5p-footer-next-slide::after, body.level-579 .h5p-footer-toggle-full-screen::after,
@@ -1443,67 +1440,67 @@ body.level-1300 .h5p-footer-toggle-full-screen::after {
   color: #fff;
 }
 
-/* line 326, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 324, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-joubelui-button,
 body.level-1300 .h5p-joubelui-button {
   color: #4ea1bf;
   background: #000;
 }
 
-/* line 332, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 330, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-progressbar .h5p-progressbar-part-show,
 body.level-1300 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 337, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 335, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-press-to-go.h5p-visible,
 body.level-1300 .h5p-press-to-go.h5p-visible {
-  background: #4ea1bf;
+  background: transparent;
   color: #fff;
   padding: 10px;
 }
 
-/* line 342, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 340, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-579 .h5p-press-to-go.h5p-visible:hover,
 body.level-1300 .h5p-press-to-go.h5p-visible:hover {
   background: #4ea1bf;
-  opacity: 1;
+  opacity: .5;
   color: #fff;
 }
 
-/* line 362, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 360, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-course-presentation,
 body.level-12731 .h5p-course-presentation {
   color: #fff;
 }
 
-/* line 366, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 364, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-course-presentation a,
 body.level-12731 .h5p-course-presentation a {
   color: #fff;
 }
 
-/* line 370, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 368, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-course-presentation p,
 body.level-12731 .h5p-course-presentation p {
   color: #fff;
 }
 
-/* line 374, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 372, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-course-presentation .h5p-slide p,
 body.level-12731 .h5p-course-presentation .h5p-slide p {
   color: white;
 }
 
-/* line 382, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 380, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-image,
 body.level-12731 .h5p-image {
   overflow: hidden;
 }
 
-/* line 390, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 388, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-footer-previous-slide::before,
 body.level-12731 .h5p-footer-previous-slide::before, body.level-1301 .h5p-footer-next-slide::before,
 body.level-12731 .h5p-footer-next-slide::before, body.level-1301 .h5p-footer-toggle-full-screen::before,
@@ -1511,7 +1508,7 @@ body.level-12731 .h5p-footer-toggle-full-screen::before {
   color: #fff;
 }
 
-/* line 394, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 392, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-footer-previous-slide::after,
 body.level-12731 .h5p-footer-previous-slide::after, body.level-1301 .h5p-footer-next-slide::after,
 body.level-12731 .h5p-footer-next-slide::after, body.level-1301 .h5p-footer-toggle-full-screen::after,
@@ -1519,33 +1516,33 @@ body.level-12731 .h5p-footer-toggle-full-screen::after {
   color: #fff;
 }
 
-/* line 400, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 398, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-joubelui-button,
 body.level-12731 .h5p-joubelui-button {
   color: #4ea1bf;
   background: #000;
 }
 
-/* line 406, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 404, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-progressbar .h5p-progressbar-part-show,
 body.level-12731 .h5p-progressbar .h5p-progressbar-part-show {
   background: #4ea1bf !important;
   background-image: none !important;
 }
 
-/* line 411, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 409, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-press-to-go.h5p-visible,
 body.level-12731 .h5p-press-to-go.h5p-visible {
-  background: #4ea1bf;
+  background: transparent;
   color: #fff;
   padding: 10px;
 }
 
-/* line 416, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
+/* line 414, /Users/ahill/VagrantSites/elx/files/drupal/web/sites/all/themes/elx_front/sass/components/h5p/_course-presentation.scss */
 body.level-1301 .h5p-press-to-go.h5p-visible:hover,
 body.level-12731 .h5p-press-to-go.h5p-visible:hover {
   background: #4ea1bf;
-  opacity: 1;
+  opacity: .5;
   color: #fff;
 }
 

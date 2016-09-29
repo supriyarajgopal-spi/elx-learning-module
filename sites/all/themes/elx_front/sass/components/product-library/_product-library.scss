@@ -1,24 +1,12 @@
+/* PRODUCT LIBRARY */
 .page-product-library,
 .page-search-product-library {
 
   h1 {
-    font-family: $font-family-serif;
-    font-size: $font-size-lg-extralarge;
-    font-weight: 100;
-    text-align: center;
-
-    @include respond-to('mobile') {
-      font-size: 40px;
-    }
-
-    @include respond-to('mobile-landscape') {
-      font-size: 40px;
-    }
+    display: none;
   }
 
   h2.pane-title {
-    display: none;
-    /*
     font-family: $font-family-serif;
     font-size: $font-size-lg-extralarge;
     font-weight: 100;
@@ -31,7 +19,7 @@
     @include respond-to('mobile-landscape') {
       font-size: 40px;
     }
-    */
+
   }
 
   .view-header {

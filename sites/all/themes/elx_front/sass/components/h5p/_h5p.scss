@@ -281,15 +281,30 @@
 // H5P MODAL ALTERNATIVE
 body.html.node-type-h5p-content {
 
+  .gobacktowhereyoucamefrom,
   .back-to-levels {
     float: right;
     text-decoration: none;
+  }
+
+  .gobacktowhereyoucamefrom::after {
+    background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat scroll -105px top;
+    height: 32px;
+    position: absolute;
+    right: 100px;
+    top: 80px;
+    width: 32px;
+    z-index: 2;
+    content: ' ';
+    display: block;
+    cursor: pointer;
   }
 
   .layout-center {
 
     padding-left: 0;
     padding-right: 0;
+    max-width: 100%;
 
     .layout-3col.layout-swap {
       padding-top: 0;
@@ -299,9 +314,13 @@ body.html.node-type-h5p-content {
       padding-left: 0;
       padding-right: 0;
 
-      > h1,
-      ul.tabs {
+      > h1 {
         display: none;
+      }
+
+      > ul.tabs {
+        display: block;
+        margin-left: 20px;
       }
 
       #modalContent {

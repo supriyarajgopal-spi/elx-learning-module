@@ -530,7 +530,7 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['label'] = '';
   $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
-  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax ctools-use-modal';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Field: Content: Display title */
   $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
@@ -576,6 +576,33 @@ function elx_user_dashboard_views_default_views() {
 
   /* Display: Activities */
   $handler = $view->new_display('panel_pane', 'Activities', 'activities');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Headline */
+  $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
+  $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['label'] = '';
+  $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_headline']['alter']['link_class'] = 'use-ajax';
+  $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
+  /* Field: Content: Display title */
+  $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['label'] = '';
+  $handler->display->display_options['fields']['field_display_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = 'modal/nojs/[nid]';
+  $handler->display->display_options['fields']['field_display_title']['alter']['link_class'] = 'use-ajax ctools-use-modal';
+  $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -631,6 +658,76 @@ function elx_user_dashboard_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Suggested drop down */
+  $handler = $view->new_display('panel_pane', 'Suggested drop down', 'suggested_drop_down');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Headline */
+  $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
+  $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['label'] = '';
+  $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_headline']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
+  /* Field: Content: Display title */
+  $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
+  $handler->display->display_options['fields']['field_display_title']['label'] = '';
+  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = '/node/[nid]';
+  $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product_detail' => 'product_detail',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['dashboard_user_activities'] = array(
     t('Master'),
     t('more'),
@@ -643,6 +740,7 @@ function elx_user_dashboard_views_default_views() {
     t('Activities'),
     t('View panes'),
     t('Suggested'),
+    t('Suggested drop down'),
   );
   $export['dashboard_user_activities'] = $view;
 

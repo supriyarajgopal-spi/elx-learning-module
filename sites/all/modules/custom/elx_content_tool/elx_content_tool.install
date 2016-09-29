@@ -54,7 +54,7 @@ function elx_content_tool_update_7101(&$sandbox) {
       ->fields('t')
       ->condition('t.entity_type', 'node')
       ->condition('t.source', '', '<>')
-      ->range(0, 1)
+      ->range(0, 10)
       ->execute();
     foreach ($result as $translation) {
       // Load translation source node.
@@ -172,25 +172,44 @@ function elx_content_tool_update_7101(&$sandbox) {
 }
 
 /**
- * Add markets group to content types.
+ * Add markets group to content types containing field_markets.
  */
 function elx_content_tool_update_7102(&$sandbox) {
-  $markets = field_info_field('markets');
-  $field_markets = field_info_field('field_markets');
+  _elx_content_tool_add_markets_field(&$sandbox, 'field_markets');
+}
+
+/**
+ * Add markets group to content types containing field_market_name.
+ */
+function elx_content_tool_update_7103(&$sandbox) {
+  _elx_content_tool_add_markets_field(&$sandbox, 'field_market_name');
+}
+
+/**
+ * Add markets field to content types.
+ */
+function _elx_content_tool_add_markets_field(&$sandbox, $field_name) {
   if (!isset($sandbox['progress'])) {
+    $sandbox['markets'] = field_info_field('markets');
+    $sandbox['field_markets'] = field_info_field($field_name);
+    // Users already have a groups field.
+    if (isset($sandbox['field_markets']['bundles']['user'])) {
+      unset($sandbox['field_markets']['bundles']['user']);
+    }
     // Count markets groups that match old markets fields.
     $sandbox['progress'] = 0;
-    foreach ($markets['bundles'] as $entity_type => $bundles) {
-      if (isset($field_markets['bundles'][$entity_type])) {
-        $sandbox['progress'] += count(array_intersect($bundles, $field_markets['bundles'][$entity_type]));
+    foreach ($sandbox['markets']['bundles'] as $entity_type => $bundles) {
+      if (isset($sandbox['field_markets']['bundles'][$entity_type])) {
+        $sandbox['progress'] += count(array_intersect($bundles, $sandbox['field_markets']['bundles'][$entity_type]));
       }
     }
     // Get the total number of old markets fields.
-    $sandbox['max'] = array_sum(array_map('count', $field_markets['bundles']));
+    $sandbox['max'] = array_sum(array_map('count', $sandbox['field_markets']['bundles']));
   }
-  foreach ($field_markets['bundles'] as $entity_type => $bundles) {
+  $count = 0;
+  foreach ($sandbox['field_markets']['bundles'] as $entity_type => $bundles) {
     // Add the OG markets field to bundles that do not have it.
-    foreach (array_diff($bundles, isset($markets['bundles'][$entity_type]) ? $markets['bundles'][$entity_type] : array()) as $bundle) {
+    foreach (array_diff($bundles, isset($sandbox['markets']['bundles'][$entity_type]) ? $sandbox['markets']['bundles'][$entity_type] : array()) as $bundle) {
       $og_field = og_fields_info('og_group_ref');
       $og_field['instance']['label'] = 'Markets';
       // Use a transaction so we can clean up errors.
@@ -203,7 +222,9 @@ function elx_content_tool_update_7102(&$sandbox) {
         $transaction->rollback();
         throw $e;
       }
-      break 2;
+      if (++$count == 10) {
+        break 2;
+      }
     }
   }
   if (!empty($sandbox['max'])) {
@@ -212,36 +233,116 @@ function elx_content_tool_update_7102(&$sandbox) {
 }
 
 /**
- * Add groups access field to content types.
+ * Add groups content access field to content types containing markets.
  */
-function elx_content_tool_update_7103(&$sandbox) {
-  $group_content_access = field_info_field('group_content_access');
-  $field_markets = field_info_field('field_markets');
+function elx_content_tool_update_7104(&$sandbox) {
   if (!isset($sandbox['progress'])) {
+    $sandbox['access'] = field_info_field(OG_CONTENT_ACCESS_FIELD);
+    $sandbox['markets'] = field_info_field('markets');
+    // Users are not content.
+    if (isset($sandbox['markets']['bundles']['user'])) {
+      unset($sandbox['markets']['bundles']['user']);
+    }
     // Count OG markets fields that match old markets fields.
     $sandbox['progress'] = 0;
-    foreach ($group_content_access['bundles'] as $entity_type => $bundles) {
-      if (isset($field_markets['bundles'][$entity_type])) {
-        $sandbox['progress'] += count(array_intersect($bundles, $field_markets['bundles'][$entity_type]));
+    foreach ($sandbox['access']['bundles'] as $entity_type => $bundles) {
+      if (isset($sandbox['markets']['bundles'][$entity_type])) {
+        $sandbox['progress'] += count(array_intersect($bundles, $sandbox['markets']['bundles'][$entity_type]));
       }
     }
     // Get total number of old markets fields.
-    $sandbox['max'] = array_sum(array_map('count', $field_markets['bundles']));
+    $sandbox['max'] = array_sum(array_map('count', $sandbox['markets']['bundles']));
   }
-  foreach ($field_markets['bundles'] as $entity_type => $bundles) {
+  $count = 0;
+  foreach ($sandbox['markets']['bundles'] as $entity_type => $bundles) {
     // Add groups access field to bundles that do not have it.
-    foreach (array_diff($bundles, isset($group_content_access['bundles'][$entity_type]) ? $group_content_access['bundles'][$entity_type] : array()) as $bundle) {
+    foreach (array_diff($bundles, isset($sandbox['access']['bundles'][$entity_type]) ? $sandbox['access']['bundles'][$entity_type] : array()) as $bundle) {
       // Use a transaction so we can clean up errors.
       $transaction = db_transaction();
       try {
-        og_create_field('group_content_access', $entity_type, $bundle);
+        og_create_field(OG_CONTENT_ACCESS_FIELD, $entity_type, $bundle);
         ++$sandbox['progress'];
       }
       catch (Exception $e) {
         $transaction->rollback();
         throw $e;
       }
-      break 2;
+      if (++$count == 10) {
+        break 2;
+      }
+    }
+  }
+  if (!empty($sandbox['max'])) {
+    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
+  }
+}
+
+/**
+ * Set content visibility.
+ */
+function elx_content_tool_update_7105(&$sandbox) {
+  if (!isset($sandbox['progress'])) {
+    $sandbox['field'] = field_info_field(OG_CONTENT_ACCESS_FIELD);
+    $sandbox['table'] = _field_sql_storage_tablename($sandbox['field']);
+    // Get the number of content visibility values.
+    $query = new EntityFieldQuery();
+    $sandbox['progress'] = $query
+      ->fieldCondition(OG_CONTENT_ACCESS_FIELD)
+      ->count()
+      ->execute();
+    $sandbox['max'] = 0;
+    foreach ($sandbox['field']['bundles'] as $entity_type => $bundles) {
+      // Get the total number of entities containing the groups content access
+      // field.
+      $query = new EntityFieldQuery();
+      $sandbox['max'] += $query
+        ->entityCondition('entity_type', $entity_type)
+        ->entityCondition('bundle', $bundles)
+        ->count()
+        ->execute();
+    }
+  }
+  foreach ($sandbox['field']['bundles'] as $entity_type => $bundles) {
+    $info = entity_get_info($entity_type);
+    // Find an entity that is missing its content visibility setting.
+    $query = db_select($info['base table'], 'b');
+    $alias = $query->join($sandbox['table'], 'f', 'b.' . $info['entity keys']['id'] . ' = %alias.entity_id AND %alias.entity_type = :entity_type AND %alias.bundle IN(:bundles)', array(
+      ':entity_type' => $entity_type,
+      ':bundles' => $bundles,
+    ));
+    $query
+      ->fields('b', array($info['entity keys']['id']))
+      ->condition(db_or()
+        ->condition("$alias.deleted", 1)
+        ->isNull("$alias.entity_id")
+      )
+      ->range(0, 10);
+    foreach (entity_load($entity_type, $query->execute()->fetchCol()) as $entity) {
+      // Save content visibility. Use a transaction so we can clean up errors.
+      $transaction = db_transaction();
+      try {
+        list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+        if (!isset($vid)) {
+          $vid = $id;
+        }
+        db_insert($sandbox['table'])
+          ->fields(array(
+            'entity_type' => $entity_type,
+            'entity_id' => $id,
+            'revision_id' => $vid,
+            'bundle' => $bundle,
+            'delta' => 0,
+            'language' => LANGUAGE_NONE,
+            _field_sql_storage_columnname(OG_CONTENT_ACCESS_FIELD, 'value') => OG_CONTENT_ACCESS_DEFAULT,
+          ))
+          ->execute();
+        // Add new content visibility setting to processed count.
+        ++$sandbox['progress'];
+      }
+      catch (Exception $e) {
+        $transaction->rollback();
+        throw $e;
+      }
     }
   }
   if (!empty($sandbox['max'])) {
@@ -252,7 +353,7 @@ function elx_content_tool_update_7103(&$sandbox) {
 /**
  * Create table to map old market options to new market groups.
  */
-function elx_content_tool_update_7104() {
+function elx_content_tool_update_7106() {
   // Use a transaction so we can clean up errors.
   $transaction = db_transaction();
   try {
@@ -260,7 +361,7 @@ function elx_content_tool_update_7104() {
       'description' => 'Temporary table to map market options to market groups.',
       'fields' => array(
         'market' => array(
-          'description' => 'field_markets value.',
+          'description' => 'Old markets value.',
           'type' => 'varchar',
           'length' => 255,
           'not null' => TRUE,
@@ -338,140 +439,35 @@ function elx_content_tool_update_7104() {
 /**
  * Switch old field_markets values to new markets groups.
  */
-function elx_content_tool_update_7105(&$sandbox) {
-  $field = field_info_field('field_markets');
-  $table = _field_sql_storage_tablename($field);
-  if (!isset($sandbox['progress'])) {
-    $sandbox['progress'] = 0;
-    $sandbox['max'] = 0;
-    foreach ($field['bundles'] as $entity_type => $bundles) {
-      $info = entity_get_info($entity_type);
-      // Get the number of values that have been switched to market groups.
-      $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_markets_value = s.market');
-      $query->join('og_membership', 'g', 'b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid');
-      if (isset($info['entity keys']['language'])) {
-        $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
-      }
-      $sandbox['progress'] += $query
-        ->condition('f.entity_type', $entity_type)
-        ->condition('f.deleted', 0)
-        ->condition('g.entity_type', $entity_type)
-        ->condition('g.status', 1)
-        ->countQuery()
-        ->execute()
-        ->fetchField();
-      // Get the total number of old market values.
-      $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_markets_value = s.market');
-      if (isset($info['entity keys']['language'])) {
-        $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
-      }
-      $sandbox['max'] += $query
-        ->condition('f.entity_type', $entity_type)
-        ->condition('f.deleted', 0)
-        ->countQuery()
-        ->execute()
-        ->fetchField();
-    }
-  }
-  foreach ($field['bundles'] as $entity_type => $bundles) {
-    $info = entity_get_info($entity_type);
-    // Find an entity that is missing market groups.
-    $query = db_select($info['base table'], 'b');
-    $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-    $query->join('elx_content_tool_markets_map', 's', 'f.field_markets_value = s.market');
-    $query->leftJoin('og_membership', 'g', 'g.entity_type = :entity_type AND b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid', array(
-      ':entity_type' => $entity_type,
-    ));
-    if (isset($info['entity keys']['language'])) {
-      $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
-    }
-    $query
-      ->fields('b', array($info['entity keys']['id']))
-      ->condition('f.entity_type', $entity_type)
-      ->condition('f.deleted', 0)
-      ->condition(db_or()
-        ->condition('g.status', 0)
-        ->isNull('g.etid')
-      )
-      ->range(0, 1);
-    foreach (entity_load($entity_type, $query->execute()->fetchCol()) as $entity) {
-      // Get new market groups to add.
-      $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_markets_value = s.market');
-      $query->leftJoin('og_membership', 'g', 'g.entity_type = :entity_type AND b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid', array(
-        ':entity_type' => $entity_type,
-      ));
-      if (isset($info['entity keys']['language'])) {
-        $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
-      }
-      $markets = $query
-        ->fields('s', array('nid'))
-        ->condition('f.entity_type', $entity_type)
-        ->condition('f.deleted', 0)
-        ->condition(db_or()
-          ->condition('g.status', 0)
-          ->isNull('g.etid')
-        )
-        ->condition('b.' . $info['entity keys']['id'], $entity->{$info['entity keys']['id']})
-        ->execute()
-        ->fetchCol();
-      // Set market groups.
-      foreach ($markets as $nid) {
-        $entity->markets[LANGUAGE_NONE][] = array('target_id' => $nid);
-      }
-      // Clear entity cache.
-      entity_get_controller($entity_type)->resetCache(array(
-        $entity->{$info['entity keys']['id']},
-      ));
-      // Save market groups. Use a transaction so we can clean up errors.
-      $transaction = db_transaction();
-      try {
-        foreach ($markets as $nid) {
-          $og_membership = og_membership_create('node', $nid, $entity_type, $entity->{$info['entity keys']['id']}, 'markets', array('language' => LANGUAGE_NONE));
-          $og_membership->entity = $entity;
-          $og_membership->save();
-          // Add new market group to processed count.
-          ++$sandbox['progress'];
-        }
-      }
-      catch (Exception $e) {
-        $transaction->rollback();
-        throw $e;
-      }
-    }
-  }
-  if (!empty($sandbox['max'])) {
-    $sandbox['#finished'] = $sandbox['progress'] / $sandbox['max'];
-  }
-}
-
-/**
- * Remove field_markets field.
- */
-function elx_content_tool_update_7106() {
-  field_delete_field('field_markets');
+function elx_content_tool_update_7107(&$sandbox) {
+  _elx_content_tool_market_switch($sandbox, 'field_markets');
 }
 
 /**
  * Switch old field_market_name values to new markets groups.
  */
-function elx_content_tool_update_7107(&$sandbox) {
-  $field = field_info_field('field_market_name');
-  $table = _field_sql_storage_tablename($field);
+function elx_content_tool_update_7108(&$sandbox) {
+  _elx_content_tool_market_switch($sandbox, 'field_market_name');
+}
+
+/**
+ * Switch old markets field values to new markets group.
+ */
+function _elx_content_tool_market_switch(&$sandbox, $field_name) {
   if (!isset($sandbox['progress'])) {
+    $sandbox['field'] = field_info_field($field_name);
+    $sandbox['table'] = _field_sql_storage_tablename($sandbox['field']);
+    $sandbox['column'] = _field_sql_storage_columnname($field_name, 'value');
+    $sandbox['role'] = user_role_load_by_name('EL Regional Market Admin');
+    $sandbox['rid'] = array_search(OG_ADMINISTRATOR_ROLE, og_roles('node', 'market'));
     $sandbox['progress'] = 0;
     $sandbox['max'] = 0;
-    foreach ($field['bundles'] as $entity_type => $bundles) {
+    foreach ($sandbox['field']['bundles'] as $entity_type => $bundles) {
       $info = entity_get_info($entity_type);
       // Get the number of values that have been switched to market groups.
       $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_market_name_value = s.market');
+      $query->join($sandbox['table'], 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
+      $query->join('elx_content_tool_markets_map', 's', "f.$sandbox[column] = s.market");
       $query->join('og_membership', 'g', 'b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid');
       if (isset($info['entity keys']['language'])) {
         $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
@@ -486,8 +482,8 @@ function elx_content_tool_update_7107(&$sandbox) {
         ->fetchField();
       // Get the total number of old market values.
       $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_market_name_value = s.market');
+      $query->join($sandbox['table'], 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
+      $query->join('elx_content_tool_markets_map', 's', "f.$sandbox[column] = s.market");
       if (isset($info['entity keys']['language'])) {
         $query->where('b.' . $info['entity keys']['language'] . ' = f.language');
       }
@@ -499,13 +495,13 @@ function elx_content_tool_update_7107(&$sandbox) {
         ->fetchField();
     }
   }
-  foreach ($field['bundles'] as $entity_type => $bundles) {
+  foreach ($sandbox['field']['bundles'] as $entity_type => $bundles) {
     $field_name = $entity_type == 'user' ? 'og_user_node' : 'markets';
     $info = entity_get_info($entity_type);
     // Find an entity that is missing market groups.
     $query = db_select($info['base table'], 'b');
-    $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-    $query->join('elx_content_tool_markets_map', 's', 'f.field_market_name_value = s.market');
+    $query->join($sandbox['table'], 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
+    $query->join('elx_content_tool_markets_map', 's', "f.$sandbox[column] = s.market");
     $query->leftJoin('og_membership', 'g', 'g.entity_type = :entity_type AND b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid', array(
       ':entity_type' => $entity_type,
     ));
@@ -520,12 +516,12 @@ function elx_content_tool_update_7107(&$sandbox) {
         ->condition('g.state', 0)
         ->isNull('g.etid')
       )
-      ->range(0, 1);
+      ->range(0, 10);
     foreach (entity_load($entity_type, $query->execute()->fetchCol()) as $entity) {
       // Get new market groups to add.
       $query = db_select($info['base table'], 'b');
-      $query->join($table, 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
-      $query->join('elx_content_tool_markets_map', 's', 'f.field_market_name_value = s.market');
+      $query->join($sandbox['table'], 'f', 'b.' . $info['entity keys']['id'] . ' = f.entity_id');
+      $query->join('elx_content_tool_markets_map', 's', "f.$sandbox[column] = s.market");
       $query->leftJoin('og_membership', 'g', 'g.entity_type = :entity_type AND b.' . $info['entity keys']['id'] . ' = g.etid AND s.nid = g.gid', array(
         ':entity_type' => $entity_type,
       ));
@@ -558,6 +554,12 @@ function elx_content_tool_update_7107(&$sandbox) {
           $og_membership = og_membership_create('node', $nid, $entity_type, $entity->{$info['entity keys']['id']}, $field_name, array('language' => LANGUAGE_NONE));
           $og_membership->entity = $entity;
           $og_membership->save();
+          // Assign market admin.
+          if ($entity_type == 'user' && user_has_role($sandbox['role']->rid)) {
+            if (isset($sandbox['rid'])) {
+              og_role_grant('node', $nid, $entity->uid, $sandbox['rid']);
+            }
+          }
           // Add new market group to processed count.
           ++$sandbox['progress'];
         }
@@ -574,9 +576,10 @@ function elx_content_tool_update_7107(&$sandbox) {
 }
 
 /**
- * Drop market value mapping table and remove old field_market_name field.
+ * Drop market value mapping table and remove old markets fields.
  */
-function elx_content_tool_update_7108() {
+function elx_content_tool_update_7109() {
   db_drop_table('elx_content_tool_markets_map');
+  field_delete_field('field_markets');
   field_delete_field('field_market_name');
 }

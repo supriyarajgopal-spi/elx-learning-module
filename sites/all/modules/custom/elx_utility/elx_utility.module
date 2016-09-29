@@ -265,12 +265,13 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
   $flag = flag_load($flag_name); //Load the flag object
   
   //Form the modal content
-  $rendered_title = (isset($flag->title) && $flag->title != '')?'Title: ' .$flag->title. '<br />':'';
-  $rendered_description = (isset($flag->badge_description) && $flag->badge_description != '')?'Description: ' .$flag->badge_description. '<br />':'';
+  $rendered_title = (isset($flag->title) && $flag->title != '')?$flag->title:'';
+  $rendered_description = (isset($flag->badge_description) && $flag->badge_description != '')?$flag->badge_description:'';
   $image = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
   $rendered_img = ($image)?'Image: '.render(theme_image_style(array('style_name' => 'thumbnail','path' => $image->uri))):'';
 
-  $output = $rendered_title.$rendered_description.$rendered_img;
-  
-  return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
+  $output = "this is not used.";
+
+  return ctools_modal_render($rendered_title.":".$rendered_description,$output); //Render content in 'Modal' view mode
+  //return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
 }

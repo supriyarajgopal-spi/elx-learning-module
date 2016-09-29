@@ -251,6 +251,7 @@ function _elx_custom_modal($js = NULL, $nid = NULL)
  */
 function _elx_badges_modal($js = NULL, $flag_name = NULL)
 {
+  global $user;
   if($flag_name == NULL)
    return 'No content to display.';
    
@@ -263,15 +264,21 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
   }
   
   $flag = flag_load($flag_name); //Load the flag object
+  $is_flagged = $flag->is_flagged($user->uid);//is the current user flagged?
   
   //Form the modal content
   $rendered_title = (isset($flag->title) && $flag->title != '')?$flag->title:'';
   $rendered_description = (isset($flag->badge_description) && $flag->badge_description != '')?$flag->badge_description:'';
-  $image = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
-  $rendered_img = ($image)?'Image: '.render(theme_image_style(array('style_name' => 'thumbnail','path' => $image->uri))):'';
+  $rendered_undescription = (isset($flag->badge_unearned_description) && $flag->badge_unearned_description != '')?$flag->badge_unearned_description:'';
+  //$image = (isset($flag->badge_image) && $flag->badge_image != 0)?file_load($flag->badge_image):FALSE;
+  //$rendered_img = ($image)?'Image: '.render(theme_image_style(array('style_name' => 'thumbnail','path' => $image->uri))):'';
 
-  $output = "this is not used.";
+  if ($is_flagged) {
+    $output = $rendered_description;
+  } else {
+    $output = $rendered_undescription;
+  }
 
-  return ctools_modal_render($rendered_title.":".$rendered_description,$output); //Render content in 'Modal' view mode
+  return ctools_modal_render($rendered_title.":".$output,$output); //Render content in 'Modal' view mode
   //return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
 }

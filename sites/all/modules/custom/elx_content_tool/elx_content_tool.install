@@ -175,14 +175,14 @@ function elx_content_tool_update_7101(&$sandbox) {
  * Add markets group to content types containing field_markets.
  */
 function elx_content_tool_update_7102(&$sandbox) {
-  _elx_content_tool_add_markets_field(&$sandbox, 'field_markets');
+  _elx_content_tool_add_markets_field($sandbox, 'field_markets');
 }
 
 /**
  * Add markets group to content types containing field_market_name.
  */
 function elx_content_tool_update_7103(&$sandbox) {
-  _elx_content_tool_add_markets_field(&$sandbox, 'field_market_name');
+  _elx_content_tool_add_markets_field($sandbox, 'field_market_name');
 }
 
 /**

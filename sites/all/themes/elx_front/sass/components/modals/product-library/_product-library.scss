@@ -1,22 +1,279 @@
-/* product library */
+/* MODAL FOR PRODUCT LIBRARY */
+.page-home-page,
 .page-product-library,
 .page-search-product-library {
 
+  .modal-default div.modal-header a.close {
+    background-position: 0 top;
+    margin-top: -30px;
+
+    @include respond-to('mobile') {
+      margin-top: -18px;
+      margin-right: -22px;
+      // transform: scale(0.5); // gulp is wrong here - needs leading zero for scale
+      background-size: 50px;
+      width: 16px;
+      height: 16px;
+      background-size: 50px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      margin-top: -14px;
+      margin-right: -18px;
+    }
+  }
+
   div.ctools-modal-content {
     background-color: #e6e9ee;
+    border: 0;
 
     .modal-header {
       position: absolute;
       top: 10px;
       right: 30px;
       z-index: 10;
-      background-color: #e6e9ee;
+      // background-color: #e6e9ee;
+    }
+
+    h1 {
+      font-family: $font-family-serif;
+      font-size: 50px;
+      text-align: left;
+      font-weight: 100;
+    }
+
+    h2 {
+      font-family: $font-family-serif;
+      font-size: 28px;
+      font-weight: 100;
+    }
+
+    .node-product-detail {
+      max-width: 1170px;
+      padding: 30px 90px;
+      margin: 0 auto;
     }
 
   }
 
+  div.ctools-modal-content #modal-content::after {
+    background-color: purple;
+    display: block;
+    height: 100px;
+    position: absolute;
+    width: 1603px;
+    z-index: 20000;
+  }
+
   .modal-content {
     background-color: #e6e9ee;
+
+    @include respond-to('mobile') {
+      margin-left: -8px;
+    }
+
+    @include respond-to('mobile-landscape') {
+      margin-left: -5px;
+    }
+
+    .node-product-detail {
+
+      @include respond-to('mobile') {
+        margin: 0;
+      }
+
+      @include respond-to('mobile-landscape') {
+        margin: 0;
+      }
+/*
+      @include respond-to('tablet') {
+        margin: 25px; 
+      }
+*/
+
+      margin: 0 100px;
+      background-color: white;
+
+      > h2 {
+        display: none;
+        position: absolute;
+        top: 75px;
+      }
+
+      .field-label {
+        margin: 12px 0;
+      }
+
+      .field-name-field-display-title {
+        .field-item h1 {
+
+          @include respond-to('mobile') {
+            margin: 30px 10px 10px;
+            background-color: #fff;
+            width: 90%;
+            font-size: 27px;
+            padding: 0;
+          }
+
+          font-family: 'optimadisplaylightlight';
+          font-size: 54px;
+          padding: 10px 100px;
+          text-align: left;
+        }
+      }
+
+      .field-name-field-subtitle {
+        .field-item h2 {
+
+          @include respond-to('mobile') {
+            margin: 5px 10px;
+            background-color: #fff;
+            width: 90%;
+            font-size: 17px;
+            padding: 0;
+            font-weight: normal;
+          }
+
+          font-size: 24px;
+          font-family: 'optimadisplaylightlight';
+          padding: 0 100px;
+          text-align: left;
+        }
+      }
+
+      .field-name-field-product-image {
+        @include respond-to('mobile') {
+          margin-top: 0;
+        }
+
+        margin-top: 80px;
+        padding: 10px;
+        float: left;
+      }
+
+      .field-name-field-why-there-s-only-one {
+        background-color: #e6e9ee;
+        float: right;
+        margin: 25px 75px;
+        padding: 10px 30px;
+        width: 40%;
+
+        @include respond-to('mobile') {
+          margin: 25px 0;
+          background-color: #fff;
+          width: 99%;
+          padding: 10px;
+        }
+
+        @include respond-to('mobile-landscape') {
+          width: 75%;
+        }
+
+        p {
+          font-size: 20px;
+          letter-spacing: '0.1em';
+          line-height: 28px;
+        }
+      }
+
+      .field-name-field-demonstration,
+      .field-name-field-benefits,
+      .field-name-field-if-she-asks-share,
+      .field-name-field-customer-questions,
+      .field-name-field-story {
+        margin: 25px 75px;
+        padding: 10px 30px;
+
+        @include respond-to('mobile') {
+          margin: 25px 5px;
+          padding: 12px 5px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+
+        font-size: 20px;
+        letter-spacing: '0.1em';
+        line-height: 28px;
+
+        clear: both;
+      }
+
+      fieldset.group-partners {
+        border: 0;
+        margin: 25px 75px;
+        padding: 10px 30px;
+
+        @include respond-to('mobile') {
+          margin: 25px 5px;
+          padding: 10px 5px;
+        }
+
+        .fieldset-legend {
+
+          @include respond-to('mobile') {
+            font-size: 14px;
+            padding: 10px 0 0;
+          }
+
+          font-size: 20px;
+          font-weight: bold;
+          padding: 20px 0 0;
+          text-transform: uppercase;
+        }
+
+        .fieldset-wrapper .field-name-field-perfect-partners {
+          display: none;
+        }
+
+        .fieldset-wrapper .field-name-field-perfect-partners-text {
+          font-size: 20px;
+          font-weight: bold;
+          padding: 20px 0 0;
+          text-transform: uppercase;
+
+          p {
+            text-transform: none;
+            font-weight: none;
+
+            @include respond-to('mobile') {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .field-name-field-if-she-asks-share,
+      .field-name-field-customer-questions {
+        div {
+          margin: 12px 0;
+        }
+      }
+
+      .field-name-field-related-products {
+        visibility: hidden;
+        display: none;
+      }
+
+      .field .field-label  {
+
+        @include respond-to('mobile') {
+          font-size: 12px;
+          font-weight: bold;
+          padding: 0;
+          text-transform: uppercase;
+        }
+
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 0 0;
+        text-transform: uppercase;
+      }
+
+      ul.links.inline {
+        visibility: hidden;
+      }
+
+    }
 
     article {
       background-color: #fff;
@@ -60,6 +317,7 @@
       }
 
       .field-name-field-why-there-s-only-one {
+
         float: right;
         width: 50%;
         background-color: #e6e9ee;

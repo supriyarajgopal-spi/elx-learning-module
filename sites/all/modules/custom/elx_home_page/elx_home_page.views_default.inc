@@ -86,6 +86,12 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Point Value */
+  $handler->display->display_options['fields']['field_point_value']['id'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['table'] = 'field_data_field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['field'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['label'] = '';
+  $handler->display->display_options['fields']['field_point_value']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
@@ -517,6 +523,12 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Point Value */
+  $handler->display->display_options['fields']['field_point_value']['id'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['table'] = 'field_data_field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['field'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['label'] = '';
+  $handler->display->display_options['fields']['field_point_value']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
@@ -926,6 +938,12 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Point Value */
+  $handler->display->display_options['fields']['field_point_value']['id'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['table'] = 'field_data_field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['field'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['label'] = '';
+  $handler->display->display_options['fields']['field_point_value']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
@@ -1236,6 +1254,12 @@ function elx_home_page_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Point Value */
+  $handler->display->display_options['fields']['field_point_value']['id'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['table'] = 'field_data_field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['field'] = 'field_point_value';
+  $handler->display->display_options['fields']['field_point_value']['label'] = '';
+  $handler->display->display_options['fields']['field_point_value']['element_label_colon'] = FALSE;
   /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';

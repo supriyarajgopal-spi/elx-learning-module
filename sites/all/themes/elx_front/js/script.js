@@ -23,7 +23,7 @@
 
 
       /* TOOLS section // per title link // */
-/*
+
       $('.view-tools.view-id-tools').find('.use-ajax.ajax-processed').click(function () {
 
         // click should trigger function with overlay
@@ -37,8 +37,8 @@
           setTimeout(function (time) {
 
             // uat debug // remove after
-            // var typefile = $('#modal-content .field-name-field-tool-pdf.field-type-file').html();
-            // console.log(typefile);
+            var typefile = $('#modal-content .field-name-field-tool-pdf.field-type-file').html();
+            console.log(typefile);
 
             // grab title field in all content variations //
             var display_title = $('#modalContent .field-name-field-display-title').find('.field-item.even').html();
@@ -92,8 +92,10 @@
             var innerpart_newcontainer = $('body.page-tools.section-tools #modalContent .node-tools');
             var modalheader = $('<div class="modal-header"><a class="close"></a></div>').click(close_action);
 
+            // css overrides due to ctools pegging hard style properties to modalContent //
             $('body.page-tools.section-tools #modalBackdrop').css({'background-color': '#040A2B', 'opacity': '0.8'});
-            $('body.page-tools.section-tools #modalContent').css({'border': '1px solid black', 'width': '50%', 'margin-top': '50px', 'margin-left': '10px', 'background-color': 'white', 'overflow': 'visible'});
+            $('body.page-tools.section-tools #modalContent').css({'overflow': 'visible'});
+            $('body.page-tools.section-tools #modalContent').addClass('drupal-overlay-js');
 
             var btnlink = $('<a href="' + asset + '" data-node-id="' + linkhref + '" target="_blank">VIEW TOOL</a>');
             var viewbtn = $('<div id="detail-content-btn"></div>');
@@ -120,29 +122,30 @@
               return;
             }
 
+            $('body.page-tools.section-tools #modalContent').removeClass('pdf-variant').removeClass('mp4-variant').removeClass('animgif-variant');
 
             // add new container after removing prior content in modal accumilated //
             $('body.page-tools.section-tools #modalContent').prepend(modalheader).append(innerpart_newcontainer);
 
             if (asset.match(/pdf/i)) {
 
-              $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn);
+              $('body.page-tools.section-tools #modalContent').append(itemtitle).append(viewbtn).addClass('pdf-variant');
 
             }
             else if (asset.match(/mp4/i)) {
 
-              $('body.page-tools.section-tools #modalContent').append(itemtitle).append(out);
+              $('body.page-tools.section-tools #modalContent').append(itemtitle).append(out).addClass('mp4-variant');
 
             }
             else if (asset.match(/gif/i)) {
 
-              $('body.page-tools.section-tools #modalContent').css({'width': '50%', 'margin-left': '30px'});
+              // $('body.page-tools.section-tools #modalContent').css({'width': '70%', 'margin-left': '30px'});
 
               var animgif = $('<img src="' + asset + '" class="animated-gif" />');
               var panim = $('<div class="paragraph-animgif-container"></div>');
               $('body.page-tools.section-tools #modalContent').append(itemtitle);
               $(panim).append(out).append(animgif);
-              $('body.page-tools.section-tools #modalContent').append(panim);
+              $('body.page-tools.section-tools #modalContent').append(panim).addClass('animgif-variant');
 
             }
 
@@ -173,7 +176,8 @@
         $('#modal-content .field-name-field-tool-pdf.field-type-file').ready(launchModal);
 
       });
-*/
+
+
       /* SEARCH #edit-combine search field alteration */
       if ($('body.page-search-product-library.section-search-product-library').size()) {
 
@@ -447,11 +451,10 @@
 
       /* GET DEVICE WIDTH */
       function effectiveDeviceWidth() {
-        var deviceWidth = window.orientation === 0 ? window.screen.width : window.screen.height;
+        var deviceWidth = window.orientation === 0 ? window.screen.height : window.screen.width;
         // iOS returns available pixels, Android returns pixels / pixel ratio
         // http://www.quirksmode.org/blog/archives/2012/07/more_about_devi.html
         if (navigator.userAgent.indexOf('Android') >= 0 && window.devicePixelRatio) {
-          deviceWidth = window.orientation === 0 ? window.screen.height : window.screen.width;
           deviceWidth = deviceWidth / window.devicePixelRatio;
         }
         return deviceWidth;

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elx_site_configurations.field_group.inc
+ * elx_product_library.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function elx_site_configurations_field_group_info() {
+function elx_product_library_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();

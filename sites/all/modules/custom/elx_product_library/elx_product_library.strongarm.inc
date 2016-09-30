@@ -1,63 +1,14 @@
 <?php
 /**
  * @file
- * elx_views.strongarm.inc
+ * elx_product_library.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function elx_views_strongarm() {
+function elx_product_library_strongarm() {
   $export = array();
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_product_detail';
-  $strongarm->value = 0;
-  $export['comment_anonymous_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_product_detail';
-  $strongarm->value = 1;
-  $export['comment_default_mode_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_product_detail';
-  $strongarm->value = '50';
-  $export['comment_default_per_page_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_product_detail';
-  $strongarm->value = 1;
-  $export['comment_form_location_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_product_detail';
-  $strongarm->value = '1';
-  $export['comment_preview_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_product_detail';
-  $strongarm->value = '1';
-  $export['comment_product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_product_detail';
-  $strongarm->value = 1;
-  $export['comment_subject_field_product_detail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -86,6 +37,12 @@ function elx_views_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'modal' => array(
+        'custom_settings' => TRUE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -99,7 +56,15 @@ function elx_views_strongarm() {
       'display' => array(
         'language' => array(
           'modal' => array(
-            'weight' => '10',
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '8',
             'visible' => FALSE,
           ),
         ),
@@ -107,13 +72,6 @@ function elx_views_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__product_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_product_detail';
-  $strongarm->value = 2;
-  $export['language_content_type_product_detail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

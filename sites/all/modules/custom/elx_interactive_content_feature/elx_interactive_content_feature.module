@@ -120,3 +120,41 @@ function elx_interactive_content_feature_h5p_scripts_alter(&$scripts, $libraries
     );
   }
 }
+
+/**
+ * Add styles to H5Ps
+ * 
+ * @param array $styles
+ *  Array of objects with properties path and version. Version is on the form
+ *  ?ver=1.0.2 and is used as a cache buster
+ * @param array $libraries
+ *  Array of libraries indexed by the library's machineName and with an array
+ *  as value. The value has the properties majorVersion and minorVersion
+ * @param string $mode
+ *  What mode are we in? Possible values are "editor", "div", "iframe" and "external"
+ */
+function elx_interactive_content_feature_h5p_styles_alter(&$styles, $libraries, $mode) {
+  //if (isset($libraries['H5P.MultiChoice']) && $libraries['H5P.MultiChoice']['majorVersion'] == '1') {
+  if ($mode == 'iframe') {
+    $styles[] = (object) array(
+      'path' => drupal_get_path('theme', 'elx_front') . '/css/h5p-iframe.css',
+      // Cache buster
+      'version' => '?ver=' . time(),
+      'mode' => 'iframe',
+    );
+  }
+  //}
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function elx_interactive_content_feature_node_view($node, $view_mode, $langcode) {
+  if (!empty($node->field_learning_category[$langcode][0]) && isset($node->field_learning_category[$langcode][0]['taxonomy_term'])) {
+    drupal_add_js(array(
+      'H5PIntegration' => array(
+        'elxLevel' => $node->field_learning_category[$langcode][0]['taxonomy_term'],
+      ),
+    ), 'setting');
+  }
+}

@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * elx_views.features.field_instance.inc
+ * elx_product_library.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function elx_views_field_default_field_instances() {
+function elx_product_library_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-product_detail-field_benefits'
+  // Exported field_instance: 'node-product_detail-field_benefits'.
   $field_instances['node-product_detail-field_benefits'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -22,20 +22,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
     ),
     'entity_type' => 'node',
@@ -58,7 +58,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_customer_questions'
+  // Exported field_instance: 'node-product_detail-field_customer_questions'.
   $field_instances['node-product_detail-field_customer_questions'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -70,20 +70,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -106,7 +106,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_demonstration'
+  // Exported field_instance: 'node-product_detail-field_demonstration'.
   $field_instances['node-product_detail-field_demonstration'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -118,20 +118,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -154,7 +154,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_display_title'
+  // Exported field_instance: 'node-product_detail-field_display_title'.
   $field_instances['node-product_detail-field_display_title'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -162,23 +162,37 @@ function elx_views_field_default_field_instances() {
     'description' => 'This is the title that will be displayed in the ELX system.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => 'h1',
+        ),
+        'type' => 'title_linked',
+        'weight' => 0,
       ),
       'modal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => 'h1',
+        ),
+        'type' => 'title_linked',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => '_none',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -201,7 +215,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_fun_fact_sheet'
+  // Exported field_instance: 'node-product_detail-field_fun_fact_sheet'.
   $field_instances['node-product_detail-field_fun_fact_sheet'] = array(
     'bundle' => 'product_detail',
     'deleted' => 0,
@@ -212,19 +226,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 14,
+        'weight' => 12,
       ),
       'modal' => array(
         'label' => 'above',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
+        'type' => 'file_default',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -264,7 +279,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_if_she_asks_share'
+  // Exported field_instance: 'node-product_detail-field_if_she_asks_share'.
   $field_instances['node-product_detail-field_if_she_asks_share'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -276,20 +291,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -312,7 +327,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_just_for_you'
+  // Exported field_instance: 'node-product_detail-field_just_for_you'.
   $field_instances['node-product_detail-field_just_for_you'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -323,22 +338,29 @@ function elx_views_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 17,
+        'type' => 'entityreference_entity_view',
+        'weight' => 14,
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -362,52 +384,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_learning_category'
-  $field_instances['node-product_detail-field_learning_category'] = array(
-    'bundle' => 'product_detail',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 18,
-      ),
-      'modal' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_learning_category',
-    'label' => 'Category',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_detail-field_perfect_partners'
+  // Exported field_instance: 'node-product_detail-field_perfect_partners'.
   $field_instances['node-product_detail-field_perfect_partners'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -415,26 +392,32 @@ function elx_views_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(),
-        'type' => 'entityreference_entity_id',
-        'weight' => 11,
-      ),
-      'modal' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
+        'type' => 'entityreference_entity_view',
+        'weight' => 8,
+      ),
+      'modal' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -458,7 +441,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_perfect_partners_text'
+  // Exported field_instance: 'node-product_detail-field_perfect_partners_text'.
   $field_instances['node-product_detail-field_perfect_partners_text'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -471,24 +454,24 @@ function elx_views_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'modal' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -511,43 +494,47 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_point_value'
+  // Exported field_instance: 'node-product_detail-field_point_value'.
   $field_instances['node-product_detail-field_point_value'] = array(
     'bundle' => 'product_detail',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 25,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 22,
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_point_value',
+    'is_property' => 0,
     'label' => 'Point Value',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -557,7 +544,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_price'
+  // Exported field_instance: 'node-product_detail-field_price'.
   $field_instances['node-product_detail-field_price'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -566,22 +553,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 21,
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -604,7 +590,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_product_categories'
+  // Exported field_instance: 'node-product_detail-field_product_categories'.
   $field_instances['node-product_detail-field_product_categories'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -613,22 +599,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 20,
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -648,32 +633,40 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_product_image'
+  // Exported field_instance: 'node-product_detail-field_product_image'.
   $field_instances['node-product_detail-field_product_image'] = array(
     'bundle' => 'product_detail',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => 'product_detail',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'modal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'product_detail',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -718,7 +711,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_related_products'
+  // Exported field_instance: 'node-product_detail-field_related_products'.
   $field_instances['node-product_detail-field_related_products'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -729,27 +722,35 @@ function elx_views_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 16,
+        'type' => 'entityreference_entity_view',
+        'weight' => 13,
       ),
       'modal' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => TRUE,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_related_products',
-    'label' => 'Related products',
+    'is_property' => 0,
+    'label' => 'See similar products',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -768,7 +769,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_season'
+  // Exported field_instance: 'node-product_detail-field_season'.
   $field_instances['node-product_detail-field_season'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -777,22 +778,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -812,7 +812,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_story'
+  // Exported field_instance: 'node-product_detail-field_story'.
   $field_instances['node-product_detail-field_story'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -824,20 +824,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -860,7 +860,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_subtitle'
+  // Exported field_instance: 'node-product_detail-field_subtitle'.
   $field_instances['node-product_detail-field_subtitle'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -872,23 +872,37 @@ function elx_views_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => 'h2',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
       'modal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => 'h2',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => '_none',
+        ),
+        'type' => 'title_linked',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -911,7 +925,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_tags_keywords'
+  // Exported field_instance: 'node-product_detail-field_tags_keywords'.
   $field_instances['node-product_detail-field_tags_keywords'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -920,22 +934,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -958,7 +971,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-field_why_there_s_only_one'
+  // Exported field_instance: 'node-product_detail-field_why_there_s_only_one'.
   $field_instances['node-product_detail-field_why_there_s_only_one'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -970,20 +983,20 @@ function elx_views_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'modal' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -1006,7 +1019,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-group_content_access'
+  // Exported field_instance: 'node-product_detail-group_content_access'.
   $field_instances['node-product_detail-group_content_access'] = array(
     'bundle' => 'product_detail',
     'default_value' => array(
@@ -1019,22 +1032,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 24,
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -1064,7 +1076,7 @@ function elx_views_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-product_detail-markets'
+  // Exported field_instance: 'node-product_detail-markets'.
   $field_instances['node-product_detail-markets'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -1073,31 +1085,32 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 23,
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'markets',
+    'is_property' => 0,
     'label' => 'Markets',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 0,
           'admin' => array(
             'widget_type' => 'entityreference_autocomplete',
           ),
@@ -1107,7 +1120,6 @@ function elx_views_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
-      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1123,6 +1135,7 @@ function elx_views_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -1130,7 +1143,7 @@ function elx_views_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-product_detail-title_field'
+  // Exported field_instance: 'node-product_detail-title_field'.
   $field_instances['node-product_detail-title_field'] = array(
     'bundle' => 'product_detail',
     'default_value' => NULL,
@@ -1139,26 +1152,21 @@ function elx_views_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'title',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => '',
-          'title_style' => '',
-        ),
-        'type' => 'title_linked',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'modal' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 21,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -1190,7 +1198,6 @@ function elx_views_field_default_field_instances() {
   t('Administrative title');
   t('Autocomplete tags. Separate tags by commas.');
   t('Benefits');
-  t('Category');
   t('Customer questions');
   t('Demonstration');
   t('Display title');
@@ -1204,8 +1211,8 @@ function elx_views_field_default_field_instances() {
   t('Price');
   t('Product categories');
   t('Product image');
-  t('Related products');
   t('Season');
+  t('See similar products');
   t('Story');
   t('Subtitle');
   t('Tags/keywords');

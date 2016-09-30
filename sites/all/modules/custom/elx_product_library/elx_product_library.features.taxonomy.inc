@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * elx_badges_rules.features.taxonomy.inc
+ * elx_product_library.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function elx_badges_rules_taxonomy_default_vocabularies() {
+function elx_product_library_taxonomy_default_vocabularies() {
   return array(
-    'userpoints' => array(
-      'name' => 'Userpoints',
-      'machine_name' => 'userpoints',
-      'description' => 'Automatically created by the userpoints module',
-      'hierarchy' => 1,
-      'module' => 'userpoints',
+    'product_category' => array(
+      'name' => 'Product Category',
+      'machine_name' => 'product_category',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,

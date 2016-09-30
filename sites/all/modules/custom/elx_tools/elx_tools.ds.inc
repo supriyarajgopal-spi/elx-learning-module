@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elx_views.ds.inc
+ * elx_tools.ds.inc
  */
 
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function elx_views_ds_layout_settings_info() {
+function elx_tools_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

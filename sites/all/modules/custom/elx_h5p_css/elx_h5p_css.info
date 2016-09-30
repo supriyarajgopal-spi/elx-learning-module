@@ -1,6 +1,4 @@
 name = ELX H5P CSS
-description = import custom css into the iframe
+description = Please uninstall.
 core = 7.x
 package = ELX
-dependencies[] = h5p
-dependencies[] = elx_interactive_content_feature

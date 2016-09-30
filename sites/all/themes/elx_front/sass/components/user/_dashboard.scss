@@ -492,7 +492,6 @@ body.section-user.page-user {
               margin: 0 25px;
 
               .views-field.views-field-field-display-title {
-
                  position: absolute;
                  margin: 0;
                  width: 500px;
@@ -701,5 +700,69 @@ body.section-user.page-user {
     }
 
   } // override //
+
+}
+
+// FAVORITES HEART
+.views-field-ops {
+  width: 50%;
+  float: left;
+  text-align: right;
+
+  .flag-favorites {
+
+    a {
+      text-decoration: none;
+      color: #000;
+      padding: 0 5px 0 0;
+    }
+
+    a.unflag-action,
+    a.flagged {
+      // background: url('../images/buttons_etc/heart.png') !important;
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60b';
+        color: #f05c72;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+    a.flag-action,
+    a.unflagged {
+     // background: url('../images/buttons_etc/heart-empty.png') !important;
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60c';
+        color: #f05c72;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+  }
+
+}
+
+.views-field-field-point-value {
+  width: 50%;
+  float: right;
+
+  .field-content {
+    padding: 0 0 0 5px;
+
+    &::before {
+      font-family: 'elx-icons';
+      content: '\e604';
+      color: #a48a58;
+      font-size: 14px;
+      padding: 0 2px 0 0;
+    }
+  }
 
 }

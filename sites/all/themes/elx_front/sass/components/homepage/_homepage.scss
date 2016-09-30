@@ -408,7 +408,10 @@ body.page-home-page {
         text-align: center;
         font-size: 22px;
         font-family: $font-family-serif;
-        margin-bottom: 50px;
+        border-bottom: 1px solid #9eafff;
+        padding: 10px 0;
+        margin: 0 20px 10px;
+        height: 92px;
 
         a {
           text-decoration: none;
@@ -490,19 +493,19 @@ body.page-home-page {
         @include respond-to('desktop') {
           float: left;
           max-width: 24%;
-          margin-right: 2px;
+          margin: 25px 2px 0 0;
         }
 
         @include respond-to('wide') {
           float: left;
           max-width: 24%;
-          margin-right: 2px;
+          margin: 25px 2px 0 0;
         }
 
         @include respond-to('xwide') {
           float: left;
           max-width: 24%;
-          margin-right: 2px;
+          margin: 25px 2px 0 0;
         }
       }
 
@@ -510,7 +513,10 @@ body.page-home-page {
         text-align: center;
         font-size: 22px;
         font-family: $font-family-serif;
-        margin-bottom: 50px;
+        border-bottom: 1px solid #9eafff;
+        padding: 10px 0;
+        margin: 0 20px 10px;
+        height: 92px;
 
         a {
           text-decoration: none;
@@ -618,7 +624,10 @@ body.page-home-page {
         text-align: center;
         font-size: 22px;
         font-family: $font-family-serif;
-        margin-bottom: 50px;
+        border-bottom: 1px solid #9eafff;
+        padding: 10px 0;
+        margin: 0 20px 10px;
+        height: 92px;
 
         a {
           text-decoration: none;

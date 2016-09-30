@@ -21,7 +21,7 @@ function elx_interactive_content_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'h5p_save_content_state';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['h5p_save_content_state'] = $strongarm;
 
   $strongarm = new stdClass();

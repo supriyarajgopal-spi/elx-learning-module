@@ -12,7 +12,6 @@ body.section-user.page-user {
     }
   }
 
-  //.page-badges .views-row .views-field a,
   .views-row {
     .views-field {
       a {
@@ -28,50 +27,28 @@ body.section-user.page-user {
       display: none;
     }
 
-/*
-    .panels-flexible-column-new-main {
-
-    }
-*/
     .panel-flexible-inside.panels-flexible-new-inside {
 
       .panels-flexible-row.panels-flexible-row-new-main-row,
       .panels-flexible-row.panels-flexible-row-new-3 {
         display: none;
       }
+
     }
 
     .panels-flexible-column-new-1 {
       float: right;
       background-color: #e6e9ee;
 
-          h2.pane-title {
-            margin: 40px auto;
-            text-align: center;
-            font-family: 'optimadisplaylightlight';
-            font-size: 3em;
-            font-weight: normal;
-          }
-    }
-
-/*
-    // dp dp //
-    .panels-flexible-row.panels-flexible-row-new-main-row {
-      .panels-flexible-region-new-user_information {
-
+      h2.pane-title {
+        margin: 40px auto;
+        text-align: center;
+        font-family: 'optimadisplaylightlight';
+        font-size: 3em;
+        font-weight: normal;
       }
+
     }
-
-    // head piece //
-    .panels-flexible-row.panels-flexible-row-new-3 {
-      .panels-flexible-region-new-user_information_left {
-
-      }
-      .panels-flexible-region-new-user_information_right {
-
-      }
-    }
-*/
 
     .panels-flexible-row.panels-flexible-row-new-4,
     .panels-flexible-row.panels-flexible-row-new-5,
@@ -79,110 +56,92 @@ body.section-user.page-user {
       background-color: #040a2b;
       color: #fff;
       text-transform: uppercase;
-      // width: 1024px;
       width: 100%;
     }
 
-    // 10 progress count //
     .panels-flexible-row.panels-flexible-row-new-4 {
 
-      // .panels-flexible-region-new-my_progress_levels {
+      .pane-levels-quizz-progress-completed-count {
+        margin-left: 10px;
 
-       .pane-levels-quizz-progress-completed-count {
+        .view-content::before {
+          content: 'My Progress';
+          display: block;
+          font-size: 32px;
+          margin: 25px 15px;
+        }
 
-          margin-left: 10px;
+        .view-content .views-field.views-field-tid {
+          height: 24px;
+          width: 100%;
+          margin: 0 15px;
 
-          .view-content::before {
-            content: 'My Progress';
-            display: block;
-            font-size: 32px;
-            margin: 25px 15px;
+          .field-content {
+            font-size: 24px;
           }
 
-          .view-content .views-field.views-field-tid {
-            height: 24px;
-            width: 100%;
-            margin: 0 15px;
-
-            .field-content {
-              font-size: 24px;
-            }
-
-            .field-content::before {
-              content: 'Levels Completed: ';
-            }
+          .field-content::before {
+            content: 'Levels Completed: ';
           }
 
-          .contextual-links-wrapper.contextual-links-processed {
-            display: none;
-          }
+        }
 
-          /*
-
-          .view-content .views-field.views-field-name {
-            display: none;
-          }
-
-          .view-content .views-field.views-field-expression {
-            height: 100px;
-            margin: 0 auto;
-            width: 95%;
-          }
-
-          */
-
-       }
-
-       .pane-levels-quizz-progress-closest-completion {
-
-          .view-content .views-field.views-field-name {
-            display: none;
-          }
-
-          .view-content .views-field.views-field-expression {
-            height: 100px;
-            margin: 0 auto;
-            width: 95%;
-
-            .user-progress-bar {
-              background-color: white;
-              box-shadow: 1px 3px 10px gray inset;
-              display: block;
-              height: 24px;
-              margin: 50px auto 50px 70px;
-              width: 95%;
-
-              .progress-bar-percentage {
-                font-family: arial, 'optimadisplaylightlight';
-                font-size: 1.4em;
-                font-weight: bold;
-                margin-left: -55px;
-                position: absolute;
-                width: 130px;
-              }
-
-              .user-progress {
-                animation: 2s ease 0s normal forwards 1 running progress;
-                background: black url('../images/progress-bar.png') repeat scroll 0 0;
-                display: block;
-                height: 24px;
-                width: 0;
-              }
-            }
-
-          // }
-
-          .view-content .views-field.views-field-name {
-            display: none;
-          }
+        .contextual-links-wrapper.contextual-links-processed {
+          display: none;
         }
 
       }
+
+      .pane-levels-quizz-progress-closest-completion {
+
+        .view-content .views-field.views-field-name {
+          display: none;
+        }
+
+        .view-content .views-field.views-field-expression {
+          height: 100px;
+          margin: 0 auto;
+          width: 95%;
+
+          .user-progress-bar {
+            background-color: white;
+            box-shadow: 1px 3px 10px gray inset;
+            display: block;
+            height: 24px;
+            margin: 50px auto 50px 70px;
+            width: 95%;
+
+            .progress-bar-percentage {
+              font-family: arial, 'optimadisplaylightlight';
+              font-size: 1.4em;
+              font-weight: bold;
+              margin-left: -55px;
+              position: absolute;
+              width: 130px;
+            }
+
+            .user-progress {
+              animation: 2s ease 0s normal forwards 1 running progress;
+              background: black url('../images/progress-bar.png') repeat scroll 0 0;
+              display: block;
+              height: 24px;
+              width: 0;
+            }
+
+          }
+
+          .view-content .views-field.views-field-name {
+            display: none;
+          }
+
+        }
+
+      }
+
     }
 
     // my points
     .panels-flexible-row.panels-flexible-row-new-5 {
-
       font-size: 1.2em;
 
       .panels-flexible-region-new-my_progress_last_login {
@@ -198,10 +157,10 @@ body.section-user.page-user {
             .views-label {
               font-weight: bold;
             }
+
           }
 
         }
-
 
       }
 
@@ -241,9 +200,9 @@ body.section-user.page-user {
 
           .views-field.views-field-field-headline,
           .views-field.views-field-field-headline a {
-              height: 50px;
-              margin: -2px 10px;
-              width: 100%;
+            height: 50px;
+            margin: -2px 10px;
+            width: 100%;
           }
 
           .views-field.views-field-field-display-title {
@@ -264,15 +223,14 @@ body.section-user.page-user {
 
           .views-field.views-field-field-headline,
           .views-field.views-field-field-headline a {
-              height: 50px;
-              margin: -2px 10px;
-              width: 100%;
-
-              display: none;
+            height: 50px;
+            margin: -2px 10px;
+            width: 100%;
+            display: none;
           }
 
           .views-field.views-field-field-display-title {
-            display: block; // none;
+            display: block;
             width: 100%;
             height: 50px;
 
@@ -303,150 +261,33 @@ body.section-user.page-user {
 
     }
 
-    // badges
-    // changed // .panels-flexible-row.panels-flexible-row-new-7 {
-    .panels-flexible-row.panels-flexible-row-new-8 {
-
-      .contextual-links-region.panel-pane.pane-views-panes.pane-user-points-panel-pane-2,
-      .contextual-links-region.panel-pane.pane-views-panes.pane-user-points-dashboard-user-points {
-        display: none;
-      }
-      // .panels-flexible-region-new-my_badges {
-/*
-      // MY FAVORITES
-      .panel-pane.pane-views.pane-dashboard-favorites {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: none;
-      }
-
-    // }
-*/
-
-    // leaderboard
-    // //.panels-flexible-row.panels-flexible-row-new-8 {
-    // .panels-flexible-row.panels-flexible-row-new--changed--8 {
-
+    .panels-flexible-row-new-8 {
       margin: 50px 0;
+    }
 
-      .panels-flexible-region-new-my_leaderboard {
+  }
 
-        .view-badges.view-id-badges {
+  /* LEADERBOARD  */
+  .panels-flexible-region-new-my_leaderboard {
 
-            .more-link {
-              display: none;
-            }
+    .view-badges.view-id-badges {
 
-            .views-row {
-              width: 600px;
-              margin: 0 auto;
+      .more-link {
+        display: none;
+      }
 
-              .views-field {
-                margin: 0;
-                transform: scale(.8);
+      .views-row {
+        width: 600px;
+        margin: 0 auto;
 
-                .field-content {
+        .views-field {
+          margin: 0;
+          transform: scale(.8);
 
-                  a {
-                    text-indent: -5000px;
-                  }
+          .field-content {
 
-                }
-
-              }
-
-            }
-
-        }
-
-        // MY FAVORITES
-        .panel-pane.pane-views.pane-dashboard-favorites {
-          display: none;
-        }
-
-
-        .pane-user-points-panel-pane-2 {
-
-          h2.pane-title {
-            padding-top: 100px;
-            margin: 40px auto;
-            text-align: center;
-            font-family: 'optimadisplaylightlight';
-            font-size: 3em;
-            font-weight: normal;
-          }
-
-          .view-id-user_points {
-            height: 50px;
-            margin: 0;
-
-            .view-content {
-              height: 40px;
-              background-color: #040a2b;
-              color: #fff;
-            }
-
-            .views-field {
-              height: 50px;
-              width: 20%;
-            }
-
-          }
-
-        }
-
-        .pane-user-points-dashboard-user-points {
-
-          .view-display-id-dashboard_user_points {
-
-            .item-list {
-
-              // ul {
-
-                li.views-row {
-                  clear: left;
-                  border: 0 solid white;
-                  width: 100%; // 880px; //
-                  height: 125px;
-                  list-style: none;
-                  list-style-position: inside;
-                  padding: 0;
-                  margin: 0;
-                  border-bottom: 1px solid lightgray;
-
-                  .views-field {
-                    height: 50px;
-                    width: 15%;
-                  }
-
-                  .views-field.views-field-counter {
-                    float: left;
-                    height: 50px;
-                    margin: 0;
-                    width: 100px;
-                  }
-/*
-                  .views-field.views-field-field-last-name {
-
-                  }
-
-                  .views-field.views-field-user-gravatar-picture {
-
-                  }
-
-                  .views-fieldviews-field-field-country {
-
-                  }
-
-                  .views-field.views-field-points-1 {
-
-                  }
-*/
-                }
-
-              // }
-
+            a {
+              text-indent: -5000px;
             }
 
           }
@@ -457,82 +298,109 @@ body.section-user.page-user {
 
     }
 
-    // tools
-    .panels-flexible-row-new-8 {
+    h2.pane-title {
+      padding-top: 100px;
+      margin: 40px auto;
+      text-align: center;
+      font-family: 'optimadisplaylightlight';
+      font-size: 3em;
+      font-weight: normal;
+      clear: both;
+    }
 
-      margin: 50px 0;
+    .pane-user-points-panel-pane-2 {
 
-      .panels-flexible-region-new-my_leaderboard {
-      // changed // .panels-flexible-region-new-my_tools {
+      h2.pane-title {
+        padding-top: 100px;
+        margin: 40px auto;
+        text-align: center;
+        font-family: 'optimadisplaylightlight';
+        font-size: 3em;
+        font-weight: normal;
+      }
 
-        h2.pane-title {
-          padding-top: 100px;
-          margin: 40px auto;
-          text-align: center;
-          font-family: 'optimadisplaylightlight';
-          font-size: 3em;
-          font-weight: normal;
-          clear: both;
+      .view-id-user_points {
+        height: 50px;
+        margin: 0;
+
+        .view-content {
+          height: 40px;
+          background-color: #040a2b;
+          color: #fff;
         }
 
-        .item-list {
+        .views-field {
+          height: 50px;
+          width: 20%;
+        }
 
-          // ul {
+      }
 
-            li.views-row {
-              border: 0 solid white;
-              width: 880px;
-              height: 220px;
-              list-style: none;
-              list-style-position: inside;
-              padding: 0;
-              margin: 0 25px;
+    }
 
-              .views-field.views-field-field-display-title {
-                 position: absolute;
-                 margin: 0;
-                 width: 500px;
-                 height: 100px;
+    .item-list {
 
-                 // .field-content {
-                 .field-content a {
-                    font-family: 'optimadisplaylightlight';
-                    position: absolute;
-                    top: 15px;
-                    left: 250px;
-                    width: 500px;
-                    color: #040a2b;
-                    font-size: 1.4em;
-                    position: absolute;
-                    text-decoration: none;
-                  }
+      li.views-row {
+        border: 0 solid white;
+        width: 880px;
+        height: 220px;
+        list-style: none;
+        list-style-position: inside;
+        padding: 0;
+        margin: 0 25px;
 
-                // }
+        @include respond-to('mobile') {
+          width: 100%;
+          height: 150px;
+          margin: 0;
+        }
 
-              }
+        @include respond-to('mobile-landscape') {
+          width: 100%;
+          height: 150px;
+          margin: 0;
+        }
 
-              .views-field.views-field-field-tool-thumbnail {
-                 float: left;
-                 clear: left;
-                 height: 200px;
-                 margin: 10px;
+        .views-field.views-field-field-display-title {
+          position: absolute;
+          margin: 0;
+          width: 500px;
+          height: 100px;
 
-                .field-content {
+          @include respond-to('mobile') {
+            width: 100%;
+            height: auto;
+          }
 
-                  a {
-                    background-size: 0;
-                    height: 150px;
-                    margin: 0;
-                    width: 250px;
-                  }
+          @include respond-to('mobile-landscape') {
+            width: 100%;
+            height: auto;
+          }
 
-                }
+          .field-content a {
+            font-family: 'optimadisplaylightlight';
+            position: absolute;
+            top: 15px;
+            left: 250px;
+            width: 500px;
+            color: #040a2b;
+            font-size: 1.4em;
+            position: absolute;
+            text-decoration: none;
 
-              }
+            @include respond-to('mobile') {
+              width: 160px;
+              height: auto;
+              left: 110px;
+            }
 
-            } // li
+            @include respond-to('mobile-landscape') {
+              width: 160px;
+              height: auto;
+              left: 110px;
+            }
 
-          // } // ul
+          }
 
         }
 
@@ -542,14 +410,101 @@ body.section-user.page-user {
 
   }
 
-  /*
-  // .pane-elx-recent-badges-recent-badges,
-   .views-row .views-field a {
-    display: inline-block;
-    height: 142px;
-    text-indent: -5000px;
-  //}
-  // */
+  /* USER POINTS */
+  .pane-user-points-dashboard-user-points {
+
+    .view-display-id-dashboard_user_points {
+
+      .item-list {
+
+        li.views-row {
+          clear: left;
+          border: 0 solid white;
+          width: 100%; // 880px; //
+          height: 125px;
+          list-style: none;
+          list-style-position: inside;
+          padding: 0;
+          margin: 0;
+          border-bottom: 1px solid lightgray;
+
+          .views-field {
+            height: 50px;
+            width: 15%;
+          }
+
+          .views-field.views-field-counter {
+            float: left;
+            height: 50px;
+            margin: 0;
+            width: 100px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  // MY FAVORITES
+  .panel-pane.pane-views.pane-dashboard-favorites {
+    display: none;
+  }
+
+
+  // TOOLS
+  .pane-dashboard-tools {
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .views-field.views-field-field-tool-thumbnail {
+      float: left;
+      clear: left;
+      height: 200px;
+      margin: 10px;
+
+      @include respond-to('mobile') {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px 0 0;
+      }
+
+      @include respond-to('mobile-landscape') {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px 0 0;
+      }
+
+      .field-content {
+
+        a {
+          background-size: 0;
+          height: 150px;
+          margin: 0;
+          width: 250px;
+
+          @include respond-to('mobile') {
+            width: 100px;
+            height: 100px;
+          }
+
+          @include respond-to('mobile-landscape') {
+            width: 100px;
+            height: 100px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
 
   main.dashboard-override {
     display: none;
@@ -568,6 +523,16 @@ body.section-user.page-user {
       width: 65%;
       padding-left: 50px;
       padding-bottom: 100px;
+
+      @include respond-to('mobile') {
+        width: 90%;
+        padding: 0 20px;
+      }
+
+      @include respond-to('mobile-landscape') {
+        width: 90%;
+        padding: 0 20px;
+      }
 
       .r1xc1,
       .r1xc2,
@@ -603,6 +568,12 @@ body.section-user.page-user {
         width: 360px;
         cursor: pointer;
 
+        @include respond-to('mobile') {
+          width: 100%;
+          height: 70px;
+          margin: 0;
+        }
+
         span {
           color: #a4a4ab;
           text-transform: uppercase;
@@ -619,6 +590,7 @@ body.section-user.page-user {
           color: #a4a4ab;
           padding: 12px;
         }
+
       }
 
       .r1xc1,
@@ -627,6 +599,12 @@ body.section-user.page-user {
       .r2xc2 {
         width: 50%;
         height: 60px;
+
+        @include respond-to('mobile') {
+          width: 100%;
+          clear: both;
+        }
+
       }
 
       .r3xc1,
@@ -670,6 +648,11 @@ body.section-user.page-user {
         border-radius: 200px;
         background-color: #f0f8ff;
         background-image: url('/sites/all/themes/elx_front/images/user/elx-circle-bg.png');
+
+        @include respond-to('mobile') {
+          margin: 20px 0 0;
+        }
+
       }
 
       .elx-inner-round::before {
@@ -681,6 +664,15 @@ body.section-user.page-user {
         margin-left: -200px;
         margin-top: 90px;
         width: 150px;
+
+        @include respond-to('mobile') {
+          display: none;
+        }
+
+        @include respond-to('mobile-landscape') {
+          display: none;
+        }
+
       }
 
       .elx-inner-round::after {
@@ -692,11 +684,20 @@ body.section-user.page-user {
         margin-right: -200px;
         margin-top: 90px;
         width: 150px;
+
+        @include respond-to('mobile') {
+          display: none;
+        }
+
+        @include respond-to('mobile-landscape') {
+          display: none;
+        }
+
       }
 
     }
 
-  } // override //
+  }
 
 }
 

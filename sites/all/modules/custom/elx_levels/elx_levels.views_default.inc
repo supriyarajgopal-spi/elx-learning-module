@@ -152,6 +152,8 @@ function elx_levels_views_default_views() {
 
   /* Display: User Mobile */
   $handler = $view->new_display('attachment', 'User Mobile', 'levels_user_mobile');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'levels-mobile';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'slideshow';
@@ -206,6 +208,8 @@ function elx_levels_views_default_views() {
 
   /* Display: Admin Mobile */
   $handler = $view->new_display('attachment', 'Admin Mobile', 'levels_admin_mobile');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'levels-mobile';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer nodes';

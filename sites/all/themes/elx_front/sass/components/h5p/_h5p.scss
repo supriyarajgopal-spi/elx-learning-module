@@ -345,3 +345,47 @@ body.html.node-type-h5p-content {
 
 }
 
+/* FAVORITES */
+.modal-default.level-250,
+.modal-default.level-1299,
+.modal-default.level-252,
+.modal-default.level-10605,
+.modal-default.level-14108 {
+
+  .flag-favorites {
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0 5px 0 0;
+    }
+
+    a.unflag-action,
+    a.flagged {
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60b';
+        color: #fff;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+    a.flag-action,
+    a.unflagged {
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60c';
+        color: #fff;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+  }
+
+}

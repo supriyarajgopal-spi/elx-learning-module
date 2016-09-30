@@ -719,7 +719,6 @@ body.section-user.page-user {
 
     a.unflag-action,
     a.flagged {
-      // background: url('../images/buttons_etc/heart.png') !important;
 
       &::before {
         font-family: 'elx-icons';
@@ -733,7 +732,6 @@ body.section-user.page-user {
 
     a.flag-action,
     a.unflagged {
-     // background: url('../images/buttons_etc/heart-empty.png') !important;
 
       &::before {
         font-family: 'elx-icons';
@@ -749,6 +747,7 @@ body.section-user.page-user {
 
 }
 
+/* POINTS VALUES AND ICON */
 .views-field-field-point-value {
   width: 50%;
   float: right;

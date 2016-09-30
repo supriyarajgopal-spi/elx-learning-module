@@ -293,6 +293,7 @@
         text-transform: uppercase;
         border-bottom: 1px solid #fff;
         display: inline-block;
+        border-bottom: 1px solid #000;
 
         @include respond-to('mobile') {
           font-size: 20px;

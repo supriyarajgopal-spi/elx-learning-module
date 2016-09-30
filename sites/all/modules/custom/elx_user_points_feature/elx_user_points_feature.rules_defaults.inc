@@ -52,33 +52,40 @@ function elx_user_points_feature_default_rules_configuration() {
     "PLUGIN" : "reaction rule",
     "OWNER" : "rules",
     "REQUIRES" : [
-      "rules",
+      "rules_conditional",
       "userpoints_rules",
       "flag",
-      "rules_conditional",
+      "rules",
       "elx_user_points_feature"
     ],
     "ON" : { "user_login" : [] },
-    "IF" : [ { "data_is_empty" : { "data" : [ "account:last-access" ] } } ],
     "DO" : [
-      { "userpoints_action_grant_points" : {
-          "user" : [ "account" ],
-          "points" : "500",
-          "tid" : "14135",
-          "entity" : [ "account" ],
-          "description" : "First time a user logged in",
-          "operation" : "Insert",
-          "reference" : [ "account:uid" ],
-          "display" : "1",
-          "moderate" : "default"
-        }
-      },
-      { "flag_flaguser" : {
-          "flag" : "welcome_badge",
-          "user" : [ "account" ],
-          "flagging_user" : [ "account" ],
-          "permission_check" : "1"
-        }
+      { "CONDITIONAL" : [
+          {
+            "IF" : { "data_is_empty" : { "data" : [ "account:last-login" ] } },
+            "DO" : [
+              { "userpoints_action_grant_points" : {
+                  "user" : [ "account" ],
+                  "points" : "500",
+                  "tid" : "14133",
+                  "entity" : [ "account" ],
+                  "description" : "First time a user logged in",
+                  "operation" : "Insert",
+                  "reference" : [ "account:uid" ],
+                  "display" : "1",
+                  "moderate" : "default"
+                }
+              },
+              { "flag_flaguser" : {
+                  "flag" : "welcome_badge",
+                  "user" : [ "account" ],
+                  "flagging_user" : [ "account" ],
+                  "permission_check" : "1"
+                }
+              }
+            ]
+          }
+        ]
       },
       { "CONDITIONAL" : [
           {
@@ -109,90 +116,90 @@ function elx_user_points_feature_default_rules_configuration() {
         ]
       }
     ]
-   }
-  }');
+  }
+}');
   $items['rules_award_points_when_user_passes_quiz_first_time'] = entity_import('rules_config', '{ "rules_award_points_when_user_passes_quiz_first_time" : {
-    "LABEL" : "Award points when user passes quiz first time",
-    "PLUGIN" : "reaction rule",
-    "OWNER" : "rules",
-    "REQUIRES" : [
-      "rules",
-      "elx_quiz_rule_trigger",
-      "userpoints_rules",
-      "elx_badges_rules",
-      "rules_conditional",
-      "flag"
-    ],
-    "ON" : { "user_passed_h5p_quiz" : [] },
-    "IF" : [
-      { "entity_is_of_bundle" : {
-          "entity" : [ "quiz" ],
-          "type" : "node",
-          "bundle" : { "value" : { "h5p_content" : "h5p_content" } }
-        }
-      },
-      { "NOT user_has_taken_quiz_before" : { "user" : [ "user" ], "quiz" : [ "quiz" ] } }
-    ],
-    "DO" : [
-      { "userpoints_action_grant_points" : {
-          "user" : [ "user" ],
-          "points" : "400",
-          "tid" : "14135",
-          "entity" : [ "quiz" ],
-          "description" : "For passing the quiz for the first time",
-          "operation" : "Insert",
-          "reference" : [ "quiz:nid" ],
-          "display" : "1",
-          "moderate" : "default"
-        }
-      },
-      { "_elx_badge_rules_get_h5p_max_points" : {
-          "USING" : { "node" : [ "quiz" ] },
-          "PROVIDE" : { "loaded_h5p_max_points" : { "loaded_h5p_max_points" : "Maximum H5P points" } }
-        }
-      },
-      { "_elx_badge_rules_get_h5p_user_points" : {
-          "USING" : { "user" : [ "user" ], "node" : [ "quiz" ] },
-          "PROVIDE" : { "loaded_h5p_user_points" : { "loaded_h5p_user_points" : "H5P user points" } }
-        }
-      },
-      { "CONDITIONAL" : [
-          {
-            "IF" : { "NOT data_is" : { "data" : [ "loaded-h5p-max-points" ], "value" : "-1" } },
-            "DO" : [
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "NOT data_is" : { "data" : [ "loaded-h5p-user-points" ], "value" : "-1" } },
-                    "DO" : [
-                      { "CONDITIONAL" : [
-                          {
-                            "IF" : { "data_is" : {
-                                "data" : [ "loaded-h5p-user-points" ],
-                                "value" : [ "loaded-h5p-max-points" ]
-                              }
-                            },
-                            "DO" : [
-                              { "flag_flaguser" : {
-                                  "flag" : "one_hundred_percent_club_badge",
-                                  "user" : [ "user" ],
-                                  "flagging_user" : [ "user" ],
-                                  "permission_check" : "1"
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+      "LABEL" : "Award points when user passes quiz first time",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [
+        "rules",
+        "elx_quiz_rule_trigger",
+        "userpoints_rules",
+        "elx_badges_rules",
+        "rules_conditional",
+        "flag"
+      ],
+      "ON" : { "user_passed_h5p_quiz" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "quiz" ],
+            "type" : "node",
+            "bundle" : { "value" : { "h5p_content" : "h5p_content" } }
           }
-        ]
-      }
-    ]
-   }
+        },
+        { "NOT user_has_taken_quiz_before" : { "user" : [ "user" ], "quiz" : [ "quiz" ] } }
+      ],
+      "DO" : [
+        { "userpoints_action_grant_points" : {
+            "user" : [ "user" ],
+            "points" : "400",
+            "tid" : "14133",
+            "entity" : [ "quiz" ],
+            "description" : "For passing the quiz for the first time",
+            "operation" : "Insert",
+            "reference" : [ "quiz:nid" ],
+            "display" : "1",
+            "moderate" : "default"
+          }
+        },
+        { "_elx_badge_rules_get_h5p_max_points" : {
+            "USING" : { "node" : [ "quiz" ] },
+            "PROVIDE" : { "loaded_h5p_max_points" : { "loaded_h5p_max_points" : "Maximum H5P points" } }
+          }
+        },
+        { "_elx_badge_rules_get_h5p_user_points" : {
+            "USING" : { "user" : [ "user" ], "node" : [ "quiz" ] },
+            "PROVIDE" : { "loaded_h5p_user_points" : { "loaded_h5p_user_points" : "H5P user points" } }
+          }
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "NOT data_is" : { "data" : [ "loaded-h5p-max-points" ], "value" : "-1" } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT data_is" : { "data" : [ "loaded-h5p-user-points" ], "value" : "-1" } },
+                      "DO" : [
+                        { "CONDITIONAL" : [
+                            {
+                              "IF" : { "data_is" : {
+                                  "data" : [ "loaded-h5p-user-points" ],
+                                  "value" : [ "loaded-h5p-max-points" ]
+                                }
+                              },
+                              "DO" : [
+                                { "flag_flaguser" : {
+                                    "flag" : "one_hundred_percent_club_badge",
+                                    "user" : [ "user" ],
+                                    "flagging_user" : [ "user" ],
+                                    "permission_check" : "1"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }');
   $items['rules_set_flag_when_content_object_viewed_for_first_time'] = entity_import('rules_config', '{ "rules_set_flag_when_content_object_viewed_for_first_time" : {
       "LABEL" : "Set flag when content is viewed for first time",

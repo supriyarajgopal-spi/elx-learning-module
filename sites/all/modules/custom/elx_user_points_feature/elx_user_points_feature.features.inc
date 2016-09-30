@@ -34,6 +34,7 @@ function elx_user_points_feature_flag_default_flags() {
     'link_type' => 'toggle',
     'weight' => 0,
     'badge_description' => '',
+    'badge_unearned_description' => '',
     'badge_image' => '',
     'show_in_links' => array(
       'full' => 0,

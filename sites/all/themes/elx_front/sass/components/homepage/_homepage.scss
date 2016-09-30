@@ -765,6 +765,20 @@ body.page-home-page {
 
   }
 
+  #modalContent .ctools-modal-content {
+    padding: 100px 0;
+
+    .field-name-field-headline.field-type-text {
+      font-size: 3em;
+      font-family: 'optimadisplaylightlight';
+      margin: 25px 0 50px;
+    }
+
+    .modal-header {
+      top: 50px;
+    }
+  }
+
   /*BROWSE PRODUCT LIBRARY*/
 
   #homepage-product-library-mobile,

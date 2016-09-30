@@ -65,7 +65,6 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = wysiwyg
-features[conditional_fields][] = node:h5p_content
 features[ctools][] = field_group:field_group:1
 features[ctools][] = oauth_common:oauth:1
 features[ctools][] = services:services:3

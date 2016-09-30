@@ -141,7 +141,7 @@
   }
 
 .h5p-slide p {
-    color: white;
+    color: #fff;
 }
 
 
@@ -189,8 +189,22 @@
 }
 
 .h5p-question-feedback-content {
+    color: #fff !important;
+}
+
+.h5p-element-inner.h5p-question.h5p-multichoice p {
     color: white !important;
 }
+
+
+.h5p-multichoice .h5p-answer .h5p-alternative-container {
+
+  &::before {
+    color: #fff;
+  }
+
+}
+
 
 
 }

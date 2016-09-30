@@ -72,8 +72,12 @@
   .questionset {
 
     .question-container.h5p-question.h5p-multichoice {
-      color: #fff;
+      color: #fff !important;
       background: none;
+
+       p {
+         color: #fff !important;
+       }
 
       .h5p-alternative-container {
         border: 0;

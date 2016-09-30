@@ -37,6 +37,7 @@
 .modal-default.level-12739,
 .modal-default.level-1299,
 .modal-default.level-252,
+.modal-default.level-1300,
 .modal-default.level-1301,
 .modal-default.level-12731,
 .modal-default.level-10605,
@@ -288,7 +289,7 @@ body.html.node-type-h5p-content {
   }
 
   .gobacktowhereyoucamefrom::after {
-    background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat scroll -105px top;
+    background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat scroll 0 top;
     height: 32px;
     position: absolute;
     right: 100px;
@@ -298,6 +299,16 @@ body.html.node-type-h5p-content {
     content: ' ';
     display: block;
     cursor: pointer;
+  }
+
+  .modal-default.level-250,
+  .modal-default.level-1299,
+  .modal-default.level-252,
+  .modal-default.level-10605,
+  .modal-default.level-14108 {
+    .gobacktowhereyoucamefrom::after {
+      background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat scroll -105px top;
+    }
   }
 
   .layout-center {
@@ -346,6 +357,50 @@ body.html.node-type-h5p-content {
 }
 
 /* FAVORITES */
+.modal-default.level-13504,
+.modal-default.level-12739,
+.modal-default.level-1300,
+.modal-default.level-1301,
+.modal-default.level-12731 {
+
+  .flag-favorites {
+
+    a {
+      text-decoration: none;
+      color: #000;
+      padding: 0 5px 0 0;
+    }
+
+    a.unflag-action,
+    a.flagged {
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60b';
+        color: #f05c72;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+    a.flag-action,
+    a.unflagged {
+
+      &::before {
+        font-family: 'elx-icons';
+        content: '\e60c';
+        color: #f05c72;
+        font-size: 14px;
+        padding: 0 2px 0 0;
+      }
+
+    }
+
+  }
+
+}
+
 .modal-default.level-250,
 .modal-default.level-1299,
 .modal-default.level-252,

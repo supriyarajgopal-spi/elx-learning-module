@@ -98,7 +98,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:23:16 -0400',
+  'date' => '2016-06-13 21:23:16 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -188,7 +188,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:10:10 -0400',
+  'date' => '2016-06-13 21:10:10 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -278,7 +278,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:06:55 -0400',
+  'date' => '2016-06-13 21:06:55 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -368,7 +368,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:25:14 -0400',
+  'date' => '2016-06-13 21:25:14 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -458,7 +458,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:23:51 -0400',
+  'date' => '2016-06-13 21:23:51 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -548,7 +548,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:22:26 -0400',
+  'date' => '2016-06-13 21:22:26 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -638,7 +638,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:16:13 -0400',
+  'date' => '2016-06-13 21:16:13 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -728,7 +728,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:03:57 -0400',
+  'date' => '2016-06-13 21:03:57 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -818,7 +818,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:55:34 -0400',
+  'date' => '2016-06-13 20:55:34 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -908,7 +908,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:05:11 -0400',
+  'date' => '2016-06-13 21:05:11 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -998,7 +998,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:24:21 -0400',
+  'date' => '2016-06-13 21:24:21 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1088,7 +1088,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:16:00 -0400',
+  'date' => '2016-06-13 21:16:00 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1178,7 +1178,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:17:28 -0400',
+  'date' => '2016-06-13 21:17:28 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1268,7 +1268,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:04:18 -0400',
+  'date' => '2016-06-13 21:04:18 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1358,7 +1358,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:56:29 -0400',
+  'date' => '2016-06-13 20:56:29 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1448,7 +1448,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-24 13:32:26 -0400',
+  'date' => '2016-06-24 17:32:26 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1538,7 +1538,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:55:54 -0400',
+  'date' => '2016-06-13 20:55:54 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1628,7 +1628,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:18:25 -0400',
+  'date' => '2016-06-13 21:18:25 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1718,7 +1718,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:24:51 -0400',
+  'date' => '2016-06-13 21:24:51 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1808,7 +1808,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:56:11 -0400',
+  'date' => '2016-06-13 20:56:11 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1898,7 +1898,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:07:59 -0400',
+  'date' => '2016-06-13 21:07:59 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -1988,7 +1988,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:08:51 -0400',
+  'date' => '2016-06-13 21:08:51 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2078,7 +2078,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:19:04 -0400',
+  'date' => '2016-06-13 21:19:04 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2168,7 +2168,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:08:37 -0400',
+  'date' => '2016-06-13 21:08:37 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2258,7 +2258,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:24:34 -0400',
+  'date' => '2016-06-13 21:24:34 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2348,7 +2348,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:07:17 -0400',
+  'date' => '2016-06-13 21:07:17 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2438,7 +2438,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:18:12 -0400',
+  'date' => '2016-06-13 21:18:12 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2528,7 +2528,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:18:46 -0400',
+  'date' => '2016-06-13 21:18:46 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2618,7 +2618,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:23:30 -0400',
+  'date' => '2016-06-13 21:23:30 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2708,7 +2708,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:21:03 -0400',
+  'date' => '2016-06-13 21:21:03 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2798,7 +2798,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:21:48 -0400',
+  'date' => '2016-06-13 21:21:48 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2888,7 +2888,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:20:22 -0400',
+  'date' => '2016-06-13 21:20:22 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -2978,7 +2978,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:21:29 -0400',
+  'date' => '2016-06-13 21:21:29 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3068,7 +3068,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:59:17 -0400',
+  'date' => '2016-06-13 20:59:17 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3158,7 +3158,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:03:26 -0400',
+  'date' => '2016-06-13 21:03:26 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3248,7 +3248,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:59:46 -0400',
+  'date' => '2016-06-13 20:59:46 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3338,7 +3338,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:20:05 -0400',
+  'date' => '2016-06-13 21:20:05 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3428,7 +3428,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:17:36 -0400',
+  'date' => '2016-06-13 21:17:36 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3518,7 +3518,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:16:54 -0400',
+  'date' => '2016-06-13 21:16:54 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3608,7 +3608,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:09:12 -0400',
+  'date' => '2016-06-13 21:09:12 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3698,7 +3698,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:07:33 -0400',
+  'date' => '2016-06-13 21:07:33 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3788,7 +3788,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:17:06 -0400',
+  'date' => '2016-06-13 21:17:06 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3878,7 +3878,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:20:48 -0400',
+  'date' => '2016-06-13 21:20:48 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -3968,7 +3968,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-06 12:56:46 -0400',
+  'date' => '2016-06-06 16:56:46 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4058,7 +4058,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:22:05 -0400',
+  'date' => '2016-06-13 21:22:05 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4148,7 +4148,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:09:48 -0400',
+  'date' => '2016-06-13 21:09:48 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4238,7 +4238,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:07:45 -0400',
+  'date' => '2016-06-13 21:07:45 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4328,7 +4328,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:17:50 -0400',
+  'date' => '2016-06-13 21:17:50 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4418,7 +4418,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:19:26 -0400',
+  'date' => '2016-06-13 21:19:26 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4508,7 +4508,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:09:30 -0400',
+  'date' => '2016-06-13 21:09:30 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4598,7 +4598,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:08:16 -0400',
+  'date' => '2016-06-13 21:08:16 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4688,7 +4688,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:22:55 -0400',
+  'date' => '2016-06-13 21:22:55 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4778,7 +4778,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:24:05 -0400',
+  'date' => '2016-06-13 21:24:05 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4868,7 +4868,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:22:41 -0400',
+  'date' => '2016-06-13 21:22:41 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -4958,7 +4958,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:04:44 -0400',
+  'date' => '2016-06-13 21:04:44 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5048,7 +5048,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:59:30 -0400',
+  'date' => '2016-06-13 20:59:30 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5138,7 +5138,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 16:55:20 -0400',
+  'date' => '2016-06-13 20:55:20 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5228,7 +5228,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-06 12:56:22 -0400',
+  'date' => '2016-06-06 16:56:22 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5318,7 +5318,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:16:27 -0400',
+  'date' => '2016-06-13 21:16:27 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5408,7 +5408,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:04:30 -0400',
+  'date' => '2016-06-13 21:04:30 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5498,7 +5498,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-13 17:19:45 -0400',
+  'date' => '2016-06-13 21:19:45 +0000',
 );
   $nodes[] = array(
   'uid' => 30639,
@@ -5588,7 +5588,7 @@ function elx_content_tool_uuid_features_default_content() {
   'name' => 'darren.oh@spi.com',
   'picture' => 0,
   'data' => 'a:1:{s:17:"mimemail_textonly";i:0;}',
-  'date' => '2016-06-24 13:32:15 -0400',
+  'date' => '2016-06-24 17:32:15 +0000',
 );
   return $nodes;
 }

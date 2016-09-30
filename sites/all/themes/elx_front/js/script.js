@@ -422,6 +422,13 @@
 
       } // size check
 
+      /* HAMBURGER MENU ICON */
+      $('#block-menu-menu-header-user-menu').find('.leaf.is-leaf.last').click(function () {
+
+        $('.qtip.qtip-light.qtip-active').hide('tgt is active based on jquery selector combination when open');
+
+      });
+
       /* ADD BACK TO LEVELS LINk */
       if ($('body.page-node.node-type-h5p-content').size()) {
 

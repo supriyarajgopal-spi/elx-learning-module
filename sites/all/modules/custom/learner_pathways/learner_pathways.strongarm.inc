@@ -51,7 +51,6 @@ function learner_pathways_strongarm() {
     ),
     4 => array(
       2 => array(
-        10605 => '10605',
         13504 => '13504',
         12739 => '12739',
         12731 => '12731',
@@ -76,7 +75,6 @@ function learner_pathways_strongarm() {
         250 => '250',
         252 => '252',
         579 => '579',
-        14095 => '14095',
       ),
     ),
     8 => array(
@@ -92,7 +90,6 @@ function learner_pathways_strongarm() {
         250 => '250',
         252 => '252',
         579 => '579',
-        14095 => '14095',
       ),
     ),
     5 => array(
@@ -108,7 +105,6 @@ function learner_pathways_strongarm() {
         250 => '250',
         252 => '252',
         579 => '579',
-        14095 => '14095',
       ),
     ),
     7 => array(
@@ -124,7 +120,6 @@ function learner_pathways_strongarm() {
         250 => '250',
         252 => '252',
         579 => '579',
-        14095 => '14095',
       ),
     ),
     6 => array(
@@ -140,7 +135,6 @@ function learner_pathways_strongarm() {
         250 => '250',
         252 => '252',
         579 => '579',
-        14095 => '14095',
       ),
     ),
   );

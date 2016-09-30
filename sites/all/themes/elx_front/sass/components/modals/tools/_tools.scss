@@ -45,7 +45,7 @@ body.page-tools.section-tools {
     }
 
     #detail-content-btn {
-      margin: 10px 0;
+      margin: 20px;
       padding: 5px;
       border: 1px solid gray;
       width: 150px;
@@ -58,10 +58,9 @@ body.page-tools.section-tools {
         color: #040a2b;
       }
     }
-  }
 
-  /*
-  #modalContent
+
+    background-color: white;
 
     .ctools-modal-content {
       opacity: 0;
@@ -95,8 +94,8 @@ body.page-tools.section-tools {
       text-decoration: none;
     }
 
-    #detail-content-btn {
-      margin: 10px 20px;
+    div#detail-content-btn {
+      margin: 20px;
       padding: 5px;
       border: 1px solid gray;
       width: 120px;
@@ -109,5 +108,64 @@ body.page-tools.section-tools {
         color: #040a2b;
       }
     }
-*/
+  }
+
+  #modalContent.drupal-overlay-js.mp4-variant {
+
+    background-color: white;
+    width: 50%;
+
+    @include respond-to('mobile') {
+      width: 70%;
+
+      .modal-header a.close {
+        right: -40px;
+      }
+
+      video {
+        padding: 0;
+      }
+    }
+
+    @include respond-to('mobile-landscape') {
+      // margin-left: -100px;
+      transform: scale(0.8);
+      margin-top: -50px;
+
+      .modal-header a.close {
+        right: -40px;
+      }
+
+      video {
+        padding: 0;
+      }
+    }
+  }
+
+  #modalContent.drupal-overlay-js.animgif-variant {
+
+    width: 50%;
+    background-color: white;
+
+    @include respond-to('mobile') {
+      width: 90%;
+      transform: scale(0.8);
+    }
+
+    @include respond-to('mobile-landscape') {
+      width: 90%;
+      transform: scale(0.6);
+    }
+  }
+
+  #modalContent.drupal-overlay-js.pdf-variant {
+    width: 50%;
+
+    background-color: white;
+
+    @include respond-to('mobile') {
+      width: 60%;
+    }
+  }
+
 }

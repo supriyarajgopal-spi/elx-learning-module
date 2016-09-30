@@ -8,6 +8,38 @@
 @import 'interactive-video';
 
 
+// Generic Styles
+
+html.h5p-iframe.js {
+
+
+.h5p-wrapper > div {
+//font-size: 20px !important;
+overflow: auto !important;
+
+}
+
+
+/* Course Presentation is canvas-based, so it scales text proportionately as it resizes
+ * We attempt to override this behavior and make it responsive instead.
+ */
+.h5p-course-presentation div {
+	    font-size: 1rem;
+	    overflow: auto !important;
+}
+
+.h5p-course-presentation .h5p-progressbar div {
+  height: auto;
+}
+
+.h5p-element-inner .h5p-advanced-text {
+  height: 100%;
+}
+
+
+
+}
+
 // SKETCHING OUT NEW STRUCTURE
 
 // *********************************************

@@ -22,7 +22,7 @@ function elx_user_points_feature_rules_condition_info() {
           'label' => t('User'),
         )
       ),
-	  'module' => 'elx_user_points_feature',
+      'module' => 'elx_user_points_feature',
     ),
   );
 }
@@ -34,18 +34,28 @@ function elx_user_points_feature_rules_condition_info() {
  * Returns boolean - true if user has taken this quiz before or false, if this is the first time the user passed this quiz
  */
 function user_is_among_first_50_in_market($user) {
-    //If user is not assigned any market, return FALSE
-	if(empty($user->og_user_node))
-		return FALSE;
+  //If user is not assigned any market, return FALSE
+  if(empty($user->og_user_node)) {
+    return FALSE;
+  }
 
-	$query_isUserAmong1st50 = db_select('users','u');
-	$query_isUserAmong1st50->join('field_data_og_user_node','og','og.entity_id = u.uid');
-	$query_isUserAmong1st50->fields('u',array('uid'));
-	$query_isUserAmong1st50->condition('u.status',1,'=')->condition('u.access',0,'>'); //Users should be active & logged in atleast once
-	$query_isUserAmong1st50->condition('og.bundle','user','=')->condition('og.og_user_node_target_id',$user->og_user_node[LANGUAGE_NONE][0]['target_id'],'='); //Users should be of the same market as this user
-	$query_isUserAmong1st50->orderBy('u.access','asc'); //Users in the order of the earliest logged in
-	$query_isUserAmong1st50->range(0,50); //Take 1st 50 users only
-	$first_50_uids = $query_isUserAmong1st50->execute()->fetchCol();
-	
-	return (!empty($first_50_uids) && in_array($user->uid,$first_50_uids));
+  foreach ($user->og_user_node['und'] as $gid) {
+    $bird_count = variable_get("elx_badges_early_bird_".$gid['target_id'], 0);
+    if ($bird_count < 50) {
+      $query_isUserAmong1st50 = db_select('users','u');
+      $query_isUserAmong1st50->distinct();
+      $query_isUserAmong1st50->join('og_membership','og','u.uid = og.etid');
+      $query_isUserAmong1st50->fields('u',array('uid'));
+      $query_isUserAmong1st50->condition('u.status',1,'=')->condition('u.login',0,'>'); //Users should be active & logged in atleast once
+      $query_isUserAmong1st50->condition('og.gid',$gid,'='); //Users should be of the same market as this user
+      $query_isUserAmong1st50->orderBy('u.login','asc'); //Users in the order of the earliest logged in
+      $query_isUserAmong1st50->range(0,50); //Take 1st 50 users only
+      $first_50_uids = $query_isUserAmong1st50->distinct()->execute()->fetchCol();
+      if (in_array($user->uid,$first_50_uids)) {
+        variable_set("elx_badges_early_bird_" . $gid['target_id'], $bird_count + 1);
+        return true;
+      }
+    }
+  }
+  return false;
 }

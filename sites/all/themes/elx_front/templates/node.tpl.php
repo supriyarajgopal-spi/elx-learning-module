@@ -80,43 +80,35 @@
  * @ingroup themeable
  */
 ?>
-<div id="modalContent" class="modal-default<?php if (!empty($field_learning_category)): print ' level-' . $field_learning_category[0]['tid']; endif; ?>">
-  <div class="ctools-modal-content">
-    <div class="modal-default">
-      <div id="modal-content" class="modal-content">
+<div class="<?php if (!empty($field_learning_category)): print 'level-' . $field_learning_category[0]['tid']; endif; ?>">
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-        <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+    <?php print $user_picture; ?>
 
-          <?php print $user_picture; ?>
+    <?php print render($title_prefix); ?>
+    <?php if (!$page): ?>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
 
-          <?php print render($title_prefix); ?>
-          <?php if (!$page): ?>
-            <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-
-          <?php if ($display_submitted): ?>
-            <div class="submitted">
-              <?php print $submitted; ?>
-            </div>
-          <?php endif; ?>
-
-          <div class="content"<?php print $content_attributes; ?>>
-            <?php
-              // We hide the comments and links now so that we can render them later.
-              hide($content['comments']);
-              hide($content['links']);
-              print render($content);
-            ?>
-          </div>
-
-          <?php print render($content['links']); ?>
-
-          <?php print render($content['comments']); ?>
-
-        </div>
-
+    <?php if ($display_submitted): ?>
+      <div class="submitted">
+        <?php print $submitted; ?>
       </div>
+    <?php endif; ?>
+
+    <div class="content"<?php print $content_attributes; ?>>
+      <?php
+        // We hide the comments and links now so that we can render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content);
+      ?>
     </div>
+
+    <?php print render($content['links']); ?>
+
+    <?php print render($content['comments']); ?>
+
   </div>
 </div>

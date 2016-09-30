@@ -37,8 +37,8 @@
           setTimeout(function (time) {
 
             // uat debug // remove after
-            var typefile = $('#modal-content .field-name-field-tool-pdf.field-type-file').html();
-            //console.log(typefile);
+            // var typefile = $('#modal-content .field-name-field-tool-pdf.field-type-file').html();
+            // console.log(typefile);
 
             // grab title field in all content variations //
             var display_title = $('#modalContent .field-name-field-display-title').find('.field-item.even').html();
@@ -445,8 +445,9 @@
 
       /* SWIPER CHANGES */
       $('.views-slideshow-swiper-main-frame').ready(function () {
-        var getWidth = effectiveDeviceWidth() - 40;
-        $('.views-slideshow-swiper-main-frame').width(getWidth);
+        // var getWidth = effectiveDeviceWidth() - 40;
+        // $('.views-slideshow-swiper-main-frame').width(getWidth);
+        $('.views-slideshow-swiper-main-frame').width(280);
       });
 
       /* GET DEVICE WIDTH */

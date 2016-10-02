@@ -2466,18 +2466,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'devel',
   );
 
-  // Exported permission: 'flag admin_upload_training'.
-  $permissions['flag admin_upload_training'] = array(
-    'name' => 'flag admin_upload_training',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'flag',
-  );
-
   // Exported permission: 'flag beautiful_start'.
   $permissions['flag beautiful_start'] = array(
     'name' => 'flag beautiful_start',
@@ -3102,17 +3090,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'i18n_string',
-  );
-
-  // Exported permission: 'unflag admin_upload_training'.
-  $permissions['unflag admin_upload_training'] = array(
-    'name' => 'unflag admin_upload_training',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'flag',
   );
 
   // Exported permission: 'unflag beautiful_start'.

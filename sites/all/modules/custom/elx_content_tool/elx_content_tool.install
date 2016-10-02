@@ -141,9 +141,11 @@ function elx_content_tool_update_7101(&$sandbox) {
             foreach ($result as $entity_type => $entities) {
               field_attach_load($entity_type, $entities, FIELD_LOAD_CURRENT, array('field_id' => $field['id']));
               foreach ($entities as $entity) {
-                foreach ($entity->{$field_name}[$translation->language] as &$item) {
-                  if ($item['target_id'] == $node->tnid) {
-                    $item['target_id'] = $node->nid;
+                if (!empty($entity->{$field_name}[$translation->language])) {
+                  foreach ($entity->{$field_name}[$translation->language] as &$item) {
+                    if ($item['target_id'] == $node->tnid) {
+                      $item['target_id'] = $node->nid;
+                    }
                   }
                 }
                 field_attach_update($entity_type, $entity);

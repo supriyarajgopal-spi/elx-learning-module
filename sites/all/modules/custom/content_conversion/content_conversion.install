@@ -24,10 +24,8 @@ function content_conversion_update_7100(&$sandbox) {
     $sandbox['nid'] = 0;
     $query = db_select('node', 'n');
     $query->leftJoin($sandbox['table'], 'f', "f.entity_type = 'node' AND n.nid = f.entity_id");
-    $query->leftJoin('node', 'h5p', 'f.field_h5p_node_target_id = h5p.nid');
     $sandbox['max'] = $query
       ->condition('n.type', 'content_object')
-      ->isNull('h5p.nid')
       ->countQuery()
       ->execute()
       ->fetchField();

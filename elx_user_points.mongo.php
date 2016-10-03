@@ -319,17 +319,28 @@ function get_user_points($user_uid, $tid) {
  *   userpoints_points
  */
 function get_nid_for_points($nid) {
-  $man_nid = $result[0];
-  $result = db_select('field_revision_field_manifest', 'frfm')
-    ->fields('frfm', array('entity_id'))
-    ->condition('field_manifest_target_id', $nid, '=')
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast[__FUNCTION__] = &drupal_static(__FUNCTION__);
+    $drupal_static_fast[__FUNCTION__]['field_manifest'] = field_info_field('field_manifest');
+    $drupal_static_fast[__FUNCTION__]['table_manifest'] = _field_sql_storage_tablename($drupal_static_fast[__FUNCTION__]['field_manifest']);
+    $drupal_static_fast[__FUNCTION__]['column_manifest'] = _field_sql_storage_columnname('field_manifest', 'target_id');
+    $drupal_static_fast[__FUNCTION__]['field_h5p_node'] = field_info_field('field_h5p_node');
+    $drupal_static_fast[__FUNCTION__]['table_h5p_node'] = _field_sql_storage_tablename($drupal_static_fast[__FUNCTION__]['field_h5p_node']);
+    $drupal_static_fast[__FUNCTION__]['column_h5p_node'] = _field_sql_storage_columnname('field_h5p_node', 'target_id');
+  }
+  $field_manifest = &$drupal_static_fast[__FUNCTION__]['field_manifest'];
+  $table_manifest = &$drupal_static_fast[__FUNCTION__]['table_manifest'];
+  $column_manifest = &$drupal_static_fast[__FUNCTION__]['column_manifest'];
+  $field_h5p_node = &$drupal_static_fast[__FUNCTION__]['field_h5p_node'];
+  $table_h5p_node = &$drupal_static_fast[__FUNCTION__]['table_h5p_node'];
+  $column_h5p_node = &$drupal_static_fast[__FUNCTION__]['column_h5p_node'];
+
+  $query = db_select($table_manifest, 'frfm');
+  $query->join($table_h5p_node, 'h5p', 'frfm.entity_type = h5p.entity_type AND frfm.entity_id = h5p.entity_id');
+  return $query
+    ->fields('h5p', array($column_h5p_node))
+    ->condition($column_manifest, $nid, '=')
     ->execute()
-    ->fetchCol();
-  if (!empty($result[0])) {
-    $nid = $result[0];
-    return $nid;
-  }
-  else {
-    return FALSE;
-  }
+    ->fetchField();
 }

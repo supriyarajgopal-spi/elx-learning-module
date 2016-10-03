@@ -55,7 +55,7 @@ function elx_user_points_cursor(MongoDB\Database $database, MongoDB\BSON\ObjectI
   }
   return $database->userPoints->find($query, array(
     'sort' => array('_id' => 1),
-    'limit' => 10,
+    'limit' => 100,
   ));
 }
 
@@ -75,7 +75,7 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
-    $user_points[] = array($user_uid, $points, $point_type);
+	$content_id = $obj->contentid;
     
     if ($points != 0) {
 
@@ -115,7 +115,7 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 	  if ($mongo_term_name != 'first-login') {
 	  	$entity_type = 'node';
 	    // Create and query node collection to retrive nid
-        $qry = array('_id' => $saved_id);
+        $qry = array('_id' => $content_id);
         $cursor_node = $database->node->find($qry);
         foreach ($cursor_node as $obj_node) {
           $node_title = $obj->title;

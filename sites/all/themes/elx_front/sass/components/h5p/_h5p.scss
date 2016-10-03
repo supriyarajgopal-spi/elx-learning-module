@@ -45,7 +45,8 @@ font-size: 1 rem;
 .modal-default.level-1301,
 .modal-default.level-12731,
 .modal-default.level-10605,
-.modal-default.level-14108 {
+.modal-default.level-14108,
+.modal-default.level-14832 {
 
   // click-to-reveal
   @extend %click-to-reveal-common;
@@ -225,7 +226,8 @@ font-size: 1 rem;
 // Holiday 2015 : level-10605
 // Holiday 2016 : level-14108
 .modal-default.level-10605,
-.modal-default.level-14108 {
+.modal-default.level-14108,
+.modal-default.level-14832 {
 
   // click-to-reveal
   // @extend %click-to-reveal-holiday;
@@ -309,7 +311,8 @@ body.html.node-type-h5p-content {
   .modal-default.level-1299,
   .modal-default.level-252,
   .modal-default.level-10605,
-  .modal-default.level-14108 {
+  .modal-default.level-14108,
+  .modal-default.level-14832 {
     .gobacktowhereyoucamefrom::after {
       background: rgba(0, 0, 0, 0) url('/sites/all/themes/elx_front/images/buttons_etc/spr-modal.png') no-repeat scroll -105px top;
     }
@@ -409,7 +412,8 @@ body.html.node-type-h5p-content {
 .modal-default.level-1299,
 .modal-default.level-252,
 .modal-default.level-10605,
-.modal-default.level-14108 {
+.modal-default.level-14108,
+.modal-default.level-14832 {
 
   .flag-favorites {
 

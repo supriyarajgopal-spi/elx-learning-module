@@ -36,6 +36,21 @@ body.section-user.page-user {
 
     }
 
+    .panel-flexible-inside.panels-flexible-new-inside::before {
+
+      clear: both;
+      font-family: 'optimadisplaylightlight';
+      font-weight: normal;
+      margin: 50px;
+      padding-top: 100px;
+      text-align: center;
+
+      content: 'My Progress';
+      display: block;
+      font-size: 3em;
+
+    }
+
     .panels-flexible-column-new-1 {
       float: right;
       background-color: #e6e9ee;
@@ -53,7 +68,7 @@ body.section-user.page-user {
     .panels-flexible-row.panels-flexible-row-new-4,
     .panels-flexible-row.panels-flexible-row-new-5,
     .panels-flexible-row.panels-flexible-row-new-6 {
-      background-color: #040a2b;
+      background-color: #1e2341; // #040a2b;
       color: #fff;
       text-transform: uppercase;
       width: 100%;
@@ -64,24 +79,35 @@ body.section-user.page-user {
       .pane-levels-quizz-progress-completed-count {
         margin-left: 10px;
 
+/*
         .view-content::before {
           content: 'My Progress';
           display: block;
           font-size: 32px;
           margin: 25px 15px;
         }
+*/
 
         .view-content .views-field.views-field-tid {
           height: 24px;
           width: 100%;
-          margin: 0 15px;
+
+          color: #e6e9ee;
+          margin: 30px 5px;
+          width: 100%;
 
           .field-content {
-            font-size: 24px;
+            font-size: 2.5em;
+            font-weight: bold;
           }
 
           .field-content::before {
             content: 'Levels Completed: ';
+            letter-spacing: .1em;
+            font-size: 21px;
+            color: #e6e9ee;
+            position: relative;
+            top: -7px;
           }
 
         }
@@ -100,34 +126,51 @@ body.section-user.page-user {
 
         .view-content .views-field.views-field-expression {
           height: 100px;
-          margin: 0 auto;
-          width: 95%;
+          margin: 10px auto;
+          width: 100%;
+          position: relative;
+          background-color: #040a2b; /* #1e2341; */
+
+          .percent-label {
+            display: none;
+          }
 
           .user-progress-bar {
             background-color: white;
             box-shadow: 1px 3px 10px gray inset;
             display: block;
             height: 24px;
-            margin: 50px auto 50px 70px;
-            width: 95%;
+            margin: 50px auto 50px 15px;
+            overflow: hidden;
+          }
 
-            .progress-bar-percentage {
-              font-family: arial, 'optimadisplaylightlight';
-              font-size: 1.4em;
-              font-weight: bold;
-              margin-left: -55px;
-              position: absolute;
-              width: 130px;
-            }
+          .progress-bar-percentage {
+            font-family: arial, 'optimadisplaylightlight';
+            font-size: 1.4em;
+            font-weight: bold;
+            position: absolute;
+            top: 50px;
+            left: 15px;
+          }
 
-            .user-progress {
+          .progress-bar-percentage::before {
+            content: 'Next Level Up: ';
+            text-transform: uppercase;
+            color: #e9e9ee;
+            font-weight: bold;
+            font-size: 22px;
+            position: absolute;
+            top: -40px;
+            width: 400px;
+            letter-spacing: .1em;
+          }
+
+          .user-progress {
               animation: 2s ease 0s normal forwards 1 running progress;
               background: black url('../images/progress-bar.png') repeat scroll 0 0;
               display: block;
               height: 24px;
               width: 0;
-            }
-
           }
 
           .view-content .views-field.views-field-name {
@@ -156,6 +199,9 @@ body.section-user.page-user {
 
             .views-label {
               font-weight: bold;
+              color: #e9e6ee;
+              font-size: 20px;
+              letter-spacing: .1em;
             }
 
           }
@@ -177,9 +223,41 @@ body.section-user.page-user {
 
             .views-label {
               font-weight: bold;
+              color: #e9e9ee;
+              font-size: 22px;
             }
 
+            .field-content {
+              margin-left: 50px;
+            }
+
+            .field-content::before {
+
+              background: transparent url('/sites/all/themes/elx_front/images/leaderboard/points-icon.png') repeat scroll 0 0 / 20px auto;
+              content: ' ';
+              display: block;
+              height: 17px;
+              margin-left: 76px;
+              position: absolute;
+              top: 8px;
+              width: 20px;
+
+            }
           }
+/*
+          .view-content .views-field.views-field-points::before {
+
+            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0 / 20px auto;
+            content: " ";
+            display: block;
+            height: 17px;
+            margin-left: 76px;
+            position: absolute;
+            top: 8px;
+            width: 20px;
+
+          }
+*/
 
         }
 
@@ -189,6 +267,15 @@ body.section-user.page-user {
 
     // blue box //
     .panels-flexible-row.panels-flexible-row-new-6 {
+
+      .panels-flexible-region-new-my_progress_recently_completed_activites::before {
+        content: 'Recently Completed Activities:';
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: .1em;
+        margin-left: 20px;
+      }
 
       .panels-flexible-region-new-my_progress_recently_completed_activites {
 
@@ -201,8 +288,10 @@ body.section-user.page-user {
           .views-field.views-field-field-headline,
           .views-field.views-field-field-headline a {
             height: 50px;
-            margin: -2px 10px;
+            margin: 10px;
             width: 100%;
+            font-size: 1.1em;
+            letter-spacing: .1em;
           }
 
           .views-field.views-field-field-display-title {
@@ -240,17 +329,21 @@ body.section-user.page-user {
             }
 
             .field-content a {
-              color: white;
+              color: #e9e9ee;
               width: 100%;
               height: 50px;
+              letter-spacing: .1em;
               text-decoration: none;
             }
 
             .field-content a::before {
-              color: white;
-              font-weight: normal;
-              font-size: 1.2em;
-              content: 'SUGGESTED FOR YOU: ';
+              color: #e9e9ee;
+              content: 'Suggested For You: ';
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: bold;
+              letter-spacing: .1em;
+              margin-right: 20px;
             }
 
           }
@@ -262,7 +355,7 @@ body.section-user.page-user {
     }
 
     .panels-flexible-row-new-8 {
-      margin: 50px 0;
+      margin: 0;
     }
 
   }

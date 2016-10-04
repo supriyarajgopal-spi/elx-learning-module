@@ -692,10 +692,22 @@ div#block-menu-menu-header-user-menu {
       }
 
       .view-display-id-completed_count {
+
+        .views-field.views-field-tid::before {
+          content: 'My Progress';
+          font-size: 21px;
+          font-family: 'optimadisplaylightlight';
+          left: 20px;
+          top: 15px;
+	  position: absolute;
+        }
+
         .views-field.views-field-tid {
-          height: 25px;
+
+          height: 80px;
           margin-left: 0;
           width: 100%;
+          margin-top: 40px;
 
           span.field-content {
             font-size: 24px;
@@ -703,7 +715,7 @@ div#block-menu-menu-header-user-menu {
 
           span.field-content::before {
             font-size: 16px;
-            content: 'Levels Completed';
+            content: 'Levels Completed: ';
             padding: 5px 20px;
             color: #999;
           }
@@ -875,6 +887,10 @@ div#block-menu-menu-header-user-menu {
         }
 
       }
+    }
+
+    .pane-dashboard-user-activities-suggested-drop-down {
+      display: none;
     }
 
     .pane-dashboard-user-my-points {

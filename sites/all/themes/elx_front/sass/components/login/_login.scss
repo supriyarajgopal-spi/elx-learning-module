@@ -1,7 +1,6 @@
-/* LOGIN PAGE*/
-body.not-logged-in.page-user,
-body.page-user-login,
-body.page-user-password {
+/* LOGIN PAGE */
+body.page-user.page-user-login.not-logged-in,
+body.page-user.page-user-password.not-logged-in {
   background: url('../images/login-bg.png') #030409 no-repeat top center;
 
   .main-menu,
@@ -36,21 +35,20 @@ body.page-user-password {
     padding: 0;
   }
 
-
-
   .layout-3col__full {
     width: 350px;
     float: none;
     background-color: #fff;
     margin: 25px auto 211px;
-    padding: 10px 0 0;
+    padding: 0;
 
-    .tabs {
+    ul.tabs {
       font-family: $font-family-serif;
       background-image: none;
       background: #e6e9ee;
       margin: 0;
       padding: 0;
+      display: block;
 
       .tabs__tab {
         border: 0;
@@ -71,31 +69,50 @@ body.page-user-password {
       }
     }
 
-    .elx-form-wrapper {
+    .elx-form-wrapper,
+    #user-pass {
       width: 300px;
       margin: 0 auto;
-
-      input#edit-name,
-      input#edit-pass {
-        color: #040a2b;
-        font-size: 18px;
-        border: 1px solid #ccc;
-        padding: 10px 15px;
-        box-shadow: inset 0 0 16px 0 rgba(204, 204, 204, .6);
-      }
-
-      #edit-submit {
-        width: 100%;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: .25em;
-        color: #fff;
-        background-color: #040a2b;
-        border: 0;
-        margin: 25px 0;
-        padding: 7px 0;
-      }
     }
+
+    input#edit-name,
+    input#edit-pass {
+      color: #040a2b;
+      font-size: 18px;
+      border: 1px solid #ccc;
+      padding: 10px 15px;
+      box-shadow: inset 0 0 16px 0 rgba(204, 204, 204, .6);
+    }
+
+    #edit-submit {
+      width: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .25em;
+      color: #fff;
+      background-color: #040a2b;
+      border: 0;
+      margin: 25px 0;
+      padding: 7px 0;
+    }
+
   }
+
+}
+
+body.page-user.page-user-password.not-logged-in {
+
+  .layout-3col__full {
+    ul.tabs {
+     background-color: #fff;
+    }
+
+    label {
+      color: #999;
+      font-weight: normal;
+    }
+
+  }
+
 }

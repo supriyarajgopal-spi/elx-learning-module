@@ -661,34 +661,47 @@ function elx_user_dashboard_views_default_views() {
 
   /* Display: Suggested drop down */
   $handler = $view->new_display('panel_pane', 'Suggested drop down', 'suggested_drop_down');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Suggested for me:';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['hide_admin_links'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Headline */
   $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
   $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
   $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
   $handler->display->display_options['fields']['field_headline']['label'] = '';
-  $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_headline']['alter']['path'] = '/node/[nid]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_headline']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_headline']['hide_empty'] = TRUE;
   /* Field: Content: Display title */
   $handler->display->display_options['fields']['field_display_title']['id'] = 'field_display_title';
   $handler->display->display_options['fields']['field_display_title']['table'] = 'field_data_field_display_title';
   $handler->display->display_options['fields']['field_display_title']['field'] = 'field_display_title';
   $handler->display->display_options['fields']['field_display_title']['label'] = '';
-  $handler->display->display_options['fields']['field_display_title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_display_title']['alter']['path'] = '/node/[nid]';
   $handler->display->display_options['fields']['field_display_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_display_title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_display_title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_display_title']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['field_display_title']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
@@ -741,6 +754,7 @@ function elx_user_dashboard_views_default_views() {
     t('View panes'),
     t('Suggested'),
     t('Suggested drop down'),
+    t('Suggested for me:'),
   );
   $export['dashboard_user_activities'] = $view;
 

@@ -23,9 +23,13 @@ overflow: auto !important;
 /* Course Presentation is canvas-based, so it scales text proportionately as it resizes
  * We attempt to override this behavior and make it responsive instead.
  */
-.h5p-course-presentation div {
+.h5p-course-presentation .h5p-advancedtext-outer-element {
 	    font-size: 1rem;
 	    overflow: auto !important;
+
+	    &::-webkit-scrollbar-thumb {
+	      background-color: white;
+	    }
 }
 
 .h5p-course-presentation .h5p-interactive-video div {

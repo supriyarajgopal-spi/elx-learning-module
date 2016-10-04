@@ -683,6 +683,9 @@ div#block-menu-menu-header-user-menu {
     .pane-levels-quizz-progress-completed-count {
       background-color: #1e2341;
       height: 80px;
+      margin-bottom: 2px;
+      padding-bottom: 10px;
+      position: relative;
 
       .pane-title {
         font-size: 20px;
@@ -723,8 +726,6 @@ div#block-menu-menu-header-user-menu {
         }
       }
 
-      margin-bottom: 2px;
-      padding-bottom: 10px;
     }
 
     .pane-levels-quizz-progress-closest-completion {
@@ -902,8 +903,11 @@ div#block-menu-menu-header-user-menu {
       padding: 20px 5px 20px 20px;
       height: 70px;
       width: 100%;
+      position: relative;
 
       .view-display-id-my_points {
+        position: relative;
+
         .views-field-points {
 
           padding-top: 5px;

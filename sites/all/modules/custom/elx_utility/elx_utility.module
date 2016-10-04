@@ -299,6 +299,19 @@ function elx_utility_init()
 }
 
 /**
+ * Implements hook_menu_link_alter()
+ * Included by SUPRIYA RAJGOPAL on 4Oct16
+ * Borrowed from https://api.drupal.org/comment/45108#comment-45108
+ */
+function elx_utility_menu_link_alter(&$item)
+{
+	if($item['link_path']=="user" && user_is_anonymous()) //If the path is '/user' but user is not logged in, redirect to user/login
+	{
+		$item['link_path'] = 'user/login';
+	}
+}
+
+/**
  * Helper function that returns the 'site not accessible' message in the desired language
  * Borrowed from https://github.com/MasterDoublePrime/elx-varnish/blob/master/var/www/errors/503_coming_soon.html
  */

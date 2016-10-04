@@ -51,11 +51,17 @@ function elx_levels_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'flag_favorite';
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'favorites';
+  /* Relationship: Flags: first_viewed_content */
+  $handler->display->display_options['relationships']['flag_content_rel_1']['id'] = 'flag_content_rel_1';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel_1']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel_1']['flag'] = 'first_viewed_content';
   /* Field: Flags: Flagged */
   $handler->display->display_options['fields']['flagged_1']['id'] = 'flagged_1';
   $handler->display->display_options['fields']['flagged_1']['table'] = 'flagging';
   $handler->display->display_options['fields']['flagged_1']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged_1']['relationship'] = 'flag_content_rel_1';
   $handler->display->display_options['fields']['flagged_1']['label'] = '';
   $handler->display->display_options['fields']['flagged_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['flagged_1']['alter']['alter_text'] = TRUE;
@@ -316,6 +322,7 @@ function elx_levels_views_default_views() {
     t('SEE MORE'),
     t('OG membership from node'),
     t('flag_favorite'),
+    t('flag'),
     t('lp-viewed'),
     t('All'),
     t('Admin'),

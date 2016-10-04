@@ -143,6 +143,15 @@ function elx_utility_menu()
       'access callback' => TRUE,
       'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
   );
+  
+  /*Included by SUPRIYA RAJGOPAL on 4Oct16 to define a page when site is not accessible for certain users*/
+  $items['noaccess'] = array(
+      'title' => 'Site not accessible',
+      'page callback' => '_noaccess',
+      'access callback' => '_userNotBelongsToSpecificMarkets',
+      'type' => MENU_NORMAL_ITEM, //Internal path menu, not a menu tab
+	  'theme callback' => 'noaccess'
+  );
   return $items;
 }
 
@@ -283,6 +292,219 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
   //return ctools_modal_render($flag->title,$output); //Render content in 'Modal' view mode
 }
 
+/**
+ * Implements hook_menu_link_alter()
+ * Included by SUPRIYA RAJGOPAL on 4Oct16
+ * Borrowed from https://api.drupal.org/comment/45108#comment-45108
+ */
+function elx_utility_menu_link_alter(&$item)
+{
+	if($item['link_path']=="user" && user_is_anonymous()) //If the path is '/user' but user is not logged in, redirect to user/login
+	{
+		$item['link_path'] = 'user/login';
+	}
+}
+
+/**
+ * Implements hook_user_login().
+ * Created by SUPRIYA RAJGOPAL on 4Oct16 to logout a user if s/he does not belong to a specific set of markets
+ */
+function elx_utility_user_login(&$edit,$account)
+{
+	if(_userNotBelongsToSpecificMarkets())
+		drupal_goto('noaccess');
+}
+
+/**
+ * Helper function that checks if logged in user belongs to the mentioned markets
+ * Returns FALSE if user belongs to atleast one of the markets mentioned in the function; TRUE otherwise
+ */
+function _userNotBelongsToSpecificMarkets()
+{
+	//Load the markets - Fashion Group,South Africa,U.K.,Singapore,Canada,New Zealand,Australia,United States in that order
+	$markets = array(34466,34476,34489,34498,34506,34518,34519,34520);
+	$isMember = false; //Flag to check if user belongs to any of the above markets
+	foreach($markets as $market)
+	{
+		if(og_is_member('node', $market, 'user'))
+		{
+			$isMember = true;
+			break;
+		}
+	}
+	return !$isMember;
+}
+
+/**
+ * Page callback of 'noaccess' page
+ * Print the site-not-accessible message and log the user out
+ */
+function _noaccess()
+{
+	global $user;
+	return theme('noaccess', array('title' => 'Site not accessible','errorMsg' => errorMsg($user->language)));
+	user_logout();
+}
+
+/**
+ * Implements hook_theme();
+ */
+function elx_utility_theme($existing, $type, $theme, $path)
+{
+    return array(
+        'noaccess' => array(
+            'variables' => array('title' => NULL,'errorMsg' => ''),
+            'template' => 'noaccess',
+        ),
+    );
+}
+
+/**
+ * Helper function that returns the 'site not accessible' message in the desired language
+ * Borrowed from https://github.com/MasterDoublePrime/elx-varnish/blob/master/var/www/errors/503_coming_soon.html
+ */
+function errorMsg($language)
+{
+  $langError = '';
+  
+  // [mo] for Moldavian has been withdrawn, recommending [ro] also for Moldavian
+  if ($language === 'mo') {
+    $language = 'ro';
+  }
+  // nn and no also Norwegian
+  if ($language === 'nn' || $language === 'no') {
+    $language = 'nb';
+  }
+  // Chinese -> Traditional Chinese (FF only sends 'zh').
+  if ($language === 'zh') {
+    $language = 'zh-Hant';
+  }
+  // zh-CN is much more common code for Simplified Chinese.
+  if ($language === 'zh-CN') {
+    $language = 'zh-Hans';
+  }
+  // zh-TW is much more common code for Traditional Chinese.
+  if ($language == 'zh-TW') {
+    $language = 'zh-Hant';
+  }
+  // Default to english.
+  if (!$language) {
+    $language = 'en';
+  }
+  //Spanish     
+  if ($language === 'es') {
+  	$langError = '¡ELX está en mantenimiento en este momento, haciendo una serie de mejoras en el sistema. Por favor regresa el 10 de octobre de 2016 para experimentar mejoras emocionantes y nuevas características. También encontrarás nuevo contenido para aprender. No te lo pierdas. Te vemos pronto!';
+  }
+  //Romanian     
+  else if ($language === 'ro') {
+  	$langError = 'ELX este in prezent in modul de intretinere. Te rugam sa verifici din nou in curand - ne cerem scuze pentru orice inconvenient.';
+  }
+  //Turkish     
+  else if ($language === 'tr') {
+  	$langError = 'ELX , yüklenecek yeni içerikler nedeniyle su an bakim çalismasindadir. ELX’in  yepyeni ve heyecan verici yüzüyle ve özellikleriyle tanismak için sizi, 10/10/2016 tarihinde, ELX’e giris yapmaya davet ediyoruz. Yeni lansmanlarimiz ve içeriklerine de ulasabileceginiz bu muhtesem deneyimi sakin kaçirmayin. Görüsmek üzere.';
+  }
+  //Hungarian     
+  else if ($language === 'hu') {
+  	$langError = 'Az ELX jelenleg karbantartás alatt áll a frissítések feltöltése céljából. Látogass vissza az oldalra : 10/10/2016 (hónap/nap/év) –tól és fedezd fel az újdonságokat, fejlesztéseket, legfrisebb tartalmakat. Ne maradj le! Visszavárunk!';
+  }
+  //Russian     
+  else if ($language === 'ru') {
+  	$langError = '????????? ???????? ??????????, ??? ??? ??????????? ??? ??????????. ?? ??????? ????????? ? ELX ????? 10.10.2016, ????? ?????? ?? ?????????? ? ?????????? ??????? ?????????. ??? ?? ????? ???????? ??? ???????? ????? ???????. ?? ??????????! ?? ????? ??????!';
+  }
+  //Latvian     
+  else if ($language === 'lv') {
+  	$langError = "ELX pašlaik tiek veikta apkope, vietnes atjauninajumiem. Ludzu, dodieties 10/10/2016 (dd / mm / gggg), jus redzesiet mazliet jauna pieredze uzlabotu sistemu un jaunas funkcijas. Mes ari tureseme jaunu saturu pieejami, lai jus varetu macities. Nepalaidiet garam. Uz \ndrizu tikšanos!";
+  }
+  //Lithuanian     
+  else if ($language === 'lt') {
+  	$langError = 'Elx šiuo metu vyksta technines priežiuros darbai   ,  svetaines atnaujinimai. Prašome grižti   10/10/2016 (DD / MM / YYYY) pamatysite šiek tiek naujos patirties patobulinta sistema ir naujos funkcijos. Mes taip pat tureseme nauja turini prieinami jums išmokti. Nepraleiskite. Iki greito pasimatymo!';
+  }
+  //Finnish     
+  else if ($language === 'fi') {
+  	$langError = "ELX on tällä hetkellä huollossa,  huollon jälkeen luvassa useita parannuksia ja sisältöä sivustolle . Tervetuloa takaisin 10.10.2016. \nMeillä on myös siinä vaiheessa uutta materiaalia opittavaksi. Älä missaa uutuuksia. Nähdään pian!";
+  }
+  //Polish     
+  else if ($language === 'pl') {
+  	$langError = 'Trwa przerwa techniczna na stronie ELX w celu poprawienia jej jakosci. Zapraszamy ponownie 10/10/2016 (mm/dd/rrrr) do odkrywania lepszego serwisu i nowych funkcji. Powrócimy równiez z nowymi informacjami do czytania. Nie przegap nowosci! Do zobaczenia wkrótce!';
+  }
+  //Norwegian     
+  else if ($language === 'nb') {
+  	$langError = 'ELX er fortiden i en oppgraderingsfase, og gjennomfører en mengde oppgraderinger. Vennligst kom tilbake 10/10/2016 (mm/dd/yyyy) for å oppleve spennende system forbedringer og nye opplevelser. Vi vil også ha nytt innhold tilgjengelig for deg slik at du kan lære enda mer. Ikke gå glipp av dette. Vi sees snart!';
+  }
+  //Swedish     
+  else if ($language === 'sv') {
+  	$langError = 'ELX är utför just nu en rad olika uppdateringar på webbplatsen. Vänligen återkom 2016/10/10 (mm / dd / åååå) för att uppleva några spännande systemförbättringar och nya funktioner. Vi kommer också att lansera ett helt nytt innehåll som blir tillgängligt för dig så att du kan lära dig ännu mer. Missa det inte. Vi ses snart!';
+  }
+  //Danish     
+  else if ($language === 'da') {
+  	$langError = 'ELX er lige nu under opdatering. Kom venligst tilbage d. 10/10/2016 for at opleve nogle spændende systemforbedringer og nye funktioner. Der vil også være helt nyt indhold tilgængeligt så du kan lære endnu mere. Gå ikke glip af det. Vi ses snart!';
+  }
+  //Arabic     
+  else if ($language === 'ar') {
+  	$langError = 'ELX ????? ?? ??? ??????? ? ???? ????? ?? ?????????? ??????. ???? ?????? ?? 10/10/2016 ?????? ??? ????????? ??????? ?????? ? ??????? ???????. ????? ????? ????? ???? ???? ?? ?????? ?????. ?? ???? ??????. ??? ???? ?????!';
+  }
+  //Italian     
+  else if ($language === 'it') {
+  	$langError = 'ELX è in fase di aggiornamento. Ritorna su ELX il 10/10/2016 per scoprire miglioramenti e nuove funzionalità. Ci saranno anche nuovi contenuti e aggiornamenti. Non mancare ti aspettiamo presto su ELX!';
+  }
+  //Hebrew
+  else if ($language === 'he') {
+    $langError = 'ELX ???? ???? ??? ??? ????? ???? ??????? ????. ??? ???? ????? ?????? 10/10/2016 ??? ??????? ?????? ??????, ???????? ????? ????? ?????? ???. ?? ??????. ????? ?????!';
+  }
+  //Greek     
+  else if ($language === 'el') {
+  	$langError = "?? ?LX ß??s?eta? ?p? s??t???s?, ?a??? d?e?e?????ta? e??as?e? a?aß??µ?s?? st?? ?st?se??da.\n\n?p??e?te ?a epa????ete st?? ?st?se??da st?? 10/10/2016 ??a ?a ??sete t? s??a?past??? eµpe???a t?? e??????? t?? s?st?µat??, µe ta ??a t?? ?a?a?t???st???. ?p?s?? ?a ????µe st? d???es? sa? ??e? p????f???e? ?a? pe??e??µe?a ??a ?a d?e????ete t?? ???se?? sa?. ??? ?e??sete ?a µa? ep?s?ef?e?te. Ta e?µaste s??t?µa ???t? sa? !";
+  }
+  //German     
+  else if ($language === 'de') {
+  	$langError = "ELX wird momentan für Euch bearbeitet. \nAb 10.10.2016 begrüßen wir Euch wieder mit viel Neuem! Lasst Euch überraschen und freut Euch auf die attraktiven Inhalte. \nBitte notiert Euch im Kalender, dass Ihr Euch am 15.09. wieder einloggt.  Bis dahin!";
+  }
+  //Czech     
+  else if ($language === 'cs') {
+  	$langError = 'ELX je v soucasné dobe v režimu údržby. Provádíme aktualizaci. Prosím vratte se na stránky 10.10. 2016 a objevujte mnoho nových vylepšení a funkcí. Tešit se mužete i na nový obsah. Nenechte se to ujít. Brzy na shledanou!';
+  }
+  //Dutch     
+  else if ($language === 'nl') {
+  	$langError = 'Wegens onderhoudswerkzaamheden is de ELX-website tijdelijk niet beschikbaar. We verwelkomen je graag terug op 10 october 2016 met enkele systeemverbeteringen en nieuwe toepassingen. Je zal ook nieuwe inhoud kunnen ontdekken die je niet mag missen. Graag tot snel!';
+  }
+  //Thai     
+  else if ($language === 'th') {
+  	$langError = "?????? ELX ?????????????????? ????????????????????????????????????????????????????????? ????????????????????????????????????? ?????? 10 ?????? 2016 ?????????\": \"???????????????????????????????????????????????????????????? ????????????????????????????????????????????????????????????????? ??????????????????? !";
+  } 
+  //Korean     
+  else if ($language === 'ko') {
+  	$langError = "??, ELX ???? ??? ????? ?? ??? ?????. \n??? ???? ?? ????? ?????? ELX ????2016? 10? 10??? ??? ??? ????.";
+  }
+  //Japanese     
+  else if ($language === 'ja') {
+  	$langError = "ELX?????????????????????????\n2016?10?10????????????????????????????????\n??????????????????????????????????";
+  }
+  //Indonesian     
+  else if ($language === 'id') {
+  	$langError = 'Saat ini ELX masih dalam tahap perbaikan untuk menjalankan beberapa peningkatan pada situs. Harap kembali pada 10/10/2016 (mm/dd/yyyy) untuk mencoba fitur-fitur baru dan beberapa perbaikan sistem yang menarik. Kami juga memiliki konten baru yang bisa Anda pelajari. Jangan lewatkan. Sampai jumpa!';
+  }
+  //Simplified Chinese     
+  else if ($language === 'zh-Hans') {
+  	$langError = "ELX????????,?????????????2016?10?10?????,??????????????????????\n???????????????,????????,????!";
+  }
+  //Traditional Chinese     
+  else if ($language === 'zh-Hant') {
+  	$langError = 'ELX???????,?? 10/10/2016 ???????????????????????,??????!';
+  }
+  //French
+  else if ($language === 'fr') {
+    $langError = 'Le site ELX est en cours de maintenance. Merci de vous reconnecter le 10/10/2016 afin de découvrir les nouvelles fonctionnalités de votre site d’apprentissage Estée Lauder.  Vous y découvrirez également beaucoup de nouveautés à ne pas manquer ! A très bientôt !';
+  }
+  //French(Canada)
+  else if ($language === 'fr-CA') {
+  	$langError = "ELX est présentement en entretien et effectue des mises à niveau pour l'amélioration de ce site. S’il-vous-plaît, revenez nous visiter le 10/10/2016 (mm/jj/aaaa) et expérimentez un système perfectionné ainsi que de nouvelles fonctionnalités. Nous aurons également du nouveau contenu à votre disposition. Ne manquez rien. Nous vous reverrons bientôt!";
+  }
+  //Default to English
+  else {
+    $langError = 'ELX is currently in maintenance mode, performing a series of upgrades for the site.  Please come back on 10/10/2016 to experience some exciting system improvements and new features. We will also have new content available for you to learn. Don’t miss out. We will see you soon!';
+  }
+  return $langError;
+}
 function elx_utility_init()
 {
 	global $user;

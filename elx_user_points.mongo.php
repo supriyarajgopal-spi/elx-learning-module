@@ -1,4 +1,9 @@
+<pre>
 <?php
+
+// 4097 characters was enough to get the browsers I tested to display output.
+print str_pad('Hi, Tracy!<!--', 4096, '-') . '>';
+flush();
 
 /**
  * Root directory of Drupal installation.
@@ -9,7 +14,7 @@ require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
 drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 $userpoint_vocabulary = taxonomy_vocabulary_machine_name_load('userpoints');
-require '/usr/local/Cellar/composer/1.1.2/libexec/vendor/autoload.php';
+require '/Users/darren/.composer/vendor/autoload.php';
 $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', array(
   'connectTimeoutMS' => 60000,
   'socketTimeoutMS' => 60000,
@@ -71,11 +76,17 @@ function elx_user_points_cursor(MongoDB\Database $database, MongoDB\BSON\ObjectI
  */
 function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, &$saved_id) {
   foreach ($cursor as $obj) {
-  	$mongo_term_name = '';
+    // Use output buffering to get the nicer variable display from var_dump().
+    ob_start();
+    var_dump($obj);
+    print str_pad(ob_get_clean() . '<!--', 4096, '-') . '>';
+    flush();
+
+    $mongo_term_name = '';
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
-	$content_id = $obj->contentid;
+    $content_id = $obj->contentid;
     
     if ($points != 0) {
 

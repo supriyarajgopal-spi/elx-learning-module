@@ -286,7 +286,8 @@ function _elx_badges_modal($js = NULL, $flag_name = NULL)
 function elx_utility_init()
 {
 	global $user;
-	if(user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
+  
+	if (arg(0) != 'user' && arg(1) != 'logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
 	{
 		drupal_set_message(t('@errorMsg',array('@errorMsg' => errorMsg($user->language))));
 		drupal_access_denied();
@@ -464,12 +465,29 @@ function errorMsg($language)
  */
 function _userNotBelongsToSpecificMarkets()
 {
-	//Load the markets - Fashion Group,South Africa,U.K.,Singapore,Canada,New Zealand,Australia,United States in that order
-	$markets = array(34466,34476,34489,34498,34506,34518,34519,34520);
+	// Load the markets.
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid'));
+  $field = field_info_field(OG_GROUP_FIELD);
+  $table = _field_sql_storage_tablename($field);
+  $query->join($table, 'g', "n.nid = g.entity_id AND g.entity_type = 'node'");
+  $result = $query
+    ->condition('n.type', 'market')
+    ->condition('n.title', array(
+      'Australia',
+      'Canada',
+      'Fashion Group',
+      'New Zealand',
+      'Singapore',
+      'South Africa',
+      'U.K.',
+      'United States',
+    ))
+    ->execute();
 	$isMember = false; //Flag to check if user belongs to any of the above markets
-	foreach($markets as $market)
+	foreach($result as $market)
 	{
-		if(og_is_member('node', $market, 'user'))
+		if(og_is_member('node', $market->nid, 'user'))
 		{
 			$isMember = true;
 			break;

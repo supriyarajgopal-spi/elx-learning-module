@@ -128,7 +128,7 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 		  	$nid = get_product_nid_for_points($node_id);
 		  }
 		  else {
-		    $nid = get_nid_for_points($node_id);
+		    $nid = get_h5p_nid_for_points($node_id);
 		  }
 	      if ($nid != FALSE) {
             $reference = $nid;
@@ -326,29 +326,28 @@ function get_user_points($user_uid, $tid) {
  * @return
  *   h5p content nid
  */
-function get_nid_for_points($nid) {
+function get_h5p_nid_for_points($nid) {
   static $drupal_static_fast;
   if (!isset($drupal_static_fast)) {
     $drupal_static_fast[__FUNCTION__] = &drupal_static(__FUNCTION__);
-    $drupal_static_fast[__FUNCTION__]['field_manifest'] = field_info_field('field_manifest');
-    $drupal_static_fast[__FUNCTION__]['table_manifest'] = _field_sql_storage_tablename($drupal_static_fast[__FUNCTION__]['field_manifest']);
+    $drupal_static_fast[__FUNCTION__]['table_manifest'] = _field_sql_storage_tablename(field_info_field('field_manifest'));
     $drupal_static_fast[__FUNCTION__]['column_manifest'] = _field_sql_storage_columnname('field_manifest', 'target_id');
-    $drupal_static_fast[__FUNCTION__]['field_h5p_node'] = field_info_field('field_h5p_node');
-    $drupal_static_fast[__FUNCTION__]['table_h5p_node'] = _field_sql_storage_tablename($drupal_static_fast[__FUNCTION__]['field_h5p_node']);
+    $drupal_static_fast[__FUNCTION__]['table_h5p_node'] = _field_sql_storage_tablename(field_info_field('field_h5p_node'));
     $drupal_static_fast[__FUNCTION__]['column_h5p_node'] = _field_sql_storage_columnname('field_h5p_node', 'target_id');
   }
-  $field_manifest = &$drupal_static_fast[__FUNCTION__]['field_manifest'];
   $table_manifest = &$drupal_static_fast[__FUNCTION__]['table_manifest'];
   $column_manifest = &$drupal_static_fast[__FUNCTION__]['column_manifest'];
-  $field_h5p_node = &$drupal_static_fast[__FUNCTION__]['field_h5p_node'];
   $table_h5p_node = &$drupal_static_fast[__FUNCTION__]['table_h5p_node'];
   $column_h5p_node = &$drupal_static_fast[__FUNCTION__]['column_h5p_node'];
 
   $query = db_select($table_manifest, 'frfm');
   $query->join($table_h5p_node, 'h5p', 'frfm.entity_type = h5p.entity_type AND frfm.entity_id = h5p.entity_id');
+  $query->leftJoin('node', 'n', "h5p.$column_h5p_node = n.nid AND n.tnid <> :tnid", array(
+    ':tnid' => 0,
+  ));
   return $query
-    ->fields('h5p', array($column_h5p_node))
-    ->condition($column_manifest, $nid, '=')
+    ->addExpression("COALESCE(n.tnid, h5p.$column_h5p_node)")
+    ->condition("frfm.$column_manifest", $nid)
     ->execute()
     ->fetchField();
 }
@@ -362,17 +361,25 @@ function get_nid_for_points($nid) {
  *   product nid
  */
 function get_product_nid_for_points($nid) {
-  $result = db_select('node', 'n')
-    ->fields('n', array('nid'))
-    ->condition('nid', $nid, '=')
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast[__FUNCTION__] = &drupal_static(__FUNCTION__);
+    $drupal_static_fast[__FUNCTION__]['table'] = _field_sql_storage_tablename(field_info_field('field_manifest'));
+    $drupal_static_fast[__FUNCTION__]['column'] = _field_sql_storage_columnname('field_manifest', 'target_id');
+  }
+  $table = &$drupal_static_fast[__FUNCTION__]['table'];
+  $column = &$drupal_static_fast[__FUNCTION__]['column'];
+
+  $query = db_select($table, 'frfm');
+  $query->leftJoin('node', 'n', 'frfm.entity_id = n.nid AND n.tnid <> :tnid', array(
+    ':tnid' => 0,
+  ));
+  return $query
+    ->addExpression("COALESCE(n.tnid, frfm.entity_id)")
+    ->condition('frfm.entity_type', 'node')
+    ->condition("frfm.$column", $nid)
     ->execute()
     ->fetchField();
-  if (!empty($result[0])) {
-	return $result[0];
-  }
-  else {
-	return FALSE;
-  }
 }
 
 /** 

@@ -269,8 +269,8 @@ function elx_badge_flags_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => -31,
-    'badge_description' => '<p>You&rsquo;re angling for success! You&rsquo;ve completed the New Dimension level.</p>',
-    'badge_unearned_description' => '<p>Score 80% or higher correct on the New Dimension Test.</p>',
+    'badge_description' => '<p>You&rsquo;ve completed 5 levels and you&#39;re getting more knowledgeable by the minute - keep going!</p>',
+    'badge_unearned_description' => '<p>Complete five Levels.</p>',
     'badge_image' => NULL,
     'show_in_links' => array(
       'full' => 0,

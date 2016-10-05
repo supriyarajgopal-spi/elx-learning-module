@@ -345,9 +345,10 @@ function get_h5p_nid_for_points($nid) {
   $query->leftJoin('node', 'n', "h5p.$column_h5p_node = n.nid AND n.tnid <> :tnid", array(
     ':tnid' => 0,
   ));
+  $query->addExpression("COALESCE(n.tnid, h5p.$column_h5p_node)");
   return $query
-    ->addExpression("COALESCE(n.tnid, h5p.$column_h5p_node)")
     ->condition("frfm.$column_manifest", $nid)
+    ->range(0, 1)
     ->execute()
     ->fetchField();
 }
@@ -374,10 +375,11 @@ function get_product_nid_for_points($nid) {
   $query->leftJoin('node', 'n', 'frfm.entity_id = n.nid AND n.tnid <> :tnid', array(
     ':tnid' => 0,
   ));
+  $query->addExpression("COALESCE(n.tnid, frfm.entity_id)");
   return $query
-    ->addExpression("COALESCE(n.tnid, frfm.entity_id)")
     ->condition('frfm.entity_type', 'node')
     ->condition("frfm.$column", $nid)
+    ->range(0, 1)
     ->execute()
     ->fetchField();
 }

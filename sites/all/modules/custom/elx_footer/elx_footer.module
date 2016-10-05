@@ -5,3 +5,19 @@
  */
 
 include_once 'elx_footer.features.inc';
+
+/**
+ * Implements hook_menu_alter().
+ */
+function elx_footer_menu_alter(&$items)
+{
+	$items['user/logout']['access callback'] = 'allow_access';
+}
+
+/**
+ * Access callback function that always returns TRUE so that Logout link can appear on the login page also in the footer
+ */
+function allow_access()
+{
+	return TRUE;
+}

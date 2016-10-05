@@ -14,6 +14,7 @@ require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
 drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 $userpoint_vocabulary = taxonomy_vocabulary_machine_name_load('userpoints');
+$flag = flag_get_flag('first_viewed_content');
 require '/Users/darren/.composer/vendor/autoload.php';
 $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', array(
   'connectTimeoutMS' => 60000,
@@ -74,19 +75,14 @@ function elx_user_points_cursor(MongoDB\Database $database, MongoDB\BSON\ObjectI
  * @param int $vid
  *   User points vocabulary ID.
  */
-function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, &$saved_id) {
+function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, $first_viewed_fid, &$saved_id) {
   foreach ($cursor as $obj) {
-    // Use output buffering to get the nicer variable display from var_dump().
-    ob_start();
-    var_dump($obj);
-    print str_pad(ob_get_clean() . '<!--', 4096, '-') . '>';
-    flush();
-
+  	$count = $count + 1;
+	$reference = NULL;
     $mongo_term_name = '';
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
-    $content_id = $obj->contentid;
     
     if ($points != 0) {
 
@@ -121,25 +117,29 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
             $tid = set_userpoint_taxonomy('first-login', $vid);
           }
         }
-      }
 	  
-	  if ($mongo_term_name != 'first-login') {
-	  	$entity_type = 'node';
-	    // Create and query node collection to retrive nid
-        $qry = array('_id' => $content_id);
-        $cursor_node = $database->node->find($qry);
-        foreach ($cursor_node as $obj_node) {
-          $node_title = $obj->title;
-          $node_id = $obj_node->nid;
-		  $nid = get_nid_for_points($node_id);
-		  if ($nid != FALSE) {
+	    if ($mongo_term_name != 'first-login') {
+	      $entity_type = 'node';
+	      // Create and query node collection with findOne to retrive nid
+          $qry = array('_id' => new MongoDB\BSON\ObjectId($contentid));
+          $qry_result = $database->node->findOne($qry);
+		  $node_id = $qry_result->nid;
+		  if ($mongo_term_name == 'product') {
+		  	$nid = get_product_nid_for_points($node_id);
+		  }
+		  else {
+		    $nid = get_nid_for_points($node_id);
+		  }
+	      if ($nid != FALSE) {
             $reference = $nid;
           }
-        }
-	  }
-	  else {
-	  	$entity_type = 'user';
-		$reference = $user_uid;
+		  // Check if first_viewed flag is set and set if not
+	      $flagging_id = set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid);
+	    }
+	    else {
+	      $entity_type = 'user';
+		  $reference = $user_uid;
+	    }
 	  }
 
       // Insert user points into userpoints, userpoints_total, and userpoints_txn tables
@@ -223,7 +223,6 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
       if (empty($txn_id) || $txn_id == FALSE) {
         $error[$user_uid]['error'] = $txn_id . ':' . $user_uid;
       }
- 
     }
     $saved_id = $obj->_id;
   }
@@ -320,14 +319,12 @@ function get_user_points($user_uid, $tid) {
 }
 
 /** 
- * Returns user's points per taxonomy id
+ * Returns nid for content
  *
- * @param user_uid 
- *   user's id
- * @param tid 
- *   taxonomy term id
+ * @param nid 
+ *   mongo manifest nid
  * @return
- *   userpoints_points
+ *   h5p content nid
  */
 function get_nid_for_points($nid) {
   static $drupal_static_fast;
@@ -354,4 +351,67 @@ function get_nid_for_points($nid) {
     ->condition($column_manifest, $nid, '=')
     ->execute()
     ->fetchField();
+}
+
+/** 
+ * Returns product nid
+ *
+ * @param nid 
+ *   mongo manifest product nid
+ * @return
+ *   product nid
+ */
+function get_product_nid_for_points($nid) {
+  $result = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('nid', $nid, '=')
+    ->execute()
+    ->fetchField();
+  if (!empty($result[0])) {
+	return $result[0];
+  }
+  else {
+	return FALSE;
+  }
+}
+
+/** 
+ * Checks if first_viewed_content is set and if not sets the flag
+ *
+ * @param first_viewed_fid 
+ *   flag fid for first_viewed_content
+ * @param entity_type 
+ *   node
+ * @param nid 
+ *   entity_id or nid for content viewed 
+ * @param user_uid 
+ *   user's uid
+ * @return
+ *   flagging id
+ */
+function set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid) {
+  $result_get = db_select('flagging', 'f')
+    ->fields('f', array('flagging_id'))
+    ->condition('fid', $first_viewed_fid, '=')
+	->condition('entity_type', $entity_type, '=')
+	->condition('entity_id', $nid, '=')
+	->condition('uid', $user_uid, '=')
+    ->execute()
+    ->fetchField();
+  if (!empty($result_get[0])) {
+	return $result_get[0];
+  }
+  else {
+	$result_set = db_insert('flagging')
+        ->fields(array(
+          'fid'         => $first_viewed_fid,
+          'entity_type' => $entity_type,
+          'entity_id'   => $nid,
+          'uid'         => $user_uid,
+          'sid'         => 0,
+          'timestamp'   => REQUEST_TIME,
+        ))
+        ->execute();
+    return $result_set[0];
+  }
 }

@@ -5,3 +5,34 @@
  */
 
 include_once 'elx_header.features.inc';
+
+/**
+ * Implements hook_preprocess_page().
+ * Borrowed from https://www.drupal.org/node/1425836 & http://drupal.stackexchange.com/questions/4482/how-to-send-variable-from-php-file-to-js-file-in-drupal-7
+ * Grab the user's picture in the desired image style and pass it to JS where it will append the picture to G-nav dropdown menu
+ */
+function elx_header_preprocess_page(&$variables) {
+  global $user;
+  $user = user_load($user->uid);
+  
+  if(empty($user->picture->uri))
+  {
+	drupal_add_css(drupal_get_path('module', 'elx_header') . '/css/elx_header.css');
+	$variables['user_image'] = '<div class="user_image_gnav"></div>';
+  }
+  else
+  {
+	$variables['user_image'] = theme(
+		'image_style', array(
+		  'style_name' => 'thumbnail',
+		  'path' => !empty($user->picture->uri) ? $user->picture->uri : variable_get('user_picture_default'),
+		  'attributes' => array(
+		    'class' => 'user_image_gnav',
+		  ),
+	    )
+	);
+  }
+  
+  drupal_add_js(array('elx_header' => array('user_image' => $variables['user_image'])), array('type' => 'setting'));
+  drupal_add_js(drupal_get_path('module', 'elx_header') . '/js/elx_header.js');
+}

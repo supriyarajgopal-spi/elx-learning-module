@@ -1,0 +1,8 @@
+div.user_default_image {
+  height: 50px;
+  width: 50px;
+  border: 3px solid gold;
+  border-radius: 200px;
+  background-color: #f0f8ff;
+  background-image: url("/sites/all/themes/elx_front/images/user/elx-circle-bg.png");
+}

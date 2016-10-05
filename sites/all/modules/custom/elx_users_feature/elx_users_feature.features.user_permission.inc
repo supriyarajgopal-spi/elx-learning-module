@@ -173,16 +173,6 @@ function elx_users_feature_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create og_user_node'.
-  $permissions['create og_user_node'] = array(
-    'name' => 'create og_user_node',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_account_field_executive'.
   $permissions['edit field_account_field_executive'] = array(
     'name' => 'edit field_account_field_executive',
@@ -339,15 +329,6 @@ function elx_users_feature_user_default_permissions() {
   // Exported permission: 'edit field_state'.
   $permissions['edit field_state'] = array(
     'name' => 'edit field_state',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit og_user_node'.
-  $permissions['edit og_user_node'] = array(
-    'name' => 'edit og_user_node',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -516,15 +497,6 @@ function elx_users_feature_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit own og_user_node'.
-  $permissions['edit own og_user_node'] = array(
-    'name' => 'edit own og_user_node',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_account_field_executive'.
   $permissions['view field_account_field_executive'] = array(
     'name' => 'view field_account_field_executive',
@@ -687,15 +659,6 @@ function elx_users_feature_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view og_user_node'.
-  $permissions['view og_user_node'] = array(
-    'name' => 'view og_user_node',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view own field_account_field_executive'.
   $permissions['view own field_account_field_executive'] = array(
     'name' => 'view own field_account_field_executive',
@@ -852,15 +815,6 @@ function elx_users_feature_user_default_permissions() {
   // Exported permission: 'view own field_state'.
   $permissions['view own field_state'] = array(
     'name' => 'view own field_state',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own og_user_node'.
-  $permissions['view own og_user_node'] = array(
-    'name' => 'view own og_user_node',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),

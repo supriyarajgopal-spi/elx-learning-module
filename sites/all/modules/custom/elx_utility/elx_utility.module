@@ -287,7 +287,7 @@ function elx_utility_init()
 {
 	global $user;
   
-	if (arg(0) != 'user' && arg(1) != 'logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
+	if (current_path() != 'user/logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
 	{
 		drupal_set_message(t('@errorMsg',array('@errorMsg' => errorMsg($user->language))));
 		drupal_access_denied();

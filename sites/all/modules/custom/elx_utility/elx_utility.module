@@ -289,7 +289,7 @@ function elx_utility_init()
   
 	if (current_path() != 'user/logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
 	{
-		drupal_set_message(t('@errorMsg',array('@errorMsg' => errorMsg($user->language))));
+		drupal_set_message(errorMsg($user->language));
 		drupal_access_denied();
 		module_invoke_all('exit');
 		drupal_exit();

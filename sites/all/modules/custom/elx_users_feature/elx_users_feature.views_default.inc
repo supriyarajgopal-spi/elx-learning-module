@@ -629,7 +629,7 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['rid']['group'] = 1;
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
-  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Roles';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Learner Group';
   $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
   $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
@@ -637,11 +637,11 @@ function elx_users_feature_views_default_views() {
     1 => 0,
     3 => 0,
     4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
     9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
   );
   /* Filter criterion: Field: Region (field_region_list) */
   $handler->display->display_options['filters']['field_region_list_value']['id'] = 'field_region_list_value';
@@ -758,6 +758,26 @@ function elx_users_feature_views_default_views() {
   $handler->display->display_options['filters']['field_door_value']['expose']['operator'] = 'field_door_value_op';
   $handler->display->display_options['filters']['field_door_value']['expose']['identifier'] = 'field_door_value';
   $handler->display->display_options['filters']['field_door_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    9 => 0,
+    8 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: User: Markets (og_user_node) */
+  $handler->display->display_options['filters']['og_user_node_target_id']['id'] = 'og_user_node_target_id';
+  $handler->display->display_options['filters']['og_user_node_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_user_node_target_id']['field'] = 'og_user_node_target_id';
+  $handler->display->display_options['filters']['og_user_node_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_user_node_target_id']['expose']['operator_id'] = 'og_user_node_target_id_op';
+  $handler->display->display_options['filters']['og_user_node_target_id']['expose']['label'] = 'Market';
+  $handler->display->display_options['filters']['og_user_node_target_id']['expose']['operator'] = 'og_user_node_target_id_op';
+  $handler->display->display_options['filters']['og_user_node_target_id']['expose']['identifier'] = 'og_user_node_target_id';
+  $handler->display->display_options['filters']['og_user_node_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -945,13 +965,14 @@ function elx_users_feature_views_default_views() {
     t('User'),
     t('- Choose an operation -'),
     t('Send welcome e-mail'),
+    t('Learner Group'),
+    t('Market'),
     t('Data export'),
     t('Status'),
     t('Email'),
     t('First Name'),
     t('Last Name'),
     t('Employer ID'),
-    t('Learner Group'),
     t('Account Name'),
     t('Region Code'),
     t('Hire Date'),

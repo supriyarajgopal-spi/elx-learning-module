@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Mongo Migration Scripts"
-AuthUserFile ../../.htpasswd
+AuthUserFile /var/www/html/myelx.com/.htpasswd
 Require valid-user

@@ -22,6 +22,12 @@ do {
   try {
     $cursor = elx_user_points_cursor($database);
     while (!empty($cursor)) {
+      // Start transmitting data to the client so the client has the ability to
+      // stop the script. 4097 characters was enough to get the browsers I
+      // tested to display output.
+      print str_pad('<!--', 4096, '-') . '>';
+      flush();
+
       elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $flag->fid);
       $cursor = elx_user_points_cursor($database);
     }
@@ -72,12 +78,6 @@ function elx_user_points_cursor(MongoDB\Database $database) {
  *   User points vocabulary ID.
  */
 function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, $first_viewed_fid) {
-  // Start transmitting data to the client so the client has the ability to stop
-  // the script. 4097 characters was enough to get the browsers I tested to
-  // display output.
-  print str_pad('<!--', 4096, '-') . '>';
-  flush();
-
   foreach ($cursor as $obj) {
     $count = $count + 1;
     $reference = NULL;
@@ -147,8 +147,8 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
       // Insert user points into userpoints, userpoints_total, and userpoints_txn tables
       // Check userpoints table for already created user/tid combo
       $userpoints_points = get_user_points($user_uid, $tid);
-
-      if ($userpoints_points == FALSE) {
+      // Add points to userpoints.
+      if ($userpoints_points === FALSE) {
         $pid = db_insert('userpoints')
           ->fields(array(
             'uid' => $user_uid,
@@ -163,11 +163,11 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
         }
       }
       else {
-        $add_points = $userpoints_points + $points;
+        $userpoints_points += $points;
         $fid = db_update('userpoints')
           ->fields(array(
-            'points' => $add_points,
-            'max_points' => $add_points,
+            'points' => $userpoints_points,
+            'max_points' => $userpoints_points,
             'last_update' => REQUEST_TIME,
           ))
           ->condition('uid', $user_uid, '=')
@@ -176,13 +176,13 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 
       // Check userpoints_total table for points
       $user_total_points = get_points_for_userpoints_total($user_uid);
-
-      if ($user_total_points != FALSE) {
-        $total_points = $user_total_points + $points;
+      // Add points to userpoints_total.
+      if ($user_total_points !== FALSE) {
+        $user_total_points += $points;
         $fid = db_update('userpoints_total')
           ->fields(array(
-            'points' => $total_points,
-            'max_points' => $total_points,
+            'points' => $user_total_points,
+            'max_points' => $user_total_points,
             'last_update' => REQUEST_TIME,
           ))
           ->condition('uid', $user_uid, '=')
@@ -236,18 +236,11 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
  *   returns total points for a given user
  */
 function get_points_for_userpoints_total($uid) {
-  $result = db_select('userpoints_total', 'upt')
+  return db_select('userpoints_total', 'upt')
     ->fields('upt', array('points'))
     ->condition('uid', $uid, '=')
     ->execute()
-    ->fetchCol();
-  if (!empty($result[0])) {
-    $user_total_points = $result[0];
-    return $user_total_points;
-  }
-  else {
-    return FALSE;
-  }
+    ->fetchField();
 }
 
 /**
@@ -259,19 +252,12 @@ function get_points_for_userpoints_total($uid) {
  *   taxonomy term id
  */
 function get_userpoint_term_tid($mongo_tx_name, $vid) {
-  $result = db_select('taxonomy_term_data', 'ttd')
+  return db_select('taxonomy_term_data', 'ttd')
     ->fields('ttd', array('tid'))
     ->condition('vid', $vid, '=')
     ->condition('name', $mongo_tx_name, '=')
     ->execute()
-    ->fetchCol();
-  if (!empty($result[0])) {
-    $tid = $result[0];
-    return $tid;
-  }
-  else {
-    return FALSE;
-  }
+    ->fetchField();
 }
 
 /**
@@ -304,19 +290,12 @@ function set_userpoint_taxonomy($mongo_tx_name, $vid) {
  *   userpoints_points
  */
 function get_user_points($user_uid, $tid) {
-  $result = db_select('userpoints', 'up')
+  return db_select('userpoints', 'up')
     ->fields('up', array('points'))
     ->condition('uid', $user_uid, '=')
     ->condition('tid', $tid, '=')
     ->execute()
-    ->fetchCol();
-  if (!empty($result[0])) {
-    $userpoints_points = $result[0];
-    return $userpoints_points;
-  }
-  else {
-    return FALSE;
-  }
+    ->fetchField();
 }
 
 /**

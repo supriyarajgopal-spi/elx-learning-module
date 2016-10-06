@@ -52,7 +52,7 @@ variable_del('userpoint_script_id');
  */
 function elx_user_points_cursor(MongoDB\Database $database) {
   // Retrieve object ID of the last successfully processed record.
-  $saved_id = variable_get('userpoint_script_id', NULL);
+  $saved_id = MongoDB\BSON\ObjectID(variable_get('userpoint_script_id', NULL));
   if (isset($saved_id)) {
     $query = array(
       '_id' => array('$gt' => $saved_id),
@@ -225,7 +225,7 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
         $error[$user_uid]['error'] = $txn_id . ':' . $user_uid;
       }
     }
-    variable_set('userpoint_script_id', $obj->_id);
+    variable_set('userpoint_script_id', (string) $obj->_id);
   }
 }
 

@@ -764,7 +764,13 @@ function _content_conversion_node_question_and_answer($node, $question) {
   $paragraph = paragraphs_item_load($node->field_paragraph_multiple_choice[$node->language][0]['value']);
   $question->library = 'H5P.MultiChoice 1.7';
   $params = new stdClass();
-  $params->question = trim($paragraph->field_question_text[LANGUAGE_NONE][0]['value']);
+  $intro = "";
+  if (!empty($node->field_intro[$node->language][0]['value'])) {
+    $intro = trim($node->field_intro[$node->language][0]['value']);
+    $params->question = $intro."<p>".trim($paragraph->field_question_text[LANGUAGE_NONE][0]['value'])."</p>";
+  } else {
+    $params->question = trim($paragraph->field_question_text[LANGUAGE_NONE][0]['value']);
+  }
   if (!empty($paragraph->field_paragraph_answer[LANGUAGE_NONE])) {
     $params->answers = array();
     foreach ($paragraph->field_paragraph_answer[LANGUAGE_NONE] as $item) {

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Mongo Migration Scripts"
+AuthUserFile ../../.htpasswd
+Require valid-user

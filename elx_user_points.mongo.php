@@ -1,9 +1,4 @@
-<pre>
 <?php
-
-// 4097 characters was enough to get the browsers I tested to display output.
-print str_pad('Hi, Tracy!<!--', 4096, '-') . '>';
-flush();
 
 /**
  * Root directory of Drupal installation.
@@ -15,7 +10,7 @@ drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 $userpoint_vocabulary = taxonomy_vocabulary_machine_name_load('userpoints');
 $flag = flag_get_flag('first_viewed_content');
-require '/Users/darren/.composer/vendor/autoload.php';
+require '/usr/local/Cellar/composer/1.1.2/libexec/vendor/autoload.php';
 $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', array(
   'connectTimeoutMS' => 60000,
   'socketTimeoutMS' => 60000,
@@ -28,7 +23,7 @@ do {
     // Store object ID of the last successfully processed record.
     $saved_id = NULL;
     while (!empty($cursor)) {
-      elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $saved_id);
+      elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $flag->fid, $saved_id);
       $cursor = elx_user_points_cursor($database, $saved_id);
     }
     $disconnected = FALSE;
@@ -132,9 +127,9 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 		  }
 	      if ($nid != FALSE) {
             $reference = $nid;
+			// Check if first_viewed flag is set and set if not
+	        $flagging_id = set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid);
           }
-		  // Check if first_viewed flag is set and set if not
-	      $flagging_id = set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid);
 	    }
 	    else {
 	      $entity_type = 'user';

@@ -1,10 +1,6 @@
 <pre>
 <?php
 
-// 4097 characters was enough to get the browsers I tested to display output.
-print str_pad('Hi, Tracy!<!--', 4096, '-') . '>';
-flush();
-
 /**
  * Root directory of Drupal installation.
  */
@@ -25,11 +21,9 @@ $database = $mongo->{'mean-prod'};
 do {
   try {
     $cursor = elx_user_points_cursor($database);
-    // Store object ID of the last successfully processed record.
-    $saved_id = NULL;
     while (!empty($cursor)) {
-      elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $flag->fid, $saved_id);
-      $cursor = elx_user_points_cursor($database, $saved_id);
+      elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $flag->fid);
+      $cursor = elx_user_points_cursor($database);
     }
     $disconnected = FALSE;
   }
@@ -38,19 +32,22 @@ do {
   }
 }
 while ($disconnected);
+// When all records have been successfully processed, delete the
+// userpoint_script_id variable.
+variable_del('userpoint_script_id');
 
 /**
  * Return the result of a user points query for batch processing.
  *
  * @param MongoDB\Database $database
  *   Mongo database to query.
- * @param MongoDB\BSON\ObjectID $saved_id
- *   Object ID of the last successfully processed record.
  *
  * @return MongoDB\Driver\Cursor
  *   User points query result for batch processing.
  */
-function elx_user_points_cursor(MongoDB\Database $database, MongoDB\BSON\ObjectID $saved_id = NULL) {
+function elx_user_points_cursor(MongoDB\Database $database) {
+  // Retrieve object ID of the last successfully processed record.
+  $saved_id = variable_get('userpoint_script_id', NULL);
   if (isset($saved_id)) {
     $query = array(
       '_id' => array('$gt' => $saved_id),
@@ -75,21 +72,20 @@ function elx_user_points_cursor(MongoDB\Database $database, MongoDB\BSON\ObjectI
  * @param int $vid
  *   User points vocabulary ID.
  */
-function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, $first_viewed_fid, &$saved_id) {
+function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, $first_viewed_fid) {
+  // Start transmitting data to the client so the client has the ability to stop
+  // the script. 4097 characters was enough to get the browsers I tested to
+  // display output.
+  print str_pad('<!--', 4096, '-') . '>';
+  flush();
+
   foreach ($cursor as $obj) {
   	$count = $count + 1;
-	$reference = NULL;
+    $reference = NULL;
     $mongo_term_name = '';
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
-	$mongo_id = $obj->_id;
-	variable_set('userpoint_script_id', $mongo_id);
-	
-	ob_start();
-    var_dump($obj);
-    print str_pad(ob_get_clean() . '<!--', 4096, '-') . '>';
-    flush();
     
     if ($points != 0) {
 
@@ -231,7 +227,7 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
         $error[$user_uid]['error'] = $txn_id . ':' . $user_uid;
       }
     }
-    $saved_id = $obj->_id;
+    variable_set('userpoint_script_id', $obj->_id);
   }
 }
 
@@ -431,3 +427,5 @@ function set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid)
     return $result_set[0];
   }
 }
+?>
+</pre>

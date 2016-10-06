@@ -71,6 +71,75 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-active_learner_groups-array_filter';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Active Learner Groups';
+  $feeds_tamper->plugin_id = 'array_filter';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Filter empty items';
+  $export['elx_users-active_learner_groups-array_filter'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-active_learner_groups-explode';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Active Learner Groups';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Explode';
+  $export['elx_users-active_learner_groups-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-active_learner_groups-strip_tags';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Active Learner Groups';
+  $feeds_tamper->plugin_id = 'strip_tags';
+  $feeds_tamper->settings = array(
+    'allowed_tags' => '',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Strip tags';
+  $export['elx_users-active_learner_groups-strip_tags'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-active_learner_groups-trim';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Active Learner Groups';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Trim';
+  $export['elx_users-active_learner_groups-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-active_learner_groups-unique';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Active Learner Groups';
+  $feeds_tamper->plugin_id = 'unique';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 5;
+  $feeds_tamper->description = 'Unique';
+  $export['elx_users-active_learner_groups-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-city-strip_tags';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'City';
@@ -96,6 +165,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
   $export['elx_users-city-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-counter_manager-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Counter Manager';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-counter_manager-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -258,6 +344,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-education_manager_executive-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Education Manager/Executive';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-education_manager_executive-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-education_manager_executive-strip_tags';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Education Manager/Executive';
@@ -328,6 +431,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-employee_id-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Employee ID';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|N\\/A$|^12345$/i',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-employee_id-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-employee_id-strip_tags';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Employee ID';
@@ -353,6 +473,52 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
   $export['elx_users-employee_id-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-employment_status-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Employment Status';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^(?!(Full-Time|Seasonal)$)/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-employment_status-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-employment_status-strip_tags';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Employment Status';
+  $feeds_tamper->plugin_id = 'strip_tags';
+  $feeds_tamper->settings = array(
+    'allowed_tags' => '',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Strip tags';
+  $export['elx_users-employment_status-strip_tags'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-employment_status-trim';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Employment Status';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['elx_users-employment_status-trim'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -423,6 +589,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Trim';
   $export['elx_users-first_name-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-general_manager_brand_manager-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'General Manager/Brand Manager';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-general_manager_brand_manager-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1231,6 +1414,47 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-last_access-strip_tags';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Last access';
+  $feeds_tamper->plugin_id = 'strip_tags';
+  $feeds_tamper->settings = array(
+    'allowed_tags' => '',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Strip tags';
+  $export['elx_users-last_access-strip_tags'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-last_access-strtotime';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Last access';
+  $feeds_tamper->plugin_id = 'strtotime';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'String to Unix timestamp';
+  $export['elx_users-last_access-strtotime'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-last_access-trim';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Last access';
+  $feeds_tamper->plugin_id = 'trim';
+  $feeds_tamper->settings = array(
+    'mask' => '',
+    'side' => 'trim',
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Trim';
+  $export['elx_users-last_access-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-last_name-required';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Last Name';
@@ -1337,6 +1561,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 8;
   $feeds_tamper->description = 'Unique';
   $export['elx_users-learner_group-unique'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-market_administrator-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Market Administrator';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-market_administrator-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -1485,6 +1726,40 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-regional_sales_sales_education_manager-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Regional Sales/Sales Education Manager';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-regional_sales_sales_education_manager-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-regional_vice_president-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Regional Vice President';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-regional_vice_president-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'elx_users-regional_vice_president-strip_tags';
   $feeds_tamper->importer = 'elx_users';
   $feeds_tamper->source = 'Regional Vice President';
@@ -1510,6 +1785,23 @@ function elx_users_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Trim';
   $export['elx_users-regional_vice_president-trim'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'elx_users-sales_sales_education_executive-find_replace_regex';
+  $feeds_tamper->importer = 'elx_users';
+  $feeds_tamper->source = 'Sales/Sales Education Executive';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^NA$|^N\\/A$/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['elx_users-sales_sales_education_executive-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

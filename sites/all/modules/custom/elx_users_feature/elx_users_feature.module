@@ -5,3 +5,35 @@
  */
 
 include_once 'elx_users_feature.features.inc';
+
+function elx_users_feature_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case "views_exposed_form":
+      switch ($form['#id']) {
+        case 'views-exposed-form-user-export-page':
+          unset($form['og_user_node_target_id']['#size']);
+          $form['og_user_node_target_id']['#type'] = 'select';
+          $form['og_user_node_target_id']['#options'] = _elx_users_feature_market_select_options();
+          $form['og_user_node_target_id']['#default_value'] = '';
+          $form['og_user_node_target_id']['#multiple'] = FALSE;
+      }
+      break;
+      deafult:
+      break;
+  }
+}
+function _elx_users_feature_market_select_options() {
+  $matches = array(''=>'<ALL>');
+
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid','title'));
+  $query->condition('n.type', 'market', '=');
+  $query->orderBy('n.title', 'ASC');
+  $result = $query->execute();
+
+  foreach ($result as $row) {
+    $matches[$row->nid] = check_plain($row->title);
+  }
+
+  return $matches;
+}

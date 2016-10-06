@@ -199,10 +199,10 @@ function elx_users_feature_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_door',
-    'is_property' => FALSE,
     'label' => 'Door',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),
@@ -269,10 +269,10 @@ function elx_users_feature_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_employer_number',
-    'is_property' => FALSE,
     'label' => 'Employer number',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => 1,
     ),

@@ -30,8 +30,7 @@ do {
   catch (MongoDB\Driver\Exception\ConnectionException $e) {
     $disconnected = TRUE;
   }
-}
-while ($disconnected);
+} while ($disconnected);
 // When all records have been successfully processed, delete the
 // userpoint_script_id variable.
 variable_del('userpoint_script_id');
@@ -80,13 +79,13 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
   flush();
 
   foreach ($cursor as $obj) {
-  	$count = $count + 1;
+    $count = $count + 1;
     $reference = NULL;
     $mongo_term_name = '';
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
-    
+
     if ($points != 0) {
 
       // Set product userpoint term
@@ -120,46 +119,45 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
             $tid = set_userpoint_taxonomy('first-login', $vid);
           }
         }
-	  
-	    if ($mongo_term_name != 'first-login') {
-	      $entity_type = 'node';
-	      // Create and query node collection with findOne to retrive nid
+
+        if ($mongo_term_name != 'first-login') {
+          $entity_type = 'node';
+          // Create and query node collection with findOne to retrive nid
           $qry = array('_id' => new MongoDB\BSON\ObjectId($contentid));
           $qry_result = $database->node->findOne($qry);
-		  $node_id = $qry_result->nid;
-		  if ($mongo_term_name == 'product') {
-		  	$nid = get_product_nid_for_points($node_id);
-		  }
-		  else {
-		    $nid = get_h5p_nid_for_points($node_id);
-		  }
-	      if ($nid != FALSE) {
-            $reference = $nid;
-			// Check if first_viewed flag is set and set if not
-	        $flagging_id = set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid);
+          $node_id = $qry_result->nid;
+          if ($mongo_term_name == 'product') {
+            $nid = get_product_nid_for_points($node_id);
           }
-	    }
-	    else {
-	      $entity_type = 'user';
-		  $reference = $user_uid;
-	    }
-	  }
+          else {
+            $nid = get_h5p_nid_for_points($node_id);
+          }
+          if ($nid != FALSE) {
+            $reference = $nid;
+            // Check if first_viewed flag is set and set if not
+            $flagging_id = set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid);
+          }
+        }
+        else {
+          $entity_type = 'user';
+          $reference = $user_uid;
+        }
+      }
 
       // Insert user points into userpoints, userpoints_total, and userpoints_txn tables
-
       // Check userpoints table for already created user/tid combo
       $userpoints_points = get_user_points($user_uid, $tid);
 
-      if ($userpoints_points == FALSE) { 
+      if ($userpoints_points == FALSE) {
         $pid = db_insert('userpoints')
           ->fields(array(
-            'uid'         => $user_uid,
-            'points'      => $points,
-            'max_points'  => $points,
+            'uid' => $user_uid,
+            'points' => $points,
+            'max_points' => $points,
             'last_update' => REQUEST_TIME,
-            'tid'         => $tid,
-        ))
-        ->execute();
+            'tid' => $tid,
+          ))
+          ->execute();
         if (empty($pid) || $pid == FALSE) {
           $error[$user_uid]['error'] = $pid . ':' . $user_uid;
         }
@@ -167,13 +165,13 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
       else {
         $add_points = $userpoints_points + $points;
         $fid = db_update('userpoints')
-        ->fields(array(
-          'points'       => $add_points,
-          'max_points'   => $add_points,
-          'last_update'  => REQUEST_TIME,
+          ->fields(array(
+            'points' => $add_points,
+            'max_points' => $add_points,
+            'last_update' => REQUEST_TIME,
           ))
-        ->condition('uid', $user_uid, '=')
-        ->execute(); 
+          ->condition('uid', $user_uid, '=')
+          ->execute();
       }
 
       // Check userpoints_total table for points
@@ -182,23 +180,23 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
       if ($user_total_points != FALSE) {
         $total_points = $user_total_points + $points;
         $fid = db_update('userpoints_total')
-        ->fields(array(
-          'points'       => $total_points,
-          'max_points'   => $total_points,
-          'last_update'  => REQUEST_TIME,
+          ->fields(array(
+            'points' => $total_points,
+            'max_points' => $total_points,
+            'last_update' => REQUEST_TIME,
           ))
-        ->condition('uid', $user_uid, '=')
-        ->execute();
+          ->condition('uid', $user_uid, '=')
+          ->execute();
       }
       else {
         $user_point_total_id = db_insert('userpoints_total')
-        ->fields(array(
-          'uid'         => $user_uid,
-          'points'      => $points,
-          'max_points'  => $points,
-          'last_update' => REQUEST_TIME,
-        ))
-        ->execute();
+          ->fields(array(
+            'uid' => $user_uid,
+            'points' => $points,
+            'max_points' => $points,
+            'last_update' => REQUEST_TIME,
+          ))
+          ->execute();
         if (empty($user_point_total_id) || $user_point_total_id == FALSE) {
           $error_total[$user_uid]['error'] = $points . ':' . $user_uid;
         }
@@ -206,23 +204,23 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 
       $txn_id = db_insert('userpoints_txn')
         ->fields(array(
-          'uid'           => $user_uid,
-          'approver_uid'  => 0,
-          'points'        => $points,
-          'time_stamp'    => REQUEST_TIME,
-          'changed'       => REQUEST_TIME,
-          'status'        => 0,
-          'description'   => $mongo_term_name, 
-          'reference'     => $reference,
-          'expirydate'    => 0,
-          'expired'       => 0,
+          'uid' => $user_uid,
+          'approver_uid' => 0,
+          'points' => $points,
+          'time_stamp' => REQUEST_TIME,
+          'changed' => REQUEST_TIME,
+          'status' => 0,
+          'description' => $mongo_term_name,
+          'reference' => $reference,
+          'expirydate' => 0,
+          'expired' => 0,
           'parent_txn_id' => 0,
-          'tid'           => $tid,
-          'entity_id'     => $user_uid,
-          'entity_type'   => $entity_type,
-          'operation'     => 'Insert',
-      ))
-      ->execute();
+          'tid' => $tid,
+          'entity_id' => $user_uid,
+          'entity_type' => $entity_type,
+          'operation' => 'Insert',
+        ))
+        ->execute();
       if (empty($txn_id) || $txn_id == FALSE) {
         $error[$user_uid]['error'] = $txn_id . ':' . $user_uid;
       }
@@ -243,16 +241,16 @@ function get_points_for_userpoints_total($uid) {
     ->condition('uid', $uid, '=')
     ->execute()
     ->fetchCol();
-	if (!empty($result[0])) {
-	  $user_total_points = $result[0];
-	  return $user_total_points;
-	}
-	else {
-	  return FALSE;
-	}
+  if (!empty($result[0])) {
+    $user_total_points = $result[0];
+    return $user_total_points;
+  }
+  else {
+    return FALSE;
+  }
 }
 
-/** 
+/**
  * @param mongo_tx_name 
  *   taxonomy name
  * @param vid 
@@ -262,21 +260,21 @@ function get_points_for_userpoints_total($uid) {
  */
 function get_userpoint_term_tid($mongo_tx_name, $vid) {
   $result = db_select('taxonomy_term_data', 'ttd')
-  ->fields('ttd', array('tid'))
-  ->condition('vid', $vid, '=')
-  ->condition('name', $mongo_tx_name, '=')
-  ->execute()
-  ->fetchCol();
+    ->fields('ttd', array('tid'))
+    ->condition('vid', $vid, '=')
+    ->condition('name', $mongo_tx_name, '=')
+    ->execute()
+    ->fetchCol();
   if (!empty($result[0])) {
-	$tid = $result[0];
-	return $tid;
+    $tid = $result[0];
+    return $tid;
   }
   else {
-	return FALSE;
-  }	
+    return FALSE;
+  }
 }
 
-/** 
+/**
  * Set's the taxonomy for userpoints and returns the tid 
  *
  * @param mongo_tx_name 
@@ -295,7 +293,7 @@ function set_userpoint_taxonomy($mongo_tx_name, $vid) {
   return $tid;
 }
 
-/** 
+/**
  * Returns user's points per taxonomy id
  *
  * @param user_uid 
@@ -307,21 +305,21 @@ function set_userpoint_taxonomy($mongo_tx_name, $vid) {
  */
 function get_user_points($user_uid, $tid) {
   $result = db_select('userpoints', 'up')
-  ->fields('up', array('points'))
-  ->condition('uid', $user_uid, '=')
-  ->condition('tid', $tid, '=')
-  ->execute()
-  ->fetchCol();
+    ->fields('up', array('points'))
+    ->condition('uid', $user_uid, '=')
+    ->condition('tid', $tid, '=')
+    ->execute()
+    ->fetchCol();
   if (!empty($result[0])) {
-	$userpoints_points = $result[0];
-	return $userpoints_points;
+    $userpoints_points = $result[0];
+    return $userpoints_points;
   }
   else {
-	return FALSE;
+    return FALSE;
   }
 }
 
-/** 
+/**
  * Returns nid for content
  *
  * @param nid 
@@ -350,13 +348,13 @@ function get_h5p_nid_for_points($nid) {
   ));
   $query->addExpression("COALESCE(n.tnid, h5p.$column_h5p_node)");
   return $query
-    ->condition("frfm.$column_manifest", $nid)
-    ->range(0, 1)
-    ->execute()
-    ->fetchField();
+      ->condition("frfm.$column_manifest", $nid)
+      ->range(0, 1)
+      ->execute()
+      ->fetchField();
 }
 
-/** 
+/**
  * Returns product nid
  *
  * @param nid 
@@ -380,14 +378,14 @@ function get_product_nid_for_points($nid) {
   ));
   $query->addExpression("COALESCE(n.tnid, frfm.entity_id)");
   return $query
-    ->condition('frfm.entity_type', 'node')
-    ->condition("frfm.$column", $nid)
-    ->range(0, 1)
-    ->execute()
-    ->fetchField();
+      ->condition('frfm.entity_type', 'node')
+      ->condition("frfm.$column", $nid)
+      ->range(0, 1)
+      ->execute()
+      ->fetchField();
 }
 
-/** 
+/**
  * Checks if first_viewed_content is set and if not sets the flag
  *
  * @param first_viewed_fid 
@@ -405,25 +403,25 @@ function set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid)
   $result_get = db_select('flagging', 'f')
     ->fields('f', array('flagging_id'))
     ->condition('fid', $first_viewed_fid, '=')
-	->condition('entity_type', $entity_type, '=')
-	->condition('entity_id', $nid, '=')
-	->condition('uid', $user_uid, '=')
+    ->condition('entity_type', $entity_type, '=')
+    ->condition('entity_id', $nid, '=')
+    ->condition('uid', $user_uid, '=')
     ->execute()
     ->fetchField();
   if (!empty($result_get[0])) {
-	return $result_get[0];
+    return $result_get[0];
   }
   else {
-	$result_set = db_insert('flagging')
-        ->fields(array(
-          'fid'         => $first_viewed_fid,
-          'entity_type' => $entity_type,
-          'entity_id'   => $nid,
-          'uid'         => $user_uid,
-          'sid'         => 0,
-          'timestamp'   => REQUEST_TIME,
-        ))
-        ->execute();
+    $result_set = db_insert('flagging')
+      ->fields(array(
+        'fid' => $first_viewed_fid,
+        'entity_type' => $entity_type,
+        'entity_id' => $nid,
+        'uid' => $user_uid,
+        'sid' => 0,
+        'timestamp' => REQUEST_TIME,
+      ))
+      ->execute();
     return $result_set[0];
   }
 }

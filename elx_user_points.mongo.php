@@ -10,7 +10,7 @@ drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 $userpoint_vocabulary = taxonomy_vocabulary_machine_name_load('userpoints');
 $flag = flag_get_flag('first_viewed_content');
-require '/usr/local/Cellar/composer/1.1.2/libexec/vendor/autoload.php';
+require '/home/myelxadmin/.config/composer/vendor/autoload.php';
 $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', array(
   'connectTimeoutMS' => 60000,
   'socketTimeoutMS' => 60000,

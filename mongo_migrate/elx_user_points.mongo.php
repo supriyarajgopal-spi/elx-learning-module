@@ -1,4 +1,9 @@
+<pre>
 <?php
+
+// 4097 characters was enough to get the browsers I tested to display output.
+print str_pad('Hi, Tracy!<!--', 4096, '-') . '>';
+flush();
 
 /**
  * Root directory of Drupal installation.
@@ -10,7 +15,7 @@ drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 drupal_set_time_limit(240);
 $userpoint_vocabulary = taxonomy_vocabulary_machine_name_load('userpoints');
 $flag = flag_get_flag('first_viewed_content');
-require '/home/myelxadmin/.config/composer/vendor/autoload.php';
+require '/usr/local/Cellar/composer/1.1.2/libexec/vendor/autoload.php';
 $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', array(
   'connectTimeoutMS' => 60000,
   'socketTimeoutMS' => 60000,
@@ -78,6 +83,13 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
     $user_uid = $obj->uid;
     $points = $obj->points;
     $point_type = $obj->kind;
+	$mongo_id = $obj->_id;
+	variable_set('userpoint_script_id', $mongo_id);
+	
+	ob_start();
+    var_dump($obj);
+    print str_pad(ob_get_clean() . '<!--', 4096, '-') . '>';
+    flush();
     
     if ($points != 0) {
 
@@ -157,11 +169,11 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
         }
       }
       else {
-        $points = $userpoints_points + $points;
+        $add_points = $userpoints_points + $points;
         $fid = db_update('userpoints')
         ->fields(array(
-          'points'       => $points,
-          'max_points'   => $points,
+          'points'       => $add_points,
+          'max_points'   => $add_points,
           'last_update'  => REQUEST_TIME,
           ))
         ->condition('uid', $user_uid, '=')

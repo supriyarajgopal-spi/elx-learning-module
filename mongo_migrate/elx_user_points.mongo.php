@@ -55,7 +55,7 @@ function elx_user_points_cursor(MongoDB\Database $database) {
   $saved_id = variable_get('userpoint_script_id', NULL);
   if (isset($saved_id)) {
     $query = array(
-      '_id' => array('$gt' => MongoDB\BSON\ObjectID($saved_id)),
+      '_id' => array('$gt' => new MongoDB\BSON\ObjectID($saved_id)),
     );
   }
   else {

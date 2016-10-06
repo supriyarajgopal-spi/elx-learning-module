@@ -13,12 +13,17 @@
 /**
  * Parse the feed into a data structure.
  *
- * @param $feed
- *  The feed object (contains the URL or the parsed XML structure.
- * @return
- *  stdClass The structured datas extracted from the feed.
+ * @param string $string
+ *   The feed object (contains the URL or the parsed XML structure).
+ *
+ * @return array|false
+ *   The structured datas extracted from the feed or FALSE in case of failures.
  */
 function common_syndication_parser_parse($string) {
+  // SimpleXML can only deal with XML declaration at the start of the document,
+  // so remove any surrounding whitespace.
+  $string = trim($string);
+
   @ $xml = simplexml_load_string($string, NULL, LIBXML_NOERROR | LIBXML_NOWARNING | LIBXML_NOCDATA);
 
   // Got a malformed XML.
@@ -41,10 +46,11 @@ function common_syndication_parser_parse($string) {
 /**
  * Determine the feed format of a SimpleXML parsed object structure.
  *
- * @param $xml
- *  SimpleXML-preprocessed feed.
- * @return
- *  The feed format short description or FALSE if not compatible.
+ * @param SimpleXMLElement $xml
+ *   SimpleXML-preprocessed feed.
+ *
+ * @return string|false
+ *   The feed format short description or FALSE if not compatible.
  */
 function _parser_common_syndication_feed_format_detect($xml) {
   if (!is_object($xml)) {
@@ -357,6 +363,9 @@ function _parser_common_syndication_RSS20_parse($feed_XML) {
   foreach ($feed_XML->xpath('//item') as $news) {
     $title = $body = $original_author = $original_url = $guid = '';
 
+    // Get optional source url.
+    $source_url = (string) $news->source['url'];
+
     $category = $news->xpath('category');
     // Get children for current namespace.
     $content = (array)$news->children($ns["content"]);
@@ -454,6 +463,13 @@ function _parser_common_syndication_RSS20_parse($feed_XML) {
     }
     $item['url'] = trim($original_url);
     $item['guid'] = $guid;
+    if (!empty($news['source'])) {
+      $item['source:title'] = $news['source'];
+    }
+    else {
+      $item['source:title'] = NULL;
+    }
+    $item['source:url'] = trim($source_url);
 
     $item['geolocations'] = array();
     if (isset($geoname, $lat, $lon)) {
@@ -476,10 +492,11 @@ function _parser_common_syndication_RSS20_parse($feed_XML) {
 /**
  * Parse a date comes from a feed.
  *
- * @param $date_string
- *  The date string in various formats.
- * @return
- *  The timestamp of the string or the current time if can't be parsed
+ * @param string $date_str
+ *   The date string in various formats.
+ *
+ * @return int
+ *   The timestamp of the string or the current time if can't be parsed.
  */
 function _parser_common_syndication_parse_date($date_str) {
   // PHP < 5.3 doesn't like the GMT- notation for parsing timezones.
@@ -512,9 +529,10 @@ function _parser_common_syndication_parse_date($date_str) {
  * See http://www.w3.org/TR/NOTE-datetime for more information.
  * Originally from MagpieRSS (http://magpierss.sourceforge.net/).
  *
- * @param $date_str
- *   A string with a potentially W3C DTF date.
- * @return
+ * @param string $date_str
+ *   A potentially W3C DTF date.
+ *
+ * @return int|false
  *   A timestamp if parsed successfully or FALSE if not.
  */
 function _parser_common_syndication_parse_w3cdtf($date_str) {
@@ -549,8 +567,11 @@ function _parser_common_syndication_parse_w3cdtf($date_str) {
  * Extract the link that points to the original content (back to site or
  * original article)
  *
- * @param $links
- *  Array of SimpleXML objects
+ * @param array $links
+ *   Array of SimpleXML objects
+ *
+ * @return string
+ *   An URL if found. An empty string otherwise.
  */
 function _parser_common_syndication_link($links) {
   $to_link = '';

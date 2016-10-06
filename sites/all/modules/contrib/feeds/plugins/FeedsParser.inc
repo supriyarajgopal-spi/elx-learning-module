@@ -171,6 +171,20 @@ abstract class FeedsParser extends FeedsPlugin {
     $item = $result->currentItem();
     return isset($item[$element_key]) ? $item[$element_key] : '';
   }
+
+  /**
+   * Returns if the parsed result can have a title.
+   *
+   * Parser classes should override this method in case they support a source
+   * title.
+   *
+   * @return bool
+   *   TRUE if the parsed result can have a title.
+   *   FALSE otherwise.
+   */
+  public function providesSourceTitle() {
+    return FALSE;
+  }
 }
 
 /**
@@ -499,6 +513,8 @@ class FeedsEnclosure extends FeedsElement {
 
 /**
  * Defines a date element of a parsed result (including ranges, repeat).
+ *
+ * @deprecated This is no longer in use and will not be maintained.
  */
 class FeedsDateTimeElement extends FeedsElement {
 
@@ -659,6 +675,8 @@ class FeedsDateTimeElement extends FeedsElement {
  * class.
  *
  * @see FeedsDateTimeElement
+ *
+ * @deprecated Use DateObject instead.
  */
 class FeedsDateTime extends DateTime {
   public $granularity = array();
@@ -667,24 +685,11 @@ class FeedsDateTime extends DateTime {
   private $_serialized_timezone;
 
   /**
-   * Helper function to prepare the object during serialization.
+   * The original time value passed into the constructor.
    *
-   * We are extending a core class and core classes cannot be serialized.
-   *
-   * Ref: http://bugs.php.net/41334, http://bugs.php.net/39821
+   * @var mixed
    */
-  public function __sleep() {
-    $this->_serialized_time = $this->format('c');
-    $this->_serialized_timezone = $this->getTimezone()->getName();
-    return array('_serialized_time', '_serialized_timezone');
-  }
-
-  /**
-   * Upon unserializing, we must re-build ourselves using local variables.
-   */
-  public function __wakeup() {
-    $this->__construct($this->_serialized_time, new DateTimeZone($this->_serialized_timezone));
-  }
+  protected $originalValue;
 
   /**
    * Overridden constructor.
@@ -696,6 +701,8 @@ class FeedsDateTime extends DateTime {
    *   PHP DateTimeZone object, NULL allowed
    */
   public function __construct($time = '', $tz = NULL) {
+    $this->originalValue = $time;
+
     if (is_numeric($time)) {
       // Assume UNIX timestamp if it doesn't look like a simple year.
       if (strlen($time) > 4) {
@@ -731,6 +738,43 @@ class FeedsDateTime extends DateTime {
 
     // Finally set granularity.
     $this->setGranularityFromTime($time, $tz);
+  }
+
+  /**
+   * Helper function to prepare the object during serialization.
+   *
+   * We are extending a core class and core classes cannot be serialized.
+   *
+   * Ref: http://bugs.php.net/41334, http://bugs.php.net/39821
+   */
+  public function __sleep() {
+    $this->_serialized_time = $this->format('c');
+    $this->_serialized_timezone = $this->getTimezone()->getName();
+    return array('_serialized_time', '_serialized_timezone');
+  }
+
+  /**
+   * Upon unserializing, we must re-build ourselves using local variables.
+   */
+  public function __wakeup() {
+    $this->__construct($this->_serialized_time, new DateTimeZone($this->_serialized_timezone));
+  }
+
+  /**
+   * Returns the string representation.
+   *
+   * Will try to use the literal input, if that is a string. Fallsback to
+   * ISO-8601.
+   *
+   * @return string
+   *   The string version of this DateTime object.
+   */
+  public function __toString() {
+    if (is_scalar($this->originalValue)) {
+      return (string) $this->originalValue;
+    }
+
+    return $this->format('Y-m-d\TH:i:sO');
   }
 
   /**
@@ -847,6 +891,7 @@ class FeedsDateTime extends DateTime {
   protected function toArray() {
     return array('year' => $this->format('Y'), 'month' => $this->format('m'), 'day' => $this->format('d'), 'hour' => $this->format('H'), 'minute' => $this->format('i'), 'second' => $this->format('s'), 'zone' => $this->format('e'));
   }
+
 }
 
 /**
@@ -864,12 +909,16 @@ function feeds_to_unixtime($date, $default_value) {
   if (is_numeric($date)) {
     return $date;
   }
-  elseif (is_string($date) && !empty($date)) {
-    $date = new FeedsDateTimeElement($date);
+
+  if ($date instanceof FeedsDateTimeElement) {
     return $date->getValue();
   }
-  elseif ($date instanceof FeedsDateTimeElement) {
-    return $date->getValue();
+
+  if (is_string($date) || is_object($date) && method_exists($date, '__toString')) {
+    if ($date_object = date_create(trim($date))) {
+      return $date_object->format('U');
+    }
   }
+
   return $default_value;
 }

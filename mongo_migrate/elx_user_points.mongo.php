@@ -1,5 +1,7 @@
 <pre>
 <?php
+print str_pad("Starting\n<!--", 4095, '-') . ">\n";
+flush();
 
 /**
  * Root directory of Drupal installation.
@@ -18,15 +20,18 @@ $mongo = new MongoDB\Client('mongodb://myelx.cloudapp.net:27017/mean-prod', arra
   'socketTimeoutMS' => 60000,
 ));
 $database = $mongo->{'mean-prod'};
+$batch = 0;
 // Ensure that processing resumes if the connection to Mongo is lost.
 do {
   try {
+    print str_pad("Connecting to Mongo\n<!--", 4095, '-') . ">\n";
+    flush();
     $cursor = elx_user_points_cursor($database);
     while (!empty($cursor)) {
       // Start transmitting data to the client so the client has the ability to
       // stop the script. 4097 characters was enough to get the browsers I
       // tested to display output.
-      print str_pad('<!--', 4096, '-') . '>';
+      print str_pad('Starting batch ' . ++$batch . "\n<!--", 4095, '-') . ">\n";
       flush();
 
       elx_user_points_batch($cursor, $database, $userpoint_vocabulary->vid, $flag->fid);
@@ -77,6 +82,11 @@ function elx_user_points_cursor(MongoDB\Database $database) {
  */
 function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $database, $vid, $first_viewed_fid) {
   foreach ($cursor as $obj) {
+    ob_start();
+    var_dump($obj);
+    print str_pad(print_r('Processing ' . ob_get_clean(), TRUE) . '<!--', 4095, '-') . ">\n";
+    flush();
+
     $count = $count + 1;
     $reference = NULL;
     $mongo_term_name = '';
@@ -403,4 +413,5 @@ function set_first_viewed_flag($first_viewed_fid, $entity_type, $nid, $user_uid)
   }
 }
 ?>
+The user points script has completed.
 </pre>

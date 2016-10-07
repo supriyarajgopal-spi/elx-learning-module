@@ -38,9 +38,6 @@ do {
     $disconnected = TRUE;
   }
 } while ($disconnected);
-// When all records have been successfully processed, delete the
-// userpoint_script_id variable.
-variable_del('userpoint_script_id');
 
 /**
  * Return the result of a user points query for batch processing.

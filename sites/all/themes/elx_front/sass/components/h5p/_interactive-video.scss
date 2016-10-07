@@ -28,16 +28,26 @@
 .h5p-interactive-video {
 
 .h5p-question-introduction p {
-    color: black !important;
+    color: #000 !important;
 }
 
 .h5p-dialog .h5p-dialog-interaction .h5p-question-feedback-content {
-    color: black !important;
+    color: #000 !important;
+}
+
+
+.h5p-dialog-interaction.h5p-frame.h5p-text p {
+    color: #000 !important;
+}
+
+.h5p-alternative-container::before {
+    color: #000 !important;
 }
 
 
 
 }
+
 
 
 

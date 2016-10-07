@@ -4397,13 +4397,25 @@ body.spin-the-wheel .flag-favorites a::before {
 .modal-default.level-10605 .h5p-course-presentation .h5p-interactive-video .h5p-question-introduction p,
 .modal-default.level-14108 .h5p-course-presentation .h5p-interactive-video .h5p-question-introduction p,
 .modal-default.level-14832 .h5p-course-presentation .h5p-interactive-video .h5p-question-introduction p {
-  color: black !important;
+  color: #000 !important;
 }
 
 .modal-default.level-10605 .h5p-course-presentation .h5p-interactive-video .h5p-dialog .h5p-dialog-interaction .h5p-question-feedback-content,
 .modal-default.level-14108 .h5p-course-presentation .h5p-interactive-video .h5p-dialog .h5p-dialog-interaction .h5p-question-feedback-content,
 .modal-default.level-14832 .h5p-course-presentation .h5p-interactive-video .h5p-dialog .h5p-dialog-interaction .h5p-question-feedback-content {
-  color: black !important;
+  color: #000 !important;
+}
+
+.modal-default.level-10605 .h5p-course-presentation .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+.modal-default.level-14108 .h5p-course-presentation .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+.modal-default.level-14832 .h5p-course-presentation .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p {
+  color: #000 !important;
+}
+
+.modal-default.level-10605 .h5p-course-presentation .h5p-interactive-video .h5p-alternative-container::before,
+.modal-default.level-14108 .h5p-course-presentation .h5p-interactive-video .h5p-alternative-container::before,
+.modal-default.level-14832 .h5p-course-presentation .h5p-interactive-video .h5p-alternative-container::before {
+  color: #000 !important;
 }
 
 .modal-default.level-10605 .h5p-course-presentation .h5p-interactive-video .h5p-seekbar-interaction,

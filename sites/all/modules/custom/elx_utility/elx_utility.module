@@ -287,8 +287,10 @@ function elx_utility_init()
 {
 	global $user;
   
-	if (current_path() != 'user/logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !in_array('administrator', array_values($user->roles)))
-	{
+	if (current_path() != 'user/logout' && user_is_logged_in() && _userNotBelongsToSpecificMarkets() && !array_intersect(array(
+    'Administrator',
+    'EL NYO Global Education System Admin',
+  ), $user->roles)) {
 		drupal_set_message(errorMsg($user->language));
 		drupal_access_denied();
 		module_invoke_all('exit');

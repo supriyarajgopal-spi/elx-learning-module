@@ -130,10 +130,15 @@ function elx_user_points_batch(MongoDB\Driver\Cursor $cursor, MongoDB\Database $
 
         if ($mongo_term_name != 'first-login') {
           $entity_type = 'node';
-          // Create and query node collection with findOne to retrive nid
-          $qry = array('_id' => new MongoDB\BSON\ObjectId($contentid));
-          $qry_result = $database->node->findOne($qry);
-          $node_id = $qry_result->nid;
+		  if (strlen($contentid) == 24) {
+            // Create and query node collection with findOne to retrive nid
+            $qry = array('_id' => new MongoDB\BSON\ObjectId($contentid));
+            $qry_result = $database->node->findOne($qry);
+            $node_id = $qry_result->nid;
+		  }
+		  else { // Quiz nodes store nid in contentid
+		  	$node_id = $contentid;
+		  }
           if ($mongo_term_name == 'product') {
             $nid = get_product_nid_for_points($node_id);
           }

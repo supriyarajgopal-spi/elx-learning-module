@@ -1,18 +1,17 @@
 <?php
+
 /**
  * @file
  * Code for the ELX Guest URL feature.
  */
-
 include_once 'elx_guest_url.features.inc';
 
 /**
  * Implements hook_form_FORM_ID_alter()
  * Add option to register through guest URLs only in Account Settings page
  */
-function elx_guest_url_form_user_admin_settings_alter(&$form, &$form_state, $form_id)
-{
-    $form['registration_cancellation']['user_register']['#options']['invite_only'] = t('New user registration through Guest URLs only.');
+function elx_guest_url_form_user_admin_settings_alter(&$form, &$form_state, $form_id) {
+  $form['registration_cancellation']['user_register']['#options']['invite_only'] = t('New user registration through Guest URLs only.');
 }
 
 /**
@@ -26,10 +25,9 @@ function elx_guest_url_menu_alter(&$items) {
 /**
  * User defined callback function to create guest user account by redirecting to user/register along with door, account name, etc. details
  */
-function _guest_account_creation()
-{
-	$options = array('query' => drupal_get_query_parameters());
-	drupal_goto('user/register', $options);
+function _guest_account_creation() {
+  $options = array('query' => drupal_get_query_parameters());
+  drupal_goto('user/register', $options);
 }
 
 /**
@@ -37,37 +35,32 @@ function _guest_account_creation()
  */
 function _registration_invite_user_register_access() {
   $queryParams = drupal_get_query_parameters();
-  
-  if(count(array_diff(array(
-    'account',
-    'door',
-    'country',
-    'region',
-    'market',
-  ), array_keys($queryParams))) == 0)
-  {
-	//Allow registration if query parameters are valid and exist in the system
 
-	//Get all Guest Account nodes and check if the combination of query parameters exists in a node
-	$nids = db_select('node', 'n')->fields('n', array('nid'))->condition('type', 'guest_accounts', '=')->execute()->fetchCol();
-	if(is_array($nids) && !empty($nids))
-	{
-		$nodes = node_load_multiple($nids);
-		foreach($nodes as $node)
-		{
-			$node_wrapper = entity_metadata_wrapper('node', $node);
-			if($node_wrapper->getBundle() == 'guest_accounts')
-			{
-				$nodeTitle = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
-				$nodeCountry = $node_wrapper->field_country->value();
-				$nodeRegion = $node_wrapper->field_region_list->value();
-				$market = $node_wrapper->field_market_name->value();
-				$nodeDoors = $node_wrapper->field_door->value();
-				if ($queryParams['account'] == $nodeTitle && $queryParams['country'] == $nodeCountry && $queryParams['region'] == $nodeRegion && $queryParams['market'] == $market && in_array($queryParams['door'], $nodeDoors))
-					return user_is_anonymous();
-			}
-		}
-	}
+  if (count(array_diff(array(
+      'account',
+      'door',
+      'country',
+      'region',
+      'market',
+        ), array_keys($queryParams))) == 0) {
+    //Allow registration if query parameters are valid and exist in the system
+    //Get all Guest Account nodes and check if the combination of query parameters exists in a node
+    $nids = db_select('node', 'n')->fields('n', array('nid'))->condition('type', 'guest_accounts', '=')->execute()->fetchCol();
+    if (is_array($nids) && !empty($nids)) {
+      $nodes = node_load_multiple($nids);
+      foreach ($nodes as $node) {
+        $node_wrapper = entity_metadata_wrapper('node', $node);
+        if ($node_wrapper->getBundle() == 'guest_accounts') {
+          $nodeTitle = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
+          $nodeCountry = $node_wrapper->field_country->value();
+          $nodeRegion = $node_wrapper->field_region_list->value();
+          $market = $node_wrapper->field_market_name->value();
+          $nodeDoors = $node_wrapper->field_door->value();
+          if ($queryParams['account'] == $nodeTitle && $queryParams['country'] == $nodeCountry && $queryParams['region'] == $nodeRegion && $queryParams['market'] == $market && in_array($queryParams['door'], $nodeDoors))
+            return user_is_anonymous();
+        }
+      }
+    }
   }
   return FALSE;
 }
@@ -78,44 +71,49 @@ function _registration_invite_user_register_access() {
  * @params $fieldName - machine name of the field ; $fieldValue - value of the field to check
  * Returns (int) number of rows in the database table having that value
  */
-function _isValueExists($fieldName,$fieldValue)
-{
-	$query = db_select('field_data_'.$fieldName,'f');
-	$query->join('node','n','n.nid = f.entity_id');
-	$query->fields('f',array('entity_id'))
-		  ->condition('f.'.$fieldName.'_value','%'.db_like($fieldValue).'%','LIKE')
-		  ->condition('f.bundle','guest_accounts','=')
-		  ->condition('n.status',1,'=');
-	$result = $query->execute();
-	
-    return $result->rowCount();
+function _isValueExists($fieldName, $fieldValue) {
+  $query = db_select('field_data_' . $fieldName, 'f');
+  $query->join('node', 'n', 'n.nid = f.entity_id');
+  $query->fields('f', array('entity_id'))
+    ->condition('f.' . $fieldName . '_value', '%' . db_like($fieldValue) . '%', 'LIKE')
+    ->condition('f.bundle', 'guest_accounts', '=')
+    ->condition('n.status', 1, '=');
+  $result = $query->execute();
+
+  return $result->rowCount();
 }
 
 /**
  * Implements hook_form_FORM_ID_alter()
  * Pre-populate fields depending on the query parameters
  */
-function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form_id)
-{
-	$query = drupal_get_query_parameters();
-	
-	if(isset($query['account']))$form['field_account_name'][LANGUAGE_NONE][0]['value']['#default_value'] = rawurldecode($query['account']);
-	if(isset($query['door']))$form['field_door'][LANGUAGE_NONE][0]['value']['#default_value'] = rawurldecode($query['door']);
-	if(isset($query['country']))$form['field_country'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['country']);
-	if(isset($query['region']))$form['field_region_list'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['region']);
-	if(isset($query['market']))$form['field_market_name'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['market']);
-	
-	//Hide all optional fields from User Registration page since only guests access user/register & they don't need to enter these values
-	$optionalFields = array('field_account_name','field_door','field_country','field_region_list','field_market_name','field_employer_number','field_hire_date','field_counter_manager','field_education_manager_executiv','field_account_field_executive','field_field_sales_director_regio','field_regional_vice_president','field_general_manager_brand_mana','field_market_administrator','field_city','field_state','field_level','field_rank','field_modified_date','field_last_access_date');
-	foreach($optionalFields as $optionalField)
-		$form[$optionalField]['#access'] = 0;
+function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  $query = drupal_get_query_parameters();
+  if (isset($query['account'])) {
+    $form['field_account_name'][LANGUAGE_NONE][0]['value']['#default_value'] = rawurldecode($query['account']);
+  }
+  if (isset($query['door'])) {
+    $form['field_door'][LANGUAGE_NONE][0]['value']['#default_value'] = rawurldecode($query['door']);
+  }
+  if (isset($query['country'])) {
+    $form['field_country'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['country']);
+  }
+  if (isset($query['region'])) {
+    $form['field_region_list'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['region']);
+  }
+  if (isset($query['market'])) {
+    $form['field_market_name'][LANGUAGE_NONE]['#default_value'][0] = rawurldecode($query['market']);
+  }
+  //Hide all optional fields from User Registration page since only guests access user/register & they don't need to enter these values
+  $optionalFields = array('field_account_name', 'field_door', 'field_country', 'field_region_list', 'field_market_name', 'field_employer_number', 'field_hire_date', 'field_counter_manager', 'field_education_manager_executiv', 'field_account_field_executive', 'field_field_sales_director_regio', 'field_regional_vice_president', 'field_general_manager_brand_mana', 'field_market_administrator', 'field_city', 'field_state', 'field_level', 'field_rank', 'field_modified_date', 'field_last_access_date');
+  foreach ($optionalFields as $optionalField) {
+    $form[$optionalField]['#access'] = 0;
+  }
 }
 
 /**
  * Implements hook_node_presave().
- * Created by PhpStorm.
- * Modified by SUPRIYA RAJGOPAL on 14Sep16
- * User: Adrienne Cabouet
+ *
  * Creates a Guest URL for each ELX User account using:
  * -node->title,
  * -field_door,
@@ -124,49 +122,47 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
  * -field_market_name.
  * One URL for each door.
  */
-function elx_guest_url_node_presave($node)
-{
-	global $base_url;
-	
-    $node_wrapper = entity_metadata_wrapper('node', $node);
+function elx_guest_url_node_presave($node) {
+  global $base_url;
 
-    if($node_wrapper->getBundle() == 'guest_accounts'){
-        //Clear out any existing guest URLs
-        $node_wrapper->field_guest_url->set(NULL);
+  $node_wrapper = entity_metadata_wrapper('node', $node);
 
-        //Create an empty array to store for each guest URL to be generated
-        $URLs = array();
-        $completed_urls = array();
+  if ($node_wrapper->getBundle() == 'guest_accounts') {
+    //Clear out any existing guest URLs
+    $node_wrapper->field_guest_url->set(NULL);
 
-        //Get account name, country, region list, and market name fields & build the query string
-        $acct = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
-		$queryParams = array(
-			'account' => $acct,
-			'country' => $node_wrapper->field_country->value(),
-			'region' => $node_wrapper->field_region_list->value()
-		);
-		
-		//Get the node author's markets (there may be multiple)
-		$markets = $node_wrapper->author->og_user_node->value();
+    //Create an empty array to store for each guest URL to be generated
+    $URLs = array();
+    $completed_urls = array();
 
-		if(is_array($markets) && !empty($markets))
-		{
-			foreach($markets as $market) {
-				$queryParams['market'] = $market->title;
+    //Get account name, country, region list, and market name fields & build the query string
+    $acct = preg_replace('/\s+/', '', $node_wrapper->label()); //this removes whitespace from node->title
+    $queryParams = array(
+      'account' => $acct,
+      'country' => $node_wrapper->field_country->value(),
+      'region' => $node_wrapper->field_region_list->value()
+    );
 
-				//Get doors (there may be multiple)
-				$doors = $node_wrapper->field_door->value();
-				//Loop through doors and create URL param array for each
-				if (is_array($doors) && !empty($doors)) {
-					foreach ($doors as $door) {
-						$queryParams['door'] = $door;
-						array_push($URLs, $queryParams);
-					}
-				}
-			}
-		}
-		
-		//The resulting array elements will be a permutation of the no. of markets and no. of doors
+    //Get the node author's markets (there may be multiple)
+    $markets = $node_wrapper->author->og_user_node->value();
+
+    if (is_array($markets) && !empty($markets)) {
+      foreach ($markets as $market) {
+        $queryParams['market'] = $market->title;
+
+        //Get doors (there may be multiple)
+        $doors = $node_wrapper->field_door->value();
+        //Loop through doors and create URL param array for each
+        if (is_array($doors) && !empty($doors)) {
+          foreach ($doors as $door) {
+            $queryParams['door'] = $door;
+            array_push($URLs, $queryParams);
+          }
+        }
+      }
+    }
+
+    //The resulting array elements will be a permutation of the no. of markets and no. of doors
     foreach ($URLs as $url) {
       //Example URL: http://myelx.com/user/register?account=Acmexx&door=4&market=X&country=Y&region=Z
       $completed_urls[] = url('user/register', array(
@@ -175,16 +171,16 @@ function elx_guest_url_node_presave($node)
       ));
     }
 
-        $node_wrapper->field_guest_url = $completed_urls; //Save each generated guest url in it's own key in field_guest_url
-    }
+    $node_wrapper->field_guest_url = $completed_urls; //Save each generated guest url in it's own key in field_guest_url
+  }
 }
 
 /**
  * Implements hook_preprocess_page()
  * Redirect to registration page if #/signup page is visited
  */
-function elx_guest_url_preprocess_page(&$vars)
-{
-	if($vars['is_front'] || current_path() == 'user/login')
-		drupal_add_js(drupal_get_path('module','elx_guest_url') . '/js/guest_url_redirect.js');
+function elx_guest_url_preprocess_page(&$vars) {
+  if ($vars['is_front'] || current_path() == 'user/login') {
+    drupal_add_js(drupal_get_path('module', 'elx_guest_url') . '/js/guest_url_redirect.js');
+  }
 }

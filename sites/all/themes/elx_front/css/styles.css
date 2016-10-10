@@ -3397,10 +3397,10 @@ body.spin-the-wheel .flag-favorites a::before {
   color: #000 !important;
 }
 
-.modal-default.level-10605 .h5p-interactive-video .h5p-seekbar-interaction,
-.modal-default.level-14108 .h5p-interactive-video .h5p-seekbar-interaction,
-.modal-default.level-14832 .h5p-interactive-video .h5p-seekbar-interaction {
-  background: #c80000;
+.modal-default.level-10605 .h5p-seekbar-interaction,
+.modal-default.level-14108 .h5p-seekbar-interaction,
+.modal-default.level-14832 .h5p-seekbar-interaction {
+  background-color: #c80000 !important;
 }
 
 .h5p-course-presentation {

@@ -193,201 +193,6 @@
 
 .h5p-question-feedback-content {
     color: #fff !important;
-}// course presentation styles
-
-%course-presentation-common {
-
-  .h5p-course-presentation {
-
-    font-family: $font-family-sans-serif;
-
-    .h5p-box-wrapper {
-      background: transparent;
-    }
-
-    .h5p-presentation-wrapper {
-      background-image: none;
-      background: transparent;
-
-      .h5p-element-outer.h5p-questionset-outer-element {
-        background: none;
-        background-image: none;
-      }
-
-    }
-
-  }
-
-
-
-}
-
-// *********
-// BLACK & GOLD
-// *********
-// Re-Nutriv : level-250
-%course-presentation-black-gold {
-
-  .h5p-course-presentation {
-    color: #fff;
-
-
- a {
-      color: #fff;
-    }
-
-  p {
-    color: #fff;
-  }
-
-.h5p-slide p {
-    color: white;
-}
-
-
-  }
-
-
-  .h5p-image {
-    overflow: hidden;
-  }
-
-  .h5p-footer-previous-slide,
-  .h5p-footer-next-slide,
-  .h5p-footer-toggle-full-screen {
-
-    &::before {
-      color: #fff;
-    }
-
-    &::after {
-      color: #fff;
-    }
-
-  }
-
-  .h5p-joubelui-button {
-    color: #9a7d46;
-    background: #000;
-  }
-
-
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: #9a7d46 !important;
-    background-image: none !important;
-  }
-
-  .h5p-press-to-go.h5p-visible {
-    background: transparent;
-    color: #000;
-    padding: 10px;
-
-    &:hover {
-      background: #9a7d46;
-      opacity: .5;
-      color: #000;
-
-    }
-
-}
-
-}
-
-// **************
-// BLUE ETHER
-//***************
-// Fall Preview : level-13504
-// Spring Preview : level-12739
-%course-presentation-blue-ether {
-
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: #4ea1bf !important;
-    background-image: none !important;
-  }
-
- .h5p-press-to-go.h5p-visible {
-    background: transparent;
-    padding: 10px;
-
-    &:hover {
-      background: #4ea1bf;
-      opacity: .5;
-    }
-
-}
-
-
-}
-
-// *********
-// HOLIDAY
-// *********
-// Holiday 2015 : level-10605
-// Holiday 2016 : level-14108
-// Holiday 2016 : level-14832
-%course-presentation-holiday {
-
-  .h5p-course-presentation {
-    color: #fff;
-
-    a {
-      color: #fff;
-    }
-
-  p {
-    color: #fff;
-  }
-
-.h5p-slide p {
-    color: #fff;
-}
-
-
-  }
-
-
-  .h5p-image {
-    overflow: hidden;
-  }
-
-  .h5p-footer-previous-slide,
-  .h5p-footer-next-slide,
-  .h5p-footer-toggle-full-screen {
-
-    &::before {
-      color: #fff;
-    }
-
-    &::after {
-      color: #fff;
-    }
-
-  }
-
-  .h5p-joubelui-button {
-    color: #600;
-    background: #fff;
-  }
-
- .h5p-progressbar .h5p-progressbar-part-show {
-    background: #fff !important;
-    background-image: none !important;
-  }
-
-  .h5p-press-to-go.h5p-visible {
-    background: transparent;
-    color: #600;
-    padding: 10px;
-
-    &:hover {
-      background: #600;
-      opacity: .5;
-    }
-
-}
-
-.h5p-question-feedback-content {
-    color: #fff !important;
 }
 
 .h5p-element-inner.h5p-question.h5p-multichoice p {
@@ -409,82 +214,28 @@
 
 .questionset-results .result-header,
 .questionset-results .result-text {
-  color: #c80000;
+  color: #fff;
+}
+
+.greeting {
+  color: #fff !important;
+
 }
 
 
+.feedback-text {
+    color: white !important;
 }
 
-
-// ************
-// BLUE KRYPTON
-// ************
-
-
-%course-presentation-blue-krypton {
-
-    .h5p-course-presentation {
-      color: #fff;
-
-    a {
-      color: #fff;
-    }
-
-  p {
-    color: #fff;
-  }
-
-.h5p-slide p {
-    color: white;
-}
-
-
-  }
-
-
-  .h5p-image {
-    overflow: hidden;
-  }
-
-  .h5p-footer-previous-slide,
-  .h5p-footer-next-slide,
-  .h5p-footer-toggle-full-screen {
-
-    &::before {
-      color: #fff;
-    }
-
-    &::after {
-      color: #fff;
-    }
-
-  }
-
-  .h5p-joubelui-button {
-    color: #080f30;
-    background: #fff;
-  }
-
-.h5p-progressbar .h5p-progressbar-part-show {
-    background: #080f30 !important;
-    background-image: none !important;
-}
-
-.h5p-press-to-go.h5p-visible {
+.questionset-results {
     background: transparent;
-    color: #fff;
-    padding: 10px;
-
-    &:hover {
-      background: #080f30;
-      opacity: .5;
-      color: #080f30;
-    }
 
 }
 
 
 }
+
+
 
 
 // ***********
@@ -638,10 +389,6 @@
     }
 
 }
-
-}
-
-
 
 .h5p-element-inner.h5p-question.h5p-multichoice p {
     color: #fff !important;
@@ -661,6 +408,14 @@
 }
 
 
+
+
+
+
+
+
+
+
 // ************
 // BLUE KRYPTON
 // ************
@@ -732,157 +487,8 @@
 }
 
 
-// ***********
-// GRAY ETHER
-// ***********
-
-%course-presentation-gray-ether {
-
-   .h5p-course-presentation {
-     color: #fff;
-
-/*.h5p-presentation-wrapper {
-      background-image: none;
-      background: transparent !important;
-
-      .h5p-element-outer.h5p-questionset-outer-element {
-        background: none;
-        background-image: none;
-      }
-
-    }*/
-
- a {
-      color: #fff;
-    }
-
-  p {
-    color: #fff;
-  }
-
-.h5p-slide p {
-    color: white;
-}
-
-
-  }
-
-
-  .h5p-image {
-    overflow: hidden;
-  }
-
-  .h5p-footer-previous-slide,
-  .h5p-footer-next-slide,
-  .h5p-footer-toggle-full-screen {
-
-    &::before {
-      color: #fff;
-    }
-
-    &::after {
-      color: #fff;
-    }
-
-  }
-
-  .h5p-joubelui-button {
-    color: #4ea1bf;
-    background: #000;
-  }
-
-
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: #4ea1bf !important;
-    background-image: none !important;
-  }
-
-.h5p-press-to-go.h5p-visible {
-    background: transparent;
-    color: #fff;
-    padding: 10px;
-
-    &:hover {
-      background: #4ea1bf;
-      opacity: .5;
-      color: #fff;
-    }
-
-}
-
-}
-
-
-// ******
-// CLOUDS
-// ******
 
 
 
 
-%course-presentation-clouds {
-
-   .h5p-course-presentation {
-     color: #fff;
-
-
- a {
-      color: #fff;
-    }
-
-  p {
-    color: #fff;
-  }
-
-.h5p-slide p {
-    color: white;
-}
-
-
-  }
-
-
-  .h5p-image {
-    overflow: hidden;
-  }
-
-  .h5p-footer-previous-slide,
-  .h5p-footer-next-slide,
-  .h5p-footer-toggle-full-screen {
-
-    &::before {
-      color: #fff;
-    }
-
-    &::after {
-      color: #fff;
-    }
-
-  }
-
-  .h5p-joubelui-button {
-    color: #4ea1bf;
-    background: #000;
-  }
-
-
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: #4ea1bf !important;
-    background-image: none !important;
-  }
-
-.h5p-press-to-go.h5p-visible {
-    background: transparent;
-    color: #fff;
-    padding: 10px;
-
-    &:hover {
-      background: #4ea1bf;
-      opacity: .5;
-      color: #fff;
-    }
-
-}
-
-}
 

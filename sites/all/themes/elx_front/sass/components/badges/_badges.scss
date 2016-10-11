@@ -36,11 +36,21 @@
       font-size: 2.85em;
     }
 
+    @include respond-to('tablet') {
+      font-size: 2.85em;
+      font-weight: normal;
+    }
+
   }
 
   .views-row {
     width: 85%;
     margin: 0 auto;
+
+    @include respond-to('tablet') {
+      width: 100%;
+    }
+
   }
 
 }
@@ -84,6 +94,14 @@
         background-size: 100px;
       }
 
+      @include respond-to('tablet')  {
+        margin: 0;
+        width: 110px;
+        height: 110px;
+        background-size: 88px;
+        background-position-x: 20px;
+      }
+
       a {
         display: inline-block;
         width: 142px;
@@ -95,6 +113,11 @@
           height: 110px;
         }
         @include respond-to('mobile-landscape') {
+          width: 100%;
+          height: 110px;
+        }
+
+        @include respond-to('tablet') {
           width: 100%;
           height: 110px;
         }

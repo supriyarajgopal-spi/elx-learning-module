@@ -832,9 +832,22 @@ th {
   }
 }
 
+@media (min-width: 768px) {
+  .page-badges h1 {
+    font-size: 2.85em;
+    font-weight: normal;
+  }
+}
+
 .page-badges .views-row {
   width: 85%;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .page-badges .views-row {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
@@ -889,6 +902,18 @@ th {
   }
 }
 
+@media (min-width: 768px) {
+  .page-badges .views-row .views-field,
+  .page-user .views-row .views-field,
+  .pane-elx-recent-badges-recent-badges .views-row .views-field {
+    margin: 0;
+    width: 110px;
+    height: 110px;
+    background-size: 88px;
+    background-position-x: 20px;
+  }
+}
+
 .page-badges .views-row .views-field a,
 .page-user .views-row .views-field a,
 .pane-elx-recent-badges-recent-badges .views-row .views-field a {
@@ -908,6 +933,15 @@ th {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  .page-badges .views-row .views-field a,
+  .page-user .views-row .views-field a,
+  .pane-elx-recent-badges-recent-badges .views-row .views-field a {
+    width: 100%;
+    height: 110px;
+  }
+}
+
+@media (min-width: 768px) {
   .page-badges .views-row .views-field a,
   .page-user .views-row .views-field a,
   .pane-elx-recent-badges-recent-badges .views-row .views-field a {

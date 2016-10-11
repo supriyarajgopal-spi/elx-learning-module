@@ -9517,6 +9517,21 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   padding: 0 2px 0 0;
 }
 
+body.section-user.page-user.page-user-register {
+  background: #030409 url("/sites/all/themes/elx_front/images/login-bg.png") no-repeat scroll center top;
+}
+
+body.section-user.page-user.page-user-register main.dashboard-override {
+  display: none;
+}
+
+body.section-user.page-user.page-user-register main.layout-3col__full form#user-register-form > div {
+  width: 319px;
+  margin: 75px auto 150px;
+  background-color: white;
+  padding: 12px;
+}
+
 .visually-hidden,
 .element-invisible,
 .element-focusable,

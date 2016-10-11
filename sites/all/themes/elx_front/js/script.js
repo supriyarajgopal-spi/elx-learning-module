@@ -249,7 +249,7 @@
       if ($('body.section-user.page-user main').size()) {
       // || $('body.section-user.page-user main .panel-display .inside').size()) {
 
-        if ($('body.page-user-login').size() || $('body.page-user-password').size()) { return; }
+        if ($('body.page-user-login').size() || $('body.page-user-password').size() || $('body.page-user-register').size()) { return; }
 
         var realname;
         var firstname;

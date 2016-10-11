@@ -4309,7 +4309,7 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   font-size: 21px;
   font-family: 'optimadisplaylightlight';
   left: 20px;
-  top: -30px;
+  top: 10px;
   position: absolute;
   height: 80px;
 }
@@ -4352,6 +4352,9 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   left: 20px;
   position: absolute;
   font-size: 16px;
+  font-weight: normal;
+  width: 150px;
+  z-index: 100;
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .pane-title {
@@ -6629,7 +6632,13 @@ body.page-levels-in-progress .qtip-content.qtip-content #mini-panel-header_user_
 body.page-levels-all .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .progress-bar-percentage,
 body.page-levels-completed .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .progress-bar-percentage,
 body.page-levels-in-progress .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .progress-bar-percentage {
-  left: 30px;
+  font-weight: normal;
+}
+
+body.page-levels-all .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .user-progress-bar,
+body.page-levels-completed .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .user-progress-bar,
+body.page-levels-in-progress .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .user-progress-bar {
+  box-shadow: none;
 }
 
 body.page-levels-all .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points .view-display-id-my_points .views-field-points .field-content::before,
@@ -8998,6 +9007,12 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
 body.section-user.page-user {
   /* LEADERBOARD  */
   /* USER POINTS */
+  /*
+  // MY FAVORITES
+  .panel-pane.pane-views.pane-dashboard-favorites {
+    display: none;
+  }
+*/
 }
 
 body.section-user.page-user #modalContent .ctools-modal-content .modal-header a.close {
@@ -9170,23 +9185,6 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   letter-spacing: .1em;
 }
 
-body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside {
-  /*
-          .view-content .views-field.views-field-points::before {
-
-            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0 / 20px auto;
-            content: " ";
-            display: block;
-            height: 17px;
-            margin-left: 76px;
-            position: absolute;
-            top: 8px;
-            width: 20px;
-
-          }
-*/
-}
-
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points {
   height: 50px;
   margin: 0 auto;
@@ -9202,6 +9200,7 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
 
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points .field-content {
   margin-left: 50px;
+  position: relative;
 }
 
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points .field-content::before {
@@ -9209,9 +9208,9 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   content: ' ';
   display: block;
   height: 17px;
-  margin-left: 76px;
+  margin-left: 160px;
   position: absolute;
-  top: 8px;
+  top: 4px;
   width: 20px;
 }
 
@@ -9438,10 +9437,6 @@ body.section-user.page-user .pane-user-points-dashboard-user-points .view-displa
   height: 50px;
   margin: 0;
   width: 100px;
-}
-
-body.section-user.page-user .panel-pane.pane-views.pane-dashboard-favorites {
-  display: none;
 }
 
 body.section-user.page-user .pane-dashboard-tools ul {

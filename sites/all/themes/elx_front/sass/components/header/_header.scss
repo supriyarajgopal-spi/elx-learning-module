@@ -1350,6 +1350,10 @@ div#block-menu-menu-header-user-menu {
     margin: 0;
   }
 
+  @include respond-to('tablet') {
+    margin: 0;
+  }
+
   li {
     padding: 20px;
     border-bottom: 1px solid #1e2441;
@@ -1378,6 +1382,10 @@ div#mini-panel-header_user_menu {
     }
 
     @include respond-to('mobile-landscape') {
+      margin: 0;
+    }
+
+    @include respond-to('tablet') {
       margin: 0;
     }
 
@@ -1489,6 +1497,9 @@ form#search-block-form--2 {
     display: none;
   }
   @include respond-to('mobile-landscape') {
+    display: none;
+  }
+  @include respond-to('tablet') {
     display: none;
   }
 

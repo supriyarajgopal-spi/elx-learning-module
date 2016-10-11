@@ -73,7 +73,11 @@
     position: relative;
     @include respond-to('mobile') {
       width: 64px;
-      margin: -6px 0 0 20px;
+      margin: 22px 0 0;
+    }
+    @include respond-to('mobile-landscape') {
+      width: 64px;
+      margin: 22px 0 0;
     }
     @include respond-to('tablet') {
       width: 64px;
@@ -148,11 +152,9 @@
       background-repeat: no-repeat;
       background-size: 284px 27px;
       width: 279px;
-
       h1#site-name a {
         color: transparent;
         text-decoration: none;
-
         &:visited {
           color: transparent;
         }

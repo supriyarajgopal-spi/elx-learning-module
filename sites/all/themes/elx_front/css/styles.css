@@ -3681,7 +3681,14 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
   .header div#block-blockify-blockify-logo {
     width: 64px;
-    margin: -6px 0 0 20px;
+    margin: 22px 0 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  .header div#block-blockify-blockify-logo {
+    width: 64px;
+    margin: 22px 0 0;
   }
 }
 
@@ -3782,11 +3789,9 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
       background-repeat: no-repeat;
       background-size: 284px 27px;
       width: 279px;
-
       h1#site-name a {
         color: transparent;
         text-decoration: none;
-
         &:visited {
           color: transparent;
         }
@@ -6634,7 +6639,7 @@ body.page-levels-in-progress .view-content > .views-row .view-level-content .vie
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-levels-all .view-content > .views-row .view-level-content .view-content > .views-row,
   body.page-levels-completed .view-content > .views-row .view-level-content .view-content > .views-row,
   body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content > .views-row {
@@ -6709,7 +6714,7 @@ body.page-levels-in-progress .pager {
   padding: 0 0 60px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-levels-all .pager,
   body.page-levels-completed .pager,
   body.page-levels-in-progress .pager {
@@ -6822,7 +6827,7 @@ body.page-levels-in-progress .progress-bar-percentage {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-levels-all .progress-bar-percentage,
   body.page-levels-completed .progress-bar-percentage,
   body.page-levels-in-progress .progress-bar-percentage {
@@ -6861,7 +6866,7 @@ body.page-levels-in-progress .user-progress-bar {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-levels-all .user-progress-bar,
   body.page-levels-completed .user-progress-bar,
   body.page-levels-in-progress .user-progress-bar {

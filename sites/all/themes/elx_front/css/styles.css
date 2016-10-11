@@ -10537,6 +10537,12 @@ tr.drag-previous {
   }
 }
 
+@media (min-width: 768px) {
+  .view-filters .views-exposed-form {
+    margin: 0 20px;
+  }
+}
+
 .view-filters .views-exposed-form label {
   color: #040a2b;
   text-transform: uppercase;
@@ -10572,6 +10578,13 @@ tr.drag-previous {
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
+  .view-filters .views-exposed-form .views-widget-sort-by {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
   .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
   .view-filters .views-exposed-form .views-widget-sort-by {
     width: 100%;

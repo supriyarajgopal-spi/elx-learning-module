@@ -5,3 +5,49 @@
  * Drupal needs this blank file.
  */
 
+function elx_organic_groups_and_permissions_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case "views_exposed_form":
+      switch ($form['#id']) {
+        case 'views-exposed-form-user-export-page':
+          unset($form['og_user_node_target_id']['#size']);
+          $form['og_user_node_target_id']['#type'] = 'select';
+          $form['og_user_node_target_id']['#options'] = _elx_organic_groups_and_permissions_market_select_options();
+          $form['og_user_node_target_id']['#default_value'] = '';
+          $form['og_user_node_target_id']['#multiple'] = FALSE;
+          break;
+        default:
+          break;
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+function _elx_organic_groups_and_permissions_market_select_options() {
+  $matches = array(''=>'<ALL>');
+
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid','title'));
+  $query->condition('n.type', 'market', '=');
+  $query->orderBy('n.title', 'ASC');
+  $result = $query->execute();
+
+  foreach ($result as $row) {
+    $matches[$row->nid] = check_plain($row->title);
+  }
+
+  return $matches;
+}
+
+function elx_organic_groups_and_permissions_feeds_presave(FeedsSource $source, $entity, $item) {
+  if (!empty($entity->og_user_node['und'][0]['target_id'])) {
+    $node = node_load($entity->og_user_node['und'][0]['target_id']);
+    $is_admin = og_user_access('node',$entity->og_user_node['und'][0]['target_id'],'administer group');
+    if (!$is_admin) {
+      $entity->feeds_item->skip = TRUE;
+      drupal_set_message('You can only add users to the Market where you are an admin. ('.$entity->mail.' : '.$node->title.')');
+    }
+  }
+}

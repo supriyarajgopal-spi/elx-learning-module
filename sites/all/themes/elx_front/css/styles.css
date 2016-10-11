@@ -6739,6 +6739,13 @@ body.page-levels-in-progress .view-display-id-levels_user_mobile {
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard .layout-3col main.layout-3col__full {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 body.page-leaderboard main h1 {
   font-family: "optimadisplaylightlight";
   font-size: 72px;
@@ -6754,9 +6761,17 @@ body.page-leaderboard main h1 {
   }
 }
 
-@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
   body.page-leaderboard main h1 {
     font-size: 2.85em;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-leaderboard main h1 {
+    font-size: 2.85em;
+    font-weight: normal;
+    margin: 0;
   }
 }
 
@@ -6764,6 +6779,12 @@ body.page-leaderboard main form#dashboard-and-menu-leaderboard-filter-form {
   background-color: #e6e9ee;
   padding: 65px 50px 1px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  body.page-leaderboard main form#dashboard-and-menu-leaderboard-filter-form {
+    padding: 25px 50px 1px;
+  }
 }
 
 body.page-leaderboard main form#dashboard-and-menu-leaderboard-filter-form .form-item-leaderboard-filter label {
@@ -6791,6 +6812,19 @@ body.page-leaderboard main .pane-dashboard-and-menu-leaderboard-filter {
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
   body.page-leaderboard main .pane-dashboard-and-menu-leaderboard-filter {
     margin-top: -25px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-dashboard-and-menu-leaderboard-filter {
+    margin-top: -25px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-1 {
+    max-width: 530px;
+    margin: 0 auto;
   }
 }
 
@@ -6824,6 +6858,14 @@ body.page-leaderboard main .pane-user-points-panel-pane-1 .views-field-user-grav
   body.page-leaderboard main .pane-user-points-panel-pane-1 .views-field-user-gravatar-picture .field-content {
     width: 42px;
     height: 42px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-1 .views-field-user-gravatar-picture .field-content {
+    width: 42px;
+    height: 42px;
+    margin: 10px 0 0;
   }
 }
 
@@ -6872,6 +6914,15 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-empty {
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+    height: 40px;
+  }
+}
+
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
   position: relative;
 }
@@ -6885,6 +6936,14 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-view {
+    float: left;
+    width: 50%;
+    padding: 6px 0 0;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-view {
     float: left;
     width: 50%;
@@ -6909,6 +6968,16 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
+    width: 56px;
+    height: 56px;
+    margin: -7px auto 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
     width: 56px;
     height: 56px;
@@ -6946,6 +7015,13 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content {
+    width: 56px;
+    height: 56px;
+  }
+}
+
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content img {
   width: 100%;
 }
@@ -6965,6 +7041,12 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
     display: none;
   }
@@ -6991,6 +7073,13 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid::before,
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
+    font-size: 13px;
+  }
+}
+
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
   margin-left: 10px;
@@ -7009,6 +7098,14 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
+    font-size: 20px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
     font-size: 20px;
@@ -7043,6 +7140,15 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
+    float: right;
+    right: 10px;
+    top: 6px;
+    font-size: 20px;
+  }
+}
+
 body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 .field-content::before {
   background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0;
   content: ' ';
@@ -7060,7 +7166,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
   body.page-leaderboard main .item-list ul {
     margin: 0;
     padding: 0;
@@ -7090,7 +7196,16 @@ body.page-leaderboard main .item-list ul li.views-row {
   }
 }
 
-@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .item-list ul li.views-row {
+    margin: 0;
+    padding: 0;
+    height: 65px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .item-list ul li.views-row {
     margin: 0;
     padding: 0;
@@ -7122,6 +7237,12 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
   }
 }
 
+@media (min-width: 768px) {
+  body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
+    font-size: 20px;
+  }
+}
+
 body.page-leaderboard main .item-list ul li.views-row .views-field-counter span.field-content {
   margin-left: -5px;
 }
@@ -7139,6 +7260,12 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter::befo
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
     font-size: 13px;
   }
@@ -7172,6 +7299,12 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
 }
 
 @media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) {
   body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
     font-size: 15px;
   }

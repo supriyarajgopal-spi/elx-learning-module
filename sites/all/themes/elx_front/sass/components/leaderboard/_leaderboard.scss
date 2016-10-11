@@ -22,6 +22,15 @@ body.page-leaderboard {
     }
   }
 
+  @include respond-to('tablet') {
+    .layout-3col {
+      main.layout-3col__full {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
   main {
 
     h1 {
@@ -36,8 +45,14 @@ body.page-leaderboard {
         font-size: 2.85em;
       }
 
-      @include respond-to('mobile') {
+      @include respond-to('mobile-landscape') {
         font-size: 2.85em;
+      }
+
+      @include respond-to('tablet') {
+        font-size: 2.85em;
+        font-weight: normal;
+        margin: 0;
       }
 
     }
@@ -46,6 +61,10 @@ body.page-leaderboard {
       background-color: #e6e9ee;
       padding: 65px 50px 1px;
       text-align: center;
+
+      @include respond-to('tablet') {
+        padding: 25px 50px 1px;
+      }
 
       .form-item-leaderboard-filter {
 
@@ -75,9 +94,18 @@ body.page-leaderboard {
         margin-top: -25px;
       }
 
+      @include respond-to('tablet') {
+        margin-top: -25px;
+      }
+
     }
 
     .pane-user-points-panel-pane-1 {
+
+      @include respond-to('tablet') {
+        max-width: 530px;
+        margin: 0 auto;
+      }
 
       .views-field-user-gravatar-picture {
         margin-left: 25%;
@@ -104,6 +132,12 @@ body.page-leaderboard {
           @include respond-to('mobile-landscape') {
             width: 42px;
             height: 42px;
+          }
+
+          @include respond-to('tablet') {
+            width: 42px;
+            height: 42px;
+            margin: 10px 0 0;
           }
 
           img {
@@ -150,6 +184,13 @@ body.page-leaderboard {
         height: 40px;
       }
 
+      @include respond-to('tablet') {
+        width: 100%;
+        margin: 20px 0 0;
+        padding: 0;
+        height: 40px;
+      }
+
       .view-content {
         position: relative;
 
@@ -163,6 +204,12 @@ body.page-leaderboard {
           }
 
           @include respond-to('mobile-landscape') {
+            float: left;
+            width: 50%;
+            padding: 6px 0 0;
+          }
+
+          @include respond-to('tablet') {
             float: left;
             width: 50%;
             padding: 6px 0 0;
@@ -184,6 +231,14 @@ body.page-leaderboard {
           }
 
           @include respond-to('mobile-landscape') {
+            width: 56px;
+            height: 56px;
+            margin: -7px auto 0;
+            left: 0;
+            right: 0;
+          }
+
+          @include respond-to('tablet') {
             width: 56px;
             height: 56px;
             margin: -7px auto 0;
@@ -215,6 +270,11 @@ body.page-leaderboard {
               height: 56px;
             }
 
+            @include respond-to('tablet') {
+              width: 56px;
+              height: 56px;
+            }
+
             img {
               width: 100%;
             }
@@ -238,6 +298,10 @@ body.page-leaderboard {
             display: none;
           }
 
+          @include respond-to('tablet') {
+            display: none;
+          }
+
         }
 
         .views-field-uid::before,
@@ -251,6 +315,10 @@ body.page-leaderboard {
           }
 
           @include respond-to('mobile-landscape') {
+            font-size: 13px;
+          }
+
+          @include respond-to('tablet') {
             font-size: 13px;
           }
 
@@ -274,6 +342,11 @@ body.page-leaderboard {
             width: 100%;
           }
 
+          @include respond-to('tablet') {
+            font-size: $font-size-lg-medium;
+            width: 100%;
+          }
+
         }
 
         .views-field-points-1 {
@@ -292,6 +365,13 @@ body.page-leaderboard {
           }
 
           @include respond-to('mobile-landscape') {
+            float: right;
+            right: 10px;
+            top: 6px;
+            font-size: $font-size-lg-medium;
+          }
+
+          @include respond-to('tablet') {
             float: right;
             right: 10px;
             top: 6px;
@@ -323,7 +403,7 @@ body.page-leaderboard {
           padding: 0;
         }
 
-        @include respond-to('mobile') {
+        @include respond-to('mobile-landscape') {
           margin: 0;
           padding: 0;
         }
@@ -348,7 +428,14 @@ body.page-leaderboard {
             font-size: 16px;
           }
 
-          @include respond-to('mobile') {
+          @include respond-to('mobile-landscape') {
+            margin: 0;
+            padding: 0;
+            height: 65px;
+            font-size: 16px;
+          }
+
+          @include respond-to('tablet') {
             margin: 0;
             padding: 0;
             height: 65px;
@@ -373,6 +460,10 @@ body.page-leaderboard {
               font-size: $font-size-lg-medium;
             }
 
+            @include respond-to('tablet') {
+              font-size: $font-size-lg-medium;
+            }
+
             span.field-content {
               margin-left: -5px;
             }
@@ -389,6 +480,10 @@ body.page-leaderboard {
             }
 
             @include respond-to('mobile-landscape') {
+              font-size: 13px;
+            }
+
+            @include respond-to('tablet') {
               font-size: 13px;
             }
 
@@ -419,6 +514,10 @@ body.page-leaderboard {
             }
 
             @include respond-to('mobile-landscape') {
+              font-size: $font-size-lg-small;
+            }
+
+            @include respond-to('tablet') {
               font-size: $font-size-lg-small;
             }
 

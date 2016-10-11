@@ -3635,7 +3635,7 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
   background-image: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .header {
     height: 64px;
     background-image: none;
@@ -3685,7 +3685,7 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .header div#block-blockify-blockify-logo {
     width: 64px;
     margin: 20px 0 0;
@@ -3722,7 +3722,7 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
   background-image: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .header div#block-blockify-blockify-logo::after {
     background-image: none;
   }
@@ -3770,28 +3770,43 @@ body.html.node-type-h5p-content .layout-center main.layout-3col__full > .action-
   }
 }
 
+.header div#block-blockify-blockify-site-name {
+  height: 60px;
+}
+
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
   .header div#block-blockify-blockify-site-name {
-    background-image: url("../images/estee-lauder-experience-logo-navy.svg");
-    background-repeat: no-repeat;
-    background-size: 284px 27px;
-    width: 279px;
-  }
-  .header div#block-blockify-blockify-site-name h1#site-name a {
-    color: transparent;
-    text-decoration: none;
-  }
-  .header div#block-blockify-blockify-site-name h1#site-name a:visited {
-    color: transparent;
+    display: none;
+    /*
+      background-image: url('../images/estee-lauder-experience-logo-navy.svg');
+      background-repeat: no-repeat;
+      background-size: 284px 27px;
+      width: 279px;
+
+      h1#site-name a {
+        color: transparent;
+        text-decoration: none;
+
+        &:visited {
+          color: transparent;
+        }
+      }
+      */
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  .header div#block-blockify-blockify-site-name {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .header div#block-blockify-blockify-site-name {
     background-image: url("../images/estee-lauder-experience.png");
     width: 290px;
     float: left;
-    height: 86px;
+    height: 60px;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -3930,7 +3945,7 @@ form#search-block-form {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   form#search-block-form {
     display: none;
   }
@@ -4024,7 +4039,7 @@ div#block-menu-menu-header-menu {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   div#block-menu-menu-header-menu {
     display: none;
   }
@@ -4081,7 +4096,7 @@ div#block-menu-menu-header-user-menu {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   div#block-menu-menu-header-user-menu {
     top: 0;
     right: -30px;
@@ -4185,7 +4200,7 @@ div#block-menu-menu-header-user-menu ul.menu {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   div#block-menu-menu-header-user-menu ul.menu li a.menu-minipanel {
     color: transparent;
     height: 25px;
@@ -5309,7 +5324,7 @@ body.page-home-page h2.pane-title {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page h2.pane-title {
     margin-top: 184px;
     font-size: 85px;
@@ -5357,7 +5372,7 @@ body.page-home-page .pane-homepage-spotlight-panel-pane-user .pane-title {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-homepage-spotlight-panel-pane-admin .pane-title,
   body.page-home-page .pane-homepage-spotlight-panel-pane-user .pane-title {
     font-size: 120px;
@@ -5439,7 +5454,7 @@ body.page-home-page .pane-homepage-spotlight-panel-pane-user .pane-title {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight {
     padding: 75px;
     width: 75%;
@@ -5484,7 +5499,7 @@ body.page-home-page .view-homepage-spotlight .views-field-field-featured-image i
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-field-featured-image img {
     width: 450px;
     margin-left: -155px;
@@ -5549,7 +5564,7 @@ body.page-home-page .view-homepage-spotlight .views-field-field-headline {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-field-headline {
     margin: 64px 0 23px;
     letter-spacing: 4px;
@@ -5641,7 +5656,7 @@ body.page-home-page .view-homepage-spotlight .views-field-nothing a {
   position: relative;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-nothing a {
     top: 50px;
     left: 90px;
@@ -5674,10 +5689,31 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-user {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-explore-learning-levels-panel-pane-admin,
   body.page-home-page .pane-explore-learning-levels-panel-pane-user {
     display: inline-block;
+  }
+}
+
+@media (min-width: 990px) {
+  body.page-home-page .pane-explore-learning-levels-panel-pane-admin,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page .pane-explore-learning-levels-panel-pane-admin,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  body.page-home-page .pane-explore-learning-levels-panel-pane-admin,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-user {
+    display: block;
   }
 }
 
@@ -5690,7 +5726,7 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-user {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .views-row,
   body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explore_learning_levels .views-row {
     float: left;
@@ -5734,7 +5770,7 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explo
   border-bottom: 1px solid #9eafff;
   padding: 10px 0;
   margin: 0 20px 10px;
-  height: 92px;
+  height: 140px;
 }
 
 body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .views-field-field-headline a,
@@ -5745,7 +5781,8 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explo
 
 body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .pager,
 body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explore_learning_levels .pager {
-  margin: 30px 650px;
+  margin: 30px auto;
+  width: 170px;
 }
 
 body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .pager .pager-next,
@@ -5796,10 +5833,31 @@ body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin,
   body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
     display: inline-block;
+  }
+}
+
+@media (min-width: 990px) {
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
+    display: block;
   }
 }
 
@@ -5812,7 +5870,7 @@ body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin .view-id-homepage_whatsnewtrending .views-row,
   body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user .view-id-homepage_whatsnewtrending .views-row {
     float: left;
@@ -5867,7 +5925,8 @@ body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user .view-id-hom
 
 body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin .view-id-homepage_whatsnewtrending .pager,
 body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-user .view-id-homepage_whatsnewtrending .pager {
-  margin: 30px 650px;
+  margin: 30px auto;
+  width: 170px;
 }
 
 body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-admin .view-id-homepage_whatsnewtrending .pager .pager-next,
@@ -5918,18 +5977,39 @@ body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin,
   body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user {
     display: inline-block;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 990px) {
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin .view-id-homepage_browseproductlibrary .views-row,
   body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user .view-id-homepage_browseproductlibrary .views-row {
     float: left;
-    max-width: 48%;
+    width: 48%;
     margin-right: 2px;
     display: inline;
   }
@@ -5984,7 +6064,7 @@ body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user .view-id
 
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin .view-id-homepage_browseproductlibrary .views-field-field-product-image-1,
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user .view-id-homepage_browseproductlibrary .views-field-field-product-image-1 {
-  width: 370px;
+  width: 100%;
   height: 240px;
 }
 
@@ -5996,7 +6076,8 @@ body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user .view-id
 
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin .view-id-homepage_browseproductlibrary .pager,
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-user .view-id-homepage_browseproductlibrary .pager {
-  margin: 30px 650px;
+  margin: 30px auto;
+  width: 170px;
 }
 
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-admin .view-id-homepage_browseproductlibrary .pager .pager-next,
@@ -6051,7 +6132,28 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-2 {
   display: inline-block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page #homepage-learning-levels-mobile,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 990px) {
+  body.page-home-page #homepage-learning-levels-mobile,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page #homepage-learning-levels-mobile,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
   body.page-home-page #homepage-learning-levels-mobile,
   body.page-home-page .pane-explore-learning-levels-panel-pane-2 {
     display: none;
@@ -6084,7 +6186,28 @@ body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-2 {
   display: inline-block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page #homepage-news-mobile,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 990px) {
+  body.page-home-page #homepage-news-mobile,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page #homepage-news-mobile,
+  body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
   body.page-home-page #homepage-news-mobile,
   body.page-home-page .pane-homepage-whatsnewtrending-panel-pane-2 {
     display: none;
@@ -6131,7 +6254,28 @@ body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 {
   display: inline-block;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page #homepage-product-library-mobile,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 990px) {
+  body.page-home-page #homepage-product-library-mobile,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.page-home-page #homepage-product-library-mobile,
+  body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
   body.page-home-page #homepage-product-library-mobile,
   body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 {
     display: none;
@@ -8533,7 +8677,7 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .region.region-bottom div#block-panels-mini-page-bottom {
     padding: 0 100px;
   }
@@ -8704,7 +8848,7 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .page-product-library div#search-line-rearranged .icon-component,
   .page-search-product-library div#search-line-rearranged .icon-component {
     width: 100%;

@@ -139,7 +139,11 @@
   }
 
   div#block-blockify-blockify-site-name {
+    height: 60px; // to keep content from being pushed down
+
     @include respond-to('mobile') {
+      display: none; // redundant and causing problems
+      /*
       background-image: url('../images/estee-lauder-experience-logo-navy.svg');
       background-repeat: no-repeat;
       background-size: 284px 27px;
@@ -153,12 +157,16 @@
           color: transparent;
         }
       }
+      */
+    }
+    @include respond-to('mobile-landscape') {
+      display: none; // redundant and causing problems
     }
     @include respond-to('tablet') {
       background-image: url('../images/estee-lauder-experience.png');
       width: 290px;
       float: left;
-      height: 86px;
+      height: 60px;
       background-repeat: no-repeat;
       background-size: contain;
       position: relative;

@@ -367,6 +367,15 @@ body.page-home-page {
     @include respond-to('tablet') {
       display: inline-block;
     }
+    @include respond-to('desktop') {
+      display: block;
+    }
+    @include respond-to('wide') {
+      display: block;
+    }
+    @include respond-to('xwide') {
+      display: block;
+    }
 
     .view-id-explore_learning_levels {
 
@@ -411,7 +420,7 @@ body.page-home-page {
         border-bottom: 1px solid #9eafff;
         padding: 10px 0;
         margin: 0 20px 10px;
-        height: 92px;
+        height: 140px; // had to enlarge for some very long headlines
 
         a {
           text-decoration: none;
@@ -421,7 +430,8 @@ body.page-home-page {
       }
 
       .pager {
-        margin: 30px 650px;
+        margin: 30px auto;
+        width: 170px;
 
         .pager-next  {
           background-image: none;
@@ -474,6 +484,15 @@ body.page-home-page {
     @include respond-to('tablet') {
       display: inline-block;
     }
+    @include respond-to('desktop') {
+      display: block;
+    }
+    @include respond-to('wide') {
+      display: block;
+    }
+    @include respond-to('xwide') {
+      display: block;
+    }
 
     .view-id-homepage_whatsnewtrending {
 
@@ -525,8 +544,8 @@ body.page-home-page {
       }
 
       .pager {
-        margin: 30px 650px;
-
+        margin: 30px auto;
+        width: 170px;
 
         .pager-next  {
           background-image: none;
@@ -583,6 +602,15 @@ body.page-home-page {
     @include respond-to('tablet') {
       display: inline-block;
     }
+    @include respond-to('desktop') {
+      display: block;
+    }
+    @include respond-to('wide') {
+      display: block;
+    }
+    @include respond-to('xwide') {
+      display: block;
+    }
 
     .view-id-homepage_browseproductlibrary {
 
@@ -590,7 +618,7 @@ body.page-home-page {
 
         @include respond-to('tablet') {
           float: left;
-          max-width: 48%;
+          width: 48%;
           margin-right: 2px;
           display: inline;
         }
@@ -636,7 +664,7 @@ body.page-home-page {
       }
 
       .views-field-field-product-image-1 {
-        width: 370px;
+        width: 100%;
         height: 240px;
 
         img {
@@ -647,8 +675,8 @@ body.page-home-page {
       }
 
       .pager {
-        margin: 30px 650px;
-
+        margin: 30px auto;
+        width: 170px;
 
         .pager-next  {
           background-image: none;
@@ -714,6 +742,15 @@ body.page-home-page {
     @include respond-to('tablet') {
       display: none;
     }
+    @include respond-to('desktop') {
+      display: none;
+    }
+    @include respond-to('wide') {
+      display: none;
+    }
+    @include respond-to('xwide') {
+      display: none;
+    }
 
     ul#views_slideshow_swiper_explore_learning_levels-panel_pane_2 {
       width: 280px;
@@ -744,6 +781,15 @@ body.page-home-page {
     display: inline-block;
 
     @include respond-to('tablet') {
+      display: none;
+    }
+    @include respond-to('desktop') {
+      display: none;
+    }
+    @include respond-to('wide') {
+      display: none;
+    }
+    @include respond-to('xwide') {
       display: none;
     }
 
@@ -789,7 +835,15 @@ body.page-home-page {
 
     @include respond-to('tablet') {
       display: none;
-
+    }
+    @include respond-to('desktop') {
+      display: none;
+    }
+    @include respond-to('wide') {
+      display: none;
+    }
+    @include respond-to('xwide') {
+      display: none;
     }
 
     ul#views_slideshow_swiper_homepage_browseproductlibrary-panel_pane_2 {

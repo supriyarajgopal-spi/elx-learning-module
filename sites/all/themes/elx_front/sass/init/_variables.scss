@@ -132,9 +132,10 @@ $rem-fallback:      false;
 // Breakpoints for ELX 
 $mobile: 1px 480px, (orientation portrait);
 $mobile-landscape: 320px 736px, (orientation landscape);
+$tablet: 768px 989px, (orientation portrait);
 @include add-breakpoint(mobile, ($mobile, 'no-query' true));
 @include add-breakpoint(mobile-landscape, ($mobile-landscape, 'no-query' true));
-@include add-breakpoint(tablet, (768px, 'no-query' true));
+@include add-breakpoint(tablet, ($tablet, 'no-query' true));
 @include add-breakpoint(desktop, (990px, 'no-query' true));
 @include add-breakpoint(wide, (1200px, 'no-query' true));
 @include add-breakpoint(xwide, (1500px, 'no-query' true));

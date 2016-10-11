@@ -222,7 +222,25 @@ function _elx_custom_modal($js = NULL, $nid = NULL)
             //'closeImage' => base_path() . path_to_theme() . '',
           ),
         ), 'setting');
-    
+
+      drupal_add_js(array(
+          'user-dashboard-product' => array(
+            'modalSize' => array(
+              'type' => 'scale',
+              'width' => 1,
+              'height' => 1,
+              'addHeight' => 80, // this needs to match the css height for div.modal-header or it acts buggy
+              'contentRight' => 5,
+              'contentBottom' => 0,
+            ),
+            'modalClass' => 'default',
+            'animation' => 'slideDown',
+            'closeText' => t(''),
+            'closeImage' => t(''),
+            //'closeImage' => base_path() . path_to_theme() . '',
+          ),
+        ), 'setting');
+
   }
   
   //Load the node object

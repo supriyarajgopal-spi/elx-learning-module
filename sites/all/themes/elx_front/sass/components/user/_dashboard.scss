@@ -229,6 +229,7 @@ body.section-user.page-user {
 
             .field-content {
               margin-left: 50px;
+              position: relative;
             }
 
             .field-content::before {
@@ -237,27 +238,13 @@ body.section-user.page-user {
               content: ' ';
               display: block;
               height: 17px;
-              margin-left: 76px;
+              margin-left: 160px;
               position: absolute;
-              top: 8px;
+              top: 4px;
               width: 20px;
 
             }
           }
-/*
-          .view-content .views-field.views-field-points::before {
-
-            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0 / 20px auto;
-            content: " ";
-            display: block;
-            height: 17px;
-            margin-left: 76px;
-            position: absolute;
-            top: 8px;
-            width: 20px;
-
-          }
-*/
 
         }
 
@@ -540,11 +527,12 @@ body.section-user.page-user {
     }
 
   }
-
+/*
   // MY FAVORITES
   .panel-pane.pane-views.pane-dashboard-favorites {
     display: none;
   }
+*/
 
 
   // TOOLS

@@ -51,3 +51,27 @@ function elx_organic_groups_and_permissions_feeds_presave(FeedsSource $source, $
     }
   }
 }
+
+function elx_organic_groups_and_permissions_menu_alter(&$items) {
+  $items['user/%user/edit']['access callback'] = '_market_admin_accesscheck';
+}
+
+function _market_admin_accesscheck($account) {
+  global $user;
+  //EL Regional Market Admin/7
+  if (user_has_role(7,$user)) {
+    $user = user_load($user->uid);
+    $user_groups = array();
+    $account_groups = array();
+    foreach ($user->og_user_node['und'] as $key => $value) {
+      $user_groups[] = $value['target_id'];
+    }
+    foreach ($account->og_user_node['und'] as $key => $value) {
+      $account_groups[] = $value['target_id'];
+    }
+    if (!array_intersect($user_groups, $account_groups)) {
+      return 0;
+    }
+  }
+  return user_edit_access($account);
+}

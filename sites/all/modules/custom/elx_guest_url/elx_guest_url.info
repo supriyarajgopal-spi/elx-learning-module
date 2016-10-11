@@ -3,6 +3,7 @@ description = Creates a Guest URL for each ELX User account
 core = 7.x
 package = ELX
 dependencies[] = ctools
+dependencies[] = email_registration
 dependencies[] = entity
 dependencies[] = features
 dependencies[] = php

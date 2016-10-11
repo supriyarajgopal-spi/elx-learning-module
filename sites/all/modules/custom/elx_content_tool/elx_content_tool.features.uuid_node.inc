@@ -3432,7 +3432,7 @@ function elx_content_tool_uuid_features_default_content() {
 );
   $nodes[] = array(
   'uid' => 30639,
-  'title' => 'Poland/Lituania/Estonia/Latvia',
+  'title' => 'Poland/Lithuania/Estonia/Latvia',
   'log' => '',
   'status' => 1,
   'comment' => 1,

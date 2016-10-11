@@ -701,7 +701,7 @@ div#block-menu-menu-header-user-menu {
           font-size: 21px;
           font-family: 'optimadisplaylightlight';
           left: 20px;
-          top: -30px;
+          top: 10px;
 	  position: absolute;
           height: 80px;
         }
@@ -746,6 +746,9 @@ div#block-menu-menu-header-user-menu {
           left: 20px;
           position: absolute;
           font-size: 16px;
+          font-weight: normal;
+          width: 150px;
+          z-index: 100;
         }
       }
 

@@ -366,9 +366,14 @@ body.page-levels-in-progress {
 
         .views-field-expression {
           .progress-bar-percentage {
-            left: 30px;
+            font-weight: normal;
+          }
+
+          .user-progress-bar {
+            box-shadow: none;
           }
         }
+
       }
 
       .pane-dashboard-user-my-points {

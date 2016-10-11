@@ -50,8 +50,8 @@ body.page-home-page {
     }
 
     @include respond-to('tablet') {
-      margin-top: 184px;
-      font-size: 85px;
+      margin: 20px 0;
+      font-size: 55px;
     }
 
     @include respond-to('desktop') {
@@ -154,8 +154,8 @@ body.page-home-page {
     }
 
     @include respond-to('tablet') {
-      padding: 75px;
-      width: 75%;
+      padding: 2%;
+      width: 96%;
       margin: auto;
     }
 
@@ -188,8 +188,8 @@ body.page-home-page {
       }
 
       @include respond-to('tablet') {
-        width: 450px;
-        margin-left: -155px;
+        width: 50%;
+        margin-left: 0;
         float: left;
         position: relative;
         top: 10px;
@@ -246,14 +246,14 @@ body.page-home-page {
       }
 
       @include respond-to('tablet') {
-        margin: 64px 0 23px;
+        width: 50%;
+        float: right;
+        margin: 0 0 23px;
         letter-spacing: 4px;
         font-size: 42px;
         text-align: center;
         z-index: 99;
         position: relative;
-        top: 55px;
-        left: 40px;
       }
 
       @include respond-to('desktop') {
@@ -302,6 +302,11 @@ body.page-home-page {
         text-align: center;
       }
 
+      @include respond-to('tablet') {
+        width: 50%;
+        float: right;
+      }
+
       a {
         font-family: $font-family-sans-serif;
         font-size: 12px;
@@ -333,8 +338,8 @@ body.page-home-page {
         }
 
         @include respond-to('tablet') {
-          top: 50px;
-          left: 90px;
+          // top: 50px;
+          left: 70px;
         }
 
         @include respond-to('desktop') {
@@ -352,6 +357,26 @@ body.page-home-page {
           left: 140px;
         }
 
+      }
+
+    }
+
+    .views-field-ops {
+
+      @include respond-to('tablet') {
+        width: 80px;
+        float: right;
+        text-align: left;
+        margin: 0 70px 0 0;
+      }
+
+    }
+
+    .views-field-field-point-value {
+
+      @include respond-to('tablet') {
+        width: 80px;
+        float: right;
       }
 
     }
@@ -432,6 +457,11 @@ body.page-home-page {
       .pager {
         margin: 30px auto;
         width: 170px;
+
+        @include respond-to('tablet') {
+          margin: 30px auto;
+          width: 180px;
+        }
 
         .pager-next  {
           background-image: none;
@@ -879,6 +909,28 @@ body.page-home-page {
         color: #040a2b;
       }
 
+    }
+
+  }
+
+  /* TABLET FIXES */
+  .view-homepage-browseproductlibrary,
+  .view-homepage-whatsnewtrending,
+  .view-explore-learning-levels {
+
+    @include respond-to('tablet') {
+      max-width: 758px;
+      margin: 0 auto;
+    }
+
+  }
+
+  #homepage-learning-levels,
+  #homepage-news,
+  #homepage-product-library {
+
+    h2 {
+      margin: 100px 0 20px;
     }
 
   }

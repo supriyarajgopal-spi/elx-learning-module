@@ -5290,6 +5290,7 @@ body.page-home-page {
   /*EXPLORE LEARNING LEVELS*/
   /*WHAT'S NEW AND TRENDING*/
   /*BROWSE PRODUCT LIBRARY*/
+  /* TABLET FIXES */
 }
 
 @-webkit-keyframes fadeIn {
@@ -5326,8 +5327,8 @@ body.page-home-page h2.pane-title {
 
 @media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page h2.pane-title {
-    margin-top: 184px;
-    font-size: 85px;
+    margin: 20px 0;
+    font-size: 55px;
   }
 }
 
@@ -5456,8 +5457,8 @@ body.page-home-page .pane-homepage-spotlight-panel-pane-user .pane-title {
 
 @media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight {
-    padding: 75px;
-    width: 75%;
+    padding: 2%;
+    width: 96%;
     margin: auto;
   }
 }
@@ -5501,8 +5502,8 @@ body.page-home-page .view-homepage-spotlight .views-field-field-featured-image i
 
 @media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-field-featured-image img {
-    width: 450px;
-    margin-left: -155px;
+    width: 50%;
+    margin-left: 0;
     float: left;
     position: relative;
     top: 10px;
@@ -5566,14 +5567,14 @@ body.page-home-page .view-homepage-spotlight .views-field-field-headline {
 
 @media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-field-headline {
-    margin: 64px 0 23px;
+    width: 50%;
+    float: right;
+    margin: 0 0 23px;
     letter-spacing: 4px;
     font-size: 42px;
     text-align: center;
     z-index: 99;
     position: relative;
-    top: 55px;
-    left: 40px;
   }
 }
 
@@ -5630,6 +5631,13 @@ body.page-home-page .view-homepage-spotlight .views-field-nothing {
   }
 }
 
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page .view-homepage-spotlight .views-field-nothing {
+    width: 50%;
+    float: right;
+  }
+}
+
 body.page-home-page .view-homepage-spotlight .views-field-nothing a {
   font-family: "akzidenz-grotesk_bq";
   font-size: 12px;
@@ -5658,8 +5666,7 @@ body.page-home-page .view-homepage-spotlight .views-field-nothing a {
 
 @media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-home-page .view-homepage-spotlight .views-field-nothing a {
-    top: 50px;
-    left: 90px;
+    left: 70px;
   }
 }
 
@@ -5681,6 +5688,22 @@ body.page-home-page .view-homepage-spotlight .views-field-nothing a {
   body.page-home-page .view-homepage-spotlight .views-field-nothing a {
     top: 50px;
     left: 140px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page .view-homepage-spotlight .views-field-ops {
+    width: 80px;
+    float: right;
+    text-align: left;
+    margin: 0 70px 0 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page .view-homepage-spotlight .views-field-field-point-value {
+    width: 80px;
+    float: right;
   }
 }
 
@@ -5783,6 +5806,14 @@ body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-expl
 body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explore_learning_levels .pager {
   margin: 30px auto;
   width: 170px;
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .pager,
+  body.page-home-page .pane-explore-learning-levels-panel-pane-user .view-id-explore_learning_levels .pager {
+    margin: 30px auto;
+    width: 180px;
+  }
 }
 
 body.page-home-page .pane-explore-learning-levels-panel-pane-admin .view-id-explore_learning_levels .pager .pager-next,
@@ -6315,6 +6346,21 @@ body.page-home-page #homepage-product-library-mobile .views-field-field-display-
 body.page-home-page .pane-homepage-browseproductlibrary-panel-pane-2 .views-field-field-display-title a {
   text-decoration: none;
   color: #040a2b;
+}
+
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
+  body.page-home-page .view-homepage-browseproductlibrary,
+  body.page-home-page .view-homepage-whatsnewtrending,
+  body.page-home-page .view-explore-learning-levels {
+    max-width: 758px;
+    margin: 0 auto;
+  }
+}
+
+body.page-home-page #homepage-learning-levels h2,
+body.page-home-page #homepage-news h2,
+body.page-home-page #homepage-product-library h2 {
+  margin: 100px 0 20px;
 }
 
 .hidden,

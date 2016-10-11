@@ -832,7 +832,7 @@ th {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .page-badges h1 {
     font-size: 2.85em;
     font-weight: normal;
@@ -844,7 +844,7 @@ th {
   margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .page-badges .views-row {
     width: 100%;
   }
@@ -902,7 +902,7 @@ th {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .page-badges .views-row .views-field,
   .page-user .views-row .views-field,
   .pane-elx-recent-badges-recent-badges .views-row .views-field {
@@ -941,7 +941,7 @@ th {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .page-badges .views-row .views-field a,
   .page-user .views-row .views-field a,
   .pane-elx-recent-badges-recent-badges .views-row .views-field a {
@@ -3397,6 +3397,18 @@ body.spin-the-wheel .flag-favorites a::before {
   color: #000 !important;
 }
 
+.modal-default.level-10605 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+.modal-default.level-14108 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+.modal-default.level-14832 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p {
+  color: #000 !important;
+}
+
+.modal-default.level-10605 .h5p-interactive-video .h5p-alternative-container::before,
+.modal-default.level-14108 .h5p-interactive-video .h5p-alternative-container::before,
+.modal-default.level-14832 .h5p-interactive-video .h5p-alternative-container::before {
+  color: #000 !important;
+}
+
 .modal-default.level-10605 .h5p-seekbar-interaction,
 .modal-default.level-14108 .h5p-seekbar-interaction,
 .modal-default.level-14832 .h5p-seekbar-interaction {
@@ -5050,7 +5062,7 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .pane-menu-menu-header-user-menu-1 ul.menu {
     margin: 0;
   }
@@ -5090,7 +5102,7 @@ div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   div#mini-panel-header_user_menu .pane-menu-menu-header-menu ul.menu {
     margin: 0;
   }
@@ -5224,7 +5236,7 @@ form#search-block-form--2 input[type='submit'] {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .pane-levels-quizz-progress-completed-count,
   .pane-levels-quizz-progress-closest-completion,
   .pane-dashboard-user-activities-suggested,
@@ -7032,7 +7044,7 @@ body.page-levels-in-progress .view-display-id-levels_user_mobile {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard .layout-3col main.layout-3col__full {
     width: 100%;
     padding: 0;
@@ -7060,7 +7072,7 @@ body.page-leaderboard main h1 {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main h1 {
     font-size: 2.85em;
     font-weight: normal;
@@ -7074,7 +7086,7 @@ body.page-leaderboard main form#dashboard-and-menu-leaderboard-filter-form {
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main form#dashboard-and-menu-leaderboard-filter-form {
     padding: 25px 50px 1px;
   }
@@ -7108,13 +7120,13 @@ body.page-leaderboard main .pane-dashboard-and-menu-leaderboard-filter {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-dashboard-and-menu-leaderboard-filter {
     margin-top: -25px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-1 {
     max-width: 530px;
     margin: 0 auto;
@@ -7154,7 +7166,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-1 .views-field-user-grav
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-1 .views-field-user-gravatar-picture .field-content {
     width: 42px;
     height: 42px;
@@ -7207,7 +7219,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-empty {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 {
     width: 100%;
     margin: 20px 0 0;
@@ -7236,7 +7248,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-view {
     float: left;
     width: 50%;
@@ -7270,7 +7282,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture {
     width: 56px;
     height: 56px;
@@ -7308,7 +7320,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-user-gravatar-picture .field-content {
     width: 56px;
     height: 56px;
@@ -7339,7 +7351,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-field-last-name {
     display: none;
   }
@@ -7366,7 +7378,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid::before,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points::before {
     font-size: 13px;
@@ -7398,7 +7410,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-uid,
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points {
     font-size: 20px;
@@ -7433,7 +7445,7 @@ body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-f
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .pane-user-points-panel-pane-2 .view-content .views-field-points-1 {
     float: right;
     right: 10px;
@@ -7498,7 +7510,7 @@ body.page-leaderboard main .item-list ul li.views-row {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .item-list ul li.views-row {
     margin: 0;
     padding: 0;
@@ -7530,7 +7542,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter {
     font-size: 20px;
   }
@@ -7558,7 +7570,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-counter::befo
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .item-list ul li.views-row .views-field-counter::before {
     font-size: 13px;
   }
@@ -7597,7 +7609,7 @@ body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   body.page-leaderboard main .item-list ul li.views-row .views-field-points-1 {
     font-size: 15px;
   }
@@ -11072,7 +11084,7 @@ tr.drag-previous {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .view-filters .views-exposed-form {
     margin: 0 20px;
   }
@@ -11119,7 +11131,7 @@ tr.drag-previous {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 989px) and (orientation: portrait) {
   .view-filters .views-exposed-form #edit-field-product-categories-tid-wrapper,
   .view-filters .views-exposed-form .views-widget-sort-by {
     width: 100%;

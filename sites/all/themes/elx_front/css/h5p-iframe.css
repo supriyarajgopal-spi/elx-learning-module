@@ -2709,6 +2709,18 @@ body.level-14832 .h5p-interactive-video .h5p-alternative-container::before {
   color: #000 !important;
 }
 
+body.level-10605 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+body.level-14108 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p,
+body.level-14832 .h5p-interactive-video .h5p-dialog-interaction.h5p-frame.h5p-text p {
+  color: #000 !important;
+}
+
+body.level-10605 .h5p-interactive-video .h5p-alternative-container::before,
+body.level-14108 .h5p-interactive-video .h5p-alternative-container::before,
+body.level-14832 .h5p-interactive-video .h5p-alternative-container::before {
+  color: #000 !important;
+}
+
 body.level-10605 .h5p-seekbar-interaction,
 body.level-14108 .h5p-seekbar-interaction,
 body.level-14832 .h5p-seekbar-interaction {

@@ -6634,6 +6634,14 @@ body.page-levels-in-progress .view-content > .views-row .view-level-content .vie
   }
 }
 
+@media (min-width: 768px) {
+  body.page-levels-all .view-content > .views-row .view-level-content .view-content > .views-row,
+  body.page-levels-completed .view-content > .views-row .view-level-content .view-content > .views-row,
+  body.page-levels-in-progress .view-content > .views-row .view-level-content .view-content > .views-row {
+    width: 48%;
+  }
+}
+
 body.page-levels-all .views-label,
 body.page-levels-completed .views-label,
 body.page-levels-in-progress .views-label {
@@ -6699,6 +6707,15 @@ body.page-levels-in-progress .pager {
   margin: 30px 650px;
   min-width: 170px;
   padding: 0 0 60px;
+}
+
+@media (min-width: 768px) {
+  body.page-levels-all .pager,
+  body.page-levels-completed .pager,
+  body.page-levels-in-progress .pager {
+    width: 170px;
+    margin: 30px auto;
+  }
 }
 
 body.page-levels-all .pager .pager-next,
@@ -6805,6 +6822,14 @@ body.page-levels-in-progress .progress-bar-percentage {
   }
 }
 
+@media (min-width: 768px) {
+  body.page-levels-all .progress-bar-percentage,
+  body.page-levels-completed .progress-bar-percentage,
+  body.page-levels-in-progress .progress-bar-percentage {
+    width: 80px;
+  }
+}
+
 body.page-levels-all .user-progress-bar,
 body.page-levels-completed .user-progress-bar,
 body.page-levels-in-progress .user-progress-bar {
@@ -6833,6 +6858,16 @@ body.page-levels-in-progress .user-progress-bar {
     margin: 0;
     float: right;
     width: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  body.page-levels-all .user-progress-bar,
+  body.page-levels-completed .user-progress-bar,
+  body.page-levels-in-progress .user-progress-bar {
+    margin: 0 0 20px;
+    float: right;
+    width: 75%;
   }
 }
 

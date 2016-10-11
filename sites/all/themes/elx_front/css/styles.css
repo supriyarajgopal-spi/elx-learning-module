@@ -9007,12 +9007,7 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
 body.section-user.page-user {
   /* LEADERBOARD  */
   /* USER POINTS */
-  /*
-  // MY FAVORITES
-  .panel-pane.pane-views.pane-dashboard-favorites {
-    display: none;
-  }
-*/
+  /* GNAV ADJUSTMENTS */
 }
 
 body.section-user.page-user #modalContent .ctools-modal-content .modal-header a.close {
@@ -9185,11 +9180,29 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
   letter-spacing: .1em;
 }
 
+body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside {
+  /*
+          .view-content .views-field.views-field-points::before {
+
+            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0 / 20px auto;
+            content: " ";
+            display: block;
+            height: 17px;
+            margin-left: 76px;
+            position: absolute;
+            top: 8px;
+            width: 20px;
+
+          }
+*/
+}
+
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points {
   height: 50px;
   margin: 0 auto;
   width: 100%;
   text-transform: uppercase;
+  position: relative;
 }
 
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points .views-label {
@@ -9200,7 +9213,6 @@ body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-f
 
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points .field-content {
   margin-left: 50px;
-  position: relative;
 }
 
 body.section-user.page-user main.layout-3col__full .panels-flexible-row.panels-flexible-row-new-5 .panels-flexible-region-new-my_progress_my_points .panels-flexible-region-new-my_progress_my_points-inside .view-content .views-field.views-field-points .field-content::before {
@@ -9315,6 +9327,10 @@ body.section-user.page-user .panels-flexible-region-new-my_leaderboard h2.pane-t
   clear: both;
 }
 
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 {
+  font-family: 'optimadisplaylightlight';
+}
+
 body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 h2.pane-title {
   padding-top: 100px;
   margin: 40px auto;
@@ -9325,19 +9341,63 @@ body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-use
 }
 
 body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points {
-  height: 50px;
+  height: 100px;
   margin: 0;
+  /*
+        .views-field-view {
+
+        }
+
+        .views-field-user-gravatar-picture {
+
+        }
+        */
 }
 
 body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .view-content {
-  height: 40px;
+  height: 100px;
   background-color: #040a2b;
   color: #fff;
 }
 
 body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field {
-  height: 50px;
+  height: 100px;
   width: 20%;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field-uid {
+  width: 15%;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field-uid .field-content {
+  font-size: 2em;
+  padding: 25px;
+  display: block;
+  float: right;
+  font-family: arial;
+  font-weight: bold;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field-field-last-name .field-content {
+  font-size: 2em;
+  padding: 25px;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field-points-1 {
+  width: 30%;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .pane-user-points-panel-pane-2 .view-id-user_points .views-field-points-1 .field-content {
+  font-size: 2em;
+  padding: 25px;
+  display: block;
+  float: right;
+  font-family: arial;
+  font-weight: bold;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list > ul {
+  padding: 0;
 }
 
 body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row {
@@ -9348,6 +9408,12 @@ body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-lis
   list-style-position: inside;
   padding: 0;
   margin: 0 25px;
+  position: relative;
+  /*
+        .views-field-user-gravatar-picture {
+
+        }
+        */
 }
 
 @media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
@@ -9415,6 +9481,44 @@ body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-lis
   }
 }
 
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row div.views-field {
+  height: 100px;
+  width: 20%;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field-counter .field-content {
+  font-size: 2em;
+  padding: 25px;
+  display: block;
+  float: right;
+  font-family: arial;
+  font-weight: bold;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field-field-last-name .field-content {
+  font-family: 'optimadisplaylightlight';
+  font-size: 2em;
+  padding: 25px;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field-field-country .field-content {
+  font-size: 2em;
+  padding: 25px;
+  display: block;
+  float: right;
+  font-family: arial;
+  font-weight: bold;
+}
+
+body.section-user.page-user .panels-flexible-region-new-my_leaderboard .item-list li.views-row .views-field-points-1 .field-content {
+  font-size: 2em;
+  padding: 25px;
+  display: block;
+  float: right;
+  font-family: arial;
+  font-weight: bold;
+}
+
 body.section-user.page-user .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row {
   clear: left;
   border: 0 solid white;
@@ -9425,11 +9529,12 @@ body.section-user.page-user .pane-user-points-dashboard-user-points .view-displa
   padding: 0;
   margin: 0;
   border-bottom: 1px solid lightgray;
-}
-
-body.section-user.page-user .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field {
-  height: 50px;
-  width: 15%;
+  /*
+          .views-field {
+            height: 50px;
+            width: 15%;
+          }
+*/
 }
 
 body.section-user.page-user .pane-user-points-dashboard-user-points .view-display-id-dashboard_user_points .item-list li.views-row .views-field.views-field-counter {
@@ -9437,6 +9542,10 @@ body.section-user.page-user .pane-user-points-dashboard-user-points .view-displa
   height: 50px;
   margin: 0;
   width: 100px;
+}
+
+body.section-user.page-user .panel-pane.pane-views.pane-dashboard-favorites {
+  display: none;
 }
 
 body.section-user.page-user .pane-dashboard-tools ul {
@@ -9693,6 +9802,20 @@ body.section-user.page-user main.dashboard-override .elx-round-container .elx-in
   body.section-user.page-user main.dashboard-override .elx-round-container .elx-inner-round::after {
     display: none;
   }
+}
+
+body.section-user.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-completed-count .view-display-id-completed_count {
+  position: relative;
+}
+
+body.section-user.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-completed-count .view-display-id-completed_count .views-field.views-field-tid::before {
+  top: 10px;
+  height: 80px;
+  position: absolute;
+}
+
+body.section-user.page-user .qtip-content.qtip-content #mini-panel-header_user_menu .pane-badges-my-badges h2.pane-title {
+  padding-left: 20px;
 }
 
 .views-field-ops {

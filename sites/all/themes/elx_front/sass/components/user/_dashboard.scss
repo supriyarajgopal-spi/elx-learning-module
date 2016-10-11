@@ -220,6 +220,7 @@ body.section-user.page-user {
             margin: 0 auto;
             width: 100%;
             text-transform: uppercase;
+            position: relative;
 
             .views-label {
               font-weight: bold;
@@ -229,7 +230,6 @@ body.section-user.page-user {
 
             .field-content {
               margin-left: 50px;
-              position: relative;
             }
 
             .field-content::before {
@@ -245,6 +245,20 @@ body.section-user.page-user {
 
             }
           }
+/*
+          .view-content .views-field.views-field-points::before {
+
+            background: transparent url("/sites/all/themes/elx_front/images/leaderboard/points-icon.png") repeat scroll 0 0 / 20px auto;
+            content: " ";
+            display: block;
+            height: 17px;
+            margin-left: 76px;
+            position: absolute;
+            top: 8px;
+            width: 20px;
+
+          }
+*/
 
         }
 
@@ -388,7 +402,10 @@ body.section-user.page-user {
       clear: both;
     }
 
+    // TOP LEADERBOARD BAND //
     .pane-user-points-panel-pane-2 {
+
+      font-family: 'optimadisplaylightlight';
 
       h2.pane-title {
         padding-top: 100px;
@@ -399,26 +416,73 @@ body.section-user.page-user {
         font-weight: normal;
       }
 
+      // TOP LEADERBOARD BAND //
       .view-id-user_points {
-        height: 50px;
+        height: 100px;
         margin: 0;
 
         .view-content {
-          height: 40px;
+          height: 100px;
           background-color: #040a2b;
           color: #fff;
         }
 
         .views-field {
-          height: 50px;
+          height: 100px;
           width: 20%;
         }
 
+        .views-field-uid {
+          width: 15%;
+
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+            display: block;
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+          }
+        }
+
+        /*
+        .views-field-view {
+
+        }
+
+        .views-field-user-gravatar-picture {
+
+        }
+        */
+
+        .views-field-field-last-name {
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+          }
+        }
+
+        .views-field-points-1 {
+          width: 30%;
+
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+            display: block;
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+          }
+        }
       }
 
     }
 
     .item-list {
+
+      > ul {
+        padding: 0;
+      }
 
       li.views-row {
         border: 0 solid white;
@@ -428,6 +492,7 @@ body.section-user.page-user {
         list-style-position: inside;
         padding: 0;
         margin: 0 25px;
+        position: relative;
 
         @include respond-to('mobile') {
           width: 100%;
@@ -484,8 +549,62 @@ body.section-user.page-user {
 
         }
 
-      }
+        div.views-field {
+          height: 100px;
+          width: 20%;
+        }
 
+        .views-field-counter {
+
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+            display: block;
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+          }
+        }
+
+        /*
+        .views-field-user-gravatar-picture {
+
+        }
+        */
+
+        .views-field-field-last-name {
+          .field-content {
+            font-family: 'optimadisplaylightlight';
+            font-size: 2em;
+            padding: 25px;
+          }
+        }
+
+        .views-field-field-country {
+
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+            display: block;
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+          }
+        }
+
+        .views-field-points-1 {
+
+          .field-content {
+            font-size: 2em;
+            padding: 25px;
+            display: block;
+            float: right;
+            font-family: arial;
+            font-weight: bold;
+          }
+        }
+
+      }
     }
 
   }
@@ -508,10 +627,12 @@ body.section-user.page-user {
           margin: 0;
           border-bottom: 1px solid lightgray;
 
+/*
           .views-field {
             height: 50px;
             width: 15%;
           }
+*/
 
           .views-field.views-field-counter {
             float: left;
@@ -527,12 +648,11 @@ body.section-user.page-user {
     }
 
   }
-/*
+
   // MY FAVORITES
   .panel-pane.pane-views.pane-dashboard-favorites {
     display: none;
   }
-*/
 
 
   // TOOLS
@@ -780,6 +900,34 @@ body.section-user.page-user {
 
   }
 
+  /* GNAV ADJUSTMENTS */
+  .qtip-content.qtip-content {
+
+    #mini-panel-header_user_menu {
+
+     .pane-levels-quizz-progress-completed-count {
+
+       .view-display-id-completed_count {
+
+          position: relative;
+
+          .views-field.views-field-tid::before {
+            top: 10px;
+            height: 80px;
+            position: absolute;
+          }
+        }
+      }
+
+      .pane-badges-my-badges {
+
+        h2.pane-title {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
 }
 
 // FAVORITES HEART
@@ -844,3 +992,4 @@ body.section-user.page-user {
   }
 
 }
+

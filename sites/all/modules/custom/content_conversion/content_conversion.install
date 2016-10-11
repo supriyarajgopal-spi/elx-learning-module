@@ -18,12 +18,9 @@ function content_conversion_install() {
  */
 function content_conversion_update_7100(&$sandbox) {
   if (!isset($sandbox['progress'])) {
-    $field = field_info_field('field_h5p_node');
-    $sandbox['table'] = _field_sql_storage_tablename($field);
     $sandbox['progress'] = 0;
     $sandbox['nid'] = 0;
     $query = db_select('node', 'n');
-    $query->leftJoin($sandbox['table'], 'f', "f.entity_type = 'node' AND n.nid = f.entity_id");
     $sandbox['max'] = $query
       ->condition('n.type', 'content_object')
       ->countQuery()
@@ -32,8 +29,6 @@ function content_conversion_update_7100(&$sandbox) {
   }
   if (!empty($sandbox['max'])) {
     $query = db_select('node', 'n');
-    $query->leftJoin($sandbox['table'], 'f', 'n.nid = f.entity_id');
-    $query->leftJoin('node', 'h5p', "f.entity_type = 'node' AND f.field_h5p_node_target_id = h5p.nid");
     $result = $query
       ->fields('n', array('nid'))
       ->condition('n.type', 'content_object')

@@ -10,10 +10,10 @@
 function elx_organic_groups_and_permissions_user_default_roles() {
   $roles = array();
 
-  // Exported role: EL NYO GLOBAL EDUCATION SYSTEM ADMIN.
-  $roles['EL NYO GLOBAL EDUCATION SYSTEM ADMIN'] = array(
-    'name' => 'EL NYO Global Education System Admin',
-    'weight' => 8,
+  // Exported role: EL Regional Market Translater.
+  $roles['EL Regional Market Translater'] = array(
+    'name' => 'EL Regional Market Translater',
+    'weight' => 9,
   );
 
   return $roles;

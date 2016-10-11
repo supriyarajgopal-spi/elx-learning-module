@@ -947,6 +947,7 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
+      'EL Regional Market Admin' => 'EL Regional Market Admin',
     ),
     'module' => 'user',
   );
@@ -3492,6 +3493,17 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'panels',
+  );
+
+  // Exported permission: 'use text format filtered_html'.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'filter',
   );
 
   // Exported permission: 'use text format full_html'.

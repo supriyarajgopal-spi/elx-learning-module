@@ -64,7 +64,9 @@ function elx_organic_groups_and_permissions_default_og_roles_permissions() {
     'group_type' => 'node',
     'group_bundle' => 'market',
     'name' => 'non-member',
-    'permissions' => array(),
+    'permissions' => array(
+      'subscribe without approval' => TRUE,
+    ),
   );
 
   // Exported role: node:market:translator.

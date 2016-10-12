@@ -1174,17 +1174,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create guest_accounts content'.
-  $permissions['create guest_accounts content'] = array(
-    'name' => 'create guest_accounts content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-      'EL Regional Market Admin' => 'EL Regional Market Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create h5p_content content'.
   $permissions['create h5p_content content'] = array(
     'name' => 'create h5p_content content',
@@ -1376,16 +1365,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete any flash_cards content'.
   $permissions['delete any flash_cards content'] = array(
     'name' => 'delete any flash_cards content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any guest_accounts content'.
-  $permissions['delete any guest_accounts content'] = array(
-    'name' => 'delete any guest_accounts content',
     'roles' => array(
       'Administrator' => 'Administrator',
       'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
@@ -1590,15 +1569,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own flash_cards content'.
   $permissions['delete own flash_cards content'] = array(
     'name' => 'delete own flash_cards content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own guest_accounts content'.
-  $permissions['delete own guest_accounts content'] = array(
-    'name' => 'delete own guest_accounts content',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -1994,16 +1964,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any guest_accounts content'.
-  $permissions['edit any guest_accounts content'] = array(
-    'name' => 'edit any guest_accounts content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'EL NYO Global Education System Admin' => 'EL NYO Global Education System Admin',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any h5p_content content'.
   $permissions['edit any h5p_content content'] = array(
     'name' => 'edit any h5p_content content',
@@ -2238,15 +2198,6 @@ function elx_organic_groups_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own flash_cards content'.
   $permissions['edit own flash_cards content'] = array(
     'name' => 'edit own flash_cards content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own guest_accounts content'.
-  $permissions['edit own guest_accounts content'] = array(
-    'name' => 'edit own guest_accounts content',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),

@@ -10,242 +10,369 @@
 function elx_guest_url_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'invite-guest_url-field_invitation_email_address'
-  $field_instances['invite-guest_url-field_invitation_email_address'] = array(
-    'bundle' => 'guest_url',
+  // Exported field_instance: 'node-guest_accounts-field_account_status'.
+  $field_instances['node-guest_accounts-field_account_status'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => array(
+      0 => array(
+        'value' => 'active',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_account_status',
+    'label' => 'Account Status',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-guest_accounts-field_country'.
+  $field_instances['node-guest_accounts-field_country'] = array(
+    'bundle' => 'guest_accounts',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Type e-mail address of person you wish invite.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
+        'type' => 'list_default',
+        'weight' => 1,
       ),
-    ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_address',
-    'label' => 'E-mail',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'invite-guest_url-field_invitation_email_body'
-  $field_instances['invite-guest_url-field_invitation_email_body'] = array(
-    'bundle' => 'guest_url',
-    'default_value' => array(
-      0 => array(
-        'value' => '[invite:inviter:name] has invited you to join [site:name] at [site:url].
-
-To become a member of [site:name], click the link below or paste it into the address bar of your browser.
-
-[invite:invite-accept-link]',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Enter e-mail body.',
-    'display' => array(
-      'default' => array(
+      'modal' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 30,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
-    ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'invite-guest_url-field_invitation_email_subject'
-  $field_instances['invite-guest_url-field_invitation_email_subject'] = array(
-    'bundle' => 'guest_url',
-    'default_value' => array(
-      0 => array(
-        'value' => '[invite:inviter:name] has sent you an invite!',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Enter e-mail subject.',
-    'display' => array(
-      'default' => array(
+      'teaser' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 20,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_subject',
-    'label' => 'Subject',
-    'required' => FALSE,
+    'entity_type' => 'node',
+    'field_name' => 'field_country',
+    'label' => 'Country',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 20,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'invite-invite_by_email-field_invitation_email_address'
-  $field_instances['invite-invite_by_email-field_invitation_email_address'] = array(
-    'bundle' => 'invite_by_email',
+  // Exported field_instance: 'node-guest_accounts-field_door'.
+  $field_instances['node-guest_accounts-field_door'] = array(
+    'bundle' => 'guest_accounts',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Type e-mail address of person you wish invite.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 0,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_address',
-    'label' => 'E-mail',
-    'required' => FALSE,
+    'entity_type' => 'node',
+    'field_name' => 'field_door',
+    'is_property' => 0,
+    'label' => 'Door',
+    'required' => 0,
     'settings' => array(
-      'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'invite-invite_by_email-field_invitation_email_body'
-  $field_instances['invite-invite_by_email-field_invitation_email_body'] = array(
-    'bundle' => 'invite_by_email',
-    'default_value' => array(
-      0 => array(
-        'value' => '[invite:inviter:name] has invited you to join [site:name] at [site:url].
-
-To become a member of [site:name], click the link below or paste it into the address bar of your browser.
-
-[invite:invite-accept-link]',
-      ),
-    ),
+  // Exported field_instance: 'node-guest_accounts-field_guest_url'.
+  $field_instances['node-guest_accounts-field_guest_url'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter e-mail body.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 30,
+        'weight' => 5,
       ),
-    ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'invite-invite_by_email-field_invitation_email_subject'
-  $field_instances['invite-invite_by_email-field_invitation_email_subject'] = array(
-    'bundle' => 'invite_by_email',
-    'default_value' => array(
-      0 => array(
-        'value' => '[invite:inviter:name] has sent you an invite!',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Enter e-mail subject.',
-    'display' => array(
-      'default' => array(
+      'modal' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 20,
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'invite',
-    'field_name' => 'field_invitation_email_subject',
-    'label' => 'Subject',
-    'required' => FALSE,
+    'entity_type' => 'node',
+    'field_name' => 'field_guest_url',
+    'label' => 'Guest URL',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'size' => 255,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-guest_accounts-field_region_list'.
+  $field_instances['node-guest_accounts-field_region_list'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_region_list',
+    'label' => 'Region',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-guest_accounts-group_content_access'.
+  $field_instances['node-guest_accounts-group_content_access'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-guest_accounts-markets'.
+  $field_instances['node-guest_accounts-markets'] = array(
+    'bundle' => 'guest_accounts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 7,
+      ),
+      'modal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'markets',
+    'label' => 'Markets',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 7,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
-  t('E-mail');
-  t('Enter e-mail body.');
-  t('Enter e-mail subject.');
-  t('Subject');
-  t('Type e-mail address of person you wish invite.');
+  t('Account Status');
+  t('Country');
+  t('Door');
+  t('Group content visibility');
+  t('Guest URL');
+  t('Markets');
+  t('Region');
 
   return $field_instances;
 }

@@ -194,12 +194,20 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
   ), array_keys($params))) == 0) {
     $node = _elx_guest_url_guest_node($params);
     if (!empty($node)) {
-      $market = _elx_guest_url_market_nid($params['market']);
       $form['locale']['#weight'] = -11;
       $form['locale']['#access'] = TRUE;
       $form['locale']['#type'] = 'container';
       $form['account']['mail']['#title'] = t('Email Address');
       unset($form['locale']['language']['#description'], $form['account']['mail']['#description']);
+      $form['account']['status']['#type'] = 'value';
+      $status = array(
+        'blocked' => 0,
+        'active' => 1,
+      );
+      $form['account']['status']['#value'] = $status[$node->field_account_status[LANGUAGE_NONE][0]['value']];
+      $role = user_role_load_by_name('Multi-Brand Sales Associate');
+      $form['account']['roles']['#type'] = 'value';
+      $form['account']['roles']['#value'][$role->rid] = TRUE;
       $form['field_account_name']['#weight'] = -12;
       $form['field_account_name']['#access'] = TRUE;
       $form['field_account_name'][LANGUAGE_NONE][0]['value']['#disabled'] = TRUE;
@@ -211,7 +219,7 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
       $form['field_region_list'][LANGUAGE_NONE]['#type'] = 'value';
       $form['field_region_list'][LANGUAGE_NONE]['#value'] = $params['region'];
       $form['og_user_node'][LANGUAGE_NONE][0]['default']['#type'] = 'value';
-      $form['og_user_node'][LANGUAGE_NONE][0]['default']['#value'] = $market;
+      $form['og_user_node'][LANGUAGE_NONE][0]['default']['#value'] = _elx_guest_url_market_nid($params['market']);
       unset($form['#groups'], $form['#fieldgroups'], $form['#group_children']);
     }
   }
@@ -230,7 +238,7 @@ function elx_guest_url_field_extra_fields_alter(&$info) {
  * Implements hook_module_implements_alter().
  */
 function elx_guest_url_module_implements_alter(&$implementations, $hook) {
-  if ($hook == 'form_alter') {
+  if ($hook == 'form_alter' && isset($implementations['elx_guest_url'])) {
     // We need to alter the Locale module's form alterations to allow language
     // to be set on the registration form.
     $group = $implementations['elx_guest_url'];
@@ -300,11 +308,114 @@ function elx_guest_url_node_presave($node) {
 }
 
 /**
- * Implements hook_preprocess_page()
- * Redirect to registration page if #/signup page is visited
+ * Implements hook_preprocess_page().
+ *
+ * Redirect to registration page if #/signup page is visited.
  */
 function elx_guest_url_preprocess_page(&$vars) {
   if ($vars['is_front'] || current_path() == 'user/login') {
     drupal_add_js(drupal_get_path('module', 'elx_guest_url') . '/js/guest_url_redirect.js');
   }
+}
+
+/**
+ * Implements hook_language_negotiation_info_alter().
+ */
+function elx_guest_url_language_negotiation_info_alter(array &$language_providers) {
+  if (isset($language_providers[LOCALE_LANGUAGE_NEGOTIATION_BROWSER])) {
+    $language_providers[LOCALE_LANGUAGE_NEGOTIATION_BROWSER]['callbacks']['language'] = 'elx_guest_url_language_from_browser';
+    $language_providers[LOCALE_LANGUAGE_NEGOTIATION_BROWSER]['file'] = drupal_get_path('module', 'elx_guest_url') . '/elx_guest_url.module';
+  }
+}
+
+function elx_guest_url_language_from_browser($languages) {
+  if (empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+    return FALSE;
+  }
+
+  // The Accept-Language header contains information about the language
+  // preferences configured in the user's browser / operating system.
+  // RFC 2616 (section 14.4) defines the Accept-Language header as follows:
+  //   Accept-Language = "Accept-Language" ":"
+  //                  1#( language-range [ ";" "q" "=" qvalue ] )
+  //   language-range  = ( ( 1*8ALPHA *( "-" 1*8ALPHA ) ) | "*" )
+  // Samples: "hu, en-us;q=0.66, en;q=0.33", "hu,en-us;q=0.5"
+  $browser_langcodes = array();
+  if (preg_match_all('@(?<=[, ]|^)([a-zA-Z-]+|\*)(?:;q=([0-9.]+))?(?:$|\s*,\s*)@', trim($_SERVER['HTTP_ACCEPT_LANGUAGE']), $matches, PREG_SET_ORDER)) {
+    foreach ($matches as $match) {
+      // We can safely use strtolower() here, tags are ASCII.
+      // RFC2616 mandates that the decimal part is no more than three digits,
+      // so we multiply the qvalue by 1000 to avoid floating point comparisons.
+      $langcode = strtolower($match[1]);
+      $qvalue = isset($match[2]) ? (float) $match[2] : 1;
+      $browser_langcodes[$langcode] = (int) ($qvalue * 1000);
+      switch ($langcode) {
+        case 'zh-hans':
+          $browser_langcodes['zhhans'] = (int) ($qvalue * 1000);
+          break;
+
+        case 'zh':
+        case 'zh-hant':
+          $browser_langcodes['zhhant'] = (int) ($qvalue * 1000);
+          break;
+
+        case 'fr-ca':
+          $browser_langcodes['frca'] = (int) ($qvalue * 1000);
+          break;
+
+        case 'es-es':
+          $browser_langcodes['essp'] = (int) ($qvalue * 1000);
+          break;
+
+      }
+    }
+  }
+
+  // We should take pristine values from the HTTP headers, but Internet Explorer
+  // from version 7 sends only specific language tags (eg. fr-CA) without the
+  // corresponding generic tag (fr) unless explicitly configured. In that case,
+  // we assume that the lowest value of the specific tags is the value of the
+  // generic language to be as close to the HTTP 1.1 spec as possible.
+  // See http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4 and
+  // http://blogs.msdn.com/b/ie/archive/2006/10/17/accept-language-header-for-internet-explorer-7.aspx
+  asort($browser_langcodes);
+  foreach ($browser_langcodes as $langcode => $qvalue) {
+    $generic_tag = strtok($langcode, '-');
+    if (!isset($browser_langcodes[$generic_tag])) {
+      $browser_langcodes[$generic_tag] = $qvalue;
+    }
+  }
+
+  // Find the enabled language with the greatest qvalue, following the rules
+  // of RFC 2616 (section 14.4). If several languages have the same qvalue,
+  // prefer the one with the greatest weight.
+  $best_match_langcode = FALSE;
+  $max_qvalue = 0;
+  foreach ($languages as $langcode => $language) {
+    // Language tags are case insensitive (RFC2616, sec 3.10).
+    $langcode = strtolower($langcode);
+
+    // If nothing matches below, the default qvalue is the one of the wildcard
+    // language, if set, or is 0 (which will never match).
+    $qvalue = isset($browser_langcodes['*']) ? $browser_langcodes['*'] : 0;
+
+    // Find the longest possible prefix of the browser-supplied language
+    // ('the language-range') that matches this site language ('the language tag').
+    $prefix = $langcode;
+    do {
+      if (isset($browser_langcodes[$prefix])) {
+        $qvalue = $browser_langcodes[$prefix];
+        break;
+      }
+    } 
+    while ($prefix = substr($prefix, 0, strrpos($prefix, '-')));
+
+    // Find the best match.
+    if ($qvalue > $max_qvalue) {
+      $best_match_langcode = $language->language;
+      $max_qvalue = $qvalue;
+    }
+  }
+
+  return $best_match_langcode;
 }

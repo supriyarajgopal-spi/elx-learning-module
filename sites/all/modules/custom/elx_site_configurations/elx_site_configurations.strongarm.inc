@@ -102,23 +102,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__guest_accounts';
-  $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__guest_accounts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'imageinfo_cache_disable_on_demand_generation';
   $strongarm->value = 0;
   $export['imageinfo_cache_disable_on_demand_generation'] = $strongarm;
@@ -283,13 +266,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_guest_accounts';
-  $strongarm->value = '0';
-  $export['language_content_type_guest_accounts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_product_detail';
   $strongarm->value = 2;
   $export['language_content_type_product_detail'] = $strongarm;
@@ -311,6 +287,13 @@ function elx_site_configurations_strongarm() {
         'language' => 'locale_language_from_user',
       ),
       'file' => 'includes/locale.inc',
+    ),
+    'locale-browser' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_browser',
+      ),
+      'file' => 'includes/locale.inc',
+      'cache' => 0,
     ),
     'language-default' => array(
       'callbacks' => array(
@@ -397,25 +380,9 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_guest_accounts';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
-  $export['menu_options_guest_accounts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_disclaimer';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_disclaimer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_guest_accounts';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_guest_accounts'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -429,16 +396,6 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_guest_accounts';
-  $strongarm->value = array(
-    0 => 'status',
-    1 => 'promote',
-  );
-  $export['node_options_guest_accounts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_disclaimer';
   $strongarm->value = '0';
   $export['node_preview_disclaimer'] = $strongarm;
@@ -446,23 +403,9 @@ function elx_site_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_guest_accounts';
-  $strongarm->value = '1';
-  $export['node_preview_guest_accounts'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_disclaimer';
   $strongarm->value = 0;
   $export['node_submitted_disclaimer'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_guest_accounts';
-  $strongarm->value = 0;
-  $export['node_submitted_guest_accounts'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -484,16 +427,13 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'user_mail_password_reset_body';
   $strongarm->value = '<p>Dear [user:name],</p>
 
-<p>Please click the link below to access the site using the login details below:</p>
+<p>Please click the one time login link below to access the site and set your new password. This link will be active for 24 hours and nothing will happen if this link is left unused.</p>
 
-<p>http://myelx.com/#/signin</p>
-<b>User Name</b>: [user:mail]<br />
-<b>Password</b>: [user:account-password]<br />
+<p>[user:one-time-login-url]</p>
 
 <p>Sincerely yours,</p>
 
-<p>Estée Lauder Global Education</p>
-';
+<p>Estée Lauder Global Education</p>';
   $export['user_mail_password_reset_body'] = $strongarm;
 
   $strongarm = new stdClass();

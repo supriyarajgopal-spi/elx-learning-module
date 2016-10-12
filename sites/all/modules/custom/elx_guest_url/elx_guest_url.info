@@ -46,3 +46,5 @@ features[variable][] = menu_parent_guest_accounts
 features[variable][] = node_options_guest_accounts
 features[variable][] = node_preview_guest_accounts
 features[variable][] = node_submitted_guest_accounts
+features_exclude[variable][i18n_node_extended_guest_accounts] = i18n_node_extended_guest_accounts
+features_exclude[variable][i18n_node_options_guest_accounts] = i18n_node_options_guest_accounts

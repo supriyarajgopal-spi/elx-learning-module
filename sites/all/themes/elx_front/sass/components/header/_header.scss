@@ -732,9 +732,11 @@ div#block-menu-menu-header-user-menu {
       background-color: #1e2341;
       padding: 0 0 10px;
       height: 80px;
+      position: relative;
 
       .views-row {
         width: 100%;
+        position: relative;
       }
 
       .views-field-expression {
@@ -772,10 +774,10 @@ div#block-menu-menu-header-user-menu {
       }
 
       .views-field.views-field-expression::after {
-        float: left;
+        float: right;
         height: 1px;
         margin-left: 0;
-        margin-top: 0;
+        margin-top: -4px;
         position: absolute;
         color: gray;
         content: '';
@@ -783,7 +785,7 @@ div#block-menu-menu-header-user-menu {
         font-size: 18px;
         font-weight: 700;
         position: absolute;
-        top: -4px;
+        top: 0;
         right: 20px;
       }
 
@@ -791,7 +793,7 @@ div#block-menu-menu-header-user-menu {
         margin: 0 20px;
         background-color: #999;
         position: relative;
-        margin-left: 40px;
+        margin-left: 50px;
 
         .progress-bar-percentage {
           float: left;
@@ -892,7 +894,43 @@ div#block-menu-menu-header-user-menu {
     }
 
     .pane-dashboard-user-activities-suggested-drop-down {
-      display: none;
+      background-color: #1e2341;
+      margin-top: 1px;
+
+      @include respond-to('mobile') {
+        display: none;
+      }
+
+      @include respond-to('mobile-landscape') {
+        display: none;
+      }
+
+      > h2.pane-title {
+        color: #999;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 10px 20px;
+        width: 230px;
+        margin: 0;
+        text-align: left;
+      }
+
+      .view-dashboard-user-activities.view-id-dashboard_user_activities.view-display-id-suggested_drop_down {
+        .view-content {
+          height: 30px;
+
+          a {
+            font-family: 'akzidenz-grotesk_bq';
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 0 20px;
+            color: #9eafff;
+          }
+        }
+      }
     }
 
     .pane-dashboard-user-my-points {

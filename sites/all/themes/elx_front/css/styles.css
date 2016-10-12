@@ -4302,10 +4302,12 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   background-color: #1e2341;
   padding: 0 0 10px;
   height: 80px;
+  position: relative;
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-row {
   width: 100%;
+  position: relative;
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression {
@@ -4340,10 +4342,10 @@ div#block-menu-menu-header-user-menu ul.menu li a {
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field.views-field-expression::after {
-  float: left;
+  float: right;
   height: 1px;
   margin-left: 0;
-  margin-top: 0;
+  margin-top: -4px;
   position: absolute;
   color: gray;
   content: '';
@@ -4351,7 +4353,7 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   font-size: 18px;
   font-weight: 700;
   position: absolute;
-  top: -4px;
+  top: 0;
   right: 20px;
 }
 
@@ -4359,7 +4361,7 @@ div#block-menu-menu-header-user-menu ul.menu li a {
   margin: 0 20px;
   background-color: #999;
   position: relative;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .user-progress-bar .progress-bar-percentage {
@@ -4442,7 +4444,45 @@ div#block-menu-menu-header-user-menu ul.menu li a {
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down {
-  display: none;
+  background-color: #1e2341;
+  margin-top: 1px;
+}
+
+@media (min-width: 1px) and (max-width: 480px) and (orientation: portrait) {
+  .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 736px) and (orientation: landscape) {
+  .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down {
+    display: none;
+  }
+}
+
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down > h2.pane-title {
+  color: #999;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 20px;
+  width: 230px;
+  margin: 0;
+  text-align: left;
+}
+
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down .view-dashboard-user-activities.view-id-dashboard_user_activities.view-display-id-suggested_drop_down .view-content {
+  height: 30px;
+}
+
+.qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-activities-suggested-drop-down .view-dashboard-user-activities.view-id-dashboard_user_activities.view-display-id-suggested_drop_down .view-content a {
+  font-family: 'akzidenz-grotesk_bq';
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 20px;
+  color: #9eafff;
 }
 
 .qtip-content.qtip-content #mini-panel-header_user_menu .pane-dashboard-user-my-points {
@@ -6525,7 +6565,9 @@ body.page-levels-in-progress .ajax-progress-throbber {
 body.page-levels-all .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .user-progress-bar,
 body.page-levels-completed .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .user-progress-bar,
 body.page-levels-in-progress .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .user-progress-bar {
+  margin: 0 20px 0 60px;
   background-color: #1e2341;
+  width: 70%;
 }
 
 body.page-levels-all .qtip-content.qtip-content #mini-panel-header_user_menu .pane-levels-quizz-progress-closest-completion .views-field-expression .progress-bar-percentage,

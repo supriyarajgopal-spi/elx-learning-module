@@ -152,7 +152,7 @@ function elx_user_points_feature_default_rules_configuration() {
         { "userpoints_action_grant_points" : {
             "user" : [ "user" ],
             "points" : "400",
-            "tid" : "14133",
+            "tid" : [ "quiz:field-learning-category:field-user-points:tid" ],
             "entity" : [ "quiz" ],
             "description" : "For passing the quiz for the first time",
             "operation" : "Insert",

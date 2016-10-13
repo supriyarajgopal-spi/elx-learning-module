@@ -19,6 +19,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Advanced Night Repair',
@@ -29,6 +36,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Spring Preview',
@@ -39,6 +53,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'GMTC',
@@ -46,9 +67,16 @@ function learner_pathways_uuid_features_default_terms() {
     'format' => 'full_html',
     'weight' => 12,
     'uuid' => '45798643-68d2-46c8-98ce-cb82a5ce5d07',
-    'language' => 'en',
+    'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Fall Preview',
@@ -59,6 +87,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Advanced Night Repair 2',
@@ -69,6 +104,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'New Dimension 2',
@@ -79,6 +121,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Re-Nutriv',
@@ -86,9 +135,16 @@ function learner_pathways_uuid_features_default_terms() {
     'format' => 'full_html',
     'weight' => 10,
     'uuid' => '9900e7bb-9c18-4cbd-a0f6-2123ef2a04fd',
-    'language' => 'enus',
+    'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'The Holiday Experience',
@@ -99,6 +155,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'New Dimension',
@@ -109,6 +172,13 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
   );
   $terms[] = array(
     'name' => 'Leading the Holiday Experience',
@@ -119,6 +189,23 @@ function learner_pathways_uuid_features_default_terms() {
     'language' => 'und',
     'i18n_tsid' => 0,
     'vocabulary_machine_name' => 'learning_category',
+    'field_user_points' => array(
+      'und' => array(
+        0 => array(
+          'tid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+        ),
+      ),
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Learning Points',
+    'description' => '',
+    'format' => 'full_html',
+    'weight' => 0,
+    'uuid' => 'ed909de6-0281-4642-bd0d-54586fd022be',
+    'language' => 'und',
+    'i18n_tsid' => 0,
+    'vocabulary_machine_name' => 'userpoints',
   );
   return $terms;
 }

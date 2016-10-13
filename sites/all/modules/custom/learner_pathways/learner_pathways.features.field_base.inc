@@ -10,30 +10,34 @@
 function learner_pathways_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'og_roles_permissions'
-  $field_bases['og_roles_permissions'] = array(
+  // Exported field_base: 'field_user_points'.
+  $field_bases['field_user_points'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'og_roles_permissions',
-    'foreign keys' => array(),
+    'field_name' => 'field_user_points',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Use default roles and permissions',
-        1 => 'Override default roles and permissions',
+        0 => array(
+          'vocabulary' => 'userpoints',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
-    'type' => 'list_boolean',
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;

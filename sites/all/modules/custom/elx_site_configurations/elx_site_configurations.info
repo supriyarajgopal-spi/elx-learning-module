@@ -1,6 +1,7 @@
 name = ELX site configurations
 core = 7.x
 package = ELX
+version = 7.x-1.0-uat
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = admin_views

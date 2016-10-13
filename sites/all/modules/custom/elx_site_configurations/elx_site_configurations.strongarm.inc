@@ -288,12 +288,13 @@ function elx_site_configurations_strongarm() {
       ),
       'file' => 'includes/locale.inc',
     ),
-    'locale-browser' => array(
+    'locale-session' => array(
       'callbacks' => array(
-        'language' => 'locale_language_from_browser',
+        'language' => 'locale_language_from_session',
+        'switcher' => 'locale_language_switcher_session',
+        'url_rewrite' => 'locale_language_url_rewrite_session',
       ),
       'file' => 'includes/locale.inc',
-      'cache' => 0,
     ),
     'language-default' => array(
       'callbacks' => array(
@@ -427,13 +428,16 @@ function elx_site_configurations_strongarm() {
   $strongarm->name = 'user_mail_password_reset_body';
   $strongarm->value = '<p>Dear [user:name],</p>
 
-<p>Please click the one time login link below to access the site and set your new password. This link will be active for 24 hours and nothing will happen if this link is left unused.</p>
+<p>Please click the link below to access the site using the login details below:</p>
 
-<p>[user:one-time-login-url]</p>
+<p>http://myelx.com/#/signin</p>
+<b>User Name</b>: [user:mail]<br />
+<b>Password</b>: [user:account-password]<br />
 
 <p>Sincerely yours,</p>
 
-<p>Estée Lauder Global Education</p>';
+<p>Estée Lauder Global Education</p>
+';
   $export['user_mail_password_reset_body'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -235,7 +235,7 @@ function elx_badge_flags_flag_default_flags() {
     'link_type' => 'toggle',
     'weight' => 0,
     'badge_description' => '<p>Your leadership is really stacking up&mdash;get ready for success! You&rsquo;ve completed the Holiday 2016 Level.</p>',
-    'badge_unearned_description' => '',
+    'badge_unearned_description' => 'Score 80% or higher correct on Leading the Holiday Experience test.',
     'badge_image' => 4906,
     'show_in_links' => array(
       'full' => 0,
@@ -480,7 +480,7 @@ function elx_badge_flags_flag_default_flags() {
     'link_type' => 'toggle',
     'weight' => 0,
     'badge_description' => '<p>You&rsquo;re ready to give your customers the gift of a great holiday experience! You&rsquo;ve completed the Holiday 2016 Level.</p>',
-    'badge_unearned_description' => '',
+    'badge_unearned_description' => 'Score 80% or higher on The Holiday Experience test.',
     'badge_image' => 4907,
     'show_in_links' => array(
       'full' => 0,

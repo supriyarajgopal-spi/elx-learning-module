@@ -612,7 +612,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_24']['alter']['path'] = '/modal/nojs/flags/perfect_present';
   $handler->display->display_options['fields']['flagged_24']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_24']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_24']['element_wrapper_class'] = 'perfect-present-[flagged]';
+  $handler->display->display_options['fields']['flagged_24']['element_wrapper_class'] = 'perfect-present-[flagged_24]';
   $handler->display->display_options['fields']['flagged_24']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_24']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_24']['type_custom_false'] = 'no';
@@ -627,7 +627,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_25']['alter']['path'] = '/modal/nojs/flags/gift_genius';
   $handler->display->display_options['fields']['flagged_25']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_25']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_25']['element_wrapper_class'] = 'gift-genius-[flagged]';
+  $handler->display->display_options['fields']['flagged_25']['element_wrapper_class'] = 'gift-genius-[flagged_25]';
   $handler->display->display_options['fields']['flagged_25']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_25']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_25']['type_custom_false'] = 'no';
@@ -642,7 +642,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_26']['alter']['path'] = '/modal/nojs/flags/beautiful_start';
   $handler->display->display_options['fields']['flagged_26']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_26']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_26']['element_wrapper_class'] = 'beautiful-start-[flagged]';
+  $handler->display->display_options['fields']['flagged_26']['element_wrapper_class'] = 'beautiful-start-[flagged_26]';
   $handler->display->display_options['fields']['flagged_26']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_26']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_26']['type_custom_false'] = 'no';
@@ -1059,7 +1059,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_24']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['flagged_24']['alter']['path'] = '/modal/nojs/flags/perfect_present';
   $handler->display->display_options['fields']['flagged_24']['alter']['link_class'] = 'use-ajax';
-  $handler->display->display_options['fields']['flagged_24']['element_wrapper_class'] = 'perfect-present-[flagged]';
+  $handler->display->display_options['fields']['flagged_24']['element_wrapper_class'] = 'perfect-present-[flagged_24]';
   $handler->display->display_options['fields']['flagged_24']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_24']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_24']['type_custom_false'] = 'no';
@@ -1074,7 +1074,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_25']['alter']['path'] = '/modal/nojs/flags/gift_genius';
   $handler->display->display_options['fields']['flagged_25']['alter']['link_class'] = 'use-ajax';
   $handler->display->display_options['fields']['flagged_25']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['flagged_25']['element_wrapper_class'] = 'gift-genius-[flagged]';
+  $handler->display->display_options['fields']['flagged_25']['element_wrapper_class'] = 'gift-genius-[flagged_25]';
   $handler->display->display_options['fields']['flagged_25']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_25']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_25']['type_custom_false'] = 'no';
@@ -1088,7 +1088,7 @@ function elx_views_views_default_views() {
   $handler->display->display_options['fields']['flagged_26']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['flagged_26']['alter']['path'] = '/modal/nojs/flags/beautiful_start';
   $handler->display->display_options['fields']['flagged_26']['alter']['link_class'] = 'use-ajax';
-  $handler->display->display_options['fields']['flagged_26']['element_wrapper_class'] = 'beautiful-start-[flagged]';
+  $handler->display->display_options['fields']['flagged_26']['element_wrapper_class'] = 'beautiful-start-[flagged_26]';
   $handler->display->display_options['fields']['flagged_26']['type'] = 'custom';
   $handler->display->display_options['fields']['flagged_26']['type_custom_true'] = 'yes';
   $handler->display->display_options['fields']['flagged_26']['type_custom_false'] = 'no';

@@ -278,22 +278,27 @@ function elx_guest_url_node_presave($node) {
       'country' => $node_wrapper->field_country->value(),
       'region' => $node_wrapper->field_region_list->value()
     );
+	
+	//Get the node author's markets (there may be multiple)
+    $markets = $node_wrapper->markets->value();
+	
+	if(is_array($markets) && !empty($markets))
+	{
+		foreach($markets as $market) {
+			$queryParams['market'] = $market->title;
 
-    //Get the node author's markets (there may be multiple)
-    $market = $node_wrapper->markets->value();
-
-    $queryParams['market'] = $market->title;
-
-    //Get doors (there may be multiple)
-    $doors = $node_wrapper->field_door->value();
-    //Loop through doors and create URL param array for each
-    if (is_array($doors) && !empty($doors)) {
-      foreach ($doors as $door) {
-        $queryParams['door'] = $door;
-        array_push($URLs, $queryParams);
-      }
-    }
-
+			//Get doors (there may be multiple)
+			$doors = $node_wrapper->field_door->value();
+			//Loop through doors and create URL param array for each
+			if (is_array($doors) && !empty($doors)) {
+				foreach ($doors as $door) {
+					$queryParams['door'] = $door;
+					array_push($URLs, $queryParams);
+				}
+			}
+		}
+	}
+	
     //The resulting array elements will be a permutation of the no. of markets and no. of doors
     foreach ($URLs as $url) {
       //Example URL: http://myelx.com/user/register?account=Acmexx&door=4&market=X&country=Y&region=Z

@@ -221,8 +221,18 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
       $form['og_user_node'][LANGUAGE_NONE][0]['default']['#type'] = 'value';
       $form['og_user_node'][LANGUAGE_NONE][0]['default']['#value'] = _elx_guest_url_market_nid($params['market']);
       unset($form['#groups'], $form['#fieldgroups'], $form['#group_children']);
+	  
+	  $form['#submit'][] = '_elx_guest_url_custom_submit'; //Additional submit handler
     }
   }
+}
+
+/**
+ * Additional submit handler for user self-registration(guest account) form.
+ */
+function _elx_guest_url_custom_submit($form, &$form_state) {
+  //Set the language chosen by the user during self-registration in the session so that messages and other fields appear in the chosen language
+  $_SESSION['language'] = $form_state['values']['language']; //'language' corresponds to what is set in admin/config/regional/language/configure/session
 }
 
 /**

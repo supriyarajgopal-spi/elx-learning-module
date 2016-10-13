@@ -48,76 +48,84 @@ function elx_user_points_feature_default_rules_configuration() {
     }
   }');
   $items['rules_award_points_when_user_logs_in_first_time'] = entity_import('rules_config', '{ "rules_award_points_when_user_logs_in_first_time" : {
-    "LABEL" : "Award points when user logs in first time",
-    "PLUGIN" : "reaction rule",
-    "OWNER" : "rules",
-    "REQUIRES" : [
-      "rules_conditional",
-      "userpoints_rules",
-      "flag",
-      "rules",
-      "elx_user_points_feature"
-    ],
-    "ON" : { "user_login" : [] },
-    "DO" : [
-      { "CONDITIONAL" : [
-          {
-            "IF" : { "data_is_empty" : { "data" : [ "account:last-login" ] } },
-            "DO" : [
-              { "userpoints_action_grant_points" : {
-                  "user" : [ "account" ],
-                  "points" : "500",
-                  "tid" : "14133",
-                  "entity" : [ "account" ],
-                  "description" : "First time a user logged in",
-                  "operation" : "Insert",
-                  "reference" : [ "account:uid" ],
-                  "display" : "1",
-                  "moderate" : "default"
+      "LABEL" : "Award points when user logs in first time",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [
+        "rules_conditional",
+        "userpoints_rules",
+        "flag",
+        "rules",
+        "php",
+        "elx_user_points_feature"
+      ],
+      "ON" : { "user_login" : [] },
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is_empty" : { "data" : [ "account:last-access" ] } },
+              "DO" : [
+                { "userpoints_action_grant_points" : {
+                    "user" : [ "account" ],
+                    "points" : "500",
+                    "tid" : "0",
+                    "entity" : [ "account" ],
+                    "description" : "First time a user logged in",
+                    "operation" : "Insert",
+                    "reference" : [ "account:uid" ],
+                    "display" : "1",
+                    "moderate" : "default"
+                  }
+                },
+                { "flag_flaguser" : {
+                    "flag" : "welcome_badge",
+                    "user" : [ "account" ],
+                    "flagging_user" : [ "account" ],
+                    "permission_check" : "1"
+                  }
+                },
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT php_eval" : { "code" : "\\/\\/Borrowed from https:\\/\\/www.drupal.org\\/node\\/480584#comment-2171130 to redirect users to Welcome video except on one-time login and password reset links\\r\\nreturn (arg(0) == \\u0027user\\u0027 \\u0026\\u0026 arg(1) == \\u0027reset\\u0027);" } },
+                      "DO" : [ { "redirect" : { "url" : "node\\/6657" } } ]
+                    }
+                  ]
                 }
-              },
-              { "flag_flaguser" : {
-                  "flag" : "welcome_badge",
-                  "user" : [ "account" ],
-                  "flagging_user" : [ "account" ],
-                  "permission_check" : "1"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      { "CONDITIONAL" : [
-          {
-            "IF" : { "user_is_among_first_50_in_market" : { "user" : [ "account" ] } },
-            "DO" : [
-              { "CONDITIONAL" : [
-                  {
-                    "IF" : { "NOT flag_flagged_user" : {
-                        "flag" : "early_bird_badge",
-                        "user" : [ "site:current-user" ],
-                        "flagging_user" : [ "site:current-user" ]
-                      }
-                    },
-                    "DO" : [
-                      { "flag_flaguser" : {
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "user_is_among_first_50_in_market" : { "user" : [ "account" ] } },
+              "DO" : [
+                { "CONDITIONAL" : [
+                    {
+                      "IF" : { "NOT flag_flagged_user" : {
                           "flag" : "early_bird_badge",
                           "user" : [ "site:current-user" ],
-                          "flagging_user" : [ "site:current-user" ],
-                          "permission_check" : "1"
+                          "flagging_user" : [ "site:current-user" ]
                         }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}');
+                      },
+                      "DO" : [
+                        { "flag_flaguser" : {
+                            "flag" : "early_bird_badge",
+                            "user" : [ "site:current-user" ],
+                            "flagging_user" : [ "site:current-user" ],
+                            "permission_check" : "1"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_award_points_when_user_passes_quiz_first_time'] = entity_import('rules_config', '{ "rules_award_points_when_user_passes_quiz_first_time" : {
       "LABEL" : "Award points when user passes quiz first time",
       "PLUGIN" : "reaction rule",

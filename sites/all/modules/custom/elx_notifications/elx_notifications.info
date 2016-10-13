@@ -1,6 +1,7 @@
 name = ELX Notifications
 core = 7.x
 package = ELX
+version = 7.x-1.0-uat
 dependencies[] = ctools
 dependencies[] = elx_header
 dependencies[] = entity
@@ -17,7 +18,6 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[flag][] = message_seen_unseen
-features[menu_links][] = menu-header-menu_messages:notifications
 features[message_type][] = badge_award_notifications
 features[rules_config][] = rules_badge_award_notification
 features[rules_config][] = rules_set_flag_when_message_viewed

@@ -84,15 +84,16 @@ function elx_notifications_default_message_type() {
     "message_text" : {
       "en" : [
         {
-          "value" : "\\u003Cp\\u003EThe !badge_name\\u0026 badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EThe !badge_name badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003EThe !badge_name\\u0026amp; badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EThe !badge_name badge has been awarded to you!badge_awarded_by.\\u003C\\/p\\u003E\\n"
         }
       ],
       "und" : [
         {
           "value" : "Congratulations! You have been awarded a badge.",
-          "format" : "filtered_html"
+          "format" : "filtered_html",
+          "safe_value" : "\\u003Cp\\u003ECongratulations! You have been awarded a badge.\\u003C\\/p\\u003E\\n"
         }
       ]
     },

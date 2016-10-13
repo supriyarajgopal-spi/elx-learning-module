@@ -2,6 +2,7 @@ name = ELX Guest URL
 description = Creates a Guest URL for each ELX User account
 core = 7.x
 package = ELX
+version = 7.x-1.0-uat
 dependencies[] = elx_content_tool
 dependencies[] = email_registration
 dependencies[] = features

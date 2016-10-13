@@ -74,7 +74,9 @@ function elx_content_tool_og_features_default_permissions() {
 
   // Exported og permission: 'node:market:subscribe without approval'
   $permissions['node:market:subscribe without approval'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:market:unsubscribe'

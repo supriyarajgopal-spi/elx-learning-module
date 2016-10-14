@@ -194,6 +194,20 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
   ), array_keys($params))) == 0) {
     $node = _elx_guest_url_guest_node($params);
     if (!empty($node)) {
+
+	  $market = _elx_guest_url_market_nid($params['market']); //Get the nid of the Market OG content type
+	  
+	  $all_langs = $form['locale']['language']['#options']; //List of all languages(default Languages field of User Profile)	 
+	  //Get the languages set for this market byuerying the DB to prevent full node load
+	  if(field_info_field('field_elx_languages'))
+		$market_langs = db_select('field_data_field_elx_languages','l')->fields('l',array('field_elx_languages_value'))->condition('l.entity_id',$market)->condition('l.bundle','market')->execute()->fetchAllKeyed(0,0);
+	  else
+		$market_langs = array();
+	  
+	  $allowed_langs = (is_array($all_langs) && is_array($market_langs))?array_intersect_key($all_langs,$market_langs):$all_langs; //array_intersect_key() is used because the query returns only language codes, not human readable language name
+	  
+	  $form['locale']['language']['#options'] = $allowed_langs;
+	  
       $form['locale']['#weight'] = -11;
       $form['locale']['#access'] = TRUE;
       $form['locale']['#type'] = 'container';

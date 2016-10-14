@@ -1,0 +1,32 @@
+<?php
+/**
+ * Implements hook_install().
+ * Create a custom field of Languages enabled in the site
+ * Borrowed from https://api.drupal.org/comment/19499#comment-19499
+ */
+function elx_guest_url_install()
+{
+	//Check if this field is not already created
+	if(!field_info_field('field_elx_languages'))
+	{
+		//Create field
+		$field = array(
+			'field_name' => 'field_elx_languages',
+			'type' => 'list_text',
+			'cardinality' => FIELD_CARDINALITY_UNLIMITED,
+			'settings' => array(
+				'allowed_values' => module_exists('locale')?locale_language_list():array('none' => t('Locale module missing')),
+			),
+		);
+		field_create_field($field);
+		
+		//Create instance
+		$instance = array(
+			'field_name' => 'field_elx_languages',
+			'entity_type' => 'node',
+			'label' => 'ELX Languages',
+			'bundle' => 'market',
+		);
+		field_create_instance($instance);
+	}
+}

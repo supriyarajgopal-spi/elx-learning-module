@@ -430,7 +430,7 @@ function errorMsg($language)
   }
   //German     
   else if ($language === 'de') {
-  	$langError = "ELX wird momentan für Euch bearbeitet. Ab 17.10. begrüßen wir Euch wieder mit viel Neuem! Lasst Euch überraschen und freut Euch auf die attraktiven Inhalte. Bitte notiert Euch im Kalender, dass Ihr Euch am 17.10. wieder einloggt. Bis dahin!";
+  	$langError = "ELX wird momentan für Euch bearbeitet. \nAb 17.10. begrüßen wir Euch wieder mit viel Neuem! Lasst Euch überraschen und freut Euch auf die attraktiven Inhalte. \nBitte notiert Euch im Kalender, dass Ihr Euch am 17.10. wieder einloggt. Bis dahin!";
   }
   //Czech     
   else if ($language === 'cs') {

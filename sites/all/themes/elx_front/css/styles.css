@@ -8010,7 +8010,7 @@ body.page-levels-in-progress #modalContent .field-name-field-headline {
   font-size: 36px;
   letter-spacing: 2px;
   font-weight: bold;
-  margin: 0 0 20px;
+  margin: 30px 0 20px;
   line-height: 1.3em;
 }
 
@@ -8760,6 +8760,28 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
   }
 }
 
+body.node-type-h5p-content #modalContent .field-name-field-learning-category {
+  font-family: "akzidenz-grotesk_bq";
+  font-size: 18px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin: 0 0 15px;
+}
+
+body.node-type-h5p-content #modalContent .field-name-field-headline {
+  font-family: "optimadisplaylightlight";
+  font-size: 36px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  line-height: 1.3em;
+}
+
+body.node-type-h5p-content #modalContent .field-name-field-intro {
+  font-size: 18px;
+  font-family: "akzidenz-grotesk_bq";
+}
+
 .region.region-bottom {
   background-color: #040a2b;
 }
@@ -9161,6 +9183,83 @@ body.page-tools.section-tools #modalContent.drupal-overlay-js.pdf-variant {
   .page-search-product-library .view-search-product-library .view-content ul li .views-field-field-why-there-s-only-one {
     display: none;
   }
+}
+
+.page-node.node-type-product-detail main > ul.tabs + div {
+  background-color: #e6e9ee;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full {
+  margin: 0 100px 50px;
+  background: #fff;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-display-title .field-item h1 {
+  font-family: 'optimadisplaylightlight';
+  font-size: 54px;
+  padding: 10px 100px;
+  text-align: left;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-subtitle .field-item h2 {
+  font-family: 'optimadisplaylightlight';
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: left;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-product-image {
+  float: left;
+  padding: 10px;
+  /*
+      .field-item {
+
+      }
+*/
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-why-there-s-only-one {
+  background-color: #e6e9ee;
+  float: left;
+  margin: 50px 0 0 50px;
+  padding: 10px 30px;
+  width: 40%;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-why-there-s-only-one .field-label {
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0 0;
+  text-transform: uppercase;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-why-there-s-only-one p {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-perfect-partners-text,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-demonstration,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-benefits,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-if-she-asks-share,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-perfect-partners,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-perfect-partners-text,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .flag-outer.flag-outer-favorites,
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-customer-questions {
+  clear: both;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 25px 75px;
+  padding: 10px 30px;
+}
+
+.page-node.node-type-product-detail main .node-product-detail.view-mode-full .field-name-field-perfect-partners.field-type-entityreference .flag-outer.flag-outer-favorites {
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .responsive-video,

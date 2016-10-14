@@ -237,3 +237,93 @@
     } // end product library content
   }
 }
+
+.page-node.node-type-product-detail {
+
+  main {
+    > ul.tabs + div {
+      background-color: #e6e9ee;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+  }
+
+  main .node-product-detail.view-mode-full {
+    margin: 0 100px 50px;
+    background: #fff;
+
+    .field-name-field-display-title {
+      .field-item h1 {
+        font-family: 'optimadisplaylightlight';
+        font-size: 54px;
+        padding: 10px 100px;
+        text-align: left;
+      }
+    }
+
+    .field-name-field-subtitle {
+      .field-item h2 {
+        font-family: 'optimadisplaylightlight';
+        font-size: 24px;
+        padding: 0 100px;
+        text-align: left;
+      }
+    }
+
+    .field-name-field-product-image {
+      float: left;
+      padding: 10px;
+/*
+      .field-item {
+
+      }
+*/
+    }
+
+    .field-name-field-why-there-s-only-one {
+      background-color: #e6e9ee;
+      float: left;
+      margin: 50px 0 0 50px;
+      padding: 10px 30px;
+      width: 40%;
+
+      .field-label {
+        border-bottom: 1px solid #000;
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 0 0;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+    .field-name-field-perfect-partners-text,
+    .field-name-field-demonstration,
+    .field-name-field-benefits,
+    .field-name-field-if-she-asks-share,
+    .field-name-field-perfect-partners,
+    .field-name-field-perfect-partners-text,
+    .flag-outer.flag-outer-favorites,
+    .field-name-field-customer-questions {
+      clear: both;
+      font-size: 20px;
+      line-height: 28px;
+      margin: 25px 75px;
+      padding: 10px 30px;
+    }
+
+    .field-name-field-perfect-partners.field-type-entityreference {
+      .flag-outer.flag-outer-favorites {
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+
+  }
+
+}

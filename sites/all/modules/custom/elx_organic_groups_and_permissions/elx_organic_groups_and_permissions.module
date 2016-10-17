@@ -49,6 +49,9 @@ function elx_organic_groups_and_permissions_feeds_presave(FeedsSource $source, $
       $entity->feeds_item->skip = TRUE;
       drupal_set_message('You can only add users to the Market where you are an admin. ('.$entity->mail.' : '.$node->title.')');
     }
+  } else {
+    $entity->feeds_item->skip = TRUE;
+    drupal_set_message('No Market Target Set. You can only add users to the Market where you are an admin. ('.$entity->mail.' : '.$node->title.')');
   }
 }
 

@@ -10,6 +10,64 @@
 function elx_content_tool_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_elx_languages'.
+  $field_bases['field_elx_languages'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_elx_languages',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'ar' => 'Arabic',
+        'bg' => 'Bulgarian',
+        'zhhans' => 'Chinese (Simplified)',
+        'zhhant' => 'Chinese (Traditional)',
+        'hr' => 'Croatian',
+        'cs' => 'Czech',
+        'da' => 'Danish',
+        'nl' => 'Dutch',
+        'en' => 'English',
+        'et' => 'Estonian',
+        'fil' => 'Filipino',
+        'fi' => 'Finnish',
+        'fr' => 'French',
+        'frca' => 'French (Canada)',
+        'de' => 'German',
+        'el' => 'Greek',
+        'he' => 'Hebrew',
+        'hu' => 'Hungarian',
+        'is' => 'Icelandic',
+        'id' => 'Indonesian',
+        'it' => 'Italian',
+        'ja' => 'Japanese',
+        'ko' => 'Korean',
+        'lv' => 'Latvian',
+        'lt' => 'Lithuanian',
+        'nb' => 'Norwegian Bokmål',
+        'pl' => 'Polish',
+        'pt' => 'Portuguese',
+        'ro' => 'Romanian',
+        'ru' => 'Russian',
+        'es' => 'Spanish',
+        'essp' => 'Spanish (Spain)',
+        'sv' => 'Swedish',
+        'th' => 'Thai',
+        'tr' => 'Turkish',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'group_access'.
   $field_bases['group_access'] = array(
     'active' => 1,

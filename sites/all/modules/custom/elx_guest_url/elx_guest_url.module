@@ -247,6 +247,17 @@ function elx_guest_url_form_user_register_form_alter(&$form, &$form_state, $form
 function _elx_guest_url_custom_submit($form, &$form_state) {
   //Set the language chosen by the user during self-registration in the session so that messages and other fields appear in the chosen language
   $_SESSION['language'] = $form_state['values']['language']; //'language' corresponds to what is set in admin/config/regional/language/configure/session
+  
+  /* Edit & save the user for the only purpose of showing password in mails.
+   * This is a workaround for the bug in Account Password Token and/or AES modules which shows password only when the newly created account is edited atleast once.
+   * Borrowed from https://www.drupal.org/node/1969192
+   */
+  if(isset($form['#user']->uid))
+  {
+	$existingUser = user_load($form['#user']->uid);
+	$existingUser->status = 1;
+	user_save((object) array('uid' => $existingUser->uid), (array) $existingUser);
+  }
 }
 
 /**
